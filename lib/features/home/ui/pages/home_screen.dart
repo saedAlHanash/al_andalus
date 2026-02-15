@@ -1,0 +1,42 @@
+import 'package:al_andalus/features/ads/ui/widgets/adds_slider.dart';
+import 'package:al_andalus/features/product/ui/widget/general_products.dart';
+import 'package:al_andalus/features/product/ui/widget/latest_products.dart';
+import 'package:al_andalus/features/product/ui/widget/offers_products.dart';
+import 'package:al_andalus/features/product/ui/widget/top_selling_products.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/strings/enum_manager.dart';
+import '../../../category/ui/widget/home_categories.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 20.0).r,
+        children: [
+          AddsSlider(type: AdsType.banner, height: 150.0),
+          20.0.verticalSpace,
+          HomeCategories(),
+          TopSellingProducts(),
+          24.0.verticalSpace,
+          AddsSlider(type: AdsType.slider, height: 140.0.h),
+          10.0.verticalSpace,
+          LatestProducts(),
+          20.0.verticalSpace,
+          AddsSlider(type: AdsType.middle, height: 140.0.h),
+          10.0.verticalSpace,
+          OffersProducts(),
+          20.0.verticalSpace,
+          AddsSlider(type: AdsType.last, height: 140.0.h),
+          10.0.verticalSpace,
+          GeneralProducts(),
+          20.0.verticalSpace,
+        ],
+      ),
+    );
+  }
+}

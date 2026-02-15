@@ -1,0 +1,39 @@
+class Profiles {
+  Profiles({required this.data});
+
+  final Profile data;
+
+  factory Profiles.fromJson(Map<String, dynamic> json) {
+    return Profiles(data: Profile.fromJson(json["data"] ?? {}));
+  }
+
+  Map<String, dynamic> toJson() => {"data": data.toJson()};
+}
+
+class Profile {
+  Profile({required this.id, required this.name, required this.phone, required this.email, required this.birthDate});
+
+  final int id;
+  final String name;
+  final String phone;
+  final String email;
+  final DateTime? birthDate;
+
+  factory Profile.fromJson(Map<String, dynamic> json) {
+    return Profile(
+      id: json["id"] ?? 0,
+      name: json["name"] ?? "",
+      phone: json["phone"] ?? "",
+      email: json["email"] ?? "",
+      birthDate: DateTime.tryParse(json["birth_date"] ?? ""),
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "phone": phone,
+    "email": email,
+    "birth_date": birthDate?.toIso8601String(),
+  };
+}
