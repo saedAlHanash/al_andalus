@@ -35,7 +35,6 @@ class IntroCardWidget extends StatelessWidget {
             matchParent: true,
             textAlign: TextAlign.center,
             size: 24.0.sp,
-            color: AppColorManager.mainColor,
             fontWeight: FontWeight.bold,
           ),
 

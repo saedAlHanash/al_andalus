@@ -1,13 +1,12 @@
+import 'package:al_andalus/features/ads/bloc/ads_cubit/ads_cubit.dart';
 import 'package:al_andalus/features/category/ui/pages/categorys_page.dart';
-import 'package:al_andalus/features/order/bloc/orders_cubit/orders_cubit.dart';
-import 'package:al_andalus/features/order/ui/pages/orders_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../core/injection/injection_container.dart';
-import '../features/address/ui/pages/addresss_page.dart';
-import '../features/address/ui/pages/map_page.dart';
+
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
 import '../features/auth/bloc/confirm_code_cubit/confirm_code_cubit.dart';
 import '../features/auth/bloc/forget_password_cubit/forget_password_cubit.dart';
@@ -25,18 +24,11 @@ import '../features/auth/ui/pages/otp_password_page.dart';
 import '../features/auth/ui/pages/reset_password_page.dart';
 import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
-import '../features/cart/ui/pages/cart_screen.dart';
+
 import '../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
-import '../features/order/bloc/order_cubit/order_cubit.dart';
-import '../features/order/ui/pages/order_page.dart';
-import '../features/product/bloc/product_cubit/product_cubit.dart';
-import '../features/product/bloc/products_cubit/products_cubit.dart';
-import '../features/product/data/request/filter_product_request.dart';
-import '../features/product/ui/pages/product_page.dart';
-import '../features/product/ui/pages/products_page.dart';
-import '../features/product/ui/pages/search_page.dart';
+
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import '../features/profile/ui/pages/profile_page.dart';
 
@@ -190,7 +182,7 @@ class AppRoutes {
               return MultiBlocProvider(
                 providers: [
                   BlocProvider(
-                    create: (context) => sl<ProductsCubit>()..getData(),
+                    create: (context) => sl<AdsCubit>()..getData(),
                   ),
                 ],
                 child: Homepage(),
@@ -199,74 +191,8 @@ class AppRoutes {
           );
         }
       //endregion
-      case RouteName.cart:
-        {
-          return MaterialPageRoute(
-            builder: (_) {
-              return CartScreen(withAppBar: true);
-            },
-          );
-        }
+
       //endregion home
-
-      //region product
-
-      case RouteName.product:
-        //region
-        final providers = [
-          BlocProvider(
-            create: (_) => sl<ProductCubit>()..getData(productId: (settings.arguments ?? 0).toString()),
-          ),
-        ];
-        return MaterialPageRoute(
-          builder: (_) {
-            return MultiBlocProvider(
-              providers: providers,
-              child: const ProductPage(),
-            );
-          },
-        );
-
-      //endregion
-
-      case RouteName.products:
-        final list = settings.arguments as List;
-
-        final providers = [
-          BlocProvider.value(value: list[0] as ProductsCubit),
-        ];
-
-        return MaterialPageRoute(
-          builder: (_) {
-            return MultiBlocProvider(
-              providers: providers,
-              child: ProductsPage(title: list[1] as String),
-            );
-          },
-        );
-
-      case RouteName.search:
-        final list = settings.arguments as List;
-        final request = list[0] as SearchRequest;
-        final providers = [
-          BlocProvider(create: (_) => sl<CategoriesCubit>()..getData(category: request.category)),
-          BlocProvider(
-            create: (_) => sl<ProductsCubit>()
-              ..setFilterRequest(request)
-              ..getData(),
-          ),
-        ];
-        return MaterialPageRoute(
-          builder: (_) {
-            return MultiBlocProvider(
-              providers: providers,
-              child: SearchPage(
-                title: list[1] as String,
-              ),
-            );
-          },
-        );
-      //endregion
 
       //region settings
       case RouteName.profile:
@@ -280,67 +206,6 @@ class AppRoutes {
                 providers: providers,
                 child: const ProfilePage(),
               );
-            },
-          );
-        }
-      //endregion
-
-      //region order
-
-      case RouteName.orders:
-        {
-          return MaterialPageRoute(
-            builder: (_) {
-              final providers = [
-                BlocProvider(create: (_) => sl<OrdersCubit>()..getData()),
-              ];
-              return MultiBlocProvider(
-                providers: providers,
-                child: const OrdersPage(),
-              );
-            },
-          );
-        }
-
-      case RouteName.order:
-        {
-          return MaterialPageRoute(
-            builder: (_) {
-              final providers = [
-                BlocProvider(
-                  create: (_) => sl<OrderCubit>()
-                    ..getData(
-                      orderId: settings.arguments.toString(),
-                    ),
-                ),
-              ];
-              return MultiBlocProvider(
-                providers: providers,
-                child: const OrderPage(),
-              );
-            },
-          );
-        }
-
-      //endregion
-
-      //region address
-      case RouteName.map:
-        {
-          return MaterialPageRoute(
-            builder: (_) {
-              return MapPage(
-                initial: (settings.arguments ?? initialLocation) as LatLng,
-              );
-            },
-          );
-        }
-
-      case RouteName.address:
-        {
-          return MaterialPageRoute(
-            builder: (_) {
-              return AddressesPage();
             },
           );
         }

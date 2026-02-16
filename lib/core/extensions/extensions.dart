@@ -8,8 +8,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
-import '../../features/cart/data/response/coupon_response.dart';
-import '../../features/product/data/response/product_response.dart';
 import '../../generated/l10n.dart';
 import '../error/error_manager.dart';
 import '../strings/app_color_manager.dart';
@@ -485,17 +483,7 @@ extension LatLngH on LatLng {
   String get stringPrint => 'N:$latitude°  E:$longitude°';
 }
 
-extension CouponDataH on CouponData {
-  num calculateDiscount(num subtotal) {
-    switch (type) {
-      case CouponType.fixed:
-        return (num.tryParse(discount) ?? 0);
-      case CouponType.percentage:
-        final discountPercent = num.tryParse(discount) ?? 0;
-        return (subtotal * discountPercent / 100);
-    }
-  }
-}
+
 
 class FormatDateTime {
   final int months;
@@ -522,127 +510,4 @@ class FormatDateTime {
   }
 }
 
-extension ProductH on Product {
-  Widget get priceWidget => Column(
-    mainAxisSize: MainAxisSize.min,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      DrawableText(
-        matchParent: true,
-        text: priceAfter.formatPrice,
-        size: 20.0.sp,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.mainColor,
-      ),
-      10.0.horizontalSpace,
-      if ((price != priceAfter))
-        DrawableText(
-          matchParent: true,
-          text: price.formatPrice,
-          textDecoration: TextDecoration.lineThrough,
-          color: AppColorManager.grey,
-          size: 12.0.sp,
-        ),
-    ],
-  );
 
-  Widget get priceWidgetMini => Column(
-    mainAxisSize: MainAxisSize.min,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      DrawableText(
-        matchParent: true,
-        text: priceAfter.formatPrice,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.mainColor,
-      ),
-      10.0.horizontalSpace,
-      if ((price != priceAfter))
-        DrawableText(
-          matchParent: true,
-          text: price.formatPrice,
-          textDecoration: TextDecoration.lineThrough,
-          color: AppColorManager.grey,
-          size: 10.0.sp,
-        ),
-    ],
-  );
-
-  Widget get priceWidgetH => Row(
-    crossAxisAlignment: CrossAxisAlignment.baseline,
-    textBaseline: TextBaseline.alphabetic,
-    children: [
-      DrawableText(
-        text: S().price,
-        size: 16.0.sp,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.black,
-      ),
-      Spacer(),
-      DrawableText(
-        padding: EdgeInsets.only(top: 10.0),
-        text: priceAfter.formatPrice,
-        size: 16.0.sp,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.black,
-      ),
-      5.0.horizontalSpace,
-      if ((price != priceAfter))
-        DrawableText(
-          text: price.formatPrice,
-          textDecoration: TextDecoration.lineThrough,
-          color: AppColorManager.red,
-          size: 10.0.sp,
-        ),
-      5.0.verticalSpace,
-    ],
-  );
-
-  Widget get priceWidgetCart => Row(
-    crossAxisAlignment: CrossAxisAlignment.baseline,
-    textBaseline: TextBaseline.alphabetic,
-    children: [
-      DrawableText(
-        text: S().price,
-        size: 16.0.sp,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.dividerColor,
-      ),
-      5.0.horizontalSpace,
-      DrawableText(
-        padding: EdgeInsets.only(top: 10.0),
-        text: priceAfter.formatPrice,
-        size: 16.0.sp,
-        fontWeight: FontWeight.bold,
-        fontFamily: FontManager.bold.name,
-        color: AppColorManager.dividerColor,
-      ),
-    ],
-  );
-
-  String get cartId => '$id';
-
-  bool get isAvailable => quantity > 0;
-
-  Widget get availableWidget => Container(
-    height: 30.0.h,
-    margin: EdgeInsets.symmetric(horizontal: 10.0).w,
-    padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0).r,
-    alignment: Alignment.center,
-    decoration: BoxDecoration(
-      color: isAvailable ? AppColorManager.cardColor : AppColorManager.red,
-      borderRadius: BorderRadius.circular(200.0.r),
-    ),
-    child: DrawableText(
-      text: isAvailable ? 'متوفر' : 'غير متوفر',
-      fontWeight: FontWeight.bold,
-      fontFamily: FontManager.bold.name,
-      color: isAvailable ? AppColorManager.black : AppColorManager.white,
-    ),
-  );
-}

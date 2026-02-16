@@ -1,7 +1,7 @@
 // Section title with optional action
 import 'package:al_andalus/core/widgets/see_all_header.dart';
 import 'package:al_andalus/features/category/ui/widget/item_category.dart';
-import 'package:al_andalus/features/product/data/request/filter_product_request.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,14 +43,7 @@ class HomeCategories extends StatelessWidget {
                   return ItemCategory(
                     category: category,
                     onTap: (category) {
-                      Navigator.pushNamed(
-                        context,
-                        RouteName.search,
-                        arguments: [
-                          SearchRequest(category: category),
-                          category.name,
-                        ],
-                      );
+
                     },
                   );
                 },

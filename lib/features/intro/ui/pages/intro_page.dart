@@ -19,17 +19,22 @@ class _IntroPageState extends State<IntroPage> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
-  // 🎨 هنا يمكنك تعديل محتوى صفحات الـ Intro
+
   final List<IntroPageModel> _pages = [
     IntroPageModel(
       image: Assets.imagesIntro1, // ضع صورتك هنا
-      title: 'تتبع حالة طلبك من أي مكان',
-      description: 'اشتري وتتبع طلبك أينما كان',
+      title: 'الإبلاغ عن حادث',
+      description: 'التعويض أسهل الآن.. صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي',
     ),
     IntroPageModel(
       image: Assets.imagesIntro2, // ضع صورتك هنا
-      title: 'الموعد النهائي المحدد لتسليم طلبك',
-      description: 'احصل على أفضل تجربة تسوق وسرعة',
+      title: 'نقل ملكية وثيقة التأمين',
+      description: 'نقل ملكية وثيقة التأمين بسهولة إلى مستخدم آخر عن طريق رمز ال QR',
+    ),
+    IntroPageModel(
+      image: Assets.imagesIntro3, // ضع صورتك هنا
+      title: 'تأمين سيارة',
+      description: 'أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك',
     ),
   ];
 
@@ -86,14 +91,7 @@ class _IntroPageState extends State<IntroPage> {
             ),
 
             // Skip Button
-            Positioned(
-              top: 16.0.h,
-              left: 16.0.w,
-              child: TextButton(
-                onPressed: _finishIntro,
-                child: DrawableText(text: 'تخطي', color: AppColorManager.grey, size: 16.0.sp),
-              ),
-            ),
+
 
             // Bottom Section (Indicators + Next Button)
             Positioned(
@@ -105,15 +103,19 @@ class _IntroPageState extends State<IntroPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    TextButton(
+                      onPressed: _finishIntro,
+                      child: DrawableText(text: 'تخطي', color: AppColorManager.grey, size: 16.0.sp),
+                    ),
                     // Page Indicators
                     Row(children: List.generate(_pages.length, (index) => _buildPageIndicator(index))),
 
                     // Next Button
-                    FloatingActionButton(
+                    TextButton(
                       onPressed: _nextPage,
-                      backgroundColor: AppColorManager.mainColor,
-                      child: Icon(Icons.arrow_forward, color: AppColorManager.white),
+                      child: DrawableText(text: 'التالي', color: AppColorManager.black, size: 16.0.sp),
                     ),
+
                   ],
                 ),
               ),

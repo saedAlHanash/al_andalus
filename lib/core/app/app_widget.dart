@@ -1,8 +1,8 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:al_andalus/features/address/bloc/addresses_cubit/addresses_cubit.dart';
+
 import 'package:al_andalus/features/auth/bloc/delete_account_cubit/delete_account_cubit.dart';
-import 'package:al_andalus/features/favorite/bloc/favorites_cubit/favorites_cubit.dart';
+
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/gestures.dart';
@@ -12,25 +12,21 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
-import '../../features/address/bloc/my_location_cubit/my_location_cubit.dart';
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
-import '../../features/cart/bloc/cart_cubit/cart_cubit.dart';
-import '../../features/cart/bloc/coupon_cubit/coupon_cubit.dart';
+
 import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
 import '../../features/notification/bloc/all_notification_cubit/all_notification_cubit.dart';
-import '../../features/order/bloc/orders_cubit/orders_cubit.dart';
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../../router/app_router.dart';
+
+import '../../router/go_router.dart';
 import '../app_theme.dart';
 import '../injection/injection_container.dart';
 import '../util/shared_preferences.dart';
 import 'bloc/loading_cubit.dart';
-
-GlobalKey<NavigatorState> _c = GlobalKey<NavigatorState>();
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -88,8 +84,8 @@ class _MyAppState extends State<MyApp> {
           initialColor: AppColorManager.black,
         );
 
-        return MaterialApp(
-          navigatorKey: _c,
+        return MaterialApp.router(
+          routerConfig: goRouter,
           locale: Locale.fromSubtags(languageCode: AppSharedPreference.getLocal),
           localizationsDelegates: const [
             S.delegate,
@@ -101,7 +97,6 @@ class _MyAppState extends State<MyApp> {
           builder: (_, child) {
             return MultiBlocProvider(
               providers: [
-                BlocProvider(create: (_) => sl<MyLocationCubit>()),
                 BlocProvider(create: (_) => sl<LoadingCubit>()),
                 BlocProvider(create: (_) => sl<DeleteAccountCubit>()),
                 BlocProvider(create: (_) => sl<UpdateProfileCubit>()),
@@ -110,12 +105,7 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(create: (_) => sl<GovernoratesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<AdssCubit>()..getData()),
                 BlocProvider(create: (_) => sl<CategoriesCubit>()..getData()),
-                BlocProvider(create: (_) => sl<CouponCubit>()),
-                BlocProvider(create: (_) => sl<CartCubit>()..getDataFromCache()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),
-                BlocProvider(create: (_) => sl<AddressesCubit>()..getData()),
-                BlocProvider(create: (_) => sl<OrdersCubit>()),
-                BlocProvider(create: (_) => sl<FavoritesCubit>()..getData()),
               ],
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(.85)),
@@ -141,7 +131,6 @@ class _MyAppState extends State<MyApp> {
           scrollBehavior: MyCustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: appTheme,
-          onGenerateRoute: AppRoutes.routes,
         );
       },
     );
@@ -157,4 +146,4 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
   };
 }
 
-BuildContext? get ctx => _c.currentContext;
+BuildContext? get ctx => sl<GlobalKey<NavigatorState>>().currentContext;

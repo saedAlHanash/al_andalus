@@ -1,18 +1,12 @@
-import 'package:al_andalus/features/address/bloc/address_cubit/address_cubit.dart';
-import 'package:al_andalus/features/address/bloc/addresses_cubit/addresses_cubit.dart';
+
 import 'package:al_andalus/features/category/bloc/categories_cubit/categories_cubit.dart';
 import 'package:al_andalus/features/category/bloc/category_cubit/category_cubit.dart';
-import 'package:al_andalus/features/favorite/bloc/favorite_cubit/favorite_cubit.dart';
-import 'package:al_andalus/features/favorite/bloc/favorites_cubit/favorites_cubit.dart';
-import 'package:al_andalus/features/order/bloc/order_cubit/order_cubit.dart';
-import 'package:al_andalus/features/order/bloc/orders_cubit/orders_cubit.dart';
-import 'package:al_andalus/features/product/bloc/product_cubit/product_cubit.dart';
-import 'package:al_andalus/features/product/bloc/products_cubit/products_cubit.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../features/address/bloc/my_location_cubit/my_location_cubit.dart';
+
 import '../../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
 import '../../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
@@ -24,8 +18,7 @@ import '../../features/auth/bloc/otp_password_cubit/otp_password_cubit.dart';
 import '../../features/auth/bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../../features/auth/bloc/reset_password_cubit/reset_password_cubit.dart';
 import '../../features/auth/bloc/signup_cubit/signup_cubit.dart';
-import '../../features/cart/bloc/cart_cubit/cart_cubit.dart';
-import '../../features/cart/bloc/coupon_cubit/coupon_cubit.dart';
+
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
 import '../../features/home/bloc/home_cubit/home_cubit.dart';
@@ -39,17 +32,7 @@ import '../app/bloc/loading_cubit.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  //region address
-  sl.registerFactory(() => AddressCubit());
-  sl.registerFactory(() => AddressesCubit());
-  //endregion
 
-  //region Cart
-
-  sl.registerFactory(() => CartCubit());
-  sl.registerFactory(() => CouponCubit());
-
-  //endregion
 
   //region Governorate
 
@@ -58,21 +41,9 @@ Future<void> init() async {
 
   //endregion
 
-  //region order
-  sl.registerFactory(() => OrderCubit());
-  sl.registerFactory(() => OrdersCubit());
-  //endregion
 
-  //region favorite
-  sl.registerFactory(() => FavoriteCubit());
-  sl.registerFactory(() => FavoritesCubit());
 
-  //endregion
 
-  //region product
-  sl.registerFactory(() => ProductCubit());
-  sl.registerFactory(() => ProductsCubit());
-  //endregion
 
   //region category
   sl.registerFactory(() => CategoryCubit());
@@ -87,7 +58,6 @@ Future<void> init() async {
   //region Core
 
   sl.registerLazySingleton(() => LoadingCubit());
-  sl.registerCachedFactory(() => MyLocationCubit());
   sl.registerLazySingleton(() => GlobalKey<NavigatorState>());
 
   sl.registerLazySingleton(() => HomeCubit());

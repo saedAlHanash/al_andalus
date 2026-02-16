@@ -18,7 +18,7 @@ class AppSharedPreference {
   static const _testIosFromServer = '9';
   static const _resendTime = '10';
   static const _isLoginToChatApp = '11';
-  static const _hasSeenIntro = '12';
+  static const _hasSeenIntro = '13';
 
   //endregion
 

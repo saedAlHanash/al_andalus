@@ -1,6 +1,5 @@
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
-import 'package:al_andalus/features/cart/ui/pages/cart_screen.dart';
-import 'package:al_andalus/features/favorite/ui/pages/favorites_page.dart';
+
 import 'package:al_andalus/features/notification/ui/pages/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +9,7 @@ import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import '../../bloc/home_cubit/home_cubit.dart';
 import '../widget/bottom_nav_widget.dart';
 import '../widget/screens/menu_screen.dart';
-import '../widget/screens/search_drawer.dart';
+
 import 'home_screen.dart';
 
 class Homepage extends StatefulWidget {
@@ -40,7 +39,6 @@ class _HomepageState extends State<Homepage> {
             onPopInvoked: (isPop, result) => cubit.jumpPage(0),
             canPop: cubit.canPop,
           ),
-          drawer: state.getIndex != 0 ? null : HomeDrawer(),
           bottomNavigationBar: NewNav(),
           body: BlocBuilder<DeleteAccountCubit, DeleteAccountInitial>(
             buildWhen: (p, c) => c.done,
@@ -53,8 +51,8 @@ class _HomepageState extends State<Homepage> {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   const HomeScreen(),
-                  const CartScreen(),
-                  FavoritesPage(),
+                  Container(),
+                  Container(),
                   NotificationPage(),
                   MenuScreen(),
                 ],
