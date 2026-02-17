@@ -9,8 +9,9 @@ import '../../../../core/app/app_widget.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/checker_helper.dart';
 import '../../../../core/util/shared_preferences.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../generated/assets.dart';
-import '../../../../router/app_router.dart';
+import '../../../../router/go_router.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});
@@ -35,25 +36,26 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
         // التحقق من مشاهدة الـ intro
         final hasSeenIntro = AppSharedPreference.hasSeenIntro;
-        
+
         // إذا لم يشاهد المستخدم الـ intro، نوجهه إليه
         if (!hasSeenIntro) {
-          Navigator.pushReplacementNamed(ctx!, RouteName.intro);
+          if (ctx!.mounted) ctx!.goNamed(RouteName.intro);
           return;
         }
 
         // إذا شاهد الـ intro، نتابع كالمعتاد
+        if (!ctx!.mounted) return;
         switch (getStartPage) {
           case StartPage.login:
-          // Navigator.pushReplacementNamed(ctx!, RouteName.login);
+          // ctx!.goNamed(RouteName.login);
           // break;
           case StartPage.home:
-            Navigator.pushReplacementNamed(ctx!, RouteName.home);
+            ctx!.goNamed(RouteName.home);
             break;
           case StartPage.signupOtp:
-            Navigator.pushReplacementNamed(ctx!, RouteName.confirmCode);
+            ctx!.goNamed(RouteName.confirmCode);
           case StartPage.passwordOtp:
-            Navigator.pushReplacementNamed(ctx!, RouteName.resetPasswordPage);
+            ctx!.goNamed(RouteName.resetPasswordPage);
             break;
         }
       },

@@ -1,3 +1,4 @@
+import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -32,7 +33,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           context,
           text: 'تم تغيير كلمة المرور بنجاح',
           onCancel: () {
-            Navigator.pop(context);
+            context.pop();
           },
         );
       },

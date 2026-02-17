@@ -5,7 +5,8 @@ import 'package:image_multi_type/round_image_widget.dart';
 
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../router/go_router.dart';
 import '../strings/enum_manager.dart';
 import 'my_button.dart';
 
@@ -33,7 +34,7 @@ class NeedLoginWidget extends StatelessWidget {
               MyButton(
                 text: S.of(context).login,
                 onTap: () {
-                  Navigator.pushNamedAndRemoveUntil(context, RouteName.login, (route) => false);
+                  context.goNamed(RouteName.login);
                 },
               ),
             ],

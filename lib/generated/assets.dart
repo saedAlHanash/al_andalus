@@ -5,6 +5,7 @@ class Assets {
   static const String fontsCairo = 'assets/fonts/cairo.ttf';
   static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
+  static const String iconsActiveStep = 'assets/icons/active_step.svg';
   static const String iconsAddToCart = 'assets/icons/add_to_cart.svg';
   static const String iconsAppBarBack = 'assets/icons/app_bar_back.svg';
   static const String iconsBack = 'assets/icons/back.svg';
@@ -13,6 +14,7 @@ class Assets {
   static const String iconsCartF = 'assets/icons/cart_f.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
   static const String iconsDone = 'assets/icons/done.svg';
+  static const String iconsDoneStep = 'assets/icons/done_step.svg';
   static const String iconsEdit = 'assets/icons/edit.svg';
   static const String iconsEmpty = 'assets/icons/empty.svg';
   static const String iconsEmptyQuantity = 'assets/icons/empty_quantity.svg';
@@ -21,6 +23,7 @@ class Assets {
   static const String iconsHeartF = 'assets/icons/heart_f.svg';
   static const String iconsHome = 'assets/icons/home.svg';
   static const String iconsHomeF = 'assets/icons/home_f.svg';
+  static const String iconsLanguage = 'assets/icons/language.svg';
   static const String iconsLeaf = 'assets/icons/leaf.svg';
   static const String iconsLocationPin = 'assets/icons/location-pin.svg';
   static const String iconsMap = 'assets/icons/map.svg';
@@ -31,14 +34,17 @@ class Assets {
   static const String iconsPersonF = 'assets/icons/person_f.svg';
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
   static const String iconsSearch = 'assets/icons/search.svg';
+  static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsTrash = 'assets/icons/trash.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
+  static const String imagesCheck = 'assets/images/check.png';
   static const String imagesEmpty = 'assets/images/empty.png';
   static const String imagesIntro1 = 'assets/images/intro1.png';
   static const String imagesIntro2 = 'assets/images/intro2.png';
   static const String imagesIntro3 = 'assets/images/intro3.png';
   static const String imagesJustLogo = 'assets/images/just_logo.jpg';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesLogoAuth = 'assets/images/logo_auth.png';
   static const String imagesUser = 'assets/images/user.png';
 
 }

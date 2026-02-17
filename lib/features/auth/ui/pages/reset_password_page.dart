@@ -8,7 +8,8 @@ import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../core/util/my_style.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/reset_password_cubit/reset_password_cubit.dart';
 
 class ResetPasswordPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     return BlocListener<ResetPasswordCubit, ResetPasswordInitial>(
       listenWhen: (p, c) => c.statuses == CubitStatuses.done,
       listener: (context, state) {
-        Navigator.pushNamedAndRemoveUntil(context, RouteName.donePage, (route) => false);
+        context.goNamed(RouteName.donePage);
       },
       child: Scaffold(
         body: Column(

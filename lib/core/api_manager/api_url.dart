@@ -253,7 +253,7 @@ class DeleteUrl {
   static var deleteGroup = '';
 }
 
-const additionalConst = '/api/v1/';
+const additionalConst = '/client/v1';
 
 String get baseUrl {
   return live;
@@ -261,5 +261,5 @@ String get baseUrl {
 }
 
 //https://back.alryyan.com/
-const live = 'back.alryyan.com';
-const test = 'back.alryyan.com';
+const live = 'admin.andalusapp.com';
+const test = 'admin.andalusapp.com';

@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
-import 'package:al_andalus/router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,6 @@ class IntroPage extends StatefulWidget {
 class _IntroPageState extends State<IntroPage> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
-
 
   final List<IntroPageModel> _pages = [
     IntroPageModel(
@@ -68,7 +68,7 @@ class _IntroPageState extends State<IntroPage> {
 
     // الانتقال إلى صفحة تسجيل الدخول
     if (mounted) {
-      Navigator.pushReplacementNamed(context, RouteName.home);
+      Navigator.of(context).context.goNamed(RouteName.home);
     }
   }
 
@@ -92,7 +92,6 @@ class _IntroPageState extends State<IntroPage> {
 
             // Skip Button
 
-
             // Bottom Section (Indicators + Next Button)
             Positioned(
               bottom: 40.0.h,
@@ -115,7 +114,6 @@ class _IntroPageState extends State<IntroPage> {
                       onPressed: _nextPage,
                       child: DrawableText(text: 'التالي', color: AppColorManager.black, size: 16.0.sp),
                     ),
-
                   ],
                 ),
               ),

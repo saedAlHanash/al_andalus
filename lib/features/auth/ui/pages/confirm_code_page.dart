@@ -14,7 +14,8 @@ import '../../../../core/util/my_style.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../core/widgets/verification_code_widget.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
 import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
 
@@ -45,11 +46,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
         BlocListener<ConfirmCodeCubit, ConfirmCodeInitial>(
           listenWhen: (p, current) => current.statuses == CubitStatuses.done,
           listener: (context, state) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              RouteName.donePage,
-              (route) => false,
-            );
+            context.goNamed(RouteName.donePage);
           },
         ),
         BlocListener<ResendCodeCubit, ResendCodeInitial>(
@@ -105,7 +102,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                         text: S.of(context).sendCode,
                         onTap: () {
                           if (AppSharedPreference.getEmail.isEmpty) {
-                            Navigator.pushReplacementNamed(context, RouteName.login);
+                            context.goNamed(RouteName.login);
                             return;
                           }
                           if (!_formKey.currentState!.validate()) return;

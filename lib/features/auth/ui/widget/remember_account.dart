@@ -6,7 +6,8 @@ import '../../../../core/strings/app_color_manager.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 
 class RememberPassword extends StatelessWidget {
   const RememberPassword({super.key});
@@ -21,7 +22,7 @@ class RememberPassword extends StatelessWidget {
         drawableEnd: InkWell(
           onTap: () {
             AppSharedPreference.removeEmail().then((value) {
-              Navigator.pushNamed(context, RouteName.login);
+              context.goNamed(RouteName.login);
             });
           },
           child: DrawableText(
@@ -50,7 +51,7 @@ class RememberAccount extends StatelessWidget {
             await AppSharedPreference.removeEmail();
             await AppSharedPreference.cashStartPage(StartPage.login);
             if (context.mounted) {
-              Navigator.pushNamed(context, RouteName.login);
+              context.goNamed(RouteName.login);
             }
           },
           child: DrawableText(

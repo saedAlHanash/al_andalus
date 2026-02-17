@@ -2,7 +2,8 @@ import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
-import 'package:al_andalus/router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       Divider(),
                       ItemMenu(
                         onTap: () {
-                          Navigator.pushNamed(context, RouteName.profile).then(
+                          context.pushNamed(RouteName.profile).then(
                             (value) {
                               context.read<GetMeCubit>().getData(newData: true);
                             },
@@ -98,7 +99,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       ItemMenu(
                         onTap: () {
-                          Navigator.pushNamed(context, RouteName.address);
+                          context.pushNamed(RouteName.address);
                         },
                         name: S.of(context).addresses,
                         image: Assets.iconsMap,
@@ -109,7 +110,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       ItemMenu(
                         onTap: () {
-                          Navigator.pushNamed(context, RouteName.orders);
+                          context.pushNamed(RouteName.orders);
                         },
                         name: S.of(context).myOrders,
                         image: Assets.iconsBox,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColorManager {
-  static const mainColor = Color(0xFFF5747A); // The base color
-  static const mainColorDark = Color(0xFFC45D62); // A darker shade of mainColor
+  static const mainColor = Color(0xFF0B223D); // The base color
+  static const mainColorDark = Color(0xFF061221); // A darker shade of mainColor
   static const mainColorLight = Color(0xFFFCD5D7); // A lighter shade of mainColor
   static const textColor = Color(0xFF606060);
   static const black = Color(0xFF000000);

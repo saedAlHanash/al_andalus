@@ -16,7 +16,8 @@ import '../../../../core/widgets/my_button.dart';
 import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../core/widgets/not_found_widget.dart';
 import '../../../../generated/assets.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/all_notification_cubit/all_notification_cubit.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -102,16 +103,14 @@ class _NotificationPageState extends State<NotificationPage> {
                                       child: ListTile(
                                         onTap: () {
                                           if (!list[i].notification.productId.isBlankNumber) {
-                                            Navigator.pushNamed(
-                                              context,
+                                            context.pushNamed(
                                               RouteName.product,
-                                              arguments: list[i].notification.productId,
+                                              queryParameters: {'id': list[i].notification.productId.toString()},
                                             );
                                           } else if (!list[i].notification.orderId.isBlankNumber) {
-                                            Navigator.pushNamed(
-                                              context,
+                                            context.pushNamed(
                                               RouteName.order,
-                                              arguments: list[i].notification.orderId,
+                                              queryParameters: {'id': list[i].notification.orderId.toString()},
                                             );
                                           }
                                         },
@@ -154,7 +153,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   MyButton(
                     text: 'تسجيل الدخول',
                     onTap: () {
-                      Navigator.pushNamedAndRemoveUntil(context, RouteName.login, (route) => false);
+                      context.goNamed(RouteName.login);
                     },
                   ),
                 ],

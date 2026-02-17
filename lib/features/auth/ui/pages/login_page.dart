@@ -10,9 +10,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import '../../../../router/go_router.dart';
 import '../../../notification/bloc/all_notification_cubit/all_notification_cubit.dart';
 import '../../../profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../bloc/login_cubit/login_cubit.dart';
@@ -42,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
           listenWhen: (p, c) => c.done,
           listener: (context, state) {
             updateData();
-            Navigator.pushNamedAndRemoveUntil(context, RouteName.home, (route) => false);
+            context.goNamed(RouteName.home);
           },
         ),
       ],
@@ -63,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10.0).r,
-                    boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
+                    // boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
                   ),
                   child: Column(
                     children: [
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                                 autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
                                 validator: (p0) => p0.validateEmpty,
                                 hint: S.of(context).phoneNumber,
-                                initialValue: loginCubit.state.request.phone,
+                                initialValue: loginCubit.state.mRequest.phone,
                                 keyBordType: TextInputType.phone,
                                 onChanged: (val) => loginCubit.setPhone = val,
                               ),
@@ -86,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                                 // labelText: S.of(context).password,
                                 hint: S.of(context).password,
                                 obscureText: true,
-                                initialValue: loginCubit.state.request.password,
+                                initialValue: loginCubit.state.mRequest.password,
                                 onChanged: (val) => loginCubit.setPassword = val,
                               ),
                             ],
@@ -97,10 +98,9 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(
-                                context,
+                              context.pushNamed(
                                 RouteName.forgetPassword,
-                                arguments: loginCubit.state.request.phone,
+                                queryParameters: {'phone': loginCubit.state.mRequest.phone},
                               );
                             },
                             child: DrawableText(
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                       OutLineButton(
                         text: 'الدخول كضيف',
                         onTap: () async {
-                          Navigator.pushNamed(context, RouteName.home);
+                          context.pushNamed(RouteName.home);
                         },
                       ),
 
@@ -143,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                       DrawableText(
                         text: S.of(context).doNotHaveAnAccount,
                         drawableEnd: TextButton(
-                          onPressed: () => Navigator.pushNamed(context, RouteName.signup),
+                          onPressed: () => context.pushNamed(RouteName.signup),
                           child: DrawableText(
                             fontFamily: FontManager.bold.name,
                             color: AppColorManager.mainColor,
@@ -161,6 +161,8 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+
 }
 
 class _ForgetAndRememberWidget extends StatefulWidget {

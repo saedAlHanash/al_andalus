@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+
 import '../../bloc/categories_cubit/categories_cubit.dart';
 
 class HomeCategories extends StatelessWidget {
@@ -42,9 +42,7 @@ class HomeCategories extends StatelessWidget {
                   final category = state.result[i];
                   return ItemCategory(
                     category: category,
-                    onTap: (category) {
-
-                    },
+                    onTap: (category) {},
                   );
                 },
                 separatorBuilder: (context, i) => 10.0.horizontalSpace,

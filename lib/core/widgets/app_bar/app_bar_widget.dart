@@ -1,4 +1,5 @@
 import 'package:drawable_text/drawable_text.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
@@ -54,7 +55,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             ),
         leading:
             leading ??
-            (Navigator.canPop(context)
+            (context.canPop()
                 ? BackBtnWidget(
                     canPop: canPop,
                     onPopInvoked: onPopInvoked,
@@ -105,15 +106,15 @@ class BackBtnWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!Navigator.canPop(context)) return 0.0.verticalSpace;
+    if (!context.canPop()) return 0.0.verticalSpace;
     return IconButton(
       onPressed: () {
         if (!canPop) {
           onPopInvoked?.call(false, null);
           return;
         }
-        if (!Navigator.canPop(context)) return;
-        Navigator.pop(context);
+        if (!context.canPop()) return;
+        context.pop();
       },
       icon: ImageMultiType(
         url: Assets.iconsBack,

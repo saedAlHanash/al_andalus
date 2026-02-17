@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:go_router/go_router.dart';
 
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
@@ -193,12 +194,12 @@ class NoteMessage {
                 40.0.verticalSpace,
                 MyButton(
                   text: S.of(context).confirm,
-                  onTap: () => Navigator.pop(context, true),
+                  onTap: () => context.pop(true),
                 ),
                 10.0.verticalSpace,
                 MyButton(
                   text: S.of(context).cancel,
-                  onTap: () => Navigator.pop(context, false),
+                  onTap: () => context.pop(false),
                   color: AppColorManager.black,
                 ),
                 20.0.verticalSpace,
@@ -247,7 +248,7 @@ class NoteMessage {
               ),
               Divider(height: 25.0.h, color: Colors.black),
               TextButton(
-                onPressed: () => Navigator.pop(context, true),
+                onPressed: () => context.pop(true),
                 child: DrawableText(text: tryAgne ? 'Try Again' : 'OK'),
               ),
             ],
@@ -298,7 +299,7 @@ class NoteMessage {
               ),
               Divider(height: 25.0.h, color: Colors.black),
               TextButton(
-                onPressed: () => Navigator.pop(context, true),
+                onPressed: () => context.pop(true),
                 child: const DrawableText(text: 'OK'),
               ),
             ],
@@ -412,7 +413,7 @@ class NoteMessage {
                         child: MyButton(
                           color: Colors.red,
                           onTap: () {
-                            Navigator.pop(context, true);
+                            context.pop(true);
                             onConfirm?.call();
                           },
                           text: textButton,
@@ -422,7 +423,7 @@ class NoteMessage {
                       Expanded(
                         child: MyButton(
                           color: AppColorManager.lightGrayAb,
-                          onTap: () => Navigator.pop(context, false),
+                          onTap: () => context.pop(false),
                           text: S.of(context).no,
                         ),
                       ),
@@ -498,7 +499,7 @@ class NoteMessage {
                   padding: const EdgeInsets.symmetric(horizontal: 40.0).r,
                   child: InkWell(
                     splashColor: Colors.transparent,
-                    onTap: () => Navigator.pop(context, true),
+                    onTap: () => context.pop(true),
                     child: DrawableText(
                       padding: const EdgeInsets.symmetric(vertical: 23.0).r,
                       text: textButton,
@@ -549,7 +550,7 @@ class NoteMessage {
                   text: 'تم بنجاح',
                   onTap: () {
                     onCancel?.call();
-                    Navigator.pop(context);
+                    context.pop();
                   },
                 ),
               ),

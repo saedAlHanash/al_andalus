@@ -1,5 +1,6 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:al_andalus/router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,10 +25,8 @@ class AskAuthWidget extends StatelessWidget {
       drawableAlin: DrawableAlin.between,
       drawableEnd: TextButton(
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
+          context.goNamed(
             (login ?? false) ? RouteName.signup : RouteName.login,
-            (route) => false,
           );
         },
         child: DrawableText(

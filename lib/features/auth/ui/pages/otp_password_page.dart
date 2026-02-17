@@ -13,7 +13,8 @@ import '../../../../core/util/shared_preferences.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/verification_code_widget.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/otp_password_cubit/otp_password_cubit.dart';
 import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../../data/request/resend_request.dart';
@@ -45,7 +46,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
         BlocListener<OtpPasswordCubit, OtpPasswordInitial>(
           listenWhen: (p, current) => current.statuses == CubitStatuses.done,
           listener: (context, state) {
-            Navigator.pushNamedAndRemoveUntil(context, RouteName.resetPasswordPage, (route) => false);
+            context.goNamed(RouteName.resetPasswordPage);
           },
         ),
         BlocListener<ResendCodeCubit, ResendCodeInitial>(
@@ -63,7 +64,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
         bottomNavigationBar: TextButton(
           onPressed: () {
             AppSharedPreference.removeEmail();
-            Navigator.pushNamed(context, RouteName.login);
+            context.pushNamed(RouteName.login);
           },
           child: DrawableText(
             size: 18.0.sp,
@@ -114,7 +115,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
                     text: S.of(context).verify,
                     onTap: () {
                       if (AppProvider.getPhoneCached.isEmpty) {
-                        Navigator.pushReplacementNamed(context, RouteName.login);
+                        context.goNamed(RouteName.login);
                         return;
                       }
 

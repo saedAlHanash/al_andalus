@@ -1,3 +1,4 @@
+import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
@@ -30,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return BlocListener<UpdateProfileCubit, UpdateProfileInitial>(
       listenWhen: (p, c) => c.done,
-      listener: (context, state) => Navigator.pop(context, true),
+      listener: (context, state) => context.pop(true),
       child: Scaffold(
         appBar: AppBarWidget(titleText: S.of(context).profile, color: Colors.white),
         bottomNavigationBar: Padding(

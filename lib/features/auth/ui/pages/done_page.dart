@@ -8,7 +8,8 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 
 class DonePage extends StatelessWidget {
   const DonePage({super.key});
@@ -31,7 +32,7 @@ class DonePage extends StatelessWidget {
           Spacer(),
           MyButton(
             onTap: () {
-              Navigator.pushNamedAndRemoveUntil(context, RouteName.splash, (route) => false);
+              context.goNamed(RouteName.splash);
             },
             text: S.of(context).done,
           ),

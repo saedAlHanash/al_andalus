@@ -11,7 +11,8 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/util/my_style.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/forget_password_cubit/forget_password_cubit.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
@@ -41,7 +42,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
     return BlocListener<ForgetPasswordCubit, ForgetPasswordInitial>(
       listenWhen: (p, c) => c.done,
       listener: (context, state) {
-        Navigator.pushNamedAndRemoveUntil(context, RouteName.resetPasswordPage, (route) => false);
+        context.goNamed(RouteName.resetPasswordPage);
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -83,7 +84,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               DrawableText(
                 text: S.of(context).rememberPassword,
                 drawableEnd: TextButton(
-                  onPressed: () => Navigator.pushReplacementNamed(context, RouteName.login),
+                  onPressed: () => context.goNamed(RouteName.login),
                   child: DrawableText(
                     fontFamily: FontManager.bold.name,
                     text: S.of(context).login,

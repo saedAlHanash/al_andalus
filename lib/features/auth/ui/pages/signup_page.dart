@@ -2,7 +2,10 @@ import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
-import 'package:al_andalus/router/app_router.dart';
+import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
+import 'package:easy_stepper/easy_stepper.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,15 +33,39 @@ class _SignupPageState extends State<SignupPage> {
     return BlocListener<SignupCubit, SignupInitial>(
       listenWhen: (p, c) => c.done,
       listener: (context, state) {
-        Navigator.pushNamedAndRemoveUntil(context, RouteName.confirmCode, (route) => false);
+        context.goNamed(RouteName.confirmCode);
       },
       child: Scaffold(
-        appBar: AppBarWidget(zeroHeight: true),
+        appBar: AppBarWidget(titleText: S.of(context).signUp),
         body: ListView(
           children: [
-            AuthCardImage(
-              titleText: S.of(context).createYourAccount,
-              description: S.of(context).enterTheFollowingInformation,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 37.0).r,
+              child: CustomStepperWidget(
+                activeStep: 2,
+                steps: [
+                  customStepWidget(
+                    title: 'الموحدة',
+                    isCompleted: true,
+                  ),
+                  customStepWidget(
+                    title: 'إجازة السوق',
+                    isCompleted: false,
+                  ),
+                  customStepWidget(
+                    title: 'رقم الهاتف',
+                    isCompleted: false,
+                  ),
+                  customStepWidget(
+                    title: 'رمز التحقق',
+                    isCompleted: false,
+                  ),
+                  customStepWidget(
+                    title: 'رمز التطبيق',
+                    isCompleted: false,
+                  ),
+                ],
+              ),
             ),
             Container(
               padding: const EdgeInsets.all(20.0).r,
@@ -46,7 +73,7 @@ class _SignupPageState extends State<SignupPage> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0).r,
-                boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
+                // boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
               ),
               child: Form(
                 key: _formKey,

@@ -1,10 +1,14 @@
 part of 'login_cubit.dart';
 
 class LoginInitial extends AbstractState<LoginResponse> {
-  @override
-  final LoginRequest request;
+  LoginRequest get mRequest => request;
 
-  const LoginInitial({required super.result, super.error, required this.request, super.statuses});
+  const LoginInitial({
+    required super.result,
+    super.error,
+    required super.request,
+    super.statuses,
+  });
 
   factory LoginInitial.initial() {
     return LoginInitial(
@@ -20,7 +24,12 @@ class LoginInitial extends AbstractState<LoginResponse> {
   @override
   List<Object> get props => [statuses, result, error];
 
-  LoginInitial copyWith({CubitStatuses? statuses, LoginResponse? result, String? error, LoginRequest? request}) {
+  LoginInitial copyWith({
+    CubitStatuses? statuses,
+    LoginResponse? result,
+    String? error,
+    LoginRequest? request,
+  }) {
     return LoginInitial(
       statuses: statuses ?? this.statuses,
       result: result ?? this.result,

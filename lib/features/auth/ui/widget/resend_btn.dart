@@ -12,7 +12,8 @@ import '../../../../core/strings/app_color_manager.dart';
 import '../../../../core/util/my_style.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
 
 class ResendBtn extends StatefulWidget {
@@ -78,7 +79,7 @@ class _ResendBtnState extends State<ResendBtn> {
                   drawableEnd: InkWell(
                     onTap: () {
                       if (AppSharedPreference.getEmail.isEmpty) {
-                        Navigator.pushReplacementNamed(context, RouteName.login);
+                        context.goNamed(RouteName.login);
                         return;
                       }
                       context.read<ResendCodeCubit>().resendCode(request: ResendRequest());

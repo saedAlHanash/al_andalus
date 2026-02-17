@@ -1,8 +1,9 @@
+import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/features/auth/data/request/login_request.dart';
 import 'package:al_andalus/services/firebase_service.dart';
-import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:m_cubit/m_cubit.dart';
 
@@ -13,7 +14,7 @@ import '../../../../core/error/error_manager.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/pair_class.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/app_router.dart';
+import '../../../../router/go_router.dart';
 import '../../data/response/login_response.dart';
 
 part 'login_state.dart';
@@ -31,18 +32,16 @@ class LoginCubit extends Cubit<LoginInitial> {
       showErrorFromApi(state);
     } else {
       await AppProvider.login(response: pair.first!);
-
       CachingService.setSupperFilter(AppProvider.supperFilter);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }
 
   Future<Pair<LoginResponse?, String?>> _loginApi() async {
-
     final response = await APIService().callApi(
       type: ApiType.post,
       url: PostUrl.loginUrl,
-      body: await state.request.toJson(),
+      body: await state.mRequest.toJson(),
     );
 
     if (response.statusCode.success) {
@@ -51,20 +50,20 @@ class LoginCubit extends Cubit<LoginInitial> {
       return pair;
     } else {
       if (response.statusCode == 311) {
-        await AppProvider.cacheEmail(phone: state.request.phone!, type: StartPage.signupOtp);
+        await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
 
-        Navigator.pushNamed(ctx!, RouteName.confirmCode);
+        ctx!.goNamed(RouteName.confirmCode);
       }
       return response.getPairError as Pair<LoginResponse?, String?>;
     }
   }
 
-  set setPhone(String? phone) => state.request.phone = phone;
+  set setPhone(String? phone) => state.mRequest.phone = phone;
 
-  set setPassword(String? password) => state.request.password = password;
+  set setPassword(String? password) => state.mRequest.password = password;
 
   String? get validatePhone {
-    if (state.request.phone.isBlank) {
+    if (state.mRequest.phone.isBlank) {
       return '${S().phoneNumber}'
           ' ${S().is_required}';
     }
@@ -72,7 +71,7 @@ class LoginCubit extends Cubit<LoginInitial> {
   }
 
   String? get validatePassword {
-    if (state.request.password.isBlank) {
+    if (state.mRequest.password.isBlank) {
       return '${S().password} ${S().is_required}';
     }
     return null;

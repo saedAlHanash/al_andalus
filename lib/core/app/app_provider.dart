@@ -9,7 +9,8 @@ import '../../features/auth/data/response/login_response.dart';
 import '../../features/profile/data/response/profile_response.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../../router/app_router.dart';
+import 'package:go_router/go_router.dart';
+import '../../router/go_router.dart';
 import '../strings/enum_manager.dart';
 import '../util/checker_helper.dart';
 import '../util/shared_preferences.dart';
@@ -66,7 +67,11 @@ class AppProvider {
           textButton: S.of(ctx!).login,
           image: Icons.login,
           onConfirm: () {
-            Navigator.pushNamed(ctx!, RouteName.login);
+            try {
+              if (ctx!.mounted) ctx!.goNamed(RouteName.login);
+            } catch (e) {
+              Navigator.pushNamed(ctx!, RouteName.login);
+            }
           },
         );
       }
@@ -101,14 +106,14 @@ class AppProvider {
           await AppSharedPreference.reload();
           _myId = 0;
 
-          Navigator.pushNamedAndRemoveUntil(ctx!, RouteName.login, (route) => false);
+          ctx!.goNamed(RouteName.login);
         },
       );
     } else {
       await AppSharedPreference.logout();
       await AppSharedPreference.reload();
       _myId = 0;
-      Navigator.pushNamedAndRemoveUntil(ctx!, RouteName.login, (route) => false);
+      ctx!.goNamed(RouteName.login);
     }
   }
 
