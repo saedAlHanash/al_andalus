@@ -9,7 +9,9 @@ class Assets {
   static const String iconsAddToCart = 'assets/icons/add_to_cart.svg';
   static const String iconsAppBarBack = 'assets/icons/app_bar_back.svg';
   static const String iconsBack = 'assets/icons/back.svg';
+  static const String iconsBottomSheetHeader = 'assets/icons/bottom_sheet_header.svg';
   static const String iconsBox = 'assets/icons/box.svg';
+  static const String iconsCalendar = 'assets/icons/calendar.svg';
   static const String iconsCart = 'assets/icons/cart.svg';
   static const String iconsCartF = 'assets/icons/cart_f.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
@@ -36,9 +38,13 @@ class Assets {
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsTrash = 'assets/icons/trash.svg';
+  static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';
+  static const String iconsUploadDragUploadBack = 'assets/icons/upload_drag_upload_back.svg';
+  static const String iconsUserSearch = 'assets/icons/user-search.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
   static const String imagesCheck = 'assets/images/check.png';
   static const String imagesEmpty = 'assets/images/empty.png';
+  static const String imagesIdScan = 'assets/images/id_scan.png';
   static const String imagesIntro1 = 'assets/images/intro1.png';
   static const String imagesIntro2 = 'assets/images/intro2.png';
   static const String imagesIntro3 = 'assets/images/intro3.png';

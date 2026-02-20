@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/profile/data/response/profile_response.dart';
@@ -19,6 +20,7 @@ class AppSharedPreference {
   static const _resendTime = '10';
   static const _isLoginToChatApp = '11';
   static const _hasSeenIntro = '13';
+  static const _keyThemeMode = '_keyThemeMode';
 
   //endregion
 
@@ -148,11 +150,27 @@ class AppSharedPreference {
   }
 
   static bool get hasSeenIntro => _prefs?.getBool(_hasSeenIntro) ?? false;
+
   //endregion
 
   //region Clear/Logout
   static Future<void> clear() async => await _prefs?.clear();
 
   static Future<void> logout() async => await _prefs?.clear();
+
+  //endregion
+
+  //region ThemeMode
+  static Future<void> setThemeMode(ThemeMode themeMode) async {
+    await _prefs?.setInt(_keyThemeMode, themeMode.index);
+    await reload();
+  }
+
+  static ThemeMode get getThemeMode {
+    final index = _prefs?.getInt(_keyThemeMode);
+    if (index == null) return ThemeMode.system;
+    return ThemeMode.values[index];
+  }
+
   //endregion
 }

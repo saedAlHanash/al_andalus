@@ -50,7 +50,7 @@
   "rememberMe": "تذكرني",
   "doNotHaveAnAccount": "لا تمتلك حساب؟",
   "signInWithSocial": "تسجيل الدخول باستخدام الشبكات الاجتماعية:",
-  "signUp": "الاشتراك",
+  "signUp": "إنشاء حساب",
   "createNewAccount": "انشاء حساب جديد",
   "addCorectData": "يجب عليك إدخال بياناتك الصحيحة لتجنب المشاكل والأخطاء",
   "name": "الاسم",
@@ -346,5 +346,8 @@
   "quantity": "الكمية",
   "yourAccountHasBeenCreatedSuccessfully": "تم إنشاء حسابك بنجاح.",
   "no": "لا",
-  "needPay": "الدفع مطلوب"
+  "needPay": "الدفع مطلوب",
+  "idCardNumber": "رقم البطاقة",
+  "fourName": "الاسم الرباعي",
+  "placeOfResidence": "محل السكن"
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../app/app_widget.dart';
+
 class AppColorManager {
-  static const mainColor = Color(0xFF0B223D); // The base color
-  static const mainColorDark = Color(0xFF061221); // A darker shade of mainColor
-  static const mainColorLight = Color(0xFFFCD5D7); // A lighter shade of mainColor
-  static const textColor = Color(0xFF606060);
+  static const mainColor = Color(0xFF0B223D);
+  static const secondColor = Color(0xFF1D569A);
+  static const mainColorDark = Color(0xFF061221);
+  static const mainColorLight = Color(0xFFFCD5D7);
+
   static const black = Color(0xFF000000);
   static const ampere = Color(0xFFFFC107);
   static const grey = Color(0xFF848484);
@@ -15,11 +18,10 @@ class AppColorManager {
   static const white = Color(0xFFFFFFFF);
   static const red = Color(0xFFC60000);
   static const redPrice = Color(0xFF910202);
-  static const cardColor = Color(0xFFEFEFEF);
+
   static const blue = Color(0xFF0D479E);
   static const c8f = Color(0xFF8F7752);
-//#CDCDCD
-  static const dividerColor = Color(0xFFCDCDCD);
+
   static const f1 = Color(0xFFf1f1f1);
   static const f9 = Color(0xFFf9f9f9);
   static const f6 = Color(0xFFf6f6f6);
@@ -27,6 +29,7 @@ class AppColorManager {
   static const ac = Color(0xFFACACAC);
   static const ee = Color(0xFFEEEEEE);
   static const d9 = Color(0xFFD9D9D9);
+  static const cd = Color(0xFFCDCDCD);
 
   static const fc = Color(0xFFFCFCFC);
   static const c50 = Color(0xFF505050);
@@ -36,6 +39,14 @@ class AppColorManager {
   static const d2 = Color(0xFFD2D2D2);
   static const c1 = Color(0xFF1C1C1C);
   static const ef = Color(0xFFEFEFEF);
+  static const darkColor = Color(0xFF151319);
+  static const greenPrice = Color(0xFF479D78);
+  static const tileColor = Color(0xFF031E1B);
+  static Color get textColor => Theme.of(ctx!).textTheme.bodyMedium!.color!;
+  static Color get scaffoldColor => Theme.of(ctx!).scaffoldBackgroundColor;
+  static Color get cardColor => Theme.of(ctx!).cardColor;
+  static Color get dividerColor => Theme.of(ctx!).dividerColor;
+  static Color get appBarColor => Theme.of(ctx!).appBarTheme.backgroundColor ?? mainColor;
 
 }
 

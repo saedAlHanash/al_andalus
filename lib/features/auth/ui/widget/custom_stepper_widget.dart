@@ -17,6 +17,7 @@ class CustomStepperWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasyStepper(
+
       showLoadingAnimation: false,
       activeStep: activeStep,
       onStepReached: onStepReached,
@@ -54,6 +55,7 @@ EasyStep customStepWidget({
   required String title,
   bool isSelected = false,
   bool isCompleted = false,
+  Function? onTap,
 }) {
   return EasyStep(
     customStep: ImageMultiType(
@@ -67,6 +69,7 @@ EasyStep customStepWidget({
       text: title,
       size: 16.0.sp,
       textAlign: TextAlign.center,
+      color: (isSelected || isCompleted) ? AppColorManager.mainColor : Colors.grey,
     ),
   );
 }

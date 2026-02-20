@@ -40,7 +40,7 @@ class _MenuScreenState extends State<MenuScreen> {
             child: Column(
               children: [
                 ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0).r,
+                  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0).r,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
                   tileColor: AppColorManager.mainColor.withValues(alpha: 0.1),
                   title: DrawableText(
@@ -76,7 +76,7 @@ class _MenuScreenState extends State<MenuScreen> {
                         text: S.of(context).account,
                         fontWeight: FontWeight.bold,
                         padding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
+                          horizontal: 24.0,
                         ).r,
                         matchParent: true,
                         size: 20.0.sp,
@@ -136,7 +136,7 @@ class _MenuScreenState extends State<MenuScreen> {
                         text: S.of(context).support,
                         fontWeight: FontWeight.bold,
                         padding: EdgeInsets.symmetric(
-                          horizontal: 20.0,
+                          horizontal: 24.0,
                         ).r,
                         matchParent: true,
                         size: 20.0.sp,

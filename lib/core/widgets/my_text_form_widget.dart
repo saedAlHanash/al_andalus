@@ -70,7 +70,7 @@ class MyTextFormOutLineWidget extends StatefulWidget {
 class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
   @override
   Widget build(BuildContext context) {
-    final padding = widget.innerPadding ?? const EdgeInsets.symmetric(horizontal: 20.0).w;
+    final padding = widget.innerPadding ?? const EdgeInsets.symmetric(horizontal: 24.0).w;
 
     bool obscureText = widget.obscureText;
     Widget? suffixIcon;
@@ -110,7 +110,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
     }
 
     final border = OutlineInputBorder(
-      borderSide: const BorderSide(color: AppColorManager.cardColor),
+      borderSide:  BorderSide(color: AppColorManager.cd),
       borderRadius: BorderRadius.circular(10.0.r),
     );
 
@@ -165,9 +165,6 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
             if (widget.labelText != null)
               DrawableText(
                 text: widget.labelText!,
-                // color: AppColorManager.gray,
-                fontFamily: FontManager.semeBold.name,
-                size: 16.0.spMin,
                 padding: EdgeInsets.only(bottom: 10.0).r,
                 matchParent: true,
               ),
@@ -189,6 +186,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
               textInputAction: widget.textInputAction,
               onFieldSubmitted: widget.onFieldSubmitted,
               keyboardType: widget.keyBordType,
+
             ),
           ],
         );
@@ -253,7 +251,7 @@ class MyEditTextWidget extends StatelessWidget {
               onChangeObscure();
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
               child: Icon(
                 obscureText ? Icons.visibility : Icons.visibility_off,
                 size: 20.0.spMin,
@@ -376,7 +374,7 @@ class MyEditTextWidgetWhite extends StatelessWidget {
               onChangeObscure();
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
               child: Icon(
                 obscureText ? Icons.visibility : Icons.visibility_off,
                 size: 20.0.spMin,

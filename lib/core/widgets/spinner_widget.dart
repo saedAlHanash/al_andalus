@@ -31,6 +31,7 @@ class SpinnerWidget<T> extends StatefulWidget {
     this.searchable = false,
     this.icon,
     this.isRequired = false,
+    this.height,
   });
 
   final List<SpinnerItem> items;
@@ -51,6 +52,7 @@ class SpinnerWidget<T> extends StatefulWidget {
   final bool searchable;
   final BoxDecoration? decoration;
   final bool isRequired;
+  final double? height;
 
   @override
   State<SpinnerWidget<T>> createState() => SpinnerWidgetState<T>();
@@ -70,11 +72,9 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
               builder: (context, menuSetState) {
                 return InkWell(
                   onTap: () {
-                    setState(
-                        () => menuSetState(() => item.isSelected = !item.isSelected));
+                    setState(() => menuSetState(() => item.isSelected = !item.isSelected));
 
-                    widget.onChangedMultiSelect
-                        ?.call(widget.items.where((e) => e.isSelected).toList());
+                    widget.onChangedMultiSelect?.call(widget.items.where((e) => e.isSelected).toList());
                   },
                   child: Container(
                     height: double.infinity,
@@ -147,10 +147,8 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
   Widget get hintLabel {
     return DrawableText(
       text: widget.hintLabel ?? '',
-      color: AppColorManager.black,
-      size: 12.0.sp,
       matchParent: true,
-      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0).r,
+      padding: const EdgeInsets.only(bottom: 10.0).r,
       drawableEnd: widget.isRequired
           ? DrawableText(
               text: ' * ',
@@ -202,7 +200,8 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
       children: [
         if (widget.hintLabel != null) hintLabel,
         Container(
-          decoration: widget.decoration ??
+          decoration:
+              widget.decoration ??
               BoxDecoration(
                 color: AppColorManager.f9,
                 borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
@@ -216,9 +215,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
                   Expanded(
                     child: DropdownButton2(
                       items: getItems,
-                      value: widget.multiSelect
-                          ? null
-                          : widget.items.firstWhereOrNull((e) => e.isSelected),
+                      value: widget.multiSelect ? null : widget.items.firstWhereOrNull((e) => e.isSelected),
                       hint: hint,
                       onChanged: (value) {
                         if (widget.loading) return;
@@ -254,94 +251,92 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
   }
 
   Widget get multiSelectList {
-    return Builder(builder: (context) {
-      final list = widget.items.where((e) => e.isSelected).toList();
-      if (list.isEmpty) return 0.0.verticalSpace;
-      return Container(
-        padding: const EdgeInsets.only(top: 10.0).h,
-        height: 40.0.h,
-        width: 1.0.sw,
-        child: ListView.separated(
-          separatorBuilder: (context, index) => 5.0.horizontalSpace,
-          scrollDirection: Axis.horizontal,
-          itemCount: list.length,
-          itemBuilder: (context, i) {
-            final item = list[i];
-            return InkWell(
-              onTap: () {
-                setState(() {
-                  widget.items
-                      .firstWhere(
-                        (e) => e.id == item.id,
-                      )
-                      .isSelected = false;
-                });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColorManager.mainColor,
-                  borderRadius: BorderRadius.all(Radius.circular(40.0.r)),
-                ),
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 10.0).r,
-                child: DrawableText(
-                  text: item.name ?? '-',
-                  color: Colors.white,
-                  size: 12.0.sp,
-                  drawableStart: const ImageMultiType(
-                    url: Icons.check,
+    return Builder(
+      builder: (context) {
+        final list = widget.items.where((e) => e.isSelected).toList();
+        if (list.isEmpty) return 0.0.verticalSpace;
+        return Container(
+          padding: const EdgeInsets.only(top: 10.0).h,
+          height: 40.0.h,
+          width: 1.0.sw,
+          child: ListView.separated(
+            separatorBuilder: (context, index) => 5.0.horizontalSpace,
+            scrollDirection: Axis.horizontal,
+            itemCount: list.length,
+            itemBuilder: (context, i) {
+              final item = list[i];
+              return InkWell(
+                onTap: () {
+                  setState(() {
+                    widget.items
+                            .firstWhere(
+                              (e) => e.id == item.id,
+                            )
+                            .isSelected =
+                        false;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: AppColorManager.mainColor,
+                    borderRadius: BorderRadius.all(Radius.circular(40.0.r)),
+                  ),
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0).r,
+                  child: DrawableText(
+                    text: item.name ?? '-',
                     color: Colors.white,
+                    size: 12.0.sp,
+                    drawableStart: const ImageMultiType(
+                      url: Icons.check,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
-        ),
-      );
-    });
+              );
+            },
+          ),
+        );
+      },
+    );
   }
 
   get buttonStyleData => ButtonStyleData(
-        width: widget.width ?? 0.9.sw,
-        height: 51.0.h,
-        decoration: widget.decoration ??
-            BoxDecoration(
-              color: AppColorManager.f9,
-              borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
-            ),
-        elevation: 0,
-      );
+    width: widget.width ?? 0.9.sw,
+    height: widget.height ?? 50.0.h,
+    elevation: 0,
+  );
 
   get menuItemStyleData => MenuItemStyleData(height: 40.0.h);
 
   get dropdownStyleData => DropdownStyleData(
-        width: widget.dropdownWidth,
-        maxHeight: 300.0.h,
-        elevation: 0,
-        padding: EdgeInsets.zero,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 10.0.r,
-              offset: Offset(0, 6.r),
-            )
-          ],
-          borderRadius: BorderRadius.circular(8.0.r),
+    width: widget.dropdownWidth,
+    maxHeight: 300.0.h,
+    elevation: 0,
+    padding: EdgeInsets.zero,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black26,
+          blurRadius: 10.0.r,
+          offset: Offset(0, 6.r),
         ),
-        isOverButton: widget.isOverButton ?? false,
-      );
+      ],
+      borderRadius: BorderRadius.circular(8.0.r),
+    ),
+    isOverButton: widget.isOverButton ?? false,
+  );
 
   get iconStyleData => IconStyleData(
-        icon: ImageMultiType(
-          url: Icons.expand_more,
-          height: 18.0.r,
-          width: 18.0.r,
-          color: AppColorManager.mainColor,
-        ),
-        iconSize: 35.0.spMin,
-      );
+    icon: ImageMultiType(
+      url: Icons.expand_more,
+      height: 18.0.r,
+      width: 18.0.r,
+      color: AppColorManager.mainColor,
+    ),
+    iconSize: 35.0.spMin,
+  );
 
   get dropdownSearchData => !widget.searchable
       ? null
@@ -358,11 +353,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
             ),
           ),
           searchMatchFn: (item, searchValue) {
-            return item.value?.name
-                    .toString()
-                    .toLowerCase()
-                    .contains(searchValue.toLowerCase()) ??
-                false;
+            return item.value?.name.toString().toLowerCase().contains(searchValue.toLowerCase()) ?? false;
           },
         );
 
@@ -427,7 +418,7 @@ class SpinnerOutlineTitle extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0.r),
             border: Border.all(color: AppColorManager.grey, width: 1.0.r),
           ),
-        )
+        ),
       ],
     );
   }
@@ -450,7 +441,7 @@ class SpinnerItem {
   dynamic item;
   Widget? icon;
 
-//<editor-fold desc="Data Methods">
+  //<editor-fold desc="Data Methods">
 
   SpinnerItem copyWith({
     String? name,
@@ -488,5 +479,5 @@ class SpinnerItem {
     );
   }
 
-//</editor-fold>
+  //</editor-fold>
 }

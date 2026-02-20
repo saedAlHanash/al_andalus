@@ -37,7 +37,9 @@ class APIService {
       (t) => serverTime = serverTime.addFromNow(second: 30),
     );
   }
+
   DateTime serverTime = DateTime.now().toUtc();
+
   factory APIService() => _singleton;
 
   Map<String, String> get innerHeader => {
@@ -146,43 +148,52 @@ class APIService {
 class UploadFile {
   UploadFile({
     this.fileBytes,
-    this.initialImage,
-    this.nameField = 'images[0]',
-    this.assetImage = '',
-    this.tempId,
-    this.type,
+    this.nameField = 'File',
+    this.localId,
+    this.extension,
+    this.fileType = FileType.other, // تأكد أن FileType معرف لديك كـ Enum
   });
 
   Uint8List? fileBytes;
   String nameField;
-  String? initialImage;
-  dynamic assetImage;
-  String? tempId;
-  String? type;
+  FileType fileType;
+  String? localId;
+  String? extension;
 
-  dynamic get getImage => fileBytes ?? (initialImage.isBlank ? null : initialImage) ?? assetImage;
-
+  // الإصلاح هنا: إضافة جميع الحقول لضمان عدم ضياع البيانات عند النسخ
   UploadFile copyWith({
     Uint8List? fileBytes,
     String? nameField,
+    FileType? fileType,
+    String? localId,
+    String? extension,
   }) {
     return UploadFile(
       fileBytes: fileBytes ?? this.fileBytes,
       nameField: nameField ?? this.nameField,
+      fileType: fileType ?? this.fileType,
+      localId: localId ?? this.localId,
+      extension: extension ?? this.extension,
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
-      'filelBytes': fileBytes,
+      'fileBytes': fileBytes?.toList(), // يفضل تحويله لـ List عند التحويل لـ JSON
       'nameField': nameField,
+      'localId': localId,
+      'extension': extension,
+      'fileType': fileType.name, // أو حسب طريقة تخزينك للـ Enum
     };
   }
 
-  factory UploadFile.fromMap(Map<String, dynamic> map) {
+  factory UploadFile.fromJson(Map<String, dynamic> map) {
     return UploadFile(
-      fileBytes: map['filelBytes'] as Uint8List,
-      nameField: map['nameField'] as String,
+      fileBytes: map['fileBytes'] != null ? Uint8List.fromList(List<int>.from(map['fileBytes'])) : null,
+      nameField: map['nameField'] ?? 'File',
+      localId: map['localId'],
+      extension: map['extension'],
+      // تأكد من طريقة استرجاع الـ Enum من الـ JSON
     );
   }
 }

@@ -47,8 +47,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         if (!ctx!.mounted) return;
         switch (getStartPage) {
           case StartPage.login:
-          // ctx!.goNamed(RouteName.login);
-          // break;
+          ctx!.goNamed(RouteName.login);
+          break;
           case StartPage.home:
             ctx!.goNamed(RouteName.home);
             break;

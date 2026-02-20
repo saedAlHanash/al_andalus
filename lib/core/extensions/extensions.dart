@@ -484,6 +484,28 @@ extension LatLngH on LatLng {
 }
 
 
+extension FileTypeDetector on String {
+  String get fileExtension {
+    if (!contains('.')) return '';
+    return split('.').last.toLowerCase();
+  }
+
+  FileType get fileType {
+    const imageExt = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'heic'];
+    const videoExt = ['mp4', 'mov', 'avi', 'mkv', 'webm', 'flv'];
+    const audioExt = ['mp3', 'wav', 'ogg', 'm4a', 'aac', 'flac'];
+    const docExt = ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'rtf'];
+
+    final ext = fileExtension;
+
+    if (imageExt.contains(ext)) return FileType.image;
+    if (videoExt.contains(ext)) return FileType.video;
+    if (audioExt.contains(ext)) return FileType.audio;
+    if (ext == 'pdf') return FileType.pdf;
+    if (docExt.contains(ext)) return FileType.document;
+    return FileType.other;
+  }
+}
 
 class FormatDateTime {
   final int months;

@@ -8,7 +8,7 @@ class MyCardWidget extends StatelessWidget {
     super.key,
     this.margin,
     this.padding,
-    this.cardColor = AppColorManager.cardColor,
+    this.cardColor ,
     required this.child,
     this.elevation = 2,
     this.radios,
@@ -16,7 +16,7 @@ class MyCardWidget extends StatelessWidget {
 
   final EdgeInsets? margin;
   final EdgeInsets? padding;
-  final Color cardColor;
+  final Color? cardColor;
   final Widget child;
   final double elevation;
   final double? radios;

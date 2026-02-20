@@ -359,3 +359,55 @@ enum AdsType {
     };
   }
 }
+
+enum CompressQuality {
+  q20,
+  q40,
+  q60,
+  q80,
+  q100
+  ;
+
+  int get getQuality {
+    switch (this) {
+      case CompressQuality.q20:
+        return 20;
+      case CompressQuality.q40:
+        return 40;
+      case CompressQuality.q60:
+        return 60;
+      case CompressQuality.q80:
+        return 80;
+      case CompressQuality.q100:
+        return 100;
+    }
+  }
+}
+
+enum FileType {
+  image,
+  video,
+  audio,
+  pdf,
+  document,
+  other
+  ;
+
+  /// ÙŠØ±Ø¬Ø¹ Ø§Ù„Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ù…Ù†Ø§Ø³Ø±Ø¨Ø© Ù„Ù„Ø¹Ø±Ø¶ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)
+  IconData get fileTypeIcon {
+    switch (this) {
+      case FileType.image:
+        return Icons.image_rounded;
+      case FileType.video:
+        return Icons.videocam_rounded;
+      case FileType.audio:
+        return Icons.audiotrack_rounded;
+      case FileType.pdf:
+        return Icons.picture_as_pdf_rounded;
+      case FileType.document:
+        return Icons.description_rounded;
+      case FileType.other:
+        return Icons.insert_drive_file_rounded;
+    }
+  }
+}

@@ -115,7 +115,7 @@ class _AuthCardImageState extends State<AuthCardImage> {
         if (context.mounted) context.pop();
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0).r,
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0).r,
         width: double.infinity,
         decoration: BoxDecoration(
           border: Border.all(color: AppColorManager.mainColor),

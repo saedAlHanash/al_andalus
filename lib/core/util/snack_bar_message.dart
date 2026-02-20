@@ -560,4 +560,5 @@ class NoteMessage {
       },
     );
   }
+
 }

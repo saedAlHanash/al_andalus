@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20.0).r,
+        padding: EdgeInsets.symmetric(horizontal: 24.0).r,
         children: [
           AddsSlider(type: AdsType.banner, height: 150.0),
           20.0.verticalSpace,

@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Already Have An Account?",
     ),
     "and": MessageLookupByLibrary.simpleMessage("and"),
+    "appCode": MessageLookupByLibrary.simpleMessage("App Code"),
     "apply": MessageLookupByLibrary.simpleMessage("Apply"),
     "apply_filters": MessageLookupByLibrary.simpleMessage("Apply filters"),
     "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
@@ -165,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "Done resend code",
     ),
+    "drivingLicense": MessageLookupByLibrary.simpleMessage("Driving License"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "ePayment": MessageLookupByLibrary.simpleMessage("E-Payment"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -240,6 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "flash_deal": MessageLookupByLibrary.simpleMessage("Flash Deal"),
     "follow": MessageLookupByLibrary.simpleMessage("Follow"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "free": MessageLookupByLibrary.simpleMessage("Free"),
     "freeExams": MessageLookupByLibrary.simpleMessage("Free exams"),
     "freeLesson": MessageLookupByLibrary.simpleMessage("Free lessons"),
@@ -268,11 +271,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "iWantToChangeAccount": MessageLookupByLibrary.simpleMessage(
       "I want to change account",
     ),
+    "idCardNumber": MessageLookupByLibrary.simpleMessage("ID Card Number"),
     "identityImage": MessageLookupByLibrary.simpleMessage("Identity Image"),
     "ifYouExitTheApplicationDuringTheExamTheExam":
         MessageLookupByLibrary.simpleMessage(
           "If you exit the application during the exam, the exam will be considered complete.",
         ),
+    "info": MessageLookupByLibrary.simpleMessage("Info"),
     "isSuccess": MessageLookupByLibrary.simpleMessage("Success!"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "ku": MessageLookupByLibrary.simpleMessage("Kurdish"),
@@ -365,6 +370,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone number must start with 07",
     ),
     "phoneSms": MessageLookupByLibrary.simpleMessage("Phone SMS"),
+    "placeOfResidence": MessageLookupByLibrary.simpleMessage(
+      "Place of Residence",
+    ),
     "pleasCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Please create an account",
     ),
@@ -375,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Terms of Use and Privacy Policy",
     ),
     "policyJust": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "processing": MessageLookupByLibrary.simpleMessage("Processing"),
     "product": MessageLookupByLibrary.simpleMessage("Product"),
@@ -491,6 +500,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "successfully": MessageLookupByLibrary.simpleMessage("Successfully."),
     "summaries": MessageLookupByLibrary.simpleMessage("Summaries"),
     "support": MessageLookupByLibrary.simpleMessage("Support"),
+    "takePicture": MessageLookupByLibrary.simpleMessage("Take picture"),
     "teacher": MessageLookupByLibrary.simpleMessage("Teacher"),
     "teacherOf": MessageLookupByLibrary.simpleMessage("Teacher of:"),
     "teachers": MessageLookupByLibrary.simpleMessage("Teachers"),
@@ -514,10 +524,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "unFollow": MessageLookupByLibrary.simpleMessage("Un Follow"),
     "underCorrection": MessageLookupByLibrary.simpleMessage("Under correction"),
     "update": MessageLookupByLibrary.simpleMessage("update"),
+    "uploadFile": MessageLookupByLibrary.simpleMessage("Upload file"),
     "useCurrentLocation": MessageLookupByLibrary.simpleMessage(
       "Use Current Location",
     ),
     "userName": MessageLookupByLibrary.simpleMessage("Username"),
+    "verificationCode": MessageLookupByLibrary.simpleMessage(
+      "Verification Code",
+    ),
     "verify": MessageLookupByLibrary.simpleMessage("verify"),
     "verifyTheVerificationCode": MessageLookupByLibrary.simpleMessage(
       "Verify the verification code",

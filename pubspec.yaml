@@ -70,6 +70,10 @@ dependencies:
   pull_to_refresh: ^2.0.0
   string_similarity: ^2.1.1
   easy_stepper:
+  flutter_image_compress: ^2.4.0
+  image: ^4.7.2
+  image_picker: ^1.2.1
+  file_picker: ^10.3.10
 #  kiosk_mode: ^0.7.0
 
 dev_dependencies:

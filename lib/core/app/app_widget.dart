@@ -130,7 +130,8 @@ class _MyAppState extends State<MyApp> {
           },
           scrollBehavior: MyCustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
-          theme: appTheme,
+          theme: lightTheme,
+          darkTheme: lightTheme,
         );
       },
     );

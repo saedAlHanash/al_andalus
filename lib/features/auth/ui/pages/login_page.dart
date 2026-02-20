@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       AutofillGroup(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+                          padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
                           child: Column(
                             children: [
                               MyTextFormOutLineWidget(

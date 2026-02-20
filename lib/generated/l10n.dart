@@ -2638,6 +2638,86 @@ class S {
   String get needPay {
     return Intl.message('Need Pay', name: 'needPay', desc: '', args: []);
   }
+
+  /// `Info`
+  String get info {
+    return Intl.message('Info', name: 'info', desc: '', args: []);
+  }
+
+  /// `Driving License`
+  String get drivingLicense {
+    return Intl.message(
+      'Driving License',
+      name: 'drivingLicense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification Code`
+  String get verificationCode {
+    return Intl.message(
+      'Verification Code',
+      name: 'verificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Code`
+  String get appCode {
+    return Intl.message('App Code', name: 'appCode', desc: '', args: []);
+  }
+
+  /// `ID Card Number`
+  String get idCardNumber {
+    return Intl.message(
+      'ID Card Number',
+      name: 'idCardNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fourName {
+    return Intl.message('Full Name', name: 'fourName', desc: '', args: []);
+  }
+
+  /// `Place of Residence`
+  String get placeOfResidence {
+    return Intl.message(
+      'Place of Residence',
+      name: 'placeOfResidence',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload file`
+  String get uploadFile {
+    return Intl.message('Upload file', name: 'uploadFile', desc: '', args: []);
+  }
+
+  /// `Take picture`
+  String get takePicture {
+    return Intl.message(
+      'Take picture',
+      name: 'takePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preview file`
+  String get previewFile {
+    return Intl.message(
+      'Preview file',
+      name: 'previewFile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

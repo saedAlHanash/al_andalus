@@ -224,6 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "flash_deal": MessageLookupByLibrary.simpleMessage("العروض السريعة"),
     "follow": MessageLookupByLibrary.simpleMessage("متابعة"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "free": MessageLookupByLibrary.simpleMessage("مجاني"),
     "freeExams": MessageLookupByLibrary.simpleMessage("امتحانات مجانية"),
     "freeLesson": MessageLookupByLibrary.simpleMessage("دروس المجانية"),
@@ -250,6 +251,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "iWantToChangeAccount": MessageLookupByLibrary.simpleMessage(
       "أريد تغيير الحساب",
     ),
+    "idCardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "identityImage": MessageLookupByLibrary.simpleMessage("صورة الهوية"),
     "ifYouExitTheApplicationDuringTheExamTheExam":
         MessageLookupByLibrary.simpleMessage(
@@ -345,6 +347,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب أن يبدأ رقم الهاتف بـ 07",
     ),
     "phoneSms": MessageLookupByLibrary.simpleMessage("رسالة نصية على الهاتف"),
+    "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "pleasCreateAccount": MessageLookupByLibrary.simpleMessage(
       "يرجى إنشاء حساب",
     ),
@@ -427,7 +430,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signInWithSocialNetworks": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول ببرامج التواصل ",
     ),
-    "signUp": MessageLookupByLibrary.simpleMessage("الاشتراك"),
+    "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "sizes": MessageLookupByLibrary.simpleMessage("الأحجام"),
     "sorryThereAreNoCoursesNow": MessageLookupByLibrary.simpleMessage(
       "عذرًا، لا توجد دورات حاليًا.",

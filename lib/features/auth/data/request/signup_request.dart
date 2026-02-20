@@ -1,67 +1,77 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SignupRequest {
   SignupRequest({
     this.name,
-    this.location,
     this.gender,
-    this.email,
     this.birthday,
     this.phone,
     this.password,
-    this.rePassword,
-    this.governorateId,
-    this.educationalGradeId,
+    this.address,
+    this.identityId,
+    this.licenseNumber,
+    this.licenseType,
+    this.licenseStartDate,
+    this.licenseEndDate,
+    this.biometricId,
   }) {
     if (AppProvider.isTestMode) {
       password = '12345678';
-      rePassword = '12345678';
     }
   }
 
   String? name;
-  LatLng? location;
-  int? governorateId;
   GenderEnum? gender;
-  String? email;
   DateTime? birthday;
   String? phone;
   String? password;
-  String? rePassword;
-  int? educationalGradeId;
+  String? address;
+  String? identityId;
+  String? licenseNumber;
+  String? licenseType;
+  DateTime? licenseStartDate;
+  DateTime? licenseEndDate;
+  String? biometricId;
+
+  var identityFrontImage = UploadFile(nameField: 'identity_front_image');
+  var identityBackImage = UploadFile(nameField: 'identity_back_image');
+  var licenseFrontImage = UploadFile(nameField: 'license_front_image');
+  var licenseBackImage = UploadFile(nameField: 'license_back_image');
 
   factory SignupRequest.fromJson(Map<String, dynamic> json) {
     return SignupRequest(
       name: json['name'] as String?,
       password: json['password'] as String?,
-      email: json['email'] as String?,
-      educationalGradeId: json['educational_grade_id'] as int?,
-      rePassword: json['rePassword'] as String?,
       phone: json['phone'] as String?,
-      governorateId: json['governorate_id'] as int?,
+      address: json['address'] as String?,
+      identityId: json['identity_id'] as String?,
+      licenseNumber: json['license_number'] as String?,
+      licenseType: json['license_type'] as String?,
+      biometricId: json['biometric_id'] as String?,
       gender: json['genderID'] == null ? null : GenderEnum.values[json['genderID'] ?? 0],
       birthday: DateTime.tryParse(json['birth_date'] ?? ''),
-      location: (json['latitude'] == null || json['longitude'] == null)
-          ? null
-          : LatLng(json['latitude'] ?? 0, json['longitude'] ?? 0),
+      licenseStartDate: DateTime.tryParse(json['license_start_date'] ?? ''),
+      licenseEndDate: DateTime.tryParse(json['license_end_date'] ?? ''),
     );
   }
 
   Map<String, dynamic> toJson() => {
     'name': name,
-    "password": password,
-    "educational_grade_id": educationalGradeId,
-    'rePassword': rePassword,
-    'phone': phone.fixPhone,
+    'password': password,
+    'phone': phone?.fixPhone,
     'gender': gender?.nameApi ?? 'male',
     'genderID': gender?.index ?? 0,
-    'birth_date': birthday?.toIso8601String() ?? DateTime(2000).toIso8601String(),
-    'latitude': location?.latitude.toString(),
-    'longitude': location?.longitude.toString(),
-    'email': email,
-    'governorate_id': governorateId,
+    'birth_date': birthday?.toIso8601String().split('T').first ?? "1997-02-19",
+    'address': address,
+    'identity_id': identityId,
+    'license_number': licenseNumber,
+    'license_type': licenseType,
+    'license_start_date': licenseStartDate?.toIso8601String().split('T').first,
+    'license_end_date': licenseEndDate?.toIso8601String().split('T').first,
+    'biometric_id': biometricId,
   };
 }
+

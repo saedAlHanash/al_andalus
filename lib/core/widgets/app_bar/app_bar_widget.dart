@@ -51,7 +51,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             DrawableText(
               text: titleText ?? '',
               size: 18.0.spMin,
-              color: isColorDark(color ?? AppColorManager.mainColor) ? Colors.white : null,
             ),
         leading:
             leading ??

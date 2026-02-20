@@ -46,64 +46,12 @@ class SignupCubit extends MCubit<SignupInitial> {
     }
   }
 
-  set setName(String? name) {
-    state.request.name = name!.trim();
-    emit(state.copyWith(request: state.request));
-  }
-
-  set setGender(GenderEnum? gender) => state.request.gender = gender;
-
-  set setEducationalGrade(int? id) => state.request.educationalGradeId = id;
-
-  set setBirthday(DateTime? birthday) => state.request.birthday = birthday;
-
-  set setPhone(String? phone) => state.request.phone = phone;
-  set setEmail(String? phone) => state.request.email = phone;
-
-  set setPassword(String? password) => state.request.password = password;
-
-  set setRePassword(String? rePassword) => state.request.rePassword = rePassword;
-
-  String? get validateName {
-    if (state.request.name.isBlank) {
-      return S().nameEmpty;
+  void next({int? step}) {
+    if (step != null) {
+      if (state.step < step) return;
+      emit(state.copyWith(step: step));
+      return;
     }
-    return null;
-  }
-
-  String? get validateLocation {
-    if (state.request.location == null) {
-      return '${S().location} ${S().is_required}';
-    }
-    return null;
-  }
-
-  String? get validateBirthday {
-    if (state.request.birthday == null) {
-      return '${S().birthday} ${S().is_required}';
-    }
-    return null;
-  }
-
-  String? get validatePhone {
-    if (state.request.phone.isBlank) {
-      return '${S().phoneNumber}'
-          ' ${S().is_required}';
-    }
-    return null;
-  }
-
-  String? get validatePassword {
-    if (state.request.password.isBlank) {
-      return '${S().password} ${S().is_required}';
-    }
-    return null;
-  }
-
-  String? get validateRePassword {
-    if (state.request.rePassword != state.request.password) {
-      return S().passwordNotMatch;
-    }
-    return null;
+    emit(state.copyWith(step: state.step + 1));
   }
 }

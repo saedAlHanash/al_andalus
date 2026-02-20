@@ -21,7 +21,7 @@ class AskAuthWidget extends StatelessWidget {
           ? 'إنشاء حساب جديد؟'
           : 'هل لديك حساب؟',
       matchParent: true,
-      padding: const EdgeInsets.symmetric(horizontal: 20.0).w,
+      padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
       drawableAlin: DrawableAlin.between,
       drawableEnd: TextButton(
         onPressed: () {
