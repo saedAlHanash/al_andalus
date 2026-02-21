@@ -31,6 +31,31 @@ enum GenderEnum {
   }
 }
 
+enum LicenseType {
+  public,
+  private,
+  //public / private
+  ;
+
+  String get name {
+    switch (this) {
+      case LicenseType.public:
+        return S().public;
+      case LicenseType.private:
+        return S().private;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case LicenseType.public:
+        return 'public';
+      case LicenseType.private:
+        return 'private';
+    }
+  }
+}
+
 enum IraqGovernorate {
   baghdad,
   basra,

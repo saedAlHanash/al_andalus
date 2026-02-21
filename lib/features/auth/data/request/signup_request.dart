@@ -1,7 +1,7 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 
 class SignupRequest {
   SignupRequest({
@@ -31,7 +31,7 @@ class SignupRequest {
   String? address;
   String? identityId;
   String? licenseNumber;
-  String? licenseType;
+  LicenseType? licenseType;
   DateTime? licenseStartDate;
   DateTime? licenseEndDate;
   String? biometricId;
@@ -41,6 +41,16 @@ class SignupRequest {
   var licenseFrontImage = UploadFile(nameField: 'license_front_image');
   var licenseBackImage = UploadFile(nameField: 'license_back_image');
 
+  bool infoChecked = false;
+  bool licenseChecked = false;
+
+  List<UploadFile> get files => [
+    identityFrontImage,
+    identityBackImage,
+    licenseFrontImage,
+    licenseBackImage,
+  ];
+
   factory SignupRequest.fromJson(Map<String, dynamic> json) {
     return SignupRequest(
       name: json['name'] as String?,
@@ -49,7 +59,7 @@ class SignupRequest {
       address: json['address'] as String?,
       identityId: json['identity_id'] as String?,
       licenseNumber: json['license_number'] as String?,
-      licenseType: json['license_type'] as String?,
+      licenseType: json['license_type'] == null ? null : LicenseType.values[json['license_type'] ?? 0],
       biometricId: json['biometric_id'] as String?,
       gender: json['genderID'] == null ? null : GenderEnum.values[json['genderID'] ?? 0],
       birthday: DateTime.tryParse(json['birth_date'] ?? ''),
@@ -68,10 +78,9 @@ class SignupRequest {
     'address': address,
     'identity_id': identityId,
     'license_number': licenseNumber,
-    'license_type': licenseType,
+    'license_type': licenseType?.nameApi,
     'license_start_date': licenseStartDate?.toIso8601String().split('T').first,
     'license_end_date': licenseEndDate?.toIso8601String().split('T').first,
     'biometric_id': biometricId,
   };
 }
-

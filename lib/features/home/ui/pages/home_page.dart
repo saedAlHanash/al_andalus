@@ -39,25 +39,35 @@ class _HomepageState extends State<Homepage> {
             onPopInvoked: (isPop, result) => cubit.jumpPage(0),
             canPop: cubit.canPop,
           ),
-          bottomNavigationBar: NewNav(),
-          body: BlocBuilder<DeleteAccountCubit, DeleteAccountInitial>(
-            buildWhen: (p, c) => c.done,
-            builder: (context, dState) {
-              if (dState.loading) {
-                return MyStyle.loadingWidget();
-              }
-              return PageView(
-                controller: state.controller,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  const HomeScreen(),
-                  Container(),
-                  Container(),
-                  NotificationPage(),
-                  MenuScreen(),
-                ],
-              );
-            },
+          body: Stack(
+            children: [
+              Expanded(
+                child: BlocBuilder<DeleteAccountCubit, DeleteAccountInitial>(
+                  buildWhen: (p, c) => c.done,
+                  builder: (context, dState) {
+                    if (dState.loading) {
+                      return MyStyle.loadingWidget();
+                    }
+                    return PageView(
+                      controller: state.controller,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        const HomeScreen(),
+                        Container(),
+                        Container(),
+                        NotificationPage(),
+                        MenuScreen(),
+                      ],
+                    );
+                  },
+                ),
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Navbar(),
+              ),
+            ],
           ),
         );
       },

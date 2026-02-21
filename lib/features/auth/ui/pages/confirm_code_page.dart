@@ -4,6 +4,7 @@ import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
 import 'package:al_andalus/features/auth/ui/widget/remember_account.dart';
 import 'package:al_andalus/features/auth/ui/widget/resend_btn.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +19,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
 import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
+import '../widget/custom_stepper_widget.dart';
 
 class ConfirmCodePage extends StatefulWidget {
   const ConfirmCodePage({super.key});
@@ -60,28 +62,51 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
         ),
       ],
       child: Scaffold(
-        appBar: AppBarWidget(zeroHeight: true, color: AppColorManager.mainColorLight),
+        appBar: AppBarWidget(titleText: S.of(context).signUp),
+        bottomNavigationBar: RememberAccount(),
         body: ListView(
           children: [
-            AuthCardImage(
-              titleText: S.of(context).verifyTheVerificationCode,
-              description: S.of(context).enterTheFollowingInformation,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 37.0).r,
+              child: CustomStepperWidget(
+                activeStep: 3,
+
+                steps: [
+                  customStepWidget(
+                    title: S.of(context).info,
+                    isCompleted: true,
+                  ),
+                  customStepWidget(
+                    title: S.of(context).drivingLicense,
+                    isCompleted: true,
+                  ),
+                  customStepWidget(
+                    title: S.of(context).phoneNumber,
+                    isCompleted: true,
+                  ),
+                  customStepWidget(
+                    title: S.of(context).verificationCode,
+                    isCompleted: false,
+                    isSelected: true,
+                  ),
+                ],
+              ),
             ),
+
             Container(
               padding: const EdgeInsets.all(20.0).r,
               margin: const EdgeInsets.all(20.0).r,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColorManager.black.withValues(alpha: 0.06),
-                    blurRadius: 24,
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(10.0).r,
-              ),
               child: Column(
                 children: [
+                  DrawableText(
+                    text:
+                        '${S.of(context).weSentTheResetVerificationCodeTo} '
+                        '${AppSharedPreference.getEmail} '
+                        '${S.of(context).enterThe6digitCode},',
+                    matchParent: true,
+                    textAlign: .center,
+                  ),
+                  40.0.verticalSpace,
                   Form(
                     key: _formKey,
                     child: PinCodeWidget(
@@ -89,8 +114,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                       validator: (p0) => confirmCodeCubit.validateCode,
                     ),
                   ),
-                  40.0.verticalSpace,
-                  ResendBtn(),
+
                   40.0.verticalSpace,
                   BlocBuilder<ConfirmCodeCubit, ConfirmCodeInitial>(
                     builder: (context, state) {
@@ -112,7 +136,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                     },
                   ),
                   20.0.verticalSpace,
-                  RememberAccount(),
+                  ResendBtn(),
                 ],
               ),
             ),

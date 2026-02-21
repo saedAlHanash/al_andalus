@@ -14,6 +14,8 @@ import '../widget/signup_steps/driving_license.dart';
 import '../widget/signup_steps/info.dart';
 import '../widget/signup_steps/phone_number.dart';
 
+import 'package:al_andalus/features/auth/ui/widget/signup_steps/signup_validator.dart';
+
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
@@ -41,12 +43,16 @@ class _SignupPageState extends State<SignupPage> {
               padding: EdgeInsetsGeometry.all(20.0),
               child: MyButton(
                 onTap: () {
+                  final request = state.mRequest;
+                  if (!SignupValidator.validateStep(context, state.step, request)) return;
+
                   if (state.step >= 2) {
                     context.read<SignupCubit>().signup();
                     return;
                   }
                   context.read<SignupCubit>().next();
                 },
+                loading: state.loading,
                 text: S.of(context).continueTo,
               ),
             ),
@@ -57,6 +63,12 @@ class _SignupPageState extends State<SignupPage> {
                   child: CustomStepperWidget(
                     activeStep: state.step,
                     onStepReached: (p0) {
+                      final request = state.mRequest;
+                      if (p0 > state.step) {
+                        for (int i = state.step; i < p0; i++) {
+                          if (!SignupValidator.validateStep(context, i, request)) return;
+                        }
+                      }
                       context.read<SignupCubit>().next(step: p0);
                     },
                     steps: [

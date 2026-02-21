@@ -31,12 +31,13 @@ class PhoneNumber extends StatelessWidget {
             20.0.verticalSpace,
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.phone = p0,
+              initialValue: state.mRequest.phone,
               labelText: S.of(context).phoneNumber,
               hint: S.of(context).phoneNumber,
               keyBordType: .phone,
             ),
             DrawableText(
-              text: 'يرجى التأكد من رقم الهاتف. سيتم إرسال رمزاً للتحقق.',
+              text: S.of(context).pleaseCheckPhoneNumber,
               matchParent: true,
               textAlign: .center,
             ),

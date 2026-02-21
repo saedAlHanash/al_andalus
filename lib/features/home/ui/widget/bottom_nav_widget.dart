@@ -1,20 +1,38 @@
+import 'dart:ui';
+
 import 'package:al_andalus/features/home/bloc/home_cubit/home_cubit.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:collection/collection.dart';
+import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/util/shared_preferences.dart';
+
+import 'package:al_andalus/features/home/ui/pages/home_page.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/strings/app_color_manager.dart';
-import '../../../../core/strings/enum_manager.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
+import '../../../notification/bloc/all_notification_cubit/all_notification_cubit.dart';
+
+/// ========================================================================
+/// Split Floating Navigation Bar - Apple News+ Style
+/// ========================================================================
+/// تصميم شريط التنقل المنفصل: كبسولة رئيسية + زر منفصل (Menu)
+/// يحاكي تصميم Apple News+ مع Glassmorphism وتأثيرات عائمة
+/// ========================================================================
 
 class Navbar extends StatefulWidget {
   const Navbar({
     super.key,
+    this.isTrainer = false,
   });
+
+  final bool isTrainer;
 
   @override
   State<Navbar> createState() => _NavbarState();
@@ -23,149 +41,347 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   @override
   Widget build(BuildContext context) {
-    final style = TextStyle(
-      color: AppColorManager.white,
-      fontSize: 12.0.sp,
-      fontFamily: FontManager.bold.name,
-    );
     return BlocBuilder<HomeCubit, HomeInitial>(
       builder: (context, state) {
-        return CurvedNavigationBar(
-          index: context.read<HomeCubit>().getIndex,
-          animationDuration: const Duration(milliseconds: 300),
-          backgroundColor: Colors.transparent,
-          color: AppColorManager.mainColor,
-          buttonBackgroundColor: AppColorManager.mainColor,
-          items: [
-            CurvedNavigationBarItem(
-              child: ImageMultiType(
-                url: Assets.iconsHome,
-                color: Colors.white,
-                height: 25.0.r,
-                width: 25.0.r,
+        final currentIndex = context.read<HomeCubit>().getIndex;
+
+        final mainItems = [
+          (
+            icon: _Home(isActive: currentIndex == 0),
+            title: S.of(context).home,
+          ),
+          (
+            icon: _Notifications(isActive: currentIndex == 1),
+            title: S.of(context).notifications,
+          ),
+          (
+            icon: _Insurance(isActive: currentIndex == 2),
+            title: S.of(context).myOrders,
+          ),
+        ];
+
+        final menuIndex = mainItems.length; // Menu هو آخر عنصر
+        final isMenuActive = currentIndex == menuIndex;
+
+        return Padding(
+          padding: EdgeInsets.only(
+            left: 20.w,
+            right: 20.w,
+            bottom: 20.h,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              // ========== Component A: Main Capsule ==========
+              Flexible(
+                child: _GlassCapsule(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.h),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(
+                        mainItems.length,
+                        (i) => _NavItem(
+                          icon: mainItems[i].icon,
+                          title: mainItems[i].title,
+                          isActive: i == currentIndex,
+                          onTap: () {
+                            context.read<HomeCubit>().jumpPage(i);
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              label: S.of(context).home,
-              labelStyle: style,
-            ),
-            CurvedNavigationBarItem(
-              child: ImageMultiType(
-                url: Assets.iconsCart,
-                color: Colors.white,
-                height: 25.0.r,
-                width: 25.0.r,
+
+              // ========== The Gap ==========
+              SizedBox(width: 15.w),
+
+              // ========== Component B: Detached Action Button ==========
+              _DetachedButton(
+                isActive: isMenuActive,
+                title: S.of(context).profile,
+                onTap: () {
+                  context.read<HomeCubit>().jumpPage(menuIndex);
+                },
+                icon: _Menu(isActive: isMenuActive),
               ),
-              label: S.of(context).cart,
-              labelStyle: style,
-            ),
-            CurvedNavigationBarItem(
-              child: ImageMultiType(
-                url: Assets.iconsHeart,
-                color: Colors.white,
-                height: 25.0.r,
-                width: 25.0.r,
-              ),
-              label: S.of(context).fav,
-              labelStyle: style,
-            ),
-            CurvedNavigationBarItem(
-              child: ImageMultiType(
-                url: Assets.iconsNotification,
-                color: Colors.white,
-                height: 25.0.r,
-                width: 25.0.r,
-              ),
-              label: S.of(context).notification,
-              labelStyle: style,
-            ),
-            CurvedNavigationBarItem(
-              child: ImageMultiType(
-                url: Assets.iconsPerson,
-                color: Colors.white,
-                height: 25.0.r,
-                width: 25.0.r,
-              ),
-              label: S.of(context).profile,
-              labelStyle: style,
-            ),
-          ],
-          onTap: (index) {
-            context.read<HomeCubit>().jumpPage(index);
-          },
+            ],
+          ),
         );
       },
     );
   }
 }
 
-class NewNav extends StatefulWidget {
-  const NewNav({super.key});
+/// ========================================================================
+/// الكبسولة الرئيسية مع Glassmorphism
+/// ========================================================================
+class _GlassCapsule extends StatelessWidget {
+  const _GlassCapsule({
+    required this.child,
+  });
 
-  @override
-  State<NewNav> createState() => _NewNavState();
-}
-
-class _NewNavState extends State<NewNav> {
-  BottomNavigationBarItem getItem(dynamic icon, dynamic iconF, dynamic label) => BottomNavigationBarItem(
-    icon: ImageMultiType(
-      url: icon,
-      color: AppColorManager.mainColor,
-      height: 25.0.spMin,
-    ),
-    activeIcon: ImageMultiType(
-      url: iconF,
-      color: AppColorManager.mainColor,
-      height: 25.0.spMin,
-    ),
-    label: label,
-  );
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeInitial>(
-      builder: (context, state) {
-        return Container(
-          padding: const EdgeInsets.only(top: 7.0, bottom: 5.0).r,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.0).r,
-            border: Border(
-              top: BorderSide(color: AppColorManager.dividerColor),
-            ),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withValues(alpha: 0.15),
+            blurRadius: 15,
+            spreadRadius: 0.5,
+            offset: const Offset(0, 3),
           ),
-          child: Theme(
-            data: ThemeData(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(50.r),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.5),
+              borderRadius: BorderRadius.circular(50.r),
+              border: Border.all(
+                color: Colors.black.withValues(alpha: 0.05),
+                width: 1,
+              ),
             ),
-            child: BottomNavigationBar(
-              backgroundColor: AppColorManager.white,
-              fixedColor: AppColorManager.mainColor,
-              unselectedItemColor: AppColorManager.mainColor,
-              elevation: 0,
-              selectedLabelStyle: TextStyle(
-                color: AppColorManager.mainColor,
-                fontFamily: FontManager.semeBold.name,
-              ),
-              unselectedLabelStyle: TextStyle(
-                color: AppColorManager.mainColor,
-                fontFamily: FontManager.semeBold.name,
-              ),
-              items: [
-                getItem(Assets.iconsHome, Assets.iconsHomeF, S.of(context).home),
-                getItem(Assets.iconsCart, Assets.iconsCartF, S.of(context).cart),
-                getItem(Assets.iconsHeart, Assets.iconsHeartF, S.of(context).fav),
-                getItem(Assets.iconsNotification, Assets.iconsNotificationF, S.of(context).notification),
-                getItem(Assets.iconsPerson, Assets.iconsPersonF, S.of(context).profile),
+            child: child,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// ========================================================================
+/// الزر المنفصل (Menu) مع Glassmorphism
+/// ========================================================================
+class _DetachedButton extends StatelessWidget {
+  const _DetachedButton({
+    required this.isActive,
+    required this.onTap,
+    required this.icon,
+    required this.title,
+  });
+
+  final bool isActive;
+  final VoidCallback onTap;
+  final Widget icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 58.r,
+            height: 58.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.15),
+                  blurRadius: 15,
+                  spreadRadius: 0.5,
+                  offset: const Offset(0, 3),
+                ),
               ],
-              currentIndex: state.getIndex,
-              onTap: (i) {
-                context.read<HomeCubit>().jumpPage(i);
-              },
-              type: BottomNavigationBarType.fixed,
+            ),
+            child: ClipOval(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                child: Container(
+                  padding: const EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    color: isActive ? theme.primaryColor.withValues(alpha: 0.9) : Colors.white.withValues(alpha: 0.5),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.black.withValues(alpha: 0.05),
+                      width: 1,
+                    ),
+                  ),
+                  child: icon,
+                ),
+              ),
             ),
           ),
+          2.0.verticalSpace,
+          DrawableText(
+            text: title,
+            size: 10.sp,
+            color: isActive ? theme.primaryColor : AppColorManager.grey,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// ========================================================================
+/// عنصر التنقل الفردي داخل الكبسولة
+/// ========================================================================
+class _NavItem extends StatelessWidget {
+  const _NavItem({
+    required this.icon,
+    required this.title,
+    required this.isActive,
+    required this.onTap,
+  });
+
+  final Widget icon;
+  final String title;
+  final bool isActive;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        behavior: HitTestBehavior.opaque,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isActive ? theme.primaryColor : Colors.transparent,
+                shape: BoxShape.circle,
+              ),
+              child: icon,
+            ),
+            2.0.verticalSpace,
+            DrawableText(
+              text: title,
+              size: 12.sp,
+              color: isActive ? theme.primaryColor : AppColorManager.grey,
+              fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// ========================================================================
+/// أيقونات التنقل الفردية
+/// ========================================================================
+
+class _Home extends StatelessWidget {
+  const _Home({required this.isActive});
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return ImageMultiType(
+      color: isActive ? Colors.white : AppColorManager.grey,
+      url: Assets.iconsHome,
+      height: 24.0.r,
+      width: 24.0.r,
+    );
+  }
+}
+
+class _Notifications extends StatelessWidget {
+  const _Notifications({required this.isActive});
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<NotificationCubit, NotificationsInitial>(
+      builder: (context, state) {
+        final notRead = state.result.any((e) => !e.isRead);
+
+        return Stack(
+          clipBehavior: Clip.none,
+          children: [
+            ImageMultiType(
+              color: isActive ? Colors.white : AppColorManager.grey,
+              url: Assets.iconsNotification,
+              height: 24.0.r,
+              width: 24.0.r,
+            ),
+            if (notRead)
+              Positioned(
+                top: -3,
+                right: -3,
+                child: Container(
+                  height: 11.0.r,
+                  width: 11.0.r,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF00E676),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      width: 2.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF00E676).withValues(alpha: 0.5),
+                        blurRadius: 6,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+          ],
         );
       },
+    );
+  }
+}
+
+class _Insurance extends StatelessWidget {
+  const _Insurance({required this.isActive});
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return ImageMultiType(
+      color: isActive ? Colors.white : AppColorManager.grey,
+      url: Assets.iconsClipboardList,
+      height: 24.0.r,
+      width: 24.0.r,
+    );
+  }
+}
+
+class _Menu extends StatelessWidget {
+  const _Menu({required this.isActive});
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return ImageMultiType(
+      color: isActive ? Colors.white : AppColorManager.grey,
+      url: Assets.iconsPerson,
+      height: 24.0.r,
+      width: 24.0.r,
     );
   }
 }

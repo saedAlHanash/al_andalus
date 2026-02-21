@@ -167,6 +167,7 @@ Future<UploadFile?> pickAndUpload({String? nameFiled}) async {
     fileType: xFile.name.fileType,
     localId: xFile.name,
     nameField: nameFiled ?? 'File',
+    path: xFile.path,
     extension: xFile.name.fileExtension,
   );
 }
@@ -190,6 +191,7 @@ Future<UploadFile?> takePhoto({String? nameFiled}) async {
     fileBytes: bytes,
     fileType: xFile.name.fileType,
     localId: xFile.name,
+    path: xFile.path,
     nameField: nameFiled ?? 'File',
     extension: xFile.name.fileExtension,
   );

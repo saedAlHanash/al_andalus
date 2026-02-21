@@ -1,3 +1,5 @@
+import 'package:al_andalus/core/extensions/extensions.dart';
+
 import '../../../../core/util/shared_preferences.dart';
 
 class ResendRequest {
@@ -9,5 +11,5 @@ class ResendRequest {
     return ResendRequest(phone: json["phone"] ?? "");
   }
 
-  Map<String, dynamic> toJson() => {"phone": phone ?? AppSharedPreference.getEmail};
+  Map<String, dynamic> toJson() => {"phone": phone ?? AppSharedPreference.getEmail.fixPhone};
 }

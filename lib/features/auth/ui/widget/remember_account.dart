@@ -41,26 +41,31 @@ class RememberAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: DrawableText(
-        text: S.of(context).iWantToChangeAccount,
-        color: AppColorManager.grey,
-        drawablePadding: 7.0.w,
-        drawableEnd: InkWell(
-          onTap: () async {
-            await AppSharedPreference.removeEmail();
-            await AppSharedPreference.cashStartPage(StartPage.login);
-            if (context.mounted) {
-              context.goNamed(RouteName.login);
-            }
-          },
-          child: DrawableText(
-            color: AppColorManager.mainColor,
-            fontFamily: FontManager.bold.name,
-            text: '${S.of(context).changeAccount}.',
+    return Row(
+      children: [
+        Spacer(),
+        DrawableText(
+          text: S.of(context).iWantToChangeAccount,
+          color: AppColorManager.grey,
+          drawablePadding: 7.0.w,
+          padding: EdgeInsets.only(bottom: 20.0),
+          drawableEnd: InkWell(
+            onTap: () async {
+              await AppSharedPreference.removeEmail();
+              await AppSharedPreference.cashStartPage(StartPage.login);
+              if (context.mounted) {
+                context.goNamed(RouteName.login);
+              }
+            },
+            child: DrawableText(
+              color: AppColorManager.mainColor,
+              fontFamily: FontManager.bold.name,
+              text: '${S.of(context).changeAccount}.',
+            ),
           ),
         ),
-      ),
+        Spacer(),
+      ],
     );
   }
 }

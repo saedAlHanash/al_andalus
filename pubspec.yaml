@@ -74,6 +74,7 @@ dependencies:
   image: ^4.7.2
   image_picker: ^1.2.1
   file_picker: ^10.3.10
+  lottie: ^3.3.2
 #  kiosk_mode: ^0.7.0
 
 dev_dependencies:
@@ -94,6 +95,7 @@ flutter:
     - assets/fonts/
     - assets/icons/
     - assets/images/
+    - assets/lotties/
     - assets/
   fonts:
     - family: regular

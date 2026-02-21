@@ -29,6 +29,12 @@ class _SignupInfoState extends State<SignupInfo> {
   final c = TextEditingController();
 
   @override
+  void initState() {
+    c.text = context.read<SignupCubit>().state.mRequest.birthday?.formatDate ?? '';
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignupCubit, SignupInitial>(
       builder: (context, state) {
@@ -37,16 +43,20 @@ class _SignupInfoState extends State<SignupInfo> {
           children: [
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.identityId = p0,
+              initialValue: state.mRequest.identityId,
               labelText: S.of(context).idCardNumber,
               hint: S.of(context).idCardNumber,
+              keyBordType: .number,
             ),
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.name = p0,
+              initialValue: state.mRequest.name,
               labelText: S.of(context).fourName,
               hint: S.of(context).fourName,
             ),
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.address = p0,
+              initialValue: state.mRequest.address,
               labelText: S.of(context).placeOfResidence,
               hint: S.of(context).placeOfResidence,
             ),
@@ -80,6 +90,9 @@ class _SignupInfoState extends State<SignupInfo> {
                   child: Container(
                     padding: EdgeInsets.only(bottom: 20.0),
                     child: SpinnerWidget(
+                      onChanged: (spinnerItem) {
+                        state.mRequest.gender = spinnerItem.item;
+                      },
                       icon: Assets.iconsUserSearch,
                       hintLabel: S.of(context).gender,
                       hintText: S.of(context).gender,
@@ -120,18 +133,18 @@ class _SignupInfoState extends State<SignupInfo> {
                 spacing: 10.0.h,
                 children: [
                   DrawableText(
-                    text: ' إرفق صوره البطاقه  الأماميه و الخلفيه:',
+                    text: S.of(context).attachIdFrontAndBack,
                     matchParent: true,
                   ),
                   UploadContainerWidget(
-                    title: ' إرفق صورة البطاقة  الأمامية هنا',
+                    title: S.of(context).attachIdFrontHere,
                     child: state.mRequest.identityFrontImage.fileBytes == null
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
                             url: state.mRequest.identityFrontImage.fileBytes,
-                            fit: .fill,
+                            fit: .cover,
                           ),
                     onTap: () {
                       showOptionBottomSheet(
@@ -148,14 +161,14 @@ class _SignupInfoState extends State<SignupInfo> {
                     },
                   ),
                   UploadContainerWidget(
-                    title: ' إرفق صورة البطاقه  الخلفية هنا',
+                    title: S.of(context).attachIdBackHere,
                     child: state.mRequest.identityBackImage.fileBytes == null
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
                             url: state.mRequest.identityBackImage.fileBytes,
-                            fit: .fill,
+                            fit: .cover,
                           ),
                     onTap: () {
                       showOptionBottomSheet(
@@ -175,15 +188,20 @@ class _SignupInfoState extends State<SignupInfo> {
               ),
             ),
             20.0.verticalSpace,
-            CheckboxListTile(
-              value: true,
-              onChanged: (value) {},
-              controlAffinity: ListTileControlAffinity.leading,
-              title: DrawableText(
-                size: 12.0.sp,
-                text:
-                    'أقرّ بصحة جميع المعلومات و الملفات المرفوعة من قبلي و أتحمل المسؤولية القانونية الكاملة عن أي بيانات غير صحيحة.',
-              ),
+            StatefulBuilder(
+              builder: (context, setStateChecked) {
+                return CheckboxListTile(
+                  value: state.mRequest.infoChecked,
+                  onChanged: (value) {
+                    setStateChecked(() => state.mRequest.infoChecked = value ?? false);
+                  },
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: DrawableText(
+                    size: 12.0.sp,
+                    text: S.of(context).declarationText,
+                  ),
+                );
+              },
             ),
             20.0.verticalSpace,
           ],

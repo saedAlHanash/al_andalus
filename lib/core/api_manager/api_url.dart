@@ -159,7 +159,7 @@ class PostUrl {
   static const insertCode = 'courses/insert-code';
   static const logout = 'logout';
 
-  static const confirmCode = 'auth/otp-check';
+  static const confirmCode = 'auth/otp/check';
   static const otpPassword = 'auth/reset-password';
 
   static const toggleFav = 'favorite/toggle';
@@ -168,7 +168,7 @@ class PostUrl {
 
   static const createEPaymentOrder = 'checkout/credit';
 
-  static const resendCode = 'auth/otp-resend';
+  static const resendCode = 'auth/otp/resend';
 
   static const addToCart = 'carts';
 
@@ -253,7 +253,7 @@ class DeleteUrl {
   static var deleteGroup = '';
 }
 
-const additionalConst = '/client/v1';
+const additionalConst = '/client/v1/';
 
 String get baseUrl {
   return live;

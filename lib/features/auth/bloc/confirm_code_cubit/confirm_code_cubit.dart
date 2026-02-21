@@ -36,7 +36,7 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
     final response = await APIService().callApi(
       type: ApiType.post,
       url: PostUrl.confirmCode,
-      body: await state.request.toJson(),
+      body: await state.mRequest.toJson(),
     );
 
     if (response.statusCode == 200) {
@@ -50,12 +50,12 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
     }
   }
 
-  set setPhone(String? phone) => state.request.phone = phone;
+  set setPhone(String? phone) => state.mRequest.phone = phone;
 
-  set setCode(String? code) => state.request.code = code;
+  set setCode(String? code) => state.mRequest.code = code;
 
   String? get validatePhone {
-    if (state.request.phone.isBlank) {
+    if (state.mRequest.phone.isBlank) {
       return '${S().phoneNumber}'
           ' ${S().is_required}';
     }
@@ -63,7 +63,7 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
   }
 
   String? get validateCode {
-    if (state.request.code.isBlank) {
+    if (state.mRequest.code.isBlank) {
       return S().confirmCode;
     }
     return null;

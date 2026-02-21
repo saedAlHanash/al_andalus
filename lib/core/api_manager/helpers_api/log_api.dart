@@ -99,5 +99,5 @@ void logResponse({
     return;
   }
 
-  loggerObject.t('${coloring(url, type)} [${response.statusCode}] \n ${response.body.logLongMessage}');
+  loggerObject.t('${coloring(url, type)} [${response.statusCode}] \n ${jsonDecode(response.body).toString().logLongMessage}');
 }

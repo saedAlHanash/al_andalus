@@ -2718,6 +2718,301 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter ID number`
+  String get pleaseEnterIdNumber {
+    return Intl.message(
+      'Please enter ID number',
+      name: 'pleaseEnterIdNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter full name`
+  String get pleaseEnterFullName {
+    return Intl.message(
+      'Please enter full name',
+      name: 'pleaseEnterFullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter address`
+  String get pleaseEnterAddress {
+    return Intl.message(
+      'Please enter address',
+      name: 'pleaseEnterAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select birthday`
+  String get pleaseSelectBirthday {
+    return Intl.message(
+      'Please select birthday',
+      name: 'pleaseSelectBirthday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select gender`
+  String get pleaseSelectGender {
+    return Intl.message(
+      'Please select gender',
+      name: 'pleaseSelectGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach front ID image`
+  String get pleaseAttachFrontId {
+    return Intl.message(
+      'Please attach front ID image',
+      name: 'pleaseAttachFrontId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach back ID image`
+  String get pleaseAttachBackId {
+    return Intl.message(
+      'Please attach back ID image',
+      name: 'pleaseAttachBackId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please accept the declaration`
+  String get pleaseAcceptDeclaration {
+    return Intl.message(
+      'Please accept the declaration',
+      name: 'pleaseAcceptDeclaration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter license number`
+  String get pleaseEnterLicenseNumber {
+    return Intl.message(
+      'Please enter license number',
+      name: 'pleaseEnterLicenseNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter license type`
+  String get pleaseEnterLicenseType {
+    return Intl.message(
+      'Please enter license type',
+      name: 'pleaseEnterLicenseType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select issue date`
+  String get pleaseSelectIssueDate {
+    return Intl.message(
+      'Please select issue date',
+      name: 'pleaseSelectIssueDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select expiry date`
+  String get pleaseSelectExpiryDate {
+    return Intl.message(
+      'Please select expiry date',
+      name: 'pleaseSelectExpiryDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach front license image`
+  String get pleaseAttachFrontLicense {
+    return Intl.message(
+      'Please attach front license image',
+      name: 'pleaseAttachFrontLicense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach back license image`
+  String get pleaseAttachBackLicense {
+    return Intl.message(
+      'Please attach back license image',
+      name: 'pleaseAttachBackLicense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter phone number`
+  String get pleaseEnterPhoneNumber {
+    return Intl.message(
+      'Please enter phone number',
+      name: 'pleaseEnterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the front and back of the ID card:`
+  String get attachIdFrontAndBack {
+    return Intl.message(
+      'Attach the front and back of the ID card:',
+      name: 'attachIdFrontAndBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the front of the ID card here`
+  String get attachIdFrontHere {
+    return Intl.message(
+      'Attach the front of the ID card here',
+      name: 'attachIdFrontHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the back of the ID card here`
+  String get attachIdBackHere {
+    return Intl.message(
+      'Attach the back of the ID card here',
+      name: 'attachIdBackHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.`
+  String get declarationText {
+    return Intl.message(
+      'I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.',
+      name: 'declarationText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `License Type`
+  String get licenseType {
+    return Intl.message(
+      'License Type',
+      name: 'licenseType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue Date`
+  String get issueDate {
+    return Intl.message('Issue Date', name: 'issueDate', desc: '', args: []);
+  }
+
+  /// `Expiry Date`
+  String get expiryDate {
+    return Intl.message('Expiry Date', name: 'expiryDate', desc: '', args: []);
+  }
+
+  /// `Attach the front and back of the driving license:`
+  String get attachLicenseFrontAndBack {
+    return Intl.message(
+      'Attach the front and back of the driving license:',
+      name: 'attachLicenseFrontAndBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the front of the driving license here`
+  String get attachLicenseFrontHere {
+    return Intl.message(
+      'Attach the front of the driving license here',
+      name: 'attachLicenseFrontHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the back of the driving license here`
+  String get attachLicenseBackHere {
+    return Intl.message(
+      'Attach the back of the driving license here',
+      name: 'attachLicenseBackHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check the phone number. A verification code will be sent.`
+  String get pleaseCheckPhoneNumber {
+    return Intl.message(
+      'Please check the phone number. A verification code will be sent.',
+      name: 'pleaseCheckPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `public`
+  String get public {
+    return Intl.message('public', name: 'public', desc: '', args: []);
+  }
+
+  /// `private`
+  String get private {
+    return Intl.message('private', name: 'private', desc: '', args: []);
+  }
+
+  /// `We sent the reset verification code to`
+  String get weSentTheResetVerificationCodeTo {
+    return Intl.message(
+      'We sent the reset verification code to',
+      name: 'weSentTheResetVerificationCodeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the 6-digit code`
+  String get enterThe6digitCode {
+    return Intl.message(
+      'Enter the 6-digit code',
+      name: 'enterThe6digitCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congrats !`
+  String get congrats {
+    return Intl.message('Congrats !', name: 'congrats', desc: '', args: []);
+  }
+
+  /// `Your account has been successfully created. You will now be redirected to the home screen.`
+  String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
+    return Intl.message(
+      'Your account has been successfully created. You will now be redirected to the home screen.',
+      name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

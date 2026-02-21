@@ -14,6 +14,7 @@ class Assets {
   static const String iconsCalendar = 'assets/icons/calendar.svg';
   static const String iconsCart = 'assets/icons/cart.svg';
   static const String iconsCartF = 'assets/icons/cart_f.svg';
+  static const String iconsClipboardList = 'assets/icons/clipboard-list.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
   static const String iconsDone = 'assets/icons/done.svg';
   static const String iconsDoneStep = 'assets/icons/done_step.svg';
@@ -43,6 +44,7 @@ class Assets {
   static const String iconsUserSearch = 'assets/icons/user-search.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
   static const String imagesCheck = 'assets/images/check.png';
+  static const String imagesDone = 'assets/images/done.json';
   static const String imagesEmpty = 'assets/images/empty.png';
   static const String imagesIdScan = 'assets/images/id_scan.png';
   static const String imagesIntro1 = 'assets/images/intro1.png';

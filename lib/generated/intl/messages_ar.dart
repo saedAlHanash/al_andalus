@@ -46,6 +46,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "ar": MessageLookupByLibrary.simpleMessage("عربي"),
     "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
     "at": MessageLookupByLibrary.simpleMessage("عند"),
+    "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة البطاقة الخلفية هنا",
+    ),
+    "attachIdFrontAndBack": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة البطاقة الأمامية والخلفية:",
+    ),
+    "attachIdFrontHere": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة البطاقة الأمامية هنا",
+    ),
+    "attachLicenseBackHere": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة الإجازة الخلفية هنا",
+    ),
+    "attachLicenseFrontAndBack": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة الإجازة الأمامية والخلفية:",
+    ),
+    "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
+      "إرفاق صورة الإجازة الأمامية هنا",
+    ),
     "back": MessageLookupByLibrary.simpleMessage("عودة"),
     "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
     "blockedByTeacher": MessageLookupByLibrary.simpleMessage(
@@ -107,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_address": MessageLookupByLibrary.simpleMessage("تأكيد العنوان"),
     "confirmation": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
     "contact": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
     "continueSignUp": MessageLookupByLibrary.simpleMessage("استكمال التسجيل"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
@@ -124,6 +143,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cvc": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
+    "declarationText": MessageLookupByLibrary.simpleMessage(
+      "أقرّ بصحة جميع المعلومات والملفات المرفوعة من قبلي وأتحمل المسؤولية القانونية الكاملة عن أي بيانات غير صحيحة.",
+    ),
     "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "deliveryDate": MessageLookupByLibrary.simpleMessage("تاريخ التسليم "),
     "deliveryPrice": MessageLookupByLibrary.simpleMessage("سعر التوصيل"),
@@ -214,6 +236,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "examSubject": MessageLookupByLibrary.simpleMessage("مادة الامتحان"),
     "exams": MessageLookupByLibrary.simpleMessage("الامتحانات"),
     "expiration": MessageLookupByLibrary.simpleMessage("انتهاء الصلاحية"),
+    "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "female": MessageLookupByLibrary.simpleMessage("أنثى"),
@@ -224,7 +247,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "flash_deal": MessageLookupByLibrary.simpleMessage("العروض السريعة"),
     "follow": MessageLookupByLibrary.simpleMessage("متابعة"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
-    "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "free": MessageLookupByLibrary.simpleMessage("مجاني"),
     "freeExams": MessageLookupByLibrary.simpleMessage("امتحانات مجانية"),
     "freeLesson": MessageLookupByLibrary.simpleMessage("دروس المجانية"),
@@ -259,12 +281,14 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "isSuccess": MessageLookupByLibrary.simpleMessage("تم بنجاح!"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
+    "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "ku": MessageLookupByLibrary.simpleMessage("كردي"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "lastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
     "latestProducts": MessageLookupByLibrary.simpleMessage("منتجات وصلت حديثا"),
     "lesson": MessageLookupByLibrary.simpleMessage("درس"),
+    "licenseType": MessageLookupByLibrary.simpleMessage("نوع الإجازة"),
     "location": MessageLookupByLibrary.simpleMessage("العنوان"),
     "locationName": MessageLookupByLibrary.simpleMessage("اسم الموقع"),
     "locationSelected": MessageLookupByLibrary.simpleMessage("تم تحديد الموقع"),
@@ -353,6 +377,54 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleasSetYourAddress": MessageLookupByLibrary.simpleMessage(
       "الرجاء تعيين عنوانك",
+    ),
+    "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
+      "يرجى الموافقة على الإقرار",
+    ),
+    "pleaseAttachBackId": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة البطاقة الخلفية",
+    ),
+    "pleaseAttachBackLicense": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة الإجازة الخلفية",
+    ),
+    "pleaseAttachFrontId": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة البطاقة الأمامية",
+    ),
+    "pleaseAttachFrontLicense": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة الإجازة الأمامية",
+    ),
+    "pleaseCheckPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى التأكد من رقم الهاتف. سيتم إرسال رمز للتحقق.",
+    ),
+    "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال محل السكن",
+    ),
+    "pleaseEnterFullName": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال الاسم الرباعي",
+    ),
+    "pleaseEnterIdNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الهوية",
+    ),
+    "pleaseEnterLicenseNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الإجازة",
+    ),
+    "pleaseEnterLicenseType": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال نوع الإجازة",
+    ),
+    "pleaseEnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الهاتف",
+    ),
+    "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ الميلاد",
+    ),
+    "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ الانتهاء",
+    ),
+    "pleaseSelectGender": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار الجنس",
+    ),
+    "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ الإصدار",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("سياسة الاستخدام والخصوصية"),
     "policyJust": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),

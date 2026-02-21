@@ -5,15 +5,15 @@ import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
-import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
+
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_multi_type/image_multi_type.dart';
+
 import 'package:image_multi_type/image_multi_type_pakage.dart';
-import 'package:image_multi_type/image_multi_type_pakage.dart';
+
 
 import '../../../../../generated/assets.dart';
 import '../../../bloc/signup_cubit/signup_cubit.dart';
@@ -30,6 +30,12 @@ class _DrivingLicenseState extends State<DrivingLicense> {
   final c1 = TextEditingController();
 
   @override
+  void initState() {
+    c.text = context.read<SignupCubit>().state.mRequest.licenseStartDate?.formatDate ?? '';
+    c1.text = context.read<SignupCubit>().state.mRequest.licenseEndDate?.formatDate ?? '';
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignupCubit, SignupInitial>(
       builder: (context, state) {
@@ -37,7 +43,7 @@ class _DrivingLicenseState extends State<DrivingLicense> {
           padding: EdgeInsets.symmetric(horizontal: 24.0).r,
           children: [
             DrawableText(
-              text: 'الاسم الرباعي',
+              text: S.of(context).fourName,
               fontWeight: .bold,
               color: Colors.grey,
               drawablePadding: 5.0,
@@ -48,13 +54,27 @@ class _DrivingLicenseState extends State<DrivingLicense> {
             10.0.verticalSpace,
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.licenseNumber = p0,
+              initialValue: state.mRequest.licenseNumber,
               labelText: S.of(context).idCardNumber,
               hint: S.of(context).idCardNumber,
+              keyBordType: .number,
             ),
-            MyTextFormOutLineWidget(
-              onChanged: (p0) => state.mRequest.name = p0,
-              labelText: 'نوع الإجازة',
-              hint: 'نوع الإجازة',
+            Container(
+              padding: EdgeInsets.only(bottom: 20.0),
+              child: SpinnerWidget(
+                onChanged: (spinnerItem) {
+                  state.mRequest.licenseType = spinnerItem.item;
+                },
+                icon: Assets.iconsUserSearch,
+                hintLabel: S.of(context).licenseType,
+                hintText: S.of(context).licenseType,
+                height: 46.0.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.0.r),
+                  border: Border.all(color: AppColorManager.cd, width: 1.0.r),
+                ),
+                items: LicenseType.values.getSpinnerItems(selectedId: state.mRequest.licenseType?.index),
+              ),
             ),
             Row(
               spacing: 15.0.w,
@@ -78,8 +98,8 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                       c.text = (state.mRequest.licenseStartDate?.formatDate) ?? '';
                     },
                     controller: c,
-                    labelText: 'تاريخ الانشاء',
-                    hint: 'تاريخ الانشاء',
+                    labelText: S.of(context).issueDate,
+                    hint: S.of(context).issueDate,
                   ),
                 ),
                 Expanded(
@@ -100,8 +120,8 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                       c1.text = (state.mRequest.licenseEndDate?.formatDate) ?? '';
                     },
                     controller: c1,
-                    labelText: 'تاريخ الانتهاء',
-                    hint: 'تاريخ الانتهاء',
+                    labelText: S.of(context).expiryDate,
+                    hint: S.of(context).expiryDate,
                   ),
                 ),
               ],
@@ -132,11 +152,11 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                 spacing: 10.0.h,
                 children: [
                   DrawableText(
-                    text: ' إرفق صوره البطاقه  الأماميه و الخلفيه:',
+                    text: S.of(context).attachLicenseFrontAndBack,
                     matchParent: true,
                   ),
                   UploadContainerWidget(
-                    title: ' إرفق صورة البطاقة  الأمامية هنا',
+                    title: S.of(context).attachLicenseFrontHere,
                     child: state.mRequest.licenseFrontImage.fileBytes == null
                         ? null
                         : RoundImageWidget(
@@ -160,7 +180,7 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                     },
                   ),
                   UploadContainerWidget(
-                    title: ' إرفق صورة البطاقه  الخلفية هنا',
+                    title: S.of(context).attachLicenseBackHere,
                     child: state.mRequest.licenseBackImage.fileBytes == null
                         ? null
                         : RoundImageWidget(
@@ -187,15 +207,20 @@ class _DrivingLicenseState extends State<DrivingLicense> {
               ),
             ),
             20.0.verticalSpace,
-            CheckboxListTile(
-              value: true,
-              onChanged: (value) {},
-              controlAffinity: ListTileControlAffinity.leading,
-              title: DrawableText(
-                size: 12.0.sp,
-                text:
-                    'أقرّ بصحة جميع المعلومات و الملفات المرفوعة من قبلي و أتحمل المسؤولية القانونية الكاملة عن أي بيانات غير صحيحة.',
-              ),
+            StatefulBuilder(
+              builder: (context, setStateChecked) {
+                return CheckboxListTile(
+                  value: state.mRequest.licenseChecked,
+                  onChanged: (value) {
+                    setStateChecked(() => state.mRequest.licenseChecked = value ?? false);
+                  },
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: DrawableText(
+                    size: 12.0.sp,
+                    text: S.of(context).declarationText,
+                  ),
+                );
+              },
             ),
             20.0.verticalSpace,
           ],

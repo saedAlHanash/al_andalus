@@ -16,7 +16,7 @@ class LoginRequest {
     return {
       'phone': phone.fixPhone,
       'password': password,
-      'otp': code,
+      'code': code,
       // 'fcm_token': 'no token',
       'fcm_token': await FirebaseService.getFireTokenAsync(),
     };

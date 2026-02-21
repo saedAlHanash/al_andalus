@@ -49,6 +49,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
     "ascending": MessageLookupByLibrary.simpleMessage("ascending"),
     "at": MessageLookupByLibrary.simpleMessage("At"),
+    "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
+      "Attach the back of the ID card here",
+    ),
+    "attachIdFrontAndBack": MessageLookupByLibrary.simpleMessage(
+      "Attach the front and back of the ID card:",
+    ),
+    "attachIdFrontHere": MessageLookupByLibrary.simpleMessage(
+      "Attach the front of the ID card here",
+    ),
+    "attachLicenseBackHere": MessageLookupByLibrary.simpleMessage(
+      "Attach the back of the driving license here",
+    ),
+    "attachLicenseFrontAndBack": MessageLookupByLibrary.simpleMessage(
+      "Attach the front and back of the driving license:",
+    ),
+    "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
+      "Attach the front of the driving license here",
+    ),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "birthday": MessageLookupByLibrary.simpleMessage("birthday"),
     "blockedByTeacher": MessageLookupByLibrary.simpleMessage(
@@ -110,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_address": MessageLookupByLibrary.simpleMessage("Confirm Address"),
     "confirmation": MessageLookupByLibrary.simpleMessage("Confirmation"),
+    "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
     "contact": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "continueSignUp": MessageLookupByLibrary.simpleMessage("Continue Sign Up"),
     "continueTo": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -129,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cvc": MessageLookupByLibrary.simpleMessage("Cvc"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
     "days": MessageLookupByLibrary.simpleMessage("Days"),
+    "declarationText": MessageLookupByLibrary.simpleMessage(
+      "I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.",
+    ),
     "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
     "deliveryDate": MessageLookupByLibrary.simpleMessage("Delivery Date"),
     "deliveryPrice": MessageLookupByLibrary.simpleMessage("Delivery price"),
@@ -204,6 +226,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "Enter Your OTP Code Here.",
     ),
+    "enterThe6digitCode": MessageLookupByLibrary.simpleMessage(
+      "Enter the 6-digit code",
+    ),
     "enterTheFollowingInformation": MessageLookupByLibrary.simpleMessage(
       "Enter the following information",
     ),
@@ -232,6 +257,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "examSubject": MessageLookupByLibrary.simpleMessage("Exam Subject"),
     "exams": MessageLookupByLibrary.simpleMessage("Exams"),
     "expiration": MessageLookupByLibrary.simpleMessage("Expiration"),
+    "expiryDate": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "faq": MessageLookupByLibrary.simpleMessage("F.A.q"),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
@@ -280,12 +306,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "info": MessageLookupByLibrary.simpleMessage("Info"),
     "isSuccess": MessageLookupByLibrary.simpleMessage("Success!"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
+    "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),
     "ku": MessageLookupByLibrary.simpleMessage("Kurdish"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
     "latest": MessageLookupByLibrary.simpleMessage("latest"),
     "latestProducts": MessageLookupByLibrary.simpleMessage("Latest Products"),
     "lesson": MessageLookupByLibrary.simpleMessage("Lesson"),
+    "licenseType": MessageLookupByLibrary.simpleMessage("License Type"),
     "location": MessageLookupByLibrary.simpleMessage("Location"),
     "locationName": MessageLookupByLibrary.simpleMessage("Location name"),
     "locationSelected": MessageLookupByLibrary.simpleMessage(
@@ -379,18 +407,68 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleasSetYourAddress": MessageLookupByLibrary.simpleMessage(
       "Pleas Set Your Address",
     ),
+    "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
+      "Please accept the declaration",
+    ),
+    "pleaseAttachBackId": MessageLookupByLibrary.simpleMessage(
+      "Please attach back ID image",
+    ),
+    "pleaseAttachBackLicense": MessageLookupByLibrary.simpleMessage(
+      "Please attach back license image",
+    ),
+    "pleaseAttachFrontId": MessageLookupByLibrary.simpleMessage(
+      "Please attach front ID image",
+    ),
+    "pleaseAttachFrontLicense": MessageLookupByLibrary.simpleMessage(
+      "Please attach front license image",
+    ),
+    "pleaseCheckPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Please check the phone number. A verification code will be sent.",
+    ),
+    "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
+      "Please enter address",
+    ),
+    "pleaseEnterFullName": MessageLookupByLibrary.simpleMessage(
+      "Please enter full name",
+    ),
+    "pleaseEnterIdNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter ID number",
+    ),
+    "pleaseEnterLicenseNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter license number",
+    ),
+    "pleaseEnterLicenseType": MessageLookupByLibrary.simpleMessage(
+      "Please enter license type",
+    ),
+    "pleaseEnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter phone number",
+    ),
+    "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
+      "Please select birthday",
+    ),
+    "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
+      "Please select expiry date",
+    ),
+    "pleaseSelectGender": MessageLookupByLibrary.simpleMessage(
+      "Please select gender",
+    ),
+    "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
+      "Please select issue date",
+    ),
     "policy": MessageLookupByLibrary.simpleMessage(
       "Terms of Use and Privacy Policy",
     ),
     "policyJust": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "private": MessageLookupByLibrary.simpleMessage("private"),
     "processing": MessageLookupByLibrary.simpleMessage("Processing"),
     "product": MessageLookupByLibrary.simpleMessage("Product"),
     "products": MessageLookupByLibrary.simpleMessage("products"),
     "productsOnSale": MessageLookupByLibrary.simpleMessage("Products on sale"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "profileImage": MessageLookupByLibrary.simpleMessage("Profile Image"),
+    "public": MessageLookupByLibrary.simpleMessage("public"),
     "quantity": MessageLookupByLibrary.simpleMessage("Quantity"),
     "question": MessageLookupByLibrary.simpleMessage("Question"),
     "rated": MessageLookupByLibrary.simpleMessage("Rated"),
@@ -536,6 +614,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "verifyTheVerificationCode": MessageLookupByLibrary.simpleMessage(
       "Verify the verification code",
     ),
+    "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
+      "We sent the reset verification code to",
+    ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
     "wishList": MessageLookupByLibrary.simpleMessage("WishList"),
     "wishlist": MessageLookupByLibrary.simpleMessage("Wishlist"),
@@ -554,6 +635,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "yourAccountHasBeenCreatedSuccessfully":
         MessageLookupByLibrary.simpleMessage(
           "Your account has been created successfully.",
+        ),
+    "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
+        MessageLookupByLibrary.simpleMessage(
+          "Your account has been successfully created. You will now be redirected to the home screen.",
         ),
     "yourAddress": MessageLookupByLibrary.simpleMessage("Your Address"),
     "yourEmail": MessageLookupByLibrary.simpleMessage("Your Email"),

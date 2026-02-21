@@ -43,21 +43,21 @@ class NoteMessage {
 
   static void showTopMessageError({
     required BuildContext? context,
+    String? message,
   }) {
     if (context == null) return;
     _showTopSnack(
       context: context,
       widget: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0).r,
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0).r,
         decoration: BoxDecoration(
-          color: Color(0xff27272A),
+          color: AppColorManager.ampere,
           borderRadius: BorderRadius.circular(12.0).r,
         ),
         child: ListTile(
-          leading: ImageMultiType(url: Assets.iconsEmptyQuantity),
+          leading: ImageMultiType(url: Icons.warning_amber),
           title: DrawableText(
-            text: 'عذرا هذا الكمية غير متوفر حاليا',
-            color: Colors.white,
+            text: message ?? 'عذرا هذا الكمية غير متوفر حاليا',
           ),
         ),
       ),
@@ -560,5 +560,4 @@ class NoteMessage {
       },
     );
   }
-
 }

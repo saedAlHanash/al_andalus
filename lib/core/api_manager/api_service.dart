@@ -119,10 +119,11 @@ class APIService {
     for (var uploadFile in (files ?? <UploadFile?>[])) {
       if (uploadFile?.fileBytes == null) continue;
 
-      final multipartFile = http.MultipartFile.fromBytes(
+      final multipartFile = await http.MultipartFile.fromPath(
         uploadFile!.nameField,
-        uploadFile.fileBytes!,
-        filename: '${getRandomString(10)}.jpg',
+        uploadFile.path!,
+        // filename: '${getRandomString(10)}.png',
+        // contentType: http.MediaType('image', 'png'),
       );
 
       request.files.add(multipartFile);
@@ -148,22 +149,25 @@ class APIService {
 class UploadFile {
   UploadFile({
     this.fileBytes,
+    this.path,
     this.nameField = 'File',
     this.localId,
     this.extension,
-    this.fileType = FileType.other, // تأكد أن FileType معرف لديك كـ Enum
+    this.fileType = FileType.other,
   });
 
   Uint8List? fileBytes;
+  String? path;
   String nameField;
   FileType fileType;
   String? localId;
   String? extension;
 
-  // الإصلاح هنا: إضافة جميع الحقول لضمان عدم ضياع البيانات عند النسخ
+
   UploadFile copyWith({
     Uint8List? fileBytes,
     String? nameField,
+    String? path,
     FileType? fileType,
     String? localId,
     String? extension,
@@ -171,6 +175,7 @@ class UploadFile {
     return UploadFile(
       fileBytes: fileBytes ?? this.fileBytes,
       nameField: nameField ?? this.nameField,
+      path: path ?? this.path,
       fileType: fileType ?? this.fileType,
       localId: localId ?? this.localId,
       extension: extension ?? this.extension,
@@ -181,6 +186,7 @@ class UploadFile {
     return {
       'fileBytes': fileBytes?.toList(), // يفضل تحويله لـ List عند التحويل لـ JSON
       'nameField': nameField,
+      'path': path,
       'localId': localId,
       'extension': extension,
       'fileType': fileType.name, // أو حسب طريقة تخزينك للـ Enum
