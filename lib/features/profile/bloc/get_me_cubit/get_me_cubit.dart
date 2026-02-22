@@ -41,7 +41,7 @@ class GetMeCubit extends MCubit<GetMeInitial> {
     );
 
     if (response.statusCode.success) {
-      final pair = Pair(Profiles.fromJson(response.jsonBodyPure).data, null);
+      final pair = Pair(Profile.fromJson(response.jsonBodyPure), null);
       return pair;
     } else {
       return response.getPairError;

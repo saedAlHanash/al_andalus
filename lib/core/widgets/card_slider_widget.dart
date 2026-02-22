@@ -36,7 +36,7 @@ class CardSlider extends StatelessWidget {
                   url: e,
                   height: 1.0.sh,
                   width: width ?? 1.0.sw,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 );
               },
             ).toList(),
@@ -132,7 +132,7 @@ class CardImageSliderState extends State<CardImageSlider> {
           ),
         ),
         Positioned(
-          bottom: 15.0.h,
+          bottom: 5.0.h,
           child: IndicatorSliderWidget(
             key: key,
             length: widget.images.length,
@@ -187,7 +187,7 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.length < 2) return 0.0.verticalSpace;
+    // if (widget.length < 2) return 0.0.verticalSpace;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 7.0).r,
       height: 12.0.h,

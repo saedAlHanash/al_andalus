@@ -1,9 +1,11 @@
+import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/injection/injection_container.dart';
 
+import '../core/strings/enum_manager.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
 import '../features/auth/bloc/confirm_code_cubit/confirm_code_cubit.dart';
@@ -26,6 +28,7 @@ import '../features/auth/ui/pages/splash_screen_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
+import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import '../features/profile/ui/pages/profile_page.dart';
 
@@ -167,6 +170,20 @@ final goRouter = GoRouter(
       },
     ),
     //endregion
+
+    //region dataPage
+    GoRoute(
+      path: RouteName.dataPage,
+      name: RouteName.dataPage,
+      builder: (_, state) {
+        final  type = DataPageType.values[int.parse(state.uri.queryParameters['type']!)];
+        return BlocProvider(
+          create: (context) => sl<PolicyCubit>()..getData(type: type),
+          child: DataPage(),
+        );
+      },
+    ),
+    //endregion
   ],
 );
 
@@ -208,4 +225,5 @@ class RouteName {
   static const categories = '/categories';
   static const cart = '/cart';
   static const intro = '/intro';
+  static const dataPage = '/dataPage';
 }

@@ -370,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "orderInfo": MessageLookupByLibrary.simpleMessage("Order info"),
     "order_summary": MessageLookupByLibrary.simpleMessage("Order summary"),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
+    "ourService": MessageLookupByLibrary.simpleMessage("Our service"),
     "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "paidExams": MessageLookupByLibrary.simpleMessage("Paid exams"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),

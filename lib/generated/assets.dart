@@ -19,6 +19,7 @@ class Assets {
   static const String iconsDone = 'assets/icons/done.svg';
   static const String iconsDoneStep = 'assets/icons/done_step.svg';
   static const String iconsEdit = 'assets/icons/edit.svg';
+  static const String iconsEmail = 'assets/icons/email.svg';
   static const String iconsEmpty = 'assets/icons/empty.svg';
   static const String iconsEmptyQuantity = 'assets/icons/empty_quantity.svg';
   static const String iconsFileList = 'assets/icons/file-list.svg';
@@ -35,13 +36,16 @@ class Assets {
   static const String iconsNotificationF = 'assets/icons/notification_f.svg';
   static const String iconsPerson = 'assets/icons/person.svg';
   static const String iconsPersonF = 'assets/icons/person_f.svg';
+  static const String iconsPhone = 'assets/icons/phone.svg';
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
+  static const String iconsProfileBack = 'assets/icons/profile_back.png';
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsTrash = 'assets/icons/trash.svg';
   static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';
   static const String iconsUploadDragUploadBack = 'assets/icons/upload_drag_upload_back.svg';
   static const String iconsUserSearch = 'assets/icons/user-search.svg';
+  static const String iconsWhatsapp = 'assets/icons/whatsapp.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
   static const String imagesCheck = 'assets/images/check.png';
   static const String imagesDone = 'assets/images/done.json';

@@ -3013,6 +3013,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Our service`
+  String get ourService {
+    return Intl.message('Our service', name: 'ourService', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

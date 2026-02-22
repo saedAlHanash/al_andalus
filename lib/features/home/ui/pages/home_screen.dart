@@ -1,6 +1,10 @@
+import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
+import 'package:al_andalus/features/ads/bloc/adss_cubit/adss_cubit.dart';
 import 'package:al_andalus/features/ads/ui/widgets/adds_slider.dart';
+import 'package:al_andalus/features/home/ui/widget/hi_widget.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/strings/enum_manager.dart';
@@ -12,16 +16,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24.0).r,
-        children: [
-          AddsSlider(type: AdsType.banner, height: 150.0),
-          20.0.verticalSpace,
-          HomeCategories(),
-          24.0.verticalSpace,
-          AddsSlider(type: AdsType.slider, height: 140.0.h),
+      body: RefreshWidget(
+        isLoading: false,
+        onRefresh: () {
+          context.read<AdssCubit>().getData(newData: true);
+        },
+        child: ListView(
 
-        ],
+          padding: EdgeInsets.symmetric(horizontal: 24.0).r,
+          children: [
+            HiWidget(),
+            AddsSlider(type: AdsType.banner, height: 150.0),
+          ],
+        ),
       ),
     );
   }

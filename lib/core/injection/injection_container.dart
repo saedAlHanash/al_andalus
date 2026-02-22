@@ -1,11 +1,9 @@
-
 import 'package:al_andalus/features/category/bloc/categories_cubit/categories_cubit.dart';
 import 'package:al_andalus/features/category/bloc/category_cubit/category_cubit.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 import '../../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
@@ -24,6 +22,8 @@ import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.da
 import '../../features/home/bloc/home_cubit/home_cubit.dart';
 import '../../features/notification/bloc/all_notification_cubit/all_notification_cubit.dart';
 import '../../features/notification/bloc/notification_count_cubit/notification_count_cubit.dart';
+import '../../features/policies/bloc/policy_cubit/policy_cubit.dart';
+import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
 import '../../features/profile/bloc/delete_my_account_cubit/delete_my_account_cubit.dart';
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
@@ -32,18 +32,12 @@ import '../app/bloc/loading_cubit.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-
-
   //region Governorate
 
   sl.registerFactory(() => GovernorateCubit());
   sl.registerFactory(() => GovernoratesCubit());
 
   //endregion
-
-
-
-
 
   //region category
   sl.registerFactory(() => CategoryCubit());
@@ -61,6 +55,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GlobalKey<NavigatorState>());
 
   sl.registerLazySingleton(() => HomeCubit());
+  sl.registerFactory(() => PolicyCubit());
+  sl.registerFactory(() => SupportInfoCubit());
 
   //endregion
 

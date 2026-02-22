@@ -14,8 +14,8 @@ class Adss {
   }
 
   Map<String, dynamic> toJson() => {
-        "data": data.map((x) => x.toJson()).toList(),
-      };
+    "data": data.map((x) => x.toJson()).toList(),
+  };
 }
 
 class Ads {
@@ -29,7 +29,6 @@ class Ads {
   final int id;
   final String title;
   final String image;
-
   final AdsType type;
 
   factory Ads.fromJson(Map<String, dynamic> json) {
@@ -37,14 +36,14 @@ class Ads {
       id: json["id"] ?? 0,
       title: json["title"] ?? "",
       image: json["image"] ?? "",
-      type: AdsType.getByNameOrIndex(json["type"] ?? ""),
+      type: AdsType.getByNameOrIndex((json["type"] ?? "").toString()),
     );
   }
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "title": title,
-        "image": image,
-        "type": type.index,
-      };
+    "id": id,
+    "title": title,
+    "image": image,
+    "type": type.index,
+  };
 }

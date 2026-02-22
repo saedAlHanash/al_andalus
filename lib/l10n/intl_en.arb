@@ -388,5 +388,6 @@
   "weSentTheResetVerificationCodeTo": "We sent the reset verification code to",
   "enterThe6digitCode": "Enter the 6-digit code",
   "congrats": "Congrats !",
-  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created. You will now be redirected to the home screen."
+  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created. You will now be redirected to the home screen.",
+  "ourService": "Our service"
 }

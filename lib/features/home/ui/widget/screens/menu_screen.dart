@@ -2,6 +2,8 @@ import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
+import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
+import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
 import 'package:go_router/go_router.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
@@ -17,6 +19,7 @@ import '../../../../../core/widgets/need_login_widget.dart';
 import '../../../../../generated/assets.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
+import '../../../../policies/ui/widget/support_call.dart';
 import '../../../../profile/bloc/get_me_cubit/get_me_cubit.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -35,53 +38,51 @@ class _MenuScreenState extends State<MenuScreen> {
     return Scaffold(
       body: BlocBuilder<GetMeCubit, GetMeInitial>(
         builder: (context, state) {
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 24.0).r,
-            child: Column(
+          return RefreshWidget(
+            isLoading: state.loading,
+            onRefresh: () {
+              context.read<GetMeCubit>().getData(newData: true);
+            },
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
               children: [
-                ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0).r,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
-                  tileColor: AppColorManager.mainColor.withValues(alpha: 0.1),
-                  title: DrawableText(
-                    fontWeight: FontWeight.bold,
-                    size: 16.0.sp,
-                    text: state.result.name,
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0).r,
+                    image: DecorationImage(image: AssetImage(Assets.iconsProfileBack), fit: BoxFit.cover),
                   ),
-                  subtitle: DrawableText(
-                    text: state.result.phone.replaceAll('+964', '0'),
-                    color: Colors.black45,
-                  ),
-                  leading: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
+                  child: ListTile(
+                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0).r,
+                    title: DrawableText(
+                      fontWeight: FontWeight.bold,
+                      size: 24.0.sp,
+                      color: Colors.white,
+                      text: state.result.name,
                     ),
-                    clipBehavior: Clip.hardEdge,
-                    child: RoundImageWidget(
-                      url: Assets.imagesUser,
-                      width: 30.0.r,
+                    subtitle: DrawableText(
+                      text: '${S.of(context).phoneNumber}: ${state.result.phone.replaceAll('+', '00')}',
+                      color: Colors.white,
+                      size: 16.0.sp,
                     ),
                   ),
                 ),
                 20.0.verticalSpace,
+                DrawableText(
+                  text: 'البيانات الشخصية',
+                  fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8.0,
+                  ).r,
+                  matchParent: true,
+                  size: 18.0.sp,
+                ),
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: AppColorManager.cardColor),
+                    border: Border.all(color: AppColorManager.cd),
                     borderRadius: BorderRadius.circular(14.0.r),
                   ),
                   child: Column(
                     children: [
-                      10.0.verticalSpace,
-                      DrawableText(
-                        text: S.of(context).account,
-                        fontWeight: FontWeight.bold,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.0,
-                        ).r,
-                        matchParent: true,
-                        size: 20.0.sp,
-                      ),
-                      Divider(),
                       ItemMenu(
                         onTap: () {
                           context.pushNamed(RouteName.profile).then(
@@ -90,75 +91,169 @@ class _MenuScreenState extends State<MenuScreen> {
                             },
                           );
                         },
-                        name: S.of(context).editProfile,
+                        name: 'بيانات الهاتف',
+                        subTitle: 'إدارة  رقم الهاتف الخاص بك.',
                         image: Assets.iconsPerson,
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
-                        ),
-                      ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(RouteName.address);
-                        },
-                        name: S.of(context).addresses,
-                        image: Assets.iconsMap,
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
-                        ),
-                      ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(RouteName.orders);
-                        },
-                        name: S.of(context).myOrders,
-                        image: Assets.iconsBox,
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
-                        ),
                         withD: false,
                       ),
                     ],
                   ),
                 ),
                 20.0.verticalSpace,
+                DrawableText(
+                  text: 'بيانات الأمان',
+                  fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8.0,
+                  ).r,
+                  matchParent: true,
+                  size: 18.0.sp,
+                ),
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: AppColorManager.cardColor),
+                    border: Border.all(color: AppColorManager.cd),
                     borderRadius: BorderRadius.circular(14.0.r),
                   ),
                   child: Column(
                     children: [
-                      10.0.verticalSpace,
-                      DrawableText(
-                        text: S.of(context).support,
-                        fontWeight: FontWeight.bold,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.0,
-                        ).r,
-                        matchParent: true,
-                        size: 20.0.sp,
-                      ),
-                      Divider(),
                       ItemMenu(
-                        onTap: () {},
+                        onTap: () {
+                          context.pushNamed(RouteName.profile).then(
+                            (value) {
+                              context.read<GetMeCubit>().getData(newData: true);
+                            },
+                          );
+                        },
+                        name: 'البيانات البيومترية',
+                        subTitle: 'إدارة أعدادات البيانات البيومترية الخاص بتسجيل الدخول.',
+                        image: Assets.iconsPerson,
+                      ),
+
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(RouteName.profile).then(
+                            (value) {
+                              context.read<GetMeCubit>().getData(newData: true);
+                            },
+                          );
+                        },
+                        name: 'تغيير الرمز السري',
+                        subTitle: 'إدارة رمز المرور الخاص بتسجيل الدخول.',
+                        image: Assets.iconsPerson,
+                        withD: false,
+                      ),
+                    ],
+                  ),
+                ),
+
+                20.0.verticalSpace,
+                DrawableText(
+                  text: 'المعلومات',
+                  fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8.0,
+                  ).r,
+                  matchParent: true,
+                  size: 18.0.sp,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColorManager.cd),
+                    borderRadius: BorderRadius.circular(14.0.r),
+                  ),
+                  child: Column(
+                    children: [
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(RouteName.profile).then(
+                            (value) {
+                              context.read<GetMeCubit>().getData(newData: true);
+                            },
+                          );
+                        },
+                        name: 'معلومات البطاقة الموحدة',
+                        subTitle: 'إدارة بيانات البطاقة الموحدة الخاص بك.',
+                        image: Assets.iconsPerson,
+                      ),
+
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(RouteName.profile).then(
+                            (value) {
+                              context.read<GetMeCubit>().getData(newData: true);
+                            },
+                          );
+                        },
+                        name: 'معلومات إجازة السوق',
+                        subTitle: 'إدارة معلومات إجازه السوق الخاص بك.',
+                        image: Assets.iconsPerson,
+                        withD: false,
+                      ),
+                    ],
+                  ),
+                ),
+                20.0.verticalSpace,
+
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColorManager.cd),
+                    borderRadius: BorderRadius.circular(14.0.r),
+                  ),
+                  child: Column(
+                    children: [
+                      ItemMenu(
+                        onTap: () {
+                          showLanguageDialog(context);
+                        },
+                        name: S.of(context).language,
+                        image: Assets.iconsFileList,
+                      ),
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(
+                            RouteName.dataPage,
+                            queryParameters: {'type': DataPageType.terms.index.toString()},
+                          );
+                        },
+                        name: S.of(context).termsAndConditions,
+                        image: Assets.iconsPhoneFlip,
+                      ),
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(
+                            RouteName.dataPage,
+                            queryParameters: {'type': DataPageType.policy.index.toString()},
+                          );
+                        },
                         name: S.of(context).policy,
                         image: Assets.iconsFileList,
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
-                        ),
                       ),
                       ItemMenu(
-                        onTap: () {},
+                        onTap: () {
+                          context.pushNamed(
+                            RouteName.dataPage,
+                            queryParameters: {'type': DataPageType.aboutUs.index.toString()},
+                          );
+                        },
+                        name: S.of(context).aboutUs,
+                        image: Assets.iconsFileList,
+                      ),
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(
+                            RouteName.dataPage,
+                            queryParameters: {'type': DataPageType.ourService.index.toString()},
+                          );
+                        },
+                        name: S.of(context).ourService,
+                        image: Assets.iconsFileList,
+                      ),
+                      ItemMenu(
+                        onTap: () {
+                          showSupportCall(context);
+                        },
                         name: S.of(context).support,
                         image: Assets.iconsPhoneFlip,
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
-                        ),
                       ),
                       ItemMenu(
                         onTap: () {
@@ -168,10 +263,6 @@ class _MenuScreenState extends State<MenuScreen> {
                         image: ImageMultiType(
                           url: Icons.logout,
                           color: AppColorManager.mainColor,
-                        ),
-                        trailing: ImageMultiType(
-                          url: Icons.arrow_forward_ios,
-                          height: 15.0.r,
                         ),
                       ),
                       if (AppProvider.isStoreTest)
@@ -211,6 +302,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     ],
                   ),
                 ),
+                100.0.verticalSpace,
               ],
             ),
           );
@@ -244,7 +336,7 @@ class ItemMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15.0).w,
-      padding: const EdgeInsets.symmetric(vertical: 5.0).r,
+      padding: const EdgeInsets.symmetric(vertical: 2.0).r,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.0.r),
         color: Colors.white,
@@ -253,13 +345,6 @@ class ItemMenu extends StatelessWidget {
         children: [
           ListTile(
             onTap: () => onTap?.call(),
-            leading: image == null
-                ? null
-                : ImageMultiType(
-                    height: 24.0.r,
-                    width: 24.0.r,
-                    url: image,
-                  ),
             title: DrawableText(
               text: name,
               fontFamily: FontManager.bold.name,
@@ -272,15 +357,21 @@ class ItemMenu extends StatelessWidget {
                     size: 12.0.sp,
                     color: Colors.grey,
                   ),
-            trailing: trailing,
+            trailing:
+                trailing ??
+                ImageMultiType(
+                  url: Icons.arrow_forward_ios,
+                  height: 15.0.r,
+                  color: Color(0xff667085),
+                ),
           ),
-          10.0.verticalSpace,
+
           if (withD)
             Divider(
               height: 0,
-              color: AppColorManager.cardColor,
-              endIndent: 20.0.w,
-              indent: 20.0.w,
+              color: AppColorManager.cd,
+              endIndent: 5.0.w,
+              indent: 5.0.w,
             ),
         ],
       ),

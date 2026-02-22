@@ -436,3 +436,24 @@ enum FileType {
     }
   }
 }
+
+enum DataPageType {
+  policy,
+  terms,
+  aboutUs,
+  ourService,
+  ;
+
+  String get name {
+    switch (this) {
+      case DataPageType.policy:
+        return S().policy;
+      case DataPageType.terms:
+        return S().termsAndConditions;
+      case DataPageType.aboutUs:
+        return S().aboutUs;
+      case DataPageType.ourService:
+        return S().ourService;
+    }
+  }
+}

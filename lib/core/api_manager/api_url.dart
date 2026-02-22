@@ -17,7 +17,6 @@ class GetUrl {
   static var chapters = 'chapter/by-course';
 
   static var banner = '';
-  static var banners = 'advertisement';
 
   static var group = '';
 
@@ -41,7 +40,10 @@ class GetUrl {
 
   static const getSocialMedia = 'social-media';
 
-  static const privacyPolicy = 'privacy-policy';
+  static const policy = 'policy-and-privacy';
+  static const aboutUs = 'about-us';
+  static const terms = 'terms-and-conditions';
+  static const ourService = 'our-services';
 
   static const getAnnouncements = 'announcements';
 
@@ -70,7 +72,7 @@ class GetUrl {
   static const manufacturers = 'manufacturers';
 
   static const newArrivalProducts = 'products/new-arrivals';
-  static const adss = 'ads';
+  static const adss = 'advertisement';
 
   static const cart = 'carts';
 
@@ -94,7 +96,7 @@ class GetUrl {
 
   static const faq = 'questions';
 
-  static const termsAndConditions = 'pages';
+  static const termsAndConditions = 'terms-and-conditions';
 
   static const educationalGrade = 'educational-grade';
   static const educationalGradeSection = 'educational-grade/sections';
@@ -109,6 +111,8 @@ class GetUrl {
   static var examCategorized = 'exam/categorized';
 
   static const getPaymentUrl = 'order/payment';
+
+  static const supportInfo = 'support-info';
 }
 
 class PostUrl {

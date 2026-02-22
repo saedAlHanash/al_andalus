@@ -12,6 +12,7 @@ import '../../../../generated/assets.dart';
 import '../../../../core/app/app_widget.dart';
 import '../../../../core/util/shared_preferences.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+
 class AuthCardImage extends StatefulWidget {
   const AuthCardImage({super.key, required this.titleText, required this.description, this.back = true});
 
@@ -47,7 +48,7 @@ class _AuthCardImageState extends State<AuthCardImage> {
               width: 100.0.r,
             ),
             InkWell(
-              onTap: () => _showLanguageDialog(context),
+              onTap: () => showLanguageDialog(context),
               child: ImageMultiType(
                 url: Assets.iconsLanguage,
                 height: 50.0.r,
@@ -77,59 +78,85 @@ class _AuthCardImageState extends State<AuthCardImage> {
       ],
     );
   }
-  void _showLanguageDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Dialog(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0).r),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0).r,
+}
+
+void showLanguageDialog(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    backgroundColor: Colors.white,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ImageMultiType(
+            url: Assets.iconsBottomSheetHeader,
+            width: 1.0.sw,
+            color: Colors.white,
+            height: 30.0.h,
+            fit: BoxFit.fill,
+          ),
+          DrawableText(
+            text: 'اختر اللغة',
+            size: 20.0.sp,
+            matchParent: true,
+            drawableAlin: .between,
+            textAlign: .center,
+            padding: EdgeInsets.symmetric(horizontal: 20.0).r,
+            drawableEnd: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: ImageMultiType(url: Icons.cancel_outlined),
+            ),
+            drawableStart: IconButton(
+              onPressed: null,
+              icon: ImageMultiType(
+                url: Icons.cancel_outlined,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               children: [
-                DrawableText(
-                  text: 'اللغة / Language',
-                  fontFamily: FontManager.bold.name,
-                  size: 18.0.sp,
+                ListTile(
+                  onTap: () {
+                    MyApp.setLocale(context, 'ar');
+                  },
+                  title: DrawableText(text: 'العربية'),
+                  leading: ImageMultiType(
+                    url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
+                    color: AppColorManager.mainColor,
+                  ),
                 ),
-                20.0.verticalSpace,
-                _buildLanguageItem(context, 'English', 'en'),
-                10.0.verticalSpace,
-                _buildLanguageItem(context, 'العربية', 'ar'),
+                ListTile(
+                  onTap: () {
+                    MyApp.setLocale(context, 'kr');
+                  },
+                  title: DrawableText(text: 'كوردى'),
+                  leading: ImageMultiType(
+                    url: AppSharedPreference.getLocal == 'kr' ? Icons.radio_button_checked : Icons.radio_button_off,
+                    color: AppColorManager.mainColor,
+                  ),
+                ),
+                ListTile(
+                  onTap: () {
+                    MyApp.setLocale(context, 'en');
+                  },
+                  title: DrawableText(text: 'English'),
+                  leading: ImageMultiType(
+                    url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
+                    color: AppColorManager.mainColor,
+                  ),
+                ),
               ],
             ),
           ),
-        );
-      },
-    );
-  }
-
-  Widget _buildLanguageItem(BuildContext context, String name, String code) {
-    var isSelected = AppSharedPreference.getLocal == code;
-    return InkWell(
-      onTap: () async {
-        await MyApp.setLocale(context, code);
-        if (context.mounted) context.pop();
-      },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0).r,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          border: Border.all(color: AppColorManager.mainColor),
-          borderRadius: BorderRadius.circular(8.0).r,
-          color: isSelected ? AppColorManager.mainColor : Colors.white,
-        ),
-        child: Center(
-          child: DrawableText(
-            text: name,
-            color: isSelected ? Colors.white : AppColorManager.mainColor,
-            fontFamily: FontManager.semeBold.name,
-          ),
-        ),
-      ),
-    );
-  }
+        ],
+      );
+    },
+  );
 }
+

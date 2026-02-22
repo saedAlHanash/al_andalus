@@ -93,5 +93,6 @@ class Profile {
     "license_back_image": licenseBackImage,
     "biometric_id": biometricId,
     "created": created,
+
   };
 }

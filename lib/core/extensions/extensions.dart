@@ -161,6 +161,23 @@ extension StringHelper on String? {
     return '+964$p'.replaceAll('+9640', '+964');
   }
 
+  String get fixPhoneForShow {
+    if (this == null) return '';
+    final p = this!
+        .replaceAll('٠', '0')
+        .replaceAll('١', '1')
+        .replaceAll('٢', '2')
+        .replaceAll('٣', '3')
+        .replaceAll('٤', '4')
+        .replaceAll('٥', '5')
+        .replaceAll('٦', '6')
+        .replaceAll('٧', '7')
+        .replaceAll('٨', '8')
+        .replaceAll('٩', '9');
+
+    return p.replaceAll('+9640', '0');
+  }
+
   String? get getVideoId => this?.split('/').lastOrNull;
 
   String? get validateEmpty {

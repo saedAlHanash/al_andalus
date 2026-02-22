@@ -45,7 +45,6 @@ class AdssCubit extends MCubit<AdssInitial> {
     final response = await APIService().callApi(
       type: ApiType.get,
       url: GetUrl.adss,
-      // query: {'type': 'slider'},
     );
 
     if (response.statusCode.success) {

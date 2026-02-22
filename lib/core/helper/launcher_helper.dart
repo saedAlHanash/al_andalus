@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:url_launcher/url_launcher.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
 class LauncherHelper {
   static Future<void> openMap(num lat, num lng) async {
@@ -13,10 +12,10 @@ class LauncherHelper {
     }
   }
 
-  static Future<bool> openPage(String url) async {
+  static Future<void> openPage(String url) async {
     final googleUrl = Uri.parse(url);
 
-    return await launchUrl(googleUrl, mode: LaunchMode.platformDefault);
+    await launchUrl(googleUrl, mode: LaunchMode.externalApplication);
   }
 
   static Future<void> callPhone({String? phone}) async {
@@ -24,10 +23,32 @@ class LauncherHelper {
   }
 
   static Future<void> sendWhatsApp({String? phone, String? text}) async {
-    var contact = phone ?? '';
-    var androidUrl = "whatsapp://send?phone=$contact&text=$text";
-    var iosUrl = "https://wa.me/$contact?text=${Uri.parse(text ?? '')}";
+    final link = WhatsAppUnilink(
+      phoneNumber: phone,
+      text: text,
+    );
 
-    await launchUrl(Uri.parse(Platform.isIOS ? iosUrl : androidUrl));
+    // var contact = phone ?? '';
+    // var androidUrl = "whatsapp://send?phone=$contact&text=$text";
+    // var iosUrl = "https://wa.me/$contact?text=${Uri.parse(text ?? '')}";
+
+    await launchUrl(link.asUri());
+  }
+
+  static Future<void> sendEmail({String? email, String? subject, String? body}) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: email ?? '',
+      queryParameters: {
+        'subject': ?subject,
+        'body': ?body,
+      },
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      throw 'Could not open email application';
+    }
   }
 }
