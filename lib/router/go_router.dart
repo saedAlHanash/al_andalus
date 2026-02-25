@@ -1,3 +1,4 @@
+import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +17,7 @@ import '../features/auth/bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../features/auth/bloc/reset_password_cubit/reset_password_cubit.dart';
 import '../features/auth/bloc/signup_cubit/signup_cubit.dart';
 import '../features/auth/ui/pages/change_password_page.dart';
-import '../features/auth/ui/pages/confirm_code_page.dart';
+import '../features/auth/ui/pages/confirm_code/confirm_code_page.dart';
 import '../features/auth/ui/pages/done_page.dart';
 import '../features/auth/ui/pages/forget_passowrd_page.dart';
 import '../features/auth/ui/pages/login_page.dart';
@@ -30,6 +31,7 @@ import '../features/home/ui/pages/home_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
+import '../features/profile/ui/pages/edit_phone_page.dart';
 import '../features/profile/ui/pages/profile_page.dart';
 
 final navigatorKey = sl<GlobalKey<NavigatorState>>();
@@ -94,12 +96,13 @@ final goRouter = GoRouter(
       path: RouteName.confirmCode,
       name: RouteName.confirmCode,
       builder: (_, state) {
+        final bool isEditPhone = state.uri.queryParameters['isEditPhone'] == 'true';
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => sl<ConfirmCodeCubit>()),
             BlocProvider(create: (_) => sl<ResendCodeCubit>()),
           ],
-          child: const ConfirmCodePage(),
+          child: isEditPhone ? ConfirmEditPhonePage() : const ConfirmCodePage(),
         );
       },
     ),
@@ -159,6 +162,16 @@ final goRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: RouteName.editPhonePage,
+      name: RouteName.editPhonePage,
+      builder: (_, state) {
+        return BlocProvider(
+          create: (_) => sl<UpdateProfileCubit>(),
+          child: const EditPhonePage(),
+        );
+      },
+    ),
     //endregion
 
     //region categories
@@ -176,7 +189,7 @@ final goRouter = GoRouter(
       path: RouteName.dataPage,
       name: RouteName.dataPage,
       builder: (_, state) {
-        final  type = DataPageType.values[int.parse(state.uri.queryParameters['type']!)];
+        final type = DataPageType.values[int.parse(state.uri.queryParameters['type']!)];
         return BlocProvider(
           create: (context) => sl<PolicyCubit>()..getData(type: type),
           child: DataPage(),
@@ -226,4 +239,5 @@ class RouteName {
   static const cart = '/cart';
   static const intro = '/intro';
   static const dataPage = '/dataPage';
+  static const editPhonePage = '/editPhonePage';
 }

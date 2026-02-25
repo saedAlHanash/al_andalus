@@ -85,7 +85,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.profile).then(
+                          context.pushNamed(RouteName.editPhonePage).then(
                             (value) {
                               context.read<GetMeCubit>().getData(newData: true);
                             },

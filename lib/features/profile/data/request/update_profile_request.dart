@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 
 class UpdateProfileRequest {
   UpdateProfileRequest({
@@ -12,13 +13,13 @@ class UpdateProfileRequest {
 
   factory UpdateProfileRequest.fromJson(Map<String, dynamic> json) {
     return UpdateProfileRequest(
-      name: json['name'] as String?,
-      phone: json['phone'] as String?,
+      name: json['name'],
+      phone: json['phone'],
     );
   }
 
   Map<String, dynamic> toJson() => {
     'name': name,
-    if (phone != AppProvider.getMe.phone) 'phone': phone,
+    'phone': phone.fixPhone,
   };
 }

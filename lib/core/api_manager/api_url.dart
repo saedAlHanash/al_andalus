@@ -222,7 +222,7 @@ class PutUrl {
   static const updateCategory = 'category';
   static const updateExam = 'NON/Update';
   static const updateName = 'update-name';
-  static const updatePhone = 'update-phone';
+  static const updatePhone = 'profile/update-phone';
 
   static const follow = 'teacher/follow';
   static const like = 'lesson/like';

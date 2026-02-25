@@ -16,7 +16,7 @@ class UpdateProfileInitial extends AbstractState<Profile> {
       result: Profile.fromJson({}),
       error: '',
       // educationalGradeParam: false,
-      request: UpdateProfileRequest.fromJson(AppProvider.getMe.toJson()),
+      request: UpdateProfileRequest.fromJson({}),
       statuses: CubitStatuses.init,
     );
   }
@@ -24,8 +24,12 @@ class UpdateProfileInitial extends AbstractState<Profile> {
   @override
   List<Object> get props => [statuses, result, error];
 
-  UpdateProfileInitial copyWith(
-      {CubitStatuses? statuses, Profile? result, String? error, UpdateProfileRequest? request}) {
+  UpdateProfileInitial copyWith({
+    CubitStatuses? statuses,
+    Profile? result,
+    String? error,
+    UpdateProfileRequest? request,
+  }) {
     return UpdateProfileInitial(
       statuses: statuses ?? this.statuses,
       result: result ?? this.result,

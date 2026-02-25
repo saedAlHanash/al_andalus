@@ -21,6 +21,8 @@ class AppSharedPreference {
   static const _isLoginToChatApp = '11';
   static const _hasSeenIntro = '13';
   static const _keyThemeMode = '_keyThemeMode';
+  static const _unconfirmedPhone = '_unconfirmedPhone';
+  static const _isWaitingPhoneConfirmation = '_isWaitingPhoneConfirmation';
 
   //endregion
 
@@ -57,6 +59,19 @@ class AppSharedPreference {
     await _prefs?.remove(_phone);
   }
 
+  //endregion
+
+  //region Unconfirmed Phone
+  static Future<void> cashUnconfirmedPhone(String? phone) async {
+    if (phone == null) return;
+    await _prefs?.setString(_unconfirmedPhone, phone);
+  }
+
+  static String get getUnconfirmedPhone => _prefs?.getString(_unconfirmedPhone) ?? '';
+
+  static Future<void> removeUnconfirmedPhone() async {
+    await _prefs?.remove(_unconfirmedPhone);
+  }
   //endregion
 
   //region User

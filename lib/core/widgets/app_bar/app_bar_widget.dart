@@ -117,7 +117,7 @@ class BackBtnWidget extends StatelessWidget {
       },
       icon: ImageMultiType(
         url: Assets.iconsBack,
-        color: isColorDark(appBarColor) ? Colors.white : AppColorManager.black,
+        color: AppColorManager.black,
       ),
     );
   }

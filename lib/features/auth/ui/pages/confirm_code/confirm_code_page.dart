@@ -1,25 +1,23 @@
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
-import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
 import 'package:al_andalus/features/auth/ui/widget/remember_account.dart';
 import 'package:al_andalus/features/auth/ui/widget/resend_btn.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:m_cubit/m_cubit.dart';
 
-import '../../../../core/strings/app_color_manager.dart';
-import '../../../../core/util/my_style.dart';
-import '../../../../core/util/shared_preferences.dart';
-import '../../../../core/widgets/verification_code_widget.dart';
-import '../../../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
-import '../../../../router/go_router.dart';
-import '../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
-import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
-import '../widget/custom_stepper_widget.dart';
+import '../../../../../core/util/my_style.dart';
+import '../../../../../core/util/shared_preferences.dart';
+import '../../../../../core/widgets/verification_code_widget.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../../../router/go_router.dart';
+import '../../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
+import '../../../bloc/resend_code_cubit/resend_code_cubit.dart';
+import '../../widget/custom_stepper_widget.dart';
 
 class ConfirmCodePage extends StatefulWidget {
   const ConfirmCodePage({super.key});
