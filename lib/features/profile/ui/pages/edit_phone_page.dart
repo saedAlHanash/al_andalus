@@ -120,6 +120,7 @@ class _EditPhonePageState extends State<EditPhonePage> {
                       validator: (p0) => p0.validateEmpty,
                       label: S.of(context).enterNewPhoneNumber,
                       hint: S.of(context).enterNewPhoneNumber,
+                      keyBordType: .phone,
                       onChanged: (val) => updateCubit.setPhone = val,
                     ),
                     DrawableText(

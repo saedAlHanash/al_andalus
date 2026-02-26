@@ -35,7 +35,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
   void initState() {
     confirmCodeCubit = context.read<ConfirmCodeCubit>();
     resendCodeCubit = context.read<ResendCodeCubit>();
-    confirmCodeCubit.setPhone = AppSharedPreference.getEmail;
+    confirmCodeCubit.setPhone = AppSharedPreference.getPhone;
     super.initState();
   }
 
@@ -99,7 +99,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                   DrawableText(
                     text:
                         '${S.of(context).weSentTheResetVerificationCodeTo} '
-                        '${AppSharedPreference.getEmail} '
+                        '${AppSharedPreference.getPhone} '
                         '${S.of(context).enterThe6digitCode},',
                     matchParent: true,
                     textAlign: .center,
@@ -123,7 +123,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                         enable: state.canSend,
                         text: S.of(context).sendCode,
                         onTap: () {
-                          if (AppSharedPreference.getEmail.isEmpty) {
+                          if (AppSharedPreference.getPhone.isEmpty) {
                             context.goNamed(RouteName.login);
                             return;
                           }

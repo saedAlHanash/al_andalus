@@ -70,7 +70,7 @@ class MyStyle {
   );
 
   static BoxDecoration get roundBoxGray => BoxDecoration(
-    color: AppColorManager.cardColor,
+    color: AppColorManager.lightGray,
     borderRadius: BorderRadius.circular(8.0.r),
   );
 

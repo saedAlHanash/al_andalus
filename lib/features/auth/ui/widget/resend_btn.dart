@@ -78,7 +78,7 @@ class _ResendBtnState extends State<ResendBtn> {
                   drawablePadding: 10.0.w,
                   drawableEnd: InkWell(
                     onTap: () {
-                      if (AppSharedPreference.getEmail.isEmpty) {
+                      if (AppSharedPreference.getPhone.isEmpty && AppSharedPreference.getUnconfirmedPhone.isEmpty) {
                         context.goNamed(RouteName.login);
                         return;
                       }

@@ -122,7 +122,7 @@ class AppProvider {
     await AppSharedPreference.cashStartPage(type);
   }
 
-  static String get getPhoneCached => AppSharedPreference.getEmail;
+  static String get getPhoneCached => AppSharedPreference.getPhone;
 }
 
 StartPage get getStartPage {

@@ -122,5 +122,19 @@
   "weSentTheResetVerificationCodeTo": "لقد أرسلنا رمز التحقق إلى",
   "enterThe6digitCode": "أدخل الرمز المكون من 6 أرقام",
   "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",
-  "ourService": "خدماتنا"
+  "ourService": "خدماتنا",
+  "savedSuccessfully": "تم الحفظ بنجاح",
+  "save": "حفظ",
+  "personalData": "البيانات الشخصية",
+  "phoneData": "بيانات الهاتف",
+  "manageYourPhoneNumber": "إدارة رقم الهاتف الخاص بك.",
+  "securityData": "بيانات الأمان",
+  "biometricData": "البيانات البيومترية",
+  "manageBiometricSettings": "إدارة أعدادات البيانات البيومترية الخاص بتسجيل الدخول.",
+  "changePasscode": "تغيير الرمز السري",
+  "manageLoginPasscode": "إدارة رمز المرور الخاص بتسجيل الدخول.",
+  "unifiedCardInfo": "معلومات البطاقة الموحدة",
+  "manageUnifiedCardInfo": "إدارة بيانات البطاقة الموحدة الخاص بك.",
+  "drivingLicenseInfo": "معلومات إجازة السوق",
+  "manageDrivingLicenseInfo": "إدارة معلومات إجازه السوق الخاص بك."
 }

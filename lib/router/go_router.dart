@@ -32,6 +32,8 @@ import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import '../features/profile/ui/pages/edit_phone_page.dart';
+import '../features/profile/ui/pages/edit_identity_info.dart';
+import '../features/profile/ui/pages/edit_driving_license.dart';
 import '../features/profile/ui/pages/profile_page.dart';
 
 final navigatorKey = sl<GlobalKey<NavigatorState>>();
@@ -172,6 +174,26 @@ final goRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: RouteName.editIdentityInfo,
+      name: RouteName.editIdentityInfo,
+      builder: (_, state) {
+        return BlocProvider(
+          create: (_) => sl<UpdateProfileCubit>(),
+          child: const EditIdentityInfo(),
+        );
+      },
+    ),
+    GoRoute(
+      path: RouteName.editDrivingLicense,
+      name: RouteName.editDrivingLicense,
+      builder: (_, state) {
+        return BlocProvider(
+          create: (_) => sl<UpdateProfileCubit>(),
+          child: const EditDrivingLicense(),
+        );
+      },
+    ),
     //endregion
 
     //region categories
@@ -240,4 +262,6 @@ class RouteName {
   static const intro = '/intro';
   static const dataPage = '/dataPage';
   static const editPhonePage = '/editPhonePage';
+  static const editIdentityInfo = '/editIdentityInfo';
+  static const editDrivingLicense = '/editDrivingLicense';
 }

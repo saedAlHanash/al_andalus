@@ -11,5 +11,11 @@ class ResendRequest {
     return ResendRequest(phone: json["phone"] ?? "");
   }
 
-  Map<String, dynamic> toJson() => {"phone": phone ?? AppSharedPreference.getEmail.fixPhone};
+  Map<String, dynamic> toJson() => {
+    "phone":
+        phone ??
+        (AppSharedPreference.getPhone.isEmpty
+            ? AppSharedPreference.getUnconfirmedPhone.fixPhone
+            : AppSharedPreference.getPhone.fixPhone),
+  };
 }

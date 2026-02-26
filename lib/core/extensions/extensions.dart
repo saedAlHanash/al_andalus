@@ -199,7 +199,7 @@ extension MaxInt on num {
   Widget get counterWidget => Container(
     height: 40.0.r,
     width: 40.0.r,
-    decoration: BoxDecoration(shape: BoxShape.circle, color: AppColorManager.cardColor),
+    decoration: BoxDecoration(shape: BoxShape.circle, color: AppColorManager.lightGray),
     alignment: Alignment.center,
     child: DrawableText(text: this == 0 ? '' : toInt().toString().padLeft(2, '0'), color: AppColorManager.mainColor),
   );

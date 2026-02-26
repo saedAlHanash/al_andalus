@@ -44,12 +44,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "Attach the front of the driving license here",
     ),
+    "biometricData": MessageLookupByLibrary.simpleMessage("Biometric Data"),
     "birthday": MessageLookupByLibrary.simpleMessage("birthday"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("Change account"),
+    "changePasscode": MessageLookupByLibrary.simpleMessage("Change Passcode"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("Click To Update"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
@@ -88,6 +90,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Done resend code",
     ),
     "drivingLicense": MessageLookupByLibrary.simpleMessage("Driving License"),
+    "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
+      "Driving License Info",
+    ),
     "editPhone": MessageLookupByLibrary.simpleMessage("Edit Phone Number"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enterNewPhoneNumber": MessageLookupByLibrary.simpleMessage(
@@ -128,6 +133,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "manageBiometricSettings": MessageLookupByLibrary.simpleMessage(
+      "Manage biometric settings for login.",
+    ),
+    "manageDrivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
+      "Manage your driving license info.",
+    ),
+    "manageLoginPasscode": MessageLookupByLibrary.simpleMessage(
+      "Manage login passcode.",
+    ),
+    "manageUnifiedCardInfo": MessageLookupByLibrary.simpleMessage(
+      "Manage your unified card data.",
+    ),
+    "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Manage your phone number.",
+    ),
     "minute": MessageLookupByLibrary.simpleMessage("minute"),
     "month": MessageLookupByLibrary.simpleMessage("month"),
     "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
@@ -153,6 +173,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "pendingPhoneConfirmation": MessageLookupByLibrary.simpleMessage(
       "There Is a Pending Phone Confirmation",
     ),
+    "personalData": MessageLookupByLibrary.simpleMessage("Personal Data"),
+    "phoneData": MessageLookupByLibrary.simpleMessage("Phone Data"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "Place of Residence",
@@ -219,9 +241,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "savedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Saved successfully",
+    ),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "second": MessageLookupByLibrary.simpleMessage("second"),
     "sections": MessageLookupByLibrary.simpleMessage("Sections"),
+    "securityData": MessageLookupByLibrary.simpleMessage("Security Data"),
     "see_all": MessageLookupByLibrary.simpleMessage("See All"),
     "sendCode": MessageLookupByLibrary.simpleMessage("Send code"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
@@ -231,6 +258,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
+    ),
+    "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
+      "Unified Card Info",
     ),
     "update": MessageLookupByLibrary.simpleMessage("update"),
     "verificationCode": MessageLookupByLibrary.simpleMessage(

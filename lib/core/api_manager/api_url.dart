@@ -113,6 +113,9 @@ class GetUrl {
   static const getPaymentUrl = 'order/payment';
 
   static const supportInfo = 'support-info';
+
+  static const insurances = 'insurance-package';
+
 }
 
 class PostUrl {
@@ -196,7 +199,10 @@ class PostUrl {
 
   static var createGroup = '';
 
-  static String get insertFcmToken => 'notification/store-fcm-token';
+  static const insertFcmToken = 'notification/store-fcm-token';
+
+  static const updateIdentity = 'profile/update-identity';
+  static const updateLicense = 'profile/update-license';
 
   static String addMessage(int id) {
     return 'drivers/messages/$id/add';

@@ -11,7 +11,7 @@ import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/signup_cubit/signup_cubit.dart';
 import '../widget/signup_steps/driving_license.dart';
-import '../widget/signup_steps/info.dart';
+import '../widget/signup_steps/identity_info.dart';
 import '../widget/signup_steps/phone_number.dart';
 
 import 'package:al_andalus/features/auth/ui/widget/signup_steps/signup_validator.dart';
@@ -97,7 +97,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 Expanded(
                   child: switch (state.step) {
-                    0 => SignupInfo(),
+                    0 => IdentityInfo(),
                     1 => DrivingLicense(),
                     2 => PhoneNumber(),
                     3 => Container(),

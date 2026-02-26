@@ -17,6 +17,7 @@ import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
 import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
+import '../../features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
 import '../../features/notification/bloc/all_notification_cubit/all_notification_cubit.dart';
 import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
@@ -106,6 +107,7 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(create: (_) => sl<GovernoratesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<AdssCubit>()..getData()),
                 BlocProvider(create: (_) => sl<CategoriesCubit>()..getData()),
+                BlocProvider(create: (_) => sl<InsurancesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),
                 BlocProvider(create: (_) => sl<SupportInfoCubit>()..getData(), lazy: false),
               ],

@@ -53,7 +53,7 @@ class AppSharedPreference {
     await _prefs?.setString(_phone, phone);
   }
 
-  static String get getEmail => _prefs?.getString(_phone) ?? '';
+  static String get getPhone => _prefs?.getString(_phone) ?? '';
 
   static Future<void> removeEmail() async {
     await _prefs?.remove(_phone);

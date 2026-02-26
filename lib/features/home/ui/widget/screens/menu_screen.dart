@@ -1,18 +1,16 @@
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
-import 'package:go_router/go_router.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
-import 'package:image_multi_type/round_image_widget.dart';
 
 import '../../../../../core/strings/app_color_manager.dart';
 import '../../../../../core/widgets/need_login_widget.dart';
@@ -68,7 +66,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
                 20.0.verticalSpace,
                 DrawableText(
-                  text: 'البيانات الشخصية',
+                  text: S.of(context).personalData,
                   fontWeight: FontWeight.bold,
                   padding: EdgeInsets.symmetric(
                     vertical: 8.0,
@@ -91,8 +89,8 @@ class _MenuScreenState extends State<MenuScreen> {
                             },
                           );
                         },
-                        name: 'بيانات الهاتف',
-                        subTitle: 'إدارة  رقم الهاتف الخاص بك.',
+                        name: S.of(context).phoneData,
+                        subTitle: S.of(context).manageYourPhoneNumber,
                         image: Assets.iconsPerson,
                         withD: false,
                       ),
@@ -101,7 +99,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
                 20.0.verticalSpace,
                 DrawableText(
-                  text: 'بيانات الأمان',
+                  text: S.of(context).securityData,
                   fontWeight: FontWeight.bold,
                   padding: EdgeInsets.symmetric(
                     vertical: 8.0,
@@ -124,8 +122,8 @@ class _MenuScreenState extends State<MenuScreen> {
                             },
                           );
                         },
-                        name: 'البيانات البيومترية',
-                        subTitle: 'إدارة أعدادات البيانات البيومترية الخاص بتسجيل الدخول.',
+                        name: S.of(context).biometricData,
+                        subTitle: S.of(context).manageBiometricSettings,
                         image: Assets.iconsPerson,
                       ),
 
@@ -137,8 +135,8 @@ class _MenuScreenState extends State<MenuScreen> {
                             },
                           );
                         },
-                        name: 'تغيير الرمز السري',
-                        subTitle: 'إدارة رمز المرور الخاص بتسجيل الدخول.',
+                        name: S.of(context).changePasscode,
+                        subTitle: S.of(context).manageLoginPasscode,
                         image: Assets.iconsPerson,
                         withD: false,
                       ),
@@ -165,27 +163,26 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.profile).then(
+                          context.pushNamed(RouteName.editIdentityInfo).then(
                             (value) {
                               context.read<GetMeCubit>().getData(newData: true);
                             },
                           );
                         },
-                        name: 'معلومات البطاقة الموحدة',
-                        subTitle: 'إدارة بيانات البطاقة الموحدة الخاص بك.',
+                        name: S.of(context).unifiedCardInfo,
+                        subTitle: S.of(context).manageUnifiedCardInfo,
                         image: Assets.iconsPerson,
                       ),
-
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.profile).then(
+                          context.pushNamed(RouteName.editDrivingLicense).then(
                             (value) {
                               context.read<GetMeCubit>().getData(newData: true);
                             },
                           );
                         },
-                        name: 'معلومات إجازة السوق',
-                        subTitle: 'إدارة معلومات إجازه السوق الخاص بك.',
+                        name: S.of(context).drivingLicenseInfo,
+                        subTitle: S.of(context).manageDrivingLicenseInfo,
                         image: Assets.iconsPerson,
                         withD: false,
                       ),

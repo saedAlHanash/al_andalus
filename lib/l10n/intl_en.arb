@@ -122,5 +122,19 @@
   "ourService": "Our service",
   "editPhone": "Edit Phone Number",
   "pendingPhoneConfirmation": "There Is a Pending Phone Confirmation",
-  "enterNewPhoneNumber": "Enter The New Phone Number"
+  "enterNewPhoneNumber": "Enter The New Phone Number",
+  "savedSuccessfully": "Saved successfully",
+  "save": "Save",
+  "personalData": "Personal Data",
+  "phoneData": "Phone Data",
+  "manageYourPhoneNumber": "Manage your phone number.",
+  "securityData": "Security Data",
+  "biometricData": "Biometric Data",
+  "manageBiometricSettings": "Manage biometric settings for login.",
+  "changePasscode": "Change Passcode",
+  "manageLoginPasscode": "Manage login passcode.",
+  "unifiedCardInfo": "Unified Card Info",
+  "manageUnifiedCardInfo": "Manage your unified card data.",
+  "drivingLicenseInfo": "Driving License Info",
+  "manageDrivingLicenseInfo": "Manage your driving license info."
 }

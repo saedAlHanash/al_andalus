@@ -347,9 +347,7 @@ enum OrderStatus {
 
 enum AdsType {
   banner,
-  slider,
-  middle,
-  last
+  slider
   ;
 
   Color get getOrderStateColorText {
@@ -357,10 +355,6 @@ enum AdsType {
       case AdsType.banner:
       case AdsType.slider:
         return AppColorManager.mainColor;
-      case AdsType.middle:
-        return Colors.green;
-      case AdsType.last:
-        return Colors.red;
     }
   }
 
@@ -376,10 +370,8 @@ enum AdsType {
       }
     }
     return switch (name.toLowerCase()) {
-      'slider' => AdsType.slider,
-      'banner1' => AdsType.banner,
-      'banner2' => AdsType.middle,
-      'banner3' => AdsType.last,
+      'banner' => AdsType.slider,
+      'slider' => AdsType.banner,
       _ => AdsType.banner, // Default value if name doesn't match
     };
   }
@@ -454,6 +446,79 @@ enum DataPageType {
         return S().aboutUs;
       case DataPageType.ourService:
         return S().ourService;
+    }
+  }
+}
+
+enum InsuranceTypeEnum {
+  private,
+  public,
+  ;
+
+  static InsuranceTypeEnum getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return InsuranceTypeEnum.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'private':
+        return InsuranceTypeEnum.private;
+      case 'public':
+        return InsuranceTypeEnum.public;
+      default:
+        return InsuranceTypeEnum.private;
+    }
+  }
+}
+
+enum InsuranceLevelEnum {
+  platinum,
+  gold,
+  silver,
+  ;
+
+  static InsuranceLevelEnum? getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return InsuranceLevelEnum.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'silver':
+        return InsuranceLevelEnum.silver;
+      case 'platinum':
+        return InsuranceLevelEnum.platinum;
+      case 'gold':
+        return InsuranceLevelEnum.gold;
+      default:
+        return null;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case InsuranceLevelEnum.platinum:
+        return const Color(0xFFA0B2C6); // لون البلاتينيوم (رمادي فاتح جداً)
+      case InsuranceLevelEnum.gold:
+        return const Color(0xFFE8C352); // اللون الذهبي
+      case InsuranceLevelEnum.silver:
+        return const Color(0xFFC4C4C4); // اللون الفضي
+    }
+  }
+}
+
+enum PricingTypeEnum {
+  fixed,
+  percent,
+  ;
+
+  static PricingTypeEnum getByNameOrIndex(String name) {
+    switch (name.toLowerCase()) {
+      case 'fixed':
+        return PricingTypeEnum.fixed;
+      case 'percent':
+        return PricingTypeEnum.percent;
+      default:
+        return PricingTypeEnum.fixed;
     }
   }
 }

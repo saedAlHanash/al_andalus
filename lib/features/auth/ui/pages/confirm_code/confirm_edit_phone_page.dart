@@ -64,7 +64,7 @@ class _ConfirmEditPhonePageState extends State<ConfirmEditPhonePage> {
         ),
       ],
       child: Scaffold(
-        appBar: AppBarWidget(titleText: S.of(context).signUp),
+        appBar: AppBarWidget(titleText: S.of(context).editPhone),
         bottomNavigationBar: RememberAccount(),
         body: ListView(
           children: [

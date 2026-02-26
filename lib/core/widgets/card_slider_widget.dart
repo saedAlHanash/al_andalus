@@ -52,12 +52,13 @@ class CardSlider extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 15.0.h,
+          bottom: 5.0.h,
           child: IndicatorSliderWidget(
             key: key,
             length: images.length,
           ),
         ),
+        ...?stackChild,
       ],
     );
   }

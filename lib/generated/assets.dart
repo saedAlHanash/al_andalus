@@ -5,6 +5,8 @@ class Assets {
   static const String fontsCairo = 'assets/fonts/cairo.ttf';
   static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
+  static const String iconsAccident = 'assets/icons/accident.png';
+  static const String iconsAccident1 = 'assets/icons/accident1.png';
   static const String iconsActiveStep = 'assets/icons/active_step.svg';
   static const String iconsAddToCart = 'assets/icons/add_to_cart.svg';
   static const String iconsAppBarBack = 'assets/icons/app_bar_back.svg';
@@ -31,6 +33,7 @@ class Assets {
   static const String iconsLeaf = 'assets/icons/leaf.svg';
   static const String iconsLocationPin = 'assets/icons/location-pin.svg';
   static const String iconsMap = 'assets/icons/map.svg';
+  static const String iconsNewCar = 'assets/icons/new_car.png';
   static const String iconsNotification = 'assets/icons/notification.svg';
   static const String iconsNotificationCardIcon = 'assets/icons/notification_card_icon.svg';
   static const String iconsNotificationF = 'assets/icons/notification_f.svg';
@@ -41,6 +44,9 @@ class Assets {
   static const String iconsProfileBack = 'assets/icons/profile_back.png';
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsStep = 'assets/icons/step.svg';
+  static const String iconsSupport = 'assets/icons/support.png';
+  static const String iconsSupportBorder = 'assets/icons/support_border.png';
+  static const String iconsTransport = 'assets/icons/transport.png';
   static const String iconsTrash = 'assets/icons/trash.svg';
   static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';
   static const String iconsUploadDragUploadBack = 'assets/icons/upload_drag_upload_back.svg';

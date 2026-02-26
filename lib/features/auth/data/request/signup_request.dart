@@ -84,3 +84,8 @@ class SignupRequest {
     'biometric_id': biometricId,
   };
 }
+//  '': 'koki',
+//   '': '12345678966',
+//   '': '3333',
+//   '': '1997-02-19',
+//   '': 'female'

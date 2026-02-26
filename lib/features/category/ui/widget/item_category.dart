@@ -26,7 +26,7 @@ class ItemCategory extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppColorManager.cardColor,
+                  color: AppColorManager.lightGray,
                   border: selected
                       ? Border.all(
                           color: AppColorManager.mainColor,

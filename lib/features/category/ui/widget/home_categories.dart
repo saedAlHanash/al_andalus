@@ -29,7 +29,7 @@ class HomeCategories extends StatelessWidget {
         Container(
           height: 100.0.h,
           decoration: BoxDecoration(
-            // border: Border.all(color: AppColorManager.cardColor),
+            // border: Border.all(color: AppColorManager.lightGray),
             borderRadius: BorderRadius.circular(12.0.r),
           ),
           padding: EdgeInsets.all(7.0).r,

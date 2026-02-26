@@ -993,6 +993,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Saved successfully`
+  String get savedSuccessfully {
+    return Intl.message(
+      'Saved successfully',
+      name: 'savedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Personal Data`
+  String get personalData {
+    return Intl.message(
+      'Personal Data',
+      name: 'personalData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Data`
+  String get phoneData {
+    return Intl.message('Phone Data', name: 'phoneData', desc: '', args: []);
+  }
+
+  /// `Manage your phone number.`
+  String get manageYourPhoneNumber {
+    return Intl.message(
+      'Manage your phone number.',
+      name: 'manageYourPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security Data`
+  String get securityData {
+    return Intl.message(
+      'Security Data',
+      name: 'securityData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biometric Data`
+  String get biometricData {
+    return Intl.message(
+      'Biometric Data',
+      name: 'biometricData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage biometric settings for login.`
+  String get manageBiometricSettings {
+    return Intl.message(
+      'Manage biometric settings for login.',
+      name: 'manageBiometricSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Passcode`
+  String get changePasscode {
+    return Intl.message(
+      'Change Passcode',
+      name: 'changePasscode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage login passcode.`
+  String get manageLoginPasscode {
+    return Intl.message(
+      'Manage login passcode.',
+      name: 'manageLoginPasscode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unified Card Info`
+  String get unifiedCardInfo {
+    return Intl.message(
+      'Unified Card Info',
+      name: 'unifiedCardInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage your unified card data.`
+  String get manageUnifiedCardInfo {
+    return Intl.message(
+      'Manage your unified card data.',
+      name: 'manageUnifiedCardInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Driving License Info`
+  String get drivingLicenseInfo {
+    return Intl.message(
+      'Driving License Info',
+      name: 'drivingLicenseInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage your driving license info.`
+  String get manageDrivingLicenseInfo {
+    return Intl.message(
+      'Manage your driving license info.',
+      name: 'manageDrivingLicenseInfo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

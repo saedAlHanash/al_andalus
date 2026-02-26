@@ -1,4 +1,6 @@
+import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
+import 'package:al_andalus/features/home/ui/pages/home_screen_guest.dart';
 
 import 'package:al_andalus/features/notification/ui/pages/notification_page.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +54,7 @@ class _HomepageState extends State<Homepage> {
                     controller: state.controller,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      const HomeScreen(),
+                      AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
                       NotificationPage(),
                       Container(),
                       MenuScreen(),

@@ -1,5 +1,7 @@
 import 'package:al_andalus/features/category/bloc/categories_cubit/categories_cubit.dart';
 import 'package:al_andalus/features/category/bloc/category_cubit/category_cubit.dart';
+import 'package:al_andalus/features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
+import 'package:al_andalus/features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
@@ -57,6 +59,9 @@ Future<void> init() async {
   sl.registerLazySingleton(() => HomeCubit());
   sl.registerFactory(() => PolicyCubit());
   sl.registerFactory(() => SupportInfoCubit());
+
+  sl.registerFactory(() => InsuranceCubit());
+  sl.registerFactory(() => InsurancesCubit());
 
   //endregion
 

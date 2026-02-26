@@ -44,12 +44,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة الإجازة الأمامية هنا",
     ),
+    "biometricData": MessageLookupByLibrary.simpleMessage(
+      "البيانات البيومترية",
+    ),
     "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("تغيير الحساب"),
+    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير الرمز السري"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
@@ -82,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إعادة الإرسال",
     ),
     "drivingLicense": MessageLookupByLibrary.simpleMessage("رخصة القيادة"),
+    "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
+      "معلومات إجازة السوق",
+    ),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enterNewPhoneNumber": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +129,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "manageBiometricSettings": MessageLookupByLibrary.simpleMessage(
+      "إدارة أعدادات البيانات البيومترية الخاص بتسجيل الدخول.",
+    ),
+    "manageDrivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
+      "إدارة معلومات إجازه السوق الخاص بك.",
+    ),
+    "manageLoginPasscode": MessageLookupByLibrary.simpleMessage(
+      "إدارة رمز المرور الخاص بتسجيل الدخول.",
+    ),
+    "manageUnifiedCardInfo": MessageLookupByLibrary.simpleMessage(
+      "إدارة بيانات البطاقة الموحدة الخاص بك.",
+    ),
+    "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "إدارة رقم الهاتف الخاص بك.",
+    ),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "month": MessageLookupByLibrary.simpleMessage("شهر"),
     "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
@@ -147,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "pendingPhoneConfirmation": MessageLookupByLibrary.simpleMessage(
       "يوجد عملية تأكيد رقم قيد الانتظار",
     ),
+    "personalData": MessageLookupByLibrary.simpleMessage("البيانات الشخصية"),
+    "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -209,9 +233,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
     "returned": MessageLookupByLibrary.simpleMessage("استعادة"),
+    "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "savedSuccessfully": MessageLookupByLibrary.simpleMessage("تم الحفظ بنجاح"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "second": MessageLookupByLibrary.simpleMessage("ثانية"),
     "sections": MessageLookupByLibrary.simpleMessage("الأقسام"),
+    "securityData": MessageLookupByLibrary.simpleMessage("بيانات الأمان"),
     "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "sendCode": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -221,6 +248,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "support": MessageLookupByLibrary.simpleMessage("الدعم"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
+    ),
+    "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
+      "معلومات البطاقة الموحدة",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),

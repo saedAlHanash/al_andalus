@@ -1,20 +1,244 @@
 {
-  "id": 9,
-  "name": "لاتف",
-  "phone": "+964938895632",
-  "identity_id": "558",
-  "address": "ايلا",
-  "birth_date": "2026-02-01",
-  "qrcode": "96cf9fc7-886f-4774-bee1-000218b7d762",
-  "gender": "male",
-  "identity_front_image": "https://admin.andalusapp.com/storage/clients/upload-drag-upload-1771709755.png",
-  "identity_back_image": "https://admin.andalusapp.com/storage/clients/upload-drag-upload-1771709755.png",
-  "license_number": "589",
-  "license_type": "private",
-  "license_start_date": "2027-02-15",
-  "license_end_date": "2026-02-01",
-  "license_front_image": "https://admin.andalusapp.com/storage/clients/upload-drag-upload-1771709755.png",
-  "license_back_image": "https://admin.andalusapp.com/storage/clients/upload-drag-upload-1771709755.png",
-  "biometric_id": null,
-  "created": "2026-02-22 | 12:35 ص"
+  "data": [
+    {
+      "id": 1,
+      "title": "Silver Private Package",
+      "brief": "Silver Private",
+      "type": "private",
+      "level": "silver",
+      "tag": null,
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 1,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 1,
+          "cylinders": "4",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 2,
+          "cylinders": "6",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 3,
+          "cylinders": "8",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    },
+    {
+      "id": 2,
+      "title": "Silver Public Package",
+      "brief": "Silver Public",
+      "type": "public",
+      "level": "silver",
+      "tag": null,
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 2,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 4,
+          "cylinders": "4",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 5,
+          "cylinders": "6",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 6,
+          "cylinders": "8",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    },
+    {
+      "id": 3,
+      "title": "Gold Private Package",
+      "brief": "Gold Private",
+      "type": "private",
+      "level": "gold",
+      "tag": "The best",
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 3,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 7,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 1.6,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 8,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 1.8,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 9,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 2,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    },
+    {
+      "id": 4,
+      "title": "Gold Public Package",
+      "brief": "Gold Public",
+      "type": "public",
+      "level": "gold",
+      "tag": null,
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 4,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 10,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 11,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 12,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    },
+    {
+      "id": 5,
+      "title": "Platinum Private Package",
+      "brief": "Platinum Private",
+      "type": "private",
+      "level": "platinum",
+      "tag": null,
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 5,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 13,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 2.4,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 14,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 2.6,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 15,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 3,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    },
+    {
+      "id": 6,
+      "title": "Platinum Public Package",
+      "brief": "Platinum Public",
+      "type": "public",
+      "level": "platinum",
+      "tag": null,
+      "description_file": "https://admin.andalusapp.com/storage/https://example.com/privacy",
+      "features": [
+        {
+          "id": 6,
+          "title": "just test",
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 16,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 3.5,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 17,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 3.5,
+          "created": "2026-01-04 | 4:23 pm"
+        },
+        {
+          "id": 18,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 3.5,
+          "created": "2026-01-04 | 4:23 pm"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 pm"
+    }
+  ]
 }
