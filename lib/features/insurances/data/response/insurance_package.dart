@@ -1,4 +1,6 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/widgets/spinner_widget.dart';
+import 'package:collection/collection.dart';
 
 class InsurancesResponse {
   InsurancesResponse({required this.data});
@@ -32,7 +34,7 @@ class InsurancePackage {
   final String title;
   final String brief;
   final InsuranceTypeEnum type;
-  final InsuranceLevelEnum? level;
+  final InsuranceLevelEnum level;
   final String tag;
   final String descriptionFile;
   final List<Feature> features;
@@ -60,14 +62,20 @@ class InsurancePackage {
     "id": id,
     "title": title,
     "brief": brief,
-    "type": type.name,
-    "level": level?.index,
+    "type": type.index,
+    "level": level.index,
     "tag": tag,
     "description_file": descriptionFile,
-    "features": features.map((x) => x.toJson()),
-    "cylinders": cylinders.map((x) => x.toJson()),
+    "features": features.map((x) => x.toJson()).toList(),
+    "cylinders": cylinders.map((x) => x.toJson()).toList(),
     "created": created,
   };
+
+  List<SpinnerItem> get getCylinders {
+    return cylinders
+        .mapIndexed((i, e) => SpinnerItem(id: e.id, item: e, name: e.cylinders, isSelected: i == 0))
+        .toList();
+  }
 }
 
 class Cylinder {

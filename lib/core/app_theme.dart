@@ -30,7 +30,6 @@ ThemeData get lightTheme => ThemeData(
   ),
   listTileTheme: ListTileThemeData(
     horizontalTitleGap: 10.0,
-    tileColor: Colors.white.withValues(alpha: 0.5),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
     controlAffinity: ListTileControlAffinity.leading,
   ),

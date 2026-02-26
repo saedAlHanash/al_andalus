@@ -90,7 +90,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
                           const Icon(Icons.check_box_outline_blank),
                         5.0.horizontalSpace,
                         Expanded(
-                          child: DrawableText(text: item.name ?? '-'),
+                          child: DrawableText(text: item.name),
                         ),
                       ],
                     ),
@@ -426,7 +426,7 @@ class SpinnerOutlineTitle extends StatelessWidget {
 
 class SpinnerItem {
   SpinnerItem({
-    this.name,
+    required this.name,
     this.id = -2,
     this.isSelected = false,
     this.item,
@@ -434,7 +434,7 @@ class SpinnerItem {
     this.enable = true,
   });
 
-  String? name;
+  String name;
   int id;
   bool isSelected;
   bool enable;

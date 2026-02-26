@@ -8,6 +8,9 @@ class InsurancesInitial extends AbstractState<List<InsurancePackage>> {
     // Add custom fields here if needed
   });
 
+  int get getMaxFeaturesCount {
+    return result.fold(0, (previousValue, element) => previousValue + element.features.length);
+  }
   factory InsurancesInitial.initial() {
     return InsurancesInitial(
       result: [],

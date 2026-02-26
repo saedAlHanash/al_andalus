@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +14,10 @@ class ItemInsurance extends StatelessWidget {
 
   final InsurancePackage insurance;
 
-  bool get isLevelNull => insurance.level == null;
-
   @override
   Widget build(BuildContext context) {
     final tagText = insurance.tag;
-    final special = insurance.level != null;
+    final special = insurance.tag.isNotEmpty;
 
     return Container(
       decoration: !special
@@ -59,16 +58,14 @@ class ItemInsurance extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0.r),
-                      border: isLevelNull ? Border.all(color: Colors.grey.shade200) : null,
-                      boxShadow: !isLevelNull
-                          ? [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.04),
-                                blurRadius: 10.r,
-                                offset: const Offset(0, 4),
-                              ),
-                            ]
-                          : null,
+                      border: Border.all(color: Colors.grey.shade200),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.04),
+                          blurRadius: 10.r,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
                     ),
                     child: Column(
                       crossAxisAlignment: .start,
@@ -88,7 +85,9 @@ class ItemInsurance extends StatelessWidget {
                         ),
                         20.verticalSpace,
                         MyButton(
-                          onTap: () {},
+                          onTap: () {
+                            showCalculationPrice(context, insurance);
+                          },
                           height: 35.0.h,
                           text: 'معرفة المزيد',
                           color: special ? insurance.level!.color : AppColorManager.mainColor.withValues(alpha: 0.2),

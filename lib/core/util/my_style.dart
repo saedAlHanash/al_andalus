@@ -35,10 +35,11 @@ class MyStyle {
     BoxShadow(color: AppColorManager.grey.withValues(alpha: 0.5), blurRadius: 5, offset: const Offset(0, 2)),
   ];
 
-  static var allShadow = [
+  static List<BoxShadow> get allShadow => [
     BoxShadow(
-      color: AppColorManager.grey.withValues(alpha: 0.5),
-      blurRadius: 10,
+      color: Colors.black12.withValues(alpha: 0.04),
+      offset: Offset(0, 5),
+      blurRadius: 5,
     ),
   ];
   static var allShadowDark = [

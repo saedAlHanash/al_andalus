@@ -17,7 +17,7 @@ class ListInsurances extends StatelessWidget {
       builder: (context, state) {
         return _CardSlider(
           images: state.result.map((e) => ItemInsurance(insurance: e)).toList(),
-          height: 0.4.sh,
+          height: 160.0.h+ (state.getMaxFeaturesCount * 12),
           autoPlay: false,
           viewportFraction: 0.7,
         );

@@ -42,10 +42,12 @@ class Assets {
   static const String iconsPhone = 'assets/icons/phone.svg';
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
   static const String iconsProfileBack = 'assets/icons/profile_back.png';
+  static const String iconsRadio = 'assets/icons/radio.svg';
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsSupport = 'assets/icons/support.png';
   static const String iconsSupportBorder = 'assets/icons/support_border.png';
+  static const String iconsTopCard = 'assets/icons/Top-Card.svg';
   static const String iconsTransport = 'assets/icons/transport.png';
   static const String iconsTrash = 'assets/icons/trash.svg';
   static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';

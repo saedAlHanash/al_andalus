@@ -92,7 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enterNewPhoneNumber": MessageLookupByLibrary.simpleMessage(
-      "إدخل رقم الهاتف الجديد",
+      "أدخل رقم الهاتف الجديد",
     ),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التفعيل الخاص بك هنا.",

@@ -477,7 +477,7 @@ enum InsuranceLevelEnum {
   silver,
   ;
 
-  static InsuranceLevelEnum? getByNameOrIndex(dynamic name) {
+  static InsuranceLevelEnum getByNameOrIndex(dynamic name) {
     final i = int.tryParse(name.toString());
     if (i != null) {
       return InsuranceLevelEnum.values[i];
@@ -490,7 +490,7 @@ enum InsuranceLevelEnum {
       case 'gold':
         return InsuranceLevelEnum.gold;
       default:
-        return null;
+        return InsuranceLevelEnum.silver;
     }
   }
 

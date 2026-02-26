@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,8 @@ import '../features/auth/ui/pages/splash_screen_page.dart';
 
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
+import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
+import '../features/insurances/ui/pages/insurance_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
@@ -219,6 +222,26 @@ final goRouter = GoRouter(
       },
     ),
     //endregion
+
+    //region insurance
+    GoRoute(
+      path: RouteName.insurancePage,
+      name: RouteName.insurancePage,
+      builder: (_, state) {
+        final id = state.uri.queryParameters['id'] ?? '';
+        final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
+        final cylinders = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
+        return BlocProvider(
+          create: (context) => sl<InsuranceCubit>()
+            ..setEstimatedPrice(price)
+            ..setSelectedCylinder(cylinders)
+            ..getData(id: id),
+          child: InsurancePage(),
+        );
+      },
+    ),
+
+    //endregion
   ],
 );
 
@@ -264,4 +287,5 @@ class RouteName {
   static const editPhonePage = '/editPhonePage';
   static const editIdentityInfo = '/editIdentityInfo';
   static const editDrivingLicense = '/editDrivingLicense';
+  static const insurancePage = '/insurancePage';
 }

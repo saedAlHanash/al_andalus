@@ -2,7 +2,6 @@ import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -13,11 +12,11 @@ import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../../core/strings/app_color_manager.dart';
+import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../core/widgets/need_login_widget.dart';
 import '../../../../../generated/assets.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
-import '../../../../policies/ui/widget/support_call.dart';
 import '../../../../profile/bloc/get_me_cubit/get_me_cubit.dart';
 
 class MenuScreen extends StatefulWidget {

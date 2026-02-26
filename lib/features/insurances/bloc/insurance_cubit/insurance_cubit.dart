@@ -3,6 +3,7 @@ import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/pair_class.dart';
+import 'package:collection/collection.dart';
 import 'package:m_cubit/m_cubit.dart';
 
 import '../../data/response/insurance_package.dart';
@@ -16,6 +17,9 @@ class InsuranceCubit extends MCubit<InsuranceInitial> {
   String get nameCache => 'insurance_item';
 
   @override
+  String get filter => state.filter;
+
+  @override
   AbstractState get mState => state;
 
   void getDataFromCache() => getFromCache(
@@ -26,7 +30,7 @@ class InsuranceCubit extends MCubit<InsuranceInitial> {
     },
   );
 
-  Future<void> getData({bool newData = false, required int id}) async {
+  Future<void> getData({bool newData = false, String? id}) async {
     emit(state.copyWith(id: id));
     await getDataAbstract(
       fromJson: InsurancePackage.fromJson,
@@ -43,10 +47,18 @@ class InsuranceCubit extends MCubit<InsuranceInitial> {
       type: ApiType.get,
     );
     if (response.statusCode.success) {
-      final res = InsurancePackage.fromJson(response.jsonBody);
+      final res = InsurancePackage.fromJson(response.jsonBodyData);
       return Pair(res, null);
     } else {
       return response.getPairError;
     }
+  }
+
+  void setSelectedCylinder(int selectedCylinder) {
+    emit(state.copyWith(selectedCylinder: selectedCylinder));
+  }
+
+  void setEstimatedPrice(double estimatedPrice) {
+    emit(state.copyWith(estimatedPrice: estimatedPrice));
   }
 }
