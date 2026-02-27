@@ -46,13 +46,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biometricData": MessageLookupByLibrary.simpleMessage("Biometric Data"),
     "birthday": MessageLookupByLibrary.simpleMessage("birthday"),
-    "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
+    "buildNumber": MessageLookupByLibrary.simpleMessage("Build Number"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "carColor": MessageLookupByLibrary.simpleMessage("Car Color"),
+    "carModel": MessageLookupByLibrary.simpleMessage("Car Model"),
+    "carName": MessageLookupByLibrary.simpleMessage("Car Name"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("Change account"),
     "changePasscode": MessageLookupByLibrary.simpleMessage("Change Passcode"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
+    "chassisNumber": MessageLookupByLibrary.simpleMessage("Chassis Number"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("Click To Update"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
@@ -68,13 +72,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
     ),
+    "damage": MessageLookupByLibrary.simpleMessage("Damage"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.",
     ),
     "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
     "descending": MessageLookupByLibrary.simpleMessage("descending"),
-    "devBy": MessageLookupByLibrary.simpleMessage("تم التطوير بواسطة"),
+    "devBy": MessageLookupByLibrary.simpleMessage("Developed By"),
     "didNotReceiveOTP": MessageLookupByLibrary.simpleMessage(
       "Didn\'t Receive The OTP?",
     ),
@@ -95,8 +100,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "editPhone": MessageLookupByLibrary.simpleMessage("Edit Phone Number"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
-    "enterNewPhoneNumber": MessageLookupByLibrary.simpleMessage(
-      "Enter The New Phone Number",
+    "engineCapacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
+    "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+    "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
+      "Enter expiry date",
     ),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "Enter Your OTP Code Here.",
@@ -111,10 +118,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "from": MessageLookupByLibrary.simpleMessage("From"),
+    "fuelType": MessageLookupByLibrary.simpleMessage("Fuel Type"),
+    "gaz": MessageLookupByLibrary.simpleMessage("Gaz"),
     "gender": MessageLookupByLibrary.simpleMessage("Gender"),
     "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hour": MessageLookupByLibrary.simpleMessage("hour"),
+    "hybrid": MessageLookupByLibrary.simpleMessage("Hybrid"),
     "iRememberedMyPassword": MessageLookupByLibrary.simpleMessage(
       "I remembered my password",
     ),
@@ -123,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "idCardNumber": MessageLookupByLibrary.simpleMessage("ID Card Number"),
     "info": MessageLookupByLibrary.simpleMessage("Info"),
+    "intact": MessageLookupByLibrary.simpleMessage("Intact"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -142,6 +154,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageLoginPasscode": MessageLookupByLibrary.simpleMessage(
       "Manage login passcode.",
     ),
+    "manageMyCars": MessageLookupByLibrary.simpleMessage(
+      "Manage your cars and documents.",
+    ),
+    "managePhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Manage your phone number.",
+    ),
     "manageUnifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "Manage your unified card data.",
     ),
@@ -149,7 +167,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Manage your phone number.",
     ),
     "minute": MessageLookupByLibrary.simpleMessage("minute"),
+    "missing": MessageLookupByLibrary.simpleMessage("Missing"),
     "month": MessageLookupByLibrary.simpleMessage("month"),
+    "myCars": MessageLookupByLibrary.simpleMessage("My Cars"),
     "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
     "name": MessageLookupByLibrary.simpleMessage("name"),
     "needLogin": MessageLookupByLibrary.simpleMessage("Need login"),
@@ -174,11 +194,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "There Is a Pending Phone Confirmation",
     ),
     "personalData": MessageLookupByLibrary.simpleMessage("Personal Data"),
+    "petrol": MessageLookupByLibrary.simpleMessage("Petrol"),
     "phoneData": MessageLookupByLibrary.simpleMessage("Phone Data"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "Place of Residence",
     ),
+    "plateNumber": MessageLookupByLibrary.simpleMessage("Plate Number"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
       "Please accept the declaration",
     ),
@@ -227,9 +249,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "Please select issue date",
     ),
-    "policy": MessageLookupByLibrary.simpleMessage(
-      "Terms of Use and Privacy Policy",
+    "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
+      "Please upload the inspection document (Al-Haza)",
     ),
+    "policy": MessageLookupByLibrary.simpleMessage("Policy"),
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "private": MessageLookupByLibrary.simpleMessage("private"),
@@ -259,10 +282,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("To"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "Unified Card Info",
     ),
     "update": MessageLookupByLibrary.simpleMessage("update"),
+    "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "Upload car inspection report",
+    ),
+    "uploadInspectionReportTopic": MessageLookupByLibrary.simpleMessage(
+      "Upload inspection report:",
+    ),
+    "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
+      "Upload file (one file only)",
+    ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),

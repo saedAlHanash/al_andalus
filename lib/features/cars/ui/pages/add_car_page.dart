@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/signup_steps/signup_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,31 +9,32 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
-import '../../bloc/signup_cubit/signup_cubit.dart';
-import '../widget/signup_steps/driving_license.dart';
-import '../widget/signup_steps/identity_info.dart';
-import '../widget/signup_steps/phone_number.dart';
+import '../../bloc/cars_cubit/cars_cubit.dart';
+import '../widget/create_car_steps/annual_info.dart';
+import '../widget/create_car_steps/car_images.dart';
+import '../widget/create_car_steps/car_inspection.dart';
+import '../widget/create_car_steps/car_preview.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class AddCarPage extends StatefulWidget {
+  const AddCarPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<AddCarPage> createState() => _AddCarPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  SignupCubit get signupCubit => context.read<SignupCubit>();
+class _AddCarPageState extends State<AddCarPage> {
+  CarsCubit get carsCubit => context.read<CarsCubit>();
 
-  SignupInitial get signupState => context.read<SignupCubit>().state;
+  CarsInitial get carsState => context.read<CarsCubit>().state;
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignupCubit, SignupInitial>(
+    return BlocListener<CarsCubit, CarsInitial>(
       listenWhen: (p, c) => c.done,
       listener: (context, state) {
         context.goNamed(RouteName.confirmCode);
       },
-      child: BlocBuilder<SignupCubit, SignupInitial>(
+      child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
           return Scaffold(
             appBar: AppBarWidget(titleText: S.of(context).signUp),
@@ -42,13 +43,13 @@ class _SignupPageState extends State<SignupPage> {
               child: MyButton(
                 onTap: () {
                   final request = state.mRequest;
-                  if (!SignupValidator.validateStep(context, state.step, request)) return;
 
-                  if (state.step >= 2) {
-                    context.read<SignupCubit>().signup();
+
+                  if (state.step >= 3) {
+
                     return;
                   }
-                  context.read<SignupCubit>().next();
+                  context.read<CarsCubit>().next();
                 },
                 loading: state.loading,
                 text: S.of(context).continueTo,
@@ -64,29 +65,34 @@ class _SignupPageState extends State<SignupPage> {
                       final request = state.mRequest;
                       if (p0 > state.step) {
                         for (int i = state.step; i < p0; i++) {
-                          if (!SignupValidator.validateStep(context, i, request)) return;
+                          // if (!CreateCarValidator.validateStep(context, i, request)) return;
                         }
                       }
-                      context.read<SignupCubit>().next(step: p0);
+                      context.read<CarsCubit>().next(step: p0);
                     },
                     steps: [
                       customStepWidget(
-                        title: S.of(context).info,
+                        title: 'الفحص',
                         isCompleted: state.step > 0,
                         isSelected: state.step == 0,
                       ),
                       customStepWidget(
-                        title: S.of(context).drivingLicense,
+                        title: 'السنوية',
                         isCompleted: state.step > 1,
                         isSelected: state.step == 1,
                       ),
                       customStepWidget(
-                        title: S.of(context).phoneNumber,
+                        title: 'المعاينة',
                         isCompleted: state.step > 2,
                         isSelected: state.step == 2,
                       ),
                       customStepWidget(
-                        title: S.of(context).verificationCode,
+                        title: 'صور المركبة',
+                        isCompleted: state.step > 3,
+                        isSelected: state.step == 3,
+                      ),
+                      customStepWidget(
+                        title: 'الدفع',
                         isCompleted: state.step > 3,
                         isSelected: state.step == 3,
                       ),
@@ -95,10 +101,10 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 Expanded(
                   child: switch (state.step) {
-                    0 => IdentityInfo(),
-                    1 => DrivingLicense(),
-                    2 => PhoneNumber(),
-                    3 => Container(),
+                    0 => CarInspection(),
+                    1 => AnnualInfo(),
+                    2 => CarPreview(),
+                    3 => CarInspectionScreen(),
 
                     int() => SizedBox(),
                   },

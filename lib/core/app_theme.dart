@@ -21,7 +21,10 @@ ThemeData get lightTheme => ThemeData(
     bodyMedium: TextStyle(fontSize: 14.0.sp),
   ),
   fontFamily: FontManager.semeBold.name,
-  dividerColor: AppColorManager.lightGrayEd,
+  dividerColor: AppColorManager.cd,
+  dividerTheme: DividerThemeData(
+    color: AppColorManager.cd,
+  ),
   primaryTextTheme: TextTheme(
     displayMedium: TextStyle(
       fontFamily: FontManager.semeBold.name,
@@ -78,7 +81,7 @@ ThemeData get lightTheme => ThemeData(
     }),
   ),
   tabBarTheme: TabBarThemeData(
-    dividerColor: Colors.grey[300],
+    dividerColor: AppColorManager.cd,
     indicatorSize: TabBarIndicatorSize.tab,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
@@ -117,7 +120,7 @@ ThemeData get lightTheme => ThemeData(
       ),
     ),
   ),
-  shadowColor: Colors.grey[300],
+  shadowColor: AppColorManager.cd,
   pageTransitionsTheme: const PageTransitionsTheme(
     builders: {
       TargetPlatform.android: ZoomPageTransitionsBuilder(),

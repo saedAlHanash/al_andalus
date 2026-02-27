@@ -33,8 +33,8 @@ class InsurancePackage {
   final int? id;
   final String title;
   final String brief;
-  final InsuranceTypeEnum type;
-  final InsuranceLevelEnum level;
+  final InsuranceType type;
+  final InsuranceLevel level;
   final String tag;
   final String descriptionFile;
   final List<Feature> features;
@@ -46,8 +46,8 @@ class InsurancePackage {
       id: int.tryParse(json["id"].toString()) ?? 0,
       title: json["title"] ?? "",
       brief: json["brief"] ?? "",
-      type: InsuranceTypeEnum.getByNameOrIndex(json["type"]),
-      level: InsuranceLevelEnum.getByNameOrIndex(json["level"]),
+      type: InsuranceType.getByNameOrIndex(json["type"]),
+      level: InsuranceLevel.getByNameOrIndex(json["level"]),
       tag: json["tag"]?.toString() ?? "",
       descriptionFile: json["description_file"] ?? "",
       features: json["features"] == null ? [] : List<Feature>.from(json["features"]!.map((x) => Feature.fromJson(x))),
@@ -89,7 +89,7 @@ class Cylinder {
 
   final int id;
   final String cylinders;
-  final PricingTypeEnum pricingType;
+  final PricingType pricingType;
   final double value;
   final String created;
 
@@ -97,7 +97,7 @@ class Cylinder {
     return Cylinder(
       id: int.tryParse(json["id"].toString()) ?? 0,
       cylinders: json["cylinders"]?.toString() ?? "",
-      pricingType: PricingTypeEnum.getByNameOrIndex(json["pricing_type"] ?? "fixed"),
+      pricingType: PricingType.getByNameOrIndex(json["pricing_type"] ?? "fixed"),
       value: double.tryParse(json["value"].toString()) ?? 0.0,
       created: json["created"] ?? "",
     );

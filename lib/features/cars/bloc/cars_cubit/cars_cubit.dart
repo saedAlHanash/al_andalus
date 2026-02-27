@@ -1,0 +1,140 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/api_manager/api_url.dart';
+import 'package:al_andalus/core/util/pair_class.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/features/cars/data/request/insurance_policy_request.dart';
+import 'package:http/http.dart';
+import 'package:m_cubit/m_cubit.dart';
+
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+
+import '../../../../core/error/error_manager.dart';
+
+part 'cars_state.dart';
+
+class CarsCubit extends MCubit<CarsInitial> {
+  CarsCubit() : super(CarsInitial.initial());
+
+  @override
+  String get nameCache => 'my_cars';
+
+  @override
+  AbstractState get mState => state;
+
+
+
+  //region getData
+
+  void getDataFromCache() => getFromCache(
+    fromJson: CarPolicy.fromJson,
+    state: state,
+    onSuccess: (data) {
+      emit(state.copyWith(result: data));
+    },
+  );
+
+  Future<void> getData({bool newData = false}) async {
+    await getDataAbstract(
+      fromJson: CarPolicy.fromJson,
+      state: state,
+      getDataApi: _getData,
+      newData: newData,
+    );
+  }
+
+  Future<Pair<List<CarPolicy>?, String?>> _getData() async {
+    final response = await APIService().callApi(
+      url: GetUrl.myCars,
+      type: ApiType.get,
+    );
+
+    if (response.statusCode.success) {
+      return Pair(CarsResponse.fromJson(response.jsonBody).data, null);
+    } else {
+      return response.getPairError;
+    }
+  }
+
+  //endregion
+
+  //region CRUD
+
+  Future<void> create() async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
+
+    final response = await APIService().uploadMultiPart(
+      url: PostUrl.createInsurancePolicy,
+      files: state.mRequest.files,
+      fields: state.mRequest.toJson(),
+    );
+
+    await _updateState(response);
+  }
+
+  Future<void> update() async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+
+    final response = await APIService().uploadMultiPart(
+      url: PutUrl.updateInsurancePolicy,
+      type: 'POST',
+      // Usually multipart update is POST with method override or just POST
+      path: state.id.toString(),
+      files: state.mRequest.files,
+      fields: state.mRequest.toJson(),
+    );
+    await _updateState(response);
+  }
+
+  Future<void> delete({required String id}) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.delete, id: id));
+
+    final response = await APIService().callApi(
+      type: ApiType.delete,
+      url: DeleteUrl.deleteInsurancePolicy,
+      path: state.id.toString(),
+    );
+
+    await _updateState(response, isDelete: true);
+  }
+
+  Future<void> _updateState(Response response, {bool isDelete = false}) async {
+    if (response.statusCode.success) {
+      if (isDelete) {
+        await deleteCarFromCache(state.id.toString());
+      } else {
+        final item = CarPolicy.fromJson(response.jsonBodyData);
+        await addOrUpdateCarToCache(item);
+      }
+      emit(state.copyWith(statuses: CubitStatuses.done));
+    } else {
+      emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
+      showErrorFromApi(state);
+    }
+  }
+
+  //endregion
+
+  void next({int? step}) {
+    if (step != null) {
+      if (state.step < step) return;
+      emit(state.copyWith(step: step));
+      return;
+    }
+    emit(state.copyWith(step: state.step + 1));
+  }
+
+  Future<void> addOrUpdateCarToCache(CarPolicy item) async {
+    final listJson = await addOrUpdateDate([item]);
+    if (listJson == null) return;
+    final list = listJson.map((e) => CarPolicy.fromJson(e)).toList();
+    emit(state.copyWith(result: list));
+  }
+
+  Future<void> deleteCarFromCache(String id) async {
+    final listJson = await deleteDate([id]);
+    if (listJson == null) return;
+    final list = listJson.map((e) => CarPolicy.fromJson(e)).toList();
+    emit(state.copyWith(result: list));
+  }
+}

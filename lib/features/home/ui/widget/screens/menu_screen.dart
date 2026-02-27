@@ -183,6 +183,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).drivingLicenseInfo,
                         subTitle: S.of(context).manageDrivingLicenseInfo,
                         image: Assets.iconsPerson,
+                      ),
+                      ItemMenu(
+                        onTap: () {
+                          context.pushNamed(RouteName.carsPage);
+                        },
+                        name: S.of(context).myCars,
+                        subTitle: S.of(context).manageMyCars,
+                        image: Assets.iconsPerson,
                         withD: false,
                       ),
                     ],

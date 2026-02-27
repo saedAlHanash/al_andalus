@@ -116,6 +116,7 @@ class GetUrl {
 
   static const insurances = 'insurance-package';
 
+  static const myCars = 'insurance-policy';
 }
 
 class PostUrl {
@@ -215,6 +216,8 @@ class PostUrl {
   static String decrease(int id) {
     return 'carts/products/$id/quantity/decrease';
   }
+
+  static const createInsurancePolicy = 'insurance-policy';
 }
 
 class PutUrl {
@@ -238,6 +241,8 @@ class PutUrl {
   static var updateTemp = '';
 
   static var updateGroup = '';
+
+  static const updateInsurancePolicy = 'insurance-policy';
 }
 
 class DeleteUrl {
@@ -261,6 +266,8 @@ class DeleteUrl {
   static var deleteTemp = '';
 
   static var deleteGroup = '';
+
+  static const deleteInsurancePolicy = 'insurance-policy';
 }
 
 const additionalConst = '/client/v1/';

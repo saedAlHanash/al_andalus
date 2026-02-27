@@ -10,6 +10,7 @@ class Assets {
   static const String iconsActiveStep = 'assets/icons/active_step.svg';
   static const String iconsAddToCart = 'assets/icons/add_to_cart.svg';
   static const String iconsAppBarBack = 'assets/icons/app_bar_back.svg';
+  static const String iconsArrpwDowne = 'assets/icons/arrpw_downe.svg';
   static const String iconsBack = 'assets/icons/back.svg';
   static const String iconsBottomSheetHeader = 'assets/icons/bottom_sheet_header.svg';
   static const String iconsBox = 'assets/icons/box.svg';
@@ -55,6 +56,7 @@ class Assets {
   static const String iconsUserSearch = 'assets/icons/user-search.svg';
   static const String iconsWhatsapp = 'assets/icons/whatsapp.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
+  static const String imagesCarImages = 'assets/images/car_images.png';
   static const String imagesCheck = 'assets/images/check.png';
   static const String imagesDone = 'assets/images/done.json';
   static const String imagesEmpty = 'assets/images/empty.png';

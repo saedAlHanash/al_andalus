@@ -4,9 +4,11 @@ import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../generated/assets.dart';
+import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
 
 class ItemInsurance extends StatelessWidget {
@@ -86,7 +88,9 @@ class ItemInsurance extends StatelessWidget {
                         20.verticalSpace,
                         MyButton(
                           onTap: () {
-                            showCalculationPrice(context, insurance);
+                            //TODO:
+                            context.pushNamed(RouteName.addCarPage);
+                            // showCalculationPrice(context, insurance);
                           },
                           height: 35.0.h,
                           text: 'معرفة المزيد',

@@ -118,8 +118,8 @@ class _EditPhonePageState extends State<EditPhonePage> {
                       ),
                     MyTextFormOutLineWidget(
                       validator: (p0) => p0.validateEmpty,
-                      label: S.of(context).enterNewPhoneNumber,
-                      hint: S.of(context).enterNewPhoneNumber,
+                      label: S.of(context).phoneNumber,
+                      hint: S.of(context).phoneNumber,
                       keyBordType: .phone,
                       onChanged: (val) => updateCubit.setPhone = val,
                     ),

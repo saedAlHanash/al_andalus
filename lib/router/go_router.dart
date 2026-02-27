@@ -27,6 +27,7 @@ import '../features/auth/ui/pages/reset_password_page.dart';
 import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
 
+import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
@@ -38,6 +39,8 @@ import '../features/profile/ui/pages/edit_phone_page.dart';
 import '../features/profile/ui/pages/edit_identity_info.dart';
 import '../features/profile/ui/pages/edit_driving_license.dart';
 import '../features/profile/ui/pages/profile_page.dart';
+import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
+import '../features/cars/ui/pages/cars_page.dart';
 
 final navigatorKey = sl<GlobalKey<NavigatorState>>();
 
@@ -242,6 +245,31 @@ final goRouter = GoRouter(
     ),
 
     //endregion
+
+    //region cars
+    GoRoute(
+      path: RouteName.addCarPage,
+      name: RouteName.addCarPage,
+      builder: (_, state) {
+        return BlocProvider(
+          create: (context) => sl<CarsCubit>(),
+          child: AddCarPage(),
+        );
+      },
+    ),
+
+    GoRoute(
+      path: RouteName.carsPage,
+      name: RouteName.carsPage,
+      builder: (_, state) {
+        return BlocProvider(
+          create: (context) => sl<CarsCubit>(),
+          child: const CarsPage(),
+        );
+      },
+    ),
+
+    //endregion
   ],
 );
 
@@ -288,4 +316,6 @@ class RouteName {
   static const editIdentityInfo = '/editIdentityInfo';
   static const editDrivingLicense = '/editDrivingLicense';
   static const insurancePage = '/insurancePage';
+  static const carsPage = '/carsPage';
+  static const addCarPage = '/addCarPage';
 }

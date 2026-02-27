@@ -51,10 +51,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "carColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
+    "carModel": MessageLookupByLibrary.simpleMessage("موديل السيارة"),
+    "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("تغيير الحساب"),
     "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير الرمز السري"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+    "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -66,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
+    "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "أقرّ بصحة جميع المعلومات والملفات المرفوعة من قبلي وأتحمل المسؤولية القانونية الكاملة عن أي بيانات غير صحيحة.",
@@ -91,8 +96,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
-    "enterNewPhoneNumber": MessageLookupByLibrary.simpleMessage(
-      "أدخل رقم الهاتف الجديد",
+    "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
+    "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
+    "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
+      "ادخل تاريخ الصلاحية",
     ),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التفعيل الخاص بك هنا.",
@@ -107,10 +114,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
+    "from": MessageLookupByLibrary.simpleMessage("من"),
+    "fuelType": MessageLookupByLibrary.simpleMessage("نوع الوقود"),
+    "gaz": MessageLookupByLibrary.simpleMessage("غاز"),
     "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
+    "hybrid": MessageLookupByLibrary.simpleMessage("هايبرد"),
     "iRememberedMyPassword": MessageLookupByLibrary.simpleMessage(
       "تذكرت كلمة المرور",
     ),
@@ -119,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "idCardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "info": MessageLookupByLibrary.simpleMessage("المعلومات"),
+    "intact": MessageLookupByLibrary.simpleMessage("سليم"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -138,6 +150,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageLoginPasscode": MessageLookupByLibrary.simpleMessage(
       "إدارة رمز المرور الخاص بتسجيل الدخول.",
     ),
+    "manageMyCars": MessageLookupByLibrary.simpleMessage(
+      "إدارة السيارات والوثائق الخاصة بك.",
+    ),
+    "managePhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "إدارة رقم الهاتف الخاص بك.",
+    ),
     "manageUnifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "إدارة بيانات البطاقة الموحدة الخاص بك.",
     ),
@@ -145,7 +163,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "إدارة رقم الهاتف الخاص بك.",
     ),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
+    "missing": MessageLookupByLibrary.simpleMessage("مفقود"),
     "month": MessageLookupByLibrary.simpleMessage("شهر"),
+    "myCars": MessageLookupByLibrary.simpleMessage("سياراتي"),
     "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "needLogin": MessageLookupByLibrary.simpleMessage("يحتاج تسجيل الدخول"),
@@ -170,9 +190,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "يوجد عملية تأكيد رقم قيد الانتظار",
     ),
     "personalData": MessageLookupByLibrary.simpleMessage("البيانات الشخصية"),
+    "petrol": MessageLookupByLibrary.simpleMessage("بنزين"),
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
+    "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
       "يرجى الموافقة على الإقرار",
     ),
@@ -221,7 +243,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الإصدار",
     ),
-    "policy": MessageLookupByLibrary.simpleMessage("سياسة الاستخدام والخصوصية"),
+    "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
+      "يرجى القيام برفع مستند الفحص (الهزة)",
+    ),
+    "policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "private": MessageLookupByLibrary.simpleMessage("خاص"),
@@ -249,10 +274,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "قم برفع تقرير فحص السيارة",
+    ),
+    "uploadInspectionReportTopic": MessageLookupByLibrary.simpleMessage(
+      "قم برفع تقرير فحص السيارة:",
+    ),
+    "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
+      "رفع الملف (ملف واحد فقط)",
+    ),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(

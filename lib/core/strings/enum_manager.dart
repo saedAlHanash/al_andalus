@@ -450,75 +450,213 @@ enum DataPageType {
   }
 }
 
-enum InsuranceTypeEnum {
+enum InsuranceType {
   private,
   public,
   ;
 
-  static InsuranceTypeEnum getByNameOrIndex(dynamic name) {
+  static InsuranceType getByNameOrIndex(dynamic name) {
     final i = int.tryParse(name.toString());
     if (i != null) {
-      return InsuranceTypeEnum.values[i];
+      return InsuranceType.values[i];
     }
     switch (name.toString().toLowerCase()) {
       case 'private':
-        return InsuranceTypeEnum.private;
+        return InsuranceType.private;
       case 'public':
-        return InsuranceTypeEnum.public;
+        return InsuranceType.public;
       default:
-        return InsuranceTypeEnum.private;
+        return InsuranceType.private;
     }
   }
 }
 
-enum InsuranceLevelEnum {
+enum InsuranceLevel {
   platinum,
   gold,
   silver,
   ;
 
-  static InsuranceLevelEnum getByNameOrIndex(dynamic name) {
+  static InsuranceLevel getByNameOrIndex(dynamic name) {
     final i = int.tryParse(name.toString());
     if (i != null) {
-      return InsuranceLevelEnum.values[i];
+      return InsuranceLevel.values[i];
     }
     switch (name.toString().toLowerCase()) {
       case 'silver':
-        return InsuranceLevelEnum.silver;
+        return InsuranceLevel.silver;
       case 'platinum':
-        return InsuranceLevelEnum.platinum;
+        return InsuranceLevel.platinum;
       case 'gold':
-        return InsuranceLevelEnum.gold;
+        return InsuranceLevel.gold;
       default:
-        return InsuranceLevelEnum.silver;
+        return InsuranceLevel.silver;
     }
   }
 
   Color get color {
     switch (this) {
-      case InsuranceLevelEnum.platinum:
+      case InsuranceLevel.platinum:
         return const Color(0xFFA0B2C6); // لون البلاتينيوم (رمادي فاتح جداً)
-      case InsuranceLevelEnum.gold:
+      case InsuranceLevel.gold:
         return const Color(0xFFE8C352); // اللون الذهبي
-      case InsuranceLevelEnum.silver:
+      case InsuranceLevel.silver:
         return const Color(0xFFC4C4C4); // اللون الفضي
     }
   }
 }
 
-enum PricingTypeEnum {
+enum PricingType {
   fixed,
   percent,
   ;
 
-  static PricingTypeEnum getByNameOrIndex(String name) {
+  static PricingType getByNameOrIndex(String name) {
     switch (name.toLowerCase()) {
       case 'fixed':
-        return PricingTypeEnum.fixed;
+        return PricingType.fixed;
       case 'percent':
-        return PricingTypeEnum.percent;
+        return PricingType.percent;
       default:
-        return PricingTypeEnum.fixed;
+        return PricingType.fixed;
+    }
+  }
+}
+
+enum FuelType {
+  petrol,
+  hybrid,
+  gaz,
+  ;
+
+  String get name {
+    switch (this) {
+      case FuelType.petrol:
+        return S().petrol;
+      case FuelType.hybrid:
+        return S().hybrid;
+      case FuelType.gaz:
+        return S().gaz;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case FuelType.petrol:
+        return 'petrol';
+      case FuelType.hybrid:
+        return 'hybrid';
+      case FuelType.gaz:
+        return 'gaz';
+    }
+  }
+
+  static FuelType getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return FuelType.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'petrol':
+        return FuelType.petrol;
+      case 'hybrid':
+        return FuelType.hybrid;
+      case 'gaz':
+        return FuelType.gaz;
+      default:
+        return FuelType.petrol;
+    }
+  }
+}
+
+enum InspectionStatus {
+  intact,
+  damage,
+  missing,
+  ;
+
+  String get name {
+    switch (this) {
+      case InspectionStatus.intact:
+        return S().intact;
+      case InspectionStatus.damage:
+        return S().damage;
+      case InspectionStatus.missing:
+        return S().missing;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case InspectionStatus.intact:
+        return 'intact';
+      case InspectionStatus.damage:
+        return 'damage';
+      case InspectionStatus.missing:
+        return 'missing';
+    }
+  }
+
+  static InspectionStatus getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return InspectionStatus.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'intact':
+        return InspectionStatus.intact;
+      case 'damage':
+        return InspectionStatus.damage;
+      case 'missing':
+        return InspectionStatus.missing;
+      default:
+        return InspectionStatus.intact;
+    }
+  }
+}
+
+enum CarStatus {
+  intact,
+  damage,
+  missing,
+  ;
+
+  String get name {
+    switch (this) {
+      case CarStatus.intact:
+        return S().intact;
+      case CarStatus.damage:
+        return S().damage;
+      case CarStatus.missing:
+        return S().missing;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case CarStatus.intact:
+        return 'intact';
+      case CarStatus.damage:
+        return 'damage';
+      case CarStatus.missing:
+        return 'missing';
+    }
+  }
+
+  static CarStatus getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return CarStatus.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'intact':
+        return CarStatus.intact;
+      case 'damage':
+        return CarStatus.damage;
+      case 'missing':
+        return CarStatus.missing;
+      default:
+        return CarStatus.intact;
     }
   }
 }
