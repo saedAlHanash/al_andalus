@@ -1274,6 +1274,246 @@ class S {
     return Intl.message('Enter', name: 'enter', desc: '', args: []);
   }
 
+  /// `Front`
+  String get front {
+    return Intl.message('Front', name: 'front', desc: '', args: []);
+  }
+
+  /// `Engine`
+  String get engine {
+    return Intl.message('Engine', name: 'engine', desc: '', args: []);
+  }
+
+  /// `Right`
+  String get right {
+    return Intl.message('Right', name: 'right', desc: '', args: []);
+  }
+
+  /// `Left`
+  String get left {
+    return Intl.message('Left', name: 'left', desc: '', args: []);
+  }
+
+  /// `Interior`
+  String get interior {
+    return Intl.message('Interior', name: 'interior', desc: '', args: []);
+  }
+
+  /// `Rear`
+  String get rear {
+    return Intl.message('Rear', name: 'rear', desc: '', args: []);
+  }
+
+  /// `Retake Image`
+  String get retakeImage {
+    return Intl.message(
+      'Retake Image',
+      name: 'retakeImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zain Cash`
+  String get zainCash {
+    return Intl.message('Zain Cash', name: 'zainCash', desc: '', args: []);
+  }
+
+  /// `Qi Card`
+  String get qiCard {
+    return Intl.message('Qi Card', name: 'qiCard', desc: '', args: []);
+  }
+
+  /// `Please upload inspection report`
+  String get pleaseUploadInspectionReport {
+    return Intl.message(
+      'Please upload inspection report',
+      name: 'pleaseUploadInspectionReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car name`
+  String get pleaseEnterCarName {
+    return Intl.message(
+      'Please enter car name',
+      name: 'pleaseEnterCarName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car color`
+  String get pleaseEnterCarColor {
+    return Intl.message(
+      'Please enter car color',
+      name: 'pleaseEnterCarColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car model`
+  String get pleaseEnterCarModel {
+    return Intl.message(
+      'Please enter car model',
+      name: 'pleaseEnterCarModel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter chassis number`
+  String get pleaseEnterChassisNumber {
+    return Intl.message(
+      'Please enter chassis number',
+      name: 'pleaseEnterChassisNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter plate number`
+  String get pleaseEnterPlateNumber {
+    return Intl.message(
+      'Please enter plate number',
+      name: 'pleaseEnterPlateNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter engine capacity`
+  String get pleaseEnterEngineCapacity {
+    return Intl.message(
+      'Please enter engine capacity',
+      name: 'pleaseEnterEngineCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select fuel type`
+  String get pleaseSelectFuelType {
+    return Intl.message(
+      'Please select fuel type',
+      name: 'pleaseSelectFuelType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select start date`
+  String get pleaseSelectStartDate {
+    return Intl.message(
+      'Please select start date',
+      name: 'pleaseSelectStartDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select end date`
+  String get pleaseSelectEndDate {
+    return Intl.message(
+      'Please select end date',
+      name: 'pleaseSelectEndDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach front ownership image`
+  String get pleaseUploadOwnershipFrontImage {
+    return Intl.message(
+      'Please attach front ownership image',
+      name: 'pleaseUploadOwnershipFrontImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach back ownership image`
+  String get pleaseUploadOwnershipBackImage {
+    return Intl.message(
+      'Please attach back ownership image',
+      name: 'pleaseUploadOwnershipBackImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a front image`
+  String get pleaseTakeFrontImage {
+    return Intl.message(
+      'Please take a front image',
+      name: 'pleaseTakeFrontImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take an engine image`
+  String get pleaseTakeEngineImage {
+    return Intl.message(
+      'Please take an engine image',
+      name: 'pleaseTakeEngineImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a right side image`
+  String get pleaseTakeRightSideImage {
+    return Intl.message(
+      'Please take a right side image',
+      name: 'pleaseTakeRightSideImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a left side image`
+  String get pleaseTakeLeftSideImage {
+    return Intl.message(
+      'Please take a left side image',
+      name: 'pleaseTakeLeftSideImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take an interior image`
+  String get pleaseTakeInteriorImage {
+    return Intl.message(
+      'Please take an interior image',
+      name: 'pleaseTakeInteriorImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a rear image`
+  String get pleaseTakeRearImage {
+    return Intl.message(
+      'Please take a rear image',
+      name: 'pleaseTakeRearImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select the status of all car parts`
+  String get pleaseCompleteAllInspectionFields {
+    return Intl.message(
+      'Please select the status of all car parts',
+      name: 'pleaseCompleteAllInspectionFields',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Your account has been successfully created. You will now be redirected to the home screen.`
   String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
     return Intl.message(

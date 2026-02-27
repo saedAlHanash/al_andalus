@@ -22,8 +22,6 @@ class CarsCubit extends MCubit<CarsInitial> {
   @override
   AbstractState get mState => state;
 
-
-
   //region getData
 
   void getDataFromCache() => getFromCache(
@@ -122,6 +120,92 @@ class CarsCubit extends MCubit<CarsInitial> {
       return;
     }
     emit(state.copyWith(step: state.step + 1));
+  }
+
+  void setImage(UploadFile value, ImageZone zone) {
+    switch (zone) {
+      case ImageZone.front:
+        final nameFiled = state.mRequest.frontImage.nameField;
+        state.mRequest.frontImage = value;
+        state.mRequest.frontImage.nameField = nameFiled;
+        break;
+      case ImageZone.engine:
+        final nameFiled = state.mRequest.backImage.nameField;
+        state.mRequest.backImage = value;
+        state.mRequest.backImage.nameField = nameFiled;
+        break;
+      case ImageZone.right:
+        final nameFiled = state.mRequest.rightSideImage.nameField;
+        state.mRequest.rightSideImage = value;
+        state.mRequest.rightSideImage.nameField = nameFiled;
+        break;
+      case ImageZone.left:
+        final nameFiled = state.mRequest.leftSideImage.nameField;
+        state.mRequest.leftSideImage = value;
+        state.mRequest.leftSideImage.nameField = nameFiled;
+        break;
+      case ImageZone.interior:
+        final nameFiled = state.mRequest.interiorImage.nameField;
+        state.mRequest.interiorImage = value;
+        state.mRequest.interiorImage.nameField = nameFiled;
+        break;
+      case ImageZone.rear:
+        final nameFiled = state.mRequest.engineImage.nameField;
+        state.mRequest.engineImage = value;
+        state.mRequest.engineImage.nameField = nameFiled;
+        break;
+    }
+
+    emit(state.copyWith(idNotifier: state.idNotifier + 1));
+  }
+
+  void removeImage(ImageZone zone) {
+    switch (zone) {
+      case ImageZone.front:
+        state.mRequest.frontImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+      case ImageZone.engine:
+        state.mRequest.backImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+      case ImageZone.right:
+        state.mRequest.rightSideImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+      case ImageZone.left:
+        state.mRequest.leftSideImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+      case ImageZone.interior:
+        state.mRequest.interiorImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+      case ImageZone.rear:
+        state.mRequest.engineImage
+          ..fileBytes = null
+          ..path = null
+          ..extension = null
+          ..fileType;
+        break;
+    }
+
+    emit(state.copyWith(idNotifier: state.idNotifier + 1));
   }
 
   Future<void> addOrUpdateCarToCache(CarPolicy item) async {

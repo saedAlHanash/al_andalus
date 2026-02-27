@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type_pakage.dart';
 
+import '../../../../../core/util/bottom_sheets.dart';
 import '../../../bloc/cars_cubit/cars_cubit.dart';
 
 class CarInspection extends StatefulWidget {

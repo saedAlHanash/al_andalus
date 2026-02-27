@@ -12,6 +12,7 @@ import 'package:image_multi_type/image_multi_type_pakage.dart';
 
 import '../../../../../core/strings/app_color_manager.dart';
 import '../../../../../core/strings/enum_manager.dart';
+import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../core/widgets/spinner_widget.dart';
 import '../../../../../generated/assets.dart';
 import '../../../bloc/cars_cubit/cars_cubit.dart';
@@ -48,6 +49,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
               hint: S.of(context).carName,
             ),
 
+
             Row(
               spacing: 15.0.w,
               mainAxisAlignment: .start,
@@ -66,6 +68,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.brand,
                     labelText: S.of(context).carModel,
                     hint: S.of(context).carModel,
+                    keyBordType: .number,
                   ),
                 ),
               ],
@@ -80,6 +83,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.chassisNumber,
                     labelText: S.of(context).chassisNumber,
                     hint: S.of(context).chassisNumber,
+                      keyBordType: .number,
                   ),
                 ),
                 Expanded(
@@ -88,6 +92,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.plateNumber,
                     labelText: S.of(context).plateNumber,
                     hint: S.of(context).plateNumber,
+                      keyBordType: .number,
                   ),
                 ),
               ],
@@ -103,6 +108,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.engineCapacity,
                     labelText: S.of(context).engineCapacity,
                     hint: S.of(context).engineCapacity,
+                    keyBordType: .number,
                   ),
                 ),
                 Expanded(

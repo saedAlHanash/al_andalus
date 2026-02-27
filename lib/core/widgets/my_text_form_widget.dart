@@ -110,7 +110,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
     }
 
     final border = OutlineInputBorder(
-      borderSide:  BorderSide(color: AppColorManager.cd),
+      borderSide: BorderSide(color: AppColorManager.cd),
       borderRadius: BorderRadius.circular(10.0.r),
     );
 
@@ -142,7 +142,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
       hintTextDirection: widget.textDirection,
       hintStyle: TextStyle(
         color: AppColorManager.grey,
-        fontSize: 14.0.sp,
+        fontSize: widget.enable == false ? 10.0.sp : 14.0.sp,
         fontFamily: FontManager.semeBold.name,
       ),
       filled: false,
@@ -186,7 +186,6 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
               textInputAction: widget.textInputAction,
               onFieldSubmitted: widget.onFieldSubmitted,
               keyboardType: widget.keyBordType,
-
             ),
           ],
         );

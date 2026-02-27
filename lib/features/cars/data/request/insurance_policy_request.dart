@@ -14,7 +14,7 @@ class InsurancePolicyRequest {
     this.plateNumber,
     this.fuelType,
     this.engineCapacity,
-    this.paymentType = "zain_cash",
+    this.paymentType = PaymentType.zainCash,
     this.expiryStartDate,
     this.expiryEndDate,
     // Inspection fields
@@ -62,7 +62,7 @@ class InsurancePolicyRequest {
   String? plateNumber;
   FuelType? fuelType;
   String? engineCapacity;
-  String? paymentType;
+  PaymentType? paymentType;
   DateTime? expiryStartDate;
   DateTime? expiryEndDate;
 
@@ -144,7 +144,7 @@ class InsurancePolicyRequest {
     'plate_number': plateNumber,
     'fuel_type': fuelType?.nameApi,
     'engine_capacity': engineCapacity,
-    'payment_type': paymentType,
+    'payment_type': paymentType?.nameApi,
     'expiry_start_date': _formatDate(expiryStartDate),
     'expiry_end_date': _formatDate(expiryEndDate),
 

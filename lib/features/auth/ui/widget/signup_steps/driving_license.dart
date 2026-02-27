@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type_pakage.dart';
 
 
+import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../generated/assets.dart';
 import '../../../bloc/signup_cubit/signup_cubit.dart';
 

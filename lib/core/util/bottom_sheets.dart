@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -15,8 +17,12 @@ import 'package:image_multi_type/image_multi_type.dart';
 import '../../../../core/app/app_widget.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/assets.dart';
+import '../../features/auth/ui/widget/uploade_utl.dart';
 import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
+import '../../generated/l10n.dart';
 import '../../router/go_router.dart';
+import '../api_manager/api_service.dart';
+import '../strings/enum_manager.dart';
 
 void showLanguageDialog(BuildContext context) {
   showModalBottomSheet(
@@ -276,6 +282,190 @@ void showAddNote(
                     10.0.verticalSpace,
                   ],
                 ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
+  showModalBottomSheet(
+    context: context,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _Header(),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(20.0).r,
+            child: Column(
+              children: [
+                ImageMultiType(
+                  url: Assets.imagesIdScan,
+                  height: 192.0.h,
+                ),
+                DrawableText(
+                  text:
+                  'تأكد أن النص واضح وقابل للقراءة '
+                      '\n\n'
+                      'يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات',
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+
+                10.0.verticalSpace,
+                MyButton(
+                  text: 'رفع من الملفات',
+                  icon: ImageMultiType(url: Icons.file_upload_outlined),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    pickAndUpload().then(
+                          (value) async {
+                        if (value == null || !context.mounted) return;
+                        final result = await showConfirmDialog(context, value);
+                        if (result == false) return;
+                        onConfirm.call(value);
+                      },
+                    );
+                  },
+                ),
+                10.0.verticalSpace,
+                MyButton(
+                  text: 'التقط صورة',
+                  icon: ImageMultiType(url: Icons.camera_alt_outlined),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    takePhoto().then(
+                          (value) async {
+                        if (value == null || !context.mounted) return;
+                        final result = await showConfirmDialog(context, value);
+                        if (result == false) return;
+                        onConfirm.call(value);
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
+  return await showDialog(
+    context: context,
+    builder: (ctx) {
+      return AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0).r),
+        title: Center(
+          child: DrawableText(
+            text: S.of(context).previewFile,
+            size: 18.0,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (file.fileType == FileType.image && file.fileBytes != null)
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10.0).r,
+                child: Image.memory(
+                  file.fileBytes!,
+                  height: 200.h,
+                  fit: BoxFit.cover,
+                ),
+              )
+            else
+              Column(
+                children: [
+                  Icon(Icons.insert_drive_file, size: 60.r, color: AppColorManager.mainColor),
+                  10.verticalSpace,
+                  DrawableText(
+                    text: (file.localId ?? '').split('/').last,
+                    size: 14.0,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            20.verticalSpace,
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    onPressed: () => Navigator.pop(ctx, false),
+                    child: DrawableText(text: S.of(context).cancel, color: Colors.white),
+                  ),
+                ),
+                10.horizontalSpace,
+                Expanded(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: AppColorManager.mainColor),
+                    onPressed: () {
+                      Navigator.pop(ctx, true);
+                    },
+                    child: DrawableText(text: S.of(context).confirm, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file,Function(bool reTake) onReTake) async {
+  return await showDialog<bool>(
+    context: context,
+    builder: (ctx) {
+      return BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+        child: Dialog(
+          backgroundColor: Colors.transparent,
+          insetPadding: EdgeInsets.symmetric(horizontal: 20.0).r,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Align(
+                alignment: AlignmentDirectional.topEnd,
+                child: InkWell(
+                  onTap: () => Navigator.pop(ctx),
+                  child: Container(
+                    padding: EdgeInsets.all(5.0).r,
+                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                    child: Icon(Icons.close, color: Colors.black, size: 24.r),
+                  ),
+                ),
+              ),
+              15.verticalSpace,
+              if (file.fileType == FileType.image && file.fileBytes != null)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0).r,
+                  child: Image.memory(file.fileBytes!, width: 1.sw, fit: BoxFit.contain),
+                ),
+              25.verticalSpace,
+              MyButton(
+                text: S.of(context).retakeImage,
+                onTap: () {
+                  Navigator.pop(ctx, true);
+                  onReTake.call(true);
+                },
+                color: Colors.white,
+                textColor: Colors.black,
+                radios: 15.0.r,
               ),
             ],
           ),

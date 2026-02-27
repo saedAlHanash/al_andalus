@@ -44,8 +44,8 @@ class MyStyle {
   ];
   static var allShadowDark = [
     BoxShadow(
-      color: AppColorManager.grey.withValues(alpha: 0.6),
-      blurRadius: 10.spMin,
+      color: Colors.blueAccent.withValues(alpha: 0.2),
+      blurRadius: 5.r,
     ),
   ];
 
@@ -75,10 +75,16 @@ class MyStyle {
     borderRadius: BorderRadius.circular(8.0.r),
   );
 
-  static var roundBox12 = BoxDecoration(
-    color: AppColorManager.white,
+  static BoxDecoration  roundBox12(Color color) => BoxDecoration(
+    color: color,
     borderRadius: BorderRadius.circular(12.0.r),
-    boxShadow: MyStyle.allShadowDark,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black12,
+        blurRadius: 5.r,
+        offset: Offset(0, 2),
+      ),
+    ],
   );
 
   static Widget loadingWidget({Color? color}) {

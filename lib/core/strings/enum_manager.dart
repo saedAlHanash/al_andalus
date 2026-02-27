@@ -660,3 +660,109 @@ enum CarStatus {
     }
   }
 }
+
+enum ImageZone {
+  front,
+  engine,
+  right,
+  left,
+  interior,
+  rear,
+  ;
+
+  String get name {
+    switch (this) {
+      case ImageZone.front:
+        return S().front;
+      case ImageZone.engine:
+        return S().engine;
+      case ImageZone.right:
+        return S().right;
+      case ImageZone.left:
+        return S().left;
+      case ImageZone.interior:
+        return S().interior;
+      case ImageZone.rear:
+        return S().rear;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case ImageZone.front:
+        return 'front';
+      case ImageZone.engine:
+        return 'engine';
+      case ImageZone.right:
+        return 'right';
+      case ImageZone.left:
+        return 'left';
+      case ImageZone.interior:
+        return 'interior';
+      case ImageZone.rear:
+        return 'rear';
+    }
+  }
+
+  static ImageZone getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return ImageZone.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'front':
+        return ImageZone.front;
+      case 'engine':
+        return ImageZone.engine;
+      case 'right':
+        return ImageZone.right;
+      case 'left':
+        return ImageZone.left;
+      case 'interior':
+        return ImageZone.interior;
+      case 'rear':
+        return ImageZone.rear;
+      default:
+        return ImageZone.front;
+    }
+  }
+}
+
+enum PaymentType {
+  zainCash,
+  qiCard,
+  ;
+
+  String get name {
+    switch (this) {
+      case PaymentType.zainCash:
+        return S().zainCash;
+      case PaymentType.qiCard:
+        return S().qiCard;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case PaymentType.zainCash:
+        return 'zain_cash';
+      case PaymentType.qiCard:
+        return 'qi_card';
+    }
+  }
+
+  static PaymentType getByNameOrIndex(dynamic name) {
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return PaymentType.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'zain_cash':
+        return PaymentType.zainCash;
+      case 'qi_card':
+        return PaymentType.qiCard;
+      default:
+        return PaymentType.zainCash;
+    }
+  }
+}

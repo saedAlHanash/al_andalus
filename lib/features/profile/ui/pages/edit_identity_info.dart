@@ -18,6 +18,7 @@ import 'package:image_multi_type/image_multi_type_pakage.dart';
 import 'package:image_multi_type/round_image_widget.dart';
 
 import '../../../../../generated/assets.dart';
+import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 
 class EditIdentityInfo extends StatefulWidget {

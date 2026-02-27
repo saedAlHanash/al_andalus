@@ -10,10 +10,12 @@ import 'package:go_router/go_router.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/cars_cubit/cars_cubit.dart';
+import '../widget/create_car_steps/add_car_validator.dart';
 import '../widget/create_car_steps/annual_info.dart';
 import '../widget/create_car_steps/car_images.dart';
 import '../widget/create_car_steps/car_inspection.dart';
 import '../widget/create_car_steps/car_preview.dart';
+import '../widget/create_car_steps/payment_screen.dart';
 
 class AddCarPage extends StatefulWidget {
   const AddCarPage({super.key});
@@ -44,11 +46,12 @@ class _AddCarPageState extends State<AddCarPage> {
                 onTap: () {
                   final request = state.mRequest;
 
-
-                  if (state.step >= 3) {
-
+                  if (state.step >= 4) {
                     return;
                   }
+
+                  if (!AddCarValidator.validateStep(context, state.step, request)) return;
+
                   context.read<CarsCubit>().next();
                 },
                 loading: state.loading,
@@ -65,7 +68,7 @@ class _AddCarPageState extends State<AddCarPage> {
                       final request = state.mRequest;
                       if (p0 > state.step) {
                         for (int i = state.step; i < p0; i++) {
-                          // if (!CreateCarValidator.validateStep(context, i, request)) return;
+                          if (!AddCarValidator.validateStep(context, i, request)) return;
                         }
                       }
                       context.read<CarsCubit>().next(step: p0);
@@ -105,6 +108,7 @@ class _AddCarPageState extends State<AddCarPage> {
                     1 => AnnualInfo(),
                     2 => CarPreview(),
                     3 => CarInspectionScreen(),
+                    4 => PaymentScreen(),
 
                     int() => SizedBox(),
                   },

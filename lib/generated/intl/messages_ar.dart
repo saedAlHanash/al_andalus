@@ -96,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "engine": MessageLookupByLibrary.simpleMessage("المحرك"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
     "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
@@ -115,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "from": MessageLookupByLibrary.simpleMessage("من"),
+    "front": MessageLookupByLibrary.simpleMessage("الأمام"),
     "fuelType": MessageLookupByLibrary.simpleMessage("نوع الوقود"),
     "gaz": MessageLookupByLibrary.simpleMessage("غاز"),
     "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
@@ -131,10 +133,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "idCardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "info": MessageLookupByLibrary.simpleMessage("المعلومات"),
     "intact": MessageLookupByLibrary.simpleMessage("سليم"),
+    "interior": MessageLookupByLibrary.simpleMessage("الداخل"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
+    "left": MessageLookupByLibrary.simpleMessage("اليسار"),
     "licenseType": MessageLookupByLibrary.simpleMessage("نوع الإجازة"),
     "logInToYourAccount": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول إلى حسابك",
@@ -213,8 +217,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseCheckPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى التأكد من رقم الهاتف. سيتم إرسال رمز للتحقق.",
     ),
+    "pleaseCompleteAllInspectionFields": MessageLookupByLibrary.simpleMessage(
+      "يرجى تحديد حالة جميع أجزاء المركبة",
+    ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال محل السكن",
+    ),
+    "pleaseEnterCarColor": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال لون المركبة",
+    ),
+    "pleaseEnterCarModel": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال موديل المركبة",
+    ),
+    "pleaseEnterCarName": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم المركبة",
+    ),
+    "pleaseEnterChassisNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم الشاصي",
+    ),
+    "pleaseEnterEngineCapacity": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال سعة المحرك",
     ),
     "pleaseEnterFullName": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال الاسم الرباعي",
@@ -231,11 +253,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
     ),
+    "pleaseEnterPlateNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم اللوحة",
+    ),
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الميلاد",
     ),
+    "pleaseSelectEndDate": MessageLookupByLibrary.simpleMessage(
+      "يرجى إختيار تاريخ النهاية",
+    ),
     "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الانتهاء",
+    ),
+    "pleaseSelectFuelType": MessageLookupByLibrary.simpleMessage(
+      "يرجى إختيار نوع الوقود",
     ),
     "pleaseSelectGender": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار الجنس",
@@ -243,8 +274,38 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الإصدار",
     ),
+    "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
+      "يرجى إختيار تاريخ البداية",
+    ),
+    "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة لمحرك السيارة",
+    ),
+    "pleaseTakeFrontImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة الجزء الأمامي",
+    ),
+    "pleaseTakeInteriorImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة للجزء الداخلي",
+    ),
+    "pleaseTakeLeftSideImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة للجانب الأيسر",
+    ),
+    "pleaseTakeRearImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة للجزء الخلفي",
+    ),
+    "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى التقاط صورة للجانب الأيمن",
+    ),
     "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
       "يرجى القيام برفع مستند الفحص (الهزة)",
+    ),
+    "pleaseUploadInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق تقرير الفحص",
+    ),
+    "pleaseUploadOwnershipBackImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة السنوية الخلفية",
+    ),
+    "pleaseUploadOwnershipFrontImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق صورة السنوية الأمامية",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
@@ -252,12 +313,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "private": MessageLookupByLibrary.simpleMessage("خاص"),
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
     "public": MessageLookupByLibrary.simpleMessage("عام"),
+    "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
+    "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "retakeImage": MessageLookupByLibrary.simpleMessage("إعادة التصوير"),
     "returned": MessageLookupByLibrary.simpleMessage("استعادة"),
+    "right": MessageLookupByLibrary.simpleMessage("اليمين"),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "savedSuccessfully": MessageLookupByLibrary.simpleMessage("تم الحفظ بنجاح"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
@@ -298,5 +363,6 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",
         ),
+    "zainCash": MessageLookupByLibrary.simpleMessage("زين كاش"),
   };
 }

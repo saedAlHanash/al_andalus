@@ -100,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "editPhone": MessageLookupByLibrary.simpleMessage("Edit Phone Number"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "engine": MessageLookupByLibrary.simpleMessage("Engine"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
     "enter": MessageLookupByLibrary.simpleMessage("Enter"),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
@@ -119,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "from": MessageLookupByLibrary.simpleMessage("From"),
+    "front": MessageLookupByLibrary.simpleMessage("Front"),
     "fuelType": MessageLookupByLibrary.simpleMessage("Fuel Type"),
     "gaz": MessageLookupByLibrary.simpleMessage("Gaz"),
     "gender": MessageLookupByLibrary.simpleMessage("Gender"),
@@ -135,10 +137,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "idCardNumber": MessageLookupByLibrary.simpleMessage("ID Card Number"),
     "info": MessageLookupByLibrary.simpleMessage("Info"),
     "intact": MessageLookupByLibrary.simpleMessage("Intact"),
+    "interior": MessageLookupByLibrary.simpleMessage("Interior"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "latest": MessageLookupByLibrary.simpleMessage("latest"),
+    "left": MessageLookupByLibrary.simpleMessage("Left"),
     "licenseType": MessageLookupByLibrary.simpleMessage("License Type"),
     "logInToYourAccount": MessageLookupByLibrary.simpleMessage(
       "Log in to your account",
@@ -219,8 +223,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseCheckPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Please check the phone number. A verification code will be sent.",
     ),
+    "pleaseCompleteAllInspectionFields": MessageLookupByLibrary.simpleMessage(
+      "Please select the status of all car parts",
+    ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "Please enter address",
+    ),
+    "pleaseEnterCarColor": MessageLookupByLibrary.simpleMessage(
+      "Please enter car color",
+    ),
+    "pleaseEnterCarModel": MessageLookupByLibrary.simpleMessage(
+      "Please enter car model",
+    ),
+    "pleaseEnterCarName": MessageLookupByLibrary.simpleMessage(
+      "Please enter car name",
+    ),
+    "pleaseEnterChassisNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter chassis number",
+    ),
+    "pleaseEnterEngineCapacity": MessageLookupByLibrary.simpleMessage(
+      "Please enter engine capacity",
     ),
     "pleaseEnterFullName": MessageLookupByLibrary.simpleMessage(
       "Please enter full name",
@@ -237,11 +259,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Please enter phone number",
     ),
+    "pleaseEnterPlateNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter plate number",
+    ),
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "Please select birthday",
     ),
+    "pleaseSelectEndDate": MessageLookupByLibrary.simpleMessage(
+      "Please select end date",
+    ),
     "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
       "Please select expiry date",
+    ),
+    "pleaseSelectFuelType": MessageLookupByLibrary.simpleMessage(
+      "Please select fuel type",
     ),
     "pleaseSelectGender": MessageLookupByLibrary.simpleMessage(
       "Please select gender",
@@ -249,8 +280,38 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "Please select issue date",
     ),
+    "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
+      "Please select start date",
+    ),
+    "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
+      "Please take an engine image",
+    ),
+    "pleaseTakeFrontImage": MessageLookupByLibrary.simpleMessage(
+      "Please take a front image",
+    ),
+    "pleaseTakeInteriorImage": MessageLookupByLibrary.simpleMessage(
+      "Please take an interior image",
+    ),
+    "pleaseTakeLeftSideImage": MessageLookupByLibrary.simpleMessage(
+      "Please take a left side image",
+    ),
+    "pleaseTakeRearImage": MessageLookupByLibrary.simpleMessage(
+      "Please take a rear image",
+    ),
+    "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
+      "Please take a right side image",
+    ),
     "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
       "Please upload the inspection document (Al-Haza)",
+    ),
+    "pleaseUploadInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "Please upload inspection report",
+    ),
+    "pleaseUploadOwnershipBackImage": MessageLookupByLibrary.simpleMessage(
+      "Please attach back ownership image",
+    ),
+    "pleaseUploadOwnershipFrontImage": MessageLookupByLibrary.simpleMessage(
+      "Please attach front ownership image",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("Policy"),
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
@@ -258,12 +319,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "private": MessageLookupByLibrary.simpleMessage("private"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "public": MessageLookupByLibrary.simpleMessage("public"),
+    "qiCard": MessageLookupByLibrary.simpleMessage("Qi Card"),
+    "rear": MessageLookupByLibrary.simpleMessage("Rear"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "Remember Password",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "retakeImage": MessageLookupByLibrary.simpleMessage("Retake Image"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
+    "right": MessageLookupByLibrary.simpleMessage("Right"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "savedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Saved successfully",
@@ -308,5 +373,6 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Your account has been successfully created. You will now be redirected to the home screen.",
         ),
+    "zainCash": MessageLookupByLibrary.simpleMessage("Zain Cash"),
   };
 }
