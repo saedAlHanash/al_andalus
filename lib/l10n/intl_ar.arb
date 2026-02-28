@@ -14,6 +14,7 @@
   "buildNumber": "رقم الإصدار",
   "cancel": "إلغاء",
   "cancelled": "ملغى",
+  "carInfo": "معلومات السيارة",
   "carColor": "لون السيارة",
   "carModel": "موديل السيارة",
   "carName": "اسم السيارة",
@@ -45,6 +46,7 @@
   "done_resend_code": "تم إعادة الإرسال",
   "drivingLicense": "رخصة القيادة",
   "drivingLicenseInfo": "معلومات إجازة السوق",
+  "cylinders": "عدد الاسطوانات",
   "editPhone": "تعديل رقم الهاتف",
   "email": "البريد الإلكتروني",
   "engineCapacity": "حجم المحرك",
@@ -280,5 +282,15 @@
   "rejectedByOperationStaff": "مرفوض من موظف العمليات",
   "acceptedBySurveyorStaff": "مقبول من المساح",
   "rejectedBySurveyorStaff": "مرفوض من المساح",
-  "fixed": "تم الإصلاح"
+  "fixed": "تم الإصلاح",
+  "packageCost": "تكلفة الباقة",
+  "insuranceStatus": "حالة التأمين",
+  "joined": "الإنضمام",
+  "validityUntil": "Validity until",
+  "annualCost": "Annual cost",
+  "renewalSubscription": "Renewal of subscription",
+  "viewInsuranceStatement": "View insurance statement",
+  "issuingAnInsuranceApplicationDocument": "Issuing an insurance application document",
+  "youWillBeAbleToChooseTheDesiredLanguageFor": "You will be able to choose the desired language for the document.",
+  "cancelTheDocument": "Cancel the document"
 }

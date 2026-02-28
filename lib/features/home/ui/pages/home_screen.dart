@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/strings/enum_manager.dart';
+import '../../../cars/ui/widget/list_cars.dart';
 import '../../../category/ui/widget/home_categories.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,11 +24,12 @@ class HomeScreen extends StatelessWidget {
           context.read<AdssCubit>().getData(newData: true);
         },
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0).r,
+          padding: EdgeInsets.symmetric(horizontal: 20.0).r,
           children: [
             HiWidget(),
             AddsSlider(type: AdsType.banner, height: 150.0),
             HowCanHelp(),
+            ListCars(),
             AddsSlider(type: AdsType.slider, height: 90.0),
           ],
         ),

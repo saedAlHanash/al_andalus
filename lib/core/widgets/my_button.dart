@@ -130,8 +130,8 @@ class OutLineButton extends StatelessWidget {
         DrawableText(
           text: toUpper ? text.toUpperCase() : text,
           color: textColor ?? AppColorManager.mainColor,
-          fontFamily: FontManager.bold.name,
-          size: 14.0.sp,
+
+          size: 13.0.sp,
           drawableEnd: loading
               ? SizedBox(
                   height: 15.0.r,
@@ -158,7 +158,7 @@ class OutLineButton extends StatelessWidget {
           elevation: WidgetStatePropertyAll(0),
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(radios ?? 8.0.r),
+              borderRadius: BorderRadius.circular(radios ?? 10.0.r),
               side: BorderSide(
                 color: AppColorManager.mainColor,
               ),

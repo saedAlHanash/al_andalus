@@ -169,6 +169,11 @@ class S {
     return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
   }
 
+  /// `Car Information`
+  String get carInfo {
+    return Intl.message('Car Information', name: 'carInfo', desc: '', args: []);
+  }
+
   /// `Car Color`
   String get carColor {
     return Intl.message('Car Color', name: 'carColor', desc: '', args: []);
@@ -404,6 +409,16 @@ class S {
     return Intl.message(
       'Driving License Info',
       name: 'drivingLicenseInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of cylinders`
+  String get cylinders {
+    return Intl.message(
+      'Number of cylinders',
+      name: 'cylinders',
       desc: '',
       args: [],
     );
@@ -2262,6 +2277,96 @@ class S {
   /// `Fixed`
   String get fixed {
     return Intl.message('Fixed', name: 'fixed', desc: '', args: []);
+  }
+
+  /// `Package cost`
+  String get packageCost {
+    return Intl.message(
+      'Package cost',
+      name: 'packageCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance Status`
+  String get insuranceStatus {
+    return Intl.message(
+      'Insurance Status',
+      name: 'insuranceStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Joined`
+  String get joined {
+    return Intl.message('Joined', name: 'joined', desc: '', args: []);
+  }
+
+  /// `Validity until`
+  String get validityUntil {
+    return Intl.message(
+      'Validity until',
+      name: 'validityUntil',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annual cost`
+  String get annualCost {
+    return Intl.message('Annual cost', name: 'annualCost', desc: '', args: []);
+  }
+
+  /// `Renewal of subscription`
+  String get renewalSubscription {
+    return Intl.message(
+      'Renewal of subscription',
+      name: 'renewalSubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View insurance statement`
+  String get viewInsuranceStatement {
+    return Intl.message(
+      'View insurance statement',
+      name: 'viewInsuranceStatement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issuing an insurance application document`
+  String get issuingAnInsuranceApplicationDocument {
+    return Intl.message(
+      'Issuing an insurance application document',
+      name: 'issuingAnInsuranceApplicationDocument',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will be able to choose the desired language for the document.`
+  String get youWillBeAbleToChooseTheDesiredLanguageFor {
+    return Intl.message(
+      'You will be able to choose the desired language for the document.',
+      name: 'youWillBeAbleToChooseTheDesiredLanguageFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel the document`
+  String get cancelTheDocument {
+    return Intl.message(
+      'Cancel the document',
+      name: 'cancelTheDocument',
+      desc: '',
+      args: [],
+    );
   }
 }
 

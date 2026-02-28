@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "and": MessageLookupByLibrary.simpleMessage("and"),
     "annual": MessageLookupByLibrary.simpleMessage("Annual"),
+    "annualCost": MessageLookupByLibrary.simpleMessage("Annual cost"),
     "annualPackageCost": MessageLookupByLibrary.simpleMessage(
       "Annual Package Cost",
     ),
@@ -72,9 +73,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "browseFiles": MessageLookupByLibrary.simpleMessage("Browse Files"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("Build Number"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
+      "Cancel the document",
+    ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "carColor": MessageLookupByLibrary.simpleMessage("Car Color"),
     "carImages": MessageLookupByLibrary.simpleMessage("Car Images"),
+    "carInfo": MessageLookupByLibrary.simpleMessage("Car Information"),
     "carModel": MessageLookupByLibrary.simpleMessage("Car Model"),
     "carName": MessageLookupByLibrary.simpleMessage("Car Name"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
@@ -101,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
       "Create a new account?",
     ),
+    "cylinders": MessageLookupByLibrary.simpleMessage("Number of cylinders"),
     "damage": MessageLookupByLibrary.simpleMessage("Damage"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
@@ -192,6 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "Insurance is easier for a better life",
     ),
+    "insuranceStatus": MessageLookupByLibrary.simpleMessage("Insurance Status"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "Insure your vehicle in minutes, view your policy and details directly from your account",
     ),
@@ -201,6 +208,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "interiorBody": MessageLookupByLibrary.simpleMessage("Interior Body"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),
+    "issuingAnInsuranceApplicationDocument":
+        MessageLookupByLibrary.simpleMessage(
+          "Issuing an insurance application document",
+        ),
+    "joined": MessageLookupByLibrary.simpleMessage("Joined"),
     "knowMore": MessageLookupByLibrary.simpleMessage("Know More"),
     "knowMoreDetails": MessageLookupByLibrary.simpleMessage(
       "Know more details",
@@ -264,6 +276,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
     "oops": MessageLookupByLibrary.simpleMessage("Oops!"),
     "ourService": MessageLookupByLibrary.simpleMessage("Our service"),
+    "packageCost": MessageLookupByLibrary.simpleMessage("Package cost"),
     "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -436,6 +449,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "Remember Password",
     ),
+    "renewalSubscription": MessageLookupByLibrary.simpleMessage(
+      "Renewal of subscription",
+    ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("Report Accident"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(
       "Compensation is easier now. Take a photo of the damage and submit your request immediately.\nWe will take care of the rest.",
@@ -519,10 +535,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
       "Upload file (one file only)",
     ),
+    "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),
     "verify": MessageLookupByLibrary.simpleMessage("verify"),
+    "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
+      "View insurance statement",
+    ),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "We sent the reset verification code to",
     ),
@@ -531,6 +551,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Windshield Wipers",
     ),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("Invalid phone number"),
+    "youWillBeAbleToChooseTheDesiredLanguageFor":
+        MessageLookupByLibrary.simpleMessage(
+          "You will be able to choose the desired language for the document.",
+        ),
     "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
         MessageLookupByLibrary.simpleMessage(
           "Your account has been successfully created. You will now be redirected to the home screen.",

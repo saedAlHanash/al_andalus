@@ -18,6 +18,7 @@ class Assets {
   static const String iconsCart = 'assets/icons/cart.svg';
   static const String iconsCartF = 'assets/icons/cart_f.svg';
   static const String iconsClipboardList = 'assets/icons/clipboard-list.svg';
+  static const String iconsCoins = 'assets/icons/coins.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
   static const String iconsDone = 'assets/icons/done.svg';
   static const String iconsDoneStep = 'assets/icons/done_step.svg';
@@ -26,6 +27,7 @@ class Assets {
   static const String iconsEmail = 'assets/icons/email.svg';
   static const String iconsEmpty = 'assets/icons/empty.svg';
   static const String iconsEmptyQuantity = 'assets/icons/empty_quantity.svg';
+  static const String iconsFile1 = 'assets/icons/file1.svg';
   static const String iconsFileList = 'assets/icons/file-list.svg';
   static const String iconsFolder = 'assets/icons/folder.svg';
   static const String iconsHeart = 'assets/icons/heart.svg';
@@ -45,12 +47,14 @@ class Assets {
   static const String iconsPersonF = 'assets/icons/person_f.svg';
   static const String iconsPhone = 'assets/icons/phone.svg';
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
+  static const String iconsPlate = 'assets/icons/plate.svg';
   static const String iconsProfileBack = 'assets/icons/profile_back.png';
   static const String iconsRadio = 'assets/icons/radio.svg';
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsSupport = 'assets/icons/support.png';
   static const String iconsSupportBorder = 'assets/icons/support_border.png';
+  static const String iconsTaxi = 'assets/icons/taxi.svg';
   static const String iconsTopCard = 'assets/icons/Top-Card.svg';
   static const String iconsTransport = 'assets/icons/transport.png';
   static const String iconsTrash = 'assets/icons/trash.svg';
@@ -64,6 +68,7 @@ class Assets {
   static const String imagesCheck = 'assets/images/check.png';
   static const String imagesDone = 'assets/images/done.json';
   static const String imagesEmpty = 'assets/images/empty.png';
+  static const String imagesFuel = 'assets/images/fuel.png';
   static const String imagesIdScan = 'assets/images/id_scan.png';
   static const String imagesIntro1 = 'assets/images/intro1.png';
   static const String imagesIntro2 = 'assets/images/intro2.png';
@@ -71,6 +76,7 @@ class Assets {
   static const String imagesJustLogo = 'assets/images/just_logo.jpg';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesLogoAuth = 'assets/images/logo_auth.png';
+  static const String imagesPistons = 'assets/images/pistons.png';
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';

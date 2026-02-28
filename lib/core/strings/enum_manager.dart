@@ -1,4 +1,6 @@
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:string_similarity/string_similarity.dart';
 
@@ -522,6 +524,17 @@ enum InsuranceLevel {
         return const Color(0xFFC4C4C4); // اللون الفضي
     }
   }
+
+  List<Color> get gradient {
+    switch (this) {
+      case InsuranceLevel.platinum:
+        return [const Color(0xFFA0B2C6), const Color(0xFFA0B2C6).withValues(alpha: 0.5)];
+      case InsuranceLevel.gold:
+        return [const Color(0xFFE8C352), const Color(0xFFE8C352).withValues(alpha: 0.5)];
+      case InsuranceLevel.silver:
+        return [const Color(0xFFC4C4C4), const Color(0xFFC4C4C4).withValues(alpha: 0.5)];
+    }
+  }
 }
 
 enum PricingType {
@@ -856,6 +869,41 @@ enum InsurancePolicyStatus {
       case InsurancePolicyStatus.resubscriptionPaymentPending:
         return 'resubscription_payment_pending';
     }
+  }
+
+  Color get color {
+    switch (this) {
+      case InsurancePolicyStatus.paymentPending:
+      case InsurancePolicyStatus.resubscriptionPaymentPending:
+        return Colors.orange;
+      case InsurancePolicyStatus.paid:
+      case InsurancePolicyStatus.approved:
+      case InsurancePolicyStatus.active:
+        return AppColorManager.greenPrice;
+      case InsurancePolicyStatus.missingInfo:
+      case InsurancePolicyStatus.rejected:
+      case InsurancePolicyStatus.expired:
+        return AppColorManager.red;
+      case InsurancePolicyStatus.resubmitted:
+        return AppColorManager.blue;
+      case InsurancePolicyStatus.draftPreparation:
+      case InsurancePolicyStatus.draft:
+      case InsurancePolicyStatus.cancelled:
+        return AppColorManager.grey;
+    }
+  }
+
+  Widget get statusWidget {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(color: color.withOpacity(0.5)),
+      ),
+      alignment: Alignment.center,
+      child: DrawableText(text: name, color: color, size: 14.sp),
+    );
   }
 
   static InsurancePolicyStatus getByNameOrIndex(dynamic name) {

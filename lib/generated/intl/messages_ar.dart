@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "and": MessageLookupByLibrary.simpleMessage("و"),
     "annual": MessageLookupByLibrary.simpleMessage("السنوية"),
+    "annualCost": MessageLookupByLibrary.simpleMessage("Annual cost"),
     "annualPackageCost": MessageLookupByLibrary.simpleMessage(
       "تكلفة الباقة السنوية",
     ),
@@ -74,9 +75,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "browseFiles": MessageLookupByLibrary.simpleMessage("تصفح الملفات"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
+      "Cancel the document",
+    ),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "carColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
     "carImages": MessageLookupByLibrary.simpleMessage("صور المركبة"),
+    "carInfo": MessageLookupByLibrary.simpleMessage("معلومات السيارة"),
     "carModel": MessageLookupByLibrary.simpleMessage("موديل السيارة"),
     "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
@@ -99,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد؟",
     ),
+    "cylinders": MessageLookupByLibrary.simpleMessage("عدد الاسطوانات"),
     "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
@@ -184,6 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "التامين اصبح اسهل لحياة أفضل",
     ),
+    "insuranceStatus": MessageLookupByLibrary.simpleMessage("حالة التأمين"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك",
     ),
@@ -193,6 +200,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "interiorBody": MessageLookupByLibrary.simpleMessage("الهيكل الداخلي"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
+    "issuingAnInsuranceApplicationDocument":
+        MessageLookupByLibrary.simpleMessage(
+          "Issuing an insurance application document",
+        ),
+    "joined": MessageLookupByLibrary.simpleMessage("الإنضمام"),
     "knowMore": MessageLookupByLibrary.simpleMessage("معرفة المزيد"),
     "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفه التفاصيل"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -252,6 +264,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
+    "packageCost": MessageLookupByLibrary.simpleMessage("تكلفة الباقة"),
     "paid": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -419,6 +432,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
     ),
+    "renewalSubscription": MessageLookupByLibrary.simpleMessage(
+      "Renewal of subscription",
+    ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("رفع حادث"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(
       "التعويض أسهل الآن.. صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي",
@@ -498,14 +514,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
       "رفع الملف (ملف واحد فقط)",
     ),
+    "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),
+    "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
+      "View insurance statement",
+    ),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "لقد أرسلنا رمز التحقق إلى",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
     "windshieldWipers": MessageLookupByLibrary.simpleMessage("ماسحات المطر"),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("رقم هاتف غير صحيح"),
+    "youWillBeAbleToChooseTheDesiredLanguageFor":
+        MessageLookupByLibrary.simpleMessage(
+          "You will be able to choose the desired language for the document.",
+        ),
     "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
         MessageLookupByLibrary.simpleMessage(
           "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",

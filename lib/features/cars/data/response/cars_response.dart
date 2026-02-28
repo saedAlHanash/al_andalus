@@ -1,33 +1,24 @@
-import 'package:al_andalus/core/strings/enum_manager.dart';
+import '../../../../core/strings/enum_manager.dart';
 
-import 'package:al_andalus/features/insurances/data/response/insurance_package.dart';
+class CarPolicies {
+  CarPolicies({
+    required this.data,
+  });
 
-class CarsResponse {
   final List<CarPolicy> data;
 
-  CarsResponse({required this.data});
-
-  factory CarsResponse.fromJson(Map<String, dynamic> json) {
-    return CarsResponse(
+  factory CarPolicies.fromJson(Map<String, dynamic> json) {
+    return CarPolicies(
       data: json["data"] == null ? [] : List<CarPolicy>.from(json["data"]!.map((x) => CarPolicy.fromJson(x))),
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    "data": data.map((x) => x.toJson()).toList(),
+  };
 }
 
 class CarPolicy {
-  final int id;
-  final bool hasTransferRequest;
-  final InsurancePackage insurancePackage;
-  final InsurancePolicyStatus status;
-  final String qrcode;
-  final double annualSubscriptionPrice;
-  final String startDate;
-  final String endDate;
-  final Vehicle vehicle;
-  final String policyFile;
-  final List<String> fieldsToBeRefilled;
-  final String created;
-
   CarPolicy({
     required this.id,
     required this.hasTransferRequest,
@@ -43,47 +34,83 @@ class CarPolicy {
     required this.created,
   });
 
+  final int id;
+  final bool hasTransferRequest;
+  final InsurancePackage insurancePackage;
+  final InsurancePolicyStatus status;
+  final String qrcode;
+  final num annualSubscriptionPrice;
+  final String startDate;
+  final String endDate;
+  final Vehicle vehicle;
+  final String policyFile;
+  final dynamic fieldsToBeRefilled;
+  final String created;
+
   factory CarPolicy.fromJson(Map<String, dynamic> json) {
     return CarPolicy(
-      id: int.tryParse(json["id"].toString()) ?? 0,
+      id: json["id"] ?? 0,
       hasTransferRequest: json["has_transfer_request"] ?? false,
       insurancePackage: InsurancePackage.fromJson(json["insurance_package"] ?? {}),
       status: InsurancePolicyStatus.getByNameOrIndex(json["status"]),
       qrcode: json["qrcode"] ?? "",
-      annualSubscriptionPrice: double.tryParse(json["annual_subscription_price"].toString()) ?? 0.0,
+      annualSubscriptionPrice: json["annual_subscription_price"] ?? 0,
       startDate: json["start_date"] ?? "",
       endDate: json["end_date"] ?? "",
       vehicle: Vehicle.fromJson(json["vehicle"] ?? {}),
       policyFile: json["policy_file"] ?? "",
-      fieldsToBeRefilled: json["fields_to_be_refilled"] == null
-          ? []
-          : List<String>.from(json["fields_to_be_refilled"]!.map((x) => x.toString())),
+      fieldsToBeRefilled: json["fields_to_be_refilled"],
       created: json["created"] ?? "",
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "has_transfer_request": hasTransferRequest,
+    "insurance_package": insurancePackage.toJson(),
+    "status": status.index,
+    "qrcode": qrcode,
+    "annual_subscription_price": annualSubscriptionPrice,
+    "start_date": startDate,
+    "end_date": endDate,
+    "vehicle": vehicle.toJson(),
+    "policy_file": policyFile,
+    "fields_to_be_refilled": fieldsToBeRefilled,
+    "created": created,
+  };
+}
+
+class InsurancePackage {
+  InsurancePackage({
+    required this.id,
+    required this.title,
+    required this.level,
+    required this.type,
+  });
+
+  final int id;
+  final String title;
+  final InsuranceLevel level;
+  final String type;
+
+  factory InsurancePackage.fromJson(Map<String, dynamic> json) {
+    return InsurancePackage(
+      id: json["id"] ?? 0,
+      title: json["title"] ?? "",
+      level: InsuranceLevel.getByNameOrIndex(json["level"]),
+      type: json["type"] ?? "",
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "title": title,
+    "level": level.index,
+    "type": type,
+  };
 }
 
 class Vehicle {
-  final int id;
-  final String name;
-  final String brand;
-  final String cylinders;
-  final String manufactureYear;
-  final String color;
-  final String chassisNumber;
-  final String plateNumber;
-  final FuelType fuelType;
-  final int engineCapacity;
-  final double value;
-  final String expiryStartDate;
-  final String expiryEndDate;
-  final String ownershipFrontImage;
-  final String ownershipBackImage;
-  final String inspectionReport;
-  final Inspection inspection;
-  final Attachment attachment;
-  final String created;
-
   Vehicle({
     required this.id,
     required this.name,
@@ -106,66 +133,120 @@ class Vehicle {
     required this.created,
   });
 
+  final int id;
+  final String name;
+  final String brand;
+  final String cylinders;
+  final String manufactureYear;
+  final String color;
+  final String chassisNumber;
+  final String plateNumber;
+  final FuelType fuelType;
+  final num engineCapacity;
+  final num value;
+  final String expiryStartDate;
+  final String expiryEndDate;
+  final String ownershipFrontImage;
+  final String ownershipBackImage;
+  final String inspectionReport;
+  final Inspection? inspection;
+  final Attachment? attachment;
+  final String created;
+
   factory Vehicle.fromJson(Map<String, dynamic> json) {
     return Vehicle(
-      id: int.tryParse(json["id"].toString()) ?? 0,
+      id: json["id"] ?? 0,
       name: json["name"] ?? "",
       brand: json["brand"] ?? "",
-      cylinders: json["cylinders"]?.toString() ?? "",
-      manufactureYear: json["manufacture_year"]?.toString() ?? "",
+      cylinders: json["cylinders"] ?? "",
+      manufactureYear: json["manufacture_year"] ?? "",
       color: json["color"] ?? "",
       chassisNumber: json["chassis_number"] ?? "",
       plateNumber: json["plate_number"] ?? "",
-      fuelType: FuelType.getByNameOrIndex(json["fuel_type"]),
-      engineCapacity: int.tryParse(json["engine_capacity"].toString()) ?? 0,
-      value: double.tryParse(json["value"].toString()) ?? 0.0,
+      fuelType: FuelType.getByNameOrIndex(json["fuel_type"] ?? ""),
+      engineCapacity: json["engine_capacity"] ?? 0,
+      value: json["value"] ?? 0,
       expiryStartDate: json["expiry_start_date"] ?? "",
       expiryEndDate: json["expiry_end_date"] ?? "",
       ownershipFrontImage: json["ownership_front_image"] ?? "",
       ownershipBackImage: json["ownership_back_image"] ?? "",
       inspectionReport: json["inspection_report"] ?? "",
-      inspection: Inspection.fromJson(json["inspection"] ?? {}),
-      attachment: Attachment.fromJson(json["attachment"] ?? {}),
+      inspection: json["inspection"] == null ? null : Inspection.fromJson(json["inspection"]),
+      attachment: json["attachment"] == null ? null : Attachment.fromJson(json["attachment"]),
       created: json["created"] ?? "",
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "brand": brand,
+    "cylinders": cylinders,
+    "manufacture_year": manufactureYear,
+    "color": color,
+    "chassis_number": chassisNumber,
+    "plate_number": plateNumber,
+    "fuel_type": fuelType.index,
+    "engine_capacity": engineCapacity,
+    "value": value,
+    "expiry_start_date": expiryStartDate,
+    "expiry_end_date": expiryEndDate,
+    "ownership_front_image": ownershipFrontImage,
+    "ownership_back_image": ownershipBackImage,
+    "inspection_report": inspectionReport,
+    "inspection": inspection?.toJson(),
+    "attachment": attachment?.toJson(),
+    "created": created,
+  };
+}
+
+class Attachment {
+  Attachment({
+    required this.id,
+    required this.frontImage,
+    required this.rightSideImage,
+    required this.leftSideImage,
+    required this.interiorImage,
+    required this.backImage,
+    required this.engineImage,
+    required this.created,
+  });
+
+  final int id;
+  final String frontImage;
+  final String rightSideImage;
+  final String leftSideImage;
+  final String interiorImage;
+  final String backImage;
+  final String engineImage;
+  final String created;
+
+  factory Attachment.fromJson(Map<String, dynamic> json) {
+    return Attachment(
+      id: json["id"] ?? 0,
+      frontImage: json["front_image"] ?? "",
+      rightSideImage: json["right_side_image"] ?? "",
+      leftSideImage: json["left_side_image"] ?? "",
+      interiorImage: json["interior_image"] ?? "",
+      backImage: json["back_image"] ?? "",
+      engineImage: json["engine_image"] ?? "",
+      created: json["created"] ?? "",
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "front_image": frontImage,
+    "right_side_image": rightSideImage,
+    "left_side_image": leftSideImage,
+    "interior_image": interiorImage,
+    "back_image": backImage,
+    "engine_image": engineImage,
+    "created": created,
+  };
 }
 
 class Inspection {
-  final int id;
-  final InspectionStatus metalBody;
-  final String metalBodyNote;
-  final InspectionStatus glassAndLamps;
-  final String glassAndLampsNote;
-  final InspectionStatus chromeNickel;
-  final String chromeNickelNote;
-  final InspectionStatus brandSign;
-  final String brandSignNote;
-  final InspectionStatus windshieldWipers;
-  final String windshieldWipersNote;
-  final InspectionStatus radioAntenna;
-  final String radioAntennaNote;
-  final InspectionStatus seats;
-  final String seatsNote;
-  final InspectionStatus floorCover;
-  final String floorCoverNote;
-  final InspectionStatus radio;
-  final String radioNote;
-  final InspectionStatus airConditioner;
-  final String airConditionerNote;
-  final InspectionStatus frontTires;
-  final String frontTiresNote;
-  final InspectionStatus backTires;
-  final String backTiresNote;
-  final InspectionStatus spareTire;
-  final String spareTireNote;
-  final InspectionStatus tiresCovers;
-  final String tiresCoversNote;
-  final InspectionStatus spareTools;
-  final String spareToolsNote;
-  final String otherNotes;
-  final String created;
-
   Inspection({
     required this.id,
     required this.metalBody,
@@ -202,76 +283,111 @@ class Inspection {
     required this.created,
   });
 
+  final int id;
+  final String metalBody;
+  final String metalBodyNote;
+  final String glassAndLamps;
+  final String glassAndLampsNote;
+  final String chromeNickel;
+  final String chromeNickelNote;
+  final String brandSign;
+  final String brandSignNote;
+  final String windshieldWipers;
+  final String windshieldWipersNote;
+  final String radioAntenna;
+  final String radioAntennaNote;
+  final String seats;
+  final String seatsNote;
+  final String floorCover;
+  final String floorCoverNote;
+  final String radio;
+  final String radioNote;
+  final String airConditioner;
+  final String airConditionerNote;
+  final String frontTires;
+  final String frontTiresNote;
+  final String backTires;
+  final String backTiresNote;
+  final String spareTire;
+  final String spareTireNote;
+  final String tiresCovers;
+  final String tiresCoversNote;
+  final String spareTools;
+  final String spareToolsNote;
+  final String otherNotes;
+  final String created;
+
   factory Inspection.fromJson(Map<String, dynamic> json) {
     return Inspection(
-      id: int.tryParse(json["id"].toString()) ?? 0,
-      metalBody: InspectionStatus.getByNameOrIndex(json["metal_body"]),
+      id: json["id"] ?? 0,
+      metalBody: json["metal_body"] ?? "",
       metalBodyNote: json["metal_body_note"] ?? "",
-      glassAndLamps: InspectionStatus.getByNameOrIndex(json["glass_and_lamps"]),
+      glassAndLamps: json["glass_and_lamps"] ?? "",
       glassAndLampsNote: json["glass_and_lamps_note"] ?? "",
-      chromeNickel: InspectionStatus.getByNameOrIndex(json["chrome_nickel"]),
+      chromeNickel: json["chrome_nickel"] ?? "",
       chromeNickelNote: json["chrome_nickel_note"] ?? "",
-      brandSign: InspectionStatus.getByNameOrIndex(json["brand_sign"]),
+      brandSign: json["brand_sign"] ?? "",
       brandSignNote: json["brand_sign_note"] ?? "",
-      windshieldWipers: InspectionStatus.getByNameOrIndex(json["windshield_wipers"]),
+      windshieldWipers: json["windshield_wipers"] ?? "",
       windshieldWipersNote: json["windshield_wipers_note"] ?? "",
-      radioAntenna: InspectionStatus.getByNameOrIndex(json["radio_antenna"]),
+      radioAntenna: json["radio_antenna"] ?? "",
       radioAntennaNote: json["radio_antenna_note"] ?? "",
-      seats: InspectionStatus.getByNameOrIndex(json["seats"]),
+      seats: json["seats"] ?? "",
       seatsNote: json["seats_note"] ?? "",
-      floorCover: InspectionStatus.getByNameOrIndex(json["floor_cover"]),
+      floorCover: json["floor_cover"] ?? "",
       floorCoverNote: json["floor_cover_note"] ?? "",
-      radio: InspectionStatus.getByNameOrIndex(json["radio"]),
+      radio: json["radio"] ?? "",
       radioNote: json["radio_note"] ?? "",
-      airConditioner: InspectionStatus.getByNameOrIndex(json["air_conditioner"]),
+      airConditioner: json["air_conditioner"] ?? "",
       airConditionerNote: json["air_conditioner_note"] ?? "",
-      frontTires: InspectionStatus.getByNameOrIndex(json["front_tires"]),
+      frontTires: json["front_tires"] ?? "",
       frontTiresNote: json["front_tires_note"] ?? "",
-      backTires: InspectionStatus.getByNameOrIndex(json["back_tires"]),
+      backTires: json["back_tires"] ?? "",
       backTiresNote: json["back_tires_note"] ?? "",
-      spareTire: InspectionStatus.getByNameOrIndex(json["spare_tire"]),
+      spareTire: json["spare_tire"] ?? "",
       spareTireNote: json["spare_tire_note"] ?? "",
-      tiresCovers: InspectionStatus.getByNameOrIndex(json["tires_covers"]),
+      tiresCovers: json["tires_covers"] ?? "",
       tiresCoversNote: json["tires_covers_note"] ?? "",
-      spareTools: InspectionStatus.getByNameOrIndex(json["spare_tools"]),
+      spareTools: json["spare_tools"] ?? "",
       spareToolsNote: json["spare_tools_note"] ?? "",
       otherNotes: json["other_notes"] ?? "",
       created: json["created"] ?? "",
     );
   }
-}
 
-class Attachment {
-  final int id;
-  final String frontImage;
-  final String rightSideImage;
-  final String leftSideImage;
-  final String interiorImage;
-  final String backImage;
-  final String engineImage;
-  final String created;
-
-  Attachment({
-    required this.id,
-    required this.frontImage,
-    required this.rightSideImage,
-    required this.leftSideImage,
-    required this.interiorImage,
-    required this.backImage,
-    required this.engineImage,
-    required this.created,
-  });
-
-  factory Attachment.fromJson(Map<String, dynamic> json) {
-    return Attachment(
-      id: int.tryParse(json["id"].toString()) ?? 0,
-      frontImage: json["front_image"] ?? "",
-      rightSideImage: json["right_side_image"] ?? "",
-      leftSideImage: json["left_side_image"] ?? "",
-      interiorImage: json["interior_image"] ?? "",
-      backImage: json["back_image"] ?? "",
-      engineImage: json["engine_image"] ?? "",
-      created: json["created"] ?? "",
-    );
-  }
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "metal_body": metalBody,
+    "metal_body_note": metalBodyNote,
+    "glass_and_lamps": glassAndLamps,
+    "glass_and_lamps_note": glassAndLampsNote,
+    "chrome_nickel": chromeNickel,
+    "chrome_nickel_note": chromeNickelNote,
+    "brand_sign": brandSign,
+    "brand_sign_note": brandSignNote,
+    "windshield_wipers": windshieldWipers,
+    "windshield_wipers_note": windshieldWipersNote,
+    "radio_antenna": radioAntenna,
+    "radio_antenna_note": radioAntennaNote,
+    "seats": seats,
+    "seats_note": seatsNote,
+    "floor_cover": floorCover,
+    "floor_cover_note": floorCoverNote,
+    "radio": radio,
+    "radio_note": radioNote,
+    "air_conditioner": airConditioner,
+    "air_conditioner_note": airConditionerNote,
+    "front_tires": frontTires,
+    "front_tires_note": frontTiresNote,
+    "back_tires": backTires,
+    "back_tires_note": backTiresNote,
+    "spare_tire": spareTire,
+    "spare_tire_note": spareTireNote,
+    "tires_covers": tiresCovers,
+    "tires_covers_note": tiresCoversNote,
+    "spare_tools": spareTools,
+    "spare_tools_note": spareToolsNote,
+    "other_notes": otherNotes,
+    "created": created,
+  };
 }

@@ -14,6 +14,7 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
 
+import '../../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
@@ -109,6 +110,7 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(create: (_) => sl<CategoriesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<InsurancesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),
+
                 BlocProvider(create: (_) => sl<SupportInfoCubit>()..getData(), lazy: false),
               ],
               child: MediaQuery(

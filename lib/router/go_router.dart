@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/injection/injection_container.dart';
-
 import '../core/strings/enum_manager.dart';
 import '../core/widgets/pdf_viewer_page.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
@@ -29,22 +27,23 @@ import '../features/auth/ui/pages/otp_password_page.dart';
 import '../features/auth/ui/pages/reset_password_page.dart';
 import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
-
+import '../features/cars/bloc/car_cubit/car_cubit.dart';
+import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../features/cars/ui/pages/add_car_page.dart';
+import '../features/cars/ui/pages/car_page.dart';
+import '../features/cars/ui/pages/cars_page.dart';
+import '../features/cars/data/response/cars_response.dart';
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
-import '../features/insurances/data/response/insurance_package.dart';
 import '../features/insurances/ui/pages/insurance_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
-import '../features/profile/ui/pages/edit_phone_page.dart';
-import '../features/profile/ui/pages/edit_identity_info.dart';
 import '../features/profile/ui/pages/edit_driving_license.dart';
+import '../features/profile/ui/pages/edit_identity_info.dart';
+import '../features/profile/ui/pages/edit_phone_page.dart';
 import '../features/profile/ui/pages/profile_page.dart';
-import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
-import '../features/cars/ui/pages/cars_page.dart';
 
 final navigatorKey = sl<GlobalKey<NavigatorState>>();
 
@@ -155,8 +154,11 @@ final goRouter = GoRouter(
       path: RouteName.home,
       name: RouteName.home,
       builder: (_, state) {
-        return BlocProvider(
-          create: (_) => sl<AdsCubit>()..getData(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => sl<AdsCubit>()..getData()),
+            BlocProvider(create: (_) => sl<CarsCubit>()..getData()),
+          ],
           child: Homepage(),
         );
       },
@@ -282,6 +284,20 @@ final goRouter = GoRouter(
       },
     ),
 
+    GoRoute(
+      path: RouteName.carPage,
+      name: RouteName.carPage,
+      builder: (_, state) {
+        final id = state.uri.queryParameters['id'] ?? '';
+        ;
+        return BlocProvider(
+          create: (context) => sl<CarCubit>()..getData(id: id),
+          child: const CarPage(),
+        );
+
+      },
+    ),
+
     //endregion
     GoRoute(
       path: RouteName.pdf,
@@ -338,5 +354,6 @@ class RouteName {
   static const editDrivingLicense = '/editDrivingLicense';
   static const insurancePage = '/insurancePage';
   static const carsPage = '/carsPage';
+  static const carPage = '/carPage';
   static const addCarPage = '/addCarPage';
 }

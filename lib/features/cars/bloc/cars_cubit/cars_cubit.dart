@@ -48,7 +48,7 @@ class CarsCubit extends MCubit<CarsInitial> {
     );
 
     if (response.statusCode.success) {
-      return Pair(CarsResponse.fromJson(response.jsonBody).data, null);
+      return Pair(CarPolicies.fromJson(response.jsonBody).data, null);
     } else {
       return response.getPairError;
     }
