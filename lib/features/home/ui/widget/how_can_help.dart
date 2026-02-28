@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../generated/assets.dart';
+import '../../../../generated/l10n.dart';
 
 class HowCanHelp extends StatelessWidget {
   const HowCanHelp({super.key});
@@ -21,7 +22,7 @@ class HowCanHelp extends StatelessWidget {
             child: _Item(
               height: 160.0,
               color: const Color(0x66F09D21),
-              title: 'رفع حادث',
+              title: S.of(context).reportAccident,
               image: ImageMultiType(
                 height: 120.0.r,
                 width: 120.0.r,
@@ -39,7 +40,7 @@ class HowCanHelp extends StatelessWidget {
                   Expanded(
                     child: _Item(
                       color: const Color(0xFFE4E4E5),
-                      title: 'نقل ملكية',
+                      title: S.of(context).transferOwnership,
                       image: ImageMultiType(
                         height: 70.0.r,
                         width: 70.0.r,
@@ -50,7 +51,7 @@ class HowCanHelp extends StatelessWidget {
                   Expanded(
                     child: _Item(
                       color: const Color(0xFFFFEAD4),
-                      title: 'إضافة سيارة جديدة',
+                      title: S.of(context).addNewCar,
                       image: Transform.scale(
                         scale: 1.8,
                         child: ImageMultiType(

@@ -13,6 +13,7 @@ import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/refresh_widget/refresh_widget.dart';
 import '../../../../generated/assets.dart';
+import '../../../../generated/l10n.dart';
 import '../../bloc/insurance_cubit/insurance_cubit.dart';
 
 class InsurancePage extends StatelessWidget {
@@ -49,7 +50,7 @@ class InsurancePage extends StatelessWidget {
               padding: EdgeInsetsGeometry.all(20.0),
               child: MyButton(
                 onTap: () {},
-                text: 'اشترك الان',
+                text: S.of(context).subscribeNow,
               ),
             ),
             body: BlocBuilder<InsuranceCubit, InsuranceInitial>(
@@ -87,11 +88,9 @@ class InsurancePage extends StatelessWidget {
                                   }).toList()..addAll([
                                     Spacer(),
                                     TextButton(
-                                      onPressed: () {
-
-                                      },
+                                      onPressed: () {},
                                       child: DrawableText(
-                                        text: 'معرفه التفاصيل ',
+                                        text: S.of(context).knowMoreDetails,
                                         textDecoration: .underline,
                                       ),
                                     ),
@@ -164,13 +163,13 @@ class _Top extends StatelessWidget {
                       color: Colors.white,
                       size: 32.0.sp,
                       drawableEnd: DrawableText(
-                        text: '/سنويا',
+                        text: '/${S.of(context).annually}',
                         color: Colors.white,
                       ),
                     ),
                     Spacer(),
                     DrawableText(
-                      text: 'المميزات',
+                      text: S.of(context).features,
 
                       size: 18.0.sp,
                     ),
@@ -184,4 +183,3 @@ class _Top extends StatelessWidget {
     );
   }
 }
-

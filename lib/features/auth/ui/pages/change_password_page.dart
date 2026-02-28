@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
@@ -29,24 +28,18 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     return BlocListener<ChangePasswordCubit, ChangePasswordInitial>(
       listenWhen: (p, c) => c.statuses == CubitStatuses.done,
       listener: (context, state) {
-        NoteMessage.showDoneDialog(
-          context,
-          text: 'تم تغيير كلمة المرور بنجاح',
-          onCancel: () {
-            context.pop();
-          },
-        );
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(S.of(context).passwordChangedSuccessfully)));
+        context.pop();
       },
       child: Scaffold(
-        appBar: const AppBarWidget(
-          titleText: 'تغيير كلمة المرور',
-        ),
+        appBar: AppBarWidget(titleText: S.of(context).changePasscode),
         body: Padding(
           padding: const EdgeInsets.all(20.0).r,
           child: Column(
             children: [
-              const DrawableText(
-                text: 'يرجى إدخال كلمة المرور القديمة والجديدة',
+              DrawableText(
+                text: S.of(context).pleaseEnterOldAndNewPassword,
+                color: Colors.grey,
                 matchParent: true,
                 textAlign: TextAlign.center,
               ),
@@ -54,14 +47,14 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               MyTextFormOutLineWidget(
                 textDirection: TextDirection.ltr,
                 keyBordType: TextInputType.visiblePassword,
-                label: 'كلمة المرور القديمة',
+                label: S.of(context).oldPassword,
                 onChanged: (val) => request.oldPass = val,
               ),
               20.0.verticalSpace,
               MyTextFormOutLineWidget(
                 textDirection: TextDirection.ltr,
                 keyBordType: TextInputType.visiblePassword,
-                label: 'كلمة المرور الجديدة',
+                label: S.of(context).newPassword,
                 onChanged: (val) => request.newPass = val,
               ),
               const Spacer(),

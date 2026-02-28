@@ -7,9 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:m_cubit/m_cubit.dart';
 
+import '../../../../../generated/assets.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/strings/enum_manager.dart';
-import '../../../../generated/assets.dart';
-import '../../../../generated/l10n.dart';
 import '../../data/generic_car_internal_option.dart';
 
 class GenericCarExternalWidget extends StatefulWidget {
@@ -92,7 +92,7 @@ class _GenericCarExternalWidgetState extends State<GenericCarExternalWidget> {
                           ),
                           Expanded(
                             child: DrawableText(
-                              text: 'تفاصيل؟',
+                              text: S.of(context).detailsQuestion,
                               textAlign: .center,
                               size: 12.sp,
                             ),

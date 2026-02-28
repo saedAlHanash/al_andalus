@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../generated/assets.dart';
+import '../../../../generated/l10n.dart'; // Added this import
 import '../widget/intro_card_widget.dart';
 
 class IntroPage extends StatefulWidget {
@@ -20,21 +21,21 @@ class _IntroPageState extends State<IntroPage> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
-  final List<IntroPageModel> _pages = [
+  List<IntroPageModel> get _pages => [
     IntroPageModel(
       image: Assets.imagesIntro1, // ضع صورتك هنا
-      title: 'الإبلاغ عن حادث',
-      description: 'التعويض أسهل الآن.. صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي',
+      title: S.of(context).reportAccidentIntroTitle,
+      description: S.of(context).reportAccidentIntroDesc,
     ),
     IntroPageModel(
       image: Assets.imagesIntro2, // ضع صورتك هنا
-      title: 'نقل ملكية وثيقة التأمين',
-      description: 'نقل ملكية وثيقة التأمين بسهولة إلى مستخدم آخر عن طريق رمز ال QR',
+      title: S.of(context).transferOwnershipIntroTitle,
+      description: S.of(context).transferOwnershipIntroDesc,
     ),
     IntroPageModel(
       image: Assets.imagesIntro3, // ضع صورتك هنا
-      title: 'تأمين سيارة',
-      description: 'أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك',
+      title: S.of(context).insureCarIntroTitle,
+      description: S.of(context).insureCarIntroDesc,
     ),
   ];
 
@@ -104,7 +105,7 @@ class _IntroPageState extends State<IntroPage> {
                   children: [
                     TextButton(
                       onPressed: _finishIntro,
-                      child: DrawableText(text: 'تخطي', color: AppColorManager.grey, size: 16.0.sp),
+                      child: DrawableText(text: S.of(context).skip, color: AppColorManager.grey, size: 16.0.sp),
                     ),
                     // Page Indicators
                     Row(children: List.generate(_pages.length, (index) => _buildPageIndicator(index))),
@@ -112,7 +113,7 @@ class _IntroPageState extends State<IntroPage> {
                     // Next Button
                     TextButton(
                       onPressed: _nextPage,
-                      child: DrawableText(text: 'التالي', color: AppColorManager.black, size: 16.0.sp),
+                      child: DrawableText(text: S.of(context).next, color: AppColorManager.black, size: 16.0.sp),
                     ),
                   ],
                 ),

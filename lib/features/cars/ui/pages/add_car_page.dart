@@ -75,27 +75,27 @@ class _AddCarPageState extends State<AddCarPage> {
                     },
                     steps: [
                       customStepWidget(
-                        title: 'الفحص',
+                        title: S.of(context).inspection,
                         isCompleted: state.step > 0,
                         isSelected: state.step == 0,
                       ),
                       customStepWidget(
-                        title: 'السنوية',
+                        title: S.of(context).annual,
                         isCompleted: state.step > 1,
                         isSelected: state.step == 1,
                       ),
                       customStepWidget(
-                        title: 'المعاينة',
+                        title: S.of(context).preview,
                         isCompleted: state.step > 2,
                         isSelected: state.step == 2,
                       ),
                       customStepWidget(
-                        title: 'صور المركبة',
+                        title: S.of(context).carImages,
                         isCompleted: state.step > 3,
                         isSelected: state.step == 3,
                       ),
                       customStepWidget(
-                        title: 'الدفع',
+                        title: S.of(context).payment,
                         isCompleted: state.step > 3,
                         isSelected: state.step == 3,
                       ),

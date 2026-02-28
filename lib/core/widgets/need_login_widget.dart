@@ -1,11 +1,10 @@
-import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/round_image_widget.dart';
-
+import 'package:go_router/go_router.dart';
+import 'package:drawable_text/drawable_text.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 import '../../router/go_router.dart';
 import '../strings/enum_manager.dart';
 import 'my_button.dart';
@@ -25,7 +24,7 @@ class NeedLoginWidget extends StatelessWidget {
               RoundImageWidget(url: Assets.imagesLogo, height: 200.0.r, width: 200.0.r),
               20.0.verticalSpace,
               DrawableText(
-                text: 'تحتاج لتسجيل الدخول للمتابعة',
+                text: S.of(context).needLoginToContinue,
                 size: 20.0.sp,
                 textAlign: TextAlign.center,
                 fontFamily: FontManager.bold.name,

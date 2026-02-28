@@ -16,6 +16,7 @@ import '../../../../core/widgets/my_button.dart';
 import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../core/widgets/not_found_widget.dart';
 import '../../../../generated/assets.dart';
+import '../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/all_notification_cubit/all_notification_cubit.dart';
@@ -148,10 +149,10 @@ class _NotificationPageState extends State<NotificationPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const DrawableText(text: 'يرجى تسجيل الدخول للمتابعة'),
+                  DrawableText(text: S.of(context).pleaseLoginToContinue),
                   20.0.verticalSpace,
                   MyButton(
-                    text: 'تسجيل الدخول',
+                    text: S.of(context).login,
                     onTap: () {
                       context.goNamed(RouteName.login);
                     },

@@ -8,7 +8,7 @@ import 'package:image_multi_type/image_multi_type.dart';
 import '../../../../../core/strings/enum_manager.dart';
 import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../generated/assets.dart';
-import '../../../../auth/ui/widget/uploade_utl.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../bloc/cars_cubit/cars_cubit.dart';
 
 class CarInspectionScreen extends StatelessWidget {
@@ -41,7 +41,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 2. Front Hotspot (الجزء الأمامي)
                     _buildHotspot(
-                      label: "الجزء الأمامي",
+                      label: S.of(context).front,
                       top: height * 0.10,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .front, state.mRequest.frontImage),
@@ -50,7 +50,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 3. Engine Hotspot (محرك السيارة)
                     _buildHotspot(
-                      label: "محرك السيارة",
+                      label: S.of(context).engine,
                       top: height * 0.20,
                       left: width * 0.75,
                       onTap: () => _handleCapture(context, .engine, state.mRequest.backImage),
@@ -59,7 +59,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 4. Right Side Hotspot (الجانب الأيمن)
                     _buildHotspot(
-                      label: "الجانب الأيمن",
+                      label: S.of(context).right,
                       top: height * 0.40,
                       left: width * 0.77,
                       onTap: () => _handleCapture(context, .right, state.mRequest.rightSideImage),
@@ -68,7 +68,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 5. Left Side Hotspot (الجانب الأيسر)
                     _buildHotspot(
-                      label: "الجانب الأيسر",
+                      label: S.of(context).left,
                       top: height * 0.39,
                       left: width * 0.22,
                       onTap: () => _handleCapture(context, .left, state.mRequest.leftSideImage),
@@ -77,7 +77,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 6. Interior Hotspot (الجزء الداخلي - بالمنتصف)
                     _buildHotspot(
-                      label: "الجزء الداخلي",
+                      label: S.of(context).interior,
                       top: height * 0.55,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .interior, state.mRequest.interiorImage),
@@ -86,7 +86,7 @@ class CarInspectionScreen extends StatelessWidget {
 
                     // 7. Rear Hotspot (الجزء الخلفي)
                     _buildHotspot(
-                      label: "الجزء الخلفي",
+                      label: S.of(context).rear,
                       top: height * 0.95,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .rear, state.mRequest.engineImage),

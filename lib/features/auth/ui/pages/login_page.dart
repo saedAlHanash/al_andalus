@@ -111,8 +111,8 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           Spacer(),
                           DrawableText(
-                            text: 'تذكرني',
-                            color: Colors.grey,
+                            text: S.of(context).rememberMe,
+                            fontWeight: FontWeight.w600,
                             drawableEnd: Checkbox(value: true, onChanged: (value) {}),
                           ),
                         ],
@@ -133,7 +133,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       10.0.verticalSpace,
                       OutLineButton(
-                        text: 'الدخول كضيف',
+                        text: S.of(context).guestLogin,
+                        color: Colors.white,
                         onTap: () async {
                           context.pushNamed(RouteName.home);
                         },
@@ -161,8 +162,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-
 }
 
 class _ForgetAndRememberWidget extends StatefulWidget {

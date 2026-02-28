@@ -145,7 +145,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
                 20.0.verticalSpace,
                 DrawableText(
-                  text: 'المعلومات',
+                  text: S.of(context).info,
                   fontWeight: FontWeight.bold,
                   padding: EdgeInsets.symmetric(
                     vertical: 8.0,
@@ -274,8 +274,8 @@ class _MenuScreenState extends State<MenuScreen> {
                           onTap: () {
                             NoteMessage.showCheckDialog(
                               context,
-                              text: 'حذف الحساب',
-                              textButton: 'متأكد',
+                              text: S.of(context).deleteAccount,
+                              textButton: S.of(context).sure,
                               image: ImageMultiType(url: Assets.iconsDelete, height: 120.0.r, width: 120.0.r),
                               onConfirm: () {
                                 context.read<DeleteAccountCubit>().deleteAccount(context);
@@ -295,7 +295,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ItemMenu(
                         onTap: () {},
                         name: S.of(context).devBy,
-                        subTitle: 'الحزمة التقنية',
+                        subTitle: S.of(context).technicalPackage,
                         withD: false,
                         trailing: ImageMultiType(
                           url: Assets.imagesBandtechLogo,

@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../category/ui/widget/home_categories.dart';
 
@@ -31,14 +32,14 @@ class GuestHomeScreen extends StatelessWidget {
             AddsSlider(type: AdsType.banner, height: 150.0),
             20.0.verticalSpace,
             DrawableText(
-              text: 'أول منصة لتأمين السيارات في العراق',
+              text: S.of(context).firstCarInsurancePlatformInIraq,
               matchParent: true,
               textAlign: .center,
               fontWeight: .bold,
               size: 18.0.sp,
             ),
             DrawableText(
-              text: 'التامين اصبح اسهل لحياة أفضل',
+              text: S.of(context).insuranceIsEasierForBetterLife,
               matchParent: true,
               color: Colors.grey,
               textAlign: .center,

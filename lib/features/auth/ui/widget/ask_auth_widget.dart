@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/strings/app_color_manager.dart';
+import '../../../../generated/l10n.dart';
 
 class AskAuthWidget extends StatelessWidget {
   const AskAuthWidget({super.key, this.login});
@@ -16,10 +17,10 @@ class AskAuthWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DrawableText(
       text: login == null
-          ? 'أتذكر كلمة المرور الخاصة بي'
+          ? S.of(context).iRememberMyPassword
           : login!
-          ? 'إنشاء حساب جديد؟'
-          : 'هل لديك حساب؟',
+          ? S.of(context).createNewAccountQuestion
+          : S.of(context).doYouHaveAccount,
       matchParent: true,
       padding: const EdgeInsets.symmetric(horizontal: 24.0).w,
       drawableAlin: DrawableAlin.between,
@@ -30,7 +31,7 @@ class AskAuthWidget extends StatelessWidget {
           );
         },
         child: DrawableText(
-          text: (login ?? false) ? 'قم بالتسجيل' : 'تسجيل الدخول',
+          text: (login ?? false) ? S.of(context).register : S.of(context).login,
           color: AppColorManager.mainColor,
           fontFamily: FontManager.bold.name,
         ),

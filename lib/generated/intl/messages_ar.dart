@@ -24,7 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
     "accepted": MessageLookupByLibrary.simpleMessage("مقبول"),
+    "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
+    "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم الأضافة الى السلة بنجاح",
+    ),
+    "additionalCosts": MessageLookupByLibrary.simpleMessage("تكاليف إضافية"),
+    "airConditionerAndType": MessageLookupByLibrary.simpleMessage(
+      "مكيف الهواء والنوع",
+    ),
     "and": MessageLookupByLibrary.simpleMessage("و"),
+    "annual": MessageLookupByLibrary.simpleMessage("السنوية"),
+    "annualPackageCost": MessageLookupByLibrary.simpleMessage(
+      "تكلفة الباقة السنوية",
+    ),
+    "annually": MessageLookupByLibrary.simpleMessage("سنويا"),
     "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة البطاقة الخلفية هنا",
@@ -44,14 +57,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة الإجازة الأمامية هنا",
     ),
+    "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "البيانات البيومترية",
     ),
     "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
+    "brandSign": MessageLookupByLibrary.simpleMessage("علامة السيارة"),
+    "browseFiles": MessageLookupByLibrary.simpleMessage("تصفح الملفات"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "carColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
+    "carImages": MessageLookupByLibrary.simpleMessage("صور المركبة"),
     "carModel": MessageLookupByLibrary.simpleMessage("موديل السيارة"),
     "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
@@ -59,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير الرمز السري"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
+    "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -70,6 +88,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
+    "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
+      "إنشاء حساب جديد؟",
+    ),
     "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
@@ -77,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "descending": MessageLookupByLibrary.simpleMessage("تنازلي"),
+    "detailsQuestion": MessageLookupByLibrary.simpleMessage("تفاصيل؟"),
     "devBy": MessageLookupByLibrary.simpleMessage("تم التطوير بواسطة"),
     "didNotReceiveOTP": MessageLookupByLibrary.simpleMessage("لم تتلقَ الرمز؟"),
     "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب؟",
     ),
+    "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "donePick": MessageLookupByLibrary.simpleMessage("تم الاختيار"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
@@ -95,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "معلومات إجازة السوق",
     ),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
+    "electronicCard": MessageLookupByLibrary.simpleMessage("بطاقة الكترونية"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "engine": MessageLookupByLibrary.simpleMessage("المحرك"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
@@ -112,18 +136,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل رقم هاتفك وكلمة المرور لتسجيل الدخول.",
     ),
     "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+    "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
+    "features": MessageLookupByLibrary.simpleMessage("المميزات"),
+    "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
+      "أول منصة لتأمين السيارات في العراق",
+    ),
+    "floorCover": MessageLookupByLibrary.simpleMessage("غطاء الأرضية"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "from": MessageLookupByLibrary.simpleMessage("من"),
     "front": MessageLookupByLibrary.simpleMessage("الأمام"),
+    "frontTires": MessageLookupByLibrary.simpleMessage("الإطارات الأمامية"),
     "fuelType": MessageLookupByLibrary.simpleMessage("نوع الوقود"),
     "gaz": MessageLookupByLibrary.simpleMessage("غاز"),
     "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
+    "glassAndLamps": MessageLookupByLibrary.simpleMessage("الزجاج و المصابيح"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
+    "guestLogin": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
     "hybrid": MessageLookupByLibrary.simpleMessage("هايبرد"),
+    "iRememberMyPassword": MessageLookupByLibrary.simpleMessage(
+      "أتذكر كلمة المرور الخاصة بي",
+    ),
     "iRememberedMyPassword": MessageLookupByLibrary.simpleMessage(
       "تذكرت كلمة المرور",
     ),
@@ -132,14 +168,26 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "idCardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "info": MessageLookupByLibrary.simpleMessage("المعلومات"),
+    "inspection": MessageLookupByLibrary.simpleMessage("الفحص"),
+    "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
+      "التامين اصبح اسهل لحياة أفضل",
+    ),
+    "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
+      "أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك",
+    ),
+    "insureCarIntroTitle": MessageLookupByLibrary.simpleMessage("تأمين سيارة"),
     "intact": MessageLookupByLibrary.simpleMessage("سليم"),
     "interior": MessageLookupByLibrary.simpleMessage("الداخل"),
+    "interiorBody": MessageLookupByLibrary.simpleMessage("الهيكل الداخلي"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
+    "knowMore": MessageLookupByLibrary.simpleMessage("معرفة المزيد"),
+    "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفه التفاصيل"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
     "left": MessageLookupByLibrary.simpleMessage("اليسار"),
     "licenseType": MessageLookupByLibrary.simpleMessage("نوع الإجازة"),
+    "loadMore": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
     "logInToYourAccount": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول إلى حسابك",
     ),
@@ -166,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "إدارة رقم الهاتف الخاص بك.",
     ),
+    "metalBody": MessageLookupByLibrary.simpleMessage("الهيكل المعدني"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "missing": MessageLookupByLibrary.simpleMessage("مفقود"),
     "month": MessageLookupByLibrary.simpleMessage("شهر"),
@@ -173,21 +222,38 @@ class MessageLookup extends MessageLookupByLibrary {
     "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "needLogin": MessageLookupByLibrary.simpleMessage("يحتاج تسجيل الدخول"),
+    "needLoginToContinue": MessageLookupByLibrary.simpleMessage(
+      "تحتاج لتسجيل الدخول للمتابعة",
+    ),
     "needPay": MessageLookupByLibrary.simpleMessage("الدفع مطلوب"),
+    "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "noInternet": MessageLookupByLibrary.simpleMessage(
       "يرجى التحقق من اتصالك بالإنترنت",
     ),
+    "noSummaryFiles": MessageLookupByLibrary.simpleMessage("لا توجد أي ملازم"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
     "passwordEmpty": MessageLookupByLibrary.simpleMessage(
       "حقل كلمة المرور مطلوب",
     ),
     "passwordNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
+    ),
+    "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
+      "سيتم الدفع عبر البطاقة الالكترونية",
+    ),
+    "paymentViaWallet": MessageLookupByLibrary.simpleMessage(
+      "سيتم الدفع من خلال المحفظة",
     ),
     "pending": MessageLookupByLibrary.simpleMessage("انتظار"),
     "pendingPhoneConfirmation": MessageLookupByLibrary.simpleMessage(
@@ -250,11 +316,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterLicenseType": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال نوع الإجازة",
     ),
+    "pleaseEnterOldAndNewPassword": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال كلمة المرور القديمة والجديدة",
+    ),
     "pleaseEnterPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
     ),
     "pleaseEnterPlateNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم اللوحة",
+    ),
+    "pleaseLoginToContinue": MessageLookupByLibrary.simpleMessage(
+      "يرجى تسجيل الدخول للمتابعة",
     ),
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الميلاد",
@@ -308,16 +380,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إرفاق صورة السنوية الأمامية",
     ),
     "policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "preview": MessageLookupByLibrary.simpleMessage("المعاينة"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "private": MessageLookupByLibrary.simpleMessage("خاص"),
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
     "public": MessageLookupByLibrary.simpleMessage("عام"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
+    "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
+    "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
+    "register": MessageLookupByLibrary.simpleMessage("قم بالتسجيل"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
+    ),
+    "reportAccident": MessageLookupByLibrary.simpleMessage("رفع حادث"),
+    "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(
+      "التعويض أسهل الآن.. صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي",
+    ),
+    "reportAccidentIntroTitle": MessageLookupByLibrary.simpleMessage(
+      "الإبلاغ عن حادث",
+    ),
+    "requestedInfoNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "المعلومات المطلوبة غير متوفرة حاليا",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
     "retakeImage": MessageLookupByLibrary.simpleMessage("إعادة التصوير"),
@@ -326,20 +412,50 @@ class MessageLookup extends MessageLookupByLibrary {
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "savedSuccessfully": MessageLookupByLibrary.simpleMessage("تم الحفظ بنجاح"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "seats": MessageLookupByLibrary.simpleMessage("المقاعد"),
     "second": MessageLookupByLibrary.simpleMessage("ثانية"),
     "sections": MessageLookupByLibrary.simpleMessage("الأقسام"),
     "securityData": MessageLookupByLibrary.simpleMessage("بيانات الأمان"),
     "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "قم بتحديد طريقة الدفع المرغوبة",
+    ),
     "sendCode": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "spareTire": MessageLookupByLibrary.simpleMessage("الإطار الإحتياط"),
+    "spareTools": MessageLookupByLibrary.simpleMessage("الأدوات الإحتياطية"),
+    "spareToolsGroup": MessageLookupByLibrary.simpleMessage(
+      "الأدوات الإحتياطيه",
+    ),
+    "startYourInsuranceJourneyEasily": MessageLookupByLibrary.simpleMessage(
+      "ابدأ رحلتك التأمينية بكل سهولة",
+    ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "سوف يتم حذف الحساب بجميع البيانات والكورسات",
     ),
+    "subscribeNow": MessageLookupByLibrary.simpleMessage("اشترك الان"),
     "support": MessageLookupByLibrary.simpleMessage("الدعم"),
+    "sure": MessageLookupByLibrary.simpleMessage("متأكد"),
+    "technicalPackage": MessageLookupByLibrary.simpleMessage("الحزمة التقنية"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
     ),
+    "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
+      "الإطارات و ملحقاتها",
+    ),
+    "tiresCovers": MessageLookupByLibrary.simpleMessage(
+      "أغطيه الإطارات (كبات)",
+    ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
+    "totalAmount": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
+    "transferOwnership": MessageLookupByLibrary.simpleMessage("نقل ملكية"),
+    "transferOwnershipIntroDesc": MessageLookupByLibrary.simpleMessage(
+      "نقل ملكية وثيقة التأمين بسهولة إلى مستخدم آخر عن طريق رمز ال QR",
+    ),
+    "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
+      "نقل ملكية وثيقة التأمين",
+    ),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),
@@ -358,11 +474,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "لقد أرسلنا رمز التحقق إلى",
     ),
+    "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
+    "windshieldWipers": MessageLookupByLibrary.simpleMessage("ماسحات المطر"),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("رقم هاتف غير صحيح"),
     "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
         MessageLookupByLibrary.simpleMessage(
           "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",
         ),
     "zainCash": MessageLookupByLibrary.simpleMessage("زين كاش"),
+    "zainCashWallet": MessageLookupByLibrary.simpleMessage("محفظة زين كاش"),
   };
 }

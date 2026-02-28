@@ -2,7 +2,8 @@ import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../../../../generated/l10n.dart';
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/widgets/dotted_decoration.dart';
 
 class UploadContainerWidget extends StatelessWidget {
@@ -41,10 +42,11 @@ class UploadContainerWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(color: AppColorManager.mainColor),
                   ),
-                    child: DrawableText(
-                      text: 'تصفح الملفات',
-                    ),
-
+                  child: DrawableText(
+                    text: S.of(context).browseFiles,
+                    color: Colors.white,
+                    fontFamily: FontManager.bold.name,
+                  ),
                 ),
                 DrawableText(
                   text: title,

@@ -67,7 +67,7 @@ class _EditIdentityInfoState extends State<EditIdentityInfo> {
       builder: (context, state) {
         final profile = AppProvider.getMe;
         return Scaffold(
-          appBar: AppBarWidget(titleText: 'معلومات البطاقة الموحدة'),
+          appBar: AppBarWidget(titleText: S.of(context).unifiedCardInfo),
           body: ListView(
             padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.0.h),
             children: [

@@ -67,7 +67,7 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
       builder: (context, state) {
         final profile = AppProvider.getMe;
         return Scaffold(
-          appBar: AppBarWidget(titleText: 'معلومات إجازة السوق'),
+          appBar: AppBarWidget(titleText: S.of(context).drivingLicenseInfo),
           body: ListView(
             padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.0.h),
             children: [
