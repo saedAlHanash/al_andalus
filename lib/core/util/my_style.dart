@@ -37,7 +37,7 @@ class MyStyle {
 
   static List<BoxShadow> get allShadow => [
     BoxShadow(
-      color: Colors.black12.withValues(alpha: 0.04),
+      color: Colors.black12.withValues(alpha: 0.1),
       offset: Offset(0, 5),
       blurRadius: 5,
     ),
@@ -120,8 +120,8 @@ class MyStyle {
     );
   }
 
-  static var outlineBorder = BoxDecoration(
-    border: Border.all(color: Colors.green),
+  static BoxDecoration get outlineBorder => BoxDecoration(
+    border: Border.all(color: AppColorManager.mainColor),
     borderRadius: BorderRadius.circular(12.0.r),
     color: AppColorManager.lightGray,
   );

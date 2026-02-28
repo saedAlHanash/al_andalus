@@ -84,7 +84,7 @@ void logRequest({
   if (q != null) msg += '\n ${jsonEncode(q)}';
   if (additional != null) msg += '\n $additional';
 
-  loggerObject.i(msg);
+  loggerObject.i(msg.logLongMessage);
 }
 
 void logResponse({
@@ -99,5 +99,7 @@ void logResponse({
     return;
   }
 
-  loggerObject.t('${coloring(url, type)} [${response.statusCode}] \n ${jsonEncode(jsonDecode(response.body)).logLongMessage}');
+  loggerObject.t(
+    '${coloring(url, type)} [${response.statusCode}] \n ${response.body.logLongMessage}',
+  );
 }

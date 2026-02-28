@@ -27,11 +27,13 @@ class AnnualInfo extends StatefulWidget {
 class _AnnualInfoState extends State<AnnualInfo> {
   final expiryStartDate = TextEditingController();
   final expiryEndDate = TextEditingController();
+  final manufactureYear = TextEditingController();
 
   @override
   void initState() {
     expiryStartDate.text = context.read<CarsCubit>().state.mRequest.expiryStartDate?.formatDate ?? '';
     expiryEndDate.text = context.read<CarsCubit>().state.mRequest.expiryEndDate?.formatDate ?? '';
+    manufactureYear.text = context.read<CarsCubit>().state.mRequest.manufactureYear?.formatDate ?? '';
     super.initState();
   }
 
@@ -47,6 +49,26 @@ class _AnnualInfoState extends State<AnnualInfo> {
               initialValue: state.mRequest.name,
               labelText: S.of(context).carName,
               hint: S.of(context).carName,
+            ),
+            MyTextFormOutLineWidget(
+              enable: false,
+              icon: Assets.iconsCalendar,
+              onTap: () async {
+                final datePicked = await showDatePicker(
+                  context: context,
+                  initialDate: state.mRequest.manufactureYear,
+                  firstDate: DateTime(1900),
+                  lastDate: APIService().serverTime,
+                  initialDatePickerMode: DatePickerMode.year,
+                  initialEntryMode: DatePickerEntryMode.calendarOnly,
+                );
+                if (datePicked == null) return;
+                state.mRequest.manufactureYear = datePicked;
+                manufactureYear.text = (state.mRequest.manufactureYear?.formatDate) ?? '';
+              },
+              controller: manufactureYear,
+              labelText: S.of(context).manufactureYear,
+              hint: S.of(context).manufactureYear,
             ),
 
 
@@ -68,7 +90,6 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.brand,
                     labelText: S.of(context).carModel,
                     hint: S.of(context).carModel,
-                    keyBordType: .number,
                   ),
                 ),
               ],

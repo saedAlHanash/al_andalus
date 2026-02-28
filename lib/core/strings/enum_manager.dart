@@ -455,6 +455,24 @@ enum InsuranceType {
   public,
   ;
 
+  String get name {
+    switch (this) {
+      case InsuranceType.private:
+        return S().private;
+      case InsuranceType.public:
+        return S().public;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case InsuranceType.private:
+        return 'private';
+      case InsuranceType.public:
+        return 'public';
+    }
+  }
+
   static InsuranceType getByNameOrIndex(dynamic name) {
     final i = int.tryParse(name.toString());
     if (i != null) {

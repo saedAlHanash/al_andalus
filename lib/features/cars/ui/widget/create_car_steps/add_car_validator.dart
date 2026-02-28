@@ -60,6 +60,10 @@ class AddCarValidator {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseSelectEndDate, context: context);
       return false;
     }
+    if (request.manufactureYear == null) {
+      NoteMessage.showTopMessageError(message: S.of(context).pleaseSelectManufactureYear, context: context);
+      return false;
+    }
     if (request.ownershipFrontImage.fileBytes == null) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadOwnershipFrontImage, context: context);
       return false;

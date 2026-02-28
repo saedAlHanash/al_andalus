@@ -3,11 +3,11 @@ import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+
+import '../../../../core/util/bottom_sheets.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
 
 class ItemInsurance extends StatelessWidget {
@@ -26,8 +26,8 @@ class ItemInsurance extends StatelessWidget {
           : BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  insurance.level!.color,
-                  insurance.level!.color.withValues(alpha: 0.7),
+                  insurance.level.color,
+                  insurance.level.color.withValues(alpha: 0.7),
                 ],
               ),
               borderRadius: BorderRadius.circular(24.0.r),
@@ -87,13 +87,11 @@ class ItemInsurance extends StatelessWidget {
                         20.verticalSpace,
                         MyButton(
                           onTap: () {
-                            //TODO:
-                            context.pushNamed(RouteName.addCarPage);
-                            // showCalculationPrice(context, insurance);
+                            showCalculationPrice(context, insurance);
                           },
                           height: 35.0.h,
                           text: S.of(context).knowMore,
-                          color: special ? insurance.level!.color : AppColorManager.mainColor.withValues(alpha: 0.2),
+                          color: special ? insurance.level.color : AppColorManager.mainColor.withValues(alpha: 0.2),
                         ),
                       ],
                     ),

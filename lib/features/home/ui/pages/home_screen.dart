@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
           context.read<AdssCubit>().getData(newData: true);
         },
         child: ListView(
-
           padding: EdgeInsets.symmetric(horizontal: 24.0).r,
           children: [
             HiWidget(),

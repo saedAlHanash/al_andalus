@@ -214,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "إدارة رقم الهاتف الخاص بك.",
     ),
+    "manufactureYear": MessageLookupByLibrary.simpleMessage("Manufacture year"),
     "metalBody": MessageLookupByLibrary.simpleMessage("الهيكل المعدني"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "missing": MessageLookupByLibrary.simpleMessage("مفقود"),
@@ -248,6 +249,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
     ),
+    "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع عبر البطاقة الالكترونية",

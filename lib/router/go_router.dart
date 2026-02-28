@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
@@ -8,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import '../core/injection/injection_container.dart';
 
 import '../core/strings/enum_manager.dart';
+import '../core/widgets/pdf_viewer_page.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
 import '../features/auth/bloc/confirm_code_cubit/confirm_code_cubit.dart';
@@ -31,6 +34,7 @@ import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
+import '../features/insurances/data/response/insurance_package.dart';
 import '../features/insurances/ui/pages/insurance_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
@@ -232,12 +236,15 @@ final goRouter = GoRouter(
       name: RouteName.insurancePage,
       builder: (_, state) {
         final id = state.uri.queryParameters['id'] ?? '';
-        final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
-        final cylinders = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
+        final json = jsonDecode(state.uri.queryParameters['json'] ?? '{}');
+        final estimatedPrice = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
+        final cylinderId = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
+        final package = InsurancePackage.fromJson(json);
+
         return BlocProvider(
           create: (context) => sl<InsuranceCubit>()
-            ..setEstimatedPrice(price)
-            ..setSelectedCylinder(cylinders)
+            ..setEstimatedPrice(estimatedPrice)
+            ..setSelectedCylinder(cylinderId)
             ..getData(id: id),
           child: InsurancePage(),
         );
@@ -251,8 +258,14 @@ final goRouter = GoRouter(
       path: RouteName.addCarPage,
       name: RouteName.addCarPage,
       builder: (_, state) {
+        final id = state.uri.queryParameters['id'] ?? '';
+        final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
+        final cylindersCount = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
         return BlocProvider(
-          create: (context) => sl<CarsCubit>(),
+          create: (context) => sl<CarsCubit>()
+            ..state.mRequest.cylinders = cylindersCount.toString()
+            ..state.mRequest.value = price.toString()
+            ..state.mRequest.insurancePackageId = id,
           child: AddCarPage(),
         );
       },
@@ -270,6 +283,14 @@ final goRouter = GoRouter(
     ),
 
     //endregion
+    GoRoute(
+      path: RouteName.pdf,
+      name: RouteName.pdf,
+      builder: (_, state) {
+        final String url = (state.uri.queryParameters['url'] ?? '').toString();
+        return PdfViewerWidget(url: url);
+      },
+    ),
   ],
 );
 

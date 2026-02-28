@@ -44,8 +44,6 @@ class UploadContainerWidget extends StatelessWidget {
                   ),
                   child: DrawableText(
                     text: S.of(context).browseFiles,
-                    color: Colors.white,
-                    fontFamily: FontManager.bold.name,
                   ),
                 ),
                 DrawableText(

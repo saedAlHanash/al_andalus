@@ -66,7 +66,12 @@ class AppProvider {
           text: S.of(ctx!).needLogin,
           textButton: S.of(ctx!).login,
           image: Icons.login,
-          onConfirm: () {
+          onConfirm: (confirm) {
+            if (!confirm) {
+              AppProvider.insurancePage = {};
+              return;
+            }
+
             try {
               if (ctx!.mounted) ctx!.goNamed(RouteName.login);
             } catch (e) {
@@ -101,7 +106,8 @@ class AppProvider {
         text: 'تأكيد تسجيل الخروج',
         textButton: 'تسجيل الخروج',
         image: ImageMultiType(url: Assets.imagesLogo, height: 100.0.r, width: 100.0.r),
-        onConfirm: () async {
+        onConfirm: (confirm) async {
+          if (!confirm) return;
           await AppSharedPreference.logout();
           await AppSharedPreference.reload();
           _myId = 0;
@@ -123,6 +129,8 @@ class AppProvider {
   }
 
   static String get getPhoneCached => AppSharedPreference.getPhone;
+
+  static Map<String, dynamic> insurancePage = {};
 }
 
 StartPage get getStartPage {

@@ -178,6 +178,7 @@
   "pleaseSelectFuelType": "Please select fuel type",
   "pleaseSelectStartDate": "Please select start date",
   "pleaseSelectEndDate": "Please select end date",
+  "pleaseSelectManufactureYear": "Please select Manufacture year",
   "pleaseUploadOwnershipFrontImage": "Please attach front ownership image",
   "pleaseUploadOwnershipBackImage": "Please attach back ownership image",
   "pleaseTakeFrontImage": "Please take a front image",
@@ -258,5 +259,7 @@
   "loadMore": "Load More",
   "addedToCartSuccessfully": "Added to cart successfully",
   "annually": "Annually",
-  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created. You will now be redirected to the home screen."
+  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created. You will now be redirected to the home screen.",
+  "pay": "Pay",
+  "manufactureYear": "Manufacture year"
 }

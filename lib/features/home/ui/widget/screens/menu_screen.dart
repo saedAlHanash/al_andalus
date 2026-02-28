@@ -277,7 +277,8 @@ class _MenuScreenState extends State<MenuScreen> {
                               text: S.of(context).deleteAccount,
                               textButton: S.of(context).sure,
                               image: ImageMultiType(url: Assets.iconsDelete, height: 120.0.r, width: 120.0.r),
-                              onConfirm: () {
+                              onConfirm: (confirm) {
+                                if (!confirm) return;
                                 context.read<DeleteAccountCubit>().deleteAccount(context);
                               },
                             );

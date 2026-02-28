@@ -222,6 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Manage your phone number.",
     ),
+    "manufactureYear": MessageLookupByLibrary.simpleMessage("Manufacture year"),
     "metalBody": MessageLookupByLibrary.simpleMessage("Metal Body"),
     "minute": MessageLookupByLibrary.simpleMessage("minute"),
     "missing": MessageLookupByLibrary.simpleMessage("Missing"),
@@ -258,6 +259,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordNotMatch": MessageLookupByLibrary.simpleMessage(
       "Password does not match",
     ),
+    "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "Payment will be made via electronic card",
@@ -357,6 +359,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "Please select issue date",
+    ),
+    "pleaseSelectManufactureYear": MessageLookupByLibrary.simpleMessage(
+      "Please select Manufacture year",
     ),
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "Please select start date",

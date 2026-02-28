@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
@@ -44,6 +45,10 @@ class _LoginPageState extends State<LoginPage> {
           listener: (context, state) {
             updateData();
             context.goNamed(RouteName.home);
+            context.pushNamed(
+              RouteName.insurancePage,
+              queryParameters: AppProvider.insurancePage,
+            );
           },
         ),
       ],

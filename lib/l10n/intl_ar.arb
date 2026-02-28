@@ -258,5 +258,7 @@
   "loadMore": "تحميل المزيد",
   "addedToCartSuccessfully": "تم الأضافة الى السلة بنجاح",
   "annually": "سنويا",
-  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية."
+  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",
+  "pay": "Pay",
+  "manufactureYear": "Manufacture year"
 }

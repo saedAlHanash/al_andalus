@@ -51,10 +51,10 @@ class InsurancePolicyRequest {
     this.otherNotes,
   });
 
-  int? insurancePackageId;
+  String? insurancePackageId;
   String? cylinders;
   String? name;
-  String? manufactureYear;
+  DateTime? manufactureYear;
   String? color;
   String? brand;
   String? value;
@@ -136,7 +136,7 @@ class InsurancePolicyRequest {
     'insurance_package_id': insurancePackageId,
     'cylinders': cylinders,
     'name': name,
-    'manufacture_year': manufactureYear,
+    'manufacture_year': manufactureYear?.year,
     'color': color,
     'brand': brand,
     'value': value,
@@ -150,35 +150,35 @@ class InsurancePolicyRequest {
 
     // Inspection
     'inspection[metal_body]': metalBody?.nameApi,
-    'inspection[metal_body_note]': metalBodyNote,
+    'inspection[metal_body_note]': metalBodyNote ?? '-',
     'inspection[glass_and_lamps]': glassAndLamps?.nameApi,
-    'inspection[glass_and_lamps_note]': glassAndLampsNote,
+    'inspection[glass_and_lamps_note]': glassAndLampsNote ?? '-',
     'inspection[chrome_nickel]': chromeNickel?.nameApi,
-    'inspection[chrome_nickel_note]': chromeNickelNote,
+    'inspection[chrome_nickel_note]': chromeNickelNote ?? '-',
     'inspection[brand_sign]': brandSign?.nameApi,
-    'inspection[brand_sign_note]': brandSignNote,
+    'inspection[brand_sign_note]': brandSignNote ?? '-',
     'inspection[windshield_wipers]': windshieldWipers?.nameApi,
-    'inspection[windshield_wipers_note]': windshieldWipersNote,
+    'inspection[windshield_wipers_note]': windshieldWipersNote ?? '-',
     'inspection[radio_antenna]': radioAntenna?.nameApi,
-    'inspection[radio_antenna_note]': radioAntennaNote,
+    'inspection[radio_antenna_note]': radioAntennaNote ?? '-',
     'inspection[seats]': seats?.nameApi,
-    'inspection[seats_note]': seatsNote,
+    'inspection[seats_note]': seatsNote ?? '-',
     'inspection[floor_cover]': floorCover?.nameApi,
-    'inspection[floor_cover_note]': floorCoverNote,
+    'inspection[floor_cover_note]': floorCoverNote ?? '-',
     'inspection[radio]': radio?.nameApi,
-    'inspection[radio_note]': radioNote,
+    'inspection[radio_note]': radioNote ?? '-',
     'inspection[air_conditioner]': airConditioner?.nameApi,
-    'inspection[air_conditioner_note]': airConditionerNote,
+    'inspection[air_conditioner_note]': airConditionerNote ?? '-',
     'inspection[front_tires]': frontTires?.nameApi,
-    'inspection[front_tires_note]': frontTiresNote,
+    'inspection[front_tires_note]': frontTiresNote ?? '-',
     'inspection[back_tires]': backTires?.nameApi,
-    'inspection[back_tires_note]': backTiresNote,
+    'inspection[back_tires_note]': backTiresNote ?? '-',
     'inspection[spare_tire]': spareTire?.nameApi,
-    'inspection[spare_tire_note]': spareTireNote,
+    'inspection[spare_tire_note]': spareTireNote ?? '-',
     'inspection[tires_covers]': tiresCovers?.nameApi,
-    'inspection[tires_covers_note]': tiresCoversNote,
+    'inspection[tires_covers_note]': tiresCoversNote ?? '-',
     'inspection[spare_tools]': spareTools?.nameApi,
-    'inspection[spare_tools_note]': spareToolsNote,
+    'inspection[spare_tools_note]': spareToolsNote ?? '-',
     'inspection[other_notes]': otherNotes,
   };
 }

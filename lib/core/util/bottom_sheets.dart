@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui';
 
 import 'package:al_andalus/core/helper/launcher_helper.dart';
@@ -219,6 +220,7 @@ void showCalculationPrice(BuildContext context, InsurancePackage insurancePackag
                             'id': insurancePackage.id.toString(),
                             'price': p.toString(),
                             'cylinders': c.toString(),
+                            'json': jsonEncode(insurancePackage.toJson()),
                           },
                         );
                       },
@@ -311,7 +313,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 ),
                 DrawableText(
                   text:
-                  'تأكد أن النص واضح وقابل للقراءة '
+                      'تأكد أن النص واضح وقابل للقراءة '
                       '\n\n'
                       'يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات',
                   color: Colors.grey,
@@ -325,7 +327,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                   onTap: () {
                     Navigator.pop(ctx);
                     pickAndUpload().then(
-                          (value) async {
+                      (value) async {
                         if (value == null || !context.mounted) return;
                         final result = await showConfirmDialog(context, value);
                         if (result == false) return;
@@ -341,7 +343,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                   onTap: () {
                     Navigator.pop(ctx);
                     takePhoto().then(
-                          (value) async {
+                      (value) async {
                         if (value == null || !context.mounted) return;
                         final result = await showConfirmDialog(context, value);
                         if (result == false) return;
@@ -427,7 +429,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
   );
 }
 
-Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file,Function(bool reTake) onReTake) async {
+Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Function(bool reTake) onReTake) async {
   return await showDialog<bool>(
     context: context,
     builder: (ctx) {

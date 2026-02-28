@@ -362,7 +362,7 @@ class NoteMessage {
     required String text,
     required String textButton,
     dynamic image,
-    Function()? onConfirm,
+    Function(bool confirm )? onConfirm,
   }) async {
     // show the dialog
     await showDialog(
@@ -414,7 +414,7 @@ class NoteMessage {
                           color: Colors.red,
                           onTap: () {
                             context.pop(true);
-                            onConfirm?.call();
+                            onConfirm?.call(true);
                           },
                           text: textButton,
                         ),
@@ -423,7 +423,10 @@ class NoteMessage {
                       Expanded(
                         child: MyButton(
                           color: AppColorManager.lightGrayAb,
-                          onTap: () => context.pop(false),
+                          onTap: () {
+                            context.pop(false);
+                            onConfirm?.call(false);
+                          },
                           text: S.of(context).no,
                         ),
                       ),

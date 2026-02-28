@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -34,7 +35,7 @@ class _AddCarPageState extends State<AddCarPage> {
     return BlocListener<CarsCubit, CarsInitial>(
       listenWhen: (p, c) => c.done,
       listener: (context, state) {
-        context.goNamed(RouteName.confirmCode);
+
       },
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
@@ -47,6 +48,7 @@ class _AddCarPageState extends State<AddCarPage> {
                   final request = state.mRequest;
 
                   if (state.step >= 4) {
+                    context.read<CarsCubit>().create();
                     return;
                   }
 
@@ -54,8 +56,8 @@ class _AddCarPageState extends State<AddCarPage> {
 
                   context.read<CarsCubit>().next();
                 },
-                loading: state.loading,
-                text: S.of(context).continueTo,
+                // loading: state.loading,
+                text: state.step == 4 ? S.of(context).pay : S.of(context).continueTo,
               ),
             ),
             body: Column(

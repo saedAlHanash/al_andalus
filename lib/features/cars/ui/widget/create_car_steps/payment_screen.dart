@@ -76,14 +76,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: EdgeInsets.symmetric(vertical: 15.0).r,
               matchParent: true,
               drawableAlin: .between,
-              drawableEnd: DrawableText(text: 'text'),
+              drawableEnd: DrawableText(text: state.mRequest.value.toString()),
             ),
             DrawableText(
               text: S.of(context).additionalCosts,
               padding: EdgeInsets.symmetric(vertical: 10.0).r,
               matchParent: true,
               drawableAlin: .between,
-              drawableEnd: DrawableText(text: 'text'),
+              drawableEnd: DrawableText(text: '0'),
             ),
             Divider(),
             DrawableText(
@@ -91,7 +91,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: EdgeInsets.symmetric(vertical: 10.0).r,
               matchParent: true,
               drawableAlin: .between,
-              drawableEnd: DrawableText(text: 'text'),
+              drawableEnd: DrawableText(text: state.mRequest.value.toString()),
             ),
           ],
         );

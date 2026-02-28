@@ -1,27 +1,77 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/util/my_style.dart';
+import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/card_slider_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
 import 'item_insurance.dart';
 
-class ListInsurances extends StatelessWidget {
+class ListInsurances extends StatefulWidget {
   const ListInsurances({super.key});
+
+  @override
+  State<ListInsurances> createState() => _ListInsurancesState();
+}
+
+class _ListInsurancesState extends State<ListInsurances> {
+  InsuranceType type = InsuranceType.private;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
-        return _CardSlider(
-          images: state.result.map((e) => ItemInsurance(insurance: e)).toList(),
-          height: 160.0.h+ (state.getMaxFeaturesCount * 12),
-          autoPlay: false,
-          viewportFraction: 0.7,
+        final list = state.result.where((e) => e.type == type).toList();
+        return Column(
+          children: [
+            20.0.verticalSpace,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                spacing: 20.0.w,
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () => setState(() => type = .private),
+                      child: Container(
+                        height: 40.0.h,
+                        alignment: .center,
+                        decoration: type == .private ? MyStyle.outlineBorder : MyStyle.roundBox12(Colors.white),
+                        child: DrawableText(text: InsuranceType.private.name),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () => setState(() => type = .public),
+                      child: Container(
+                        height: 40.0.h,
+                        alignment: .center,
+                        decoration: type == .public ? MyStyle.outlineBorder : MyStyle.roundBox12(Colors.white),
+                        child: DrawableText(text: InsuranceType.public.name),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            20.0.verticalSpace,
+            _CardSlider(
+              images: list.map((e) => ItemInsurance(insurance: e)).toList(),
+              height: 160.0.h + (state.getMaxFeaturesCount * 12),
+              autoPlay: false,
+              viewportFraction: 0.7,
+            ),
+            20.0.verticalSpace,
+          ],
         );
-
       },
     );
   }

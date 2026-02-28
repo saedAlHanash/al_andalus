@@ -1424,6 +1424,16 @@ class S {
     );
   }
 
+  /// `Please select Manufacture year`
+  String get pleaseSelectManufactureYear {
+    return Intl.message(
+      'Please select Manufacture year',
+      name: 'pleaseSelectManufactureYear',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please attach front ownership image`
   String get pleaseUploadOwnershipFrontImage {
     return Intl.message(
@@ -2104,6 +2114,21 @@ class S {
     return Intl.message(
       'Your account has been successfully created. You will now be redirected to the home screen.',
       name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message('Pay', name: 'pay', desc: '', args: []);
+  }
+
+  /// `Manufacture year`
+  String get manufactureYear {
+    return Intl.message(
+      'Manufacture year',
+      name: 'manufactureYear',
       desc: '',
       args: [],
     );

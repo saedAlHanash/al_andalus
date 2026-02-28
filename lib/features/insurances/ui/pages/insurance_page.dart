@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/util/my_style.dart';
@@ -7,6 +10,7 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/util/bottom_sheets.dart';
@@ -14,6 +18,7 @@ import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/refresh_widget/refresh_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/insurance_cubit/insurance_cubit.dart';
 
 class InsurancePage extends StatelessWidget {
@@ -49,7 +54,27 @@ class InsurancePage extends StatelessWidget {
             bottomNavigationBar: Padding(
               padding: EdgeInsetsGeometry.all(20.0),
               child: MyButton(
-                onTap: () {},
+                onTap: () {
+                  if (AppProvider.needLogin) {
+                    AppProvider.insurancePage = {
+                      'id': state.result.id.toString(),
+                      'price': state.estimatedPrice.toString(),
+                      'cylinders': state.cylinder.id.toString(),
+                      'json': jsonEncode(state.result),
+                    };
+                    return;
+                  }
+
+                  context.pushNamed(
+                    RouteName.addCarPage,
+                    queryParameters: {
+                      'id': state.result.id.toString(),
+                      'price': state.price.toString(),
+                      'cylinders': state.cylinder.cylinders,
+                      'json': jsonEncode(state.result),
+                    },
+                  );
+                },
                 text: S.of(context).subscribeNow,
               ),
             ),
@@ -85,17 +110,24 @@ class InsurancePage extends StatelessWidget {
                                           title: DrawableText(text: feature.title),
                                         )
                                         as Widget;
-                                  }).toList()..addAll([
-                                    Spacer(),
-                                    TextButton(
-                                      onPressed: () {},
-                                      child: DrawableText(
-                                        text: S.of(context).knowMoreDetails,
-                                        textDecoration: .underline,
+                                  }).toList()..addAll(
+                                    [
+                                      Spacer(),
+                                      TextButton(
+                                        onPressed: () {
+                                          context.pushNamed(
+                                            RouteName.pdf,
+                                            queryParameters: {'url': state.result.descriptionFile},
+                                          );
+                                        },
+                                        child: DrawableText(
+                                          text: S.of(context).knowMoreDetails,
+                                          textDecoration: .underline,
+                                        ),
                                       ),
-                                    ),
-                                    20.0.verticalSpace,
-                                  ]),
+                                      20.0.verticalSpace,
+                                    ],
+                                  ),
                             ),
                           ),
                         ),
@@ -147,8 +179,8 @@ class _Top extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.black12,
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(8.0),
-                          bottomLeft: Radius.circular(8.0),
+                          topRight: Radius.circular(24.0).r,
+                          bottomLeft: Radius.circular(24.0).r,
                         ),
                       ),
                       child: DrawableText(

@@ -16,7 +16,7 @@ part 'resend_code_state.dart';
 class ResendCodeCubit extends Cubit<ResendCodeInitial> {
   ResendCodeCubit() : super(ResendCodeInitial.initial());
 
-  Future<void> resendCode({required ResendRequest request}) async {
+  Future<void> resendCode({required ResendRequest request, bool isPhoneUpdate = false}) async {
     emit(state.copyWith(statuses: CubitStatuses.loading, request: request));
     final pair = await _resendCodeApi();
 

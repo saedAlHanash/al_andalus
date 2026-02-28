@@ -112,7 +112,9 @@ class CarsCubit extends MCubit<CarsInitial> {
   }
 
   //endregion
+  void setCylindersAndValue(){
 
+  }
   void next({int? step}) {
     if (step != null) {
       if (state.step < step) return;
