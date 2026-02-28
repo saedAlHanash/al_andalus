@@ -5,6 +5,7 @@ import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart'
 import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +72,6 @@ class _AnnualInfoState extends State<AnnualInfo> {
               hint: S.of(context).manufactureYear,
             ),
 
-
             Row(
               spacing: 15.0.w,
               mainAxisAlignment: .start,
@@ -104,7 +104,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.chassisNumber,
                     labelText: S.of(context).chassisNumber,
                     hint: S.of(context).chassisNumber,
-                      keyBordType: .number,
+                    keyBordType: .number,
                   ),
                 ),
                 Expanded(
@@ -113,7 +113,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.plateNumber,
                     labelText: S.of(context).plateNumber,
                     hint: S.of(context).plateNumber,
-                      keyBordType: .number,
+                    keyBordType: .number,
                   ),
                 ),
               ],
@@ -249,11 +249,9 @@ class _AnnualInfoState extends State<AnnualInfo> {
                         context,
                         (value) {
                           setState(() {
-                            final nameField = state.mRequest.ownershipFrontImage.nameField;
-                            state.mRequest
-                              ..ownershipFrontImage = value
-                              ..ownershipFrontImage.nameField = nameField;
+                            state.mRequest.ownershipFrontImage = value;
                           });
+                          state.mRequest.setImages(value);
                         },
                       );
                     },
@@ -273,10 +271,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                         context,
                         (value) {
                           setState(() {
-                            final nameField = state.mRequest.ownershipBackImage.nameField;
-                            state.mRequest
-                              ..ownershipBackImage = value
-                              ..ownershipBackImage.nameField = nameField;
+                            state.mRequest.ownershipBackImage = value;
                           });
                         },
                       );

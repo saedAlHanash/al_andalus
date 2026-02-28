@@ -18,7 +18,7 @@ class CarPolicy {
   final int id;
   final bool hasTransferRequest;
   final InsurancePackage insurancePackage;
-  final String status;
+  final InsurancePolicyStatus status;
   final String qrcode;
   final double annualSubscriptionPrice;
   final String startDate;
@@ -48,7 +48,7 @@ class CarPolicy {
       id: int.tryParse(json["id"].toString()) ?? 0,
       hasTransferRequest: json["has_transfer_request"] ?? false,
       insurancePackage: InsurancePackage.fromJson(json["insurance_package"] ?? {}),
-      status: json["status"] ?? "",
+      status: InsurancePolicyStatus.getByNameOrIndex(json["status"]),
       qrcode: json["qrcode"] ?? "",
       annualSubscriptionPrice: double.tryParse(json["annual_subscription_price"].toString()) ?? 0.0,
       startDate: json["start_date"] ?? "",

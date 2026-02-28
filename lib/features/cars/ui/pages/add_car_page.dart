@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -33,9 +34,11 @@ class _AddCarPageState extends State<AddCarPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<CarsCubit, CarsInitial>(
-      listenWhen: (p, c) => c.done,
+      listenWhen: (p, c) => c.done && c.cubitCrud == .create,
       listener: (context, state) {
-
+        if (state.url.isNotEmpty) {
+          LauncherHelper.openPage(state.url);
+        }
       },
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
@@ -48,7 +51,8 @@ class _AddCarPageState extends State<AddCarPage> {
                   final request = state.mRequest;
 
                   if (state.step >= 4) {
-                    context.read<CarsCubit>().create();
+                    LauncherHelper.openPage('https://test.zaincash.iq/transaction/pay?id=69a359524758590b12651394');
+                    // context.read<CarsCubit>().create();
                     return;
                   }
 

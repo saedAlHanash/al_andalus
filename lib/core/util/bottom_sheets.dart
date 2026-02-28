@@ -361,6 +361,56 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
   );
 }
 
+void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
+  showModalBottomSheet(
+    context: context,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _Header(),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(20.0).r,
+            child: Column(
+              children: [
+                ImageMultiType(
+                  url: Assets.iconsPdf,
+                  height: 100.0.h,
+                ),
+                DrawableText(
+                  text:
+                      'يرجى رفع ملف من الملفات'
+                      '\n\n'
+                      'الأنواع المسموحة: PDF, DOC',
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+
+                10.0.verticalSpace,
+                MyButton(
+                  text: 'رفع من الملفات',
+                  icon: ImageMultiType(url: Icons.file_upload_outlined),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    pickAndUpload(allowedExtensions: ['pdf', 'doc','PDF', 'DOC']).then(
+                      (value) async {
+                        if (value == null || !context.mounted) return;
+                        onConfirm.call(value);
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
   return await showDialog(
     context: context,

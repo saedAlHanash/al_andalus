@@ -24,6 +24,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
     "accepted": MessageLookupByLibrary.simpleMessage("مقبول"),
+    "acceptedByOperationStaff": MessageLookupByLibrary.simpleMessage(
+      "مقبول من موظف العمليات",
+    ),
+    "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
+      "مقبول من المساح",
+    ),
+    "active": MessageLookupByLibrary.simpleMessage("نشط"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم الأضافة الى السلة بنجاح",
@@ -38,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تكلفة الباقة السنوية",
     ),
     "annually": MessageLookupByLibrary.simpleMessage("سنويا"),
+    "approved": MessageLookupByLibrary.simpleMessage("مقبول"),
     "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة البطاقة الخلفية هنا",
@@ -113,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "تم إعادة الإرسال",
     ),
+    "draft": MessageLookupByLibrary.simpleMessage("مسودة"),
+    "draftPreparation": MessageLookupByLibrary.simpleMessage("تجهيز مسودة"),
     "drivingLicense": MessageLookupByLibrary.simpleMessage("رخصة القيادة"),
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات إجازة السوق",
@@ -135,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "أدخل رقم هاتفك وكلمة المرور لتسجيل الدخول.",
     ),
+    "expired": MessageLookupByLibrary.simpleMessage("منتهي"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
@@ -142,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "أول منصة لتأمين السيارات في العراق",
     ),
+    "fixed": MessageLookupByLibrary.simpleMessage("تم الإصلاح"),
     "floorCover": MessageLookupByLibrary.simpleMessage("غطاء الأرضية"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
@@ -214,10 +226,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageYourPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "إدارة رقم الهاتف الخاص بك.",
     ),
-    "manufactureYear": MessageLookupByLibrary.simpleMessage("Manufacture year"),
+    "manufactureYear": MessageLookupByLibrary.simpleMessage("سنة الصنع"),
     "metalBody": MessageLookupByLibrary.simpleMessage("الهيكل المعدني"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "missing": MessageLookupByLibrary.simpleMessage("مفقود"),
+    "missingInfo": MessageLookupByLibrary.simpleMessage("معلومات مفقودة"),
     "month": MessageLookupByLibrary.simpleMessage("شهر"),
     "myCars": MessageLookupByLibrary.simpleMessage("سياراتي"),
     "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
@@ -239,6 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
+    "paid": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "تم تغيير كلمة المرور بنجاح",
@@ -249,15 +263,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
     ),
-    "pay": MessageLookupByLibrary.simpleMessage("Pay"),
+    "pay": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "paymentPending": MessageLookupByLibrary.simpleMessage("بانتظار الدفع"),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع عبر البطاقة الالكترونية",
     ),
     "paymentViaWallet": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع من خلال المحفظة",
     ),
-    "pending": MessageLookupByLibrary.simpleMessage("انتظار"),
+    "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pendingPhoneConfirmation": MessageLookupByLibrary.simpleMessage(
       "يوجد عملية تأكيد رقم قيد الانتظار",
     ),
@@ -393,6 +408,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
     "register": MessageLookupByLibrary.simpleMessage("قم بالتسجيل"),
+    "rejected": MessageLookupByLibrary.simpleMessage("مرفوض"),
+    "rejectedByOperationStaff": MessageLookupByLibrary.simpleMessage(
+      "مرفوض من موظف العمليات",
+    ),
+    "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
+      "مرفوض من المساح",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
@@ -408,6 +430,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "المعلومات المطلوبة غير متوفرة حاليا",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة الإرسال"),
+    "resubmitted": MessageLookupByLibrary.simpleMessage("أُعيد تقديمها"),
+    "resubscriptionPaymentPending": MessageLookupByLibrary.simpleMessage(
+      "بانتظار إعادة الدفع",
+    ),
     "retakeImage": MessageLookupByLibrary.simpleMessage("إعادة التصوير"),
     "returned": MessageLookupByLibrary.simpleMessage("استعادة"),
     "right": MessageLookupByLibrary.simpleMessage("اليمين"),
@@ -458,6 +484,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين",
     ),
+    "underReview": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),

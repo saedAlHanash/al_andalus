@@ -29,8 +29,10 @@ class PickImageHelper {
     return result;
   }
 
-  Future<FilePickerResult?> pickFile() async {
+  Future<FilePickerResult?> pickFile(List<String>? allowedExtensions) async {
     return await FilePicker.platform.pickFiles(
+      allowedExtensions: allowedExtensions,
+      type: allowedExtensions != null ? FileType.custom : FileType.any,
       withData: true,
       allowMultiple: false,
       withReadStream: true,
@@ -56,8 +58,8 @@ class PickImageHelper {
     return result;
   }
 
-  Future<XFile?> pickFileBytes() async {
-    final result = await pickFile();
+  Future<XFile?> pickFileBytes(List<String>? allowedExtensions) async {
+    final result = await pickFile(allowedExtensions);
     final file = result?.files.first;
     return file?.xFile;
   }

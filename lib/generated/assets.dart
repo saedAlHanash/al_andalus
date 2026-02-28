@@ -27,6 +27,7 @@ class Assets {
   static const String iconsEmpty = 'assets/icons/empty.svg';
   static const String iconsEmptyQuantity = 'assets/icons/empty_quantity.svg';
   static const String iconsFileList = 'assets/icons/file-list.svg';
+  static const String iconsFolder = 'assets/icons/folder.svg';
   static const String iconsHeart = 'assets/icons/heart.svg';
   static const String iconsHeartF = 'assets/icons/heart_f.svg';
   static const String iconsHome = 'assets/icons/home.svg';
@@ -39,6 +40,7 @@ class Assets {
   static const String iconsNotification = 'assets/icons/notification.svg';
   static const String iconsNotificationCardIcon = 'assets/icons/notification_card_icon.svg';
   static const String iconsNotificationF = 'assets/icons/notification_f.svg';
+  static const String iconsPdf = 'assets/icons/pdf.svg';
   static const String iconsPerson = 'assets/icons/person.svg';
   static const String iconsPersonF = 'assets/icons/person_f.svg';
   static const String iconsPhone = 'assets/icons/phone.svg';

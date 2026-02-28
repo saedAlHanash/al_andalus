@@ -2133,6 +2133,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Payment Pending`
+  String get paymentPending {
+    return Intl.message(
+      'Payment Pending',
+      name: 'paymentPending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paid`
+  String get paid {
+    return Intl.message('Paid', name: 'paid', desc: '', args: []);
+  }
+
+  /// `Missing Info`
+  String get missingInfo {
+    return Intl.message(
+      'Missing Info',
+      name: 'missingInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resubmitted`
+  String get resubmitted {
+    return Intl.message('Resubmitted', name: 'resubmitted', desc: '', args: []);
+  }
+
+  /// `Draft Preparation`
+  String get draftPreparation {
+    return Intl.message(
+      'Draft Preparation',
+      name: 'draftPreparation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Draft`
+  String get draft {
+    return Intl.message('Draft', name: 'draft', desc: '', args: []);
+  }
+
+  /// `Approved`
+  String get approved {
+    return Intl.message('Approved', name: 'approved', desc: '', args: []);
+  }
+
+  /// `Rejected`
+  String get rejected {
+    return Intl.message('Rejected', name: 'rejected', desc: '', args: []);
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message('Active', name: 'active', desc: '', args: []);
+  }
+
+  /// `Expired`
+  String get expired {
+    return Intl.message('Expired', name: 'expired', desc: '', args: []);
+  }
+
+  /// `Resubscription Payment Pending`
+  String get resubscriptionPaymentPending {
+    return Intl.message(
+      'Resubscription Payment Pending',
+      name: 'resubscriptionPaymentPending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Under Review`
+  String get underReview {
+    return Intl.message(
+      'Under Review',
+      name: 'underReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accepted by Operation Staff`
+  String get acceptedByOperationStaff {
+    return Intl.message(
+      'Accepted by Operation Staff',
+      name: 'acceptedByOperationStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejected by Operation Staff`
+  String get rejectedByOperationStaff {
+    return Intl.message(
+      'Rejected by Operation Staff',
+      name: 'rejectedByOperationStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accepted by Surveyor Staff`
+  String get acceptedBySurveyorStaff {
+    return Intl.message(
+      'Accepted by Surveyor Staff',
+      name: 'acceptedBySurveyorStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejected by Surveyor Staff`
+  String get rejectedBySurveyorStaff {
+    return Intl.message(
+      'Rejected by Surveyor Staff',
+      name: 'rejectedBySurveyorStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fixed`
+  String get fixed {
+    return Intl.message('Fixed', name: 'fixed', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

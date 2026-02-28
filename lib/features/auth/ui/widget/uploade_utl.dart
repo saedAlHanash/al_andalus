@@ -17,9 +17,9 @@ import '../../../../generated/l10n.dart';
 import '../../../../services/images/compress_service.dart';
 
 
-Future<UploadFile?> pickAndUpload({String? nameFiled}) async {
+Future<UploadFile?> pickAndUpload({String? nameFiled,List<String>? allowedExtensions}) async {
   final helper = PickImageHelper();
-  final xFile = (await helper.pickFileBytes());
+  final xFile = (await helper.pickFileBytes(allowedExtensions));
   if (xFile == null) return null;
   var bytes = await xFile.readAsBytes();
   bytes = await CompressService().compressImage(bytes);

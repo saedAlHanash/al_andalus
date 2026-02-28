@@ -98,8 +98,13 @@ void logResponse({
     );
     return;
   }
-
+  var t = '';
+  try {
+    t = jsonEncode(jsonDecode(response.body));
+  } catch (e) {
+    t = response.body;
+  }
   loggerObject.t(
-    '${coloring(url, type)} [${response.statusCode}] \n ${response.body.logLongMessage}',
+    '${coloring(url, type)} [${response.statusCode}] \n ${t.logLongMessage}',
   );
 }

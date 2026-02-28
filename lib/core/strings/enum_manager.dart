@@ -784,3 +784,242 @@ enum PaymentType {
     }
   }
 }
+
+enum InsurancePolicyStatus {
+  paymentPending,
+  paid,
+  missingInfo,
+  resubmitted,
+  draftPreparation,
+  draft,
+  approved,
+  rejected,
+  active,
+  expired,
+  cancelled,
+  resubscriptionPaymentPending,
+  ;
+
+  String get name {
+    switch (this) {
+      case InsurancePolicyStatus.paymentPending:
+        return S().paymentPending;
+      case InsurancePolicyStatus.paid:
+        return S().paid;
+      case InsurancePolicyStatus.missingInfo:
+        return S().missingInfo;
+      case InsurancePolicyStatus.resubmitted:
+        return S().resubmitted;
+      case InsurancePolicyStatus.draftPreparation:
+        return S().draftPreparation;
+      case InsurancePolicyStatus.draft:
+        return S().draft;
+      case InsurancePolicyStatus.approved:
+        return S().approved;
+      case InsurancePolicyStatus.rejected:
+        return S().rejected;
+      case InsurancePolicyStatus.active:
+        return S().active;
+      case InsurancePolicyStatus.expired:
+        return S().expired;
+      case InsurancePolicyStatus.cancelled:
+        return S().cancelled;
+      case InsurancePolicyStatus.resubscriptionPaymentPending:
+        return S().resubscriptionPaymentPending;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case InsurancePolicyStatus.paymentPending:
+        return 'payment_pending';
+      case InsurancePolicyStatus.paid:
+        return 'paid';
+      case InsurancePolicyStatus.missingInfo:
+        return 'missing_info';
+      case InsurancePolicyStatus.resubmitted:
+        return 'resubmitted';
+      case InsurancePolicyStatus.draftPreparation:
+        return 'draft_preparation';
+      case InsurancePolicyStatus.draft:
+        return 'draft';
+      case InsurancePolicyStatus.approved:
+        return 'approved';
+      case InsurancePolicyStatus.rejected:
+        return 'rejected';
+      case InsurancePolicyStatus.active:
+        return 'active';
+      case InsurancePolicyStatus.expired:
+        return 'expired';
+      case InsurancePolicyStatus.cancelled:
+        return 'cancelled';
+      case InsurancePolicyStatus.resubscriptionPaymentPending:
+        return 'resubscription_payment_pending';
+    }
+  }
+
+  static InsurancePolicyStatus getByNameOrIndex(dynamic name) {
+    if (name == null) return InsurancePolicyStatus.paymentPending;
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return InsurancePolicyStatus.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'payment_pending':
+        return InsurancePolicyStatus.paymentPending;
+      case 'paid':
+        return InsurancePolicyStatus.paid;
+      case 'missing_info':
+        return InsurancePolicyStatus.missingInfo;
+      case 'resubmitted':
+        return InsurancePolicyStatus.resubmitted;
+      case 'draft_preparation':
+        return InsurancePolicyStatus.draftPreparation;
+      case 'draft':
+        return InsurancePolicyStatus.draft;
+      case 'approved':
+        return InsurancePolicyStatus.approved;
+      case 'rejected':
+        return InsurancePolicyStatus.rejected;
+      case 'active':
+        return InsurancePolicyStatus.active;
+      case 'expired':
+        return InsurancePolicyStatus.expired;
+      case 'cancelled':
+        return InsurancePolicyStatus.cancelled;
+      case 'resubscription_payment_pending':
+        return InsurancePolicyStatus.resubscriptionPaymentPending;
+      default:
+        return InsurancePolicyStatus.paymentPending;
+    }
+  }
+}
+
+enum TransferOwnershipStatus {
+  pending,
+  underReview,
+  accepted,
+  rejected,
+  ;
+
+  String get name {
+    switch (this) {
+      case TransferOwnershipStatus.pending:
+        return S().pending;
+      case TransferOwnershipStatus.underReview:
+        return S().underReview;
+      case TransferOwnershipStatus.accepted:
+        return S().accepted;
+      case TransferOwnershipStatus.rejected:
+        return S().rejected;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case TransferOwnershipStatus.pending:
+        return 'pending';
+      case TransferOwnershipStatus.underReview:
+        return 'under_review';
+      case TransferOwnershipStatus.accepted:
+        return 'accepted';
+      case TransferOwnershipStatus.rejected:
+        return 'rejected';
+    }
+  }
+
+  static TransferOwnershipStatus getByNameOrIndex(dynamic name) {
+    if (name == null) return TransferOwnershipStatus.pending;
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return TransferOwnershipStatus.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'pending':
+        return TransferOwnershipStatus.pending;
+      case 'under_review':
+        return TransferOwnershipStatus.underReview;
+      case 'accepted':
+        return TransferOwnershipStatus.accepted;
+      case 'rejected':
+        return TransferOwnershipStatus.rejected;
+      default:
+        return TransferOwnershipStatus.pending;
+    }
+  }
+}
+
+enum AccidentStatus {
+  pending,
+  acceptedByOperationStaff,
+  rejectedByOperationStaff,
+  acceptedBySurveyorStaff,
+  rejectedBySurveyorStaff,
+  paid,
+  fixed,
+  ;
+
+  String get name {
+    switch (this) {
+      case AccidentStatus.pending:
+        return S().pending;
+      case AccidentStatus.acceptedByOperationStaff:
+        return S().acceptedByOperationStaff;
+      case AccidentStatus.rejectedByOperationStaff:
+        return S().rejectedByOperationStaff;
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return S().acceptedBySurveyorStaff;
+      case AccidentStatus.rejectedBySurveyorStaff:
+        return S().rejectedBySurveyorStaff;
+      case AccidentStatus.paid:
+        return S().paid;
+      case AccidentStatus.fixed:
+        return S().fixed;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case AccidentStatus.pending:
+        return 'pending';
+      case AccidentStatus.acceptedByOperationStaff:
+        return 'accepted_by_operation_staff';
+      case AccidentStatus.rejectedByOperationStaff:
+        return 'rejected_by_operation_staff';
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return 'accepted_by_surveyor_staff';
+      case AccidentStatus.rejectedBySurveyorStaff:
+        return 'rejected_by_surveyor_staff';
+      case AccidentStatus.paid:
+        return 'paid';
+      case AccidentStatus.fixed:
+        return 'fixed';
+    }
+  }
+
+  static AccidentStatus getByNameOrIndex(dynamic name) {
+    if (name == null) return AccidentStatus.pending;
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return AccidentStatus.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'pending':
+        return AccidentStatus.pending;
+      case 'accepted_by_operation_staff':
+        return AccidentStatus.acceptedByOperationStaff;
+      case 'rejected_by_operation_staff':
+        return AccidentStatus.rejectedByOperationStaff;
+      case 'accepted_by_surveyor_staff':
+        return AccidentStatus.acceptedBySurveyorStaff;
+      case 'rejected_by_surveyor_staff':
+        return AccidentStatus.rejectedBySurveyorStaff;
+      case 'paid':
+        return AccidentStatus.paid;
+      case 'fixed':
+        return AccidentStatus.fixed;
+      default:
+        return AccidentStatus.pending;
+    }
+  }
+}

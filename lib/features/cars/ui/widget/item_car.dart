@@ -3,6 +3,7 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../data/response/cars_response.dart';
 
 class ItemCar extends StatelessWidget {
@@ -69,7 +70,7 @@ class ItemCar extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: DrawableText(
-                  text: car.status,
+                  text: car.status.name,
                   color: _getStatusColor(car.status),
                   size: 12.sp,
                   fontWeight: FontWeight.bold,
@@ -101,13 +102,13 @@ class ItemCar extends StatelessWidget {
     );
   }
 
-  Color _getStatusColor(String status) {
+  Color _getStatusColor(InsurancePolicyStatus status) {
     switch (status) {
-      case 'active':
+      case InsurancePolicyStatus.active:
         return Colors.green;
-      case 'missing_info':
+      case InsurancePolicyStatus.missingInfo:
         return Colors.orange;
-      case 'expired':
+      case InsurancePolicyStatus.expired:
         return Colors.red;
       default:
         return Colors.blue;

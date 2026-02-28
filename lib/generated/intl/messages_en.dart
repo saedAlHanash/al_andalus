@@ -24,6 +24,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
     "accepted": MessageLookupByLibrary.simpleMessage("Accepted"),
+    "acceptedByOperationStaff": MessageLookupByLibrary.simpleMessage(
+      "Accepted by Operation Staff",
+    ),
+    "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
+      "Accepted by Surveyor Staff",
+    ),
+    "active": MessageLookupByLibrary.simpleMessage("Active"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("Add New Car"),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Added to cart successfully",
@@ -38,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Annual Package Cost",
     ),
     "annually": MessageLookupByLibrary.simpleMessage("Annually"),
+    "approved": MessageLookupByLibrary.simpleMessage("Approved"),
     "ascending": MessageLookupByLibrary.simpleMessage("ascending"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "Attach the back of the ID card here",
@@ -119,6 +127,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "Done resend code",
     ),
+    "draft": MessageLookupByLibrary.simpleMessage("Draft"),
+    "draftPreparation": MessageLookupByLibrary.simpleMessage(
+      "Draft Preparation",
+    ),
     "drivingLicense": MessageLookupByLibrary.simpleMessage("Driving License"),
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "Driving License Info",
@@ -141,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "Enter your phone and password to log in.",
     ),
+    "expired": MessageLookupByLibrary.simpleMessage("Expired"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("Exterior Body"),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
@@ -148,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "First car insurance platform in Iraq",
     ),
+    "fixed": MessageLookupByLibrary.simpleMessage("Fixed"),
     "floorCover": MessageLookupByLibrary.simpleMessage("Floor Cover"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -226,6 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "metalBody": MessageLookupByLibrary.simpleMessage("Metal Body"),
     "minute": MessageLookupByLibrary.simpleMessage("minute"),
     "missing": MessageLookupByLibrary.simpleMessage("Missing"),
+    "missingInfo": MessageLookupByLibrary.simpleMessage("Missing Info"),
     "month": MessageLookupByLibrary.simpleMessage("month"),
     "myCars": MessageLookupByLibrary.simpleMessage("My Cars"),
     "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
@@ -249,6 +264,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
     "oops": MessageLookupByLibrary.simpleMessage("Oops!"),
     "ourService": MessageLookupByLibrary.simpleMessage("Our service"),
+    "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Password changed successfully",
@@ -261,6 +277,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+    "paymentPending": MessageLookupByLibrary.simpleMessage("Payment Pending"),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "Payment will be made via electronic card",
     ),
@@ -408,6 +425,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "radioAntenna": MessageLookupByLibrary.simpleMessage("Radio Antenna"),
     "rear": MessageLookupByLibrary.simpleMessage("Rear"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "rejected": MessageLookupByLibrary.simpleMessage("Rejected"),
+    "rejectedByOperationStaff": MessageLookupByLibrary.simpleMessage(
+      "Rejected by Operation Staff",
+    ),
+    "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
+      "Rejected by Surveyor Staff",
+    ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "Remember Password",
@@ -423,6 +447,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Requested information is not available",
     ),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "resubmitted": MessageLookupByLibrary.simpleMessage("Resubmitted"),
+    "resubscriptionPaymentPending": MessageLookupByLibrary.simpleMessage(
+      "Resubscription Payment Pending",
+    ),
     "retakeImage": MessageLookupByLibrary.simpleMessage("Retake Image"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "right": MessageLookupByLibrary.simpleMessage("Right"),
@@ -477,6 +505,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "Transfer Policy Ownership",
     ),
+    "underReview": MessageLookupByLibrary.simpleMessage("Under Review"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "Unified Card Info",
     ),

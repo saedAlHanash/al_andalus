@@ -8,12 +8,14 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
     super.request,
     required this.step,
     required this.idNotifier,
+    required this.url,
     super.cubitCrud,
     super.id,
   });
 
   InsurancePolicyRequest get mRequest => request as InsurancePolicyRequest;
   final int idNotifier;
+  final String url;
   final int step;
 
   factory CarsInitial.initial() {
@@ -23,6 +25,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
       request: InsurancePolicyRequest(),
       step: 0,
       idNotifier: 0,
+      url: '',
 
       statuses: CubitStatuses.init,
     );
@@ -37,6 +40,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
     request,
     step,
     idNotifier,
+    url,
     cubitCrud,
   ];
 
@@ -47,6 +51,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
     InsurancePolicyRequest? request,
     int? step,
     int? idNotifier,
+    String? url,
     CubitCrud? cubitCrud,
     dynamic id,
   }) {
@@ -58,6 +63,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
       step: step ?? this.step,
       cubitCrud: cubitCrud ?? this.cubitCrud,
       idNotifier: idNotifier ?? this.idNotifier,
+      url: url ?? this.url,
       id: id ?? this.id,
     );
   }

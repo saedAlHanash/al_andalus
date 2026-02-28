@@ -66,8 +66,13 @@ class CarsCubit extends MCubit<CarsInitial> {
       files: state.mRequest.files,
       fields: state.mRequest.toJson(),
     );
-
-    await _updateState(response);
+    if (response.statusCode.success) {
+      final url = response.jsonBody['url'] ?? '';
+      emit(state.copyWith(statuses: CubitStatuses.done, url: url));
+    } else {
+      emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
+      showErrorFromApi(state);
+    }
   }
 
   Future<void> update() async {
@@ -112,9 +117,8 @@ class CarsCubit extends MCubit<CarsInitial> {
   }
 
   //endregion
-  void setCylindersAndValue(){
+  void setCylindersAndValue() {}
 
-  }
   void next({int? step}) {
     if (step != null) {
       if (state.step < step) return;
@@ -127,34 +131,22 @@ class CarsCubit extends MCubit<CarsInitial> {
   void setImage(UploadFile value, ImageZone zone) {
     switch (zone) {
       case ImageZone.front:
-        final nameFiled = state.mRequest.frontImage.nameField;
         state.mRequest.frontImage = value;
-        state.mRequest.frontImage.nameField = nameFiled;
         break;
       case ImageZone.engine:
-        final nameFiled = state.mRequest.backImage.nameField;
         state.mRequest.backImage = value;
-        state.mRequest.backImage.nameField = nameFiled;
         break;
       case ImageZone.right:
-        final nameFiled = state.mRequest.rightSideImage.nameField;
         state.mRequest.rightSideImage = value;
-        state.mRequest.rightSideImage.nameField = nameFiled;
         break;
       case ImageZone.left:
-        final nameFiled = state.mRequest.leftSideImage.nameField;
         state.mRequest.leftSideImage = value;
-        state.mRequest.leftSideImage.nameField = nameFiled;
         break;
       case ImageZone.interior:
-        final nameFiled = state.mRequest.interiorImage.nameField;
         state.mRequest.interiorImage = value;
-        state.mRequest.interiorImage.nameField = nameFiled;
         break;
       case ImageZone.rear:
-        final nameFiled = state.mRequest.engineImage.nameField;
         state.mRequest.engineImage = value;
-        state.mRequest.engineImage.nameField = nameFiled;
         break;
     }
 

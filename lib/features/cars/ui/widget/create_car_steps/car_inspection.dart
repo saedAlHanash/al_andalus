@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type_pakage.dart';
 
 import '../../../../../core/util/bottom_sheets.dart';
+import '../../../../../generated/assets.dart';
 import '../../../bloc/cars_cubit/cars_cubit.dart';
 
 class CarInspection extends StatefulWidget {
@@ -71,21 +72,20 @@ class _CarInspectionState extends State<CarInspection> {
                     title: S.of(context).uploadOneFileOnly,
                     child: state.mRequest.inspectionReport.fileBytes == null
                         ? null
-                        : RoundImageWidget(
-                            height: 200.0.h,
-                            width: 1.0.sw,
-                            url: state.mRequest.inspectionReport.fileBytes,
-                            fit: .cover,
+                        : ListTile(
+                            leading: ImageMultiType(
+                              url: Assets.iconsFolder,
+                              height: 50.0.dg,
+                              width: 50.0.dg,
+                            ),
+                            title: DrawableText(text: state.mRequest.inspectionReport.localId ?? '-'),
                           ),
                     onTap: () {
-                      showOptionBottomSheet(
+                      showFileUploadBottomSheet(
                         context,
                         (value) {
                           setState(() {
-                            final nameField = state.mRequest.inspectionReport.nameField;
-                            state.mRequest
-                              ..inspectionReport = value
-                              ..inspectionReport.nameField = nameField;
+                            state.mRequest.inspectionReport = value;
                           });
                         },
                       );
