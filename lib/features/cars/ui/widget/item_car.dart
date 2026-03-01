@@ -48,32 +48,32 @@ class ItemCar extends StatelessWidget {
             },
           ),
           16.0.verticalSpace,
-          if (car.status != .paymentPending)
-            BlocBuilder<CarsCubit, CarsInitial>(
-              builder: (context, state) {
-                return MyButton(
-                  loading: state.loading,
-                  onTap: () {
-                    showRePay(
-                      context,
-                      car.annualSubscriptionPrice,
-                      (value) {
-                        context.read<CarsCubit>().rePay(id: car.id.toString(), type: value);
-                      },
-                    );
-                  },
-                  text: S.of(context).pay,
-                );
-              },
-            )
-          else
-            OutLineButton(
-              onTap: () => context.pushNamed(
-                RouteName.carPage,
-                queryParameters: {'id': car.id.toString()},
-              ),
-              text: S.of(context).viewInsuranceStatement,
+
+          BlocBuilder<CarsCubit, CarsInitial>(
+            builder: (context, state) {
+              return MyButton(
+                loading: state.loading,
+                onTap: () {
+                  showRePay(
+                    context,
+                    car.annualSubscriptionPrice,
+                    (value) {
+                      context.read<CarsCubit>().rePay(id: car.id.toString(), type: value);
+                    },
+                  );
+                },
+                text: S.of(context).pay,
+              );
+            },
+          ),
+
+          OutLineButton(
+            onTap: () => context.pushNamed(
+              RouteName.carPage,
+              queryParameters: {'id': car.id.toString()},
             ),
+            text: S.of(context).viewInsuranceStatement,
+          ),
           16.0.verticalSpace,
         ],
       ),
