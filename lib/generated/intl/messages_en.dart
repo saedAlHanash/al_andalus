@@ -30,6 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "Accepted by Surveyor Staff",
     ),
+    "accidentDetails": MessageLookupByLibrary.simpleMessage("Accident Details"),
+    "accidentLocation": MessageLookupByLibrary.simpleMessage(
+      "Accident Location",
+    ),
     "active": MessageLookupByLibrary.simpleMessage("Active"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("Add New Car"),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "annually": MessageLookupByLibrary.simpleMessage("Annually"),
     "approved": MessageLookupByLibrary.simpleMessage("Approved"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "ascending": MessageLookupByLibrary.simpleMessage("ascending"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "Attach the back of the ID card here",
@@ -66,12 +71,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "Attach the front of the driving license here",
     ),
+    "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
+      "Attach Police Report:",
+    ),
     "backTires": MessageLookupByLibrary.simpleMessage("Back Tires"),
     "biometricData": MessageLookupByLibrary.simpleMessage("Biometric Data"),
     "birthday": MessageLookupByLibrary.simpleMessage("birthday"),
     "brandSign": MessageLookupByLibrary.simpleMessage("Brand Sign"),
     "browseFiles": MessageLookupByLibrary.simpleMessage("Browse Files"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("Build Number"),
+    "calculateInsuranceCost": MessageLookupByLibrary.simpleMessage(
+      "Calculate your car insurance cost",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
       "Cancel the document",
@@ -87,6 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePasscode": MessageLookupByLibrary.simpleMessage("Change Passcode"),
     "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("Chassis Number"),
+    "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
+      "Choose engine capacity",
+    ),
+    "chooseLanguage": MessageLookupByLibrary.simpleMessage("Choose Language"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("Chrome or Nickel"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("Click To Update"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
@@ -146,12 +161,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "engine": MessageLookupByLibrary.simpleMessage("Engine"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
+    "ensureTextIsClear": MessageLookupByLibrary.simpleMessage(
+      "Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions",
+    ),
     "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+    "enterCarValue": MessageLookupByLibrary.simpleMessage("Enter car value"),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
       "Enter expiry date",
     ),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "Enter Your OTP Code Here.",
+    ),
+    "enterRequiredDetails": MessageLookupByLibrary.simpleMessage(
+      "Enter required details",
     ),
     "enterThe6digitCode": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code",
@@ -177,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "fuelType": MessageLookupByLibrary.simpleMessage("Fuel Type"),
     "gaz": MessageLookupByLibrary.simpleMessage("Gaz"),
     "gender": MessageLookupByLibrary.simpleMessage("Gender"),
+    "generalInformation": MessageLookupByLibrary.simpleMessage(
+      "General Information",
+    ),
     "glassAndLamps": MessageLookupByLibrary.simpleMessage("Glass and Lamps"),
     "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
     "guestLogin": MessageLookupByLibrary.simpleMessage("Guest Login"),
@@ -217,6 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "knowMoreDetails": MessageLookupByLibrary.simpleMessage(
       "Know more details",
     ),
+    "kurdish": MessageLookupByLibrary.simpleMessage("Kurdish"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "latest": MessageLookupByLibrary.simpleMessage("latest"),
     "left": MessageLookupByLibrary.simpleMessage("Left"),
@@ -305,6 +331,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "petrol": MessageLookupByLibrary.simpleMessage("Petrol"),
     "phoneData": MessageLookupByLibrary.simpleMessage("Phone Data"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "photosOfTheAccident": MessageLookupByLibrary.simpleMessage(
+      "Photos of the accident",
+    ),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "Place of Residence",
     ),
@@ -345,6 +374,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterChassisNumber": MessageLookupByLibrary.simpleMessage(
       "Please enter chassis number",
     ),
+    "pleaseEnterDescription": MessageLookupByLibrary.simpleMessage(
+      "Please enter description",
+    ),
     "pleaseEnterEngineCapacity": MessageLookupByLibrary.simpleMessage(
       "Please enter engine capacity",
     ),
@@ -360,6 +392,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterLicenseType": MessageLookupByLibrary.simpleMessage(
       "Please enter license type",
     ),
+    "pleaseEnterLocation": MessageLookupByLibrary.simpleMessage(
+      "Please enter location",
+    ),
     "pleaseEnterOldAndNewPassword": MessageLookupByLibrary.simpleMessage(
       "Please enter old and new password",
     ),
@@ -369,8 +404,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterPlateNumber": MessageLookupByLibrary.simpleMessage(
       "Please enter plate number",
     ),
+    "pleaseEnterRequiredAccidentInfo": MessageLookupByLibrary.simpleMessage(
+      "Please enter and attach the required information regarding the accident",
+    ),
+    "pleaseEnterVehicleId": MessageLookupByLibrary.simpleMessage(
+      "Please enter vehicle ID",
+    ),
     "pleaseLoginToContinue": MessageLookupByLibrary.simpleMessage(
       "Please login to continue",
+    ),
+    "pleaseScanQrToPay": MessageLookupByLibrary.simpleMessage(
+      "Please scan the code above to complete the payment and confirmation",
     ),
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "Please select birthday",
@@ -396,6 +440,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "Please select start date",
     ),
+    "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
+      "Please specify the details of the accident that occurred",
+    ),
+    "pleaseSpecifyAccidentLocation": MessageLookupByLibrary.simpleMessage(
+      "Please specify the location of the accident",
+    ),
     "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
       "Please take an engine image",
     ),
@@ -414,6 +464,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
       "Please take a right side image",
     ),
+    "pleaseUploadAllImages": MessageLookupByLibrary.simpleMessage(
+      "Please upload all images",
+    ),
+    "pleaseUploadFile": MessageLookupByLibrary.simpleMessage(
+      "Please upload a file from files \n\n Allowed types: PDF, DOC",
+    ),
     "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
       "Please upload the inspection document (Al-Haza)",
     ),
@@ -426,6 +482,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseUploadOwnershipFrontImage": MessageLookupByLibrary.simpleMessage(
       "Please attach front ownership image",
     ),
+    "pleaseUploadPoliceReport": MessageLookupByLibrary.simpleMessage(
+      "Please upload police report",
+    ),
     "policy": MessageLookupByLibrary.simpleMessage("Policy"),
     "preview": MessageLookupByLibrary.simpleMessage("Preview"),
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
@@ -434,6 +493,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "public": MessageLookupByLibrary.simpleMessage("public"),
     "qiCard": MessageLookupByLibrary.simpleMessage("Qi Card"),
+    "qrCode": MessageLookupByLibrary.simpleMessage("QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("Radio and Type"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("Radio Antenna"),
     "rear": MessageLookupByLibrary.simpleMessage("Rear"),
@@ -491,17 +551,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(
       "Spare Tools Group",
     ),
+    "startNow": MessageLookupByLibrary.simpleMessage("Start now"),
     "startYourInsuranceJourneyEasily": MessageLookupByLibrary.simpleMessage(
       "Start your insurance journey easily",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "سوف يتم حذف الحساب بجميع البيانات والكورسات",
     ),
+    "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("Subscribe Now"),
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "sure": MessageLookupByLibrary.simpleMessage("Sure"),
+    "takePicture": MessageLookupByLibrary.simpleMessage("Take picture"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage(
       "Technical Package",
+    ),
+    "technicalSupport": MessageLookupByLibrary.simpleMessage(
+      "Technical Support",
     ),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
@@ -526,6 +592,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Unified Card Info",
     ),
     "update": MessageLookupByLibrary.simpleMessage("update"),
+    "uploadFromFiles": MessageLookupByLibrary.simpleMessage(
+      "Upload from files",
+    ),
     "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
       "Upload car inspection report",
     ),

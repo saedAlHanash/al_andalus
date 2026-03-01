@@ -251,7 +251,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                           setState(() {
                             state.mRequest.ownershipFrontImage = value;
                           });
-                          state.mRequest.setImages(value);
+                          state.mRequest.setTempImages(value);
                         },
                       );
                     },

@@ -33,9 +33,13 @@ import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/cars/ui/pages/car_page.dart';
 import '../features/cars/ui/pages/cars_page.dart';
 import '../features/cars/data/response/cars_response.dart';
+import '../features/cars/ui/pages/custome_web_page_view.dart';
+import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
+import '../features/accident/ui/pages/add_accident_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
+import '../features/insurances/data/response/insurance_package.dart';
 import '../features/insurances/ui/pages/insurance_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
@@ -294,11 +298,35 @@ final goRouter = GoRouter(
           create: (context) => sl<CarCubit>()..getData(id: id),
           child: const CarPage(),
         );
-
       },
     ),
 
     //endregion
+
+    //region accident
+    GoRoute(
+      path: RouteName.addAccidentPage,
+      name: RouteName.addAccidentPage,
+      builder: (_, state) {
+        final vehicleId = state.uri.queryParameters['vehicleId'] ?? '';
+        return BlocProvider(
+          create: (context) => sl<AccidentsCubit>()..state.mRequest.vehicleId = vehicleId,
+          child: AddAccidentPage(),
+        );
+      },
+    ),
+    //endregion
+
+    /// webView
+    GoRoute(
+      path: RouteName.webView,
+      name: RouteName.webView,
+      builder: (_, state) {
+        final String url = (state.uri.queryParameters['url'] ?? '').toString();
+        return MyCustomWebPage(urlWebPage: url);
+      },
+    ),
+
     GoRoute(
       path: RouteName.pdf,
       name: RouteName.pdf,
@@ -356,4 +384,6 @@ class RouteName {
   static const carsPage = '/carsPage';
   static const carPage = '/carPage';
   static const addCarPage = '/addCarPage';
+  static const addAccidentPage = '/addAccidentPage';
+  static const webView = '/webView';
 }

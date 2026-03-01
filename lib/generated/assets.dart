@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsIconsAccident = 'assets/icons/accident.svg';
   static const String fontsCairo = 'assets/fonts/cairo.ttf';
   static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
@@ -21,6 +22,7 @@ class Assets {
   static const String iconsCoins = 'assets/icons/coins.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
   static const String iconsDone = 'assets/icons/done.svg';
+  static const String iconsDoneShild = 'assets/icons/done_shild.svg';
   static const String iconsDoneStep = 'assets/icons/done_step.svg';
   static const String iconsDoneTake = 'assets/icons/done_take.svg';
   static const String iconsEdit = 'assets/icons/edit.svg';
@@ -49,8 +51,12 @@ class Assets {
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
   static const String iconsPlate = 'assets/icons/plate.svg';
   static const String iconsProfileBack = 'assets/icons/profile_back.png';
+  static const String iconsQr = 'assets/icons/qr.svg';
   static const String iconsRadio = 'assets/icons/radio.svg';
+  static const String iconsReject = 'assets/icons/reject.svg';
+  static const String iconsSandGlass = 'assets/icons/sand_glass.svg';
   static const String iconsSearch = 'assets/icons/search.svg';
+  static const String iconsSearchCar = 'assets/icons/search_car.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsSupport = 'assets/icons/support.png';
   static const String iconsSupportBorder = 'assets/icons/support_border.png';
@@ -80,5 +86,4 @@ class Assets {
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';
-
 }

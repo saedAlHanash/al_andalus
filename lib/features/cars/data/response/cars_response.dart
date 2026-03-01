@@ -1,4 +1,5 @@
 import '../../../../core/strings/enum_manager.dart';
+import '../../../insurances/data/response/insurance_package.dart';
 
 class CarPolicies {
   CarPolicies({
@@ -77,36 +78,6 @@ class CarPolicy {
     "policy_file": policyFile,
     "fields_to_be_refilled": fieldsToBeRefilled,
     "created": created,
-  };
-}
-
-class InsurancePackage {
-  InsurancePackage({
-    required this.id,
-    required this.title,
-    required this.level,
-    required this.type,
-  });
-
-  final int id;
-  final String title;
-  final InsuranceLevel level;
-  final String type;
-
-  factory InsurancePackage.fromJson(Map<String, dynamic> json) {
-    return InsurancePackage(
-      id: json["id"] ?? 0,
-      title: json["title"] ?? "",
-      level: InsuranceLevel.getByNameOrIndex(json["level"]),
-      type: json["type"] ?? "",
-    );
-  }
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "title": title,
-    "level": level.index,
-    "type": type,
   };
 }
 

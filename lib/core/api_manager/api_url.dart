@@ -117,6 +117,7 @@ class GetUrl {
   static const insurances = 'insurance-package';
 
   static const myCars = 'insurance-policy';
+  static const claim = 'claim';
 }
 
 class PostUrl {
@@ -218,6 +219,7 @@ class PostUrl {
   }
 
   static const createInsurancePolicy = 'insurance-policy';
+  static const claim = 'claim';
 }
 
 class PutUrl {
@@ -241,6 +243,8 @@ class PutUrl {
   static var updateTemp = '';
 
   static var updateGroup = '';
+
+  static String rePay(String id) => 'insurance-policy/$id/repayment';
 
   static const updateInsurancePolicy = 'insurance-policy';
 }

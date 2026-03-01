@@ -2368,6 +2368,271 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose Language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose Language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `Kurdish`
+  String get kurdish {
+    return Intl.message('Kurdish', name: 'kurdish', desc: '', args: []);
+  }
+
+  /// `Technical Support`
+  String get technicalSupport {
+    return Intl.message(
+      'Technical Support',
+      name: 'technicalSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calculate your car insurance cost`
+  String get calculateInsuranceCost {
+    return Intl.message(
+      'Calculate your car insurance cost',
+      name: 'calculateInsuranceCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose engine capacity`
+  String get chooseEngineCapacity {
+    return Intl.message(
+      'Choose engine capacity',
+      name: 'chooseEngineCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter car value`
+  String get enterCarValue {
+    return Intl.message(
+      'Enter car value',
+      name: 'enterCarValue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start now`
+  String get startNow {
+    return Intl.message('Start now', name: 'startNow', desc: '', args: []);
+  }
+
+  /// `Enter required details`
+  String get enterRequiredDetails {
+    return Intl.message(
+      'Enter required details',
+      name: 'enterRequiredDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message('Submit', name: 'submit', desc: '', args: []);
+  }
+
+  /// `Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions`
+  String get ensureTextIsClear {
+    return Intl.message(
+      'Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions',
+      name: 'ensureTextIsClear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload from files`
+  String get uploadFromFiles {
+    return Intl.message(
+      'Upload from files',
+      name: 'uploadFromFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take picture`
+  String get takePicture {
+    return Intl.message(
+      'Take picture',
+      name: 'takePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload a file from files \n\n Allowed types: PDF, DOC`
+  String get pleaseUploadFile {
+    return Intl.message(
+      'Please upload a file from files \n\n Allowed types: PDF, DOC',
+      name: 'pleaseUploadFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QR Code`
+  String get qrCode {
+    return Intl.message('QR Code', name: 'qrCode', desc: '', args: []);
+  }
+
+  /// `Please scan the code above to complete the payment and confirmation`
+  String get pleaseScanQrToPay {
+    return Intl.message(
+      'Please scan the code above to complete the payment and confirmation',
+      name: 'pleaseScanQrToPay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Information`
+  String get generalInformation {
+    return Intl.message(
+      'General Information',
+      name: 'generalInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Photos of the accident`
+  String get photosOfTheAccident {
+    return Intl.message(
+      'Photos of the accident',
+      name: 'photosOfTheAccident',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter and attach the required information regarding the accident`
+  String get pleaseEnterRequiredAccidentInfo {
+    return Intl.message(
+      'Please enter and attach the required information regarding the accident',
+      name: 'pleaseEnterRequiredAccidentInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accident Details`
+  String get accidentDetails {
+    return Intl.message(
+      'Accident Details',
+      name: 'accidentDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please specify the details of the accident that occurred`
+  String get pleaseSpecifyAccidentDetails {
+    return Intl.message(
+      'Please specify the details of the accident that occurred',
+      name: 'pleaseSpecifyAccidentDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accident Location`
+  String get accidentLocation {
+    return Intl.message(
+      'Accident Location',
+      name: 'accidentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please specify the location of the accident`
+  String get pleaseSpecifyAccidentLocation {
+    return Intl.message(
+      'Please specify the location of the accident',
+      name: 'pleaseSpecifyAccidentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach Police Report:`
+  String get attachPoliceReport {
+    return Intl.message(
+      'Attach Police Report:',
+      name: 'attachPoliceReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter vehicle ID`
+  String get pleaseEnterVehicleId {
+    return Intl.message(
+      'Please enter vehicle ID',
+      name: 'pleaseEnterVehicleId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter location`
+  String get pleaseEnterLocation {
+    return Intl.message(
+      'Please enter location',
+      name: 'pleaseEnterLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter description`
+  String get pleaseEnterDescription {
+    return Intl.message(
+      'Please enter description',
+      name: 'pleaseEnterDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload police report`
+  String get pleaseUploadPoliceReport {
+    return Intl.message(
+      'Please upload police report',
+      name: 'pleaseUploadPoliceReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload all images`
+  String get pleaseUploadAllImages {
+    return Intl.message(
+      'Please upload all images',
+      name: 'pleaseUploadAllImages',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

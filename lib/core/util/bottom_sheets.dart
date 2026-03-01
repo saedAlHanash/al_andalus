@@ -1,11 +1,14 @@
 import 'dart:convert';
 import 'dart:ui';
 
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_checkbox_widget.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/insurances/data/response/insurance_package.dart';
 import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -14,6 +17,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../../core/app/app_widget.dart';
 import '../../../../core/util/shared_preferences.dart';
@@ -24,6 +28,7 @@ import '../../generated/l10n.dart';
 import '../../router/go_router.dart';
 import '../api_manager/api_service.dart';
 import '../strings/enum_manager.dart';
+import 'my_style.dart';
 
 void showLanguageDialog(BuildContext context) {
   showModalBottomSheet(
@@ -37,7 +42,7 @@ void showLanguageDialog(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           children: [
             _Header(),
-            _Title(title: 'اختر اللغة'),
+            _Title(title: S.of(context).chooseLanguage),
             Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
@@ -47,7 +52,7 @@ void showLanguageDialog(BuildContext context) {
                     onTap: () {
                       MyApp.setLocale(context, 'ar');
                     },
-                    title: DrawableText(text: 'العربية'),
+                    title: DrawableText(text: S.of(context).arabic),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
@@ -57,7 +62,7 @@ void showLanguageDialog(BuildContext context) {
                     onTap: () {
                       MyApp.setLocale(context, 'kr');
                     },
-                    title: DrawableText(text: 'كوردى'),
+                    title: DrawableText(text: S.of(context).kurdish),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'kr' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
@@ -101,7 +106,7 @@ void showSupportCall(BuildContext context) {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      _Title(title: 'الدعم الفني'),
+                      _Title(title: S.of(context).technicalSupport),
                       ListTile(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -174,10 +179,10 @@ void showCalculationPrice(BuildContext context, InsurancePackage insurancePackag
                 padding: EdgeInsets.all(20.0).r,
                 child: Column(
                   children: [
-                    _Title(title: 'إحسب تكلفة التأمين لسيارتك'),
+                    _Title(title: S.of(context).calculateInsuranceCost),
                     10.0.verticalSpace,
                     DrawableText(
-                      text: 'إختر حجم المحرك',
+                      text: S.of(context).chooseEngineCapacity,
                       matchParent: true,
                     ),
                     MyCheckboxWidget(
@@ -208,7 +213,7 @@ void showCalculationPrice(BuildContext context, InsurancePackage insurancePackag
                         p = double.parse(p0);
                       },
                       keyBordType: TextInputType.number,
-                      labelText: 'أدخل قيمة السيارة',
+                      labelText: S.of(context).enterCarValue,
                       hint: '0.0',
                     ),
                     10.0.verticalSpace,
@@ -224,7 +229,7 @@ void showCalculationPrice(BuildContext context, InsurancePackage insurancePackag
                           },
                         );
                       },
-                      text: 'ابدأ الآن',
+                      text: S.of(context).startNow,
                     ),
                   ],
                 ),
@@ -263,19 +268,19 @@ void showAddNote(
                   children: [
                     _Title(title: title),
                     DrawableText(
-                      text: 'إدخل التفاصيل المطلوبه',
+                      text: S.of(context).enterRequiredDetails,
                       size: 12.0.sp,
                       matchParent: true,
                     ),
                     10.0.verticalSpace,
                     MyTextFormOutLineWidget(
                       controller: controller,
-                      hint: 'إدخل التفاصيل المطلوبه',
+                      hint: S.of(context).enterRequiredDetails,
                       maxLines: 7,
                     ),
                     10.0.verticalSpace,
                     MyButton(
-                      text: 'إدخال',
+                      text: S.of(context).submit,
                       onTap: () {
                         onDone.call(controller.text);
                         context.pop();
@@ -312,17 +317,14 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                   height: 192.0.h,
                 ),
                 DrawableText(
-                  text:
-                      'تأكد أن النص واضح وقابل للقراءة '
-                      '\n\n'
-                      'يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات',
+                  text: S.of(context).ensureTextIsClear,
                   color: Colors.grey,
                   fontWeight: FontWeight.bold,
                 ),
 
                 10.0.verticalSpace,
                 MyButton(
-                  text: 'رفع من الملفات',
+                  text: S.of(context).uploadFromFiles,
                   icon: ImageMultiType(url: Icons.file_upload_outlined),
                   onTap: () {
                     Navigator.pop(ctx);
@@ -338,7 +340,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 ),
                 10.0.verticalSpace,
                 MyButton(
-                  text: 'التقط صورة',
+                  text: S.of(context).takePicture,
                   icon: ImageMultiType(url: Icons.camera_alt_outlined),
                   onTap: () {
                     Navigator.pop(ctx);
@@ -380,21 +382,18 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                   height: 100.0.h,
                 ),
                 DrawableText(
-                  text:
-                      'يرجى رفع ملف من الملفات'
-                      '\n\n'
-                      'الأنواع المسموحة: PDF, DOC',
+                  text: S.of(context).pleaseUploadFile,
                   color: Colors.grey,
                   fontWeight: FontWeight.bold,
                 ),
 
                 10.0.verticalSpace,
                 MyButton(
-                  text: 'رفع من الملفات',
+                  text: S.of(context).uploadFromFiles,
                   icon: ImageMultiType(url: Icons.file_upload_outlined),
                   onTap: () {
                     Navigator.pop(ctx);
-                    pickAndUpload(allowedExtensions: ['pdf', 'doc','PDF', 'DOC']).then(
+                    pickAndUpload(allowedExtensions: ['pdf', 'doc', 'PDF', 'DOC']).then(
                       (value) async {
                         if (value == null || !context.mounted) return;
                         onConfirm.call(value);
@@ -402,6 +401,204 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                     );
                   },
                 ),
+              ],
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void showRePay(BuildContext context, num value, Function(PaymentType value) onConfirm) {
+  PaymentType? type;
+  showModalBottomSheet(
+    context: context,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _Header(),
+          StatefulBuilder(
+            builder: (context, setState) {
+              return Container(
+                color: Colors.white,
+                padding: const EdgeInsets.all(20.0).r,
+                child: Column(
+                  children: [
+                    DrawableText(text: S.of(context).selectPaymentMethod),
+                    20.0.verticalSpace,
+                    Container(
+                      decoration: MyStyle.roundBox12(
+                        type == .qiCard ? AppColorManager.mainColor.withValues(alpha: 0.1) : Colors.white,
+                      ),
+                      child: ListTile(
+                        onTap: () {
+                          setState(() {
+                            type = .qiCard;
+                          });
+                        },
+                        title: DrawableText(text: S.of(context).electronicCard),
+                        subtitle: DrawableText(text: S.of(context).paymentViaElectronicCard),
+                        trailing: ImageMultiType(
+                          url: Assets.imagesVisa,
+                          width: 71.0.w,
+                        ),
+                      ),
+                    ),
+                    25.0.verticalSpace,
+                    Container(
+                      decoration: MyStyle.roundBox12(
+                        type == .zainCash ? AppColorManager.mainColor.withValues(alpha: 0.3) : Colors.white,
+                      ),
+                      child: ListTile(
+                        onTap: () {
+                          setState(() {
+                            type = .zainCash;
+                          });
+                        },
+                        title: DrawableText(text: S.of(context).zainCashWallet),
+                        subtitle: DrawableText(text: S.of(context).paymentViaWallet),
+                        trailing: ImageMultiType(
+                          url: Assets.imagesZainCash,
+                          width: 71.0.w,
+                        ),
+                      ),
+                    ),
+                    30.0.verticalSpace,
+                    DrawableText(
+                      text: S.of(context).totalAmount,
+                      padding: EdgeInsets.symmetric(vertical: 10.0).r,
+                      matchParent: true,
+                      drawableAlin: .between,
+                      drawableEnd: DrawableText(text: value.formatPrice),
+                    ),
+                    MyButton(
+                      enable: type != null,
+                      text: S.of(context).pay,
+                      icon: ImageMultiType(url: Icons.payment, color: AppColorManager.white),
+                      onTap: () {
+                        onConfirm.call(type!);
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void selectCar(
+  BuildContext context,
+  List<CarPolicy> cars,
+  Function(CarPolicy value) onConfirm,
+) {
+  showModalBottomSheet(
+    context: context,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _Header(),
+          StatefulBuilder(
+            builder: (context, setState) {
+              return Container(
+                color: Colors.white,
+                padding: const EdgeInsets.all(20.0).r,
+                child: Column(
+                  children: [
+                    _Title(
+                      title: 'إختر السيارة المرغوبة',
+                    ),
+                    15.0.verticalSpace,
+                    DrawableText(
+                      text: 'يرجى تحديد السيارة المرغوب عرض تفاصيلها',
+                      matchParent: true,
+                    ),
+                    10.0.verticalSpace,
+                    ...cars
+                        .map(
+                          (e) => Container(
+                            decoration: MyStyle.roundBox12(Colors.white),
+                            child: ListTile(
+                              onTap: () {
+                                Navigator.pop(context);
+                                onConfirm.call(e);
+                              },
+                              title: DrawableText(text: e.vehicle.name),
+                              leading: ImageMultiType(url: Assets.iconsTaxi),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void showQr(BuildContext context, String qr) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _Header(),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(24.0).r,
+            child: Column(
+              children: [
+                _Title(title: S.of(context).qrCode),
+                20.0.verticalSpace,
+                Container(
+                  padding: EdgeInsets.all(12.0).r,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16.0).r,
+                    border: Border.all(color: AppColorManager.mainColor.withValues(alpha: 0.1)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.05),
+                        blurRadius: 10.0,
+                        spreadRadius: 1.0,
+                      ),
+                    ],
+                  ),
+                  child: QrImageView(
+                    data: qr,
+                    version: QrVersions.auto,
+                    size: 250.0.r,
+                  ),
+                ),
+                30.0.verticalSpace,
+                DrawableText(
+                  text: S.of(context).pleaseScanQrToPay,
+                  textAlign: .center,
+                  matchParent: true,
+                  size: 16.0.sp,
+                ),
+                30.0.verticalSpace,
+                MyButton(
+                  text: S.of(context).done,
+                  onTap: () => Navigator.pop(context),
+                ),
+                15.0.verticalSpace,
               ],
             ),
           ),

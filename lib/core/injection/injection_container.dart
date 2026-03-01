@@ -4,6 +4,8 @@ import 'package:al_andalus/features/insurances/bloc/insurance_cubit/insurance_cu
 import 'package:al_andalus/features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
 import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
+import 'package:al_andalus/features/accident/bloc/accident_cubit/accident_cubit.dart';
+import 'package:al_andalus/features/accident/bloc/accidents_cubit/accidents_cubit.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
@@ -66,6 +68,8 @@ Future<void> init() async {
   sl.registerFactory(() => InsurancesCubit());
   sl.registerFactory(() => CarsCubit());
   sl.registerFactory(() => CarCubit());
+  sl.registerFactory(() => AccidentsCubit());
+  sl.registerFactory(() => AccidentCubit());
 
   //endregion
 

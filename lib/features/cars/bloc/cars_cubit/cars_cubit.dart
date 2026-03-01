@@ -58,6 +58,18 @@ class CarsCubit extends MCubit<CarsInitial> {
 
   //region CRUD
 
+  Future<void> rePay({required String id, required PaymentType type}) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
+
+    final response = await APIService().callApi(
+      type: .put,
+      url: PutUrl.rePay(id),
+      body: {'payment_type': type.nameApi},
+    );
+
+    _pay(response);
+  }
+
   Future<void> create() async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
 
@@ -66,13 +78,7 @@ class CarsCubit extends MCubit<CarsInitial> {
       files: state.mRequest.files,
       fields: state.mRequest.toJson(),
     );
-    if (response.statusCode.success) {
-      final url = response.jsonBody['url'] ?? '';
-      emit(state.copyWith(statuses: CubitStatuses.done, url: url));
-    } else {
-      emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
-      showErrorFromApi(state);
-    }
+    _pay(response);
   }
 
   Future<void> update() async {
@@ -116,7 +122,22 @@ class CarsCubit extends MCubit<CarsInitial> {
     }
   }
 
+  Future<void> _pay(Response response) async {
+    if (response.statusCode.success) {
+      final url = response.jsonBody['url'] ?? '';
+      emit(state.copyWith(idNotifier: state.idNotifier + 1, statuses: CubitStatuses.done, url: url));
+    } else {
+      emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
+      showErrorFromApi(state);
+    }
+  }
+
+  Future<void> doneOpenUrl() async {
+    emit(state.copyWith(idNotifier: state.idNotifier + 1, url: ''));
+  }
+
   //endregion
+
   void setCylindersAndValue() {}
 
   void next({int? step}) {

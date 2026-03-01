@@ -7,8 +7,12 @@ import 'package:al_andalus/features/home/ui/widget/how_can_help.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/helper/launcher_helper.dart';
 import '../../../../core/strings/enum_manager.dart';
+import '../../../../router/go_router.dart';
+import '../../../cars/bloc/cars_cubit/cars_cubit.dart';
 import '../../../cars/ui/widget/list_cars.dart';
 import '../../../category/ui/widget/home_categories.dart';
 
@@ -17,21 +21,28 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: RefreshWidget(
-        isLoading: false,
-        onRefresh: () {
-          context.read<AdssCubit>().getData(newData: true);
-        },
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 20.0).r,
-          children: [
-            HiWidget(),
-            AddsSlider(type: AdsType.banner, height: 150.0),
-            HowCanHelp(),
-            ListCars(),
-            AddsSlider(type: AdsType.slider, height: 90.0),
-          ],
+    return BlocListener<CarsCubit, CarsInitial>(
+      listenWhen: (p, c) => c.done && c.url.isNotEmpty,
+      listener: (context, state) {
+        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url});
+        context.read<CarsCubit>().doneOpenUrl();
+      },
+      child: Scaffold(
+        body: RefreshWidget(
+          isLoading: false,
+          onRefresh: () {
+            context.read<AdssCubit>().getData(newData: true);
+          },
+          child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: 20.0).r,
+            children: [
+              HiWidget(),
+              AddsSlider(type: AdsType.banner, height: 150.0),
+              HowCanHelp(),
+              ListCars(),
+              AddsSlider(type: AdsType.slider, height: 90.0),
+            ],
+          ),
         ),
       ),
     );

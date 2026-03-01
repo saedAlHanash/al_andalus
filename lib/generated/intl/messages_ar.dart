@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "مقبول من المساح",
     ),
+    "accidentDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الحادث"),
+    "accidentLocation": MessageLookupByLibrary.simpleMessage("موقع الحادث"),
     "active": MessageLookupByLibrary.simpleMessage("نشط"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "annually": MessageLookupByLibrary.simpleMessage("سنويا"),
     "approved": MessageLookupByLibrary.simpleMessage("مقبول"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة البطاقة الخلفية هنا",
@@ -66,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة الإجازة الأمامية هنا",
     ),
+    "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
+      " إرفق تقرير الشرطة:",
+    ),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "البيانات البيومترية",
@@ -74,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "brandSign": MessageLookupByLibrary.simpleMessage("علامة السيارة"),
     "browseFiles": MessageLookupByLibrary.simpleMessage("تصفح الملفات"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
+    "calculateInsuranceCost": MessageLookupByLibrary.simpleMessage(
+      "إحسب تكلفة التأمين لسيارتك",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
       "Cancel the document",
@@ -89,6 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير الرمز السري"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
+    "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
+      "إختر حجم المحرك",
+    ),
+    "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
@@ -138,12 +151,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "engine": MessageLookupByLibrary.simpleMessage("المحرك"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
+    "ensureTextIsClear": MessageLookupByLibrary.simpleMessage(
+      "تأكد أن النص واضح وقابل للقراءة \n\n يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات",
+    ),
     "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
+    "enterCarValue": MessageLookupByLibrary.simpleMessage("أدخل قيمة السيارة"),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
       "ادخل تاريخ الصلاحية",
     ),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التفعيل الخاص بك هنا.",
+    ),
+    "enterRequiredDetails": MessageLookupByLibrary.simpleMessage(
+      "إدخل التفاصيل المطلوبه",
     ),
     "enterThe6digitCode": MessageLookupByLibrary.simpleMessage(
       "أدخل الرمز المكون من 6 أرقام",
@@ -169,6 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fuelType": MessageLookupByLibrary.simpleMessage("نوع الوقود"),
     "gaz": MessageLookupByLibrary.simpleMessage("غاز"),
     "gender": MessageLookupByLibrary.simpleMessage("الجنس"),
+    "generalInformation": MessageLookupByLibrary.simpleMessage("معلومات عامة"),
     "glassAndLamps": MessageLookupByLibrary.simpleMessage("الزجاج و المصابيح"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
     "guestLogin": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
@@ -207,6 +228,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "joined": MessageLookupByLibrary.simpleMessage("الإنضمام"),
     "knowMore": MessageLookupByLibrary.simpleMessage("معرفة المزيد"),
     "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفه التفاصيل"),
+    "kurdish": MessageLookupByLibrary.simpleMessage("كوردى"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
     "left": MessageLookupByLibrary.simpleMessage("اليسار"),
@@ -293,6 +315,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "petrol": MessageLookupByLibrary.simpleMessage("بنزين"),
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -331,6 +354,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterChassisNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الشاصي",
     ),
+    "pleaseEnterDescription": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال تفاصيل الحادث",
+    ),
     "pleaseEnterEngineCapacity": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال سعة المحرك",
     ),
@@ -346,6 +372,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterLicenseType": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال نوع الإجازة",
     ),
+    "pleaseEnterLocation": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال موقع الحادث",
+    ),
     "pleaseEnterOldAndNewPassword": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال كلمة المرور القديمة والجديدة",
     ),
@@ -355,8 +384,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterPlateNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم اللوحة",
     ),
+    "pleaseEnterRequiredAccidentInfo": MessageLookupByLibrary.simpleMessage(
+      "يرجى تعبئه و إرفاق المعلومات المطلوبه بخصوص الحادث",
+    ),
+    "pleaseEnterVehicleId": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال معرف المركبة",
+    ),
     "pleaseLoginToContinue": MessageLookupByLibrary.simpleMessage(
       "يرجى تسجيل الدخول للمتابعة",
+    ),
+    "pleaseScanQrToPay": MessageLookupByLibrary.simpleMessage(
+      "يرجى مسح الرمز أعلاه لإتمام عملية الدفع والتأكيد",
     ),
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الميلاد",
@@ -379,6 +417,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار تاريخ البداية",
     ),
+    "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
+      "يرجى ذكر تفاصيل الحادث الذي جرى",
+    ),
+    "pleaseSpecifyAccidentLocation": MessageLookupByLibrary.simpleMessage(
+      "يرجى ذكر موقع الحادث",
+    ),
     "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
       "يرجى التقاط صورة لمحرك السيارة",
     ),
@@ -397,6 +441,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
       "يرجى التقاط صورة للجانب الأيمن",
     ),
+    "pleaseUploadAllImages": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق جميع الصور",
+    ),
+    "pleaseUploadFile": MessageLookupByLibrary.simpleMessage(
+      "يرجى رفع ملف من الملفات \n\n الأنواع المسموحة: PDF, DOC",
+    ),
     "pleaseUploadInspectionDocument": MessageLookupByLibrary.simpleMessage(
       "يرجى القيام برفع مستند الفحص (الهزة)",
     ),
@@ -409,6 +459,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseUploadOwnershipFrontImage": MessageLookupByLibrary.simpleMessage(
       "يرجى إرفاق صورة السنوية الأمامية",
     ),
+    "pleaseUploadPoliceReport": MessageLookupByLibrary.simpleMessage(
+      "يرجى إرفاق تقرير الشرطة",
+    ),
     "policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "preview": MessageLookupByLibrary.simpleMessage("المعاينة"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
@@ -417,6 +470,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
     "public": MessageLookupByLibrary.simpleMessage("عام"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
+    "qrCode": MessageLookupByLibrary.simpleMessage("الرمز السريع QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
@@ -472,16 +526,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(
       "الأدوات الإحتياطيه",
     ),
+    "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "startYourInsuranceJourneyEasily": MessageLookupByLibrary.simpleMessage(
       "ابدأ رحلتك التأمينية بكل سهولة",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "سوف يتم حذف الحساب بجميع البيانات والكورسات",
     ),
+    "submit": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("اشترك الان"),
     "support": MessageLookupByLibrary.simpleMessage("الدعم"),
     "sure": MessageLookupByLibrary.simpleMessage("متأكد"),
+    "takePicture": MessageLookupByLibrary.simpleMessage("التقاط صورة"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage("الحزمة التقنية"),
+    "technicalSupport": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
     ),
@@ -505,6 +563,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "معلومات البطاقة الموحدة",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "uploadFromFiles": MessageLookupByLibrary.simpleMessage("رفع من الملفات"),
     "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
       "قم برفع تقرير فحص السيارة",
     ),

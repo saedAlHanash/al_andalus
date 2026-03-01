@@ -1,11 +1,16 @@
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
+import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:http/http.dart';
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../data/response/cars_response.dart';
@@ -43,13 +48,32 @@ class ItemCar extends StatelessWidget {
             },
           ),
           16.0.verticalSpace,
-          OutLineButton(
-            onTap: () => context.pushNamed(
-              RouteName.carPage,
-              queryParameters: {'id': car.id.toString()},
+          if (car.status != .paymentPending)
+            BlocBuilder<CarsCubit, CarsInitial>(
+              builder: (context, state) {
+                return MyButton(
+                  loading: state.loading,
+                  onTap: () {
+                    showRePay(
+                      context,
+                      car.annualSubscriptionPrice,
+                      (value) {
+                        context.read<CarsCubit>().rePay(id: car.id.toString(), type: value);
+                      },
+                    );
+                  },
+                  text: S.of(context).pay,
+                );
+              },
+            )
+          else
+            OutLineButton(
+              onTap: () => context.pushNamed(
+                RouteName.carPage,
+                queryParameters: {'id': car.id.toString()},
+              ),
+              text: S.of(context).viewInsuranceStatement,
             ),
-            text: S.of(context).viewInsuranceStatement,
-          ),
           16.0.verticalSpace,
         ],
       ),

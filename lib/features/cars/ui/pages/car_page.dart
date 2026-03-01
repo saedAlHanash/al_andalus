@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/cars/ui/widget/car_info.dart';
@@ -23,7 +24,17 @@ class CarPage extends StatelessWidget {
       builder: (context, state) {
         final CarPolicy car = state.result;
         return Scaffold(
-          appBar: AppBarWidget(titleText: car.vehicle.name),
+          appBar: AppBarWidget(
+            titleText: car.vehicle.name,
+            actions: [
+              IconButton(
+                onPressed: () {
+                  showQr(context, car.qrcode);
+                },
+                icon: ImageMultiType(url: Assets.iconsQr),
+              ),
+            ],
+          ),
           body: ListView(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
             children: [

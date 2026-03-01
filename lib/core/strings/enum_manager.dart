@@ -225,30 +225,6 @@ enum SortBy {
   }
 }
 
-enum PaymentMethod {
-  cash,
-  gateway
-  ;
-
-  String get name {
-    switch (this) {
-      case PaymentMethod.cash:
-        return 'الدفع عند الاستلام';
-      case PaymentMethod.gateway:
-        return 'الكتروني';
-    }
-  }
-
-  String get nameApi {
-    switch (this) {
-      case PaymentMethod.cash:
-        return 'cash';
-      case PaymentMethod.gateway:
-        return 'gateway';
-    }
-  }
-}
-
 enum SortOrder {
   asc,
   desc

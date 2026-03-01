@@ -17,7 +17,6 @@ class CustomStepperWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasyStepper(
-
       showLoadingAnimation: false,
       activeStep: activeStep,
       onStepReached: onStepReached,
@@ -37,7 +36,7 @@ class CustomStepperWidget extends StatelessWidget {
       stepRadius: 11.r,
       finishedStepBorderType: BorderType.normal,
       lineStyle: LineStyle(
-        lineLength: .2.sw,
+        lineLength: (0.4 - (steps.length - 2) * 0.066).sw,
         lineWidth: 120.w,
         lineThickness: 2.h,
         lineType: LineType.normal,

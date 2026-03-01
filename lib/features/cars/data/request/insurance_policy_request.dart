@@ -227,7 +227,7 @@ class InsurancePolicyRequest {
     'inspection[other_notes]': otherNotes,
   };
 
-  void setImages(UploadFile file) {
+  void setTempImages(UploadFile file) {
     if (!kDebugMode) return;
 
     // final ownershipFrontImageName = ownershipFrontImage.nameField;

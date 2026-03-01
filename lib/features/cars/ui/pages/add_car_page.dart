@@ -34,11 +34,10 @@ class _AddCarPageState extends State<AddCarPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<CarsCubit, CarsInitial>(
-      listenWhen: (p, c) => c.done && c.cubitCrud == .create,
+      listenWhen: (p, c) => c.done && c.url.isNotEmpty,
       listener: (context, state) {
-        if (state.url.isNotEmpty) {
-          LauncherHelper.openPage(state.url);
-        }
+        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url});
+        context.read<CarsCubit>().doneOpenUrl();
       },
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
@@ -47,6 +46,7 @@ class _AddCarPageState extends State<AddCarPage> {
             bottomNavigationBar: Padding(
               padding: EdgeInsetsGeometry.all(20.0),
               child: MyButton(
+                loading: state.loading,
                 onTap: () {
                   final request = state.mRequest;
 
