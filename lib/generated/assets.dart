@@ -82,6 +82,7 @@ class Assets {
   static const String imagesJustLogo = 'assets/images/just_logo.jpg';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesLogoAuth = 'assets/images/logo_auth.png';
+  static const String imagesLogoWithoutText = 'assets/images/logo_without_text.png';
   static const String imagesPistons = 'assets/images/pistons.png';
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';

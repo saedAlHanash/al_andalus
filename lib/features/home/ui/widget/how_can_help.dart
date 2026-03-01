@@ -34,7 +34,7 @@ class HowCanHelp extends StatelessWidget {
                     selectCar(context, state.result, (value) {
                       context.pushNamed(
                         RouteName.addAccidentPage,
-                        queryParameters: {'vehicleId': value.id.toString()},
+                        queryParameters: {'vehicleId': value.vehicle.id.toString()},
                       );
                     });
                   },
