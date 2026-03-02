@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import '../core/injection/injection_container.dart';
 import '../core/strings/enum_manager.dart';
 import '../core/widgets/pdf_viewer_page.dart';
+import '../core/widgets/qr_scanner_page.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
 import '../features/auth/bloc/confirm_code_cubit/confirm_code_cubit.dart';
@@ -32,11 +33,12 @@ import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/cars/ui/pages/car_page.dart';
 import '../features/cars/ui/pages/cars_page.dart';
-import '../features/cars/data/response/cars_response.dart';
 import '../features/cars/ui/pages/custome_web_page_view.dart';
 import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
 import '../features/accident/ui/pages/add_accident_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
+import '../features/transfer_ownership/bloc/transfer_ownership_cubit.dart';
+import '../features/transfer_ownership/ui/pages/transfer_ownership_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
 import '../features/insurances/data/response/insurance_package.dart';
@@ -315,7 +317,24 @@ final goRouter = GoRouter(
         );
       },
     ),
+
     //endregion
+    GoRoute(
+      path: RouteName.qrScanner,
+      name: RouteName.qrScanner,
+      builder: (_, state) => const QrScannerPage(),
+    ),
+    GoRoute(
+      path: RouteName.transferOwnershipPage,
+      name: RouteName.transferOwnershipPage,
+      builder: (_, state) {
+        final policyId = int.tryParse(state.uri.queryParameters['policyId'] ?? '');
+        return BlocProvider(
+          create: (context) => TransferOwnershipCubit()..setPolicyId(policyId ?? 0),
+          child: const TransferOwnershipPage(),
+        );
+      },
+    ),
 
     /// webView
     GoRoute(
@@ -386,4 +405,6 @@ class RouteName {
   static const addCarPage = '/addCarPage';
   static const addAccidentPage = '/addAccidentPage';
   static const webView = '/webView';
+  static const String qrScanner = '/qrScanner';
+  static const String transferOwnershipPage = '/transferOwnershipPage';
 }

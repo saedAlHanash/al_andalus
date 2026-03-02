@@ -33,7 +33,7 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
         builder: (context, state) {
           return PopScope(
             canPop: false,
-            onPopInvoked: (didPop) {
+            onPopInvokedWithResult: (didPop, result) {
               if (didPop) return;
               if (state.step > 0) {
                 context.read<AccidentsCubit>().next(step: state.step - 1);

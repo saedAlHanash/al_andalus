@@ -36,14 +36,20 @@ class _AddCarPageState extends State<AddCarPage> {
     return BlocListener<CarsCubit, CarsInitial>(
       listenWhen: (p, c) => c.done && c.url.isNotEmpty,
       listener: (context, state) {
-        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url});
+        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+          (value) {
+            if (context.mounted && value == true) {
+              context.goNamed(RouteName.home);
+            }
+          },
+        );
         context.read<CarsCubit>().doneOpenUrl();
       },
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
           return PopScope(
             canPop: false,
-            onPopInvoked: (didPop) {
+            onPopInvokedWithResult: (didPop, result) {
               if (didPop) return;
               if (state.step > 0) {
                 context.read<CarsCubit>().next(step: state.step - 1);
@@ -68,8 +74,7 @@ class _AddCarPageState extends State<AddCarPage> {
                     final request = state.mRequest;
 
                     if (state.step >= 4) {
-                      LauncherHelper.openPage('https://test.zaincash.iq/transaction/pay?id=69a359524758590b12651394');
-                      // context.read<CarsCubit>().create();
+                      context.read<CarsCubit>().create();
                       return;
                     }
 

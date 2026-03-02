@@ -24,8 +24,14 @@ class HomeScreen extends StatelessWidget {
     return BlocListener<CarsCubit, CarsInitial>(
       listenWhen: (p, c) => c.done && c.url.isNotEmpty,
       listener: (context, state) {
-        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url});
         context.read<CarsCubit>().doneOpenUrl();
+        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+          (value) {
+            if (context.mounted && value == true) {
+              context.goNamed(RouteName.home);
+            }
+          },
+        );
       },
       child: Scaffold(
         body: RefreshWidget(

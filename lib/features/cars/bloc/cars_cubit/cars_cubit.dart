@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/util/pair_class.dart';
@@ -70,9 +72,33 @@ class CarsCubit extends MCubit<CarsInitial> {
     _pay(response);
   }
 
+  Future<void> approveOrReject({required String id, required PaymentType type}) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
+
+    final response = await APIService().callApi(
+      type: .put,
+      url: PutUrl.rePay(id),
+      body: {'payment_type': type.nameApi},
+    );
+
+    _pay(response);
+  }
+
   Future<void> create() async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
 
+    loggerObject.w(
+      jsonEncode(
+        state.mRequest.files
+            .map(
+              (e) => {
+                'nameField': e.nameField,
+                'fileSize': e.fileBytes?.length,
+              },
+            )
+            .toList(),
+      ),
+    );
     final response = await APIService().uploadMultiPart(
       url: PostUrl.createInsurancePolicy,
       files: state.mRequest.files,

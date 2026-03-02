@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -57,10 +54,14 @@ class HowCanHelp extends StatelessWidget {
                     children: [
                       Expanded(
                         child: _Item(
-                          onTap: () {
-                            selectCar(context, state.result, (value) {
-                              showQr(context, value.qrcode);
-                            });
+                          onTap: () async {
+                            final result = await context.pushNamed(RouteName.qrScanner);
+                            // if (result != null && context.mounted) {
+                            //   context.pushNamed(
+                            //     RouteName.transferOwnershipPage,
+                            //     queryParameters: {'policyId': result.toString()},
+                            //   );
+                            // }
                           },
                           color: const Color(0xFFE4E4E5),
                           title: S.of(context).transferOwnership,

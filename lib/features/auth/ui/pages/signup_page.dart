@@ -38,7 +38,7 @@ class _SignupPageState extends State<SignupPage> {
         builder: (context, state) {
           return PopScope(
             canPop: false,
-            onPopInvoked: (didPop) {
+            onPopInvokedWithResult: (didPop, result) {
               if (didPop) return;
               if (state.step > 0) {
                 context.read<SignupCubit>().next(step: state.step - 1);

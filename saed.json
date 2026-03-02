@@ -1,11 +1,38 @@
-{
-  "message": "السيارة غير موجودة. (and 1 more error)",
-  "errors": {
-    "vehicle_id": [
-      "السيارة غير موجودة."
-    ],
-    "police_report": [
-      "نوع الملف غير مسموح. الأنواع المسموحة: pdf, doc."
-    ]
+[
+  {
+    "nameField": "ownership_front_image",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "ownership_back_image",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "inspection_report",
+    "fileSize": 140017
+  },
+  {
+    "nameField": "attachments[front_image]",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "attachments[back_image]",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "attachments[right_side_image]",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "attachments[left_side_image]",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "attachments[interior_image]",
+    "fileSize": 65366
+  },
+  {
+    "nameField": "attachments[engine_image]",
+    "fileSize": 65366
   }
-}
+]
