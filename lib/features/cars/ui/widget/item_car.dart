@@ -9,8 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:http/http.dart';
-import '../../../../core/strings/enum_manager.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../data/response/cars_response.dart';
@@ -33,7 +31,9 @@ class ItemCar extends StatelessWidget {
       child: Column(
         children: [
           DrawableText(
-            text: S.of(context).insuranceStatus,
+            text: S
+                .of(context)
+                .insuranceStatus,
             drawableEnd: car.status.statusWidget,
             matchParent: true,
             drawableAlin: .between,
@@ -41,10 +41,18 @@ class ItemCar extends StatelessWidget {
           16.0.verticalSpace,
           _RowItems(
             dataRow: {
-              S.of(context).expiryDate: car.endDate,
-              S.of(context).manufactureYear: car.vehicle.manufactureYear,
-              S.of(context).carModel: car.vehicle.brand,
-              S.of(context).packageCost: car.annualSubscriptionPrice.formatPrice,
+              S
+                  .of(context)
+                  .expiryDate: car.endDate,
+              S
+                  .of(context)
+                  .manufactureYear: car.vehicle.manufactureYear,
+              S
+                  .of(context)
+                  .carModel: car.vehicle.brand,
+              S
+                  .of(context)
+                  .packageCost: car.annualSubscriptionPrice.formatPrice,
             },
           ),
           16.0.verticalSpace,
@@ -57,22 +65,27 @@ class ItemCar extends StatelessWidget {
                   showRePay(
                     context,
                     car.annualSubscriptionPrice,
-                    (value) {
+                        (value) {
                       context.read<CarsCubit>().rePay(id: car.id.toString(), type: value);
                     },
                   );
                 },
-                text: S.of(context).pay,
+                text: S
+                    .of(context)
+                    .pay,
               );
             },
           ),
 
           OutLineButton(
-            onTap: () => context.pushNamed(
-              RouteName.carPage,
-              queryParameters: {'id': car.id.toString()},
-            ),
-            text: S.of(context).viewInsuranceStatement,
+            onTap: () =>
+                context.pushNamed(
+                  RouteName.carPage,
+                  queryParameters: {'id': car.id.toString()},
+                ),
+            text: S
+                .of(context)
+                .viewInsuranceStatement,
           ),
           16.0.verticalSpace,
         ],

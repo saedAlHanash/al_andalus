@@ -11,10 +11,10 @@ import '../../../../generated/l10n.dart';
 import '../../data/response/insurance_package.dart';
 
 class ItemInsurance extends StatelessWidget {
-  const ItemInsurance({super.key, required this.insurance});
+  const ItemInsurance({super.key, required this.insurance, this.onTapInfo});
 
   final InsurancePackage insurance;
-
+  final Function()? onTapInfo;
   @override
   Widget build(BuildContext context) {
     final tagText = insurance.tag;
@@ -86,9 +86,7 @@ class ItemInsurance extends StatelessWidget {
                         ),
                         20.verticalSpace,
                         MyButton(
-                          onTap: () {
-                            showCalculationPrice(context, insurance);
-                          },
+                          onTap: () => onTapInfo?.call(),
                           height: 35.0.h,
                           text: S.of(context).knowMore,
                           color: special ? insurance.level.color : AppColorManager.mainColor.withValues(alpha: 0.2),

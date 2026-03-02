@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
           isLoading: false,
           onRefresh: () {
             context.read<AdssCubit>().getData(newData: true);
+            context.read<CarsCubit>().getData(newData: true);
           },
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 20.0).r,

@@ -321,5 +321,9 @@
   "pleaseEnterLocation": "يرجى إدخال موقع الحادث",
   "pleaseEnterDescription": "يرجى إدخال تفاصيل الحادث",
   "pleaseUploadPoliceReport": "يرجى إرفاق تقرير الشرطة",
-  "pleaseUploadAllImages": "يرجى إرفاق جميع الصور"
+  "pleaseUploadAllImages": "يرجى إرفاق جميع الصور",
+  "exitSignUpConfirmation": "هل أنت متأكد من الخروج من عملية إنشاء الحساب؟",
+  "exitAddAccidentConfirmation": "هل أنت متأكد من الخروج من عملية الإبلاغ عن الحادث؟",
+  "exitAddCarConfirmation": "هل أنت متأكد من الخروج من عملية إضافة سيارة؟",
+  "yes": "نعم"
 }

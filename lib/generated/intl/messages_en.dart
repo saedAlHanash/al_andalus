@@ -181,6 +181,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "Enter your phone and password to log in.",
     ),
+    "exitAddAccidentConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to exit the report accident process?",
+    ),
+    "exitAddCarConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to exit the add car process?",
+    ),
+    "exitSignUpConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to exit the sign up process?",
+    ),
     "expired": MessageLookupByLibrary.simpleMessage("Expired"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("Exterior Body"),
@@ -620,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Windshield Wipers",
     ),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("Invalid phone number"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "You will be able to choose the desired language for the document.",

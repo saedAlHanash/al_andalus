@@ -158,7 +158,11 @@ void showSupportCall(BuildContext context) {
   );
 }
 
-void showCalculationPrice(BuildContext context, InsurancePackage insurancePackage) {
+void showCalculationPrice(
+  BuildContext context,
+  InsurancePackage insurancePackage,
+  Function(Map<String, dynamic> queryParameters) onTap,
+) {
   final items = insurancePackage.getCylinders;
   var c = items.firstWhereOrNull((e) => e.isSelected)?.id ?? 0;
   var p = 0.0;
@@ -219,9 +223,8 @@ void showCalculationPrice(BuildContext context, InsurancePackage insurancePackag
                     10.0.verticalSpace,
                     MyButton(
                       onTap: () {
-                        context.pushNamed(
-                          RouteName.insurancePage,
-                          queryParameters: {
+                        onTap.call(
+                          {
                             'id': insurancePackage.id.toString(),
                             'price': p.toString(),
                             'cylinders': c.toString(),

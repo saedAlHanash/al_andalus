@@ -9,13 +9,19 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/strings/enum_manager.dart';
+import '../../../../core/util/bottom_sheets.dart';
+import '../../../../router/go_router.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
+import '../../data/response/insurance_package.dart';
 import 'item_insurance.dart';
 
 class ListInsurances extends StatefulWidget {
-  const ListInsurances({super.key});
+  const ListInsurances({super.key, this.onTapInfo});
+
+  final Function(InsurancePackage e)? onTapInfo;
 
   @override
   State<ListInsurances> createState() => _ListInsurancesState();
@@ -64,7 +70,28 @@ class _ListInsurancesState extends State<ListInsurances> {
             ),
             20.0.verticalSpace,
             _CardSlider(
-              images: list.map((e) => ItemInsurance(insurance: e)).toList(),
+              images: list
+                  .map(
+                    (e) => ItemInsurance(
+                      insurance: e,
+                      onTapInfo: () {
+                        widget.onTapInfo?.call(e);
+                        if (widget.onTapInfo == null) {
+                          showCalculationPrice(
+                            context,
+                            e,
+                            (queryParameters) {
+                              context.pushNamed(
+                                RouteName.insurancePage,
+                                queryParameters: queryParameters,
+                              );
+                            },
+                          );
+                        }
+                      },
+                    ),
+                  )
+                  .toList(),
               height: 160.0.h + (state.getMaxFeaturesCount * 12),
               autoPlay: false,
               viewportFraction: 0.7,

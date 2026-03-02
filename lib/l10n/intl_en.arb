@@ -322,5 +322,9 @@
   "pleaseEnterLocation": "Please enter location",
   "pleaseEnterDescription": "Please enter description",
   "pleaseUploadPoliceReport": "Please upload police report",
-  "pleaseUploadAllImages": "Please upload all images"
+  "pleaseUploadAllImages": "Please upload all images",
+  "exitSignUpConfirmation": "Are you sure you want to exit the sign up process?",
+  "exitAddAccidentConfirmation": "Are you sure you want to exit the report accident process?",
+  "exitAddCarConfirmation": "Are you sure you want to exit the add car process?",
+  "yes": "Yes"
 }

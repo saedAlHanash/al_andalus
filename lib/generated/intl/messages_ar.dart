@@ -171,6 +171,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "أدخل رقم هاتفك وكلمة المرور لتسجيل الدخول.",
     ),
+    "exitAddAccidentConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من الخروج من عملية الإبلاغ عن الحادث؟",
+    ),
+    "exitAddCarConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من الخروج من عملية إضافة سيارة؟",
+    ),
+    "exitSignUpConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من الخروج من عملية إنشاء الحساب؟",
+    ),
     "expired": MessageLookupByLibrary.simpleMessage("منتهي"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
@@ -585,6 +594,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك"),
     "windshieldWipers": MessageLookupByLibrary.simpleMessage("ماسحات المطر"),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("رقم هاتف غير صحيح"),
+    "yes": MessageLookupByLibrary.simpleMessage("نعم"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "You will be able to choose the desired language for the document.",

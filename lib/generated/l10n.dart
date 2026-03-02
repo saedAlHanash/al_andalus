@@ -2633,6 +2633,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure you want to exit the sign up process?`
+  String get exitSignUpConfirmation {
+    return Intl.message(
+      'Are you sure you want to exit the sign up process?',
+      name: 'exitSignUpConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to exit the report accident process?`
+  String get exitAddAccidentConfirmation {
+    return Intl.message(
+      'Are you sure you want to exit the report accident process?',
+      name: 'exitAddAccidentConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to exit the add car process?`
+  String get exitAddCarConfirmation {
+    return Intl.message(
+      'Are you sure you want to exit the add car process?',
+      name: 'exitAddCarConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
