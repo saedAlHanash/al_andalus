@@ -112,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "confirm New Password",
     ),
+    "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
+      "Confirm the next step",
+    ),
     "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("Continue"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
@@ -233,6 +236,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Insurance is easier for a better life",
     ),
     "insurancePolicy": MessageLookupByLibrary.simpleMessage("Insurance policy"),
+    "insurancePolicyReview": MessageLookupByLibrary.simpleMessage(
+      "Insurance policy review",
+    ),
     "insuranceStatus": MessageLookupByLibrary.simpleMessage("Insurance Status"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "Insure your vehicle in minutes, view your policy and details directly from your account",
@@ -512,6 +518,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "radioAntenna": MessageLookupByLibrary.simpleMessage("Radio Antenna"),
     "rear": MessageLookupByLibrary.simpleMessage("Rear"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "rejected": MessageLookupByLibrary.simpleMessage("Rejected"),
     "rejectedByOperationStaff": MessageLookupByLibrary.simpleMessage(
       "Rejected by Operation Staff",

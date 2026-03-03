@@ -163,53 +163,103 @@ class NoteMessage {
     );
   }
 
-  static Future<bool> showConfirm(BuildContext context, {required String text, Function()? onConfirm}) async {
-    // show the dialog
-    final result = await showDialog(
+  static Future<bool> showConfirm(
+    BuildContext context, {
+    required String text,
+    VoidCallback? onConfirm,
+  }) async {
+    final result = await showGeneralDialog<bool>(
       context: context,
-      barrierColor: Colors.black.withValues(alpha: 0.3),
-      builder: (BuildContext context) {
-        return Dialog(
-          surfaceTintColor: Colors.white,
-          backgroundColor: Colors.white,
-          alignment: Alignment.center,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20.0.r),
-            ),
-          ),
-          elevation: 10.0,
-          clipBehavior: Clip.hardEdge,
-          child: Padding(
-            padding: const EdgeInsets.all(15.0).r,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                DrawableText(
-                  text: text,
-                  size: 22.0.spMin,
-                  fontFamily: FontManager.bold.name,
-                  color: AppColorManager.mainColorDark,
+      barrierDismissible: false,
+      barrierLabel: "Confirm",
+      barrierColor: Colors.black.withOpacity(0.4),
+      transitionDuration: const Duration(milliseconds: 250),
+      pageBuilder: (_, __, ___) => const SizedBox(),
+      transitionBuilder: (context, animation, _, __) {
+        final curved = CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOutCubic,
+        );
+
+        return ScaleTransition(
+          scale: Tween(begin: 0.9, end: 1.0).animate(curved),
+          child: FadeTransition(
+            opacity: curved,
+            child: Center(
+              child: Dialog(
+                elevation: 0,
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24.r),
                 ),
-                40.0.verticalSpace,
-                MyButton(
-                  text: S.of(context).confirm,
-                  onTap: () => context.pop(true),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 28.h,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      /// Icon
+                      Container(
+                        width: 60.w,
+                        height: 60.w,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColorManager.mainColor.withOpacity(0.1),
+                        ),
+                        child: Icon(
+                          Icons.help_outline_rounded,
+                          size: 32.sp,
+                          color: AppColorManager.mainColor,
+                        ),
+                      ),
+
+                      20.verticalSpace,
+
+                      /// Text
+                      DrawableText(
+                        text: text,
+                        size: 18.spMin,
+                        color: AppColorManager.mainColorDark,
+                        textAlign: TextAlign.center,
+                      ),
+
+                      28.verticalSpace,
+
+                      /// Buttons Row
+                      Row(
+                        children: [
+                          Expanded(
+                            child: MyButton(
+                              text: S.of(context).cancel,
+                              onTap: () => context.pop(false),
+                              color: AppColorManager.black.withOpacity(0.7),
+                            ),
+                          ),
+                          12.horizontalSpace,
+                          Expanded(
+                            child: MyButton(
+                              text: S.of(context).confirm,
+                              onTap: () {
+                                context.pop(true);
+                                onConfirm?.call();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                10.0.verticalSpace,
-                MyButton(
-                  text: S.of(context).cancel,
-                  onTap: () => context.pop(false),
-                  color: AppColorManager.black,
-                ),
-                20.0.verticalSpace,
-              ],
+              ),
             ),
           ),
         );
       },
     );
-    return (result ?? false);
+
+    return result ?? false;
   }
 
   static Future<bool> showErrorDialog(BuildContext context, {required String text, bool tryAgne = true}) async {
@@ -362,7 +412,7 @@ class NoteMessage {
     required String text,
     required String textButton,
     dynamic image,
-    Function(bool confirm )? onConfirm,
+    Function(bool confirm)? onConfirm,
   }) async {
     // show the dialog
     await showDialog(

@@ -295,10 +295,12 @@ final goRouter = GoRouter(
       name: RouteName.carPage,
       builder: (_, state) {
         final id = state.uri.queryParameters['id'] ?? '';
-        ;
-        return BlocProvider(
-          create: (context) => sl<CarCubit>()..getData(id: id),
-          child: const CarPage(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => sl<CarCubit>()..getData(id: id)),
+            BlocProvider(create: (context) => sl<CarsCubit>()),
+          ],
+          child: CarPage(),
         );
       },
     ),

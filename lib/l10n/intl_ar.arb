@@ -327,5 +327,8 @@
   "exitAddCarConfirmation": "هل أنت متأكد من الخروج من عملية إضافة سيارة؟",
   "yes": "نعم",
   "pleaseAddYourVehicleToShowTheInsuranceDocument": "Please add your vehicle to show the insurance document.",
-  "insurancePolicy": "Insurance policy"
+  "insurancePolicy": "Insurance policy",
+  "reject": "Reject",
+  "insurancePolicyReview": "Insurance policy review",
+  "confirmTheNextStep": "Confirm the next step"
 }

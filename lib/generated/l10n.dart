@@ -2688,6 +2688,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message('Reject', name: 'reject', desc: '', args: []);
+  }
+
+  /// `Insurance policy review`
+  String get insurancePolicyReview {
+    return Intl.message(
+      'Insurance policy review',
+      name: 'insurancePolicyReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm the next step`
+  String get confirmTheNextStep {
+    return Intl.message(
+      'Confirm the next step',
+      name: 'confirmTheNextStep',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

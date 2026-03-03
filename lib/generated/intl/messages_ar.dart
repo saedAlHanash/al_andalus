@@ -110,6 +110,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
+    "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
+      "Confirm the next step",
+    ),
     "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -221,6 +224,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "التامين اصبح اسهل لحياة أفضل",
     ),
     "insurancePolicy": MessageLookupByLibrary.simpleMessage("Insurance policy"),
+    "insurancePolicyReview": MessageLookupByLibrary.simpleMessage(
+      "Insurance policy review",
+    ),
     "insuranceStatus": MessageLookupByLibrary.simpleMessage("حالة التأمين"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك",
@@ -489,6 +495,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
     "register": MessageLookupByLibrary.simpleMessage("قم بالتسجيل"),
+    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "rejected": MessageLookupByLibrary.simpleMessage("مرفوض"),
     "rejectedByOperationStaff": MessageLookupByLibrary.simpleMessage(
       "مرفوض من موظف العمليات",

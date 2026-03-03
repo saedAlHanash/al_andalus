@@ -1,4 +1,7 @@
 import 'package:al_andalus/core/util/bottom_sheets.dart';
+import 'package:al_andalus/core/util/my_style.dart';
+import 'package:al_andalus/core/util/snack_bar_message.dart';
+import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/cars/ui/widget/car_info.dart';
@@ -11,6 +14,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import 'package:al_andalus/core/injection/injection_container.dart';
+import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
+import 'package:m_cubit/m_cubit.dart';
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/strings/app_color_manager.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
@@ -22,66 +29,175 @@ class CarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CarCubit, CarInitial>(
-      builder: (context, state) {
-        final CarPolicy car = state.result;
-        return Scaffold(
-          appBar: AppBarWidget(
-            titleText: car.vehicle.name,
-            actions: [
-              IconButton(
-                onPressed: () {
-                  showQr(context, car.qrcode);
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<CarsCubit, CarsInitial>(
+          listenWhen: (p, c) => c.done,
+          listener: (context, state) {
+            if (state.url.isNotEmpty) {
+              context.read<CarsCubit>().doneOpenUrl();
+              context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+                (value) {
+                  if (context.mounted && value == true) {
+                    context.read<CarCubit>().getData(newData: true);
+                  }
                 },
-                icon: ImageMultiType(url: Assets.iconsQr),
-              ),
-            ],
-          ),
-          body: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-            children: [
-              PackageInfoWidget(),
-              20.verticalSpace,
-              CarInfo(),
-              20.verticalSpace,
-              if (state.result.policyFile.isEmpty) ...[
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.0).r,
-                    border: Border.all(color: AppColorManager.dividerColor, width: 1.sp),
+              );
+            } else {
+              context.read<CarCubit>().getData(newData: true);
+            }
+          },
+        ),
+      ],
+      child: BlocBuilder<CarCubit, CarInitial>(
+        builder: (context, state) {
+          final CarPolicy car = state.result;
+          return Scaffold(
+            appBar: AppBarWidget(
+              titleText: car.vehicle.name,
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    showQr(context, car.qrcode);
+                  },
+                  icon: ImageMultiType(url: Assets.iconsQr),
+                ),
+              ],
+            ),
+            body: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              children: [
+                PackageInfoWidget(),
+                20.verticalSpace,
+                CarInfo(),
+                20.verticalSpace,
+                if (car.policyFile.isEmpty) _PolicyFileWidget(car: car),
+
+                20.verticalSpace,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0.15.sw),
+                  child: MyButton(
+                    onTap: () {
+                      NoteMessage.showConfirm(
+                        context,
+                        text: S.of(context).confirmTheNextStep,
+                        onConfirm: () {
+                          context.read<CarsCubit>().cancelInsurance(id: car.id.toString());
+                        },
+                      );
+                    },
+                    height: 35.0,
+                    text: S.of(context).cancelTheDocument,
+                    color: Colors.red,
                   ),
+                ),
+                100.0.verticalSpace,
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _PolicyFileWidget extends StatelessWidget {
+  const _PolicyFileWidget({required this.car});
+
+  final CarPolicy car;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<CarsCubit, CarsInitial>(
+      listenWhen: (p, c) => c.done && c.update,
+      listener: (context, state) {
+        context.read<CarCubit>().getData(newData: true);
+      },
+      child: BlocBuilder<CarsCubit, CarsInitial>(
+        builder: (context, state) {
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: 10.h),
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: AppColorManager.mainColor.withOpacity(0.05),
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(color: AppColorManager.mainColor.withOpacity(0.1)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DrawableText(
+                  text: S.of(context).insurancePolicyReview,
+                  fontWeight: FontWeight.bold,
+                  color: AppColorManager.mainColor,
+                  size: 16.sp,
+                ),
+                15.verticalSpace,
+                Container(
+                  decoration: MyStyle.roundBox,
                   child: ListTile(
                     onTap: () {
                       context.pushNamed(
                         RouteName.pdf,
-                        queryParameters: {'url': state.result.policyFile},
+                        queryParameters: {'url': car.policyFile},
                       );
                     },
-                    leading: ImageMultiType(url: Assets.iconsPdfBorder),
+                    leading: ImageMultiType(
+                      url: Assets.iconsPdfBorder,
+                      height: 50.0.r,
+                      width: 50.0.r,
+                    ),
                     title: DrawableText(
-                      text: '${S.of(context).insurancePolicy}: ${state.result.vehicle.name}',
+                      text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
                       padding: EdgeInsets.symmetric(vertical: 5.0),
                       fontWeight: .bold,
                     ),
                     trailing: ImageMultiType(url: Icons.visibility_rounded),
                   ),
                 ),
-
-                // make widget with 2 buttons and onTap call approve/reject from CarsCubit
-              ],
-              20.verticalSpace,
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0.15.sw),
-                child: OutLineButton(
-                  text: S.of(context).cancelTheDocument,
-                  textColor: Colors.red,
+                20.verticalSpace,
+                Row(
+                  children: [
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).confirm,
+                        onTap: () {
+                          NoteMessage.showConfirm(
+                            context,
+                            text: S.of(context).confirmTheNextStep,
+                            onConfirm: () {
+                              context.read<CarsCubit>().approve(id: car.id.toString());
+                            },
+                          );
+                        },
+                        loading: state.loading,
+                      ),
+                    ),
+                    12.horizontalSpace,
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).reject,
+                        color: Colors.white,
+                        textColor: Colors.red,
+                        onTap: () {
+                          NoteMessage.showConfirm(
+                            context,
+                            text: S.of(context).confirmTheNextStep,
+                            onConfirm: () {
+                              context.read<CarsCubit>().reject(id: car.id.toString());
+                            },
+                          );
+                        },
+                        loading: state.loading,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              100.0.verticalSpace,
-            ],
-          ),
-        );
-      },
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

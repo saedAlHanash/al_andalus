@@ -328,5 +328,8 @@
   "exitAddCarConfirmation": "Are you sure you want to exit the add car process?",
   "yes": "Yes",
   "pleaseAddYourVehicleToShowTheInsuranceDocument": "Please add your vehicle to show the insurance document.",
-  "insurancePolicy": "Insurance policy"
+  "insurancePolicy": "Insurance policy",
+  "reject": "Reject",
+  "insurancePolicyReview": "Insurance policy review",
+  "confirmTheNextStep": "Confirm the next step"
 }
