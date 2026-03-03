@@ -79,7 +79,7 @@ class _TransferOwnershipView extends StatelessWidget {
                 10.0.verticalSpace,
                 UploadContainerWidget(
                   title: S.of(context).attachIdFrontHere,
-                  child: state.mRequest.identityFrontImage.fileBytes == null
+                  child: state.mRequest.identityFrontImage.notHaveValue
                       ? null
                       : RoundImageWidget(
                           height: 200.0.h,
@@ -96,7 +96,7 @@ class _TransferOwnershipView extends StatelessWidget {
                 15.0.verticalSpace,
                 UploadContainerWidget(
                   title: S.of(context).attachIdBackHere,
-                  child: state.mRequest.identityBackImage.fileBytes == null
+                  child: state.mRequest.identityBackImage.notHaveValue
                       ? null
                       : RoundImageWidget(
                           height: 200.0.h,

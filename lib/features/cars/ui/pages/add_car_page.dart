@@ -33,18 +33,28 @@ class _AddCarPageState extends State<AddCarPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CarsCubit, CarsInitial>(
-      listenWhen: (p, c) => c.done && c.url.isNotEmpty,
-      listener: (context, state) {
-        context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
-          (value) {
-            if (context.mounted && value == true) {
-              context.goNamed(RouteName.home);
-            }
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<CarsCubit, CarsInitial>(
+          listenWhen: (p, c) => c.done && c.url.isNotEmpty,
+          listener: (context, state) {
+            context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+              (value) {
+                if (context.mounted && value == true) {
+                  context.goNamed(RouteName.home);
+                }
+              },
+            );
+            context.read<CarsCubit>().doneOpenUrl();
           },
-        );
-        context.read<CarsCubit>().doneOpenUrl();
-      },
+        ),
+        BlocListener<CarsCubit, CarsInitial>(
+          listenWhen: (p, c) => c.done && c.update,
+          listener: (context, state) {
+            context.pop(true);
+          },
+        ),
+      ],
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
           return PopScope(
@@ -73,6 +83,10 @@ class _AddCarPageState extends State<AddCarPage> {
                   onTap: () {
                     final request = state.mRequest;
 
+                    if (state.mRequest.id != null && state.step >= 3) {
+                      context.read<CarsCubit>().update();
+                      return;
+                    }
                     if (state.step >= 4) {
                       context.read<CarsCubit>().create();
                       return;
@@ -122,11 +136,12 @@ class _AddCarPageState extends State<AddCarPage> {
                           isCompleted: state.step > 3,
                           isSelected: state.step == 3,
                         ),
-                        customStepWidget(
-                          title: S.of(context).payment,
-                          isCompleted: state.step > 4,
-                          isSelected: state.step == 4,
-                        ),
+                        if (state.mRequest.id == null)
+                          customStepWidget(
+                            title: S.of(context).payment,
+                            isCompleted: state.step > 4,
+                            isSelected: state.step == 4,
+                          ),
                       ],
                     ),
                   ),

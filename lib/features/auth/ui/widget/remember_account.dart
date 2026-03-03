@@ -14,22 +14,20 @@ class RememberPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: DrawableText(
-        text: S.of(context).iRememberedMyPassword,
-        color: AppColorManager.grey,
-        drawablePadding: 7.0.w,
-        drawableEnd: InkWell(
-          onTap: () {
-            AppSharedPreference.removeEmail().then((value) {
-              context.goNamed(RouteName.login);
-            });
-          },
-          child: DrawableText(
-            color: AppColorManager.mainColor,
-            fontFamily: FontManager.bold.name,
-            text: '${S.of(context).login}.',
-          ),
+    return DrawableText(
+      text: S.of(context).iRememberedMyPassword,
+      color: AppColorManager.grey,
+      drawablePadding: 7.0.w,
+      drawableEnd: InkWell(
+        onTap: () {
+          AppSharedPreference.removeEmail().then((value) {
+            context.goNamed(RouteName.login);
+          });
+        },
+        child: DrawableText(
+          color: AppColorManager.mainColor,
+          fontFamily: FontManager.bold.name,
+          text: '${S.of(context).login}.',
         ),
       ),
     );

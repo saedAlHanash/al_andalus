@@ -236,12 +236,12 @@ class _AnnualInfoState extends State<AnnualInfo> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachIdFrontHere,
-                    child: state.mRequest.ownershipFrontImage.fileBytes == null
+                    child: state.mRequest.ownershipFrontImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.ownershipFrontImage.fileBytes,
+                            url: state.mRequest.ownershipFrontImage.fileValue,
                             fit: .cover,
                           ),
                     onTap: () {
@@ -258,12 +258,12 @@ class _AnnualInfoState extends State<AnnualInfo> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachIdBackHere,
-                    child: state.mRequest.ownershipBackImage.fileBytes == null
+                    child: state.mRequest.ownershipBackImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.ownershipBackImage.fileBytes,
+                            url: state.mRequest.ownershipBackImage.fileValue,
                             fit: .cover,
                           ),
                     onTap: () {

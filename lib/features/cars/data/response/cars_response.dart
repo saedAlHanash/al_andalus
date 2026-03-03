@@ -216,8 +216,8 @@ class Vehicle {
   final String ownershipFrontImage;
   final String ownershipBackImage;
   final String inspectionReport;
-  final Inspection? inspection;
-  final Attachment? attachment;
+  final Inspection inspection;
+  final Attachment attachment;
   final String created;
 
   factory Vehicle.fromJson(Map<String, dynamic> json) {
@@ -238,8 +238,8 @@ class Vehicle {
       ownershipFrontImage: json["ownership_front_image"] ?? "",
       ownershipBackImage: json["ownership_back_image"] ?? "",
       inspectionReport: json["inspection_report"] ?? "",
-      inspection: json["inspection"] == null ? null : Inspection.fromJson(json["inspection"]),
-      attachment: json["attachment"] == null ? null : Attachment.fromJson(json["attachment"]),
+      inspection: Inspection.fromJson(json["inspection"]??{}),
+      attachment: Attachment.fromJson(json["attachment"]??{}),
       created: json["created"] ?? "",
     );
   }
@@ -261,8 +261,8 @@ class Vehicle {
     "ownership_front_image": ownershipFrontImage,
     "ownership_back_image": ownershipBackImage,
     "inspection_report": inspectionReport,
-    "inspection": inspection?.toJson(),
-    "attachment": attachment?.toJson(),
+    "inspection": inspection.toJson(),
+    "attachment": attachment.toJson(),
     "created": created,
   };
 }

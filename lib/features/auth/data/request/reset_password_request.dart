@@ -16,6 +16,6 @@ class ResetPasswordRequest {
   Map<String, dynamic> toJson() => {
         "phone": AppProvider.getPhoneCached.fixPhone,
         "password": password,
-        "token": code,
+        "code": code,
       };
 }

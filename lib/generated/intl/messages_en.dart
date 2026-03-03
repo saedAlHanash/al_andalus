@@ -484,6 +484,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
       "Please take a right side image",
     ),
+    "pleaseUpdateMissingFields": MessageLookupByLibrary.simpleMessage(
+      "Please make the necessary adjustments to the following fields:",
+    ),
     "pleaseUploadAllImages": MessageLookupByLibrary.simpleMessage(
       "Please upload all images",
     ),
@@ -516,6 +519,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "qrCode": MessageLookupByLibrary.simpleMessage("QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("Radio and Type"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("Radio Antenna"),
+    "reUpload": MessageLookupByLibrary.simpleMessage("Re upload"),
     "rear": MessageLookupByLibrary.simpleMessage("Rear"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "reject": MessageLookupByLibrary.simpleMessage("Reject"),
@@ -625,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
       "Upload file (one file only)",
     ),
+    "uploadedFile": MessageLookupByLibrary.simpleMessage("Uploaded file"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",

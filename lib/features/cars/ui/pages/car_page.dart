@@ -17,12 +17,11 @@ import 'package:image_multi_type/image_multi_type.dart';
 import 'package:al_andalus/core/injection/injection_container.dart';
 import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:m_cubit/m_cubit.dart';
-import '../../../../core/strings/enum_manager.dart';
-import '../../../../core/strings/app_color_manager.dart';
-import '../../../../generated/assets.dart';
-import '../../../../generated/l10n.dart';
-import '../../bloc/car_cubit/car_cubit.dart';
-import '../../data/response/cars_response.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/generated/assets.dart';
+import 'package:al_andalus/generated/l10n.dart';
+import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 
 class CarPage extends StatelessWidget {
   const CarPage({super.key});
@@ -58,6 +57,7 @@ class CarPage extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: () {
+                    if (state.result.status == .cancelled) return;
                     showQr(context, car.qrcode);
                   },
                   icon: ImageMultiType(url: Assets.iconsQr),
@@ -67,37 +67,184 @@ class CarPage extends StatelessWidget {
             body: ListView(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
               children: [
+                _MissingInfoWidget(car: car),
                 PackageInfoWidget(),
                 20.verticalSpace,
                 CarInfo(),
                 20.verticalSpace,
-                if (car.policyFile.isEmpty) _PolicyFileWidget(car: car),
+                if (car.status == .draft) _PolicyFileWidget(car: car),
 
                 20.verticalSpace,
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 0.15.sw),
-                  child: MyButton(
-                    onTap: () {
-                      NoteMessage.showConfirm(
-                        context,
-                        text: S.of(context).confirmTheNextStep,
-                        onConfirm: () {
-                          context.read<CarsCubit>().cancelInsurance(id: car.id.toString());
-                        },
-                      );
-                    },
-                    height: 35.0,
-                    text: S.of(context).cancelTheDocument,
-                    color: Colors.red,
+                if (state.result.status != .cancelled)
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 0.15.sw),
+                    child: MyButton(
+                      onTap: () {
+                        NoteMessage.showConfirm(
+                          context,
+                          text: S.of(context).confirmTheNextStep,
+                          onConfirm: () {
+                            context.read<CarsCubit>().cancelInsurance(id: car.id.toString());
+                          },
+                        );
+                      },
+                      height: 35.0,
+                      text: S.of(context).cancelTheDocument,
+                      color: Colors.red,
+                    ),
                   ),
-                ),
-                100.0.verticalSpace,
+                20.0.verticalSpace,
+                if (car.status == .missingInfo)
+                  MyButton(
+                    onTap: () {
+                      context
+                          .pushNamed(
+                            RouteName.addCarPage,
+                            queryParameters: {'id': state.result.id.toString()},
+                            extra: car,
+                          )
+                          .then(
+                            (value) {
+                              if (value == true) {
+                                context.read<CarCubit>().getData(newData: true);
+                              }
+                            },
+                          );
+                    },
+                    icon: ImageMultiType(
+                      url: Assets.iconsEdit,
+                      color: AppColorManager.white,
+                    ),
+                    text: 'تعديل',
+                  ),
+                80.0.verticalSpace,
               ],
             ),
           );
         },
       ),
     );
+  }
+}
+
+class _MissingInfoWidget extends StatelessWidget {
+  const _MissingInfoWidget({required this.car});
+
+  final CarPolicy car;
+
+  @override
+  Widget build(BuildContext context) {
+    if (car.fieldsToBeRefilled.isEmpty) return const SizedBox();
+
+    return Container(
+      margin: EdgeInsets.only(bottom: 20.h),
+      padding: EdgeInsets.all(16.r),
+      decoration: BoxDecoration(
+        color: Colors.amber.shade50,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: Colors.amber.shade200, width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.amber.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(8.r),
+                decoration: BoxDecoration(
+                  color: Colors.amber.shade100,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.report_problem_rounded,
+                  color: Colors.amber.shade900,
+                  size: 20.r,
+                ),
+              ),
+              12.horizontalSpace,
+              Expanded(
+                child: DrawableText(
+                  text: S.of(context).missingInfo,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber.shade900,
+                  size: 16.sp,
+                ),
+              ),
+            ],
+          ),
+          12.verticalSpace,
+          DrawableText(
+            text: S.of(context).pleaseUpdateMissingFields,
+            size: 14.sp,
+            color: Colors.black87,
+          ),
+          12.verticalSpace,
+          ...car.fieldsToBeRefilled.map((field) {
+            return Padding(
+              padding: EdgeInsets.only(bottom: 6.h, right: 8.w, left: 8.w),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.error_outline_rounded,
+                    size: 14.r,
+                    color: Colors.amber.shade900,
+                  ),
+                  8.horizontalSpace,
+                  Expanded(
+                    child: DrawableText(
+                      text: _getLocalizedFieldName(context, field),
+                      size: 14.sp,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
+        ],
+      ),
+    );
+  }
+
+  String _getLocalizedFieldName(BuildContext context, String field) {
+    final s = S.of(context);
+    switch (field.trim().toLowerCase()) {
+      case 'plate_number':
+        return s.plateNumber;
+      case 'chassis_number':
+        return s.chassisNumber;
+      case 'engine_capacity':
+        return s.engineCapacity;
+      case 'fuel_type':
+        return s.fuelType;
+      case 'vehicle_name':
+      case 'name':
+        return s.carName;
+      case 'color':
+        return s.carColor;
+      case 'model':
+        return s.carModel;
+      case 'manufacture_year':
+        return s.manufactureYear;
+      case 'ownership_front_image':
+        return s.pleaseUploadOwnershipFrontImage;
+      case 'ownership_back_image':
+        return s.pleaseUploadOwnershipBackImage;
+      default:
+        // Try to replace underscore with space and capitalize
+        return field
+            .replaceAll('_', ' ')
+            .split(' ')
+            .map((e) => e.isNotEmpty ? '${e[0].toUpperCase()}${e.substring(1)}' : '')
+            .join(' ');
+    }
   }
 }
 

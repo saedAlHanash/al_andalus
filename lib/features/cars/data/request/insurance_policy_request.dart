@@ -3,9 +3,13 @@ import 'dart:math';
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:flutter/foundation.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+
+import '../../../../generated/l10n.dart';
 
 class InsurancePolicyRequest {
   InsurancePolicyRequest({
+    this.id,
     this.insurancePackageId,
     this.cylinders,
     this.name,
@@ -85,6 +89,93 @@ class InsurancePolicyRequest {
     spareTools = InspectionStatus.values[Random().nextInt(2)];
   }
 
+  factory InsurancePolicyRequest.fromCarPolicy(CarPolicy car) {
+    final vehicle = car.vehicle;
+    final inspection = vehicle.inspection;
+    final attachment = vehicle.attachment;
+
+    final request = InsurancePolicyRequest(
+      id: car.id,
+      insurancePackageId: car.insurancePackage.id.toString(),
+      cylinders: vehicle.cylinders,
+      name: vehicle.name,
+      manufactureYear: DateTime(int.parse(vehicle.manufactureYear)),
+      color: vehicle.color,
+      brand: vehicle.brand,
+      value: vehicle.value.toString(),
+      chassisNumber: vehicle.chassisNumber,
+      plateNumber: vehicle.plateNumber,
+      fuelType: vehicle.fuelType,
+      engineCapacity: vehicle.engineCapacity.toString(),
+      expiryStartDate: DateTime.tryParse(vehicle.expiryStartDate),
+      expiryEndDate: DateTime.tryParse(vehicle.expiryEndDate),
+
+      // Inspection
+      metalBody: InspectionStatus.getByNameOrIndex(inspection.metalBody),
+      metalBodyNote: inspection.metalBodyNote,
+      glassAndLamps: InspectionStatus.getByNameOrIndex(inspection.glassAndLamps),
+      glassAndLampsNote: inspection.glassAndLampsNote,
+      chromeNickel: InspectionStatus.getByNameOrIndex(inspection.chromeNickel),
+      chromeNickelNote: inspection.chromeNickelNote,
+      brandSign: InspectionStatus.getByNameOrIndex(inspection.brandSign),
+      brandSignNote: inspection.brandSignNote,
+      windshieldWipers: InspectionStatus.getByNameOrIndex(inspection.windshieldWipers),
+      windshieldWipersNote: inspection.windshieldWipersNote,
+      radioAntenna: InspectionStatus.getByNameOrIndex(inspection.radioAntenna),
+      radioAntennaNote: inspection.radioAntennaNote,
+      seats: InspectionStatus.getByNameOrIndex(inspection.seats),
+      seatsNote: inspection.seatsNote,
+      floorCover: InspectionStatus.getByNameOrIndex(inspection.floorCover),
+      floorCoverNote: inspection.floorCoverNote,
+      radio: InspectionStatus.getByNameOrIndex(inspection.radio),
+      radioNote: inspection.radioNote,
+      airConditioner: InspectionStatus.getByNameOrIndex(inspection.airConditioner),
+      airConditionerNote: inspection.airConditionerNote,
+      frontTires: InspectionStatus.getByNameOrIndex(inspection.frontTires),
+      frontTiresNote: inspection.frontTiresNote,
+      backTires: InspectionStatus.getByNameOrIndex(inspection.backTires),
+      backTiresNote: inspection.backTiresNote,
+      spareTire: InspectionStatus.getByNameOrIndex(inspection.spareTire),
+      spareTireNote: inspection.spareTireNote,
+      tiresCovers: InspectionStatus.getByNameOrIndex(inspection.tiresCovers),
+      tiresCoversNote: inspection.tiresCoversNote,
+      spareTools: InspectionStatus.getByNameOrIndex(inspection.spareTools),
+      spareToolsNote: inspection.spareToolsNote,
+      otherNotes: inspection.otherNotes,
+    );
+
+    request.ownershipFrontImage
+      ..remoteUrl = vehicle.ownershipFrontImage
+      ..localId = S().uploadedFile;
+    request.ownershipBackImage
+      ..remoteUrl = vehicle.ownershipBackImage
+      ..localId = S().uploadedFile;
+    request.inspectionReport
+      ..remoteUrl = vehicle.inspectionReport
+      ..localId = S().uploadedFile;
+    request.frontImage
+      ..remoteUrl = attachment.frontImage
+      ..localId = S().uploadedFile;
+    request.backImage
+      ..remoteUrl = attachment.backImage
+      ..localId = S().uploadedFile;
+    request.rightSideImage
+      ..remoteUrl = attachment.rightSideImage
+      ..localId = S().uploadedFile;
+    request.leftSideImage
+      ..remoteUrl = attachment.leftSideImage
+      ..localId = S().uploadedFile;
+    request.interiorImage
+      ..remoteUrl = attachment.interiorImage
+      ..localId = S().uploadedFile;
+    request.engineImage
+      ..remoteUrl = attachment.engineImage
+      ..localId = S().uploadedFile;
+
+    return request;
+  }
+
+  int? id;
   String? insurancePackageId;
   String? cylinders;
   String? name;

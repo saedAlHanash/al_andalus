@@ -117,7 +117,7 @@ class APIService {
     var request = http.MultipartRequest(type, uri);
 
     for (var uploadFile in (files ?? <UploadFile?>[])) {
-      if (uploadFile?.fileBytes == null) continue;
+      if (uploadFile?.notHaveLocal == true) continue;
 
       final multipartFile = await http.MultipartFile.fromPath(
         uploadFile!.nameField,
@@ -153,16 +153,25 @@ class UploadFile {
     this.nameField = 'File',
     this.localId,
     this.extension,
+    this.remoteUrl,
     this.fileType = FileType.other,
   });
 
+  bool get haveValue => fileBytes != null || !remoteUrl.isBlank || !path.isBlank;
+
+  bool get notHaveValue => !haveValue;
+
+  bool get notHaveLocal => fileBytes == null || path.isBlank;
+
+  dynamic get fileValue => fileBytes ?? remoteUrl;
+
   Uint8List? fileBytes;
   String? path;
+  String? remoteUrl;
   String nameField;
   FileType fileType;
   String? localId;
   String? extension;
-
 
   UploadFile copyWith({
     Uint8List? fileBytes,
@@ -171,6 +180,7 @@ class UploadFile {
     FileType? fileType,
     String? localId,
     String? extension,
+    String? remoteUrl,
   }) {
     return UploadFile(
       fileBytes: fileBytes ?? this.fileBytes,
@@ -179,6 +189,7 @@ class UploadFile {
       fileType: fileType ?? this.fileType,
       localId: localId ?? this.localId,
       extension: extension ?? this.extension,
+      remoteUrl: remoteUrl ?? this.remoteUrl,
     );
   }
 
@@ -189,6 +200,7 @@ class UploadFile {
       'path': path,
       'localId': localId,
       'extension': extension,
+      'remoteUrl': remoteUrl,
       'fileType': fileType.name, // أو حسب طريقة تخزينك للـ Enum
     };
   }

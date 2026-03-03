@@ -52,7 +52,7 @@ class _AccidentInfoState extends State<AccidentInfo> {
             20.0.verticalSpace,
             UploadContainerWidget(
               title: S.of(context).uploadOneFileOnly,
-              child: state.mRequest.policeReport.fileBytes == null
+              child: state.mRequest.policeReport.notHaveValue
                   ? null
                   : ListTile(
                       leading: ImageMultiType(

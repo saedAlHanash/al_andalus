@@ -22,16 +22,16 @@ class AddAccidentValidator {
     }
 
     if (step == 1) {
-      if (request.policeReport.fileBytes == null) {
+      if (request.policeReport.notHaveValue) {
         NoteMessage.showSnakeBar(message: S.of(context).pleaseUploadPoliceReport, context: context);
         return false;
       }
-      if (request.frontImage.fileBytes == null ||
-          request.backImage.fileBytes == null ||
-          request.rightSideImage.fileBytes == null ||
-          request.leftSideImage.fileBytes == null ||
-          request.interiorImage.fileBytes == null ||
-          request.engineImage.fileBytes == null) {
+      if (request.frontImage.notHaveValue ||
+          request.backImage.notHaveValue ||
+          request.rightSideImage.notHaveValue ||
+          request.leftSideImage.notHaveValue ||
+          request.interiorImage.notHaveValue ||
+          request.engineImage.notHaveValue) {
         NoteMessage.showSnakeBar(message: S.of(context).pleaseUploadAllImages, context: context);
         return false;
       }

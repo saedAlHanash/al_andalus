@@ -45,7 +45,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.10,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .front, state.mRequest.frontImage),
-                      isCompleted: state.mRequest.frontImage.fileBytes != null,
+                      isCompleted: state.mRequest.frontImage.haveValue,
                     ),
 
                     // 3. Engine Hotspot (محرك السيارة)
@@ -54,7 +54,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.20,
                       left: width * 0.75,
                       onTap: () => _handleCapture(context, .engine, state.mRequest.backImage),
-                      isCompleted: state.mRequest.backImage.fileBytes != null,
+                      isCompleted: state.mRequest.backImage.haveValue,
                     ),
 
                     // 4. Right Side Hotspot (الجانب الأيمن)
@@ -63,7 +63,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.40,
                       left: width * 0.77,
                       onTap: () => _handleCapture(context, .right, state.mRequest.rightSideImage),
-                      isCompleted: state.mRequest.rightSideImage.fileBytes != null,
+                      isCompleted: state.mRequest.rightSideImage.haveValue,
                     ),
 
                     // 5. Left Side Hotspot (الجانب الأيسر)
@@ -72,7 +72,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.39,
                       left: width * 0.22,
                       onTap: () => _handleCapture(context, .left, state.mRequest.leftSideImage),
-                      isCompleted: state.mRequest.leftSideImage.fileBytes != null,
+                      isCompleted: state.mRequest.leftSideImage.haveValue,
                     ),
 
                     // 6. Interior Hotspot (الجزء الداخلي - بالمنتصف)
@@ -81,7 +81,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.55,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .interior, state.mRequest.interiorImage),
-                      isCompleted: state.mRequest.interiorImage.fileBytes != null,
+                      isCompleted: state.mRequest.interiorImage.haveValue,
                     ),
 
                     // 7. Rear Hotspot (الجزء الخلفي)
@@ -90,7 +90,7 @@ class CarInspectionScreen extends StatelessWidget {
                       top: height * 0.95,
                       left: width * 0.50,
                       onTap: () => _handleCapture(context, .rear, state.mRequest.engineImage),
-                      isCompleted: state.mRequest.engineImage.fileBytes != null,
+                      isCompleted: state.mRequest.engineImage.haveValue,
                     ),
                   ],
                 );
@@ -138,7 +138,7 @@ class CarInspectionScreen extends StatelessWidget {
   }
 
   void _handleCapture(BuildContext context, ImageZone zone, UploadFile file) {
-    if (file.fileBytes != null) {
+    if (file.haveValue) {
       showImageReviewDialog(
         context,
         file,

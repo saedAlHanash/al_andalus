@@ -184,11 +184,11 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
                     ),
                     UploadContainerWidget(
                       title: S.of(context).attachLicenseFrontHere,
-                      child: state.mRequest.licenseFrontImage.fileBytes != null
+                      child: state.mRequest.licenseFrontImage.haveValue
                           ? RoundImageWidget(
                               height: 200.0.h,
                               width: 1.0.sw,
-                              url: state.mRequest.licenseFrontImage.fileBytes,
+                              url: state.mRequest.licenseFrontImage.fileValue,
                               fit: BoxFit.cover,
                             )
                           : profile.licenseFrontImage.isNotEmpty
@@ -215,11 +215,11 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
                     ),
                     UploadContainerWidget(
                       title: S.of(context).attachLicenseBackHere,
-                      child: state.mRequest.licenseBackImage.fileBytes != null
+                      child: state.mRequest.licenseBackImage.haveValue
                           ? RoundImageWidget(
                               height: 200.0.h,
                               width: 1.0.sw,
-                              url: state.mRequest.licenseBackImage.fileBytes,
+                              url: state.mRequest.licenseBackImage.fileValue,
                               fit: BoxFit.cover,
                             )
                           : profile.licenseBackImage.isNotEmpty

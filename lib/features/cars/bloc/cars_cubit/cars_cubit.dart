@@ -159,8 +159,7 @@ class CarsCubit extends MCubit<CarsInitial> {
     final response = await APIService().uploadMultiPart(
       url: PutUrl.updateInsurancePolicy,
       type: 'POST',
-      // Usually multipart update is POST with method override or just POST
-      path: state.id.toString(),
+      path: state.mRequest.id.toString(),
       files: state.mRequest.files,
       fields: state.mRequest.toJson(),
     );
@@ -249,50 +248,31 @@ class CarsCubit extends MCubit<CarsInitial> {
   void removeImage(ImageZone zone) {
     switch (zone) {
       case ImageZone.front:
-        state.mRequest.frontImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.frontImage = UploadFile();
         break;
       case ImageZone.engine:
-        state.mRequest.backImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.backImage = UploadFile();
         break;
       case ImageZone.right:
-        state.mRequest.rightSideImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.rightSideImage = UploadFile();
         break;
       case ImageZone.left:
-        state.mRequest.leftSideImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.leftSideImage = UploadFile();
         break;
       case ImageZone.interior:
-        state.mRequest.interiorImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.interiorImage = UploadFile();
         break;
       case ImageZone.rear:
-        state.mRequest.engineImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.engineImage = UploadFile();
         break;
     }
 
     emit(state.copyWith(idNotifier: state.idNotifier + 1));
+  }
+
+  void setRequest(CarPolicy car) {
+    final request = InsurancePolicyRequest.fromCarPolicy(car);
+    emit(state.copyWith(request: request));
   }
 
   Future<void> addOrUpdateCarToCache(CarPolicy item) async {

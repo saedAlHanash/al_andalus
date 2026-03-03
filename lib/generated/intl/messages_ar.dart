@@ -461,6 +461,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseTakeRightSideImage": MessageLookupByLibrary.simpleMessage(
       "يرجى التقاط صورة للجانب الأيمن",
     ),
+    "pleaseUpdateMissingFields": MessageLookupByLibrary.simpleMessage(
+      "يرجى القيام بالتعديل اللازم للحقول التالية:",
+    ),
     "pleaseUploadAllImages": MessageLookupByLibrary.simpleMessage(
       "يرجى إرفاق جميع الصور",
     ),
@@ -493,6 +496,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "qrCode": MessageLookupByLibrary.simpleMessage("الرمز السريع QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
+    "reUpload": MessageLookupByLibrary.simpleMessage("Re upload"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
     "register": MessageLookupByLibrary.simpleMessage("قم بالتسجيل"),
     "reject": MessageLookupByLibrary.simpleMessage("Reject"),
@@ -594,6 +598,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
       "رفع الملف (ملف واحد فقط)",
     ),
+    "uploadedFile": MessageLookupByLibrary.simpleMessage("Uploaded file"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),

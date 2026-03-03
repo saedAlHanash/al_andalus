@@ -77,46 +77,22 @@ class AccidentsCubit extends MCubit<AccidentsInitial> {
   void removeImage(ImageZone zone) {
     switch (zone) {
       case ImageZone.front:
-        state.mRequest.frontImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.frontImage = UploadFile();
         break;
       case ImageZone.rear:
-        state.mRequest.backImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.backImage = UploadFile();
         break;
       case ImageZone.right:
-        state.mRequest.rightSideImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.rightSideImage = UploadFile();
         break;
       case ImageZone.left:
-        state.mRequest.leftSideImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.leftSideImage = UploadFile();
         break;
       case ImageZone.interior:
-        state.mRequest.interiorImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.interiorImage = UploadFile();
         break;
       case ImageZone.engine:
-        state.mRequest.engineImage
-          ..fileBytes = null
-          ..path = null
-          ..extension = null
-          ..fileType;
+        state.mRequest.engineImage = UploadFile();
         break;
     }
 

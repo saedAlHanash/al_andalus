@@ -34,11 +34,11 @@ class SignupValidator {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseSelectGender, context: context);
       return false;
     }
-    if (request.identityFrontImage.fileBytes == null) {
+    if (request.identityFrontImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseAttachFrontId, context: context);
       return false;
     }
-    if (request.identityBackImage.fileBytes == null) {
+    if (request.identityBackImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseAttachBackId, context: context);
       return false;
     }
@@ -66,11 +66,11 @@ class SignupValidator {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseSelectExpiryDate, context: context);
       return false;
     }
-    if (request.licenseFrontImage.fileBytes == null) {
+    if (request.licenseFrontImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseAttachFrontLicense, context: context);
       return false;
     }
-    if (request.licenseBackImage.fileBytes == null) {
+    if (request.licenseBackImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseAttachBackLicense, context: context);
       return false;
     }

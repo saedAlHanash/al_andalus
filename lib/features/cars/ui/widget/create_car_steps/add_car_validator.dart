@@ -16,7 +16,7 @@ class AddCarValidator {
   }
 
   static bool _validateStep0(BuildContext context, InsurancePolicyRequest request) {
-    if (request.inspectionReport.fileBytes == null) {
+    if (request.inspectionReport.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadInspectionReport, context: context);
       return false;
     }
@@ -64,11 +64,11 @@ class AddCarValidator {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseSelectManufactureYear, context: context);
       return false;
     }
-    if (request.ownershipFrontImage.fileBytes == null) {
+    if (request.ownershipFrontImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadOwnershipFrontImage, context: context);
       return false;
     }
-    if (request.ownershipBackImage.fileBytes == null) {
+    if (request.ownershipBackImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadOwnershipBackImage, context: context);
       return false;
     }
@@ -106,27 +106,27 @@ class AddCarValidator {
   }
 
   static bool _validateStep3(BuildContext context, InsurancePolicyRequest request) {
-    if (request.frontImage.fileBytes == null) {
+    if (request.frontImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeFrontImage, context: context);
       return false;
     }
-    if (request.backImage.fileBytes == null) {
+    if (request.backImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeEngineImage, context: context);
       return false;
     }
-    if (request.rightSideImage.fileBytes == null) {
+    if (request.rightSideImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeRightSideImage, context: context);
       return false;
     }
-    if (request.leftSideImage.fileBytes == null) {
+    if (request.leftSideImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeLeftSideImage, context: context);
       return false;
     }
-    if (request.interiorImage.fileBytes == null) {
+    if (request.interiorImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeInteriorImage, context: context);
       return false;
     }
-    if (request.engineImage.fileBytes == null) {
+    if (request.engineImage.notHaveValue) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeRearImage, context: context);
       return false;
     }

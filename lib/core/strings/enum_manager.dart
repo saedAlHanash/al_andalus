@@ -388,7 +388,6 @@ enum FileType {
   other
   ;
 
-  /// ÙŠØ±Ø¬Ø¹ Ø§Ù„Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ù…Ù†Ø§Ø³Ø±Ø¨Ø© Ù„Ù„Ø¹Ø±Ø¶ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)
   IconData get fileTypeIcon {
     switch (this) {
       case FileType.image:

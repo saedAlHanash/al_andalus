@@ -2713,6 +2713,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Please make the necessary adjustments to the following fields:`
+  String get pleaseUpdateMissingFields {
+    return Intl.message(
+      'Please make the necessary adjustments to the following fields:',
+      name: 'pleaseUpdateMissingFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploaded file`
+  String get uploadedFile {
+    return Intl.message(
+      'Uploaded file',
+      name: 'uploadedFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re upload`
+  String get reUpload {
+    return Intl.message('Re upload', name: 'reUpload', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

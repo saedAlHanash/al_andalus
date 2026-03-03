@@ -2,16 +2,15 @@ import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
-import 'package:al_andalus/generated/assets.dart';
+import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_multi_type/image_multi_type.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/util/my_style.dart';
 import '../../../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/forget_password_cubit/forget_password_cubit.dart';
 
@@ -44,43 +43,13 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
       listener: (context, state) {
         context.goNamed(RouteName.resetPasswordPage);
       },
+
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBarWidget(titleText: S.of(context).forgetPassword),
-        body: Padding(
-          padding: MyStyle.pagePadding,
-          child: Column(
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Row(
             children: [
-              ImageMultiType(
-                url: Assets.imagesLogo,
-                height: 150.0.r,
-                width: 150.0.r,
-              ),
-              const Spacer(),
-              MyTextFormOutLineWidget(
-                hint: '07xxxxxxxxxx',
-                textDirection: TextDirection.ltr,
-                keyBordType: TextInputType.phone,
-                initialValue: widget.phone,
-                label: S.of(context).phoneNumber,
-                validator: (p0) => forgetPasswordCubit.validatePhone,
-                onChanged: (val) => forgetPasswordCubit.setPhone = val,
-              ),
-              const Spacer(),
-              BlocBuilder<ForgetPasswordCubit, ForgetPasswordInitial>(
-                builder: (_, state) {
-                  if (state.loading) {
-                    return MyStyle.loadingWidget();
-                  }
-                  return MyButton(
-                    text: S.of(context).continueTo,
-                    onTap: () {
-                      forgetPasswordCubit.forgetPassword();
-                    },
-                  );
-                },
-              ),
-              20.0.verticalSpace,
+              Spacer(),
               DrawableText(
                 text: S.of(context).rememberPassword,
                 drawableEnd: TextButton(
@@ -89,6 +58,54 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     fontFamily: FontManager.bold.name,
                     text: S.of(context).login,
                   ),
+                ),
+              ),
+              Spacer(),
+            ],
+          ),
+        ),
+        appBar: AppBarWidget(zeroHeight: true),
+        body: SingleChildScrollView(
+          padding: MyStyle.pagePadding,
+          child: Column(
+            children: [
+              AuthCardImage(
+                titleText: S.of(context).logInToYourAccount,
+                description: S.of(context).enterYourPhoneAndPasswordToLogIn,
+              ),
+              Container(
+                padding: const EdgeInsets.all(20.0).r,
+                margin: const EdgeInsets.symmetric(vertical: 20.0).r,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0).r,
+                  // boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
+                ),
+                child: Column(
+                  children: [
+                    MyTextFormOutLineWidget(
+                      hint: '07xxxxxxxxxx',
+                      textDirection: TextDirection.ltr,
+                      keyBordType: TextInputType.phone,
+                      initialValue: widget.phone,
+                      label: S.of(context).phoneNumber,
+                      validator: (p0) => forgetPasswordCubit.validatePhone,
+                      onChanged: (val) => forgetPasswordCubit.setPhone = val,
+                    ),
+                    BlocBuilder<ForgetPasswordCubit, ForgetPasswordInitial>(
+                      builder: (_, state) {
+                        if (state.loading) {
+                          return MyStyle.loadingWidget();
+                        }
+                        return MyButton(
+                          text: S.of(context).continueTo,
+                          onTap: () {
+                            forgetPasswordCubit.forgetPassword();
+                          },
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],

@@ -136,12 +136,12 @@ class _IdentityInfoState extends State<IdentityInfo> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachIdFrontHere,
-                    child: state.mRequest.identityFrontImage.fileBytes == null
+                    child: state.mRequest.identityFrontImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.identityFrontImage.fileBytes,
+                            url: state.mRequest.identityFrontImage.fileValue,
                             fit: .cover,
                           ),
                     onTap: () {
@@ -160,12 +160,12 @@ class _IdentityInfoState extends State<IdentityInfo> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachIdBackHere,
-                    child: state.mRequest.identityBackImage.fileBytes == null
+                    child: state.mRequest.identityBackImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.identityBackImage.fileBytes,
+                            url: state.mRequest.identityBackImage.fileValue,
                             fit: .cover,
                           ),
                     onTap: () {

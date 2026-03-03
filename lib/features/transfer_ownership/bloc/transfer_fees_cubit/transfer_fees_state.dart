@@ -8,7 +8,7 @@ class TransferFeesInitial extends AbstractState<TransferFee> {
   });
 
   factory TransferFeesInitial.initial() {
-    return const TransferFeesInitial(
+    return  TransferFeesInitial(
       result: TransferFee.fromJson({}),
       statuses: CubitStatuses.init,
     );
@@ -19,7 +19,7 @@ class TransferFeesInitial extends AbstractState<TransferFee> {
 
   TransferFeesInitial copyWith({
     CubitStatuses? statuses,
-    num? result,
+    TransferFee? result,
     String? error,
   }) {
     return TransferFeesInitial(

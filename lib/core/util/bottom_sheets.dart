@@ -626,11 +626,11 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (file.fileType == FileType.image && file.fileBytes != null)
+            if ( file.haveValue)
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0).r,
-                child: Image.memory(
-                  file.fileBytes!,
+                child: ImageMultiType(url:
+                  file.fileValue,
                   height: 200.h,
                   fit: BoxFit.cover,
                 ),
@@ -701,10 +701,10 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                 ),
               ),
               15.verticalSpace,
-              if (file.fileType == FileType.image && file.fileBytes != null)
+              if ( file.haveValue)
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20.0).r,
-                  child: Image.memory(file.fileBytes!, width: 1.sw, fit: BoxFit.contain),
+                  child: ImageMultiType(url:file.fileValue, width: 1.sw, fit: BoxFit.contain),
                 ),
               25.verticalSpace,
               MyButton(

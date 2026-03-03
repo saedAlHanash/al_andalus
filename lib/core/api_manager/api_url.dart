@@ -158,9 +158,9 @@ class PostUrl {
   static const loginUrl = 'auth/login';
   static const signup = 'auth/register';
 
-  static const forgetPassword = 'auth/forget-password';
+  static const forgetPassword = 'auth/password/forget';
 
-  static const resetPassword = 'auth/reset-password';
+  static const resetPassword = 'auth/password/reset';
 
   static const closeVideo = 'lesson/close-video';
 

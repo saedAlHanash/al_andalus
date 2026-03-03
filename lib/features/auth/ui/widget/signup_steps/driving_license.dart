@@ -14,7 +14,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:image_multi_type/image_multi_type_pakage.dart';
 
-
 import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../generated/assets.dart';
 import '../../../bloc/signup_cubit/signup_cubit.dart';
@@ -36,6 +35,7 @@ class _DrivingLicenseState extends State<DrivingLicense> {
     c1.text = context.read<SignupCubit>().state.mRequest.licenseEndDate?.formatDate ?? '';
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignupCubit, SignupInitial>(
@@ -158,12 +158,12 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachLicenseFrontHere,
-                    child: state.mRequest.licenseFrontImage.fileBytes == null
+                    child: state.mRequest.licenseFrontImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.licenseFrontImage.fileBytes,
+                            url: state.mRequest.licenseFrontImage.fileValue,
                             fit: .fill,
                           ),
                     onTap: () {
@@ -182,12 +182,12 @@ class _DrivingLicenseState extends State<DrivingLicense> {
                   ),
                   UploadContainerWidget(
                     title: S.of(context).attachLicenseBackHere,
-                    child: state.mRequest.licenseBackImage.fileBytes == null
+                    child: state.mRequest.licenseBackImage.notHaveValue
                         ? null
                         : RoundImageWidget(
                             height: 200.0.h,
                             width: 1.0.sw,
-                            url: state.mRequest.licenseBackImage.fileBytes,
+                            url: state.mRequest.licenseBackImage.fileValue,
                             fit: .fill,
                           ),
                     onTap: () {

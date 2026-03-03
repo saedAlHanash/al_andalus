@@ -331,5 +331,8 @@
   "insurancePolicy": "Insurance policy",
   "reject": "Reject",
   "insurancePolicyReview": "Insurance policy review",
-  "confirmTheNextStep": "Confirm the next step"
+  "confirmTheNextStep": "Confirm the next step",
+  "pleaseUpdateMissingFields": "Please make the necessary adjustments to the following fields:",
+  "uploadedFile": "Uploaded file",
+  "reUpload": "Re upload"
 }

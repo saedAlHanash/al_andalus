@@ -330,5 +330,8 @@
   "insurancePolicy": "Insurance policy",
   "reject": "Reject",
   "insurancePolicyReview": "Insurance policy review",
-  "confirmTheNextStep": "Confirm the next step"
+  "confirmTheNextStep": "Confirm the next step",
+  "pleaseUpdateMissingFields": "يرجى القيام بالتعديل اللازم للحقول التالية:",
+  "uploadedFile": "Uploaded file",
+  "reUpload": "Re upload"
 }

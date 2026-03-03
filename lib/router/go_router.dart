@@ -30,6 +30,7 @@ import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
 import '../features/cars/bloc/car_cubit/car_cubit.dart';
 import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
+import '../features/cars/data/response/cars_response.dart';
 import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/cars/ui/pages/car_page.dart';
 import '../features/cars/ui/pages/cars_page.dart';
@@ -269,8 +270,12 @@ final goRouter = GoRouter(
         final id = state.uri.queryParameters['id'] ?? '';
         final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
         final cylindersCount = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
+        final CarPolicy? car = state.extra as CarPolicy?;
+        final bloc = sl<CarsCubit>();
+        if (car != null) bloc.setRequest(car);
+
         return BlocProvider(
-          create: (context) => sl<CarsCubit>()
+          create: (context) => bloc
             ..state.mRequest.cylinders = cylindersCount.toString()
             ..state.mRequest.value = price.toString()
             ..state.mRequest.insurancePackageId = id,

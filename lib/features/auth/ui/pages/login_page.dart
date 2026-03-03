@@ -45,15 +45,37 @@ class _LoginPageState extends State<LoginPage> {
           listener: (context, state) {
             updateData();
             context.goNamed(RouteName.home);
-            context.pushNamed(
-              RouteName.insurancePage,
-              queryParameters: AppProvider.insurancePage,
-            );
+            if (AppProvider.insurancePage.isNotEmpty) {
+              context.pushNamed(
+                RouteName.insurancePage,
+                queryParameters: AppProvider.insurancePage,
+              );
+            }
           },
         ),
       ],
       child: Scaffold(
         appBar: AppBarWidget(zeroHeight: true),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Row(
+            children: [
+              Spacer(),
+              DrawableText(
+                text: S.of(context).doNotHaveAnAccount,
+                drawableEnd: TextButton(
+                  onPressed: () => context.pushNamed(RouteName.signup),
+                  child: DrawableText(
+                    fontFamily: FontManager.bold.name,
+                    color: AppColorManager.mainColor,
+                    text: S.of(context).createNewAccount,
+                  ),
+                ),
+              ),
+              Spacer(),
+            ],
+          ),
+        ),
         body: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -65,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Container(
                   padding: const EdgeInsets.all(20.0).r,
-                  margin: const EdgeInsets.all(20.0).r,
+                  margin: const EdgeInsets.symmetric(vertical: 20.0).r,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10.0).r,
@@ -111,15 +133,11 @@ class _LoginPageState extends State<LoginPage> {
                             child: DrawableText(
                               text: S.of(context).forgetPassword,
                               color: AppColorManager.mainColor,
+                              textDecoration: .underline,
                               fontFamily: FontManager.bold.name,
                             ),
                           ),
                           Spacer(),
-                          DrawableText(
-                            text: S.of(context).rememberMe,
-                            fontWeight: FontWeight.w600,
-                            drawableEnd: Checkbox(value: true, onChanged: (value) {}),
-                          ),
                         ],
                       ),
                       10.0.verticalSpace,
@@ -144,19 +162,6 @@ class _LoginPageState extends State<LoginPage> {
                           context.pushNamed(RouteName.home);
                         },
                       ),
-
-                      18.0.verticalSpace,
-                      DrawableText(
-                        text: S.of(context).doNotHaveAnAccount,
-                        drawableEnd: TextButton(
-                          onPressed: () => context.pushNamed(RouteName.signup),
-                          child: DrawableText(
-                            fontFamily: FontManager.bold.name,
-                            color: AppColorManager.mainColor,
-                            text: S.of(context).createNewAccount,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -165,28 +170,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _ForgetAndRememberWidget extends StatefulWidget {
-  const _ForgetAndRememberWidget();
-
-  @override
-  State<_ForgetAndRememberWidget> createState() => _ForgetAndRememberWidgetState();
-}
-
-class _ForgetAndRememberWidgetState extends State<_ForgetAndRememberWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        DrawableText(
-          text: S.of(context).rememberMe,
-          drawableEnd: Checkbox(value: true, onChanged: (value) {}),
-        ),
-      ],
     );
   }
 }
