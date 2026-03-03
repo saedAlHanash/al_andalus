@@ -3,8 +3,8 @@ import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:m_cubit/m_cubit.dart';
 
-import '../data/request/transfer_ownership_request.dart';
-import '../data/response/transfer_ownership_response.dart';
+import '../../data/request/transfer_ownership_request.dart';
+import '../../data/response/transfer_ownership_response.dart';
 
 part 'transfer_ownership_state.dart';
 

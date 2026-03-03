@@ -13,7 +13,7 @@ import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../core/util/snack_bar_message.dart';
 import '../../../../core/util/bottom_sheets.dart';
-import '../../bloc/transfer_ownership_cubit.dart';
+import '../../bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';
 
 class TransferOwnershipPage extends StatelessWidget {
   const TransferOwnershipPage({super.key});

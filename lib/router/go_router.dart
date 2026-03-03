@@ -37,7 +37,7 @@ import '../features/cars/ui/pages/custome_web_page_view.dart';
 import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
 import '../features/accident/ui/pages/add_accident_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
-import '../features/transfer_ownership/bloc/transfer_ownership_cubit.dart';
+import '../features/transfer_ownership/bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';
 import '../features/transfer_ownership/ui/pages/transfer_ownership_page.dart';
 import '../features/home/ui/pages/home_page.dart';
 import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';

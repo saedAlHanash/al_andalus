@@ -56,6 +56,7 @@ class HowCanHelp extends StatelessWidget {
                         child: _Item(
                           onTap: () async {
                             final result = await context.pushNamed(RouteName.qrScanner);
+
                             // if (result != null && context.mounted) {
                             //   context.pushNamed(
                             //     RouteName.transferOwnershipPage,
