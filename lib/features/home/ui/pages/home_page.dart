@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/util/my_style.dart';
 import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
+import '../../../cars/ui/widget/list_cars.dart';
 import '../../bloc/home_cubit/home_cubit.dart';
 import '../widget/bottom_nav_widget.dart';
 import '../widget/screens/menu_screen.dart';
@@ -56,7 +57,10 @@ class _HomepageState extends State<Homepage> {
                     children: [
                       AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
                       NotificationPage(),
-                      Container(),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: ListCars(),
+                      ),
                       MenuScreen(),
                     ],
                   );

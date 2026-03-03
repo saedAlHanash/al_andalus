@@ -1,6 +1,8 @@
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
+import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,9 +70,23 @@ class PackageInfoWidget extends StatelessWidget {
                   ),
                   leading: ImageMultiType(url: Assets.iconsCoins, height: 24.0.r),
                 ),
-                MyButton(
-                  text: S.of(context).renewalSubscription,
-                ),
+                if (state.result.status.canRenew)
+                  MyButton(
+                    onTap: () {
+                      showRePay(
+                        context,
+                        state.result.annualSubscriptionPrice,
+                        (value) {
+                          context.read<CarsCubit>().resubscribe(
+                            id: state.result.id.toString(),
+                            insurancePackageId: state.result.insurancePackage.id.toString(),
+                            paymentType: value,
+                          );
+                        },
+                      );
+                    },
+                    text: S.of(context).renewalSubscription,
+                  ),
               ],
             ),
           ),

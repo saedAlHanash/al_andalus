@@ -789,6 +789,10 @@ enum InsurancePolicyStatus {
   resubscriptionPaymentPending,
   ;
 
+  bool get canRenew => this == .expired || this == .active;
+
+  bool get canCancel => this == .draft;
+
   String get name {
     switch (this) {
       case InsurancePolicyStatus.paymentPending:

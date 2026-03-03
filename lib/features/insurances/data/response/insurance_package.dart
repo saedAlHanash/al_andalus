@@ -30,7 +30,7 @@ class InsurancePackage {
     required this.created,
   });
 
-  final int? id;
+  final int id;
   final String title;
   final String brief;
   final InsuranceType type;

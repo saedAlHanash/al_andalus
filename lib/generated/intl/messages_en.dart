@@ -232,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "Insurance is easier for a better life",
     ),
+    "insurancePolicy": MessageLookupByLibrary.simpleMessage("Insurance policy"),
     "insuranceStatus": MessageLookupByLibrary.simpleMessage("Insurance Status"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "Insure your vehicle in minutes, view your policy and details directly from your account",
@@ -350,6 +351,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
       "Please accept the declaration",
     ),
+    "pleaseAddYourVehicleToShowTheInsuranceDocument":
+        MessageLookupByLibrary.simpleMessage(
+          "Please add your vehicle to show the insurance document.",
+        ),
     "pleaseAttachBackId": MessageLookupByLibrary.simpleMessage(
       "Please attach back ID image",
     ),

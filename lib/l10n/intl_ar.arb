@@ -325,5 +325,7 @@
   "exitSignUpConfirmation": "هل أنت متأكد من الخروج من عملية إنشاء الحساب؟",
   "exitAddAccidentConfirmation": "هل أنت متأكد من الخروج من عملية الإبلاغ عن الحادث؟",
   "exitAddCarConfirmation": "هل أنت متأكد من الخروج من عملية إضافة سيارة؟",
-  "yes": "نعم"
+  "yes": "نعم",
+  "pleaseAddYourVehicleToShowTheInsuranceDocument": "Please add your vehicle to show the insurance document.",
+  "insurancePolicy": "Insurance policy"
 }

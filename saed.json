@@ -1,38 +1,84 @@
-[
-  {
-    "nameField": "ownership_front_image",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "ownership_back_image",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "inspection_report",
-    "fileSize": 140017
-  },
-  {
-    "nameField": "attachments[front_image]",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "attachments[back_image]",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "attachments[right_side_image]",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "attachments[left_side_image]",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "attachments[interior_image]",
-    "fileSize": 65366
-  },
-  {
-    "nameField": "attachments[engine_image]",
-    "fileSize": 65366
+{
+  "data": {
+    "id": 20,
+    "has_transfer_request": null,
+    "insurance_package": {
+      "id": 1,
+      "title": "Silver Private Package",
+      "level": "silver",
+      "type": "private"
+    },
+    "status": "paid",
+    "qrcode": "d53217e5-3f73-48d0-90d0-5f118e647cb4",
+    "annual_subscription_price": 180000,
+    "start_date": null,
+    "end_date": null,
+    "vehicle": {
+      "id": 16,
+      "name": "سيارة تجريبية",
+      "brand": "تويوتا",
+      "cylinders": "6",
+      "manufacture_year": "2020",
+      "color": "أبيض",
+      "chassis_number": "1234569",
+      "plate_number": "12354",
+      "fuel_type": "petrol",
+      "engine_capacity": 2000,
+      "value": 180000,
+      "expiry_start_date": null,
+      "expiry_end_date": null,
+      "ownership_front_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+      "ownership_back_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+      "inspection_report": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/بلا عنوان.pdf",
+      "inspection": {
+        "id": 13,
+        "metal_body": "intact",
+        "metal_body_note": "-",
+        "glass_and_lamps": "damage",
+        "glass_and_lamps_note": "-",
+        "chrome_nickel": "intact",
+        "chrome_nickel_note": "-",
+        "brand_sign": "intact",
+        "brand_sign_note": "-",
+        "windshield_wipers": "damage",
+        "windshield_wipers_note": "-",
+        "radio_antenna": "damage",
+        "radio_antenna_note": "-",
+        "seats": "intact",
+        "seats_note": "-",
+        "floor_cover": "intact",
+        "floor_cover_note": "-",
+        "radio": "damage",
+        "radio_note": "-",
+        "air_conditioner": "damage",
+        "air_conditioner_note": "-",
+        "front_tires": "damage",
+        "front_tires_note": "-",
+        "back_tires": "damage",
+        "back_tires_note": "-",
+        "spare_tire": "intact",
+        "spare_tire_note": "-",
+        "tires_covers": "intact",
+        "tires_covers_note": "-",
+        "spare_tools": "intact",
+        "spare_tools_note": "-",
+        "other_notes": null,
+        "created": "2026-03-02 | 12:12 م"
+      },
+      "attachment": {
+        "id": 13,
+        "front_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "right_side_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "left_side_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "interior_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "back_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "engine_image": "https://admin.andalusapp.com/storage/insurancePolicy/20/vehicle/1-1772442767.jpg",
+        "created": "2026-03-02 | 12:12 م"
+      },
+      "created": "2026-03-02 | 12:12 م"
+    },
+    "policy_file": null,
+    "fields_to_be_refilled": null,
+    "created": "2026-03-02 | 12:12 م"
   }
-]
+}

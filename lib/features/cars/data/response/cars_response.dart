@@ -23,6 +23,7 @@ class CarPolicy {
   CarPolicy({
     required this.id,
     required this.hasTransferRequest,
+    required this.hasClaimRequest,
     required this.insurancePackage,
     required this.status,
     required this.qrcode,
@@ -36,7 +37,8 @@ class CarPolicy {
   });
 
   final int id;
-  final bool hasTransferRequest;
+  final HasTransferRequest hasTransferRequest;
+  final HasClaimRequest hasClaimRequest;
   final InsurancePackage insurancePackage;
   final InsurancePolicyStatus status;
   final String qrcode;
@@ -45,13 +47,14 @@ class CarPolicy {
   final String endDate;
   final Vehicle vehicle;
   final String policyFile;
-  final dynamic fieldsToBeRefilled;
+  final List<String> fieldsToBeRefilled;
   final String created;
 
   factory CarPolicy.fromJson(Map<String, dynamic> json) {
     return CarPolicy(
       id: json["id"] ?? 0,
-      hasTransferRequest: json["has_transfer_request"] ?? false,
+      hasTransferRequest: HasTransferRequest.fromJson(json["has_transfer_request"] ?? {}),
+      hasClaimRequest: HasClaimRequest.fromJson(json["has_claim_request"] ?? {}),
       insurancePackage: InsurancePackage.fromJson(json["insurance_package"] ?? {}),
       status: InsurancePolicyStatus.getByNameOrIndex(json["status"]),
       qrcode: json["qrcode"] ?? "",
@@ -60,14 +63,17 @@ class CarPolicy {
       endDate: json["end_date"] ?? "",
       vehicle: Vehicle.fromJson(json["vehicle"] ?? {}),
       policyFile: json["policy_file"] ?? "",
-      fieldsToBeRefilled: json["fields_to_be_refilled"],
+      fieldsToBeRefilled: json["fields_to_be_refilled"] == null
+          ? []
+          : List<String>.from(json["fields_to_be_refilled"]!.map((x) => x.toString())),
       created: json["created"] ?? "",
     );
   }
 
   Map<String, dynamic> toJson() => {
     "id": id,
-    "has_transfer_request": hasTransferRequest,
+    "has_transfer_request": hasTransferRequest.toJson(),
+    "has_claim_request": hasClaimRequest.toJson(),
     "insurance_package": insurancePackage.toJson(),
     "status": status.index,
     "qrcode": qrcode,
@@ -78,6 +84,96 @@ class CarPolicy {
     "policy_file": policyFile,
     "fields_to_be_refilled": fieldsToBeRefilled,
     "created": created,
+  };
+}
+
+class HasTransferRequest {
+  HasTransferRequest({
+    required this.id,
+    required this.status,
+    required this.note,
+    required this.toClient,
+    required this.created,
+  });
+
+  final int id;
+  final TransferOwnershipStatus status;
+  final String? note;
+  final ToClient toClient;
+  final String created;
+
+  factory HasTransferRequest.fromJson(Map<String, dynamic> json) {
+    return HasTransferRequest(
+      id: json["id"] ?? 0,
+      status: TransferOwnershipStatus.getByNameOrIndex(json["status"]),
+      note: json["note"],
+      toClient: ToClient.fromJson(json["to_client"] ?? {}),
+      created: json["created"] ?? "",
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "status": status.index,
+    "note": note,
+    "to_client": toClient.toJson(),
+    "created": created,
+  };
+}
+
+class HasClaimRequest {
+  HasClaimRequest({
+    required this.id,
+    required this.status,
+    required this.compensationValue,
+    required this.compensationType,
+    required this.created,
+  });
+
+  final int id;
+  final AccidentStatus status;
+  final num compensationValue;
+  final String compensationType;
+  final String created;
+
+  factory HasClaimRequest.fromJson(Map<String, dynamic> json) {
+    return HasClaimRequest(
+      id: json["id"] ?? 0,
+      status: AccidentStatus.getByNameOrIndex(json["status"]),
+      compensationValue: json["compensation_value"] ?? 0,
+      compensationType: json["compensation_type"] ?? "",
+      created: json["created"] ?? "",
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "status": status.index,
+    "compensation_value": compensationValue,
+    "compensation_type": compensationType,
+    "created": created,
+  };
+}
+
+class ToClient {
+  ToClient({
+    required this.name,
+    required this.phone,
+  });
+
+  final String name;
+  final String phone;
+
+  factory ToClient.fromJson(Map<String, dynamic> json) {
+    return ToClient(
+      name: json["name"] ?? "",
+      phone: json["phone"] ?? "",
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "name": name,
+    "phone": phone,
   };
 }
 

@@ -2668,6 +2668,26 @@ class S {
   String get yes {
     return Intl.message('Yes', name: 'yes', desc: '', args: []);
   }
+
+  /// `Please add your vehicle to show the insurance document.`
+  String get pleaseAddYourVehicleToShowTheInsuranceDocument {
+    return Intl.message(
+      'Please add your vehicle to show the insurance document.',
+      name: 'pleaseAddYourVehicleToShowTheInsuranceDocument',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance policy`
+  String get insurancePolicy {
+    return Intl.message(
+      'Insurance policy',
+      name: 'insurancePolicy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

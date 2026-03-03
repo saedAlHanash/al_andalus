@@ -247,6 +247,9 @@ class PutUrl {
   static var updateGroup = '';
 
   static String rePay(String id) => 'insurance-policy/$id/repayment';
+  static String approveOrReject(String id) => 'insurance-policy/$id/approve-or-reject';
+  static String resubscribe(String id) => 'insurance-policy/$id/resubscribe';
+  static String cancelInsurance(String id) => 'insurance-policy/$id/cancel';
 
   static const updateInsurancePolicy = 'insurance-policy';
 }

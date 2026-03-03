@@ -61,10 +61,10 @@ class CarsCubit extends MCubit<CarsInitial> {
   //region CRUD
 
   Future<void> rePay({required String id, required PaymentType type}) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
 
     final response = await APIService().callApi(
-      type: .put,
+      type: ApiType.put,
       url: PutUrl.rePay(id),
       body: {'payment_type': type.nameApi},
     );
@@ -72,16 +72,62 @@ class CarsCubit extends MCubit<CarsInitial> {
     _pay(response);
   }
 
-  Future<void> approveOrReject({required String id, required PaymentType type}) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
+  Future<void> reject({
+    required String id,
+  }) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
 
     final response = await APIService().callApi(
-      type: .put,
-      url: PutUrl.rePay(id),
-      body: {'payment_type': type.nameApi},
+      type: ApiType.put,
+      url: PutUrl.approveOrReject(id),
+      body: {'status': 'cancelled'},
+    );
+
+    await _updateState(response);
+  }
+
+  Future<void> approve({
+    required String id,
+  }) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+
+    final response = await APIService().callApi(
+      type: ApiType.put,
+      url: PutUrl.approveOrReject(id),
+      body: {'status': 'approved'},
+    );
+
+    await _updateState(response);
+  }
+
+  Future<void> resubscribe({
+    required String id,
+    required String insurancePackageId,
+    required PaymentType paymentType,
+  }) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+
+    final response = await APIService().callApi(
+      type: ApiType.put,
+      url: PutUrl.resubscribe(id),
+      body: {
+        'payment_type': paymentType.nameApi,
+        'insurance_package_id': insurancePackageId,
+      },
     );
 
     _pay(response);
+  }
+
+  Future<void> cancelInsurance({required String id}) async {
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+
+    final response = await APIService().callApi(
+      type: ApiType.put,
+      url: PutUrl.cancelInsurance(id),
+    );
+
+    await _updateState(response);
   }
 
   Future<void> create() async {

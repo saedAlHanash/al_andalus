@@ -326,5 +326,7 @@
   "exitSignUpConfirmation": "Are you sure you want to exit the sign up process?",
   "exitAddAccidentConfirmation": "Are you sure you want to exit the report accident process?",
   "exitAddCarConfirmation": "Are you sure you want to exit the add car process?",
-  "yes": "Yes"
+  "yes": "Yes",
+  "pleaseAddYourVehicleToShowTheInsuranceDocument": "Please add your vehicle to show the insurance document.",
+  "insurancePolicy": "Insurance policy"
 }

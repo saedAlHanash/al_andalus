@@ -220,6 +220,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "التامين اصبح اسهل لحياة أفضل",
     ),
+    "insurancePolicy": MessageLookupByLibrary.simpleMessage("Insurance policy"),
     "insuranceStatus": MessageLookupByLibrary.simpleMessage("حالة التأمين"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
       "أمن مركبتك خلال دقائق، واطّلع على وثيقتك وكل تفاصيلها مباشرة من حسابك",
@@ -330,6 +331,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
       "يرجى الموافقة على الإقرار",
     ),
+    "pleaseAddYourVehicleToShowTheInsuranceDocument":
+        MessageLookupByLibrary.simpleMessage(
+          "Please add your vehicle to show the insurance document.",
+        ),
     "pleaseAttachBackId": MessageLookupByLibrary.simpleMessage(
       "يرجى إرفاق صورة البطاقة الخلفية",
     ),

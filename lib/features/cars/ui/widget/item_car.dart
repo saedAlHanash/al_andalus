@@ -48,7 +48,7 @@ class ItemCar extends StatelessWidget {
           ),
           16.0.verticalSpace,
 
-          if (car.status == InsurancePolicyStatus.paymentPending)
+          if (car.status == .paymentPending)
             BlocBuilder<CarsCubit, CarsInitial>(
               builder: (context, state) {
                 return MyButton(
