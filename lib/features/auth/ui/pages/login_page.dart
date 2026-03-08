@@ -77,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0).r,
           child: Form(
             key: _formKey,
             child: Column(
@@ -85,85 +86,68 @@ class _LoginPageState extends State<LoginPage> {
                   titleText: S.of(context).logInToYourAccount,
                   description: S.of(context).enterYourPhoneAndPasswordToLogIn,
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20.0).r,
-                  margin: const EdgeInsets.symmetric(vertical: 20.0).r,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10.0).r,
-                    // boxShadow: [BoxShadow(color: AppColorManager.black.withValues(alpha: 0.06), blurRadius: 24)],
-                  ),
+                30.0.verticalSpace,
+                AutofillGroup(
                   child: Column(
                     children: [
-                      AutofillGroup(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
-                          child: Column(
-                            children: [
-                              MyTextFormOutLineWidget(
-                                autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
-                                validator: (p0) => p0.validateEmpty,
-                                hint: S.of(context).phoneNumber,
-                                initialValue: loginCubit.state.mRequest.phone,
-                                keyBordType: TextInputType.phone,
-                                onChanged: (val) => loginCubit.setPhone = val,
-                              ),
-                              MyTextFormOutLineWidget(
-                                autofillHints: const [AutofillHints.password],
-                                validator: (p0) => loginCubit.validatePassword,
-                                // labelText: S.of(context).password,
-                                hint: S.of(context).password,
-                                obscureText: true,
-                                initialValue: loginCubit.state.mRequest.password,
-                                onChanged: (val) => loginCubit.setPassword = val,
-                              ),
-                            ],
-                          ),
-                        ),
+                      MyTextFormOutLineWidget(
+                        autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
+                        validator: (p0) => p0.validateEmpty,
+                        hint: S.of(context).phoneNumber,
+                        initialValue: loginCubit.state.mRequest.phone,
+                        keyBordType: TextInputType.phone,
+                        onChanged: (val) => loginCubit.setPhone = val,
                       ),
-                      Row(
-                        children: [
-                          TextButton(
-                            onPressed: () {
-                              context.pushNamed(
-                                RouteName.forgetPassword,
-                                queryParameters: {'phone': loginCubit.state.mRequest.phone},
-                              );
-                            },
-                            child: DrawableText(
-                              text: S.of(context).forgetPassword,
-                              color: AppColorManager.mainColor,
-                              textDecoration: .underline,
-                              fontFamily: FontManager.bold.name,
-                            ),
-                          ),
-                          Spacer(),
-                        ],
-                      ),
-                      10.0.verticalSpace,
-                      BlocBuilder<LoginCubit, LoginInitial>(
-                        builder: (_, state) {
-                          return MyButton(
-                            text: S.of(context).login,
-                            loading: state.loading,
-                            onTap: () async {
-                              if (!_formKey.currentState!.validate()) return;
-                              TextInput.finishAutofillContext();
-                              loginCubit.login();
-                            },
-                          );
-                        },
-                      ),
-                      10.0.verticalSpace,
-                      OutLineButton(
-                        text: S.of(context).guestLogin,
-                        color: Colors.white,
-                        onTap: () async {
-                          context.pushNamed(RouteName.home);
-                        },
+                      MyTextFormOutLineWidget(
+                        autofillHints: const [AutofillHints.password],
+                        validator: (p0) => loginCubit.validatePassword,
+                        // labelText: S.of(context).password,
+                        hint: S.of(context).password,
+                        obscureText: true,
+                        initialValue: loginCubit.state.mRequest.password,
+                        onChanged: (val) => loginCubit.setPassword = val,
                       ),
                     ],
                   ),
+                ),
+                InkWell(
+                  onTap: () {
+                    context.pushNamed(
+                      RouteName.forgetPassword,
+                      queryParameters: {'phone': loginCubit.state.mRequest.phone},
+                    );
+                  },
+                  child: DrawableText(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    matchParent: true,
+                    text: S.of(context).forgetPassword,
+                    color: AppColorManager.mainColor,
+                    textDecoration: .underline,
+                    fontFamily: FontManager.bold.name,
+                  ),
+                ),
+
+                10.0.verticalSpace,
+                BlocBuilder<LoginCubit, LoginInitial>(
+                  builder: (_, state) {
+                    return MyButton(
+                      text: S.of(context).login,
+                      loading: state.loading,
+                      onTap: () async {
+                        if (!_formKey.currentState!.validate()) return;
+                        TextInput.finishAutofillContext();
+                        loginCubit.login();
+                      },
+                    );
+                  },
+                ),
+                10.0.verticalSpace,
+                OutLineButton(
+                  text: S.of(context).guestLogin,
+                  color: Colors.white,
+                  onTap: () async {
+                    context.pushNamed(RouteName.home);
+                  },
                 ),
               ],
             ),

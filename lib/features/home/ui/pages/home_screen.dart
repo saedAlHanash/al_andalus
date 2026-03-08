@@ -40,15 +40,25 @@ class HomeScreen extends StatelessWidget {
             context.read<AdssCubit>().getData(newData: true);
             context.read<CarsCubit>().getData(newData: true);
           },
-          child: ListView(
+          child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0).r,
-            children: [
-              HiWidget(),
-              AddsSlider(type: AdsType.banner, height: 150.0),
-              HowCanHelp(),
-              ListCars(take: 1),
-              AddsSlider(type: AdsType.slider, height: 90.0),
-            ],
+
+            child: Column(
+              children: [
+                HiWidget(),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      AddsSlider(type: AdsType.banner, height: 150.0),
+                      HowCanHelp(),
+                      ListCars(take: 1),
+                      AddsSlider(type: AdsType.slider, height: 90.0),
+                      200.0.verticalSpace,
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

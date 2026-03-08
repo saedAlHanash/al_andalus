@@ -104,9 +104,10 @@ class HowCanHelp extends StatelessWidget {
                           color: const Color(0xFFFFEAD4),
                           title: S.of(context).addNewCar,
                           image: Transform.scale(
-                            scale: 1.8,
+                            scaleX: 1.8,
+                            scaleY: 1.8,
                             child: ImageMultiType(
-                              height: 40.0.r,
+                              height: 50.0.r,
                               width: 50.0.r,
                               url: Assets.iconsNewCar,
                             ),
@@ -168,8 +169,9 @@ class _Item extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            Align(
-              alignment: .bottomLeft,
+            Positioned(
+              bottom: -6,
+              left: 0,
               child: image,
             ),
           ],

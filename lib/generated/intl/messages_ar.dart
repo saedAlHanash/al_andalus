@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "and": MessageLookupByLibrary.simpleMessage("و"),
     "annual": MessageLookupByLibrary.simpleMessage("السنوية"),
-    "annualCost": MessageLookupByLibrary.simpleMessage("Annual cost"),
+    "annualCost": MessageLookupByLibrary.simpleMessage("التكلفة السنوية"),
     "annualPackageCost": MessageLookupByLibrary.simpleMessage(
       "تكلفة الباقة السنوية",
     ),
@@ -84,9 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إحسب تكلفة التأمين لسيارتك",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
-    "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
-      "Cancel the document",
-    ),
+    "cancelTheDocument": MessageLookupByLibrary.simpleMessage("إلغاء الوثيقة"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "carColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
     "carImages": MessageLookupByLibrary.simpleMessage("صور المركبة"),
@@ -99,7 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
     "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
-      "إختر حجم المحرك",
+      "اختر حجم المحرك",
     ),
     "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
@@ -111,9 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكيد كلمة المرور الجديدة",
     ),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
-      "Confirm the next step",
+      "تأكيد الخطوة التالية",
     ),
-    "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
+    "congrats": MessageLookupByLibrary.simpleMessage("تهانينا !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
@@ -154,6 +152,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "engine": MessageLookupByLibrary.simpleMessage("المحرك"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
+    "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
     "ensureTextIsClear": MessageLookupByLibrary.simpleMessage(
       "تأكد أن النص واضح وقابل للقراءة \n\n يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات",
     ),
@@ -223,9 +222,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "التامين اصبح اسهل لحياة أفضل",
     ),
-    "insurancePolicy": MessageLookupByLibrary.simpleMessage("Insurance policy"),
+    "insurancePolicy": MessageLookupByLibrary.simpleMessage("وثيقة التأمين"),
     "insurancePolicyReview": MessageLookupByLibrary.simpleMessage(
-      "Insurance policy review",
+      "مراجعة وثيقة التأمين",
     ),
     "insuranceStatus": MessageLookupByLibrary.simpleMessage("حالة التأمين"),
     "insureCarIntroDesc": MessageLookupByLibrary.simpleMessage(
@@ -238,9 +237,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "issuingAnInsuranceApplicationDocument":
-        MessageLookupByLibrary.simpleMessage(
-          "Issuing an insurance application document",
-        ),
+        MessageLookupByLibrary.simpleMessage("إصدار وثيقة طلب تأمين"),
     "joined": MessageLookupByLibrary.simpleMessage("الإنضمام"),
     "knowMore": MessageLookupByLibrary.simpleMessage("معرفة المزيد"),
     "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفه التفاصيل"),
@@ -339,7 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseAddYourVehicleToShowTheInsuranceDocument":
         MessageLookupByLibrary.simpleMessage(
-          "Please add your vehicle to show the insurance document.",
+          "يرجى إضافة مركبتك لعرض وثيقة التأمين.",
         ),
     "pleaseAttachBackId": MessageLookupByLibrary.simpleMessage(
       "يرجى إرفاق صورة البطاقة الخلفية",
@@ -419,6 +416,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الميلاد",
     ),
+    "pleaseSelectCarToViewDetails": MessageLookupByLibrary.simpleMessage(
+      "يرجى تحديد السيارة المرغوب عرض تفاصيلها",
+    ),
     "pleaseSelectEndDate": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار تاريخ النهاية",
     ),
@@ -433,6 +433,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseSelectIssueDate": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار تاريخ الإصدار",
+    ),
+    "pleaseSelectManufactureYear": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار سنة الصنع",
     ),
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار تاريخ البداية",
@@ -489,17 +492,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "preview": MessageLookupByLibrary.simpleMessage("المعاينة"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
-    "private": MessageLookupByLibrary.simpleMessage("خاص"),
+    "private": MessageLookupByLibrary.simpleMessage("خصوصي"),
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
-    "public": MessageLookupByLibrary.simpleMessage("عام"),
+    "public": MessageLookupByLibrary.simpleMessage("عمومي"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
     "qrCode": MessageLookupByLibrary.simpleMessage("الرمز السريع QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
-    "reUpload": MessageLookupByLibrary.simpleMessage("Re upload"),
+    "reUpload": MessageLookupByLibrary.simpleMessage("إعادة الرفع"),
     "rear": MessageLookupByLibrary.simpleMessage("الخلف"),
     "register": MessageLookupByLibrary.simpleMessage("قم بالتسجيل"),
-    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
+    "reject": MessageLookupByLibrary.simpleMessage("رفض"),
     "rejected": MessageLookupByLibrary.simpleMessage("مرفوض"),
     "rejectedByOperationStaff": MessageLookupByLibrary.simpleMessage(
       "مرفوض من موظف العمليات",
@@ -512,7 +515,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أتذكر كلمة المرور",
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
-      "Renewal of subscription",
+      "تجديد الاشتراك",
     ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("رفع حادث"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(
@@ -540,6 +543,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "sections": MessageLookupByLibrary.simpleMessage("الأقسام"),
     "securityData": MessageLookupByLibrary.simpleMessage("بيانات الأمان"),
     "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "selectDesiredCar": MessageLookupByLibrary.simpleMessage(
+      "اختر السيارة المرغوبة",
+    ),
     "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
       "قم بتحديد طريقة الدفع المرغوبة",
     ),
@@ -598,12 +604,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadOneFileOnly": MessageLookupByLibrary.simpleMessage(
       "رفع الملف (ملف واحد فقط)",
     ),
-    "uploadedFile": MessageLookupByLibrary.simpleMessage("Uploaded file"),
-    "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
+    "uploadedFile": MessageLookupByLibrary.simpleMessage("الملف المرفوع"),
+    "validityUntil": MessageLookupByLibrary.simpleMessage("صلاحية لغاية"),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),
     "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
-      "View insurance statement",
+      "عرض كشف التأمين",
     ),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "لقد أرسلنا رمز التحقق إلى",
@@ -614,7 +620,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "yes": MessageLookupByLibrary.simpleMessage("نعم"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
-          "You will be able to choose the desired language for the document.",
+          "ستتمكن من اختيار اللغة المطلوبة للوثيقة.",
         ),
     "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
         MessageLookupByLibrary.simpleMessage(

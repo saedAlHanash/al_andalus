@@ -392,6 +392,7 @@ class NoteMessage {
       dialogType: DialogType.error,
       animType: AnimType.scale,
       title: S.of(context).oops,
+      headerAnimationLoop: false,
       desc: message,
     ).show();
   }

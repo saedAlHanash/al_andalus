@@ -44,9 +44,11 @@ class _NotificationPageState extends State<NotificationPage> {
 
   @override
   Widget build(BuildContext context) {
+    if(AppProvider.isNotLogin){
+      return NeedLoginWidget();
+    }
     return Scaffold(
-      body: AppProvider.isLogin
-          ? BlocConsumer<NotificationCubit, NotificationsInitial>(
+      body: BlocConsumer<NotificationCubit, NotificationsInitial>(
               listenWhen: (p, c) => c.done,
               listener: (context, state) {
                 context.read<NotificationCubit>().readAll();
@@ -145,21 +147,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 );
               },
             )
-          : Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  DrawableText(text: S.of(context).pleaseLoginToContinue),
-                  20.0.verticalSpace,
-                  MyButton(
-                    text: S.of(context).login,
-                    onTap: () {
-                      context.goNamed(RouteName.login);
-                    },
-                  ),
-                ],
-              ),
-            ),
+           ,
     );
   }
 }

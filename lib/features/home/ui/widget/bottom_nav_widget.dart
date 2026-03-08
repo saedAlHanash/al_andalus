@@ -70,8 +70,8 @@ class _NavbarState extends State<Navbar> {
             bottom: 20.h,
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: .center,
+            crossAxisAlignment: .center,
             children: [
               // ========== Component A: Main Capsule ==========
               Flexible(
@@ -97,8 +97,7 @@ class _NavbarState extends State<Navbar> {
                 ),
               ),
 
-              // ========== The Gap ==========
-              SizedBox(width: 15.w),
+              15.0.horizontalSpace,
 
               // ========== Component B: Detached Action Button ==========
               _DetachedButton(
@@ -107,7 +106,12 @@ class _NavbarState extends State<Navbar> {
                 onTap: () {
                   context.read<HomeCubit>().jumpPage(menuIndex);
                 },
-                icon: _Menu(isActive: isMenuActive),
+                icon: ImageMultiType(
+                  color: isMenuActive ? Colors.white : AppColorManager.grey,
+                  url: Assets.iconsUser,
+                  height: 24.0.r,
+                  width: 24.0.r,
+                ),
               ),
             ],
           ),
@@ -189,8 +193,8 @@ class _DetachedButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 58.r,
-            height: 58.r,
+            width: 73.dg,
+            height: 73.dg,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               boxShadow: [
@@ -206,7 +210,7 @@ class _DetachedButton extends StatelessWidget {
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                 child: Container(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                     color: isActive ? theme.primaryColor.withValues(alpha: 0.9) : Colors.white.withValues(alpha: 0.5),
                     shape: BoxShape.circle,
@@ -220,13 +224,13 @@ class _DetachedButton extends StatelessWidget {
               ),
             ),
           ),
-          2.0.verticalSpace,
-          DrawableText(
-            text: title,
-            size: 10.sp,
-            color: isActive ? theme.primaryColor : AppColorManager.grey,
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-          ),
+          // 2.0.verticalSpace,
+          // DrawableText(
+          //   text: title,
+          //   size: 10.sp,
+          //   color: isActive ? theme.primaryColor : AppColorManager.grey,
+          //   fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+          // ),
         ],
       ),
     );
@@ -370,18 +374,3 @@ class _Insurance extends StatelessWidget {
   }
 }
 
-class _Menu extends StatelessWidget {
-  const _Menu({required this.isActive});
-
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return ImageMultiType(
-      color: isActive ? Colors.white : AppColorManager.grey,
-      url: Assets.iconsPerson,
-      height: 24.0.r,
-      width: 24.0.r,
-    );
-  }
-}

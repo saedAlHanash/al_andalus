@@ -164,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "engine": MessageLookupByLibrary.simpleMessage("Engine"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "ensureTextIsClear": MessageLookupByLibrary.simpleMessage(
       "Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions",
     ),
@@ -439,6 +440,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseSelectBirthday": MessageLookupByLibrary.simpleMessage(
       "Please select birthday",
     ),
+    "pleaseSelectCarToViewDetails": MessageLookupByLibrary.simpleMessage(
+      "Please select the car you wish to view details for",
+    ),
     "pleaseSelectEndDate": MessageLookupByLibrary.simpleMessage(
       "Please select end date",
     ),
@@ -565,6 +569,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "sections": MessageLookupByLibrary.simpleMessage("Sections"),
     "securityData": MessageLookupByLibrary.simpleMessage("Security Data"),
     "see_all": MessageLookupByLibrary.simpleMessage("See All"),
+    "selectDesiredCar": MessageLookupByLibrary.simpleMessage(
+      "Select Desired Car",
+    ),
     "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
       "Select desired payment method",
     ),

@@ -64,9 +64,124 @@ class S {
     return Intl.message('Accepted', name: 'accepted', desc: '', args: []);
   }
 
+  /// `Accepted by Operation Staff`
+  String get acceptedByOperationStaff {
+    return Intl.message(
+      'Accepted by Operation Staff',
+      name: 'acceptedByOperationStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accepted by Surveyor Staff`
+  String get acceptedBySurveyorStaff {
+    return Intl.message(
+      'Accepted by Surveyor Staff',
+      name: 'acceptedBySurveyorStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accident Details`
+  String get accidentDetails {
+    return Intl.message(
+      'Accident Details',
+      name: 'accidentDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accident Location`
+  String get accidentLocation {
+    return Intl.message(
+      'Accident Location',
+      name: 'accidentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message('Active', name: 'active', desc: '', args: []);
+  }
+
+  /// `Add New Car`
+  String get addNewCar {
+    return Intl.message('Add New Car', name: 'addNewCar', desc: '', args: []);
+  }
+
+  /// `Added to cart successfully`
+  String get addedToCartSuccessfully {
+    return Intl.message(
+      'Added to cart successfully',
+      name: 'addedToCartSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional Costs`
+  String get additionalCosts {
+    return Intl.message(
+      'Additional Costs',
+      name: 'additionalCosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Air Conditioner and Type`
+  String get airConditionerAndType {
+    return Intl.message(
+      'Air Conditioner and Type',
+      name: 'airConditionerAndType',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `and`
   String get and {
     return Intl.message('and', name: 'and', desc: '', args: []);
+  }
+
+  /// `Annual`
+  String get annual {
+    return Intl.message('Annual', name: 'annual', desc: '', args: []);
+  }
+
+  /// `Annual cost`
+  String get annualCost {
+    return Intl.message('Annual cost', name: 'annualCost', desc: '', args: []);
+  }
+
+  /// `Annual Package Cost`
+  String get annualPackageCost {
+    return Intl.message(
+      'Annual Package Cost',
+      name: 'annualPackageCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Annually`
+  String get annually {
+    return Intl.message('Annually', name: 'annually', desc: '', args: []);
+  }
+
+  /// `Approved`
+  String get approved {
+    return Intl.message('Approved', name: 'approved', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
   }
 
   /// `ascending`
@@ -134,6 +249,21 @@ class S {
     );
   }
 
+  /// `Attach Police Report:`
+  String get attachPoliceReport {
+    return Intl.message(
+      'Attach Police Report:',
+      name: 'attachPoliceReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back Tires`
+  String get backTires {
+    return Intl.message('Back Tires', name: 'backTires', desc: '', args: []);
+  }
+
   /// `Biometric Data`
   String get biometricData {
     return Intl.message(
@@ -149,6 +279,21 @@ class S {
     return Intl.message('birthday', name: 'birthday', desc: '', args: []);
   }
 
+  /// `Brand Sign`
+  String get brandSign {
+    return Intl.message('Brand Sign', name: 'brandSign', desc: '', args: []);
+  }
+
+  /// `Browse Files`
+  String get browseFiles {
+    return Intl.message(
+      'Browse Files',
+      name: 'browseFiles',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Build Number`
   String get buildNumber {
     return Intl.message(
@@ -159,9 +304,29 @@ class S {
     );
   }
 
+  /// `Calculate your car insurance cost`
+  String get calculateInsuranceCost {
+    return Intl.message(
+      'Calculate your car insurance cost',
+      name: 'calculateInsuranceCost',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Cancel`
   String get cancel {
     return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Cancel the document`
+  String get cancelTheDocument {
+    return Intl.message(
+      'Cancel the document',
+      name: 'cancelTheDocument',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Cancelled`
@@ -169,14 +334,19 @@ class S {
     return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
   }
 
-  /// `Car Information`
-  String get carInfo {
-    return Intl.message('Car Information', name: 'carInfo', desc: '', args: []);
-  }
-
   /// `Car Color`
   String get carColor {
     return Intl.message('Car Color', name: 'carColor', desc: '', args: []);
+  }
+
+  /// `Car Images`
+  String get carImages {
+    return Intl.message('Car Images', name: 'carImages', desc: '', args: []);
+  }
+
+  /// `Car Information`
+  String get carInfo {
+    return Intl.message('Car Information', name: 'carInfo', desc: '', args: []);
   }
 
   /// `Car Model`
@@ -234,6 +404,36 @@ class S {
     );
   }
 
+  /// `Choose engine capacity`
+  String get chooseEngineCapacity {
+    return Intl.message(
+      'Choose engine capacity',
+      name: 'chooseEngineCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose Language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chrome or Nickel`
+  String get chromeNickel {
+    return Intl.message(
+      'Chrome or Nickel',
+      name: 'chromeNickel',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Click To Update`
   String get clickToUpdate {
     return Intl.message(
@@ -274,6 +474,16 @@ class S {
     );
   }
 
+  /// `Confirm the next step`
+  String get confirmTheNextStep {
+    return Intl.message(
+      'Confirm the next step',
+      name: 'confirmTheNextStep',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Congrats !`
   String get congrats {
     return Intl.message('Congrats !', name: 'congrats', desc: '', args: []);
@@ -299,6 +509,26 @@ class S {
     return Intl.message(
       'Create New Account',
       name: 'createNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a new account?`
+  String get createNewAccountQuestion {
+    return Intl.message(
+      'Create a new account?',
+      name: 'createNewAccountQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of cylinders`
+  String get cylinders {
+    return Intl.message(
+      'Number of cylinders',
+      name: 'cylinders',
       desc: '',
       args: [],
     );
@@ -339,6 +569,16 @@ class S {
     return Intl.message('descending', name: 'descending', desc: '', args: []);
   }
 
+  /// `Details?`
+  String get detailsQuestion {
+    return Intl.message(
+      'Details?',
+      name: 'detailsQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Developed By`
   String get devBy {
     return Intl.message('Developed By', name: 'devBy', desc: '', args: []);
@@ -374,6 +614,16 @@ class S {
     );
   }
 
+  /// `Do you have an account?`
+  String get doYouHaveAccount {
+    return Intl.message(
+      'Do you have an account?',
+      name: 'doYouHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Done`
   String get done {
     return Intl.message('Done', name: 'done', desc: '', args: []);
@@ -389,6 +639,21 @@ class S {
     return Intl.message(
       'Done resend code',
       name: 'done_resend_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Draft`
+  String get draft {
+    return Intl.message('Draft', name: 'draft', desc: '', args: []);
+  }
+
+  /// `Draft Preparation`
+  String get draftPreparation {
+    return Intl.message(
+      'Draft Preparation',
+      name: 'draftPreparation',
       desc: '',
       args: [],
     );
@@ -414,16 +679,6 @@ class S {
     );
   }
 
-  /// `Number of cylinders`
-  String get cylinders {
-    return Intl.message(
-      'Number of cylinders',
-      name: 'cylinders',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Edit Phone Number`
   String get editPhone {
     return Intl.message(
@@ -434,9 +689,24 @@ class S {
     );
   }
 
+  /// `Electronic Card`
+  String get electronicCard {
+    return Intl.message(
+      'Electronic Card',
+      name: 'electronicCard',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get email {
     return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Engine`
+  String get engine {
+    return Intl.message('Engine', name: 'engine', desc: '', args: []);
   }
 
   /// `Engine Capacity`
@@ -449,11 +719,61 @@ class S {
     );
   }
 
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions`
+  String get ensureTextIsClear {
+    return Intl.message(
+      'Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions',
+      name: 'ensureTextIsClear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter`
+  String get enter {
+    return Intl.message('Enter', name: 'enter', desc: '', args: []);
+  }
+
+  /// `Enter car value`
+  String get enterCarValue {
+    return Intl.message(
+      'Enter car value',
+      name: 'enterCarValue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter expiry date`
+  String get enterExpiryDate {
+    return Intl.message(
+      'Enter expiry date',
+      name: 'enterExpiryDate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter Your OTP Code Here.`
   String get enterOTP {
     return Intl.message(
       'Enter Your OTP Code Here.',
       name: 'enterOTP',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter required details`
+  String get enterRequiredDetails {
+    return Intl.message(
+      'Enter required details',
+      name: 'enterRequiredDetails',
       desc: '',
       args: [],
     );
@@ -479,14 +799,39 @@ class S {
     );
   }
 
-  /// `Enter expiry date`
-  String get enterExpiryDate {
+  /// `Are you sure you want to exit the report accident process?`
+  String get exitAddAccidentConfirmation {
     return Intl.message(
-      'Enter expiry date',
-      name: 'enterExpiryDate',
+      'Are you sure you want to exit the report accident process?',
+      name: 'exitAddAccidentConfirmation',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Are you sure you want to exit the add car process?`
+  String get exitAddCarConfirmation {
+    return Intl.message(
+      'Are you sure you want to exit the add car process?',
+      name: 'exitAddCarConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to exit the sign up process?`
+  String get exitSignUpConfirmation {
+    return Intl.message(
+      'Are you sure you want to exit the sign up process?',
+      name: 'exitSignUpConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expired`
+  String get expired {
+    return Intl.message('Expired', name: 'expired', desc: '', args: []);
   }
 
   /// `Expiry Date`
@@ -494,9 +839,44 @@ class S {
     return Intl.message('Expiry Date', name: 'expiryDate', desc: '', args: []);
   }
 
+  /// `Exterior Body`
+  String get exteriorBody {
+    return Intl.message(
+      'Exterior Body',
+      name: 'exteriorBody',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Favorites`
   String get fav {
     return Intl.message('Favorites', name: 'fav', desc: '', args: []);
+  }
+
+  /// `Features`
+  String get features {
+    return Intl.message('Features', name: 'features', desc: '', args: []);
+  }
+
+  /// `First car insurance platform in Iraq`
+  String get firstCarInsurancePlatformInIraq {
+    return Intl.message(
+      'First car insurance platform in Iraq',
+      name: 'firstCarInsurancePlatformInIraq',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fixed`
+  String get fixed {
+    return Intl.message('Fixed', name: 'fixed', desc: '', args: []);
+  }
+
+  /// `Floor Cover`
+  String get floorCover {
+    return Intl.message('Floor Cover', name: 'floorCover', desc: '', args: []);
   }
 
   /// `Forgot Password?`
@@ -519,6 +899,16 @@ class S {
     return Intl.message('From', name: 'from', desc: '', args: []);
   }
 
+  /// `Front`
+  String get front {
+    return Intl.message('Front', name: 'front', desc: '', args: []);
+  }
+
+  /// `Front Tires`
+  String get frontTires {
+    return Intl.message('Front Tires', name: 'frontTires', desc: '', args: []);
+  }
+
   /// `Fuel Type`
   String get fuelType {
     return Intl.message('Fuel Type', name: 'fuelType', desc: '', args: []);
@@ -534,9 +924,34 @@ class S {
     return Intl.message('Gender', name: 'gender', desc: '', args: []);
   }
 
+  /// `General Information`
+  String get generalInformation {
+    return Intl.message(
+      'General Information',
+      name: 'generalInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Glass and Lamps`
+  String get glassAndLamps {
+    return Intl.message(
+      'Glass and Lamps',
+      name: 'glassAndLamps',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Governorate`
   String get governorate {
     return Intl.message('Governorate', name: 'governorate', desc: '', args: []);
+  }
+
+  /// `Guest Login`
+  String get guestLogin {
+    return Intl.message('Guest Login', name: 'guestLogin', desc: '', args: []);
   }
 
   /// `Home`
@@ -552,6 +967,16 @@ class S {
   /// `Hybrid`
   String get hybrid {
     return Intl.message('Hybrid', name: 'hybrid', desc: '', args: []);
+  }
+
+  /// `I remember my password`
+  String get iRememberMyPassword {
+    return Intl.message(
+      'I remember my password',
+      name: 'iRememberMyPassword',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `I remembered my password`
@@ -589,9 +1014,89 @@ class S {
     return Intl.message('Info', name: 'info', desc: '', args: []);
   }
 
+  /// `Inspection`
+  String get inspection {
+    return Intl.message('Inspection', name: 'inspection', desc: '', args: []);
+  }
+
+  /// `Insurance is easier for a better life`
+  String get insuranceIsEasierForBetterLife {
+    return Intl.message(
+      'Insurance is easier for a better life',
+      name: 'insuranceIsEasierForBetterLife',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance policy`
+  String get insurancePolicy {
+    return Intl.message(
+      'Insurance policy',
+      name: 'insurancePolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance policy review`
+  String get insurancePolicyReview {
+    return Intl.message(
+      'Insurance policy review',
+      name: 'insurancePolicyReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance Status`
+  String get insuranceStatus {
+    return Intl.message(
+      'Insurance Status',
+      name: 'insuranceStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insure your vehicle in minutes, view your policy and details directly from your account`
+  String get insureCarIntroDesc {
+    return Intl.message(
+      'Insure your vehicle in minutes, view your policy and details directly from your account',
+      name: 'insureCarIntroDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insure a car`
+  String get insureCarIntroTitle {
+    return Intl.message(
+      'Insure a car',
+      name: 'insureCarIntroTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Intact`
   String get intact {
     return Intl.message('Intact', name: 'intact', desc: '', args: []);
+  }
+
+  /// `Interior`
+  String get interior {
+    return Intl.message('Interior', name: 'interior', desc: '', args: []);
+  }
+
+  /// `Interior Body`
+  String get interiorBody {
+    return Intl.message(
+      'Interior Body',
+      name: 'interiorBody',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Required`
@@ -604,6 +1109,41 @@ class S {
     return Intl.message('Issue Date', name: 'issueDate', desc: '', args: []);
   }
 
+  /// `Issuing an insurance application document`
+  String get issuingAnInsuranceApplicationDocument {
+    return Intl.message(
+      'Issuing an insurance application document',
+      name: 'issuingAnInsuranceApplicationDocument',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Joined`
+  String get joined {
+    return Intl.message('Joined', name: 'joined', desc: '', args: []);
+  }
+
+  /// `Know More`
+  String get knowMore {
+    return Intl.message('Know More', name: 'knowMore', desc: '', args: []);
+  }
+
+  /// `Know more details`
+  String get knowMoreDetails {
+    return Intl.message(
+      'Know more details',
+      name: 'knowMoreDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kurdish`
+  String get kurdish {
+    return Intl.message('Kurdish', name: 'kurdish', desc: '', args: []);
+  }
+
   /// `Language`
   String get language {
     return Intl.message('Language', name: 'language', desc: '', args: []);
@@ -614,6 +1154,11 @@ class S {
     return Intl.message('latest', name: 'latest', desc: '', args: []);
   }
 
+  /// `Left`
+  String get left {
+    return Intl.message('Left', name: 'left', desc: '', args: []);
+  }
+
   /// `License Type`
   String get licenseType {
     return Intl.message(
@@ -622,6 +1167,11 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Load More`
+  String get loadMore {
+    return Intl.message('Load More', name: 'loadMore', desc: '', args: []);
   }
 
   /// `Log in to your account`
@@ -704,6 +1254,31 @@ class S {
     );
   }
 
+  /// `Manage your phone number.`
+  String get manageYourPhoneNumber {
+    return Intl.message(
+      'Manage your phone number.',
+      name: 'manageYourPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manufacture year`
+  String get manufactureYear {
+    return Intl.message(
+      'Manufacture year',
+      name: 'manufactureYear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Metal Body`
+  String get metalBody {
+    return Intl.message('Metal Body', name: 'metalBody', desc: '', args: []);
+  }
+
   /// `minute`
   String get minute {
     return Intl.message('minute', name: 'minute', desc: '', args: []);
@@ -712,6 +1287,16 @@ class S {
   /// `Missing`
   String get missing {
     return Intl.message('Missing', name: 'missing', desc: '', args: []);
+  }
+
+  /// `Missing Info`
+  String get missingInfo {
+    return Intl.message(
+      'Missing Info',
+      name: 'missingInfo',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `month`
@@ -739,9 +1324,34 @@ class S {
     return Intl.message('Need login', name: 'needLogin', desc: '', args: []);
   }
 
+  /// `You need to log in to continue`
+  String get needLoginToContinue {
+    return Intl.message(
+      'You need to log in to continue',
+      name: 'needLoginToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Need Pay`
   String get needPay {
     return Intl.message('Need Pay', name: 'needPay', desc: '', args: []);
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
   }
 
   /// `No`
@@ -754,6 +1364,16 @@ class S {
     return Intl.message(
       'Please check your internet connection',
       name: 'noInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No summary files available`
+  String get noSummaryFiles {
+    return Intl.message(
+      'No summary files available',
+      name: 'noSummaryFiles',
       desc: '',
       args: [],
     );
@@ -779,6 +1399,16 @@ class S {
     );
   }
 
+  /// `Old Password`
+  String get oldPassword {
+    return Intl.message(
+      'Old Password',
+      name: 'oldPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Oops!`
   String get oops {
     return Intl.message('Oops!', name: 'oops', desc: '', args: []);
@@ -789,9 +1419,34 @@ class S {
     return Intl.message('Our service', name: 'ourService', desc: '', args: []);
   }
 
+  /// `Package cost`
+  String get packageCost {
+    return Intl.message(
+      'Package cost',
+      name: 'packageCost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paid`
+  String get paid {
+    return Intl.message('Paid', name: 'paid', desc: '', args: []);
+  }
+
   /// `Password`
   String get password {
     return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Password changed successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Password field is required`
@@ -809,6 +1464,46 @@ class S {
     return Intl.message(
       'Password does not match',
       name: 'passwordNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message('Pay', name: 'pay', desc: '', args: []);
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message('Payment', name: 'payment', desc: '', args: []);
+  }
+
+  /// `Payment Pending`
+  String get paymentPending {
+    return Intl.message(
+      'Payment Pending',
+      name: 'paymentPending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment will be made via electronic card`
+  String get paymentViaElectronicCard {
+    return Intl.message(
+      'Payment will be made via electronic card',
+      name: 'paymentViaElectronicCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment will be made through wallet`
+  String get paymentViaWallet {
+    return Intl.message(
+      'Payment will be made through wallet',
+      name: 'paymentViaWallet',
       desc: '',
       args: [],
     );
@@ -859,6 +1554,16 @@ class S {
     );
   }
 
+  /// `Photos of the accident`
+  String get photosOfTheAccident {
+    return Intl.message(
+      'Photos of the accident',
+      name: 'photosOfTheAccident',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Place of Residence`
   String get placeOfResidence {
     return Intl.message(
@@ -884,6 +1589,16 @@ class S {
     return Intl.message(
       'Please accept the declaration',
       name: 'pleaseAcceptDeclaration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add your vehicle to show the insurance document.`
+  String get pleaseAddYourVehicleToShowTheInsuranceDocument {
+    return Intl.message(
+      'Please add your vehicle to show the insurance document.',
+      name: 'pleaseAddYourVehicleToShowTheInsuranceDocument',
       desc: '',
       args: [],
     );
@@ -939,11 +1654,81 @@ class S {
     );
   }
 
+  /// `Please select the status of all car parts`
+  String get pleaseCompleteAllInspectionFields {
+    return Intl.message(
+      'Please select the status of all car parts',
+      name: 'pleaseCompleteAllInspectionFields',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter address`
   String get pleaseEnterAddress {
     return Intl.message(
       'Please enter address',
       name: 'pleaseEnterAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car color`
+  String get pleaseEnterCarColor {
+    return Intl.message(
+      'Please enter car color',
+      name: 'pleaseEnterCarColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car model`
+  String get pleaseEnterCarModel {
+    return Intl.message(
+      'Please enter car model',
+      name: 'pleaseEnterCarModel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter car name`
+  String get pleaseEnterCarName {
+    return Intl.message(
+      'Please enter car name',
+      name: 'pleaseEnterCarName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter chassis number`
+  String get pleaseEnterChassisNumber {
+    return Intl.message(
+      'Please enter chassis number',
+      name: 'pleaseEnterChassisNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter description`
+  String get pleaseEnterDescription {
+    return Intl.message(
+      'Please enter description',
+      name: 'pleaseEnterDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter engine capacity`
+  String get pleaseEnterEngineCapacity {
+    return Intl.message(
+      'Please enter engine capacity',
+      name: 'pleaseEnterEngineCapacity',
       desc: '',
       args: [],
     );
@@ -989,11 +1774,81 @@ class S {
     );
   }
 
+  /// `Please enter location`
+  String get pleaseEnterLocation {
+    return Intl.message(
+      'Please enter location',
+      name: 'pleaseEnterLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter old and new password`
+  String get pleaseEnterOldAndNewPassword {
+    return Intl.message(
+      'Please enter old and new password',
+      name: 'pleaseEnterOldAndNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter phone number`
   String get pleaseEnterPhoneNumber {
     return Intl.message(
       'Please enter phone number',
       name: 'pleaseEnterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter plate number`
+  String get pleaseEnterPlateNumber {
+    return Intl.message(
+      'Please enter plate number',
+      name: 'pleaseEnterPlateNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter and attach the required information regarding the accident`
+  String get pleaseEnterRequiredAccidentInfo {
+    return Intl.message(
+      'Please enter and attach the required information regarding the accident',
+      name: 'pleaseEnterRequiredAccidentInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter vehicle ID`
+  String get pleaseEnterVehicleId {
+    return Intl.message(
+      'Please enter vehicle ID',
+      name: 'pleaseEnterVehicleId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please login to continue`
+  String get pleaseLoginToContinue {
+    return Intl.message(
+      'Please login to continue',
+      name: 'pleaseLoginToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please scan the code above to complete the payment and confirmation`
+  String get pleaseScanQrToPay {
+    return Intl.message(
+      'Please scan the code above to complete the payment and confirmation',
+      name: 'pleaseScanQrToPay',
       desc: '',
       args: [],
     );
@@ -1009,11 +1864,41 @@ class S {
     );
   }
 
+  /// `Please select the car you wish to view details for`
+  String get pleaseSelectCarToViewDetails {
+    return Intl.message(
+      'Please select the car you wish to view details for',
+      name: 'pleaseSelectCarToViewDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select end date`
+  String get pleaseSelectEndDate {
+    return Intl.message(
+      'Please select end date',
+      name: 'pleaseSelectEndDate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please select expiry date`
   String get pleaseSelectExpiryDate {
     return Intl.message(
       'Please select expiry date',
       name: 'pleaseSelectExpiryDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select fuel type`
+  String get pleaseSelectFuelType {
+    return Intl.message(
+      'Please select fuel type',
+      name: 'pleaseSelectFuelType',
       desc: '',
       args: [],
     );
@@ -1039,6 +1924,136 @@ class S {
     );
   }
 
+  /// `Please select Manufacture year`
+  String get pleaseSelectManufactureYear {
+    return Intl.message(
+      'Please select Manufacture year',
+      name: 'pleaseSelectManufactureYear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select start date`
+  String get pleaseSelectStartDate {
+    return Intl.message(
+      'Please select start date',
+      name: 'pleaseSelectStartDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please specify the details of the accident that occurred`
+  String get pleaseSpecifyAccidentDetails {
+    return Intl.message(
+      'Please specify the details of the accident that occurred',
+      name: 'pleaseSpecifyAccidentDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please specify the location of the accident`
+  String get pleaseSpecifyAccidentLocation {
+    return Intl.message(
+      'Please specify the location of the accident',
+      name: 'pleaseSpecifyAccidentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take an engine image`
+  String get pleaseTakeEngineImage {
+    return Intl.message(
+      'Please take an engine image',
+      name: 'pleaseTakeEngineImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a front image`
+  String get pleaseTakeFrontImage {
+    return Intl.message(
+      'Please take a front image',
+      name: 'pleaseTakeFrontImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take an interior image`
+  String get pleaseTakeInteriorImage {
+    return Intl.message(
+      'Please take an interior image',
+      name: 'pleaseTakeInteriorImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a left side image`
+  String get pleaseTakeLeftSideImage {
+    return Intl.message(
+      'Please take a left side image',
+      name: 'pleaseTakeLeftSideImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a rear image`
+  String get pleaseTakeRearImage {
+    return Intl.message(
+      'Please take a rear image',
+      name: 'pleaseTakeRearImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a right side image`
+  String get pleaseTakeRightSideImage {
+    return Intl.message(
+      'Please take a right side image',
+      name: 'pleaseTakeRightSideImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please make the necessary adjustments to the following fields:`
+  String get pleaseUpdateMissingFields {
+    return Intl.message(
+      'Please make the necessary adjustments to the following fields:',
+      name: 'pleaseUpdateMissingFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload all images`
+  String get pleaseUploadAllImages {
+    return Intl.message(
+      'Please upload all images',
+      name: 'pleaseUploadAllImages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload a file from files \n\n Allowed types: PDF, DOC`
+  String get pleaseUploadFile {
+    return Intl.message(
+      'Please upload a file from files \n\n Allowed types: PDF, DOC',
+      name: 'pleaseUploadFile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please upload the inspection document (Al-Haza)`
   String get pleaseUploadInspectionDocument {
     return Intl.message(
@@ -1047,6 +2062,56 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Please upload inspection report`
+  String get pleaseUploadInspectionReport {
+    return Intl.message(
+      'Please upload inspection report',
+      name: 'pleaseUploadInspectionReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach back ownership image`
+  String get pleaseUploadOwnershipBackImage {
+    return Intl.message(
+      'Please attach back ownership image',
+      name: 'pleaseUploadOwnershipBackImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please attach front ownership image`
+  String get pleaseUploadOwnershipFrontImage {
+    return Intl.message(
+      'Please attach front ownership image',
+      name: 'pleaseUploadOwnershipFrontImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please upload police report`
+  String get pleaseUploadPoliceReport {
+    return Intl.message(
+      'Please upload police report',
+      name: 'pleaseUploadPoliceReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Policy`
+  String get policy {
+    return Intl.message('Policy', name: 'policy', desc: '', args: []);
+  }
+
+  /// `Preview`
+  String get preview {
+    return Intl.message('Preview', name: 'preview', desc: '', args: []);
   }
 
   /// `Preview file`
@@ -1079,6 +2144,81 @@ class S {
     return Intl.message('public', name: 'public', desc: '', args: []);
   }
 
+  /// `Qi Card`
+  String get qiCard {
+    return Intl.message('Qi Card', name: 'qiCard', desc: '', args: []);
+  }
+
+  /// `QR Code`
+  String get qrCode {
+    return Intl.message('QR Code', name: 'qrCode', desc: '', args: []);
+  }
+
+  /// `Radio and Type`
+  String get radioAndType {
+    return Intl.message(
+      'Radio and Type',
+      name: 'radioAndType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Radio Antenna`
+  String get radioAntenna {
+    return Intl.message(
+      'Radio Antenna',
+      name: 'radioAntenna',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re upload`
+  String get reUpload {
+    return Intl.message('Re upload', name: 'reUpload', desc: '', args: []);
+  }
+
+  /// `Rear`
+  String get rear {
+    return Intl.message('Rear', name: 'rear', desc: '', args: []);
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
+  }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message('Reject', name: 'reject', desc: '', args: []);
+  }
+
+  /// `Rejected`
+  String get rejected {
+    return Intl.message('Rejected', name: 'rejected', desc: '', args: []);
+  }
+
+  /// `Rejected by Operation Staff`
+  String get rejectedByOperationStaff {
+    return Intl.message(
+      'Rejected by Operation Staff',
+      name: 'rejectedByOperationStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rejected by Surveyor Staff`
+  String get rejectedBySurveyorStaff {
+    return Intl.message(
+      'Rejected by Surveyor Staff',
+      name: 'rejectedBySurveyorStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Remember Me`
   String get rememberMe {
     return Intl.message('Remember Me', name: 'rememberMe', desc: '', args: []);
@@ -1094,14 +2234,94 @@ class S {
     );
   }
 
+  /// `Renewal of subscription`
+  String get renewalSubscription {
+    return Intl.message(
+      'Renewal of subscription',
+      name: 'renewalSubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report Accident`
+  String get reportAccident {
+    return Intl.message(
+      'Report Accident',
+      name: 'reportAccident',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compensation is easier now. Take a photo of the damage and submit your request immediately.\nWe will take care of the rest.`
+  String get reportAccidentIntroDesc {
+    return Intl.message(
+      'Compensation is easier now. Take a photo of the damage and submit your request immediately.\nWe will take care of the rest.',
+      name: 'reportAccidentIntroDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report an accident`
+  String get reportAccidentIntroTitle {
+    return Intl.message(
+      'Report an accident',
+      name: 'reportAccidentIntroTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requested information is not available`
+  String get requestedInfoNotAvailable {
+    return Intl.message(
+      'Requested information is not available',
+      name: 'requestedInfoNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Resend`
   String get resend {
     return Intl.message('Resend', name: 'resend', desc: '', args: []);
   }
 
+  /// `Resubmitted`
+  String get resubmitted {
+    return Intl.message('Resubmitted', name: 'resubmitted', desc: '', args: []);
+  }
+
+  /// `Resubscription Payment Pending`
+  String get resubscriptionPaymentPending {
+    return Intl.message(
+      'Resubscription Payment Pending',
+      name: 'resubscriptionPaymentPending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retake Image`
+  String get retakeImage {
+    return Intl.message(
+      'Retake Image',
+      name: 'retakeImage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Returned`
   String get returned {
     return Intl.message('Returned', name: 'returned', desc: '', args: []);
+  }
+
+  /// `Right`
+  String get right {
+    return Intl.message('Right', name: 'right', desc: '', args: []);
   }
 
   /// `Save`
@@ -1124,6 +2344,11 @@ class S {
     return Intl.message('Search', name: 'search', desc: '', args: []);
   }
 
+  /// `Seats`
+  String get seats {
+    return Intl.message('Seats', name: 'seats', desc: '', args: []);
+  }
+
   /// `second`
   String get second {
     return Intl.message('second', name: 'second', desc: '', args: []);
@@ -1134,9 +2359,39 @@ class S {
     return Intl.message('Sections', name: 'sections', desc: '', args: []);
   }
 
+  /// `Security Data`
+  String get securityData {
+    return Intl.message(
+      'Security Data',
+      name: 'securityData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `See All`
   String get see_all {
     return Intl.message('See All', name: 'see_all', desc: '', args: []);
+  }
+
+  /// `Select Desired Car`
+  String get selectDesiredCar {
+    return Intl.message(
+      'Select Desired Car',
+      name: 'selectDesiredCar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select desired payment method`
+  String get selectPaymentMethod {
+    return Intl.message(
+      'Select desired payment method',
+      name: 'selectPaymentMethod',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send code`
@@ -1149,6 +2404,46 @@ class S {
     return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
   }
 
+  /// `Skip`
+  String get skip {
+    return Intl.message('Skip', name: 'skip', desc: '', args: []);
+  }
+
+  /// `Spare Tire`
+  String get spareTire {
+    return Intl.message('Spare Tire', name: 'spareTire', desc: '', args: []);
+  }
+
+  /// `Spare Tools`
+  String get spareTools {
+    return Intl.message('Spare Tools', name: 'spareTools', desc: '', args: []);
+  }
+
+  /// `Spare Tools Group`
+  String get spareToolsGroup {
+    return Intl.message(
+      'Spare Tools Group',
+      name: 'spareToolsGroup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start now`
+  String get startNow {
+    return Intl.message('Start now', name: 'startNow', desc: '', args: []);
+  }
+
+  /// `Start your insurance journey easily`
+  String get startYourInsuranceJourneyEasily {
+    return Intl.message(
+      'Start your insurance journey easily',
+      name: 'startYourInsuranceJourneyEasily',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `سوف يتم حذف الحساب بجميع البيانات والكورسات`
   String get subTitleDeleteAccount {
     return Intl.message(
@@ -1159,9 +2454,59 @@ class S {
     );
   }
 
+  /// `Submit`
+  String get submit {
+    return Intl.message('Submit', name: 'submit', desc: '', args: []);
+  }
+
+  /// `Subscribe Now`
+  String get subscribeNow {
+    return Intl.message(
+      'Subscribe Now',
+      name: 'subscribeNow',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Support`
   String get support {
     return Intl.message('Support', name: 'support', desc: '', args: []);
+  }
+
+  /// `Sure`
+  String get sure {
+    return Intl.message('Sure', name: 'sure', desc: '', args: []);
+  }
+
+  /// `Take picture`
+  String get takePicture {
+    return Intl.message(
+      'Take picture',
+      name: 'takePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Technical Package`
+  String get technicalPackage {
+    return Intl.message(
+      'Technical Package',
+      name: 'technicalPackage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Technical Support`
+  String get technicalSupport {
+    return Intl.message(
+      'Technical Support',
+      name: 'technicalSupport',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Terms And Conditions`
@@ -1174,9 +2519,74 @@ class S {
     );
   }
 
+  /// `Tires and Accessories`
+  String get tiresAndAccessories {
+    return Intl.message(
+      'Tires and Accessories',
+      name: 'tiresAndAccessories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tire Covers`
+  String get tiresCovers {
+    return Intl.message('Tire Covers', name: 'tiresCovers', desc: '', args: []);
+  }
+
   /// `To`
   String get to {
     return Intl.message('To', name: 'to', desc: '', args: []);
+  }
+
+  /// `Total Amount`
+  String get totalAmount {
+    return Intl.message(
+      'Total Amount',
+      name: 'totalAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfer Ownership`
+  String get transferOwnership {
+    return Intl.message(
+      'Transfer Ownership',
+      name: 'transferOwnership',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Easily transfer policy ownership to another user via QR code`
+  String get transferOwnershipIntroDesc {
+    return Intl.message(
+      'Easily transfer policy ownership to another user via QR code',
+      name: 'transferOwnershipIntroDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfer Policy Ownership`
+  String get transferOwnershipIntroTitle {
+    return Intl.message(
+      'Transfer Policy Ownership',
+      name: 'transferOwnershipIntroTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Under Review`
+  String get underReview {
+    return Intl.message(
+      'Under Review',
+      name: 'underReview',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Unified Card Info`
@@ -1192,6 +2602,16 @@ class S {
   /// `update`
   String get update {
     return Intl.message('update', name: 'update', desc: '', args: []);
+  }
+
+  /// `Upload from files`
+  String get uploadFromFiles {
+    return Intl.message(
+      'Upload from files',
+      name: 'uploadFromFiles',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Upload car inspection report`
@@ -1224,6 +2644,26 @@ class S {
     );
   }
 
+  /// `Uploaded file`
+  String get uploadedFile {
+    return Intl.message(
+      'Uploaded file',
+      name: 'uploadedFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Validity until`
+  String get validityUntil {
+    return Intl.message(
+      'Validity until',
+      name: 'validityUntil',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Verification Code`
   String get verificationCode {
     return Intl.message(
@@ -1239,11 +2679,36 @@ class S {
     return Intl.message('verify', name: 'verify', desc: '', args: []);
   }
 
+  /// `View insurance statement`
+  String get viewInsuranceStatement {
+    return Intl.message(
+      'View insurance statement',
+      name: 'viewInsuranceStatement',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `We sent the reset verification code to`
   String get weSentTheResetVerificationCodeTo {
     return Intl.message(
       'We sent the reset verification code to',
       name: 'weSentTheResetVerificationCodeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message('Welcome', name: 'welcome', desc: '', args: []);
+  }
+
+  /// `Windshield Wipers`
+  String get windshieldWipers {
+    return Intl.message(
+      'Windshield Wipers',
+      name: 'windshieldWipers',
       desc: '',
       args: [],
     );
@@ -1259,1094 +2724,9 @@ class S {
     );
   }
 
-  /// `Policy`
-  String get policy {
-    return Intl.message('Policy', name: 'policy', desc: '', args: []);
-  }
-
-  /// `Manage your phone number.`
-  String get manageYourPhoneNumber {
-    return Intl.message(
-      'Manage your phone number.',
-      name: 'manageYourPhoneNumber',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Security Data`
-  String get securityData {
-    return Intl.message(
-      'Security Data',
-      name: 'securityData',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter`
-  String get enter {
-    return Intl.message('Enter', name: 'enter', desc: '', args: []);
-  }
-
-  /// `Front`
-  String get front {
-    return Intl.message('Front', name: 'front', desc: '', args: []);
-  }
-
-  /// `Engine`
-  String get engine {
-    return Intl.message('Engine', name: 'engine', desc: '', args: []);
-  }
-
-  /// `Right`
-  String get right {
-    return Intl.message('Right', name: 'right', desc: '', args: []);
-  }
-
-  /// `Left`
-  String get left {
-    return Intl.message('Left', name: 'left', desc: '', args: []);
-  }
-
-  /// `Interior`
-  String get interior {
-    return Intl.message('Interior', name: 'interior', desc: '', args: []);
-  }
-
-  /// `Rear`
-  String get rear {
-    return Intl.message('Rear', name: 'rear', desc: '', args: []);
-  }
-
-  /// `Retake Image`
-  String get retakeImage {
-    return Intl.message(
-      'Retake Image',
-      name: 'retakeImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Zain Cash`
-  String get zainCash {
-    return Intl.message('Zain Cash', name: 'zainCash', desc: '', args: []);
-  }
-
-  /// `Qi Card`
-  String get qiCard {
-    return Intl.message('Qi Card', name: 'qiCard', desc: '', args: []);
-  }
-
-  /// `Please upload inspection report`
-  String get pleaseUploadInspectionReport {
-    return Intl.message(
-      'Please upload inspection report',
-      name: 'pleaseUploadInspectionReport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter car name`
-  String get pleaseEnterCarName {
-    return Intl.message(
-      'Please enter car name',
-      name: 'pleaseEnterCarName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter car color`
-  String get pleaseEnterCarColor {
-    return Intl.message(
-      'Please enter car color',
-      name: 'pleaseEnterCarColor',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter car model`
-  String get pleaseEnterCarModel {
-    return Intl.message(
-      'Please enter car model',
-      name: 'pleaseEnterCarModel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter chassis number`
-  String get pleaseEnterChassisNumber {
-    return Intl.message(
-      'Please enter chassis number',
-      name: 'pleaseEnterChassisNumber',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter plate number`
-  String get pleaseEnterPlateNumber {
-    return Intl.message(
-      'Please enter plate number',
-      name: 'pleaseEnterPlateNumber',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter engine capacity`
-  String get pleaseEnterEngineCapacity {
-    return Intl.message(
-      'Please enter engine capacity',
-      name: 'pleaseEnterEngineCapacity',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please select fuel type`
-  String get pleaseSelectFuelType {
-    return Intl.message(
-      'Please select fuel type',
-      name: 'pleaseSelectFuelType',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please select start date`
-  String get pleaseSelectStartDate {
-    return Intl.message(
-      'Please select start date',
-      name: 'pleaseSelectStartDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please select end date`
-  String get pleaseSelectEndDate {
-    return Intl.message(
-      'Please select end date',
-      name: 'pleaseSelectEndDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please select Manufacture year`
-  String get pleaseSelectManufactureYear {
-    return Intl.message(
-      'Please select Manufacture year',
-      name: 'pleaseSelectManufactureYear',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please attach front ownership image`
-  String get pleaseUploadOwnershipFrontImage {
-    return Intl.message(
-      'Please attach front ownership image',
-      name: 'pleaseUploadOwnershipFrontImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please attach back ownership image`
-  String get pleaseUploadOwnershipBackImage {
-    return Intl.message(
-      'Please attach back ownership image',
-      name: 'pleaseUploadOwnershipBackImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take a front image`
-  String get pleaseTakeFrontImage {
-    return Intl.message(
-      'Please take a front image',
-      name: 'pleaseTakeFrontImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take an engine image`
-  String get pleaseTakeEngineImage {
-    return Intl.message(
-      'Please take an engine image',
-      name: 'pleaseTakeEngineImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take a right side image`
-  String get pleaseTakeRightSideImage {
-    return Intl.message(
-      'Please take a right side image',
-      name: 'pleaseTakeRightSideImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take a left side image`
-  String get pleaseTakeLeftSideImage {
-    return Intl.message(
-      'Please take a left side image',
-      name: 'pleaseTakeLeftSideImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take an interior image`
-  String get pleaseTakeInteriorImage {
-    return Intl.message(
-      'Please take an interior image',
-      name: 'pleaseTakeInteriorImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please take a rear image`
-  String get pleaseTakeRearImage {
-    return Intl.message(
-      'Please take a rear image',
-      name: 'pleaseTakeRearImage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please select the status of all car parts`
-  String get pleaseCompleteAllInspectionFields {
-    return Intl.message(
-      'Please select the status of all car parts',
-      name: 'pleaseCompleteAllInspectionFields',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Select desired payment method`
-  String get selectPaymentMethod {
-    return Intl.message(
-      'Select desired payment method',
-      name: 'selectPaymentMethod',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Electronic Card`
-  String get electronicCard {
-    return Intl.message(
-      'Electronic Card',
-      name: 'electronicCard',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Payment will be made via electronic card`
-  String get paymentViaElectronicCard {
-    return Intl.message(
-      'Payment will be made via electronic card',
-      name: 'paymentViaElectronicCard',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Zain Cash Wallet`
-  String get zainCashWallet {
-    return Intl.message(
-      'Zain Cash Wallet',
-      name: 'zainCashWallet',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Payment will be made through wallet`
-  String get paymentViaWallet {
-    return Intl.message(
-      'Payment will be made through wallet',
-      name: 'paymentViaWallet',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Annual Package Cost`
-  String get annualPackageCost {
-    return Intl.message(
-      'Annual Package Cost',
-      name: 'annualPackageCost',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Additional Costs`
-  String get additionalCosts {
-    return Intl.message(
-      'Additional Costs',
-      name: 'additionalCosts',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Total Amount`
-  String get totalAmount {
-    return Intl.message(
-      'Total Amount',
-      name: 'totalAmount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Exterior Body`
-  String get exteriorBody {
-    return Intl.message(
-      'Exterior Body',
-      name: 'exteriorBody',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Metal Body`
-  String get metalBody {
-    return Intl.message('Metal Body', name: 'metalBody', desc: '', args: []);
-  }
-
-  /// `Chrome or Nickel`
-  String get chromeNickel {
-    return Intl.message(
-      'Chrome or Nickel',
-      name: 'chromeNickel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Brand Sign`
-  String get brandSign {
-    return Intl.message('Brand Sign', name: 'brandSign', desc: '', args: []);
-  }
-
-  /// `Windshield Wipers`
-  String get windshieldWipers {
-    return Intl.message(
-      'Windshield Wipers',
-      name: 'windshieldWipers',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Radio Antenna`
-  String get radioAntenna {
-    return Intl.message(
-      'Radio Antenna',
-      name: 'radioAntenna',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Interior Body`
-  String get interiorBody {
-    return Intl.message(
-      'Interior Body',
-      name: 'interiorBody',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Seats`
-  String get seats {
-    return Intl.message('Seats', name: 'seats', desc: '', args: []);
-  }
-
-  /// `Floor Cover`
-  String get floorCover {
-    return Intl.message('Floor Cover', name: 'floorCover', desc: '', args: []);
-  }
-
-  /// `Radio and Type`
-  String get radioAndType {
-    return Intl.message(
-      'Radio and Type',
-      name: 'radioAndType',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Air Conditioner and Type`
-  String get airConditionerAndType {
-    return Intl.message(
-      'Air Conditioner and Type',
-      name: 'airConditionerAndType',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Glass and Lamps`
-  String get glassAndLamps {
-    return Intl.message(
-      'Glass and Lamps',
-      name: 'glassAndLamps',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Tires and Accessories`
-  String get tiresAndAccessories {
-    return Intl.message(
-      'Tires and Accessories',
-      name: 'tiresAndAccessories',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Front Tires`
-  String get frontTires {
-    return Intl.message('Front Tires', name: 'frontTires', desc: '', args: []);
-  }
-
-  /// `Back Tires`
-  String get backTires {
-    return Intl.message('Back Tires', name: 'backTires', desc: '', args: []);
-  }
-
-  /// `Spare Tire`
-  String get spareTire {
-    return Intl.message('Spare Tire', name: 'spareTire', desc: '', args: []);
-  }
-
-  /// `Tire Covers`
-  String get tiresCovers {
-    return Intl.message('Tire Covers', name: 'tiresCovers', desc: '', args: []);
-  }
-
-  /// `Spare Tools Group`
-  String get spareToolsGroup {
-    return Intl.message(
-      'Spare Tools Group',
-      name: 'spareToolsGroup',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Spare Tools`
-  String get spareTools {
-    return Intl.message('Spare Tools', name: 'spareTools', desc: '', args: []);
-  }
-
-  /// `Inspection`
-  String get inspection {
-    return Intl.message('Inspection', name: 'inspection', desc: '', args: []);
-  }
-
-  /// `Annual`
-  String get annual {
-    return Intl.message('Annual', name: 'annual', desc: '', args: []);
-  }
-
-  /// `Preview`
-  String get preview {
-    return Intl.message('Preview', name: 'preview', desc: '', args: []);
-  }
-
-  /// `Car Images`
-  String get carImages {
-    return Intl.message('Car Images', name: 'carImages', desc: '', args: []);
-  }
-
-  /// `Payment`
-  String get payment {
-    return Intl.message('Payment', name: 'payment', desc: '', args: []);
-  }
-
-  /// `Details?`
-  String get detailsQuestion {
-    return Intl.message(
-      'Details?',
-      name: 'detailsQuestion',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Welcome`
-  String get welcome {
-    return Intl.message('Welcome', name: 'welcome', desc: '', args: []);
-  }
-
-  /// `Start your insurance journey easily`
-  String get startYourInsuranceJourneyEasily {
-    return Intl.message(
-      'Start your insurance journey easily',
-      name: 'startYourInsuranceJourneyEasily',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `First car insurance platform in Iraq`
-  String get firstCarInsurancePlatformInIraq {
-    return Intl.message(
-      'First car insurance platform in Iraq',
-      name: 'firstCarInsurancePlatformInIraq',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Insurance is easier for a better life`
-  String get insuranceIsEasierForBetterLife {
-    return Intl.message(
-      'Insurance is easier for a better life',
-      name: 'insuranceIsEasierForBetterLife',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Report Accident`
-  String get reportAccident {
-    return Intl.message(
-      'Report Accident',
-      name: 'reportAccident',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Transfer Ownership`
-  String get transferOwnership {
-    return Intl.message(
-      'Transfer Ownership',
-      name: 'transferOwnership',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add New Car`
-  String get addNewCar {
-    return Intl.message('Add New Car', name: 'addNewCar', desc: '', args: []);
-  }
-
-  /// `Technical Package`
-  String get technicalPackage {
-    return Intl.message(
-      'Technical Package',
-      name: 'technicalPackage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sure`
-  String get sure {
-    return Intl.message('Sure', name: 'sure', desc: '', args: []);
-  }
-
-  /// `No summary files available`
-  String get noSummaryFiles {
-    return Intl.message(
-      'No summary files available',
-      name: 'noSummaryFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Features`
-  String get features {
-    return Intl.message('Features', name: 'features', desc: '', args: []);
-  }
-
-  /// `Know more details`
-  String get knowMoreDetails {
-    return Intl.message(
-      'Know more details',
-      name: 'knowMoreDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Subscribe Now`
-  String get subscribeNow {
-    return Intl.message(
-      'Subscribe Now',
-      name: 'subscribeNow',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Know More`
-  String get knowMore {
-    return Intl.message('Know More', name: 'knowMore', desc: '', args: []);
-  }
-
-  /// `Skip`
-  String get skip {
-    return Intl.message('Skip', name: 'skip', desc: '', args: []);
-  }
-
-  /// `Next`
-  String get next {
-    return Intl.message('Next', name: 'next', desc: '', args: []);
-  }
-
-  /// `Report an accident`
-  String get reportAccidentIntroTitle {
-    return Intl.message(
-      'Report an accident',
-      name: 'reportAccidentIntroTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Compensation is easier now. Take a photo of the damage and submit your request immediately.\nWe will take care of the rest.`
-  String get reportAccidentIntroDesc {
-    return Intl.message(
-      'Compensation is easier now. Take a photo of the damage and submit your request immediately.\nWe will take care of the rest.',
-      name: 'reportAccidentIntroDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Transfer Policy Ownership`
-  String get transferOwnershipIntroTitle {
-    return Intl.message(
-      'Transfer Policy Ownership',
-      name: 'transferOwnershipIntroTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Easily transfer policy ownership to another user via QR code`
-  String get transferOwnershipIntroDesc {
-    return Intl.message(
-      'Easily transfer policy ownership to another user via QR code',
-      name: 'transferOwnershipIntroDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Insure a car`
-  String get insureCarIntroTitle {
-    return Intl.message(
-      'Insure a car',
-      name: 'insureCarIntroTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Insure your vehicle in minutes, view your policy and details directly from your account`
-  String get insureCarIntroDesc {
-    return Intl.message(
-      'Insure your vehicle in minutes, view your policy and details directly from your account',
-      name: 'insureCarIntroDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please login to continue`
-  String get pleaseLoginToContinue {
-    return Intl.message(
-      'Please login to continue',
-      name: 'pleaseLoginToContinue',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Browse Files`
-  String get browseFiles {
-    return Intl.message(
-      'Browse Files',
-      name: 'browseFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Guest Login`
-  String get guestLogin {
-    return Intl.message('Guest Login', name: 'guestLogin', desc: '', args: []);
-  }
-
-  /// `Password changed successfully`
-  String get passwordChangedSuccessfully {
-    return Intl.message(
-      'Password changed successfully',
-      name: 'passwordChangedSuccessfully',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter old and new password`
-  String get pleaseEnterOldAndNewPassword {
-    return Intl.message(
-      'Please enter old and new password',
-      name: 'pleaseEnterOldAndNewPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Old Password`
-  String get oldPassword {
-    return Intl.message(
-      'Old Password',
-      name: 'oldPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `New Password`
-  String get newPassword {
-    return Intl.message(
-      'New Password',
-      name: 'newPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `I remember my password`
-  String get iRememberMyPassword {
-    return Intl.message(
-      'I remember my password',
-      name: 'iRememberMyPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Create a new account?`
-  String get createNewAccountQuestion {
-    return Intl.message(
-      'Create a new account?',
-      name: 'createNewAccountQuestion',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Do you have an account?`
-  String get doYouHaveAccount {
-    return Intl.message(
-      'Do you have an account?',
-      name: 'doYouHaveAccount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Register`
-  String get register {
-    return Intl.message('Register', name: 'register', desc: '', args: []);
-  }
-
-  /// `Requested information is not available`
-  String get requestedInfoNotAvailable {
-    return Intl.message(
-      'Requested information is not available',
-      name: 'requestedInfoNotAvailable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You need to log in to continue`
-  String get needLoginToContinue {
-    return Intl.message(
-      'You need to log in to continue',
-      name: 'needLoginToContinue',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Load More`
-  String get loadMore {
-    return Intl.message('Load More', name: 'loadMore', desc: '', args: []);
-  }
-
-  /// `Added to cart successfully`
-  String get addedToCartSuccessfully {
-    return Intl.message(
-      'Added to cart successfully',
-      name: 'addedToCartSuccessfully',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Annually`
-  String get annually {
-    return Intl.message('Annually', name: 'annually', desc: '', args: []);
-  }
-
-  /// `Your account has been successfully created. You will now be redirected to the home screen.`
-  String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
-    return Intl.message(
-      'Your account has been successfully created. You will now be redirected to the home screen.',
-      name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Pay`
-  String get pay {
-    return Intl.message('Pay', name: 'pay', desc: '', args: []);
-  }
-
-  /// `Manufacture year`
-  String get manufactureYear {
-    return Intl.message(
-      'Manufacture year',
-      name: 'manufactureYear',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Payment Pending`
-  String get paymentPending {
-    return Intl.message(
-      'Payment Pending',
-      name: 'paymentPending',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Paid`
-  String get paid {
-    return Intl.message('Paid', name: 'paid', desc: '', args: []);
-  }
-
-  /// `Missing Info`
-  String get missingInfo {
-    return Intl.message(
-      'Missing Info',
-      name: 'missingInfo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Resubmitted`
-  String get resubmitted {
-    return Intl.message('Resubmitted', name: 'resubmitted', desc: '', args: []);
-  }
-
-  /// `Draft Preparation`
-  String get draftPreparation {
-    return Intl.message(
-      'Draft Preparation',
-      name: 'draftPreparation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Draft`
-  String get draft {
-    return Intl.message('Draft', name: 'draft', desc: '', args: []);
-  }
-
-  /// `Approved`
-  String get approved {
-    return Intl.message('Approved', name: 'approved', desc: '', args: []);
-  }
-
-  /// `Rejected`
-  String get rejected {
-    return Intl.message('Rejected', name: 'rejected', desc: '', args: []);
-  }
-
-  /// `Active`
-  String get active {
-    return Intl.message('Active', name: 'active', desc: '', args: []);
-  }
-
-  /// `Expired`
-  String get expired {
-    return Intl.message('Expired', name: 'expired', desc: '', args: []);
-  }
-
-  /// `Resubscription Payment Pending`
-  String get resubscriptionPaymentPending {
-    return Intl.message(
-      'Resubscription Payment Pending',
-      name: 'resubscriptionPaymentPending',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Under Review`
-  String get underReview {
-    return Intl.message(
-      'Under Review',
-      name: 'underReview',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Accepted by Operation Staff`
-  String get acceptedByOperationStaff {
-    return Intl.message(
-      'Accepted by Operation Staff',
-      name: 'acceptedByOperationStaff',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Rejected by Operation Staff`
-  String get rejectedByOperationStaff {
-    return Intl.message(
-      'Rejected by Operation Staff',
-      name: 'rejectedByOperationStaff',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Accepted by Surveyor Staff`
-  String get acceptedBySurveyorStaff {
-    return Intl.message(
-      'Accepted by Surveyor Staff',
-      name: 'acceptedBySurveyorStaff',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Rejected by Surveyor Staff`
-  String get rejectedBySurveyorStaff {
-    return Intl.message(
-      'Rejected by Surveyor Staff',
-      name: 'rejectedBySurveyorStaff',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Fixed`
-  String get fixed {
-    return Intl.message('Fixed', name: 'fixed', desc: '', args: []);
-  }
-
-  /// `Package cost`
-  String get packageCost {
-    return Intl.message(
-      'Package cost',
-      name: 'packageCost',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Insurance Status`
-  String get insuranceStatus {
-    return Intl.message(
-      'Insurance Status',
-      name: 'insuranceStatus',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Joined`
-  String get joined {
-    return Intl.message('Joined', name: 'joined', desc: '', args: []);
-  }
-
-  /// `Validity until`
-  String get validityUntil {
-    return Intl.message(
-      'Validity until',
-      name: 'validityUntil',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Annual cost`
-  String get annualCost {
-    return Intl.message('Annual cost', name: 'annualCost', desc: '', args: []);
-  }
-
-  /// `Renewal of subscription`
-  String get renewalSubscription {
-    return Intl.message(
-      'Renewal of subscription',
-      name: 'renewalSubscription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `View insurance statement`
-  String get viewInsuranceStatement {
-    return Intl.message(
-      'View insurance statement',
-      name: 'viewInsuranceStatement',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Issuing an insurance application document`
-  String get issuingAnInsuranceApplicationDocument {
-    return Intl.message(
-      'Issuing an insurance application document',
-      name: 'issuingAnInsuranceApplicationDocument',
-      desc: '',
-      args: [],
-    );
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
   }
 
   /// `You will be able to choose the desired language for the document.`
@@ -2359,384 +2739,29 @@ class S {
     );
   }
 
-  /// `Cancel the document`
-  String get cancelTheDocument {
+  /// `Your account has been successfully created. You will now be redirected to the home screen.`
+  String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
     return Intl.message(
-      'Cancel the document',
-      name: 'cancelTheDocument',
+      'Your account has been successfully created. You will now be redirected to the home screen.',
+      name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
       desc: '',
       args: [],
     );
   }
 
-  /// `Choose Language`
-  String get chooseLanguage {
+  /// `Zain Cash`
+  String get zainCash {
+    return Intl.message('Zain Cash', name: 'zainCash', desc: '', args: []);
+  }
+
+  /// `Zain Cash Wallet`
+  String get zainCashWallet {
     return Intl.message(
-      'Choose Language',
-      name: 'chooseLanguage',
+      'Zain Cash Wallet',
+      name: 'zainCashWallet',
       desc: '',
       args: [],
     );
-  }
-
-  /// `Arabic`
-  String get arabic {
-    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
-  }
-
-  /// `Kurdish`
-  String get kurdish {
-    return Intl.message('Kurdish', name: 'kurdish', desc: '', args: []);
-  }
-
-  /// `Technical Support`
-  String get technicalSupport {
-    return Intl.message(
-      'Technical Support',
-      name: 'technicalSupport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Calculate your car insurance cost`
-  String get calculateInsuranceCost {
-    return Intl.message(
-      'Calculate your car insurance cost',
-      name: 'calculateInsuranceCost',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Choose engine capacity`
-  String get chooseEngineCapacity {
-    return Intl.message(
-      'Choose engine capacity',
-      name: 'chooseEngineCapacity',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter car value`
-  String get enterCarValue {
-    return Intl.message(
-      'Enter car value',
-      name: 'enterCarValue',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Start now`
-  String get startNow {
-    return Intl.message('Start now', name: 'startNow', desc: '', args: []);
-  }
-
-  /// `Enter required details`
-  String get enterRequiredDetails {
-    return Intl.message(
-      'Enter required details',
-      name: 'enterRequiredDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Submit`
-  String get submit {
-    return Intl.message('Submit', name: 'submit', desc: '', args: []);
-  }
-
-  /// `Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions`
-  String get ensureTextIsClear {
-    return Intl.message(
-      'Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions',
-      name: 'ensureTextIsClear',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Upload from files`
-  String get uploadFromFiles {
-    return Intl.message(
-      'Upload from files',
-      name: 'uploadFromFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Take picture`
-  String get takePicture {
-    return Intl.message(
-      'Take picture',
-      name: 'takePicture',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please upload a file from files \n\n Allowed types: PDF, DOC`
-  String get pleaseUploadFile {
-    return Intl.message(
-      'Please upload a file from files \n\n Allowed types: PDF, DOC',
-      name: 'pleaseUploadFile',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `QR Code`
-  String get qrCode {
-    return Intl.message('QR Code', name: 'qrCode', desc: '', args: []);
-  }
-
-  /// `Please scan the code above to complete the payment and confirmation`
-  String get pleaseScanQrToPay {
-    return Intl.message(
-      'Please scan the code above to complete the payment and confirmation',
-      name: 'pleaseScanQrToPay',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `General Information`
-  String get generalInformation {
-    return Intl.message(
-      'General Information',
-      name: 'generalInformation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Photos of the accident`
-  String get photosOfTheAccident {
-    return Intl.message(
-      'Photos of the accident',
-      name: 'photosOfTheAccident',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter and attach the required information regarding the accident`
-  String get pleaseEnterRequiredAccidentInfo {
-    return Intl.message(
-      'Please enter and attach the required information regarding the accident',
-      name: 'pleaseEnterRequiredAccidentInfo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Accident Details`
-  String get accidentDetails {
-    return Intl.message(
-      'Accident Details',
-      name: 'accidentDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please specify the details of the accident that occurred`
-  String get pleaseSpecifyAccidentDetails {
-    return Intl.message(
-      'Please specify the details of the accident that occurred',
-      name: 'pleaseSpecifyAccidentDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Accident Location`
-  String get accidentLocation {
-    return Intl.message(
-      'Accident Location',
-      name: 'accidentLocation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please specify the location of the accident`
-  String get pleaseSpecifyAccidentLocation {
-    return Intl.message(
-      'Please specify the location of the accident',
-      name: 'pleaseSpecifyAccidentLocation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Attach Police Report:`
-  String get attachPoliceReport {
-    return Intl.message(
-      'Attach Police Report:',
-      name: 'attachPoliceReport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter vehicle ID`
-  String get pleaseEnterVehicleId {
-    return Intl.message(
-      'Please enter vehicle ID',
-      name: 'pleaseEnterVehicleId',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter location`
-  String get pleaseEnterLocation {
-    return Intl.message(
-      'Please enter location',
-      name: 'pleaseEnterLocation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter description`
-  String get pleaseEnterDescription {
-    return Intl.message(
-      'Please enter description',
-      name: 'pleaseEnterDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please upload police report`
-  String get pleaseUploadPoliceReport {
-    return Intl.message(
-      'Please upload police report',
-      name: 'pleaseUploadPoliceReport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please upload all images`
-  String get pleaseUploadAllImages {
-    return Intl.message(
-      'Please upload all images',
-      name: 'pleaseUploadAllImages',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Are you sure you want to exit the sign up process?`
-  String get exitSignUpConfirmation {
-    return Intl.message(
-      'Are you sure you want to exit the sign up process?',
-      name: 'exitSignUpConfirmation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Are you sure you want to exit the report accident process?`
-  String get exitAddAccidentConfirmation {
-    return Intl.message(
-      'Are you sure you want to exit the report accident process?',
-      name: 'exitAddAccidentConfirmation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Are you sure you want to exit the add car process?`
-  String get exitAddCarConfirmation {
-    return Intl.message(
-      'Are you sure you want to exit the add car process?',
-      name: 'exitAddCarConfirmation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Yes`
-  String get yes {
-    return Intl.message('Yes', name: 'yes', desc: '', args: []);
-  }
-
-  /// `Please add your vehicle to show the insurance document.`
-  String get pleaseAddYourVehicleToShowTheInsuranceDocument {
-    return Intl.message(
-      'Please add your vehicle to show the insurance document.',
-      name: 'pleaseAddYourVehicleToShowTheInsuranceDocument',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Insurance policy`
-  String get insurancePolicy {
-    return Intl.message(
-      'Insurance policy',
-      name: 'insurancePolicy',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Reject`
-  String get reject {
-    return Intl.message('Reject', name: 'reject', desc: '', args: []);
-  }
-
-  /// `Insurance policy review`
-  String get insurancePolicyReview {
-    return Intl.message(
-      'Insurance policy review',
-      name: 'insurancePolicyReview',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Confirm the next step`
-  String get confirmTheNextStep {
-    return Intl.message(
-      'Confirm the next step',
-      name: 'confirmTheNextStep',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please make the necessary adjustments to the following fields:`
-  String get pleaseUpdateMissingFields {
-    return Intl.message(
-      'Please make the necessary adjustments to the following fields:',
-      name: 'pleaseUpdateMissingFields',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Uploaded file`
-  String get uploadedFile {
-    return Intl.message(
-      'Uploaded file',
-      name: 'uploadedFile',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Re upload`
-  String get reUpload {
-    return Intl.message('Re upload', name: 'reUpload', desc: '', args: []);
   }
 }
 

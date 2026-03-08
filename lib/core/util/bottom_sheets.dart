@@ -70,12 +70,13 @@ void showLanguageDialog(BuildContext context) {
                     onTap: () {
                       MyApp.setLocale(context, 'en');
                     },
-                    title: DrawableText(text: 'English'),
+                    title: DrawableText(text: S.of(context).english),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
                     ),
                   ),
+                  15.0.verticalSpace,
                 ],
               ),
             ),
@@ -92,6 +93,7 @@ void showSupportCall(BuildContext context) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
+      var iconSize = 25.0.dg;
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
         child: BlocBuilder<SupportInfoCubit, SupportInfoInitial>(
@@ -105,45 +107,52 @@ void showSupportCall(BuildContext context) {
                   child: Column(
                     children: [
                       _Title(title: S.of(context).technicalSupport),
-                      ListTile(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: AppColorManager.mainColor),
-                        ),
-                        onTap: () {
-                          LauncherHelper.sendEmail(email: state.result.email);
-                        },
-                        title: DrawableText(text: state.result.email),
-                        trailing: ImageMultiType(
-                          url: Assets.iconsEmail,
-                        ),
-                      ),
-                      ListTile(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: AppColorManager.mainColor),
-                        ),
-                        onTap: () {
-                          LauncherHelper.sendWhatsApp(phone: state.result.whatsApp);
-                        },
-                        title: DrawableText(text: state.result.whatsApp),
-                        trailing: ImageMultiType(
-                          url: Assets.iconsWhatsapp,
+                      Container(
+                        decoration: MyStyle.outlineBorder,
+                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
+                        child: ListTile(
+                          onTap: () {
+                            LauncherHelper.sendEmail(email: state.result.email);
+                          },
+                          title: DrawableText(text: state.result.email),
+                          trailing: ImageMultiType(
+                            url: Assets.iconsEmail,
+                            height: iconSize,
+                            width: iconSize,
+                          ),
                         ),
                       ),
-                      ListTile(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: AppColorManager.mainColor),
-                        ),
-                        onTap: () {
-                          LauncherHelper.callPhone(phone: state.result.phone);
-                        },
-                        title: DrawableText(text: state.result.phone),
-                        trailing: ImageMultiType(
-                          url: Assets.iconsPhone,
+                      Container(
+                        decoration: MyStyle.outlineBorder,
+                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
+                        child: ListTile(
+                          onTap: () {
+                            LauncherHelper.sendWhatsApp(phone: state.result.whatsApp);
+                          },
+                          title: DrawableText(text: state.result.whatsApp),
+                          trailing: ImageMultiType(
+                            url: Assets.iconsWhatsapp,
+                            height: iconSize,
+                            width: iconSize,
+                          ),
                         ),
                       ),
+                      Container(
+                        decoration: MyStyle.outlineBorder,
+                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
+                        child: ListTile(
+                          onTap: () {
+                            LauncherHelper.callPhone(phone: state.result.phone);
+                          },
+                          title: DrawableText(text: state.result.phone),
+                          trailing: ImageMultiType(
+                            url: Assets.iconsPhone,
+                            height: iconSize,
+                            width: iconSize,
+                          ),
+                        ),
+                      ),
+                      15.0.verticalSpace,
                     ],
                   ),
                 ),
@@ -232,6 +241,7 @@ void showCalculationPrice(
                       },
                       text: S.of(context).startNow,
                     ),
+                    15.0.verticalSpace,
                   ],
                 ),
               ),
@@ -287,7 +297,7 @@ void showAddNote(
                         context.pop();
                       },
                     ),
-                    10.0.verticalSpace,
+                    15.0.verticalSpace,
                   ],
                 ),
               ),
@@ -320,6 +330,8 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 DrawableText(
                   text: S.of(context).ensureTextIsClear,
                   color: Colors.grey,
+                  matchParent: true,
+                  textAlign: .center,
                   fontWeight: FontWeight.bold,
                 ),
 
@@ -355,6 +367,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                     );
                   },
                 ),
+                15.0.verticalSpace,
               ],
             ),
           ),
@@ -402,6 +415,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                     );
                   },
                 ),
+                15.0.verticalSpace,
               ],
             ),
           ),
@@ -484,6 +498,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                         Navigator.pop(context);
                       },
                     ),
+                    15.0.verticalSpace,
                   ],
                 ),
               );
@@ -516,29 +531,29 @@ void selectCar(
                 child: Column(
                   children: [
                     _Title(
-                      title: 'إختر السيارة المرغوبة',
+                      title: S.of(context).selectDesiredCar,
                     ),
                     15.0.verticalSpace,
                     DrawableText(
-                      text: 'يرجى تحديد السيارة المرغوب عرض تفاصيلها',
+                      text: S.of(context).pleaseSelectCarToViewDetails,
                       matchParent: true,
                     ),
                     10.0.verticalSpace,
-                    ...cars
-                        .map(
-                          (e) => Container(
-                            decoration: MyStyle.roundBox12(Colors.white),
-                            child: ListTile(
-                              onTap: () {
-                                Navigator.pop(context);
-                                onConfirm.call(e);
-                              },
-                              title: DrawableText(text: e.vehicle.name),
-                              leading: ImageMultiType(url: Assets.iconsTaxi),
-                            ),
-                          ),
-                        )
-                        .toList(),
+                    ...cars.map(
+                      (e) => Container(
+                        decoration: MyStyle.roundBox12(Colors.white),
+                        margin: EdgeInsets.symmetric(vertical: 5.0),
+                        child: ListTile(
+                          onTap: () {
+                            Navigator.pop(context);
+                            onConfirm.call(e);
+                          },
+                          title: DrawableText(text: e.vehicle.name),
+                          leading: ImageMultiType(url: Assets.iconsTaxi),
+                        ),
+                      ),
+                    ),
+                    15.0.verticalSpace,
                   ],
                 ),
               );
@@ -626,11 +641,11 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if ( file.haveValue)
+            if (file.haveValue)
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0).r,
-                child: ImageMultiType(url:
-                  file.fileValue,
+                child: ImageMultiType(
+                  url: file.fileValue,
                   height: 200.h,
                   fit: BoxFit.cover,
                 ),
@@ -670,6 +685,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                 ),
               ],
             ),
+            15.0.verticalSpace,
           ],
         ),
       );
@@ -701,10 +717,10 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                 ),
               ),
               15.verticalSpace,
-              if ( file.haveValue)
+              if (file.haveValue)
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20.0).r,
-                  child: ImageMultiType(url:file.fileValue, width: 1.sw, fit: BoxFit.contain),
+                  child: ImageMultiType(url: file.fileValue, width: 1.sw, fit: BoxFit.contain),
                 ),
               25.verticalSpace,
               MyButton(
@@ -717,6 +733,7 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                 textColor: Colors.black,
                 radios: 15.0.r,
               ),
+              15.0.verticalSpace,
             ],
           ),
         ),

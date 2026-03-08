@@ -242,16 +242,16 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).aboutUs,
                         image: Assets.iconsFileList,
                       ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(
-                            RouteName.dataPage,
-                            queryParameters: {'type': DataPageType.ourService.index.toString()},
-                          );
-                        },
-                        name: S.of(context).ourService,
-                        image: Assets.iconsFileList,
-                      ),
+                      // ItemMenu(
+                      //   onTap: () {
+                      //     context.pushNamed(
+                      //       RouteName.dataPage,
+                      //       queryParameters: {'type': DataPageType.ourService.index.toString()},
+                      //     );
+                      //   },
+                      //   name: S.of(context).ourService,
+                      //   image: Assets.iconsFileList,
+                      // ),
                       ItemMenu(
                         onTap: () {
                           showSupportCall(context);

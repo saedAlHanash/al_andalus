@@ -3,9 +3,9 @@ class Assets {
   Assets._();
 
   static const String assetsIconsAccident = 'assets/icons/accident.svg';
-  static const String fontsCairo = 'assets/fonts/cairo.ttf';
-  static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
-  static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
+  static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
+  static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
+  static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
   static const String iconsAccident = 'assets/icons/accident.png';
   static const String iconsAccident1 = 'assets/icons/accident1.png';
   static const String iconsActiveStep = 'assets/icons/active_step.svg';
@@ -68,6 +68,7 @@ class Assets {
   static const String iconsTrash = 'assets/icons/trash.svg';
   static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';
   static const String iconsUploadDragUploadBack = 'assets/icons/upload_drag_upload_back.svg';
+  static const String iconsUser = 'assets/icons/user.svg';
   static const String iconsUserSearch = 'assets/icons/user-search.svg';
   static const String iconsWhatsapp = 'assets/icons/whatsapp.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
@@ -89,4 +90,5 @@ class Assets {
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';
+
 }

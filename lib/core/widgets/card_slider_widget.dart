@@ -23,42 +23,52 @@ class CardSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     final key = GlobalKey<IndicatorSliderWidgetState>();
 
-    return Stack(
-      alignment: Alignment.center,
+    return Column(
       children: [
-        SizedBox(
-          width: width,
-          height: height ?? 160.0.h,
-          child: CarouselSlider(
-            items: images.map(
-              (e) {
-                return ImageMultiType(
-                  url: e,
-                  height: 1.0.sh,
-                  width: width ?? 1.0.sw,
-                  fit: BoxFit.cover,
-                );
-              },
-            ).toList(),
-            options: CarouselOptions(
-              height: height ?? 160.0.h,
-              autoPlayInterval: const Duration(seconds: 5),
-              autoPlay: true,
-              viewportFraction: 1,
-              onPageChanged: (i, reason) {
-                key.currentState!.changePage(i);
-              },
-            ),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0.r),
+            color: AppColorManager.lightGray,
+          ),
+          clipBehavior: Clip.hardEdge,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: width,
+                height: height ?? 160.0.h,
+                child: CarouselSlider(
+                  items: images.map(
+                    (e) {
+                      return ImageMultiType(
+                        url: e,
+                        height: 1.0.sh,
+                        width: width ?? 1.0.sw,
+                        fit: BoxFit.cover,
+                      );
+                    },
+                  ).toList(),
+                  options: CarouselOptions(
+                    height: height ?? 160.0.h,
+                    autoPlayInterval: const Duration(seconds: 5),
+                    autoPlay: true,
+                    viewportFraction: 1,
+                    onPageChanged: (i, reason) {
+                      key.currentState!.changePage(i);
+                    },
+                  ),
+                ),
+              ),
+
+              ...?stackChild,
+            ],
           ),
         ),
-        Positioned(
-          bottom: 5.0.h,
-          child: IndicatorSliderWidget(
-            key: key,
-            length: images.length,
-          ),
+        10.0.verticalSpace,
+        IndicatorSliderWidget(
+          key: key,
+          length: images.length,
         ),
-        ...?stackChild,
       ],
     );
   }

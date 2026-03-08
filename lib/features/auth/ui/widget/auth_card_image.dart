@@ -52,8 +52,8 @@ class _AuthCardImageState extends State<AuthCardImage> {
               onTap: () => showLanguageDialog(context),
               child: ImageMultiType(
                 url: Assets.iconsLanguage,
-                height: 50.0.r,
-                width: 50.0.r,
+                height: 40.0.r,
+                width: 40.0.r,
               ),
             ),
           ],

@@ -56,7 +56,10 @@ class _HomepageState extends State<Homepage> {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
-                      NotificationPage(),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: NotificationPage(),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: ListCars(),

@@ -24,36 +24,29 @@ class AddsSlider extends StatelessWidget {
         if (state.loading) {
           return MyStyle.loadingWidget();
         }
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0.r),
-            color: AppColorManager.lightGray,
-          ),
-          clipBehavior: Clip.hardEdge,
-          child: CardSlider(
-            height: height,
-            images: list.map((e) => e.image),
-            stackChild: [
-              Align(
-                alignment: .bottomCenter,
-                child: Container(
-                  width: 1.0.sw,
-                  height: height ?? 0 / 2,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.transparent,
-                        Colors.black12,
-                        Colors.black38,
-                      ],
-                      begin: .topCenter,
-                      end: .bottomCenter,
-                    ),
+        return CardSlider(
+          height: height,
+          images: list.map((e) => e.image),
+          stackChild: [
+            Align(
+              alignment: .bottomCenter,
+              child: Container(
+                width: 1.0.sw,
+                height: height ?? 0 / 2,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      Colors.black12,
+                      Colors.black38,
+                    ],
+                    begin: .topCenter,
+                    end: .bottomCenter,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );

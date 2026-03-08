@@ -36,13 +36,16 @@ class _AccidentInfoState extends State<AccidentInfo> {
             ),
             10.0.verticalSpace,
             MyTextFormOutLineWidget(
+              innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               onChanged: (p0) => state.mRequest.description = p0,
               initialValue: state.mRequest.description,
               labelText: S.of(context).accidentDetails,
               hint: S.of(context).pleaseSpecifyAccidentDetails,
+              maxLines: 4,
             ),
             10.0.verticalSpace,
             MyTextFormOutLineWidget(
+              innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               onChanged: (p0) => state.mRequest.location = p0,
               initialValue: state.mRequest.location,
               labelText: S.of(context).accidentLocation,
