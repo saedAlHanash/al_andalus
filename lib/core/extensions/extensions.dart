@@ -500,7 +500,6 @@ extension LatLngH on LatLng {
   String get stringPrint => 'N:$latitude°  E:$longitude°';
 }
 
-
 extension FileTypeDetector on String {
   String get fileExtension {
     if (!contains('.')) return '';
@@ -548,5 +547,3 @@ class FormatDateTime {
         '$seconds\n';
   }
 }
-
-

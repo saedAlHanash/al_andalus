@@ -233,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "idCardNumber": MessageLookupByLibrary.simpleMessage("ID Card Number"),
     "info": MessageLookupByLibrary.simpleMessage("Info"),
     "inspection": MessageLookupByLibrary.simpleMessage("Inspection"),
+    "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "Insurance is easier for a better life",
     ),

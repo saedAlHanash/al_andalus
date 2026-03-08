@@ -219,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "idCardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "info": MessageLookupByLibrary.simpleMessage("المعلومات"),
     "inspection": MessageLookupByLibrary.simpleMessage("الفحص"),
+    "insurance": MessageLookupByLibrary.simpleMessage("التأمينات"),
     "insuranceIsEasierForBetterLife": MessageLookupByLibrary.simpleMessage(
       "التامين اصبح اسهل لحياة أفضل",
     ),

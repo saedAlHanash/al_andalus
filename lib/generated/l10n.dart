@@ -2763,6 +2763,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Insurance`
+  String get insurance {
+    return Intl.message('Insurance', name: 'insurance', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -56,7 +56,7 @@ class _NavbarState extends State<Navbar> {
           ),
           (
             icon: _Insurance(isActive: currentIndex == 2),
-            title: S.of(context).myOrders,
+            title: S.of(context).insurance,
           ),
         ];
 
@@ -193,8 +193,8 @@ class _DetachedButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 73.dg,
-            height: 73.dg,
+            width: 70.dg,
+            height: 70.dg,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               boxShadow: [
@@ -373,4 +373,3 @@ class _Insurance extends StatelessWidget {
     );
   }
 }
-

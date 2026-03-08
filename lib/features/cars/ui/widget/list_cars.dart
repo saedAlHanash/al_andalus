@@ -39,9 +39,9 @@ class ListCars extends StatelessWidget {
             ),
           );
         }
-        final list = take != null ? state.result.take(take!).toList() : state.result;
+        final list = take != null ? state.result.reversed.take(take!).toList() : state.result;
         return ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          physics: take == null ? null : NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(vertical: 16.h),
           itemCount: list.length,

@@ -14,30 +14,28 @@ class NeedLoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0).r,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              RoundImageWidget(url: Assets.imagesLogo, height: 200.0.r, width: 200.0.r),
-              20.0.verticalSpace,
-              DrawableText(
-                text: S.of(context).needLoginToContinue,
-                size: 20.0.sp,
-                textAlign: TextAlign.center,
-                fontFamily: FontManager.bold.name,
-              ),
-              20.0.verticalSpace,
-              MyButton(
-                text: S.of(context).login,
-                onTap: () {
-                  context.goNamed(RouteName.login);
-                },
-              ),
-            ],
-          ),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0).r,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RoundImageWidget(url: Assets.imagesLogo, height: 200.0.r, width: 200.0.r),
+            20.0.verticalSpace,
+            DrawableText(
+              text: S.of(context).needLoginToContinue,
+              size: 20.0.sp,
+              textAlign: TextAlign.center,
+              fontFamily: FontManager.bold.name,
+            ),
+            20.0.verticalSpace,
+            MyButton(
+              text: S.of(context).login,
+              onTap: () {
+                context.goNamed(RouteName.login);
+              },
+            ),
+          ],
         ),
       ),
     );
