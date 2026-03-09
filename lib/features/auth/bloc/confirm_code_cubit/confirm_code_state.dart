@@ -1,8 +1,7 @@
 part of 'confirm_code_cubit.dart';
 
 class ConfirmCodeInitial extends AbstractState<LoginResponse> {
-
-   LoginRequest get  mRequest =>request;
+  LoginRequest get mRequest => request;
 
   const ConfirmCodeInitial({
     required super.result,
@@ -18,9 +17,9 @@ class ConfirmCodeInitial extends AbstractState<LoginResponse> {
     );
   }
 
-  bool get canSend=>request.code?.length == 5;
+  bool get canSend => request.code?.length == 6;
   @override
-  List<Object> get props => [statuses, result, error,request];
+  List<Object> get props => [statuses, result, error, request];
 
   ConfirmCodeInitial copyWith({
     CubitStatuses? statuses,

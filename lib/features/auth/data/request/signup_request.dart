@@ -2,6 +2,7 @@ import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:flutter/foundation.dart';
 
 class SignupRequest {
   SignupRequest({
@@ -18,9 +19,18 @@ class SignupRequest {
     this.licenseEndDate,
     this.biometricId,
   }) {
-    if (AppProvider.isTestMode) {
-      password = '12345678';
-    }
+    if (!kDebugMode) return;
+    name = 'مستخدم تجريبي';
+    gender = GenderEnum.male;
+    birthday = DateTime(1997, 2, 19);
+    phone = '07801234567';
+    password = '12345678';
+    address = 'بغداد - الكرادة';
+    identityId = '123456789';
+    licenseNumber = '987654321';
+    licenseType = LicenseType.private;
+    licenseStartDate = DateTime.now();
+    licenseEndDate = DateTime.now().add(const Duration(days: 365 * 10));
   }
 
   String? name;

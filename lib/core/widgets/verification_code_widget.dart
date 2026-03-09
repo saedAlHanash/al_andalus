@@ -42,7 +42,7 @@ class PinCodeWidget extends StatelessWidget {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: Pinput(
-          length: 5,
+          length: 6,
           defaultPinTheme: defaultPinTheme,
           focusedPinTheme: defaultPinTheme.copyDecorationWith(
             border: Border.all(color: AppColorManager.mainColor),

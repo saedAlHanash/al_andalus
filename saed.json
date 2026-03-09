@@ -1,85 +1,956 @@
 {
-  "data": {
-    "id": 19,
-    "has_transfer_request": null,
-    "has_claim_request": null,
-    "insurance_package": {
-      "id": 1,
-      "title": "Silver Private Package",
-      "level": "silver",
-      "type": "private"
-    },
-    "status": "cancelled",
-    "qrcode": "7dab2cd9-1343-41d5-8dd7-2ea8a1bafa98",
-    "annual_subscription_price": 180000,
-    "start_date": null,
-    "end_date": null,
-    "vehicle": {
-      "id": 15,
-      "name": "سيارة تجريبية",
-      "brand": "تويوتا",
-      "cylinders": "6",
-      "manufacture_year": "2020",
-      "color": "أبيض",
-      "chassis_number": "123456789",
-      "plate_number": "1234",
-      "fuel_type": "petrol",
-      "engine_capacity": 2000,
-      "value": 180000,
-      "expiry_start_date": null,
-      "expiry_end_date": null,
-      "ownership_front_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-      "ownership_back_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-      "inspection_report": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/Document 3.pdf",
-      "inspection": {
-        "id": 12,
-        "metal_body": "intact",
-        "metal_body_note": "-",
-        "glass_and_lamps": "intact",
-        "glass_and_lamps_note": "-",
-        "chrome_nickel": "damage",
-        "chrome_nickel_note": "-",
-        "brand_sign": "intact",
-        "brand_sign_note": "-",
-        "windshield_wipers": "intact",
-        "windshield_wipers_note": "-",
-        "radio_antenna": "damage",
-        "radio_antenna_note": "-",
-        "seats": "damage",
-        "seats_note": "-",
-        "floor_cover": "intact",
-        "floor_cover_note": "-",
-        "radio": "damage",
-        "radio_note": "-",
-        "air_conditioner": "intact",
-        "air_conditioner_note": "-",
-        "front_tires": "damage",
-        "front_tires_note": "-",
-        "back_tires": "intact",
-        "back_tires_note": "-",
-        "spare_tire": "intact",
-        "spare_tire_note": "-",
-        "tires_covers": "damage",
-        "tires_covers_note": "-",
-        "spare_tools": "damage",
-        "spare_tools_note": "-",
-        "other_notes": null,
-        "created": "2026-03-01 | 12:08 ص"
+  "data": [
+    {
+      "id": "78",
+      "image": "storage/app/public/trainersImagesNew/WjKDAdoEC1SdbX78va0wfvlNe0lvi84ziBt3oCKz.png",
+      "image_ar": "storage/app/public/trainersImagesAr/tV2iisvNlTyHKMBTBPN9Wt1feZc3K5KDcltMnIVF.png",
+      "agreement": null,
+      "rating": 4.5,
+      "name": {
+        "ar": "أمل",
+        "en": "Amal"
       },
-      "attachment": {
-        "id": 12,
-        "front_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "right_side_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "left_side_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "interior_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "back_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "engine_image": "https://admin.andalusapp.com/storage/insurancePolicy/19/vehicle/upload-drag-upload-1772312914.png",
-        "created": "2026-03-01 | 12:08 ص"
+      "bio": {
+        "ar": "أنا أمل، مدربة يوغا. بالنسبة لي اليوغا مساحة هدوء نرجع فيها لنفسنا. من خلال النفس والحركة نخفف التوتر ونزيد وعي الجسد ونستعيد توازننا.  فوائدها: تهدئة، مرونة، تركيز",
+        "en": "I'm Amal, a yoga instructor. For me, yoga is a peaceful space where we reconnect with ourselves. Through breath and movement, we relieve stress, increase body awareness, and restore our balance.  Benefits: Calmness, flexibility, focus"
       },
-      "created": "2026-03-01 | 12:08 ص"
+      "specification": {
+        "ar": "مدربة يوغا",
+        "en": "Yoga Instructor"
+      },
+      "gender": "female",
+      "order": 1,
+      "status": true,
+      "wallet": 352.96,
+      "account": {
+        "id": "35",
+        "email": "Amalsaleh@fitness.com",
+        "password": "$2y$10$G/7o6ChzZh2MKhaPeden9u4Lfvt/9LcXHUSBCNQ6OAAHKQx7PgCti",
+        "is_confirmed": true
+      },
+      "private_session_price": 147,
+      "trainer_profit_ratio": 60,
+      "tags": "يوغا, Yoga, تأمل, Meditation, صحة نفسية, Mental Health, مرونة, Flexibility, اتزان, Balance, تنفس, Breathing, عافية, Wellness, راحة نفسية, Inner Peace, حياة صحية, Healthy Lifestyle, استرخاء, Relaxation, وعي, Mindfulness, يوغا يومية, Daily Yoga, تمارين يوغا, Yoga Practice, عادات صحية, Healthy Habits,"
     },
-    "policy_file": null,
-    "fields_to_be_refilled": null,
-    "created": "2026-03-01 | 12:08 ص"
-  }
+    {
+      "id": "50",
+      "image": "storage/app/public/trainersImagesNew/BbsvYx3NCbCCEULAGorwGKdsV3vyOss6aRWkrMWL.png",
+      "image_ar": "storage/app/public/trainersImagesAr/ZybLdcTbgRFJOZyqaKwFfJknv2rd0xmwOgFeKAeo.png",
+      "agreement": "storage/app/public/trainersImages/krWo6jFgLr7xEpJ0p03NshvLFcshfxXLZ6xEtZmb.pdf",
+      "rating": 4.53757225433526,
+      "name": {
+        "ar": "صابرين",
+        "en": "Sabrin"
+      },
+      "bio": {
+        "ar": "كوتش صابرين مدربة لياقة بدنية مختصة فى التدريبات بوزن الجسم, المات بيلاتس و الاكوا ايروبكس خبرة 10 سنوات",
+        "en": "Coach Sabrin is a fitness trainer specializing in body weight training, mat Pilates and aqua aerobics with 10 years of experience"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 2,
+      "status": true,
+      "wallet": 19.08,
+      "account": {
+        "id": "10",
+        "email": "sabrin@fitness.com",
+        "password": "$2y$10$cEk53MvsJpjHc4O/zFu3i.Lm3jzhfXlncf9sV6rnijNnptNs4hFhu",
+        "is_confirmed": true
+      },
+      "private_session_price": 60,
+      "trainer_profit_ratio": 60,
+      "tags": "Personal Trainer, مدربة شخصية, Fitness Coach, مدربة لياقة بدنية, Bodyweight Training, التدريبات بوزن الجسم, Mat Pilates, المات بيلاتس, Aqua Aerobics, الأكوا أيروبكس, 10+ Years of Experience, خبرة 10 سنوات, Strength & Flexibility, القوة والمرونة, Low-Impact Training, تمارين منخفضة التأثير, Certified Trainer, مدربة معتمدة, Functional Training, التدريب الوظيفي, Online Coaching, تدريب أونلاين, Group Fitness Instructor, مدربة تمارين جماعية, Personalized Programs, برامج مخصصة, Women’s Fitness, لياقة المرأة, Endurance & Mobility, التحمل والمرونة, Aquatic Fitness, اللياقة المائية,"
+    },
+    {
+      "id": "73",
+      "image": "storage/app/public/trainersImagesNew/4QFBMRkkiOWAEMCAaYzQPpon0mVDVYJRT6vNbRPi.png",
+      "image_ar": "storage/app/public/trainersImagesAr/bkWdEOtEOTHQN0kikLXPCHuWGAuSSg6hPthl2Z2c.png",
+      "agreement": "storage/app/public/trainersImagesNew/U7kGX39u4wlFyj3RD5CHoMvULeKcMSaRkxy80gjr.pdf",
+      "rating": 5,
+      "name": {
+        "ar": "خديجة طوله",
+        "en": "Khadijah Tawlah"
+      },
+      "bio": {
+        "ar": "أخصائية تغذية علاجية حاصلة على التصنيف المهني من هيئة التخصصات الصحية السعودية، أركز على دعم وتعزيز صحة المرأة في مراحل ما قبل الحمل، وأثناء الحمل والرضاعة. أقدّم حلولاً غذائية فعّالة للمساعدة في علاج تكيس المبايض، مستندة إلى تدريب متخصص في تقييم وعلاج تكيس المبايض من جامعة Monash ومركز أبحاث MCHRI. أسعى لتوفير التوعية والدعم الغذائي لضمان صحة ورفاهية المرأة في مختلف مراحل حياتها.",
+        "en": "Clinical Dietitian licensed by the Saudi Commission for Health Specialties, with a focus on supporting and promoting women's health before pregnancy, during pregnancy, and throughout the breastfeeding period. I offer effective nutritional solutions for managing polycystic ovary syndrome (PCOS), backed by specialized training in the assessment and treatment of PCOS from Monash University and the MCHRI Research Center. My goal is to provide women with the knowledge and support they need to achieve optimal health and well-being at every stage of life."
+      },
+      "specification": {
+        "ar": "أخصائية تغذية",
+        "en": "Dietitian"
+      },
+      "gender": "female",
+      "order": 3,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "30",
+        "email": "khadijah@fitness.com",
+        "password": "$2y$10$7ywZnOp24gVtqK7cWax4auNNvoZqFPnCLF28z4.nfTUq2D9RoYkpu",
+        "is_confirmed": true
+      },
+      "private_session_price": 150,
+      "trainer_profit_ratio": 60,
+      "tags": "تغذية سليمة, Healthy Diet, استشارات غذائية, Diet Tips, عادات صحية, Healthy Habits, diet, دايت،"
+    },
+    {
+      "id": "48",
+      "image": "storage/app/public/trainersImagesNew/dBSq7DZdW3bEp7G4em3H7XyJTo17eRDAmgEUl0B1.png",
+      "image_ar": "storage/app/public/trainersImagesAr/AT5FKcWzWf1gM5GnuuRElU93yyGmpbmZ9QtP9CCd.png",
+      "agreement": null,
+      "rating": 4.848360655737705,
+      "name": {
+        "ar": "خلود زقية",
+        "en": "Kholouod Zagia"
+      },
+      "bio": {
+        "ar": "كوتش خلود زقية خبرة 7 سنوات فى تدريب البيلاتس والتدريب الشخصى",
+        "en": "Coach Kholoud Zagia has 7 years of experience in Pilates and personal training"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 3,
+      "status": true,
+      "wallet": 426,
+      "account": {
+        "id": "8",
+        "email": "Khouloud@fitness.com",
+        "password": "$2y$10$s4Q.ExCyNLNij8ncAftoW.2nMjcCMO.96a6Az.XD1rjCiQSQXi2na",
+        "is_confirmed": true
+      },
+      "private_session_price": 250,
+      "trainer_profit_ratio": 60,
+      "tags": "Pilates Coach, مدربة بيلاتس, Personal Trainer, مدربة شخصية, Cardio Classes, حصص الكارديو, Fitness Coach, مدربة لياقة بدنية, Strength & Endurance, القوة والتحمل, Group Fitness Instructor, مدربة تمارين جماعية, Low-Impact Training, تمارين منخفضة التأثير, Certified Trainer, مدربة معتمدة, Online Coaching, تدريب أونلاين, Functional Training, التدريب الوظيفي, Women’s Fitness, لياقة المرأة,"
+    },
+    {
+      "id": "51",
+      "image": "storage/app/public/trainersImagesNew/OTTU735jAy1pajY30O12o8mubuF44OfLTGGPZt7h.png",
+      "image_ar": "storage/app/public/trainersImagesAr/VMhoUQtIwKuwi8oTX0zPxjKaYEnretJzJrThxeRd.png",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "سلمى عليوة",
+        "en": "Salma Elwia"
+      },
+      "bio": {
+        "ar": "مدربة شخصية معتمدة من ISSA . خبرة خمس سنوات في تدريب الحركة (تصحيح الوضعية)، تدريب القوة، تدريب وزن الجسم، تمارين الكارديو، فقدان الوزن، التحمل، وتمارين الإطالة.",
+        "en": "Certified Personal Trainer from ISSA (USA).  5 years experience in Mobility (posture correction) , strength training, body weight training, cardio, weight loss, stamina and stretching."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 3,
+      "status": true,
+      "wallet": 228,
+      "account": {
+        "id": "11",
+        "email": "salma@fitness.com",
+        "password": "$2y$10$ToPRwHWmgiecOiOdZQctQesi/NZF0Tj9CBg2qDTz0Ea6UhwAJk2Ma",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Certified Personal Trainer, مدربة شخصية معتمدة, ISSA Certified, معتمدة من ISSA, Movement Training, تدريب الحركة, Posture Correction, تصحيح الوضعية, Strength Training, تدريب القوة, Bodyweight Training, تدريب وزن الجسم, Cardio Workouts, تمارين الكارديو, Weight Loss Coaching, فقدان الوزن, Endurance Training, تدريب التحمل, Flexibility Exercises, تمارين الإطالة, Functional Fitness, اللياقة الوظيفية, Mobility Improvement, تحسين الحركة, Fitness Coaching, تدريب اللياقة, Health & Wellness, الصحة والعافية,"
+    },
+    {
+      "id": "79",
+      "image": "storage/app/public/trainersImagesNew/lNuPJnxieIF6sf913Sf3BebNnB8Bx4ENTYuH9RGD.png",
+      "image_ar": "storage/app/public/trainersImagesAr/CBlsmxnIHrOELS4yEoCeflXbVuIIMGE506SRoT7x.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "مريم عسيلة",
+        "en": "Meryem Assila"
+      },
+      "bio": {
+        "ar": "متخصصة في تمارين الكارديو والمقاومة، سواء لهدف فقدان الوزن أو زيادة الوزن، مع برامج تدريب مصممة حسب هدف كل متدربة",
+        "en": "Personal Trainer specialized in full body workouts, upper & lower body training, body pump, boxing, hips & abs, and step cardio."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 3,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "36",
+        "email": "meryem@fitness.com",
+        "password": "$2y$10$G.PuX5I48Dck/h2uoRNdF.Tfm6pUMN2I8R06YRPbAekSm3EtPAYkq",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "جسم كامل, Full Body, جزء علوي, Upper Body, جزء سفلي, Lower Body, بودي بامب, Body Pump, ملاكمة, Boxing, كارديو, Cardio, ستب, Step, أرداف وبطن, Hips and Abs, لياقة, Fitness, قوة, Strength, مرونة, Flexibility, رشاقة, Agility, توازن, Balance, حرق دهون, Fat Burn, عافية, Wellness, طاقة, Energy, صحة, Health, نمط حياة صحي, Healthy Lifestyle, تدريب منزلي, Home Workout, تمارين يومية, Daily Workout, عادات صحية, Healthy Habits, نحت الجسم, Body Sculpting, تحفيز, Motivation, تحدي, Challenge, تطوير الذات, Self Improvement,"
+    },
+    {
+      "id": "68",
+      "image": "storage/app/public/trainersImagesNew/NzslVxnFHGFcvVHrwyAYWzVg3c33emrmBzKx29r5.png",
+      "image_ar": "storage/app/public/trainersImagesAr/rlDvwuP1YKjRylkcSPoAQhv6t9fpDWcmnA4jIt27.png",
+      "agreement": null,
+      "rating": 4.636363636363637,
+      "name": {
+        "ar": "ميج",
+        "en": "Meg"
+      },
+      "bio": {
+        "ar": "مدربة معتمدة في تصحيح الوضعية و التأهيل البدني, تتحدث فقط الإنجليزية و اللغة الأفريكانية  أكثر من 23 عامًا من الخبرة في مجال العلاج الطبيعي وإعادة التأهيل. أساعدك على التعافي بشكل أسرع وتحسين نوعية حياتك من خلال تقييم شامل لوضعية جسمك وتصميم برامج علاجية فردية تناسب احتياجاتك سواء قبل أو بعد الجراحة. متخصصة في علاج الإصابات وتعزيز القدرة الوظيفية",
+        "en": "Certified posture specialist and physical rehabilitation trainer, Speaks English and Afrikaans Physical therapist, trainer and posture specialist been in the industry for over 23years  My trained eye is there to guide you with your pre or post operative rehabilitation aswell as guide you to prevent injuries from happening with an awareness to posture and enhance and restore functional ability and quality of life.   certified posture specialist NPI-CPS for adults or minors"
+      },
+      "specification": {
+        "ar": "علاج طبيعى",
+        "en": "Pyhsical Therapy"
+      },
+      "gender": "female",
+      "order": 4,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "25",
+        "email": "meg@fitness.com",
+        "password": "$2y$10$gyiZpCDG3nEZqsrbO2ktX.5FJvYxgEmsShTdmqDttzHSzyOxBDjqO",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Posture Correction Specialist, مدربة معتمدة في تصحيح الوضعية, Physical Rehabilitation Coach, مدربة إعادة تأهيل بدني, Certified Trainer, مدربة معتمدة, Injury Recovery, علاج الإصابات, Functional Training, التدريب الوظيفي, Pre & Post-Surgery Rehab, إعادة التأهيل قبل وبعد الجراحة, Mobility Improvement, تحسين الحركة, Pain Management, إدارة الألم, Body Alignment, تحسين استقامة الجسم, Personalized Therapy Programs, برامج علاجية فردية, Physical Therapy Specialist, أخصائية علاج طبيعي, Health & Wellness, الصحة والعافية,"
+    },
+    {
+      "id": "75",
+      "image": "storage/app/public/trainersImagesNew/gJzjpYFN2UJHRfctWgpgtETKP585WOjil8VZSELo.png",
+      "image_ar": "storage/app/public/trainersImagesAr/B4qTFkyPXkRb41OyNhu14mZptMNuGYrxShVwLPE4.png",
+      "agreement": "storage/app/public/trainersImagesNew/9sbZ2UTzDteNjK6pmj46vBxpGoovywf7uM58Q4yE.pdf",
+      "rating": 3,
+      "name": {
+        "ar": "هبه علي",
+        "en": "Heba Ali"
+      },
+      "bio": {
+        "ar": "\"اخصائيه معتمده في فهم العلاقه بين الغذاء وصحه الانسان ، تقديم النصائح والارشادات المناسبه لتحسين نمط الحياه الصحي ، المساعده في تحقيق الاهداف الغذائية بإسلوب صحي موازن ومناسب لكل نمط حياة ، هدفي غذاء صحي وممتع بدون حرمان وبطريقه تناسب التفضيلات الشخصية.  \"\"أؤمن ان الغذاء هو مفتاح صحه الانسان\"\"\"",
+        "en": "A certified specialist in understanding the relationship between food and human health, she provides appropriate advice and guidance to improve a healthy lifestyle. She helps achieve nutritional goals in a healthy, balanced way that suits every lifestyle. My goal is healthy and enjoyable eating without deprivation, and in a way that suits personal preferences. I believe that food is the key to human health."
+      },
+      "specification": {
+        "ar": "أخصائية تغذية",
+        "en": "Dietitian"
+      },
+      "gender": "female",
+      "order": 5,
+      "status": true,
+      "wallet": 56.7,
+      "account": {
+        "id": "32",
+        "email": "Hebaali@fitness.com",
+        "password": "$2y$10$waDDnVOn/h2uLLH.IMclXuotk0xgmHmdrVWyaUYxGsQaiDFMgPube",
+        "is_confirmed": true
+      },
+      "private_session_price": 60,
+      "trainer_profit_ratio": 60,
+      "tags": "تغذية سليمة, Healthy Diet, استشارات غذائية, Diet Tips, عادات صحية, Healthy Habits, diet, دايت،"
+    },
+    {
+      "id": "49",
+      "image": "storage/app/public/trainersImagesNew/7aL3l9VEcG3qS53TR4LZIXENDTTno373BemQtn6o.png",
+      "image_ar": "storage/app/public/trainersImagesAr/8x1wLo2jx7WcLHtfYO9MatnmJzajlWwphMoSKgub.png",
+      "agreement": null,
+      "rating": 4.666666666666667,
+      "name": {
+        "ar": "حوراء الهاشمى",
+        "en": "Hawraa Alhashmi"
+      },
+      "bio": {
+        "ar": "حوراء يحيى الهاشمى مدربة حياة معتمدة خبرة 10 سنوات فى الايف كوتشينج",
+        "en": "Hawraa Yahya Al Hashemi is a certified life coach with 10 years of experience in life coaching"
+      },
+      "specification": {
+        "ar": "مدربة حياة - لايف كوتش",
+        "en": "Life Coach"
+      },
+      "gender": "female",
+      "order": 5,
+      "status": true,
+      "wallet": 66.2,
+      "account": {
+        "id": "9",
+        "email": "hawra.alhashimy@gmail.com",
+        "password": "$2y$10$lOu2upovfT7Xd8vUKoQREea0LbYchu/GO5eU5gmXGSqeapIAmApDG",
+        "is_confirmed": true
+      },
+      "private_session_price": 150,
+      "trainer_profit_ratio": 60,
+      "tags": "Certified Life Coach, مدربة حياة معتمدة, Life Coaching, الايف كوتشينج, Personal Development, التطوير الشخصي, Mindset Coaching, تدريب العقلية, Goal Setting, تحديد الأهداف, Self-Improvement, تحسين الذات, Motivation & Growth, التحفيز والنمو, Coaching for Success, تدريب للنجاح, Emotional Well-being, الرفاهية العاطفية, Confidence Building, بناء الثقة, Behavioral Coaching, التدريب السلوكي, Transformational Coaching, التدريب التحولي, Positive Mindset, العقلية الإيجابية, Empowerment Coaching, تدريب التمكين,"
+    },
+    {
+      "id": "64",
+      "image": "storage/app/public/trainersImagesNew/4VjuFFKTYMkviTrhbw13H9pbyIyldh1hmuh8Qot6.png",
+      "image_ar": "storage/app/public/trainersImagesAr/BIYmct5FAypDpETD3FhxmyiKk9fiiulWWp7y0RbW.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "حسام بدر",
+        "en": "Houssam Badr"
+      },
+      "bio": {
+        "ar": "كوتش حسام معد بدنى للاعبى كرة القدم ,مدرب فتنس وبودى بيلدنج خبرة 8 سنوات",
+        "en": "Physical trainer for football players, fitness and bodybuilding coach with 8 years of experience"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 6,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "22",
+        "email": "baderhoussem39@gmail.com",
+        "password": "$2y$10$S7tMwLgc4CReCQHQOqTGp.62uPRDpd1.rE4ZpnkckrlqUDNCkmOOK",
+        "is_confirmed": true
+      },
+      "private_session_price": 550,
+      "trainer_profit_ratio": 60,
+      "tags": "Football Conditioning Coach, معد بدني للاعبي كرة القدم, Fitness Trainer, مدرب فتنس, Bodybuilding Coach, مدرب بودي بيلدنج, Strength & Conditioning, القوة والتكييف, Athletic Performance, تحسين الأداء الرياضي, Endurance Training, تدريب التحمل, Muscle Building, بناء العضلات, Speed & Agility, السرعة والرشاقة, Sports Performance, الأداء الرياضي, Resistance Training, تمارين المقاومة, Injury Prevention, الوقاية من الإصابات, Strength Training, تدريب القوة, Functional Training, التدريب الوظيفي, Personal Trainer, مدرب شخصي, Gym Coaching, تدريب الجيم,"
+    },
+    {
+      "id": "77",
+      "image": "storage/app/public/trainersImagesNew/PSeWdXsmpG7aP4JNkVruvcBTIlEKWJO1wbV5mfvK.png",
+      "image_ar": "storage/app/public/trainersImagesAr/fNlxqIrOI9iVb5q07eAO2T8A4L8OMBZp9sxAWCtD.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "فراس الشامى",
+        "en": "Feras Alshami"
+      },
+      "bio": {
+        "ar": "مدرّب متخصص بخبرة تتجاوز 5 سنوات، أساعدك على تحسين لياقتك والوصول إلى أهدافك الصحية والبدنية بثقة وفعالية.",
+        "en": "Specialized trainer with over 5 years of experience, helping you improve your fitness and achieve your health and body goals with confidence and efficiency"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 7,
+      "status": true,
+      "wallet": 78.96,
+      "account": {
+        "id": "34",
+        "email": "Ferasshami@fitness.com",
+        "password": "$2y$10$BoLwnYt7Kq.xMY13g34e3eenkOgZrMnfXMFPZkg5E24ajVtsaZWoW",
+        "is_confirmed": true
+      },
+      "private_session_price": 210,
+      "trainer_profit_ratio": 60,
+      "tags": "لياقة رجالية, Men’s Fitness, تدريب رياضي, Workout Training, تمارين منزلية, Home Workout, تدريب شخصي, Personal Training, كمال أجسام, Bodybuilding, تقوية عضلات, Strength Training, صحة الرجال, Men’s Health, خطط تمارين, Workout Plans, رياضة أونلاين, Online Coaching, لياقة بدنية, Physical Fitness,"
+    },
+    {
+      "id": "55",
+      "image": "storage/app/public/trainersImagesNew/K7bsLqpgh6Gg0Wy4WinasEH1GewNXGPzn34x71Fb.png",
+      "image_ar": "storage/app/public/trainersImagesAr/HvPmPDmIkCi7IQz4iqsUDhzUkifeM2w95xCYVFwC.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "ريما سلمان",
+        "en": "Reema Salman"
+      },
+      "bio": {
+        "ar": "ريما سلمان أخصائية التغذية العلاجية والرياضية خبرة 25 عام",
+        "en": "Reema Salman is a clinical and sports nutritionist with 25 years of experience"
+      },
+      "specification": {
+        "ar": "أخصائية تغذية",
+        "en": "Dietitian"
+      },
+      "gender": "female",
+      "order": 7,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "16",
+        "email": "reema@fitness.com",
+        "password": "$2y$10$eHID5LGcKSv9zi5GGa4WLub/sjGjfmfA0k1lqRPdMguxGa3oFxesO",
+        "is_confirmed": true
+      },
+      "private_session_price": 2000,
+      "trainer_profit_ratio": 60,
+      "tags": "Clinical Nutrition Specialist, أخصائية التغذية العلاجية, Sports Nutritionist, أخصائية التغذية الرياضية, Diet & Meal Planning, تخطيط الوجبات الغذائية, Weight Management, إدارة الوزن, Healthy Eating, الأكل الصحي, Performance Nutrition, تغذية الأداء الرياضي, Personalized Nutrition Plans, خطط تغذية مخصصة, Nutritional Counseling, استشارات تغذية, Metabolism Optimization, تحسين التمثيل الغذائي, Health & Wellness, الصحة والعافية, Lifestyle Coaching, تدريب أسلوب الحياة, Macronutrient Balance, توازن المغذيات, Holistic Nutrition, التغذية الشمولية, Dietary Support, الدعم الغذائي, Fitness & Nutrition, اللياقة والتغذية,"
+    },
+    {
+      "id": "54",
+      "image": "storage/app/public/trainersImagesNew/W59UmOEfrTmOHJtzaIEcjdkpzsgTgCckn6ZnAOET.png",
+      "image_ar": "storage/app/public/trainersImagesAr/pJBsbDqj9l45USTjGDU9YcwxHcfa4tBKMFbyEAtO.png",
+      "agreement": null,
+      "rating": 3.1666666666666665,
+      "name": {
+        "ar": "دعاء دحدولى",
+        "en": "Doaa Dahdoli"
+      },
+      "bio": {
+        "ar": "دعاء دحدولى اختصاصية تغذية واختصاصية نفسية متخصصة بتعديل السلوك الغذائي للتحكم بالوزن والتغذية الرياضية وعلاج اضطرابات الاكل النفسية خبرة 15 عام",
+        "en": "Nutritionist and psychologist specializing in dietary behavior modification for weight control, sports nutrition, and treatment of psychological eating disorders with 15 years of experience"
+      },
+      "specification": {
+        "ar": "أخصائية تغذية",
+        "en": "Dietitian"
+      },
+      "gender": "female",
+      "order": 8,
+      "status": true,
+      "wallet": 420.6,
+      "account": {
+        "id": "13",
+        "email": "doaa@fitness.com",
+        "password": "$2y$10$lpAB4x6QQatb3CALeXxyOuzS0EmQI5RRu.HZLHc/.FWDA7.RXUmUm",
+        "is_confirmed": true
+      },
+      "private_session_price": 150,
+      "trainer_profit_ratio": 60,
+      "tags": "Nutrition Specialist, اختصاصية تغذية, Psychology Specialist, اختصاصية نفسية, Behavioral Nutrition, تعديل السلوك الغذائي, Weight Management, التحكم بالوزن, Sports Nutrition, التغذية الرياضية, Eating Disorder Treatment, علاج اضطرابات الأكل النفسية, Healthy Eating, الأكل الصحي, Personalized Diet Plans, خطط غذائية مخصصة, Mindful Eating, الأكل الواعي, Emotional Eating Support, دعم الأكل العاطفي, Holistic Health, الصحة الشمولية, Nutritional Counseling, استشارات تغذية, Mental Wellness, الرفاهية النفسية, Lifestyle Coaching, تدريب أسلوب الحياة, Health & Nutrition, الصحة والتغذية,"
+    },
+    {
+      "id": "66",
+      "image": "storage/app/public/trainersImagesNew/bZVg9809DjfczFM7TF3i1ny1sY9ThqGjLXrnEebf.png",
+      "image_ar": "storage/app/public/trainersImagesAr/5lHJ7QjeawlQZvIB0uP9pHqNp4pUScYGa9VCtwhf.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "مصطفى محمد",
+        "en": "Mostafa Mohamed"
+      },
+      "bio": {
+        "ar": "مدرب شخصي خبرة أكثر من 5 سنوات من الخبرة في مجال التدريب الشخصي وتصميم الانظمة الغذائية والوصول لأهداف العملاء وتحقيق نتائج مُرضية جدا في وقت قصير",
+        "en": "Personal trainer with more than 5 years experiencein the field of personal training designing food systems, achieving customer goals, and achieving very satisfactory results in a short time"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 9,
+      "status": false,
+      "wallet": 0,
+      "account": {
+        "id": "23",
+        "email": "Mostafa@fitness.com",
+        "password": "$2y$10$0bEV1UUKKh8y5n3X95b2buJ6SExU7/3uT8HhPq.YtDg7mK3oDIEN6",
+        "is_confirmed": true
+      },
+      "private_session_price": 550,
+      "trainer_profit_ratio": 60,
+      "tags": "مدرب لياقة, تصميم الأنظمة الغذائية, خطط تدريب مخصصة, تحقيق الأهداف, نتائج سريعة, بناء العضلات, خسارة الوزن, صحة ولياقة, تدريب أونلاين, مدرب معتمد, تحسين الأداء, تدريب القوة,Nutrition Planning, Custom Workout Programs, Goal-Oriented Training, Achieving Results, Fast Progress, Strength & Conditioning, Weight Loss Specialist, Muscle Building, Health & Wellness, Online Coaching, Certified Trainer,"
+    },
+    {
+      "id": "67",
+      "image": "storage/app/public/trainersImagesNew/BsAciEPjhiHRnd5m3IiFyZ5IPPC9clJxejKJOAx1.png",
+      "image_ar": "storage/app/public/trainersImagesAr/oLa40wyQ0xAckXwXIHtMQvVP9UqrjelOm9cdaErh.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "فرح حسون",
+        "en": "Farah Hassoun"
+      },
+      "bio": {
+        "ar": "اختصاصيه في التغذية معتمدة, 10 سنوات من الخبرة,هدفي الاول مساعدتك على تغيير عاداتك الغذائية من خلال اعتماد انظمة تناسب نمط حياتك لتصل لحياة صحيه. انظمه لتعديل الوزن, خطط تغذيه علاجية, تغذية رياضية",
+        "en": "Registered Nutritionist,10 years of experience, who LOVES to help you change your eating habits by customizing your own diet that is manageable for life. Providing weight control plans, therapeutic nutrition, sports nutrition."
+      },
+      "specification": {
+        "ar": "أخصائية تغذية",
+        "en": "Dietitian"
+      },
+      "gender": "female",
+      "order": 9,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "24",
+        "email": "farah@fitness.com",
+        "password": "$2y$10$aGyNlEveNNYW83LqUILYL.ZfyDdEu193vGesKosuGY/9I4wqAHmlq",
+        "is_confirmed": true
+      },
+      "private_session_price": 400,
+      "trainer_profit_ratio": 60,
+      "tags": "Certified Nutrition Specialist, اختصاصية في التغذية معتمدة, Healthy Lifestyle Coaching, تدريب نمط حياة صحي, Weight Management Plans, أنظمة لتعديل الوزن, Therapeutic Nutrition Plans, خطط تغذية علاجية, Sports Nutrition, تغذية رياضية, Personalized Meal Plans, خطط وجبات مخصصة, Habit Change Coaching, تدريب على تغيير العادات الغذائية, Holistic Health, الصحة الشمولية, Balanced Diet, النظام الغذائي المتوازن, Nutrition for Wellness, التغذية للصحة والعافية, Sustainable Eating, الأكل المستدام, Healthy Habits, العادات الصحية, Fitness & Nutrition, اللياقة والتغذية, Nutritional Counseling, استشارات تغذية,"
+    },
+    {
+      "id": "69",
+      "image": "storage/app/public/trainersImagesNew/jkRktI7YO5xgSNIsC4MKiNPT51fzsugP0G5kmsNG.png",
+      "image_ar": "storage/app/public/trainersImagesAr/VxpT2bYTYx4psO1bxwQ7roMMZUolisDExTGpxn0W.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "غادة الباجى",
+        "en": "Ghada Albaji"
+      },
+      "bio": {
+        "ar": "مدربة معتمدة خبرة 5 سنوات فى التدريب الشخصى وتصميم البرامج والفتنس",
+        "en": "Certified trainer with 5 years of experience in personal training, program design, and fitness"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 10,
+      "status": true,
+      "wallet": 300.6,
+      "account": {
+        "id": "26",
+        "email": "ghada@fitness.com",
+        "password": "$2y$10$ID15mx7k/9lZY3ciZqsuoug.X4hzN1exJQh.fJIJZ5fBBlkSs8CFy",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "فتنس, رياضه, برامج رياضيه, fitness, sports, personal trainer,"
+    },
+    {
+      "id": "76",
+      "image": "storage/app/public/trainersImagesNew/ANAIriv5bXPLk77KSfdw6ycufvaSukLixd98zvPl.png",
+      "image_ar": "storage/app/public/trainersImagesAr/5CxXQwWI3dHuh3n9peHLKHv9rZ3UgyVjBETASrXS.png",
+      "agreement": null,
+      "rating": null,
+      "name": {
+        "ar": "فيزي",
+        "en": "Faizy"
+      },
+      "bio": {
+        "ar": "مدرب شخصي معتمد للرجال وللسيدات ، بخبرة ١٠ سنوات أضمن نتائج ملموسة خلال شهر واحد. شغوف بمساعدتك على بناء القوة والتحمل والثقة. متخصص في إنقاص الوزن وبناء العضلات، وتقوية الجسم شد وحرق الدهون، بالإضافة إلى التدريب الوظيفي, برامج مصممة خصيصًا لتناسب أهدافك وأسلوب حياتك, نركز على النتائج المستدامة، والوقاية من الإصابات.",
+        "en": "A certified personal trainer for men and women, with10 years of experience, I guarantee visible results in as little as one month. Passionate about helping you build strength, endurance, and confidence. Specializing in weight loss, muscle building, body toning, and fat burning, as well as functional training. Programs are tailored to fit your goals and lifestyle. We focus on sustainable results and injury prevention."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 11,
+      "status": false,
+      "wallet": 0,
+      "account": {
+        "id": "33",
+        "email": "feezy@fitness.com",
+        "password": "$2y$10$xuvLImABb0RJEBa5Scbh6OgC4sAVZFItNVvZYV7pYy.771jrcUuEy",
+        "is_confirmed": true
+      },
+      "private_session_price": 60,
+      "trainer_profit_ratio": 60,
+      "tags": "فتنس, رياضه, برامج رياضيه, fitness, sports, personal trainer,"
+    },
+    {
+      "id": "25",
+      "image": "storage/app/public/trainersImagesNew/hZ6JFOIfzUEfUU1IfsGP2sfquTVmzDWTli5hmhtY.png",
+      "image_ar": "storage/app/public/trainersImagesAr/cRYBk0sk7tGqx74RRtuZPkZOaq20Tsq1aV0mh0g7.png",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "نسرين خورى",
+        "en": "Nisrine Khoury"
+      },
+      "bio": {
+        "ar": "كوتش نسرين خورى مدربة يوغا لديها 10 سنوات من الخبرة في اليوغا المنزلية وغيرها من تقنيات الاسترخاء والتأمل الرياضية تتيح برامج اليوغا لجميع المستويات",
+        "en": "Coach Nisreen is a yoga instructor with 10 years of experience in home yoga and other relaxation and meditation techniques. Yoga programs are available for all levels."
+      },
+      "specification": {
+        "ar": "مدربة يوغا",
+        "en": "Yoga Instructor"
+      },
+      "gender": "female",
+      "order": 11,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "2",
+        "email": "Khourynisrine1@gmail.com",
+        "password": "$2y$10$cVozuridYcnj2ELse4bnqeJyL5N0TaUJaanur4ockAlynIjuLkMcO",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Yoga Coach, كوتش يوغا, Home Yoga Trainer, مدربة يوغا منزلية, Relaxation Techniques, تقنيات الاسترخاء, Meditation Coach, مدربة تأمل, Yoga for All Levels, يوغا لجميع المستويات, Mindfulness Training, تدريب اليقظة الذهنية, Stress Relief Yoga, يوغا لتخفيف التوتر, Flexibility & Mobility, المرونة والحركة, Breathwork Exercises, تمارين التنفس, Holistic Wellness, العافية الشمولية, Guided Meditation, التأمل الموجه, Strength & Balance, القوة والتوازن, Yoga for Beginners, يوغا للمبتدئين, Advanced Yoga, يوغا للمستوى المتقدم,"
+    },
+    {
+      "id": "30",
+      "image": "storage/app/public/trainersImagesNew/hsLIzdI3Yik7CzwHJQpMT5nZwX5m8YkbU6lEvuK5.png",
+      "image_ar": "storage/app/public/trainersImagesAr/3hssUDve9TGikIReY0irycenYPozUk2zRxvQX32x.png",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "رشاد قزاز",
+        "en": "Rashad Kazaz"
+      },
+      "bio": {
+        "ar": "كوتش رشاد قزاز خبرة 8 سنوات متخصص في: برامج رفع الأثقال للمبتدئين والمتوسطين والمتقدمين, برامج لزيادة القوة العضلية والكتلة العضلية, برامج لتعزيز اللياقة البدنية وحرق السعرات الحرارية, برامج إعادة التأهيل من الإصابات",
+        "en": "Coach Rashad, 8 years of experience, specializes in: weightlifting programs for beginners, intermediate and advanced, programs to increase muscle strength and muscle mass, programs to enhance physical fitness and burn calories, injury rehabilitation programs"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 12,
+      "status": true,
+      "wallet": 0,
+      "account": {
+        "id": "6",
+        "email": "rashadkazaz@gmail.com",
+        "password": "$2y$10$AHXjJhBVbNBXxFTY7RoJTeDompgAoW7OPLgO4UhRHqrETTX/hWTUq",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Strength Training Coach, كوتش تدريب القوة, Weightlifting Programs, برامج رفع الأثقال, Beginner to Advanced Training, تدريب للمبتدئين والمتوسطين والمتقدمين, Muscle Growth Programs, برامج لزيادة الكتلة العضلية, Strength & Power Training, تدريب القوة والطاقة, Fitness & Conditioning, اللياقة البدنية والتكييف, Calorie Burning Workouts, تمارين لحرق السعرات الحرارية, Injury Rehabilitation, إعادة التأهيل من الإصابات, Athletic Performance, تحسين الأداء الرياضي, Resistance Training, تمارين المقاومة, Functional Strength, القوة الوظيفية, Gym Coaching, تدريب الجيم, Personalized Workout Plans, خطط تمارين مخصصة, Body Transformation, تغيير الجسم,"
+    },
+    {
+      "id": "24",
+      "image": "storage/app/public/trainersImagesNew/5XainRZgU5i26dWCXsuBXBe45W50phnTsvCPTU75.png",
+      "image_ar": "storage/app/public/trainersImagesAr/g9A7fGWkzVb3WiUXa5uZveMjwwG3i8VqkwzkfyHa.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "مريم خالد",
+        "en": "Mariam Khaled"
+      },
+      "bio": {
+        "ar": "كوتش مريم خالد خبرة 6 سنوات متخصصة في: برامج تدريبية منزلية لنحت جميع مناطق الجسم, برامج لزيادة القوة العضلية واللياقة البدنية, برامج لتعزيز حرق الدهون, برامج لشدّ الترهلات.",
+        "en": "Coach Maryam, with 6 years of experience, specializes in: home training programs to sculpt all areas of the body, programs to increase muscle strength and physical fitness, programs to enhance fat burning, programs to tighten sagging skin."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 13,
+      "status": true,
+      "wallet": 0.6,
+      "account": {
+        "id": "1",
+        "email": "mariamkhalid2112@gmail.com",
+        "password": "$2y$10$P4GYL3YOUxrP4BHDkB7SbOT4huNTolshD2dWUmvhe3gqxbnnxVOC6",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Home Workout, تمارين منزلية, Fat Burning, حرق الدهون,Fitness Plan, خطة لياقة,"
+    },
+    {
+      "id": "31",
+      "image": "storage/app/public/trainersImagesNew/7HRxKvoELvAcAEKCflIGuU8VT1G7pHjyeDdkBF10.jpg",
+      "image_ar": "storage/app/public/trainersImagesAr/p9r2ffwOpdV7xUd4D01CbXbr9w5QHCDtRkVXBoYq.jpg",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "اسماعيل الكضاشي",
+        "en": "Ismail Lagdashi"
+      },
+      "bio": {
+        "ar": "اسماعيل الكضاشي بطل المغرب في الملاكمة وبطل المملكة العربية السعودية في الملاكمة والكيك بوكسين والمواي تاي حاصل على الحزام الاسود في الكيك بوكسين",
+        "en": "Ismail Al-Kadashi, the Moroccan boxing champion and the Kingdom of Saudi Arabia’s champion in boxing, kickboxing and Muay Thai, holds a black belt in kickboxing."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 14,
+      "status": true,
+      "wallet": 6500,
+      "account": {
+        "id": "7",
+        "email": "ismail@fitness.com",
+        "password": "$2y$10$.yYj4ueCj0.fwuEVTLvApeZ13ECBbKiVWUfpBAtWcQgEQC9o4YTkK",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Boxing Champion, بطل ملاكمة, Kickboxing Champion, بطل كيك بوكسين, Muay Thai Fighter, مقاتل مواي تاي, Black Belt in Kickboxing, حاصل على الحزام الأسود في الكيك بوكسين, Moroccan Boxing Champion, بطل المغرب في الملاكمة, Saudi Kickboxing Champion, بطل المملكة العربية السعودية في الكيك بوكسين, Saudi Boxing Champion, بطل المملكة العربية السعودية في الملاكمة, Muay Thai Specialist, متخصص في المواي تاي, Combat Sports Coach, مدرب رياضات قتالية, Striking Techniques, تقنيات الضرب, Martial Arts Expert, خبير فنون قتالية, Professional Fighter, مقاتل محترف, Strength & Conditioning, القوة والتكييف, Self-Defense Training, تدريب الدفاع عن النفس,"
+    },
+    {
+      "id": "29",
+      "image": "storage/app/public/trainersImagesNew/L5Zcxxq1iFhHBL4iTZeetiCnEFdpwiHAvIFomzfg.png",
+      "image_ar": "storage/app/public/trainersImagesAr/uzK9dM25TZPmVrdepetMqmii1HdAR9JiRDnVPUmD.png",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "ضحى ضرغام",
+        "en": "Doha Dergham"
+      },
+      "bio": {
+        "ar": "كوتش ضحى ضرغام خبرة 6 سنوات في: تصميم برامج تدريبية منزلية تناسب جميع مستويات اللياقة البدنية, تقديم نصائح غذائية صحية لتحسين الأداء, متابعة تقدمك وتقديم الدعم والتحفيز",
+        "en": "Coach Doha has 6 years of experience in: designing home training programs to suit all levels of fitness, providing healthy nutritional advice to improve performance, monitoring your progress and providing support and motivation."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 15,
+      "status": true,
+      "wallet": 1500,
+      "account": {
+        "id": "5",
+        "email": "doha@fitness.com",
+        "password": "$2y$10$K03DDPExCe9ykOJFM/8sDu2vYxf2/I2pXa9FbbQey8BSyJ9wtMpt.",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Home Workout Coach, كوتش تمارين منزلية, Fitness Program Design, تصميم برامج تدريبية, All Fitness Levels, لجميع مستويات اللياقة البدنية, Healthy Nutrition Tips, نصائح غذائية صحية, Performance Enhancement, تحسين الأداء, Progress Tracking, متابعة التقدم, Coaching & Motivation, الدعم والتحفيز, Strength & Conditioning, القوة والتكييف, Personalized Training Plans, خطط تدريب مخصصة, Home Fitness, اللياقة البدنية المنزلية, Functional Training, التدريب الوظيفي, Wellness Coaching, تدريب العافية, Weight Management, إدارة الوزن, Endurance Training, تدريب التحمل,"
+    },
+    {
+      "id": "26",
+      "image": "storage/app/public/trainersImagesNew/8rgMR5v11vLqO3nDre5L2NSXdL2r1rtz7imCiJX5.png",
+      "image_ar": "storage/app/public/trainersImagesAr/0n5oVRNbOa1ckgWN3cL94D162YADPwuWhFKsNJjM.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "ريتا كمار",
+        "en": "Rita Kamar"
+      },
+      "bio": {
+        "ar": "كوتش ريتا كمار خبرة 10 سنوات في: برامج زيادة الكتلة العضلية, برامج الزومبا, برامج التدريب بوزن الجسم",
+        "en": "Coach Rita Kamar has 10 years of experience in: programs to increase muscle mass, Zumba programs, and body weight training programs."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 16,
+      "status": true,
+      "wallet": 8100.72,
+      "account": {
+        "id": "3",
+        "email": "Rita_kamar@hotmail.com",
+        "password": "$2y$10$85cGts.ubFkaDn8yJ4DiGOy0GFGwbS1Iu7u9L3GX.tS3OqKLJv5dq",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Muscle Gain Programs, برامج زيادة الكتلة العضلية, Zumba Coach, كوتش زومبا, Bodyweight Training, التدريب بوزن الجسم, Strength & Conditioning, القوة والتكييف, Dance Fitness, لياقة الرقص, Functional Training, التدريب الوظيفي, Fat Burning Workouts, تمارين لحرق الدهون, High-Intensity Training, تمارين عالية الكثافة, Flexibility & Mobility, المرونة والحركة, Cardio Workouts, تمارين الكارديو, Group Fitness Instructor, مدربة تمارين جماعية, Personalized Workout Plans, خطط تمارين مخصصة, Fitness & Wellness, اللياقة والعافية,"
+    },
+    {
+      "id": "28",
+      "image": "storage/app/public/trainersImagesNew/i2G2eviRhIIeazwB68QVdLcnkhA5J5wyf1nL5j4j.png",
+      "image_ar": "storage/app/public/trainersImagesAr/5i5ArEKHefeM2WMOsbdY6gcvX4vlAcHgqMfdQZtK.png",
+      "agreement": null,
+      "rating": 4,
+      "name": {
+        "ar": "عبد العظيم",
+        "en": "Abdelazim"
+      },
+      "bio": {
+        "ar": "كوتش عبد العظيم خبرة 7 سنوات متخصص فى برامج رفع الأثقال مساعدة العملاء على تحقيق أهدافهم اللياقة البدنية, تعليم تقنيات رفع الأثقال الصحيحة, تقديم النصائح الغذائية لتحسين الأداء",
+        "en": "Coach Abdel Azim, 7 years of experience, specializes in weightlifting programs, helping clients achieve their fitness goals, teaching correct weightlifting techniques, and providing nutritional advice to improve performance."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 17,
+      "status": true,
+      "wallet": 0.05,
+      "account": {
+        "id": "4",
+        "email": "abdelazim@fitness.com",
+        "password": "$2y$10$IjT0iEhRuxNxVZ9I8gkeCu5WGdvsLuZ5AiD8Sm6YY16tl.gslbFMW",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Weightlifting Coach, كوتش رفع الأثقال, Strength Training, تدريب القوة, Fitness Goal Coaching, مساعدة العملاء على تحقيق أهداف اللياقة البدنية, Proper Lifting Techniques, تعليم تقنيات رفع الأثقال الصحيحة, Nutrition Guidance, تقديم النصائح الغذائية, Performance Enhancement, تحسين الأداء, Muscle Building, بناء العضلات, Strength & Conditioning, القوة والتكييف, Resistance Training, تمارين المقاومة, Powerlifting Programs, برامج الباورليفتنغ, Injury Prevention, الوقاية من الإصابات, Personalized Workout Plans, خطط تمارين مخصصة, Gym Coaching, تدريب الجيم, Athletic Performance, تحسين الأداء الرياضي,"
+    },
+    {
+      "id": "52",
+      "image": "storage/app/public/trainersImagesNew/kOcUYkwxt4AM0n25bb8AAfjp8LJLZie2WPoFg1F3.png",
+      "image_ar": "storage/app/public/trainersImagesAr/MN3Z6eyxPAWXdGgm65OvjEJsqgoYruyO2Zzn6OHh.png",
+      "agreement": null,
+      "rating": 5,
+      "name": {
+        "ar": "هبة",
+        "en": "Hiba"
+      },
+      "bio": {
+        "ar": "كوتش هبه مدربة لياقة بدنية خبرة 15 عام تتحدث الأسبانية والعربية",
+        "en": "Coach Heba is a fitness trainer with 15 years of experience who speaks Spanish and Arabic"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 18,
+      "status": false,
+      "wallet": 0,
+      "account": {
+        "id": "12",
+        "email": "hiba@fitness.com",
+        "password": "$2y$10$NJDjmVJNZI4OPIRbO3K/vOP1VEftvXbEfrhOWi2SMoOf6dfp60Guy",
+        "is_confirmed": true
+      },
+      "private_session_price": 250,
+      "trainer_profit_ratio": 60,
+      "tags": null
+    },
+    {
+      "id": "59",
+      "image": "storage/app/public/trainersImagesNew/BXrt9iPBhIZL1rnHA24AqttH43LnEMkSfgeRCb2g.png",
+      "image_ar": "storage/app/public/trainersImagesAr/XJR2ejBAarBkA7BJezynvzh2srmkPPWiXlkNdbfb.png",
+      "agreement": "storage/app/public/trainersImages/BRnKdECfzXpairTJ6ffiYh8TzqgYAwWDlog9H3Go.pdf",
+      "rating": 5,
+      "name": {
+        "ar": "أحمد عبد الغنى",
+        "en": "Ahmed Abdelghany"
+      },
+      "bio": {
+        "ar": "أحمد عبد الغنى خبره اكثر من ١١ سنه في تدريب الفتنس و تمارين المقاومه والكروس فيت والبوكسينج وتأهيل الاصابات الرياضية",
+        "en": "More than 11 years of experience in training fitness, resistance exercises, CrossFit, boxing, and rehabilitation of sports injuries."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "male",
+      "order": 19,
+      "status": false,
+      "wallet": 60,
+      "account": {
+        "id": "19",
+        "email": "ahmed@fitness.com",
+        "password": "$2y$10$JKO51RQm2LLZJCBTqwsGl.qZj1yy55SpnwGXJT436vrmugVmW.bMO",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": null
+    },
+    {
+      "id": "56",
+      "image": "storage/app/public/trainersImagesNew/UH7kfNQhMjofVELww3A7bi1WspW7bSyuXPlWneCC.png",
+      "image_ar": "storage/app/public/trainersImagesAr/1jF8idrI6VH1nnSMA42xd3fIiuHYm1QYCISavs2w.png",
+      "agreement": "storage/app/public/trainersImages/deiUY0i4RDXYQaKsUfDiwJJMJm3VITfgXBsocVnW.pdf",
+      "rating": 4.833333333333333,
+      "name": {
+        "ar": "تمارا عماد",
+        "en": "Tamara Emad"
+      },
+      "bio": {
+        "ar": "كوتش تمارا عماد 8 سنوات خبرة فى تدريب الزومبا والبيلاتس والتدريب الشخصى وحصص الكارديو",
+        "en": "Coach Tamara Imad has 8 years of experience in training Zumba, Pilates, personal training, and cardio classes"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 20,
+      "status": false,
+      "wallet": 0.6,
+      "account": {
+        "id": "14",
+        "email": "Tamara@fitness.com",
+        "password": "$2y$10$9zLJGhth2XOjE6KdXThU9uEwjKPhf21CvFE/Zn1KJgJ8Uzx7O7aPG",
+        "is_confirmed": true
+      },
+      "private_session_price": 1,
+      "trainer_profit_ratio": 60,
+      "tags": null
+    },
+    {
+      "id": "57",
+      "image": "storage/app/public/trainersImagesNew/0pu9gry5Aw4g9eEkNWtmuEHU9h4fXMgTjXwzDrgt.png",
+      "image_ar": "storage/app/public/trainersImagesAr/Eq9MTmChb8MQ7OFThlftvqTHub0aUNGtFIb0FHmg.png",
+      "agreement": "storage/app/public/trainersImages/whkm9aJVhnE5PU9IvgAFAKX2JDHhjE0u9OWZmgzU.pdf",
+      "rating": 5,
+      "name": {
+        "ar": "رهف مهند",
+        "en": "Rahaf Mohanned"
+      },
+      "bio": {
+        "ar": "كوتش رهف مهند ٣ سنوات من الخبرة في المجال الرياضي ومختصة في كلاسات الزومبا والرقص الافريقي والبودى كومبات والكارديو والمقاومة",
+        "en": "Coach Rahaf Muhannad, 3 years of experience in the sports field, specializing in Zumba, African dance, body combat, cardio, and resistance classes."
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 21,
+      "status": false,
+      "wallet": 420.6,
+      "account": {
+        "id": "15",
+        "email": "rahaf@fitness.com",
+        "password": "$2y$10$NwcrefL0ei4zedPU9XuV2.mNwktrmIXbAl0d9Z77joo/r.ijjCHWu",
+        "is_confirmed": true
+      },
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": null
+    },
+    {
+      "id": "53",
+      "image": "storage/app/public/trainersImagesNew/oU1yrJ0zym23uCzRANqCBzX83gt9bynWk4WhG85p.png",
+      "image_ar": "storage/app/public/trainersImagesAr/7SXYZW2IFvjSRRHhlMTZEwq4Thf5ZMcD7WfyjVFQ.png",
+      "agreement": null,
+      "rating": null,
+      "name": {
+        "ar": "إيزابيل",
+        "en": "Isabeal"
+      },
+      "bio": {
+        "ar": "كوتش إيزابيل مدربة لياقة بدنية خبرة 10 سنوات تتحدث الأسبانية فقط",
+        "en": "Coach Isabel is a fitness trainer with 10 years of experience and speaks only Spanish"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 22,
+      "status": false,
+      "wallet": 0,
+      "account": null,
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": null
+    },
+    {
+      "id": "80",
+      "image": "storage/app/public/trainersImagesNew/qUpe9dNoO6dT2mEPfk1WInngY9IDvYYuvXMsd1ik.png",
+      "image_ar": "storage/app/public/trainersImagesAr/9EVvzq1ZmVPyetZec7gLKvwxNY04wokHGR1Tp9So.png",
+      "agreement": null,
+      "rating": null,
+      "name": {
+        "ar": "كياني",
+        "en": "Kayanee Coach"
+      },
+      "bio": {
+        "ar": "استمتع ببرامج كياني أونلاين — تجربة غامرة، مليئة بالطاقة، ومستلهمة من الإيقاع العربي",
+        "en": "Experience Kayanee Programs Online — immersive, energizing, and rooted in Arabic rhythm"
+      },
+      "specification": {
+        "ar": "مدرب شخصى",
+        "en": "Coach"
+      },
+      "gender": "female",
+      "order": 23,
+      "status": true,
+      "wallet": 0,
+      "account": null,
+      "private_session_price": 100,
+      "trainer_profit_ratio": 60,
+      "tags": "Dance, Fitness, flexibility, رقص,"
+    }
+  ],
+  "number_of_pages": 1,
+  "number_of_results": 30
 }
