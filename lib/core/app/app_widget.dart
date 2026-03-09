@@ -22,6 +22,7 @@ import '../../features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
 import '../../features/notification/bloc/all_notification_cubit/all_notification_cubit.dart';
 import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
+import '../../features/transfer_ownership/bloc/transfer_fees_cubit/transfer_fees_cubit.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
 
@@ -110,7 +111,7 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(create: (_) => sl<CategoriesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<InsurancesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),
-
+                BlocProvider(create: (_) => sl<TransferFeesCubit>()..getData(), lazy: false),
                 BlocProvider(create: (_) => sl<SupportInfoCubit>()..getData(), lazy: false),
               ],
               child: MediaQuery(

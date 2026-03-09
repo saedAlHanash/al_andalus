@@ -11,7 +11,10 @@ import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../../cars/bloc/cars_cubit/cars_cubit.dart';
+import '../../../insurances/bloc/insurances_cubit/insurances_cubit.dart';
 import '../../../insurances/ui/widget/list_insurances.dart';
+import '../../../../core/injection/injection_container.dart';
+import 'dart:convert';
 
 class HowCanHelp extends StatelessWidget {
   const HowCanHelp({super.key});
@@ -55,14 +58,18 @@ class HowCanHelp extends StatelessWidget {
                       Expanded(
                         child: _Item(
                           onTap: () async {
-                            final result = await context.pushNamed(RouteName.qrScanner);
+                            final qrcode = await context.pushNamed(RouteName.qrScanner);
 
-                            // if (result != null && context.mounted) {
-                            //   context.pushNamed(
-                            //     RouteName.transferOwnershipPage,
-                            //     queryParameters: {'policyId': result.toString()},
-                            //   );
-                            // }
+                            final json = jsonDecode((qrcode ?? "{}").toString());
+                            if (json.isNotEmpty && context.mounted) {
+                              context.pushNamed(
+                                RouteName.transferOwnershipPage,
+                                queryParameters: {
+                                  'qrcode': json['qr'].toString(),
+                                  'id': json['id'].toString(),
+                                },
+                              );
+                            }
                           },
                           color: const Color(0xFFE4E4E5),
                           title: S.of(context).transferOwnership,

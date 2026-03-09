@@ -22,10 +22,10 @@ class TransferOwnershipCubit extends MCubit<TransferOwnershipState> {
       ),
     );
 
-    final response = await APIService().uploadMultiPart(
+    final response = await APIService().callApi(
+      type: .post,
       url: PostUrl.transferOwnership,
-      files: state.mRequest.files,
-      fields: state.mRequest.toJson(),
+      body: state.mRequest.toJson(),
     );
 
     if (response.statusCode.success) {
@@ -45,32 +45,8 @@ class TransferOwnershipCubit extends MCubit<TransferOwnershipState> {
     }
   }
 
-  void updateName(String name) {
-    state.mRequest.newOwnerName = name;
-    emit(state.copyWith(idNotifier: state.idNotifier + 1));
-  }
-
-  void updatePhone(String phone) {
-    state.mRequest.newOwnerPhone = phone;
-    emit(state.copyWith(idNotifier: state.idNotifier + 1));
-  }
-
-  void updateIdentityNumber(String number) {
-    state.mRequest.newOwnerIdentityNumber = number;
-    emit(state.copyWith(idNotifier: state.idNotifier + 1));
-  }
-
-  void setPolicyId(int id) {
-    state.mRequest.policyId = id;
-    emit(state.copyWith(idNotifier: state.idNotifier + 1));
-  }
-
-  void setImage(UploadFile file, bool isFront) {
-    if (isFront) {
-      state.mRequest.identityFrontImage = file;
-    } else {
-      state.mRequest.identityBackImage = file;
-    }
+  void setQr(int id) {
+    state.mRequest.qrcode = id;
     emit(state.copyWith(idNotifier: state.idNotifier + 1));
   }
 }

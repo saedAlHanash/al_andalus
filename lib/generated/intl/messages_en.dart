@@ -611,6 +611,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "tiresCovers": MessageLookupByLibrary.simpleMessage("Tire Covers"),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("Total Amount"),
+    "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
+      "Transfer of ownership costs",
+    ),
     "transferOwnership": MessageLookupByLibrary.simpleMessage(
       "Transfer Ownership",
     ),

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
@@ -58,7 +60,13 @@ class CarPage extends StatelessWidget {
                 IconButton(
                   onPressed: () {
                     if (state.result.status == .cancelled) return;
-                    showQr(context, car.qrcode);
+                    showQr(
+                      context,
+                      jsonEncode({
+                        'qrcode': car.qrcode,
+                        'id': car.id.toString(),
+                      }),
+                    );
                   },
                   icon: ImageMultiType(url: Assets.iconsQr),
                 ),

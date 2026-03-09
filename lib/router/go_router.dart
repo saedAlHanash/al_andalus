@@ -335,10 +335,14 @@ final goRouter = GoRouter(
       path: RouteName.transferOwnershipPage,
       name: RouteName.transferOwnershipPage,
       builder: (_, state) {
-        final policyId = int.tryParse(state.uri.queryParameters['policyId'] ?? '');
-        return BlocProvider(
-          create: (context) => TransferOwnershipCubit()..setPolicyId(policyId ?? 0),
-          child: const TransferOwnershipPage(),
+        final qrcode = int.tryParse(state.uri.queryParameters['qrcode'] ?? '0') ?? 0;
+        final id = state.uri.queryParameters['id'] ?? '0';
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => sl<TransferOwnershipCubit>()..setQr(qrcode)),
+            BlocProvider(create: (context) => sl<CarCubit>()..getData(id: id)),
+          ],
+          child: TransferOwnershipPage(),
         );
       },
     ),
@@ -412,6 +416,6 @@ class RouteName {
   static const addCarPage = '/addCarPage';
   static const addAccidentPage = '/addAccidentPage';
   static const webView = '/webView';
-  static const String qrScanner = '/qrScanner';
-  static const String transferOwnershipPage = '/transferOwnershipPage';
+  static const qrScanner = '/qrScanner';
+  static const transferOwnershipPage = '/transferOwnershipPage';
 }

@@ -2768,6 +2768,16 @@ class S {
   String get insurance {
     return Intl.message('Insurance', name: 'insurance', desc: '', args: []);
   }
+
+  /// `Transfer of ownership costs`
+  String get transferOfOwnershipCosts {
+    return Intl.message(
+      'Transfer of ownership costs',
+      name: 'transferOfOwnershipCosts',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

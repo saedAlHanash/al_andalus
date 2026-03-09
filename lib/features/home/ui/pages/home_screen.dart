@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         context.read<CarsCubit>().doneOpenUrl();
         context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
           (value) {
-            if (context.mounted && value == true) {
+            if (context.mounted) {
               context.goNamed(RouteName.home);
             }
           },

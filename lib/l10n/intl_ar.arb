@@ -335,5 +335,6 @@
   "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "تم إنشاء حسابك بنجاح. سيتم إعادة توجيهك الآن إلى الشاشة الرئيسية.",
   "zainCash": "زين كاش",
   "zainCashWallet": "محفظة زين كاش",
-  "insurance": "التأمينات"
+  "insurance": "التأمينات",
+  "transferOfOwnershipCosts": "Transfer of ownership costs"
 }

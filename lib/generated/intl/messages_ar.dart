@@ -583,6 +583,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
+    "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
+      "Transfer of ownership costs",
+    ),
     "transferOwnership": MessageLookupByLibrary.simpleMessage("نقل ملكية"),
     "transferOwnershipIntroDesc": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين بسهولة إلى مستخدم آخر عن طريق رمز ال QR",

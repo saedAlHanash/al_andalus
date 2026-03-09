@@ -40,7 +40,7 @@ class _AddCarPageState extends State<AddCarPage> {
           listener: (context, state) {
             context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
               (value) {
-                if (context.mounted && value == true) {
+                if (context.mounted) {
                   context.goNamed(RouteName.home);
                 }
               },
