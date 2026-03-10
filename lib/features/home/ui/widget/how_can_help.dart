@@ -65,7 +65,7 @@ class HowCanHelp extends StatelessWidget {
                               context.pushNamed(
                                 RouteName.transferOwnershipPage,
                                 queryParameters: {
-                                  'qrcode': json['qr'].toString(),
+                                  'qrcode': json['qrcode'].toString(),
                                   'id': json['id'].toString(),
                                 },
                               );

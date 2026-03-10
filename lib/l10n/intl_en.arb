@@ -337,5 +337,7 @@
 
   "zainCashWallet": "Zain Cash Wallet",
   "insurance": "Insurance",
-  "transferOfOwnershipCosts": "Transfer of ownership costs"
+  "transferOfOwnershipCosts": "Transfer of ownership costs",
+  "ownershipTransferStatus": "Ownership transfer status",
+  "claimStatus": "Claim request status"
 }

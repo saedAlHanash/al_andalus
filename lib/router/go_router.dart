@@ -335,7 +335,7 @@ final goRouter = GoRouter(
       path: RouteName.transferOwnershipPage,
       name: RouteName.transferOwnershipPage,
       builder: (_, state) {
-        final qrcode = int.tryParse(state.uri.queryParameters['qrcode'] ?? '0') ?? 0;
+        final qrcode = state.uri.queryParameters['qrcode'] ?? '';
         final id = state.uri.queryParameters['id'] ?? '0';
         return MultiBlocProvider(
           providers: [

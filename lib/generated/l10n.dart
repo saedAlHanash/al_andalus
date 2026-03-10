@@ -2778,6 +2778,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Ownership transfer status`
+  String get ownershipTransferStatus {
+    return Intl.message(
+      'Ownership transfer status',
+      name: 'ownershipTransferStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Claim request status`
+  String get claimStatus {
+    return Intl.message(
+      'Claim request status',
+      name: 'claimStatus',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -2787,6 +2807,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'ur'),
     ];
   }
 

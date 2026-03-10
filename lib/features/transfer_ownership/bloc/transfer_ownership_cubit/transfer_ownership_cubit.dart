@@ -1,5 +1,6 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
+import 'package:al_andalus/core/error/error_manager.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:m_cubit/m_cubit.dart';
 
@@ -15,12 +16,7 @@ class TransferOwnershipCubit extends MCubit<TransferOwnershipState> {
   AbstractState get mState => state;
 
   Future<void> transferOwnership() async {
-    emit(
-      state.copyWith(
-        statuses: CubitStatuses.loading,
-        cubitCrud: CubitCrud.create,
-      ),
-    );
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
 
     final response = await APIService().callApi(
       type: .post,
@@ -30,22 +26,17 @@ class TransferOwnershipCubit extends MCubit<TransferOwnershipState> {
 
     if (response.statusCode.success) {
       emit(
-        state.copyWith(
-          statuses: CubitStatuses.done,
-          result: TransferOwnershipResponse.fromJson(response.jsonBody),
-        ),
+        state.copyWith(statuses: CubitStatuses.done, result: TransferOwnershipResponse.fromJson(response.jsonBody)),
       );
     } else {
       emit(
-        state.copyWith(
-          statuses: CubitStatuses.error,
-          error: response.getPairError.second,
-        ),
+        state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second),
       );
+      showErrorFromApi(state);
     }
   }
 
-  void setQr(int id) {
+  void setQr(String id) {
     state.mRequest.qrcode = id;
     emit(state.copyWith(idNotifier: state.idNotifier + 1));
   }

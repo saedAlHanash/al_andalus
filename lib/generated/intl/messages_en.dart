@@ -103,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "chooseLanguage": MessageLookupByLibrary.simpleMessage("Choose Language"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("Chrome or Nickel"),
+    "claimStatus": MessageLookupByLibrary.simpleMessage("Claim request status"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("Click To Update"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
@@ -320,6 +321,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
     "oops": MessageLookupByLibrary.simpleMessage("Oops!"),
     "ourService": MessageLookupByLibrary.simpleMessage("Our service"),
+    "ownershipTransferStatus": MessageLookupByLibrary.simpleMessage(
+      "Ownership transfer status",
+    ),
     "packageCost": MessageLookupByLibrary.simpleMessage("Package cost"),
     "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),

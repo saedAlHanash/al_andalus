@@ -49,6 +49,7 @@ void showLanguageDialog(BuildContext context) {
                   ListTile(
                     onTap: () {
                       MyApp.setLocale(context, 'ar');
+                      Navigator.pop(context);
                     },
                     title: DrawableText(text: S.of(context).arabic),
                     leading: ImageMultiType(
@@ -58,17 +59,19 @@ void showLanguageDialog(BuildContext context) {
                   ),
                   ListTile(
                     onTap: () {
-                      MyApp.setLocale(context, 'kr');
+                      MyApp.setLocale(context, 'ur');
+                      Navigator.pop(context);
                     },
                     title: DrawableText(text: S.of(context).kurdish),
                     leading: ImageMultiType(
-                      url: AppSharedPreference.getLocal == 'kr' ? Icons.radio_button_checked : Icons.radio_button_off,
+                      url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
                     ),
                   ),
                   ListTile(
                     onTap: () {
                       MyApp.setLocale(context, 'en');
+                      Navigator.pop(context);
                     },
                     title: DrawableText(text: S.of(context).english),
                     leading: ImageMultiType(

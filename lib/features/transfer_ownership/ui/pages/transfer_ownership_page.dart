@@ -4,6 +4,7 @@ import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
 import 'package:al_andalus/features/cars/ui/widget/create_car_steps/payment_screen.dart';
 import 'package:al_andalus/generated/l10n.dart';
+import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class TransferOwnershipPage extends StatelessWidget {
       listenWhen: (p, c) => c.statuses == CubitStatuses.done,
       listener: (context, state) {
         NoteMessage.showSnakeBar(context: context, message: state.result?.message ?? '');
-        context.pop();
+        context.go(RouteName.home);
       },
       child: Scaffold(
         appBar: AppBarWidget(titleText: S.of(context).transferOwnership),

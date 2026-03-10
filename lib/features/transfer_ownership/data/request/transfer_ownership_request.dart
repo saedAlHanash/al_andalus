@@ -8,7 +8,7 @@ class TransferOwnershipRequest {
     this.paymentType,
   });
 
-  int? qrcode;
+  String? qrcode;
   PaymentType? paymentType;
 
   bool get canSend => qrcode != null && paymentType != null;

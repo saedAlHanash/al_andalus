@@ -101,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
+    "claimStatus": MessageLookupByLibrary.simpleMessage("حالة المطالبة"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -300,6 +301,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
+    "ownershipTransferStatus": MessageLookupByLibrary.simpleMessage(
+      "حالة نقل الملكية",
+    ),
     "packageCost": MessageLookupByLibrary.simpleMessage("تكلفة الباقة"),
     "paid": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -584,7 +588,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
-      "Transfer of ownership costs",
+      "تكاليف نقل الملكية",
     ),
     "transferOwnership": MessageLookupByLibrary.simpleMessage("نقل ملكية"),
     "transferOwnershipIntroDesc": MessageLookupByLibrary.simpleMessage(

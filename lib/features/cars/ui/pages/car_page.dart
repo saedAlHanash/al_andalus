@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
@@ -76,6 +77,8 @@ class CarPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
               children: [
                 _MissingInfoWidget(car: car),
+                car.hasTransferRequest.getWidget,
+                car.hasClaimRequest.getWidget,
                 PackageInfoWidget(),
                 20.verticalSpace,
                 CarInfo(),

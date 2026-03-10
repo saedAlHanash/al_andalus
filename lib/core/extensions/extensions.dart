@@ -1,13 +1,17 @@
 import 'dart:convert';
 
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/util/my_style.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_multi_type/image_multi_type.dart';
 import 'package:intl/intl.dart';
 
+import '../../features/cars/data/response/cars_response.dart';
+import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
 import '../error/error_manager.dart';
 import '../strings/app_color_manager.dart';
@@ -520,6 +524,100 @@ extension FileTypeDetector on String {
     if (ext == 'pdf') return FileType.pdf;
     if (docExt.contains(ext)) return FileType.document;
     return FileType.other;
+  }
+}
+
+extension HasTransferRequestH on HasTransferRequest {
+  Widget get getWidget {
+    if (id == 0) return 0.0.verticalSpace;
+
+    return Container(
+      width: 1.0.sw,
+      height: 220.0.h,
+      padding: EdgeInsets.all(12.0).r,
+      margin: EdgeInsets.symmetric(vertical: 12.0).r,
+      decoration: MyStyle.outlineBorder,
+      child: Column(
+        children: [
+          DrawableText(
+            text: S().ownershipTransferStatus,
+            fontWeight: .bold,
+            size: 18.0.sp,
+            drawableEnd: ImageMultiType(url: Assets.iconsTransport),
+            drawableAlin: .between,
+            matchParent: true,
+          ),
+          5.0.verticalSpace,
+          ImageMultiType(url: Assets.iconsDotedLine, width: 1.0.sw),
+          5.0.verticalSpace,
+          ImageMultiType(
+            url: status.icon,
+            color: status.color,
+            height: 55.0.r,
+            width: 55.0.r,
+          ),
+          15.0.verticalSpace,
+          DrawableText(
+            text: status.name,
+            size: 16.0.sp,
+          ),
+          15.0.verticalSpace,
+          DrawableText(
+            text: status.description,
+            size: 12.0.sp,
+            color: Colors.grey,
+          ),
+        ],
+      ),
+    );
+    return 0.0.verticalSpace;
+  }
+}
+
+extension HasClaimRequestH on HasClaimRequest {
+  Widget get getWidget {
+    if (id == 0) return 0.0.verticalSpace;
+
+    return Container(
+      width: 1.0.sw,
+      height: 220.0.h,
+      padding: EdgeInsets.all(12.0).r,
+      margin: EdgeInsets.symmetric(vertical: 12.0).r,
+      decoration: MyStyle.outlineBorder,
+      child: Column(
+        children: [
+          DrawableText(
+            text: S().claimStatus,
+            fontWeight: .bold,
+            size: 18.0.sp,
+            drawableEnd: ImageMultiType(url: Assets.iconsTransport),
+            drawableAlin: .between,
+            matchParent: true,
+          ),
+          5.0.verticalSpace,
+          ImageMultiType(url: Assets.iconsDotedLine, width: 1.0.sw),
+          5.0.verticalSpace,
+          ImageMultiType(
+            url: status.icon,
+            color: status.color,
+            height: 55.0.r,
+            width: 55.0.r,
+          ),
+          15.0.verticalSpace,
+          DrawableText(
+            text: status.name,
+            size: 16.0.sp,
+          ),
+          15.0.verticalSpace,
+          DrawableText(
+            text: status.description,
+            size: 12.0.sp,
+            color: Colors.grey,
+          ),
+        ],
+      ),
+    );
+    return 0.0.verticalSpace;
   }
 }
 

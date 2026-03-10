@@ -336,5 +336,7 @@
   "zainCash": "زين كاش",
   "zainCashWallet": "محفظة زين كاش",
   "insurance": "التأمينات",
-  "transferOfOwnershipCosts": "Transfer of ownership costs"
+  "transferOfOwnershipCosts": "تكاليف نقل الملكية",
+  "ownershipTransferStatus": "حالة نقل الملكية",
+  "claimStatus": "حالة المطالبة"
 }

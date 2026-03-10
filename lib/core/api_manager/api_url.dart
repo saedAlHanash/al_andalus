@@ -118,7 +118,7 @@ class GetUrl {
 
   static const myCars = 'insurance-policy';
   static const claim = 'claim';
-  static const transferOwnership = 'transfer-ownership';
+  static const transferOwnership = 'transfer';
   static const transferFees = 'transfer-fees';
 }
 
@@ -222,7 +222,7 @@ class PostUrl {
 
   static const createInsurancePolicy = 'insurance-policy';
   static const claim = 'claim';
-  static const transferOwnership = 'transfer-ownership';
+  static const transferOwnership = 'transfer';
 }
 
 class PutUrl {

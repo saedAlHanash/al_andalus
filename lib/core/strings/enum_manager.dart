@@ -923,10 +923,10 @@ enum InsurancePolicyStatus {
 }
 
 enum TransferOwnershipStatus {
-  pending,
-  underReview,
-  accepted,
-  rejected,
+  pending, // color : gray | icon :
+  underReview, // color: orange | icon :
+  accepted, // color: green | icon :
+  rejected, // color: red | icon :
   ;
 
   String get name {
@@ -942,6 +942,18 @@ enum TransferOwnershipStatus {
     }
   }
 
+  String get description {
+    switch (this) {
+      case TransferOwnershipStatus.pending:
+      case TransferOwnershipStatus.underReview:
+        return 'يرجى الإنتظار لغاية إتمام مراجعة الطلب';
+      case TransferOwnershipStatus.accepted:
+        return 'تم قبول نقل الملكية لمالك آخر';
+      case TransferOwnershipStatus.rejected:
+        return 'تم رفض طلب نقل الملكية';
+    }
+  }
+
   String get nameApi {
     switch (this) {
       case TransferOwnershipStatus.pending:
@@ -952,6 +964,32 @@ enum TransferOwnershipStatus {
         return 'accepted';
       case TransferOwnershipStatus.rejected:
         return 'rejected';
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case TransferOwnershipStatus.pending:
+        return AppColorManager.grey;
+      case TransferOwnershipStatus.underReview:
+        return Colors.orange;
+      case TransferOwnershipStatus.accepted:
+        return AppColorManager.greenPrice;
+      case TransferOwnershipStatus.rejected:
+        return AppColorManager.red;
+    }
+  }
+
+  IconData? get icon {
+    switch (this) {
+      case TransferOwnershipStatus.pending:
+        return Icons.timer_outlined;
+      case TransferOwnershipStatus.underReview:
+        return Icons.hourglass_empty_rounded;
+      case TransferOwnershipStatus.accepted:
+        return Icons.check_circle_outline;
+      case TransferOwnershipStatus.rejected:
+        return Icons.cancel_outlined;
     }
   }
 
@@ -1024,6 +1062,40 @@ enum AccidentStatus {
     }
   }
 
+  Color get color {
+    switch (this) {
+      case AccidentStatus.pending:
+        return AppColorManager.grey;
+      case AccidentStatus.acceptedByOperationStaff:
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return AppColorManager.greenPrice;
+      case AccidentStatus.rejectedByOperationStaff:
+      case AccidentStatus.rejectedBySurveyorStaff:
+        return AppColorManager.red;
+      case AccidentStatus.paid:
+        return Colors.blueAccent;
+      case AccidentStatus.fixed:
+        return Colors.green;
+    }
+  }
+
+  IconData? get icon {
+    switch (this) {
+      case AccidentStatus.pending:
+        return Icons.timer_outlined;
+      case AccidentStatus.acceptedByOperationStaff:
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return Icons.check_circle_outline;
+      case AccidentStatus.rejectedByOperationStaff:
+      case AccidentStatus.rejectedBySurveyorStaff:
+        return Icons.cancel_outlined;
+      case AccidentStatus.paid:
+        return Icons.paid_outlined;
+      case AccidentStatus.fixed:
+        return Icons.build_outlined;
+    }
+  }
+
   static AccidentStatus getByNameOrIndex(dynamic name) {
     if (name == null) return AccidentStatus.pending;
     final i = int.tryParse(name.toString());
@@ -1047,6 +1119,25 @@ enum AccidentStatus {
         return AccidentStatus.fixed;
       default:
         return AccidentStatus.pending;
+    }
+  }
+
+  String get description {
+    switch (this) {
+      case AccidentStatus.pending:
+        return 'في انتظار المراجعة';
+      case AccidentStatus.acceptedByOperationStaff:
+        return 'تم قبول الطلب من قبل موظفي العمليات';
+      case AccidentStatus.rejectedByOperationStaff:
+        return 'تم رفض الطلب من قبل موظفي العمليات';
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return 'تم قبول الطلب من قبل المساح';
+      case AccidentStatus.rejectedBySurveyorStaff:
+        return 'تم رفض الطلب من قبل المساح';
+      case AccidentStatus.paid:
+        return 'تم الدفع';
+      case AccidentStatus.fixed:
+        return 'تم الإصلاح';
     }
   }
 }
