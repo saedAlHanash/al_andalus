@@ -50,7 +50,7 @@ class _AccidentInfoState extends State<AccidentInfo> {
               initialValue: state.mRequest.location,
               labelText: S.of(context).accidentLocation,
               hint: S.of(context).pleaseSpecifyAccidentLocation,
-              maxLines: 4,
+              maxLines: 2,
             ),
             20.0.verticalSpace,
             UploadContainerWidget(

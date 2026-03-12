@@ -1,13 +1,6 @@
 import 'dart:ui';
 
 import 'package:al_andalus/features/home/bloc/home_cubit/home_cubit.dart';
-import 'package:collection/collection.dart';
-import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:al_andalus/core/util/shared_preferences.dart';
-
-import 'package:al_andalus/features/home/ui/pages/home_page.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

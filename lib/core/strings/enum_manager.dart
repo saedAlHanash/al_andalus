@@ -7,7 +7,7 @@ import 'package:string_similarity/string_similarity.dart';
 import '../../generated/l10n.dart';
 import 'app_color_manager.dart';
 
-enum StartPage { login, home, signupOtp, passwordOtp }
+enum StartPage { login, home, signupOtp,pinCode, passwordOtp }
 
 enum GenderEnum {
   male,

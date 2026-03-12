@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
+import 'package:al_andalus/features/auth/ui/pages/confirm_code/pin_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -121,6 +122,18 @@ final goRouter = GoRouter(
             BlocProvider(create: (_) => sl<ResendCodeCubit>()),
           ],
           child: isEditPhone ? ConfirmEditPhonePage() : const ConfirmCodePage(),
+        );
+      },
+    ),
+    GoRoute(
+      path: RouteName.pin,
+      name: RouteName.pin,
+      builder: (_, state) {
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => sl<ConfirmCodeCubit>()),
+          ],
+          child: PinPage(),
         );
       },
     ),
@@ -418,4 +431,5 @@ class RouteName {
   static const webView = '/webView';
   static const qrScanner = '/qrScanner';
   static const transferOwnershipPage = '/transferOwnershipPage';
+  static const pin = '/pin';
 }

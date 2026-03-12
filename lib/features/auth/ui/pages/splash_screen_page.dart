@@ -54,6 +54,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             break;
           case StartPage.signupOtp:
             ctx!.goNamed(RouteName.confirmCode);
+          case StartPage.pinCode:
+            ctx!.goNamed(RouteName.pin);
           case StartPage.passwordOtp:
             ctx!.goNamed(RouteName.resetPasswordPage);
             break;

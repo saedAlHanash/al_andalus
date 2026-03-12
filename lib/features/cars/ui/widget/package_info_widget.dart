@@ -59,7 +59,9 @@ class PackageInfoWidget extends StatelessWidget {
                 ListTile(
                   contentPadding: .zero,
                   minTileHeight: 0,
-                  title: DrawableText(text: '${S.of(context).validityUntil}: ${insurance.endDate}'),
+                  title: DrawableText(
+                    text: '${S.of(context).validityUntil}: ${insurance.endDate}',
+                  ),
                   leading: ImageMultiType(url: Assets.iconsCalendar, height: 24.0.r),
                 ),
                 ListTile(

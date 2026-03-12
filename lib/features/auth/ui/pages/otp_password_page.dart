@@ -35,7 +35,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
   void initState() {
     confirmCodeCubit = context.read<OtpPasswordCubit>();
     resendCodeCubit = context.read<ResendCodeCubit>();
-    confirmCodeCubit.setPhone = AppProvider.getPhoneCached;
+    confirmCodeCubit.setPhone = AppSharedPreference.getPhone;
     super.initState();
   }
 
@@ -114,7 +114,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
                   return MyButton(
                     text: S.of(context).verify,
                     onTap: () {
-                      if (AppProvider.getPhoneCached.isEmpty) {
+                      if (AppSharedPreference.getPhone.isEmpty) {
                         context.goNamed(RouteName.login);
                         return;
                       }

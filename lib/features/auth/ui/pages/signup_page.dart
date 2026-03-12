@@ -108,6 +108,11 @@ class _SignupPageState extends State<SignupPage> {
                           isCompleted: state.step > 3,
                           isSelected: state.step == 3,
                         ),
+                        customStepWidget(
+                          title: S.of(context).pinCode,
+                          isCompleted: state.step > 4,
+                          isSelected: state.step == 4,
+                        ),
                       ],
                     ),
                   ),

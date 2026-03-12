@@ -137,6 +137,11 @@ extension SplitByLength on String {
   }
 
   Color get toColor => Color(int.parse('0xff${replaceFirst('#', '')}'));
+
+  bool get isUrl {
+    final uri = Uri.tryParse(this);
+    return uri != null && (uri.scheme == 'http' || uri.scheme == 'https');
+  }
 }
 
 extension StringHelper on String? {

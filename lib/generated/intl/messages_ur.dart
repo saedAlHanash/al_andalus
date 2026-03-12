@@ -121,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "وشەی نهێنی نوێ پشتڕاست بکەرەوە",
     ),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "هەنگاوی داهاتوو پشتڕاست بکەرەوە",
     ),
@@ -370,6 +371,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage(
       "وێنەکانی ڕووداوەکە",
     ),
+    "pinCode": MessageLookupByLibrary.simpleMessage("PIN code"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "شوێنی نیشتەجێبوون",
     ),
@@ -482,6 +484,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "تکایە بەرواری دەستپێکردن هەڵبژێرە",
+    ),
+    "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
+      "Please send the PIN code",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "تکایە وردەکارییەکانی ڕووداوەکە بنووسە",

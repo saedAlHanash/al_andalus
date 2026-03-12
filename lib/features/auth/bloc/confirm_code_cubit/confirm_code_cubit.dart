@@ -43,6 +43,40 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
       final pair = Pair(LoginResponse.fromJson(response.jsonBody), null);
 
       AppSharedPreference.cashToken(pair.first.token);
+
+      return pair;
+    } else {
+      return response.getPairError;
+    }
+  }
+
+  Future<void> confirmPine() async {
+    emit(state.copyWith(statuses: CubitStatuses.loading));
+
+    final pair = await _confirmPineApi();
+
+    if (pair.first == null) {
+      emit(state.copyWith(statuses: CubitStatuses.error, error: pair.second));
+      showErrorFromApi(state);
+    } else {
+      emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
+    }
+  }
+
+  Future<Pair<LoginResponse?, String?>> _confirmPineApi() async {
+    final response = await APIService().callApi(
+      type: ApiType.put,
+      url: PostUrl.pinCode,
+      body: {
+        'pin_code': state.mRequest.code,
+        'pin_code_confirmation': state.mRequest.code,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final pair = Pair(LoginResponse.fromJson(response.jsonBody), null);
+
+      AppSharedPreference.cashToken(pair.first.token);
       AppSharedPreference.removeEmail();
       return pair;
     } else {

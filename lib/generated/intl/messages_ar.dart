@@ -109,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
@@ -334,6 +335,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("PIN code"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -444,6 +446,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار تاريخ البداية",
+    ),
+    "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
+      "Please send the PIN code",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "يرجى ذكر تفاصيل الحادث الذي جرى",
@@ -617,7 +622,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),
     "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
-      "عرض كشف التأمين",
+      "عرض تفاصيل التأمين",
     ),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "لقد أرسلنا رمز التحقق إلى",

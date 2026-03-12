@@ -5,6 +5,7 @@ import 'package:al_andalus/features/home/ui/pages/home_screen_guest.dart';
 import 'package:al_andalus/features/notification/ui/pages/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/util/my_style.dart';
 import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
@@ -57,11 +58,11 @@ class _HomepageState extends State<Homepage> {
                     children: [
                       AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: NotificationPage(),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: ListCars(),
                       ),
                       MenuScreen(),

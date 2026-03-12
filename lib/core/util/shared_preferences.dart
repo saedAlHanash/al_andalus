@@ -22,7 +22,7 @@ class AppSharedPreference {
   static const _hasSeenIntro = '13';
   static const _keyThemeMode = '_keyThemeMode';
   static const _unconfirmedPhone = '_unconfirmedPhone';
-  static const _isWaitingPhoneConfirmation = '_isWaitingPhoneConfirmation';
+  static const tempToken = 'tempToken';
 
   //endregion
 

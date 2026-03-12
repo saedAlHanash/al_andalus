@@ -113,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "confirm New Password",
     ),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "Confirm the next step",
     ),
@@ -356,6 +357,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage(
       "Photos of the accident",
     ),
+    "pinCode": MessageLookupByLibrary.simpleMessage("PIN code"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "Place of Residence",
     ),
@@ -468,6 +470,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseSelectStartDate": MessageLookupByLibrary.simpleMessage(
       "Please select start date",
+    ),
+    "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
+      "Please send the PIN code",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "Please specify the details of the accident that occurred",
@@ -651,7 +656,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "verify": MessageLookupByLibrary.simpleMessage("verify"),
     "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
-      "View insurance statement",
+      "View insurance info",
     ),
     "weSentTheResetVerificationCodeTo": MessageLookupByLibrary.simpleMessage(
       "We sent the reset verification code to",

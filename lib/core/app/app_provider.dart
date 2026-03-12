@@ -128,8 +128,6 @@ class AppProvider {
     await AppSharedPreference.cashStartPage(type);
   }
 
-  static String get getPhoneCached => AppSharedPreference.getPhone;
-
   static Map<String, dynamic> insurancePage = {};
 }
 
