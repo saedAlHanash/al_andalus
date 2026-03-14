@@ -51,7 +51,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ar');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).arabic),
+                    title: DrawableText(text: 'العربية'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
@@ -62,7 +62,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ur');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).kurdish),
+                    title: DrawableText(text: 'كوردی'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
@@ -73,13 +73,13 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'en');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).english),
+                    title: DrawableText(text: 'English'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
                       color: AppColorManager.mainColor,
                     ),
                   ),
-                  15.0.verticalSpace,
+                  30.0.verticalSpace,
                 ],
               ),
             ),
@@ -155,7 +155,7 @@ void showSupportCall(BuildContext context) {
                           ),
                         ),
                       ),
-                      15.0.verticalSpace,
+                      30.0.verticalSpace,
                     ],
                   ),
                 ),
@@ -244,7 +244,7 @@ void showCalculationPrice(
                       },
                       text: S.of(context).startNow,
                     ),
-                    15.0.verticalSpace,
+                    30.0.verticalSpace,
                   ],
                 ),
               ),
@@ -300,7 +300,7 @@ void showAddNote(
                         context.pop();
                       },
                     ),
-                    15.0.verticalSpace,
+                    30.0.verticalSpace,
                   ],
                 ),
               ),
@@ -370,7 +370,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                     );
                   },
                 ),
-                15.0.verticalSpace,
+                30.0.verticalSpace,
               ],
             ),
           ),
@@ -418,7 +418,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                     );
                   },
                 ),
-                15.0.verticalSpace,
+                30.0.verticalSpace,
               ],
             ),
           ),
@@ -501,7 +501,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                         Navigator.pop(context);
                       },
                     ),
-                    15.0.verticalSpace,
+                    30.0.verticalSpace,
                   ],
                 ),
               );
@@ -536,7 +536,7 @@ void selectCar(
                     _Title(
                       title: S.of(context).selectDesiredCar,
                     ),
-                    15.0.verticalSpace,
+                    30.0.verticalSpace,
                     DrawableText(
                       text: S.of(context).pleaseSelectCarToViewDetails,
                       matchParent: true,
@@ -556,7 +556,7 @@ void selectCar(
                         ),
                       ),
                     ),
-                    15.0.verticalSpace,
+                    30.0.verticalSpace,
                   ],
                 ),
               );
@@ -617,7 +617,7 @@ void showQr(BuildContext context, String qr) {
                   text: S.of(context).done,
                   onTap: () => Navigator.pop(context),
                 ),
-                15.0.verticalSpace,
+                30.0.verticalSpace,
               ],
             ),
           ),
@@ -688,7 +688,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                 ),
               ],
             ),
-            15.0.verticalSpace,
+            30.0.verticalSpace,
           ],
         ),
       );
@@ -736,7 +736,7 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                 textColor: Colors.black,
                 radios: 15.0.r,
               ),
-              15.0.verticalSpace,
+              30.0.verticalSpace,
             ],
           ),
         ),

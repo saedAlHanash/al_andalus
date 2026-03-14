@@ -2679,10 +2679,10 @@ class S {
     return Intl.message('verify', name: 'verify', desc: '', args: []);
   }
 
-  /// `View insurance statement`
+  /// `View insurance info`
   String get viewInsuranceStatement {
     return Intl.message(
-      'View insurance statement',
+      'View insurance info',
       name: 'viewInsuranceStatement',
       desc: '',
       args: [],
@@ -2797,6 +2797,26 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `PIN code`
+  String get pinCode {
+    return Intl.message('PIN code', name: 'pinCode', desc: '', args: []);
+  }
+
+  /// `Please send the PIN code`
+  String get pleaseSendThePinCode {
+    return Intl.message(
+      'Please send the PIN code',
+      name: 'pleaseSendThePinCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm PIN`
+  String get confirmPin {
+    return Intl.message('Confirm PIN', name: 'confirmPin', desc: '', args: []);
   }
 }
 

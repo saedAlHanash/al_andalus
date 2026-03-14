@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       ListCars(take: 1),
                       20.0.verticalSpace,
                       AddsSlider(type: AdsType.slider, height: 90.0),
-                      200.0.verticalSpace,
+                      150.0.verticalSpace,
                     ],
                   ),
                 ),

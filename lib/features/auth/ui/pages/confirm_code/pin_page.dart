@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../../core/util/my_style.dart';
 import '../../../../../core/util/shared_preferences.dart';
@@ -18,23 +19,21 @@ import '../../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
 import '../../../bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../../widget/custom_stepper_widget.dart';
 
-class ConfirmCodePage extends StatefulWidget {
-  const ConfirmCodePage({super.key});
+class PinPage extends StatefulWidget {
+  const PinPage({super.key});
 
   @override
-  State<ConfirmCodePage> createState() => _ConfirmCodePageState();
+  State<PinPage> createState() => _PinPageState();
 }
 
-class _ConfirmCodePageState extends State<ConfirmCodePage> {
+class _PinPageState extends State<PinPage> {
   late final ConfirmCodeCubit confirmCodeCubit;
-  late final ResendCodeCubit resendCodeCubit;
+
   final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     confirmCodeCubit = context.read<ConfirmCodeCubit>();
-    resendCodeCubit = context.read<ResendCodeCubit>();
-    confirmCodeCubit.setPhone = AppSharedPreference.getPhone;
     super.initState();
   }
 
@@ -43,18 +42,9 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
     return MultiBlocListener(
       listeners: [
         BlocListener<ConfirmCodeCubit, ConfirmCodeInitial>(
-          listenWhen: (p, current) => current.done,
+          listenWhen: (p, current) => current.statuses == CubitStatuses.done,
           listener: (context, state) {
-            context.goNamed(RouteName.pin);
-          },
-        ),
-        BlocListener<ResendCodeCubit, ResendCodeInitial>(
-          listenWhen: (p, c) => c.done,
-          listener: (context, state) {
-            NoteMessage.showAwesomeDoneDialog(
-              context,
-              message: state.error.isEmpty ? '${S.of(context).done_resend_code} ${state.result}' : state.error,
-            );
+            context.goNamed(RouteName.donePage);
           },
         ),
       ],
@@ -83,6 +73,11 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                   ),
                   customStepWidget(
                     title: S.of(context).verificationCode,
+                    isCompleted: true,
+                    isSelected: true,
+                  ),
+                  customStepWidget(
+                    title: S.of(context).pinCode,
                     isCompleted: false,
                     isSelected: true,
                   ),
@@ -97,7 +92,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                 children: [
                   DrawableText(
                     text:
-                        '${S.of(context).weSentTheResetVerificationCodeTo} '
+                        '${S.of(context).pleaseSendThePinCode} '
                         '${AppSharedPreference.getPhone} '
                         '${S.of(context).enterThe6digitCode},',
                     matchParent: true,
@@ -120,20 +115,19 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                       }
                       return MyButton(
                         enable: state.canSend,
-                        text: S.of(context).sendCode,
+                        text: S.of(context).confirmPin,
                         onTap: () {
-                          if (AppSharedPreference.getPhone.isEmpty) {
+                          if (AppSharedPreference.getToken.isEmpty) {
                             context.goNamed(RouteName.login);
                             return;
                           }
                           if (!_formKey.currentState!.validate()) return;
-                          confirmCodeCubit.confirmCode();
+                          confirmCodeCubit.confirmPine();
                         },
                       );
                     },
                   ),
                   20.0.verticalSpace,
-                  ResendBtn(),
                 ],
               ),
             ),

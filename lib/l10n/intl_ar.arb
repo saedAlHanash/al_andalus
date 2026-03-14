@@ -325,7 +325,7 @@
   "validityUntil": "صلاحية لغاية",
   "verificationCode": "رمز التحقق",
   "verify": "التحقق",
-  "viewInsuranceStatement": "عرض كشف التأمين",
+  "viewInsuranceStatement": "عرض تفاصيل التأمين",
   "weSentTheResetVerificationCodeTo": "لقد أرسلنا رمز التحقق إلى",
   "welcome": "مرحبا بك",
   "windshieldWipers": "ماسحات المطر",
@@ -338,5 +338,8 @@
   "insurance": "التأمينات",
   "transferOfOwnershipCosts": "تكاليف نقل الملكية",
   "ownershipTransferStatus": "حالة نقل الملكية",
-  "claimStatus": "حالة المطالبة"
+  "claimStatus": "حالة المطالبة",
+  "pinCode": "PIN code",
+  "pleaseSendThePinCode": "Please send the PIN code",
+  "confirmPin": "Confirm PIN"
 }

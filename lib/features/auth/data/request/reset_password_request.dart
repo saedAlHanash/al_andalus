@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/extensions/extensions.dart';
 
 import '../../../../core/app/app_provider.dart';
+import '../../../../core/util/shared_preferences.dart';
 
 class ResetPasswordRequest {
   ResetPasswordRequest({
@@ -14,8 +15,8 @@ class ResetPasswordRequest {
   String? code;
 
   Map<String, dynamic> toJson() => {
-        "phone": AppProvider.getPhoneCached.fixPhone,
-        "password": password,
-        "code": code,
-      };
+    "phone": AppSharedPreference.getPhone.fixPhone,
+    "password": password,
+    "code": code,
+  };
 }

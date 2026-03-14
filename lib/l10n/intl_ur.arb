@@ -338,5 +338,8 @@
   "insurance": "دڵنیایی",
   "transferOfOwnershipCosts": "تێچووی گواستنەوەی خاوەندارێتی",
   "ownershipTransferStatus": "دۆخی گواستنەوەی خاوەندارێتی",
-  "claimStatus": "دۆخی داواکاری قەرەبوو"
+  "claimStatus": "دۆخی داواکاری قەرەبوو",
+  "pinCode": "PIN code",
+  "pleaseSendThePinCode": "Please send the PIN code",
+  "confirmPin": "Confirm PIN"
 }

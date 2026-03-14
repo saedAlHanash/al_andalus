@@ -2,8 +2,6 @@ class ChangePasswordRequest {
   String oldPass;
   String newPass;
 
-
-
   ChangePasswordRequest({
     this.oldPass = '',
     this.newPass = '',
@@ -12,8 +10,9 @@ class ChangePasswordRequest {
   Map<String, dynamic> toJson() {
     return {
       'old-password': oldPass,
+      'old-pin_code': oldPass,
       'password': newPass,
-
+      'pin_code': newPass,
     };
   }
 
@@ -21,7 +20,6 @@ class ChangePasswordRequest {
     return ChangePasswordRequest(
       oldPass: map['old-password'] ?? '',
       newPass: map['password'] ?? '',
-
     );
   }
 }

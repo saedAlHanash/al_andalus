@@ -158,9 +158,9 @@ class PostUrl {
   static const loginUrl = 'auth/login';
   static const signup = 'auth/register';
 
-  static const forgetPassword = 'auth/password/forget';
+  static const forgetPassword = 'auth/pin-code/forget';
 
-  static const resetPassword = 'auth/password/reset';
+  static const resetPassword = 'auth/pin-code/reset';
 
   static const closeVideo = 'lesson/close-video';
 
@@ -171,6 +171,9 @@ class PostUrl {
   static const logout = 'logout';
 
   static const confirmCode = 'auth/otp/check';
+
+  static const pinCode = 'auth/pin-code/set';
+
   static const otpPassword = 'auth/reset-password';
 
   static const toggleFav = 'favorite/toggle';
@@ -248,8 +251,11 @@ class PutUrl {
   static var updateGroup = '';
 
   static String rePay(String id) => 'insurance-policy/$id/repayment';
+
   static String approveOrReject(String id) => 'insurance-policy/$id/approve-or-reject';
+
   static String resubscribe(String id) => 'insurance-policy/$id/resubscribe';
+
   static String cancelInsurance(String id) => 'insurance-policy/$id/cancel';
 
   static const updateInsurancePolicy = 'insurance-policy';

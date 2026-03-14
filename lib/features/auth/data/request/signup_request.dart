@@ -81,6 +81,7 @@ class SignupRequest {
   Map<String, dynamic> toJson() => {
     'name': name,
     'password': password,
+    'pin_code': password,
     'phone': phone?.fixPhone,
     'gender': gender?.nameApi ?? 'male',
     'genderID': gender?.index ?? 0,
@@ -94,6 +95,7 @@ class SignupRequest {
     'biometric_id': biometricId,
   };
 }
+
 //  '': 'koki',
 //   '': '12345678966',
 //   '': '3333',
