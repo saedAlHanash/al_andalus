@@ -102,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                         autofillHints: const [AutofillHints.password],
                         validator: (p0) => loginCubit.validatePassword,
                         // labelText: S.of(context).password,
+                        keyBordType: .number,
                         hint: S.of(context).pinCode,
                         obscureText: true,
                         initialValue: loginCubit.state.mRequest.password,

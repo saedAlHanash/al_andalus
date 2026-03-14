@@ -619,6 +619,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "tiresCovers": MessageLookupByLibrary.simpleMessage("Tire Covers"),
     "to": MessageLookupByLibrary.simpleMessage("To"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("Total Amount"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "Transfer of ownership costs",
@@ -667,6 +668,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("Invalid phone number"),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "You will be able to choose the desired language for the document.",

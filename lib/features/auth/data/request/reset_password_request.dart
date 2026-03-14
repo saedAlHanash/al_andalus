@@ -16,7 +16,7 @@ class ResetPasswordRequest {
 
   Map<String, dynamic> toJson() => {
     "phone": AppSharedPreference.getPhone.fixPhone,
-    "password": password,
+    "pin_code": password,
     "code": code,
   };
 }

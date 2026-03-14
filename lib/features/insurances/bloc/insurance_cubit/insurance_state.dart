@@ -29,11 +29,6 @@ class InsuranceInitial extends AbstractState<InsurancePackage> {
   Cylinder get cylinder => result.cylinders.firstWhereOrNull((e) => e.id == selectedCylinder) ?? Cylinder.fromJson({});
 
   num get price {
-    loggerObject.w('''
-    cylinder: ${cylinder.toJson()}
-    selectedCylinder: $selectedCylinder
-    estimatedPrice: $estimatedPrice
-    ''');
     return cylinder.pricingType == .fixed ? cylinder.value : (cylinder.value * estimatedPrice) / 100;
   }
 

@@ -142,6 +142,44 @@ extension SplitByLength on String {
     final uri = Uri.tryParse(this);
     return uri != null && (uri.scheme == 'http' || uri.scheme == 'https');
   }
+
+  DateTime? get parseArabicDate {
+    if (trim().isEmpty) return null;
+
+    try {
+      final List<String> parts = split(' | ');
+      if (parts.length != 2) return null;
+
+      final String datePart = parts[0].trim();
+      final String timePart = parts[1].trim();
+
+      final List<String> timeComponents = timePart.split(' ');
+      if (timeComponents.length != 2) return null;
+
+      final List<String> timeNumbers = timeComponents[0].split(':');
+      if (timeNumbers.length != 2) return null;
+
+      int hour = int.parse(timeNumbers[0]);
+      final int minute = int.parse(timeNumbers[1]);
+      final String amPm = timeComponents[1];
+
+      // Convert 12-hour format to 24-hour format
+      if (amPm == 'م' && hour < 12) {
+        hour += 12;
+      } else if (amPm == 'ص' && hour == 12) {
+        hour = 0;
+      }
+
+      final String hourStr = hour.toString().padLeft(2, '0');
+      final String minuteStr = minute.toString().padLeft(2, '0');
+
+      // Construct standard ISO 8601 string and parse
+      return DateTime.parse('${datePart}T$hourStr:$minuteStr:00');
+    } catch (e) {
+      loggerObject.e(e);
+      return null; // Return null safely on any parsing exception
+    }
+  }
 }
 
 extension StringHelper on String? {
@@ -374,6 +412,21 @@ extension DateUtcHelper on DateTime {
   DateTime get getUtc => DateTime.utc(year, month, day);
 
   String get formatDate => DateFormat('yyyy/MM/dd', 'en').format(this);
+  
+  String get formatDateNowOrYesterday {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final yesterday = today.subtract(const Duration(days: 1));
+    final dateToCheck = DateTime(year, month, day);
+
+    if (dateToCheck == today) {
+      return S().today;
+    } else if (dateToCheck == yesterday) {
+      return S().yesterday;
+    } else {
+      return DateFormat('yyyy/MM/dd', 'en').format(this);
+    }
+  }
 
   String get formatDateAther => DateFormat('yyyy/MM/dd HH:MM').format(this);
 
@@ -410,7 +463,6 @@ extension DateUtcHelper on DateTime {
   }
 
   String formatDuration({DateTime? serverDate}) {
-    if (isAfter(serverDate ?? APIService().serverTime)) return '';
     final result = getFormat(serverDate: serverDate);
 
     final formattedDuration = StringBuffer();

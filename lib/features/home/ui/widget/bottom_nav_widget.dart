@@ -309,7 +309,7 @@ class _Notifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotificationCubit, NotificationsInitial>(
       builder: (context, state) {
-        final notRead = state.result.any((e) => !e.isRead);
+        final notRead = /*state.result.any((e) => !e.isRead)*/false;
 
         return Stack(
           clipBehavior: Clip.none,

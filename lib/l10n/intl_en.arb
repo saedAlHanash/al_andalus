@@ -342,5 +342,7 @@
   "claimStatus": "Claim request status",
   "pinCode": "PIN code",
   "pleaseSendThePinCode": "Please send the PIN code",
-  "confirmPin": "Confirm PIN"
+  "confirmPin": "Confirm PIN",
+  "today": "Today",
+  "yesterday": "Yesterday"
 }

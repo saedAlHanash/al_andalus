@@ -7,6 +7,7 @@ import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_checkbox_widget.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
+import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/insurances/data/response/insurance_package.dart';
 import 'package:collection/collection.dart';
@@ -170,11 +171,11 @@ void showSupportCall(BuildContext context) {
 
 void showCalculationPrice(
   BuildContext context,
-  InsurancePackage insurancePackage,
+  InsurancePackage? insurancePackage,
   Function(Map<String, dynamic> queryParameters) onTap,
 ) {
-  final items = insurancePackage.getCylinders;
-  var c = items.firstWhereOrNull((e) => e.isSelected)?.id ?? 0;
+
+  var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
   var p = 0.0;
   showModalBottomSheet(
     context: context,
@@ -200,9 +201,13 @@ void showCalculationPrice(
                       matchParent: true,
                     ),
                     MyCheckboxWidget(
-                      items: insurancePackage.getCylinders,
+                      items: insurancePackage?.getCylinders??[
+                        SpinnerItem(name: '4',id: 4),
+                        SpinnerItem(name: '6',id: 6),
+                        SpinnerItem(name: '8',id: 8),
+                      ],
                       onSelected: (value, i, isSelected) {
-                        c = value.id;
+                        cylindersCount = value.id;
                       },
                       isRadio: true,
                       buttonBuilder: (selected, value, context) {
@@ -235,10 +240,10 @@ void showCalculationPrice(
                       onTap: () {
                         onTap.call(
                           {
-                            'id': insurancePackage.id.toString(),
+                            'id': insurancePackage?.id.toString(),
                             'price': p.toString(),
-                            'cylinders': c.toString(),
-                            'json': jsonEncode(insurancePackage.toJson()),
+                            'cylindersCount': cylindersCount.toString(),
+                            'json': jsonEncode(insurancePackage?.toJson()),
                           },
                         );
                       },

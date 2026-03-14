@@ -83,29 +83,16 @@ class HowCanHelp extends StatelessWidget {
                       Expanded(
                         child: _Item(
                           onTap: () {
-                            NoteMessage.showBottomSheet(
-                              child: Column(
-                                children: [
-                                  20.0.verticalSpace,
-                                  ListInsurances(
-                                    onTapInfo: (e) {
-                                      context.pop();
-                                      showCalculationPrice(
-                                        context,
-                                        e,
-                                        (queryParameters) {
-                                          context.pop();
-                                          context.pushNamed(
-                                            RouteName.insurancePage,
-                                            queryParameters: queryParameters,
-                                          );
-                                        },
-                                      );
-                                    },
-                                  ),
-                                  20.0.verticalSpace,
-                                ],
-                              ),
+                            showCalculationPrice(
+                              context,
+                              null,
+                              (queryParameters) {
+                                context.pop();
+                                context.pushNamed(
+                                  RouteName.insurancePage,
+                                  queryParameters: queryParameters,
+                                );
+                              },
                             );
                           },
                           color: const Color(0xFFFFEAD4),

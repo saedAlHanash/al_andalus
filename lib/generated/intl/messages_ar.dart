@@ -591,6 +591,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أغطيه الإطارات (كبات)",
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "تكاليف نقل الملكية",
@@ -631,6 +632,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "windshieldWipers": MessageLookupByLibrary.simpleMessage("ماسحات المطر"),
     "wrongPhone": MessageLookupByLibrary.simpleMessage("رقم هاتف غير صحيح"),
     "yes": MessageLookupByLibrary.simpleMessage("نعم"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "ستتمكن من اختيار اللغة المطلوبة للوثيقة.",

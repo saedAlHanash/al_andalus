@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_card_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -22,7 +23,6 @@ class CardSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final key = GlobalKey<IndicatorSliderWidgetState>();
-
     return Column(
       children: [
         Container(
@@ -44,14 +44,14 @@ class CardSlider extends StatelessWidget {
                         url: e,
                         height: 1.0.sh,
                         width: width ?? 1.0.sw,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       );
                     },
                   ).toList(),
                   options: CarouselOptions(
                     height: height ?? 160.0.h,
                     autoPlayInterval: const Duration(seconds: 5),
-                    autoPlay: true,
+                    autoPlay: images.length > 1,
                     viewportFraction: 1,
                     onPageChanged: (i, reason) {
                       key.currentState!.changePage(i);
@@ -184,7 +184,7 @@ class IndicatorSliderWidget extends StatefulWidget {
 }
 
 class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
-  late int selected;
+  int? selected;
 
   void changePage(int i) {
     setState(() => selected = i);
@@ -198,7 +198,7 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // if (widget.length < 2) return 0.0.verticalSpace;
+    if (widget.length < 2) return 0.0.verticalSpace;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 7.0).r,
       height: 12.0.h,
@@ -211,12 +211,12 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
           return AnimatedContainer(
             height: 5.0.h,
             margin: EdgeInsets.symmetric(vertical: 2.0),
-            width: selected == i ? 15.0.w : 8.0.w,
+            width: selected == i ? 21.0.w : 12.0.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.0),
               color: selected == i
                   ? (widget.selectedColor ?? AppColorManager.mainColor)
-                  : (widget.unselectedColor ?? Colors.white),
+                  : (widget.unselectedColor ?? AppColorManager.dividerColor),
             ),
             duration: const Duration(milliseconds: 150),
           );
@@ -224,5 +224,61 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
         separatorBuilder: (context, i) => 5.0.horizontalSpace,
       ),
     );
+  }
+}
+
+class CardSlider1 extends StatelessWidget {
+  const CardSlider1({
+    super.key,
+    this.margin,
+    required this.images,
+    this.height,
+    this.width,
+    this.viewportFraction,
+    this.seconds,
+    this.initialPage,
+    this.autoPlay, this.onPageCh,
+  });
+
+  final EdgeInsets? margin;
+  final List<Widget> images;
+  final double? height;
+  final double? viewportFraction;
+  final double? width;
+  final int? seconds;
+  final int? initialPage;
+  final bool? autoPlay;
+  final  Function(int i, CarouselPageChangedReason reason)? onPageCh;
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
+      items: images,
+
+      options: CarouselOptions(
+        autoPlayInterval: Duration(seconds: seconds ?? 6),
+        autoPlay: autoPlay ?? true,
+        initialPage: initialPage ?? 0,
+        // disableCenter: true,
+        viewportFraction: viewportFraction ?? 1,
+        height: height,
+        enlargeCenterPage: true,
+        pauseAutoPlayInFiniteScroll: false,
+        disableCenter: true,
+        enableInfiniteScroll: false,
+        animateToClosest: true,
+        pageSnapping: true,
+        pauseAutoPlayOnTouch: true,
+        pauseAutoPlayOnManualNavigate: true,
+        padEnds: true,
+
+        onPageChanged: onPageCh,
+      ),
+    );
+    // return Column(
+    //   children: [
+    //     IndicatorSliderWidget(key: key, length: images.length),
+    //   ],
+    // );
   }
 }

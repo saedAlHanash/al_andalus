@@ -258,17 +258,13 @@ final goRouter = GoRouter(
       name: RouteName.insurancePage,
       builder: (_, state) {
         final id = state.uri.queryParameters['id'] ?? '';
-        final json = jsonDecode(state.uri.queryParameters['json'] ?? '{}');
         final estimatedPrice = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
-        final cylinderId = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
-        final package = InsurancePackage.fromJson(json);
+        final cylindersCount = int.tryParse(state.uri.queryParameters['cylindersCount'] ?? '0') ?? 0;
 
-        return BlocProvider(
-          create: (context) => sl<InsuranceCubit>()
-            ..setEstimatedPrice(estimatedPrice)
-            ..setSelectedCylinder(cylinderId)
-            ..getData(id: id),
-          child: InsurancePage(),
+        return InsurancePage(
+          id: id,
+          estimatedPrice: estimatedPrice,
+          cylindersCount: cylindersCount,
         );
       },
     ),
@@ -282,9 +278,12 @@ final goRouter = GoRouter(
       builder: (_, state) {
         final id = state.uri.queryParameters['id'] ?? '';
         final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
-        final cylindersCount = int.tryParse(state.uri.queryParameters['cylinders'] ?? '0') ?? 0;
+        final cylindersCount = int.tryParse(state.uri.queryParameters['cylindersCount'] ?? '0') ?? 0;
+
         final CarPolicy? car = state.extra as CarPolicy?;
+
         final bloc = sl<CarsCubit>();
+
         if (car != null) bloc.setRequest(car);
 
         return BlocProvider(

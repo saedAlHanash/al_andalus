@@ -2818,6 +2818,16 @@ class S {
   String get confirmPin {
     return Intl.message('Confirm PIN', name: 'confirmPin', desc: '', args: []);
   }
+
+  /// `Today`
+  String get today {
+    return Intl.message('Today', name: 'today', desc: '', args: []);
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message('Yesterday', name: 'yesterday', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

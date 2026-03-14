@@ -17,13 +17,11 @@ class ItemInsurance extends StatelessWidget {
   final Function()? onTapInfo;
   @override
   Widget build(BuildContext context) {
-    final tagText = insurance.tag;
-    final special = insurance.tag.isNotEmpty;
+    final tagText = insurance.tag.isEmpty?insurance.level.name: insurance.tag;
+
 
     return Container(
-      decoration: !special
-          ? null
-          : BoxDecoration(
+      decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   insurance.level.color,
@@ -89,7 +87,7 @@ class ItemInsurance extends StatelessWidget {
                           onTap: () => onTapInfo?.call(),
                           height: 35.0.h,
                           text: S.of(context).knowMore,
-                          color: special ? insurance.level.color : AppColorManager.mainColor.withValues(alpha: 0.2),
+                          color: insurance.level.color ,
                         ),
                       ],
                     ),

@@ -3,6 +3,7 @@ import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
+import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -48,18 +49,19 @@ class _NotificationPageState extends State<NotificationPage> {
       return NeedLoginWidget();
     }
     return Scaffold(
+      appBar: AppBarWidget(titleText: S.of(context).notifications),
       body: BlocConsumer<NotificationCubit, NotificationsInitial>(
         listenWhen: (p, c) => c.done,
         listener: (context, state) {
           context.read<NotificationCubit>().readAll();
         },
         builder: (context, state) {
-          final gList = state.result.groupListsBy((element) => element.createdAt?.formatDate).values.toList();
+          final gList = state.result.groupListsBy((element) => element.created?.formatDate).values.toList();
 
           return RefreshWidget(
             isLoading: state.loading,
             onRefresh: () {
-              context.read<NotificationCubit>().getData();
+              context.read<NotificationCubit>().getData(newData: true);
             },
             child: state.isDataEmpty
                 ? const NotFoundWidget()
@@ -75,63 +77,66 @@ class _NotificationPageState extends State<NotificationPage> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
+                              spacing: 15.0,
                               children: [
-                                DrawableText(text: list.first.createdAt?.formatDate ?? '-'),
+                                DrawableText(text: list.first.created?.formatDateNowOrYesterday ?? '-'),
                                 Expanded(child: Divider()),
                               ],
                             ),
                           ),
                           ListView.separated(
                             shrinkWrap: true,
-                            padding: EdgeInsets.all(20.0).r,
                             physics: NeverScrollableScrollPhysics(),
                             separatorBuilder: (context, i) => 10.0.verticalSpace,
-                            itemCount: list.length,
+                            itemCount: 10,
                             itemBuilder: (_, i) {
+                              final item = list[0];
                               return Container(
                                 padding: EdgeInsets.symmetric(vertical: 10.0).r,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: i % 2 != 0 ? null : Colors.white,
                                   borderRadius: BorderRadius.circular(10.0.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black12.withValues(alpha: 0.1),
-                                      offset: Offset(0, 5),
-                                      blurRadius: 8,
-                                    ),
-                                  ],
+                                  boxShadow: i % 2 != 0
+                                      ? []
+                                      : [
+                                          BoxShadow(
+                                            color: Color(0x14000000),
+                                            blurRadius: 26.86,
+                                            offset: Offset(0, 3.58),
+                                            spreadRadius: 0,
+                                          ),
+                                        ],
                                 ),
                                 child: ListTile(
                                   onTap: () {
-                                    if (!list[i].notification.productId.isBlankNumber) {
-                                      context.pushNamed(
-                                        RouteName.product,
-                                        queryParameters: {'id': list[i].notification.productId.toString()},
-                                      );
-                                    } else if (!list[i].notification.orderId.isBlankNumber) {
-                                      context.pushNamed(
-                                        RouteName.order,
-                                        queryParameters: {'id': list[i].notification.orderId.toString()},
-                                      );
-                                    }
+                                    // if (!item.productId.isBlankNumber) {
+                                    //   context.pushNamed(
+                                    //     RouteName.product,
+                                    //     queryParameters: {'id': item.productId.toString()},
+                                    //   );
+                                    // } else if (!item.orderId.isBlankNumber) {
+                                    //   context.pushNamed(
+                                    //     RouteName.order,
+                                    //     queryParameters: {'id': item.orderId.toString()},
+                                    //   );
+                                    // }
                                   },
                                   leading: ImageMultiType(url: Assets.iconsNotificationCardIcon),
                                   title: DrawableText(
-                                    text: list[i].notification.title,
+                                    text: item.title,
                                     maxLines: 2,
                                     textAlign: TextAlign.start,
-                                    fontFamily: FontManager.bold.name,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: .bold,
+                                    size: 16.0.sp,
                                   ),
                                   subtitle: DrawableText(
-                                    text: list[i].notification.body,
+                                    text: item.body,
                                     maxLines: 2,
-                                    size: 12.0.sp,
-                                    color: Colors.grey,
+                                    fontFamily: FontManager.regular.name,
                                     textAlign: TextAlign.start,
                                   ),
                                   trailing: DrawableText(
-                                    text: list[i].createdAt?.formatDuration() ?? '-',
+                                    text: item.created?.formatDuration() ?? '-',
                                     size: 10.0.sp,
                                   ),
                                 ),

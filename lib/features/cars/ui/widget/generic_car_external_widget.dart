@@ -138,13 +138,28 @@ class _GenericCarExternalWidgetState extends State<GenericCarExternalWidget> {
                                                     initial: option.note.call(),
                                                   );
                                                 },
-                                                icon: ImageMultiType(
-                                                  height: 20.0.r,
-                                                  width: 20.0.r,
-                                                  url: Assets.iconsEdit,
-                                                  color: (option.note.call().toString().isBlank)
-                                                      ? AppColorManager.mainColorLight
-                                                      : AppColorManager.mainColor,
+                                                icon: Row(
+                                                  spacing: 2.0,
+                                                  children: [
+                                                    ImageMultiType(
+                                                      height: 20.0.r,
+                                                      width: 20.0.r,
+                                                      url: Assets.iconsEdit,
+                                                      color: (option.groupValue.call()?.index == 0)
+                                                          ? AppColorManager.mainColorLight
+                                                          : (option.note.call().toString().isBlank)
+                                                          ? AppColorManager.mainColor
+                                                          : Colors.green,
+                                                    ),
+                                                    if (option.groupValue.call()?.index != 0)
+                                                      DrawableText(
+                                                        text: '*',
+                                                        size: 30.0,
+                                                        color: (option.note.call().toString().isBlank)
+                                                            ? AppColorManager.red
+                                                            : Colors.green,
+                                                      ),
+                                                  ],
                                                 ),
                                               ),
                                             ),

@@ -8,7 +8,7 @@ import 'app/app_widget.dart';
 
 var primaryColor = AppColorManager.mainColor;
 var secondaryColor = AppColorManager.white;
-
+ const _dividerColor = Color(0xFFECEDF2);
 ThemeData get lightTheme => ThemeData(
   progressIndicatorTheme: ProgressIndicatorThemeData(
     borderRadius: BorderRadius.circular(8.0),
@@ -21,9 +21,9 @@ ThemeData get lightTheme => ThemeData(
     bodyMedium: TextStyle(fontSize: 14.0.sp),
   ),
   fontFamily: FontManager.semeBold.name,
-  dividerColor: AppColorManager.cd,
+  dividerColor: _dividerColor,
   dividerTheme: DividerThemeData(
-    color: AppColorManager.cd,
+    color: _dividerColor,
   ),
   primaryTextTheme: TextTheme(
     displayMedium: TextStyle(

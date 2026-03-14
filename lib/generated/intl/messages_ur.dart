@@ -633,6 +633,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "tiresCovers": MessageLookupByLibrary.simpleMessage("بەرگی تایە"),
     "to": MessageLookupByLibrary.simpleMessage("بۆ"),
+    "today": MessageLookupByLibrary.simpleMessage("Today"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("بڕی گشتی"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "تێچووی گواستنەوەی خاوەندارێتی",
@@ -683,6 +684,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ژمارەی مۆبایل نادروستە",
     ),
     "yes": MessageLookupByLibrary.simpleMessage("بەڵێ"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "دەتوانیت زمانی خوازراو بۆ بەڵگەنامەکە هەڵبژێریت.",

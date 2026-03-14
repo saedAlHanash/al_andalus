@@ -1,3 +1,5 @@
+import 'package:al_andalus/core/extensions/extensions.dart';
+
 class NotificationsResponse {
   NotificationsResponse({
     required this.data,
@@ -21,59 +23,38 @@ class NotificationsResponse {
 class NotificationModel {
   NotificationModel({
     required this.id,
-    required this.notification,
-    required this.isRead,
-    required this.createdAt,
-  });
-
-  final String id;
-  final NotificationData notification;
-  final bool isRead;
-  final DateTime? createdAt;
-
-  factory NotificationModel.fromJson(Map<String, dynamic> json) {
-    return NotificationModel(
-      id: json["id"] ?? "",
-      notification: NotificationData.fromJson(json["notification"] ?? {}),
-      isRead: json["is_read"] ?? false,
-      createdAt: DateTime.tryParse(json["created_at"] ?? ""),
-    );
-  }
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "notification": notification?.toJson(),
-        "is_read": isRead,
-        "created_at": createdAt?.toIso8601String(),
-      };
-}
-
-class NotificationData {
-  NotificationData({
     required this.title,
     required this.body,
-    required this.productId,
-    required this.orderId,
+    required this.type,
+    required this.status,
+    required this.created,
   });
 
+  final int id;
   final String title;
   final String body;
-  final int productId;
-  final int orderId;
+  final String type;
+  final String status;
+  final DateTime? created;
 
-  factory NotificationData.fromJson(Map<String, dynamic> json) {
-    return NotificationData(
+  factory NotificationModel.fromJson(Map<String, dynamic> json){
+    return NotificationModel(
+      id: json["id"] ?? 0,
       title: json["title"] ?? "",
       body: json["body"] ?? "",
-      productId: json["product_id"] ?? 0,
-      orderId: json["order_id"] ?? 0,
+      type: json["type"] ?? "",
+      status: json["status"] ?? "",
+      created: (json["created"] ?? "").toString().parseArabicDate,
     );
   }
 
   Map<String, dynamic> toJson() => {
-        "title": title,
-        "body": body,
-        "product_id": productId,
-        "order_id": orderId,
-      };
+    "id": id,
+    "title": title,
+    "body": body,
+    "type": type,
+    "status": status,
+    "created": created?.toIso8601String(),
+  };
+
 }

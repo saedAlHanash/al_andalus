@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:collection/collection.dart';
@@ -40,6 +41,17 @@ class InsurancePackage {
   final List<Feature> features;
   final List<Cylinder> cylinders;
   final String created;
+
+  int cylindersCount = 0;
+
+  double estimatedPrice = 0;
+
+  Cylinder get cylinder =>
+      cylinders.firstWhereOrNull((e) => e.cylinders == cylindersCount.toString()) ?? Cylinder.fromJson({});
+
+  num get price {
+    return cylinder.pricingType == .fixed ? cylinder.value : (cylinder.value * estimatedPrice) / 100;
+  }
 
   factory InsurancePackage.fromJson(Map<String, dynamic> json) {
     return InsurancePackage(

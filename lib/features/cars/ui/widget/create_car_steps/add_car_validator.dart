@@ -98,6 +98,9 @@ class AddCarValidator {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseCompleteAllInspectionFields, context: context);
       return false;
     }
+
+    if (!_validate(context, request)) return false;
+
     if (!request.carPreviewInfoCheck) {
       NoteMessage.showTopMessageError(message: S.of(context).pleaseAcceptDeclaration, context: context);
       return false;
@@ -136,4 +139,128 @@ class AddCarValidator {
   static bool _validateStep4(BuildContext context, InsurancePolicyRequest request) {
     return true;
   }
+}
+
+bool _validate(BuildContext context, InsurancePolicyRequest request) {
+  if (request.metalBody != .intact && request.metalBodyNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لهيكل المعدن',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.glassAndLamps != .intact && request.glassAndLampsNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للزجاج والمصابيح',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.chromeNickel != .intact && request.chromeNickelNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للكروم والنيكل',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.brandSign != .intact && request.brandSignNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لشعار السيارة',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.windshieldWipers != .intact && request.windshieldWipersNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لمسّاحات الزجاج',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.radioAntenna != .intact && request.radioAntennaNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لهوائي الراديو',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.seats != .intact && request.seatsNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للمقاعد',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.floorCover != .intact && request.floorCoverNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لغطاء الأرضية',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.radio != .intact && request.radioNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للراديو',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.airConditioner != .intact && request.airConditionerNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للمكيف',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.frontTires != .intact && request.frontTiresNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للإطارات الأمامية',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.backTires != .intact && request.backTiresNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للإطارات الخلفية',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.spareTire != .intact && request.spareTireNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة للإطار الاحتياطي',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.tiresCovers != .intact && request.tiresCoversNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لأغطية الإطارات',
+      context: context,
+    );
+    return false;
+  }
+
+  if (request.spareTools != .intact && request.spareToolsNote.isBlank) {
+    NoteMessage.showTopMessageError(
+      message: 'يجب إضافة ملاحظة لأدوات الاحتياط',
+      context: context,
+    );
+    return false;
+  }
+
+  return true;
 }
