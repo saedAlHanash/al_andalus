@@ -45,6 +45,14 @@ class MyApp extends StatefulWidget {
       await state?.setLocale(Locale.fromSubtags(languageCode: AppSharedPreference.getLocal));
     }
   }
+
+  static Future<void> setTheme(BuildContext context, ThemeMode themeMode) async {
+    await AppSharedPreference.cashThemeMode(themeMode);
+    if (context.mounted) {
+      final state = context.findAncestorStateOfType<_MyAppState>();
+      state?.setTheme(themeMode);
+    }
+  }
 }
 
 class _MyAppState extends State<MyApp> {
@@ -71,6 +79,12 @@ class _MyAppState extends State<MyApp> {
     setState(() {});
   }
 
+  void setTheme(ThemeMode themeMode) {
+    setState(() => this.themeMode = themeMode);
+  }
+
+  ThemeMode themeMode = AppSharedPreference.getThemeMode;
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -80,14 +94,6 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       // splitScreenMode: true,
       builder: (context, child) {
-        DrawableText.initial(
-          initialHeightText: 1.3.sp,
-          initialSize: 14.0.sp,
-          selectable: false,
-          initialFont: FontManager.semeBold.name,
-          initialColor: AppColorManager.black,
-        );
-
         return MaterialApp.router(
           routerConfig: goRouter,
           locale: Locale.fromSubtags(languageCode: AppSharedPreference.getLocal),
@@ -138,7 +144,8 @@ class _MyAppState extends State<MyApp> {
           scrollBehavior: MyCustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: lightTheme,
-          darkTheme: lightTheme,
+          darkTheme: darkTheme,
+          themeMode: themeMode,
         );
       },
     );

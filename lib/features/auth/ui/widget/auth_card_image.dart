@@ -32,7 +32,7 @@ class _AuthCardImageState extends State<AuthCardImage> {
           ),
         ),
         ImageMultiType(
-          url: Assets.imagesLogoAuth,
+          url: Assets.imagesLogo,
           height: 100.0.r,
           fit: .fill,
           width: 100.0.r,

@@ -62,7 +62,7 @@ class Assets {
   static const String iconsSearchCar = 'assets/icons/search_car.svg';
   static const String iconsStep = 'assets/icons/step.svg';
   static const String iconsSupport = 'assets/icons/support.png';
-  static const String iconsSupportBorder = 'assets/icons/support_border.png';
+  static const String iconsSupportBorder = 'assets/icons/support_border.svg';
   static const String iconsTaxi = 'assets/icons/taxi.svg';
   static const String iconsTopCard = 'assets/icons/Top-Card.svg';
   static const String iconsTransport = 'assets/icons/transport.png';
@@ -85,7 +85,6 @@ class Assets {
   static const String imagesIntro3 = 'assets/images/intro3.png';
   static const String imagesJustLogo = 'assets/images/just_logo.jpg';
   static const String imagesLogo = 'assets/images/logo.png';
-  static const String imagesLogoAuth = 'assets/images/logo_auth.png';
   static const String imagesLogoWithoutText = 'assets/images/logo_without_text.png';
   static const String imagesPistons = 'assets/images/pistons.png';
   static const String imagesUser = 'assets/images/user.png';

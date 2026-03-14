@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_card_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -215,7 +216,7 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.0),
               color: selected == i
-                  ? (widget.selectedColor ?? AppColorManager.mainColor)
+                  ? (widget.selectedColor ?? (context.isDark ? AppColorManager.mainColorLight : AppColorManager.mainColor))
                   : (widget.unselectedColor ?? AppColorManager.dividerColor),
             ),
             duration: const Duration(milliseconds: 150),
@@ -237,7 +238,8 @@ class CardSlider1 extends StatelessWidget {
     this.viewportFraction,
     this.seconds,
     this.initialPage,
-    this.autoPlay, this.onPageCh,
+    this.autoPlay,
+    this.onPageCh,
   });
 
   final EdgeInsets? margin;
@@ -248,7 +250,7 @@ class CardSlider1 extends StatelessWidget {
   final int? seconds;
   final int? initialPage;
   final bool? autoPlay;
-  final  Function(int i, CarouselPageChangedReason reason)? onPageCh;
+  final Function(int i, CarouselPageChangedReason reason)? onPageCh;
 
   @override
   Widget build(BuildContext context) {

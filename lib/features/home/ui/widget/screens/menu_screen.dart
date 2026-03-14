@@ -1,5 +1,6 @@
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:al_andalus/router/go_router.dart';
@@ -27,6 +28,8 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+  bool get isDarkMode => context.isDark;
+
   @override
   Widget build(BuildContext context) {
     if (AppProvider.isGuest) {
@@ -49,6 +52,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     image: DecorationImage(image: AssetImage(Assets.iconsProfileBack), fit: BoxFit.cover),
                   ),
                   child: ListTile(
+                    tileColor: Colors.transparent,
                     contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0).r,
                     title: DrawableText(
                       fontWeight: FontWeight.bold,
@@ -214,6 +218,16 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       ItemMenu(
                         onTap: () {
+                          showThemeDialog(context);
+                        },
+                        name: S.of(context).theme,
+                        image: ImageMultiType(
+                          url: Icons.dark_mode,
+                          color: AppColorManager.mainColor,
+                        ),
+                      ),
+                      ItemMenu(
+                        onTap: () {
                           context.pushNamed(
                             RouteName.dataPage,
                             queryParameters: {'type': DataPageType.terms.index.toString()},
@@ -344,11 +358,11 @@ class ItemMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 2.0).r,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.0.r),
-        color: Colors.white,
       ),
       child: Column(
         children: [
           ListTile(
+            tileColor: Colors.transparent,
             onTap: () => onTap?.call(),
             title: DrawableText(
               text: name,

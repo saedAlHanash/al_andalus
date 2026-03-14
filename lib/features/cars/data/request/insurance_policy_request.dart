@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:flutter/foundation.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 
 import '../../../../generated/l10n.dart';
+import 'insurance_policy_mock.dart';
 
 class InsurancePolicyRequest {
   InsurancePolicyRequest({
@@ -57,36 +56,7 @@ class InsurancePolicyRequest {
     this.spareToolsNote,
     this.otherNotes,
   }) {
-    if (!kDebugMode) return;
-    insurancePackageId = '1';
-    cylinders = '4';
-    name = 'سيارة تجريبية';
-    manufactureYear = DateTime(2020);
-    color = 'أبيض';
-    brand = 'تويوتا';
-    value = '15000';
-    chassisNumber = '123456789';
-    plateNumber = '1234';
-    fuelType = FuelType.petrol;
-    engineCapacity = '2000';
-    paymentType = PaymentType.zainCash;
-    expiryStartDate = DateTime.now();
-    expiryEndDate = DateTime.now().add(const Duration(days: 365));
-    metalBody = InspectionStatus.values[Random().nextInt(2)];
-    glassAndLamps = InspectionStatus.values[Random().nextInt(2)];
-    chromeNickel = InspectionStatus.values[Random().nextInt(2)];
-    brandSign = InspectionStatus.values[Random().nextInt(2)];
-    windshieldWipers = InspectionStatus.values[Random().nextInt(2)];
-    radioAntenna = InspectionStatus.values[Random().nextInt(2)];
-    seats = InspectionStatus.values[Random().nextInt(2)];
-    floorCover = InspectionStatus.values[Random().nextInt(2)];
-    radio = InspectionStatus.values[Random().nextInt(2)];
-    airConditioner = InspectionStatus.values[Random().nextInt(2)];
-    frontTires = InspectionStatus.values[Random().nextInt(2)];
-    backTires = InspectionStatus.values[Random().nextInt(2)];
-    spareTire = InspectionStatus.values[Random().nextInt(2)];
-    tiresCovers = InspectionStatus.values[Random().nextInt(2)];
-    spareTools = InspectionStatus.values[Random().nextInt(2)];
+    if (kDebugMode) fillMockData();
   }
 
   factory InsurancePolicyRequest.fromCarPolicy(CarPolicy car) {
@@ -319,33 +289,6 @@ class InsurancePolicyRequest {
   };
 
   void setTempImages(UploadFile file) {
-    if (!kDebugMode) return;
-
-    // final ownershipFrontImageName = ownershipFrontImage.nameField;
-    ownershipFrontImage = file.copyWith();
-    // ownershipFrontImage.nameField = ownershipFrontImageName;
-
-    // final ownershipBackImageName = ownershipBackImage.nameField;
-    ownershipBackImage = file.copyWith();
-    // ownershipBackImage.nameField = ownershipBackImageName;
-
-    // final frontImageName = frontImage.nameField;
-    frontImage = file.copyWith();
-    // frontImage.nameField = frontImageName;
-    // final backImageName = backImage.nameField;
-    backImage = file.copyWith();
-    // backImage.nameField = backImageName;
-    // final rightSideImageName = rightSideImage.nameField;
-    rightSideImage = file.copyWith();
-    // rightSideImage.nameField = rightSideImageName;
-    // final leftSideImageName = leftSideImage.nameField;
-    leftSideImage = file.copyWith();
-    // leftSideImage.nameField = leftSideImageName;
-    // final interiorImageName = interiorImage.nameField;
-    interiorImage = file.copyWith();
-    // interiorImage.nameField = interiorImageName;
-    // final engineImageName = engineImage.nameField;
-    engineImage = file.copyWith();
-    // engineImage.nameField = engineImageName;
+    if (kDebugMode) fillMockImages(file);
   }
 }

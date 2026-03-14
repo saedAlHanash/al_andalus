@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,11 @@ class ListCars extends StatelessWidget {
       builder: (context, state) {
         if (state.isDataEmpty) {
           return Container(
-            decoration: MyStyle.roundBox12(Colors.white),
+            decoration: MyStyle.roundBox12(),
             padding: EdgeInsets.all(30.0).r,
             child: Column(
               children: [
-                ImageMultiType(url: Assets.iconsCircleArow),
+                ImageMultiType(url: Assets.iconsCircleArow, color: AppColorManager.textColor),
                 30.0.verticalSpace,
                 DrawableText(text: S.of(context).pleaseAddYourVehicleToShowTheInsuranceDocument),
               ],

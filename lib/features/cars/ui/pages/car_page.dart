@@ -89,7 +89,8 @@ class CarPage extends StatelessWidget {
                 if (state.result.status != .cancelled)
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 0.15.sw),
-                    child: MyButton(
+                    child: OutLineButton(
+                      textColor: Colors.red,
                       onTap: () {
                         NoteMessage.showConfirm(
                           context,

@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(field) => "Please add a note for ${field}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutUs": MessageLookupByLibrary.simpleMessage("About Us"),
@@ -128,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cylinders": MessageLookupByLibrary.simpleMessage("Number of cylinders"),
     "damage": MessageLookupByLibrary.simpleMessage("Damage"),
+    "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.",
@@ -267,6 +270,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "latest": MessageLookupByLibrary.simpleMessage("latest"),
     "left": MessageLookupByLibrary.simpleMessage("Left"),
     "licenseType": MessageLookupByLibrary.simpleMessage("License Type"),
+    "light": MessageLookupByLibrary.simpleMessage("Light"),
     "loadMore": MessageLookupByLibrary.simpleMessage("Load More"),
     "logInToYourAccount": MessageLookupByLibrary.simpleMessage(
       "Log in to your account",
@@ -317,6 +321,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage(
       "No summary files available",
     ),
+    "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("Notifications"),
     "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
@@ -604,6 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "subscribeNow": MessageLookupByLibrary.simpleMessage("Subscribe Now"),
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "sure": MessageLookupByLibrary.simpleMessage("Sure"),
+    "system": MessageLookupByLibrary.simpleMessage("System"),
     "takePicture": MessageLookupByLibrary.simpleMessage("Take picture"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage(
       "Technical Package",
@@ -614,6 +620,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
     ),
+    "theme": MessageLookupByLibrary.simpleMessage("Theme"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "Tires and Accessories",
     ),

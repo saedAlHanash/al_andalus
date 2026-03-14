@@ -1,3 +1,5 @@
+import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 import '../app/app_widget.dart';
@@ -6,7 +8,8 @@ class AppColorManager {
   static const mainColor = Color(0xFF0B223D);
   static const secondColor = Color(0xFF1D569A);
   static const mainColorDark = Color(0xFF061221);
-  static const mainColorLight = Color(0x6711263F);
+  static const mainColorLight = Color(0xFFC2D9F4);
+  static Color get mainColorDynamic => AppSharedPreference.getThemeMode.isDark ? mainColorLight : mainColor;
 
   static const black = Color(0xFF000000);
   static const ampere = Color(0xFFFFC107);

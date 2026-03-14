@@ -152,7 +152,7 @@ ThemeData get darkTheme => ThemeData(
   shadowColor: AppColorManager.darkColor.withValues(alpha: 0.5),
   listTileTheme: ListTileThemeData(
     horizontalTitleGap: 10.0,
-    tileColor: Color(0xFF1C1B1F),
+    tileColor: Color(0xFF303030),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
     controlAffinity: ListTileControlAffinity.leading,
   ),
@@ -186,9 +186,9 @@ ThemeData get darkTheme => ThemeData(
       fontSize: 18.sp,
     ),
   ),
-  cardColor: Color(0xFF1C1B1F),
+  cardColor: Color(0xFF303030),
   cardTheme: CardThemeData(
-    color: Color(0xFF1C1B1F),
+    color: Color(0xFF303030),
     elevation: 2,
     shadowColor: Colors.black38,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
@@ -345,20 +345,3 @@ ThemeData get darkTheme => ThemeData(
   ),
 );
 
-ThemeData get currentTheme {
-  switch (AppSharedPreference.getThemeMode) {
-    case ThemeMode.system:
-      return isSystemDarkMode ? darkTheme : lightTheme;
-    case ThemeMode.dark:
-      return darkTheme;
-    case ThemeMode.light:
-      return lightTheme;
-  }
-}
-
-bool get isSystemDarkMode {
-  final brightness = MediaQuery.platformBrightnessOf(ctx!);
-  return brightness == Brightness.dark;
-}
-
-final themeNotifier = ValueNotifier<ThemeMode>(AppSharedPreference.getThemeMode);

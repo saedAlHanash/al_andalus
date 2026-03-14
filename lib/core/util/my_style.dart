@@ -75,8 +75,8 @@ class MyStyle {
     borderRadius: BorderRadius.circular(8.0.r),
   );
 
-  static BoxDecoration  roundBox12(Color color) => BoxDecoration(
-    color: color,
+  static BoxDecoration  roundBox12({Color? color}) => BoxDecoration(
+    color: color??AppColorManager.cardColor,
     borderRadius: BorderRadius.circular(12.0.r),
     boxShadow: [
       BoxShadow(

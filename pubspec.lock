@@ -196,12 +196,11 @@ packages:
   drawable_text:
     dependency: "direct main"
     description:
-      path: "."
-      ref: android
-      resolved-ref: aa22c7e6b729d412932696369c4aac04a3eb2044
-      url: "https://github.com/saedAlHanash/drawable_text"
-    source: git
-    version: "0.0.8"
+      name: drawable_text
+      sha256: "0be1f3e4ed9d00e93b27115a896986b5a57138804d6529c8bfb4362fc45ee691"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   dropdown_button2:
     dependency: "direct main"
     description:
@@ -578,10 +577,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_widget_from_html_core
-      sha256: b1048fd119a14762e2361bd057da608148a895477846d6149109b2151d2f7abf
+      sha256: "1120ee6ed3509ceff2d55aa6c6cbc7b6b1291434422de2411b5a59364dd6ff03"
       url: "https://pub.dev"
     source: hosted
-    version: "0.15.2"
+    version: "0.17.0"
   geoclue:
     dependency: transitive
     description:

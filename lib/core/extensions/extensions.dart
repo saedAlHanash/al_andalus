@@ -144,6 +144,10 @@ extension SplitByLength on String {
   }
 
   DateTime? get parseArabicDate {
+
+    var tryPars = DateTime.tryParse(this);
+    if (tryPars != null) return tryPars;
+
     if (trim().isEmpty) return null;
 
     try {
@@ -412,7 +416,7 @@ extension DateUtcHelper on DateTime {
   DateTime get getUtc => DateTime.utc(year, month, day);
 
   String get formatDate => DateFormat('yyyy/MM/dd', 'en').format(this);
-  
+
   String get formatDateNowOrYesterday {
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
@@ -675,6 +679,18 @@ extension HasClaimRequestH on HasClaimRequest {
       ),
     );
     return 0.0.verticalSpace;
+  }
+}
+
+extension ContextHelper on BuildContext {
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
+}
+
+extension ThemeModeHelper on ThemeMode {
+  bool get isDark {
+    if (this == ThemeMode.dark) return true;
+    if (this == ThemeMode.light) return false;
+    return WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark;
   }
 }
 

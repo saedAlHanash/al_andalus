@@ -25,7 +25,7 @@ class ItemCar extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 8.h),
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColorManager.cardColor,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: AppColorManager.cd),
       ),

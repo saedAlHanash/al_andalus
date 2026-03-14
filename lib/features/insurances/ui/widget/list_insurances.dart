@@ -49,7 +49,7 @@ class _ListInsurancesState extends State<ListInsurances> {
                       child: Container(
                         height: 40.0.h,
                         alignment: .center,
-                        decoration: type == .private ? MyStyle.outlineBorder : MyStyle.roundBox12(Colors.white),
+                        decoration: type == .private ? MyStyle.outlineBorder : MyStyle.roundBox12(),
                         child: DrawableText(text: InsuranceType.private.name),
                       ),
                     ),
@@ -60,7 +60,7 @@ class _ListInsurancesState extends State<ListInsurances> {
                       child: Container(
                         height: 40.0.h,
                         alignment: .center,
-                        decoration: type == .public ? MyStyle.outlineBorder : MyStyle.roundBox12(Colors.white),
+                        decoration: type == .public ? MyStyle.outlineBorder : MyStyle.roundBox12(),
                         child: DrawableText(text: InsuranceType.public.name),
                       ),
                     ),

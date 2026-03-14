@@ -23,13 +23,13 @@ class HiWidget extends StatelessWidget {
         title: AppProvider.isGuest
             ? DrawableText(
                 text: S.of(context).welcome,
-                fontWeight: .bold,
+
               )
             : DrawableText(text: AppProvider.getMe.name),
         subtitle: AppProvider.isGuest
             ? DrawableText(
                 text: S.of(context).startYourInsuranceJourneyEasily,
-                color: Colors.grey,
+
               )
             : null,
         trailing: InkWell(

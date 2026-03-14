@@ -176,16 +176,13 @@ class AppSharedPreference {
   //endregion
 
   //region ThemeMode
-  static Future<void> setThemeMode(ThemeMode themeMode) async {
+  static Future<void> cashThemeMode(ThemeMode themeMode) async {
     await _prefs?.setInt(_keyThemeMode, themeMode.index);
-    await reload();
   }
 
-  static ThemeMode get getThemeMode {
-    final index = _prefs?.getInt(_keyThemeMode);
-    if (index == null) return ThemeMode.system;
-    return ThemeMode.values[index];
-  }
+  static ThemeMode get getThemeMode => ThemeMode.values[_prefs?.getInt(_keyThemeMode) ?? 1];
+
+
 
   //endregion
 }

@@ -129,7 +129,7 @@ class OutLineButton extends StatelessWidget {
         this.child ??
         DrawableText(
           text: toUpper ? text.toUpperCase() : text,
-          color: textColor ?? AppColorManager.mainColor,
+          color: textColor ?? AppColorManager.mainColorDynamic,
 
           size: 13.0.sp,
           drawableEnd: loading
@@ -150,8 +150,8 @@ class OutLineButton extends StatelessWidget {
       height: height ?? 45.0.h,
       child: ElevatedButton(
         style: ButtonStyle(
-          surfaceTintColor: WidgetStatePropertyAll(color ?? AppColorManager.white),
-          backgroundColor: WidgetStatePropertyAll(color ?? AppColorManager.white),
+          surfaceTintColor: WidgetStatePropertyAll(Colors.transparent),
+          backgroundColor: WidgetStatePropertyAll(Colors.transparent),
           padding: WidgetStatePropertyAll(
             height != null ? EdgeInsets.zero : padding ?? const EdgeInsets.symmetric(vertical: 13.0).r,
           ),
@@ -160,7 +160,7 @@ class OutLineButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radios ?? 10.0.r),
               side: BorderSide(
-                color: AppColorManager.mainColor,
+                color:color?? AppColorManager.mainColorDynamic,
               ),
             ),
           ),

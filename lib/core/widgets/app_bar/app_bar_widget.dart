@@ -42,8 +42,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       canPop: canPop,
       onPopInvokedWithResult: onPopInvoked,
       child: AppBar(
-        backgroundColor: color ?? AppColorManager.white,
-        surfaceTintColor: color ?? AppColorManager.white,
+        backgroundColor: color,
+        surfaceTintColor: color,
         toolbarHeight: (zeroHeight ?? false) ? 0 : 70.0.h,
         // scrolledUnderElevation: 0,
         title:
@@ -58,7 +58,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 ? BackBtnWidget(
                     canPop: canPop,
                     onPopInvoked: onPopInvoked,
-                    appBarColor: imageAppBar ? AppColorManager.black : color ?? AppColorManager.mainColor,
+                    appBarColor: imageAppBar ? AppColorManager.black : color ?? AppColorManager.textColor,
                   )
                 : null),
         flexibleSpace:
@@ -81,7 +81,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         actions: actions,
         elevation: elevation ?? 0.0,
         shadowColor: elevation == 0 ? null : AppColorManager.black.withValues(alpha: 0.28),
-        iconTheme: const IconThemeData(color: AppColorManager.mainColor),
+        iconTheme:  IconThemeData(color: AppColorManager.textColor),
       ),
     );
   }
@@ -117,7 +117,7 @@ class BackBtnWidget extends StatelessWidget {
       },
       icon: ImageMultiType(
         url: Assets.iconsBack,
-        color: AppColorManager.black,
+        color: AppColorManager.textColor,
       ),
     );
   }

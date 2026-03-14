@@ -33,7 +33,7 @@ void showLanguageDialog(BuildContext context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: Colors.white,
+    backgroundColor: AppColorManager.cardColor,
     builder: (ctx) {
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
@@ -43,7 +43,7 @@ void showLanguageDialog(BuildContext context) {
             _Header(),
             _Title(title: S.of(context).chooseLanguage),
             Container(
-              color: Colors.white,
+              color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
               child: Column(
                 children: [
@@ -55,7 +55,7 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'العربية'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
-                      color: AppColorManager.mainColor,
+
                     ),
                   ),
                   ListTile(
@@ -66,7 +66,7 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'كوردی'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
-                      color: AppColorManager.mainColor,
+
                     ),
                   ),
                   ListTile(
@@ -77,7 +77,7 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'English'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
-                      color: AppColorManager.mainColor,
+
                     ),
                   ),
                   30.0.verticalSpace,
@@ -89,6 +89,69 @@ void showLanguageDialog(BuildContext context) {
       );
     },
   );
+}
+
+void showThemeDialog(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: AppColorManager.cardColor,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _Header(),
+            _Title(title: S.of(context).theme),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+              child: Column(
+                children: [
+                  _ThemeItem(
+                    title: S.of(context).light,
+                    themeMode: ThemeMode.light,
+                  ),
+                  _ThemeItem(
+                    title: S.of(context).dark,
+                    themeMode: ThemeMode.dark,
+                  ),
+                  _ThemeItem(
+                    title: S.of(context).system,
+                    themeMode: ThemeMode.system,
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+class _ThemeItem extends StatelessWidget {
+  const _ThemeItem({required this.title, required this.themeMode});
+
+  final String title;
+  final ThemeMode themeMode;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {
+        MyApp.setTheme(context, themeMode);
+        Navigator.pop(context);
+      },
+      title: DrawableText(text: title),
+      leading: ImageMultiType(
+        url: AppSharedPreference.getThemeMode == themeMode ? Icons.radio_button_checked : Icons.radio_button_off,
+
+      ),
+    );
+  }
 }
 
 void showSupportCall(BuildContext context) {
@@ -107,7 +170,7 @@ void showSupportCall(BuildContext context) {
               children: [
                 _Header(),
                 Container(
-                  color: Colors.white,
+                  color: AppColorManager.cardColor,
                   child: Column(
                     children: [
                       _Title(title: S.of(context).technicalSupport),
@@ -174,7 +237,6 @@ void showCalculationPrice(
   InsurancePackage? insurancePackage,
   Function(Map<String, dynamic> queryParameters) onTap,
 ) {
-
   var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
   var p = 0.0;
   showModalBottomSheet(
@@ -190,7 +252,7 @@ void showCalculationPrice(
             children: [
               _Header(),
               Container(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 padding: EdgeInsets.all(20.0).r,
                 child: Column(
                   children: [
@@ -201,11 +263,13 @@ void showCalculationPrice(
                       matchParent: true,
                     ),
                     MyCheckboxWidget(
-                      items: insurancePackage?.getCylinders??[
-                        SpinnerItem(name: '4',id: 4),
-                        SpinnerItem(name: '6',id: 6),
-                        SpinnerItem(name: '8',id: 8),
-                      ],
+                      items:
+                          insurancePackage?.getCylinders ??
+                          [
+                            SpinnerItem(name: '4', id: 4),
+                            SpinnerItem(name: '6', id: 6),
+                            SpinnerItem(name: '8', id: 8),
+                          ],
                       onSelected: (value, i, isSelected) {
                         cylindersCount = value.id;
                       },
@@ -281,7 +345,7 @@ void showAddNote(
             children: [
               _Header(),
               Container(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 padding: EdgeInsets.symmetric(horizontal: 24.0).r,
                 child: Column(
                   children: [
@@ -327,7 +391,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
         children: [
           _Header(),
           Container(
-            color: Colors.white,
+            color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(20.0).r,
             child: Column(
               children: [
@@ -337,7 +401,6 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 ),
                 DrawableText(
                   text: S.of(context).ensureTextIsClear,
-                  color: Colors.grey,
                   matchParent: true,
                   textAlign: .center,
                   fontWeight: FontWeight.bold,
@@ -395,7 +458,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
         children: [
           _Header(),
           Container(
-            color: Colors.white,
+            color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(20.0).r,
             child: Column(
               children: [
@@ -405,7 +468,6 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                 ),
                 DrawableText(
                   text: S.of(context).pleaseUploadFile,
-                  color: Colors.grey,
                   fontWeight: FontWeight.bold,
                 ),
 
@@ -446,7 +508,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
           StatefulBuilder(
             builder: (context, setState) {
               return Container(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 padding: const EdgeInsets.all(20.0).r,
                 child: Column(
                   children: [
@@ -454,7 +516,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                     20.0.verticalSpace,
                     Container(
                       decoration: MyStyle.roundBox12(
-                        type == .qiCard ? AppColorManager.mainColor.withValues(alpha: 0.1) : Colors.white,
+                        color: type == .qiCard ? AppColorManager.mainColorLight : null,
                       ),
                       child: ListTile(
                         onTap: () {
@@ -473,7 +535,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                     25.0.verticalSpace,
                     Container(
                       decoration: MyStyle.roundBox12(
-                        type == .zainCash ? AppColorManager.mainColor.withValues(alpha: 0.3) : Colors.white,
+                        color: type == .zainCash ? AppColorManager.mainColorLight : null,
                       ),
                       child: ListTile(
                         onTap: () {
@@ -534,7 +596,7 @@ void selectCar(
           StatefulBuilder(
             builder: (context, setState) {
               return Container(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 padding: const EdgeInsets.all(20.0).r,
                 child: Column(
                   children: [
@@ -549,7 +611,7 @@ void selectCar(
                     10.0.verticalSpace,
                     ...cars.map(
                       (e) => Container(
-                        decoration: MyStyle.roundBox12(Colors.white),
+                        decoration: MyStyle.roundBox12(),
                         margin: EdgeInsets.symmetric(vertical: 5.0),
                         child: ListTile(
                           onTap: () {
@@ -584,7 +646,7 @@ void showQr(BuildContext context, String qr) {
         children: [
           _Header(),
           Container(
-            color: Colors.white,
+            color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(24.0).r,
             child: Column(
               children: [
@@ -593,9 +655,9 @@ void showQr(BuildContext context, String qr) {
                 Container(
                   padding: EdgeInsets.all(12.0).r,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColorManager.cardColor,
                     borderRadius: BorderRadius.circular(16.0).r,
-                    border: Border.all(color: AppColorManager.mainColor.withValues(alpha: 0.1)),
+                    border: Border.all(color: AppColorManager.mainColorLight),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.05),
@@ -678,7 +740,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () => Navigator.pop(ctx, false),
-                    child: DrawableText(text: S.of(context).cancel, color: Colors.white),
+                    child: DrawableText(text: S.of(context).cancel),
                   ),
                 ),
                 10.horizontalSpace,
@@ -688,7 +750,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                     onPressed: () {
                       Navigator.pop(ctx, true);
                     },
-                    child: DrawableText(text: S.of(context).confirm, color: Colors.white),
+                    child: DrawableText(text: S.of(context).confirm),
                   ),
                 ),
               ],
@@ -719,7 +781,7 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                   onTap: () => Navigator.pop(ctx),
                   child: Container(
                     padding: EdgeInsets.all(5.0).r,
-                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                    decoration: BoxDecoration(color: AppColorManager.cardColor, shape: BoxShape.circle),
                     child: Icon(Icons.close, color: Colors.black, size: 24.r),
                   ),
                 ),
@@ -737,7 +799,7 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
                   Navigator.pop(ctx, true);
                   onReTake.call(true);
                 },
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 textColor: Colors.black,
                 radios: 15.0.r,
               ),
@@ -760,7 +822,7 @@ class _Header extends StatelessWidget {
       child: ImageMultiType(
         url: Assets.iconsBottomSheetHeader,
         width: 1.0.sw,
-        color: Colors.white,
+        color: AppColorManager.cardColor,
         height: 30.0.h,
         fit: BoxFit.fill,
       ),
@@ -792,7 +854,7 @@ class _Title extends StatelessWidget {
         onPressed: null,
         icon: ImageMultiType(
           url: Icons.close,
-          color: Colors.white,
+          color: AppColorManager.cardColor,
         ),
       ),
     );

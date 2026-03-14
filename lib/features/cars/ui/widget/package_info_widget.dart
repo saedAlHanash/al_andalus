@@ -36,9 +36,12 @@ class PackageInfoWidget extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(15.0).r,
             decoration: BoxDecoration(
-              color: AppColorManager.white,
+              color: AppColorManager.scaffoldColor,
               borderRadius: BorderRadius.circular(14.r),
-              border: Border.all(color: AppColorManager.dividerColor, width: 1.sp),
+              border: Border.all(
+                color: AppColorManager.dividerColor,
+                width: 1.sp,
+              ),
             ),
             child: Column(
               spacing: 10.0.h,
@@ -74,6 +77,7 @@ class PackageInfoWidget extends StatelessWidget {
                 ),
                 if (state.result.status.canRenew)
                   MyButton(
+                    color: insurancePackage.level.color,
                     onTap: () {
                       showRePay(
                         context,

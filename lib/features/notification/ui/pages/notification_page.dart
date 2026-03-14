@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
@@ -88,13 +89,13 @@ class _NotificationPageState extends State<NotificationPage> {
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
                             separatorBuilder: (context, i) => 10.0.verticalSpace,
-                            itemCount: 10,
+                            itemCount: state.result.length,
                             itemBuilder: (_, i) {
-                              final item = list[0];
+                              final item = list[i];
                               return Container(
                                 padding: EdgeInsets.symmetric(vertical: 10.0).r,
                                 decoration: BoxDecoration(
-                                  color: i % 2 != 0 ? null : Colors.white,
+                                  color: i % 2 != 0 ? null : AppColorManager.cardColor,
                                   borderRadius: BorderRadius.circular(10.0.r),
                                   boxShadow: i % 2 != 0
                                       ? []
@@ -121,7 +122,10 @@ class _NotificationPageState extends State<NotificationPage> {
                                     //   );
                                     // }
                                   },
-                                  leading: ImageMultiType(url: Assets.iconsNotificationCardIcon),
+                                  leading: ImageMultiType(
+                                    url: Assets.iconsNotificationCardIcon,
+                                    color: AppColorManager.mainColorDynamic,
+                                  ),
                                   title: DrawableText(
                                     text: item.title,
                                     maxLines: 2,

@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:al_andalus/core/extensions/extensions.dart';
 
 import 'package:al_andalus/features/home/bloc/home_cubit/home_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -100,7 +101,7 @@ class _NavbarState extends State<Navbar> {
                   context.read<HomeCubit>().jumpPage(menuIndex);
                 },
                 icon: ImageMultiType(
-                  color: isMenuActive ? Colors.white : AppColorManager.grey,
+                  color: isMenuActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
                   url: Assets.iconsUser,
                   height: 24.0.r,
                   width: 24.0.r,
@@ -131,7 +132,7 @@ class _GlassCapsule extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.15),
+            color: Colors.black.withValues(alpha: context.isDark ? 0.4 : 0.15),
             blurRadius: 15,
             spreadRadius: 0.5,
             offset: const Offset(0, 3),
@@ -144,10 +145,10 @@ class _GlassCapsule extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.5),
+              color: AppColorManager.cardColor.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(50.r),
               border: Border.all(
-                color: Colors.black.withValues(alpha: 0.05),
+                color: AppColorManager.dividerColor.withValues(alpha: 0.1),
                 width: 1,
               ),
             ),
@@ -192,7 +193,7 @@ class _DetachedButton extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.15),
+                  color: Colors.black.withValues(alpha: context.isDark ? 0.4 : 0.15),
                   blurRadius: 15,
                   spreadRadius: 0.5,
                   offset: const Offset(0, 3),
@@ -205,10 +206,10 @@ class _DetachedButton extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
-                    color: isActive ? theme.primaryColor.withValues(alpha: 0.9) : Colors.white.withValues(alpha: 0.5),
+                    color: isActive ? theme.primaryColor.withValues(alpha: 0.9) : AppColorManager.cardColor.withValues(alpha: 0.5),
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Colors.black.withValues(alpha: 0.05),
+                      color: AppColorManager.dividerColor.withValues(alpha: 0.1),
                       width: 1,
                     ),
                   ),
@@ -270,7 +271,7 @@ class _NavItem extends StatelessWidget {
             DrawableText(
               text: title,
               size: 12.sp,
-              color: isActive ? theme.primaryColor : AppColorManager.grey,
+              color: isActive ? theme.primaryColor : (context.isDark ? Colors.white70 : AppColorManager.grey),
               fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
             ),
           ],
@@ -292,7 +293,7 @@ class _Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ImageMultiType(
-      color: isActive ? Colors.white : AppColorManager.grey,
+      color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
       url: Assets.iconsHome,
       height: 24.0.r,
       width: 24.0.r,
@@ -315,7 +316,7 @@ class _Notifications extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             ImageMultiType(
-              color: isActive ? Colors.white : AppColorManager.grey,
+              color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
               url: Assets.iconsNotification,
               height: 24.0.r,
               width: 24.0.r,
@@ -359,7 +360,7 @@ class _Insurance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ImageMultiType(
-      color: isActive ? Colors.white : AppColorManager.grey,
+      color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
       url: Assets.iconsClipboardList,
       height: 24.0.r,
       width: 24.0.r,

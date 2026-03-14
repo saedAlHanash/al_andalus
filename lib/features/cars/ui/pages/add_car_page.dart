@@ -41,6 +41,7 @@ class _AddCarPageState extends State<AddCarPage> {
             context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
               (value) {
                 if (context.mounted) {
+                  context.read<CarsCubit>().getData(newData: true);
                   context.goNamed(RouteName.home);
                 }
               },

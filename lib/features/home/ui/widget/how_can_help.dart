@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/extensions/extensions.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
@@ -39,7 +40,7 @@ class HowCanHelp extends StatelessWidget {
                     });
                   },
                   height: 160.0,
-                  color: const Color(0x66F09D21),
+                  color: context.isDark ? const Color(0xFF6C4E22) : const Color(0x66F09D21),
                   title: S.of(context).reportAccident,
                   image: ImageMultiType(
                     height: 120.0.r,
@@ -71,7 +72,7 @@ class HowCanHelp extends StatelessWidget {
                               );
                             }
                           },
-                          color: const Color(0xFFE4E4E5),
+                          color: context.isDark ? const Color(0xFF565657) : const Color(0xFFE4E4E5),
                           title: S.of(context).transferOwnership,
                           image: ImageMultiType(
                             height: 70.0.r,
@@ -95,7 +96,7 @@ class HowCanHelp extends StatelessWidget {
                               },
                             );
                           },
-                          color: const Color(0xFFFFEAD4),
+                          color: context.isDark ? const Color(0xFF715C46) : const Color(0xFFFFEAD4),
                           title: S.of(context).addNewCar,
                           image: Transform.scale(
                             scaleX: 1.8,

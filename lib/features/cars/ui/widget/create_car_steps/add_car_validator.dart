@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:m_cubit/m_cubit.dart';
 
+import '../../../../../core/strings/enum_manager.dart';
 import '../../../../../core/util/snack_bar_message.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../data/request/insurance_policy_request.dart';
@@ -114,7 +115,7 @@ class AddCarValidator {
       return false;
     }
     if (request.backImage.notHaveValue) {
-      NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeEngineImage, context: context);
+      NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeRearImage, context: context);
       return false;
     }
     if (request.rightSideImage.notHaveValue) {
@@ -130,7 +131,7 @@ class AddCarValidator {
       return false;
     }
     if (request.engineImage.notHaveValue) {
-      NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeRearImage, context: context);
+      NoteMessage.showTopMessageError(message: S.of(context).pleaseTakeEngineImage, context: context);
       return false;
     }
     return true;
@@ -139,128 +140,39 @@ class AddCarValidator {
   static bool _validateStep4(BuildContext context, InsurancePolicyRequest request) {
     return true;
   }
+
+  static bool _validate(BuildContext context, InsurancePolicyRequest request) {
+    final s = S.of(context);
+
+    final fields = [
+      (request.metalBody, request.metalBodyNote, s.metalBody),
+      (request.glassAndLamps, request.glassAndLampsNote, s.glassAndLamps),
+      (request.chromeNickel, request.chromeNickelNote, s.chromeNickel),
+      (request.brandSign, request.brandSignNote, s.brandSign),
+      (request.windshieldWipers, request.windshieldWipersNote, s.windshieldWipers),
+      (request.radioAntenna, request.radioAntennaNote, s.radioAntenna),
+      (request.seats, request.seatsNote, s.seats),
+      (request.floorCover, request.floorCoverNote, s.floorCover),
+      (request.radio, request.radioNote, s.radioAndType),
+      (request.airConditioner, request.airConditionerNote, s.airConditionerAndType),
+      (request.frontTires, request.frontTiresNote, s.frontTires),
+      (request.backTires, request.backTiresNote, s.backTires),
+      (request.spareTire, request.spareTireNote, s.spareTire),
+      (request.tiresCovers, request.tiresCoversNote, s.tiresCovers),
+      (request.spareTools, request.spareToolsNote, s.spareTools),
+    ];
+
+    for (final field in fields) {
+      if (field.$1 != InspectionStatus.intact && (field.$2).isBlank) {
+        NoteMessage.showTopMessageError(
+          message: s.noteIsRequired(field.$3),
+          context: context,
+        );
+        return false;
+      }
+    }
+
+    return true;
+  }
 }
 
-bool _validate(BuildContext context, InsurancePolicyRequest request) {
-  if (request.metalBody != .intact && request.metalBodyNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لهيكل المعدن',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.glassAndLamps != .intact && request.glassAndLampsNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للزجاج والمصابيح',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.chromeNickel != .intact && request.chromeNickelNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للكروم والنيكل',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.brandSign != .intact && request.brandSignNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لشعار السيارة',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.windshieldWipers != .intact && request.windshieldWipersNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لمسّاحات الزجاج',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.radioAntenna != .intact && request.radioAntennaNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لهوائي الراديو',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.seats != .intact && request.seatsNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للمقاعد',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.floorCover != .intact && request.floorCoverNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لغطاء الأرضية',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.radio != .intact && request.radioNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للراديو',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.airConditioner != .intact && request.airConditionerNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للمكيف',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.frontTires != .intact && request.frontTiresNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للإطارات الأمامية',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.backTires != .intact && request.backTiresNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للإطارات الخلفية',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.spareTire != .intact && request.spareTireNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة للإطار الاحتياطي',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.tiresCovers != .intact && request.tiresCoversNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لأغطية الإطارات',
-      context: context,
-    );
-    return false;
-  }
-
-  if (request.spareTools != .intact && request.spareToolsNote.isBlank) {
-    NoteMessage.showTopMessageError(
-      message: 'يجب إضافة ملاحظة لأدوات الاحتياط',
-      context: context,
-    );
-    return false;
-  }
-
-  return true;
-}

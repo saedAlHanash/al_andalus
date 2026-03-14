@@ -39,9 +39,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                 20.0.verticalSpace,
                 Container(
                   decoration: MyStyle.roundBox12(
-                    state.mRequest.paymentType == .qiCard
-                        ? AppColorManager.mainColor.withValues(alpha: 0.1)
-                        : Colors.white,
+                    color: state.mRequest.paymentType == .qiCard ? AppColorManager.mainColorLight : null,
                   ),
                   child: ListTile(
                     onTap: () {
@@ -61,9 +59,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                 25.0.verticalSpace,
                 Container(
                   decoration: MyStyle.roundBox12(
-                    state.mRequest.paymentType == .zainCash
-                        ? AppColorManager.mainColor.withValues(alpha: 0.3)
-                        : Colors.white,
+                    color: state.mRequest.paymentType == .zainCash ? AppColorManager.mainColorLight : null,
                   ),
                   child: ListTile(
                     onTap: () {
