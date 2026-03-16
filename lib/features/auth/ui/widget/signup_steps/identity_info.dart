@@ -97,7 +97,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
                       height: 46.0.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12.0.r),
-                        border: Border.all(color: AppColorManager.cd, width: 1.0.r),
+                        border: Border.all(color: AppColorManager.cardColor, width: 1.0.r),
                       ),
                       items: GenderEnum.values.getSpinnerItems(selectedId: state.mRequest.gender?.index),
                     ),
@@ -108,7 +108,6 @@ class _IdentityInfoState extends State<IdentityInfo> {
             Container(
               padding: const EdgeInsets.all(14.62),
               decoration: ShapeDecoration(
-                color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9.75),
                 ),

@@ -339,9 +339,10 @@
   "transferOfOwnershipCosts": "تێچووی گواستنەوەی خاوەندارێتی",
   "ownershipTransferStatus": "دۆخی گواستنەوەی خاوەندارێتی",
   "claimStatus": "دۆخی داواکاری قەرەبوو",
-  "pinCode": "PIN code",
-  "pleaseSendThePinCode": "Please send the PIN code",
-  "confirmPin": "Confirm PIN",
-  "today": "Today",
-  "yesterday": "Yesterday"
+  "pinCode": "کۆدی PIN",
+  "pleaseSendThePinCode": "تکایە کۆدی PIN بنێرە",
+  "confirmPin": "پشتڕاستکردنەوەی PIN",
+  "today": "ئەمڕۆ",
+  "yesterday": "دوێنێ",
+  "unified": "یەکگرتوو"
 }

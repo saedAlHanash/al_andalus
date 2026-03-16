@@ -7,7 +7,7 @@ import 'package:string_similarity/string_similarity.dart';
 import '../../generated/l10n.dart';
 import 'app_color_manager.dart';
 
-enum StartPage { login, home, signupOtp,pinCode, passwordOtp }
+enum StartPage { login, home, signupOtp, pinCode, passwordOtp }
 
 enum GenderEnum {
   male,
@@ -336,21 +336,11 @@ enum AdsType {
     }
   }
 
-  static AdsType getByNameOrIndex(String name) {
-    final i = int.tryParse(name);
-    if (i != null) {
-      // Ensure the index is within the valid range
-      if (i >= 0 && i < AdsType.values.length) {
-        return AdsType.values[i];
-      } else {
-        // Handle invalid index, perhaps return a default or throw an error
-        return AdsType.banner; // Or throw ArgumentError('Invalid index for AdsType');
-      }
-    }
+  static AdsType getByNameOrIndex(dynamic name) {
     return switch (name.toLowerCase()) {
       'banner' => AdsType.slider,
       'slider' => AdsType.banner,
-      _ => AdsType.banner, // Default value if name doesn't match
+      _ => AdsType.slider,
     };
   }
 }

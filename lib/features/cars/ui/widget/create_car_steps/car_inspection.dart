@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
@@ -46,7 +47,7 @@ class _CarInspectionState extends State<CarInspection> {
             Container(
               padding: const EdgeInsets.all(14.62),
               decoration: ShapeDecoration(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9.75),
                 ),

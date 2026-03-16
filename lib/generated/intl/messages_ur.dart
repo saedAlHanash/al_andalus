@@ -121,7 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "وشەی نهێنی نوێ پشتڕاست بکەرەوە",
     ),
-    "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("پشتڕاستکردنەوەی PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "هەنگاوی داهاتوو پشتڕاست بکەرەوە",
     ),
@@ -371,7 +371,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage(
       "وێنەکانی ڕووداوەکە",
     ),
-    "pinCode": MessageLookupByLibrary.simpleMessage("PIN code"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("کۆدی PIN"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "شوێنی نیشتەجێبوون",
     ),
@@ -486,7 +486,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تکایە بەرواری دەستپێکردن هەڵبژێرە",
     ),
     "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
-      "Please send the PIN code",
+      "تکایە کۆدی PIN بنێرە",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "تکایە وردەکارییەکانی ڕووداوەکە بنووسە",
@@ -633,7 +633,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "tiresCovers": MessageLookupByLibrary.simpleMessage("بەرگی تایە"),
     "to": MessageLookupByLibrary.simpleMessage("بۆ"),
-    "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "today": MessageLookupByLibrary.simpleMessage("ئەمڕۆ"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("بڕی گشتی"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "تێچووی گواستنەوەی خاوەندارێتی",
@@ -650,6 +650,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "underReview": MessageLookupByLibrary.simpleMessage(
       "لەژێر پێداچوونەوەدایە",
     ),
+    "unified": MessageLookupByLibrary.simpleMessage("یەکگرتوو"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "زانیاری کارتی نیشتمانی",
     ),
@@ -684,7 +685,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ژمارەی مۆبایل نادروستە",
     ),
     "yes": MessageLookupByLibrary.simpleMessage("بەڵێ"),
-    "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
+    "yesterday": MessageLookupByLibrary.simpleMessage("دوێنێ"),
     "youWillBeAbleToChooseTheDesiredLanguageFor":
         MessageLookupByLibrary.simpleMessage(
           "دەتوانیت زمانی خوازراو بۆ بەڵگەنامەکە هەڵبژێریت.",

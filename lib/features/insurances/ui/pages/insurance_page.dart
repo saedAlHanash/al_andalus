@@ -4,6 +4,7 @@ import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/card_slider_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -59,9 +60,7 @@ class InsurancePage extends StatelessWidget {
             ],
           ),
           body: CardSlider1(
-            onPageCh: (i, reason) {
-
-            },
+            onPageCh: (i, reason) {},
             autoPlay: false,
             viewportFraction: 0.75,
             height: 1.0.sh,
@@ -100,13 +99,12 @@ class InsurancePage extends StatelessWidget {
                           },
                           text: S.of(context).subscribeNow,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 );
               },
             ).toList(),
-
           ),
         );
       },
@@ -128,7 +126,7 @@ class _Item extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColorManager.cardColor,
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(24.0).r),
               boxShadow: MyStyle.allShadow,
             ),
@@ -182,7 +180,7 @@ class _Top extends StatelessWidget {
       clipBehavior: .hardEdge,
       width: 1.0.sw,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColorManager.cardColor,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.0).r),
         boxShadow: MyStyle.allShadow,
       ),

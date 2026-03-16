@@ -31,6 +31,7 @@ import 'my_style.dart';
 
 void showLanguageDialog(BuildContext context) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: AppColorManager.cardColor,
@@ -55,7 +56,6 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'العربية'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
-
                     ),
                   ),
                   ListTile(
@@ -66,7 +66,6 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'كوردی'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
-
                     ),
                   ),
                   ListTile(
@@ -77,7 +76,6 @@ void showLanguageDialog(BuildContext context) {
                     title: DrawableText(text: 'English'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
-
                     ),
                   ),
                   30.0.verticalSpace,
@@ -93,6 +91,7 @@ void showLanguageDialog(BuildContext context) {
 
 void showThemeDialog(BuildContext context) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: AppColorManager.cardColor,
@@ -148,7 +147,6 @@ class _ThemeItem extends StatelessWidget {
       title: DrawableText(text: title),
       leading: ImageMultiType(
         url: AppSharedPreference.getThemeMode == themeMode ? Icons.radio_button_checked : Icons.radio_button_off,
-
       ),
     );
   }
@@ -156,6 +154,7 @@ class _ThemeItem extends StatelessWidget {
 
 void showSupportCall(BuildContext context) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
@@ -240,6 +239,7 @@ void showCalculationPrice(
   var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
   var p = 0.0;
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
@@ -333,6 +333,7 @@ void showAddNote(
 }) {
   final controller = TextEditingController(text: initial);
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
@@ -383,8 +384,10 @@ void showAddNote(
 
 void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     backgroundColor: Colors.transparent,
+
     builder: (ctx) {
       return Column(
         mainAxisSize: MainAxisSize.min,
@@ -397,7 +400,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
               children: [
                 ImageMultiType(
                   url: Assets.imagesIdScan,
-                  height: 192.0.h,
+                  height: 170.0.h,
                 ),
                 DrawableText(
                   text: S.of(context).ensureTextIsClear,
@@ -450,6 +453,7 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
 
 void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
@@ -498,6 +502,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
 void showRePay(BuildContext context, num value, Function(PaymentType value) onConfirm) {
   PaymentType? type;
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
@@ -586,6 +591,7 @@ void selectCar(
   Function(CarPolicy value) onConfirm,
 ) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
@@ -637,6 +643,7 @@ void selectCar(
 
 void showQr(BuildContext context, String qr) {
   showModalBottomSheet(
+    useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,

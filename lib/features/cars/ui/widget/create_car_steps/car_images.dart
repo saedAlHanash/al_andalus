@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,7 @@ class CarInspectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColorManager.cardColor,
       body: SafeArea(
         child: BlocBuilder<CarsCubit, CarsInitial>(
           builder: (context, state) {
@@ -126,7 +127,7 @@ class CarInspectionScreen extends StatelessWidget {
               5.0.verticalSpace,
               ImageMultiType(
                 url: isCompleted ? Assets.iconsDoneTake : Assets.imagesCamera,
-                color: Colors.black,
+                color: AppColorManager.mainColorDynamic,
                 width: 35.0.r,
                 height: 35.0.r,
               ),

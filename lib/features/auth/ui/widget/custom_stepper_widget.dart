@@ -68,7 +68,7 @@ EasyStep customStepWidget({
       text: title,
       size: 16.0.sp,
       textAlign: TextAlign.center,
-      color: (isSelected || isCompleted) ? AppColorManager.mainColor : Colors.grey,
+      color: (isSelected || isCompleted) ? AppColorManager.mainColorDynamic : Colors.grey,
     ),
   );
 }

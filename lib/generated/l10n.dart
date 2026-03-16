@@ -2858,6 +2858,11 @@ class S {
   String get system {
     return Intl.message('System', name: 'system', desc: '', args: []);
   }
+
+  /// `Unified`
+  String get unified {
+    return Intl.message('Unified', name: 'unified', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

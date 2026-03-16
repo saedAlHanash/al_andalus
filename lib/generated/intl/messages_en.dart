@@ -641,6 +641,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Transfer Policy Ownership",
     ),
     "underReview": MessageLookupByLibrary.simpleMessage("Under Review"),
+    "unified": MessageLookupByLibrary.simpleMessage("Unified"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "Unified Card Info",
     ),

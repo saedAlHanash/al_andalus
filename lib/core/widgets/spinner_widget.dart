@@ -82,9 +82,9 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
                     child: Row(
                       children: [
                         if (item.isSelected)
-                          const Icon(
+                          Icon(
                             Icons.check_box_outlined,
-                            color: AppColorManager.mainColor,
+                            color: AppColorManager.mainColorDynamic,
                           )
                         else
                           const Icon(Icons.check_box_outline_blank),
@@ -107,7 +107,6 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
             selectable: false,
             size: 13.0.sp,
             text: item.name ?? '',
-            color: Colors.black,
             drawableStart: item.icon,
             drawablePadding: 5.0.w,
           ),
@@ -122,7 +121,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
     //       child: TextButton(
     //         style: ButtonStyle(
     //           backgroundColor: WidgetStatePropertyAll(
-    //             AppColorManager.mainColor.withValues(alpha: 0.1),
+    //             AppColorManager.mainColorDynamic.withValues(alpha: 0.1),
     //           ),
     //         ),
     //         onPressed: () {
@@ -131,7 +130,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
     //         child: Center(
     //           child: DrawableText(
     //             text: S.of(context).done,
-    //             color: AppColorManager.mainColor,
+    //             color: AppColorManager.mainColorDynamic,
     //             textAlign: TextAlign.center,
     //             drawableAlin: DrawableAlin.withText,
     //             drawableStart: const ImageMultiType(url: Icons.done),
@@ -184,7 +183,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: ImageMultiType(
               url: widget.icon,
-              color: AppColorManager.mainColor,
+              color: AppColorManager.mainColorDynamic,
               height: 20.0.r,
               width: 20.0.r,
             ),
@@ -203,7 +202,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
           decoration:
               widget.decoration ??
               BoxDecoration(
-                color: AppColorManager.f9,
+                color: AppColorManager.textColor,
                 borderRadius: BorderRadius.all(Radius.circular(10.0.r)),
               ),
           padding: const EdgeInsets.symmetric(horizontal: 10.0).r,
@@ -278,18 +277,17 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: AppColorManager.mainColor,
+                    color: AppColorManager.mainColorDynamic,
                     borderRadius: BorderRadius.all(Radius.circular(40.0.r)),
                   ),
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(horizontal: 10.0).r,
                   child: DrawableText(
                     text: item.name ?? '-',
-                    color: Colors.white,
                     size: 12.0.sp,
-                    drawableStart: const ImageMultiType(
+                    drawableStart: ImageMultiType(
                       url: Icons.check,
-                      color: Colors.white,
+                      color: AppColorManager.cardColor,
                     ),
                   ),
                 ),
@@ -315,7 +313,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
     elevation: 0,
     padding: EdgeInsets.zero,
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: AppColorManager.cardColor,
       boxShadow: [
         BoxShadow(
           color: Colors.black26,
@@ -333,7 +331,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
       url: Icons.expand_more,
       height: 18.0.r,
       width: 18.0.r,
-      color: AppColorManager.mainColor,
+      color: AppColorManager.mainColorDynamic,
     ),
     iconSize: 35.0.spMin,
   );
@@ -400,7 +398,7 @@ class SpinnerOutlineTitle extends StatelessWidget {
         DrawableText(
           selectable: false,
           text: label,
-          color: AppColorManager.black,
+
           padding: const EdgeInsets.symmetric(horizontal: 10.0).w,
           size: 18.0.sp,
         ),

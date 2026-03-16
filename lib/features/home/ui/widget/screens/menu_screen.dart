@@ -306,6 +306,7 @@ class _MenuScreenState extends State<MenuScreen> {
                         onTap: () {},
                         name: S.of(context).buildNumber,
                         subTitle: AppInfoService.fullVersionName,
+                        trailing: 0.0.verticalSpace,
                       ),
                       ItemMenu(
                         onTap: () {},

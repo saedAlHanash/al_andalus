@@ -89,7 +89,7 @@ class _SignupPageState extends State<SignupPage> {
                       },
                       steps: [
                         customStepWidget(
-                          title: S.of(context).info,
+                          title: S.of(context).unified,
                           isCompleted: state.step > 0,
                           isSelected: state.step == 0,
                         ),

@@ -76,7 +76,7 @@ class _AddCarPageState extends State<AddCarPage> {
               }
             },
             child: Scaffold(
-              appBar: AppBarWidget(titleText: S.of(context).signUp),
+              appBar: AppBarWidget(titleText: S.of(context).addNewCar),
               bottomNavigationBar: Padding(
                 padding: EdgeInsetsGeometry.all(20.0),
                 child: MyButton(

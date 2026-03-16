@@ -29,14 +29,14 @@ class Ads {
   final int id;
   final String title;
   final String image;
-  final AdsType type;
+  final String type;
 
   factory Ads.fromJson(Map<String, dynamic> json) {
     return Ads(
       id: json["id"] ?? 0,
       title: json["title"] ?? "",
       image: json["image"] ?? "",
-      type: AdsType.getByNameOrIndex((json["type"] ?? "").toString()),
+      type: (json["type"] ?? "").toString(),
     );
   }
 
@@ -44,6 +44,6 @@ class Ads {
     "id": id,
     "title": title,
     "image": image,
-    "type": type.index,
+    "type": type,
   };
 }

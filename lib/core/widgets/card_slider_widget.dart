@@ -53,6 +53,7 @@ class CardSlider extends StatelessWidget {
                     height: height ?? 160.0.h,
                     autoPlayInterval: const Duration(seconds: 5),
                     autoPlay: images.length > 1,
+                    enableInfiniteScroll: images.length > 1,
                     viewportFraction: 1,
                     onPageChanged: (i, reason) {
                       key.currentState!.changePage(i);
@@ -216,7 +217,8 @@ class IndicatorSliderWidgetState extends State<IndicatorSliderWidget> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.0),
               color: selected == i
-                  ? (widget.selectedColor ?? (context.isDark ? AppColorManager.mainColorLight : AppColorManager.mainColor))
+                  ? (widget.selectedColor ??
+                        (context.isDark ? AppColorManager.mainColorLight : AppColorManager.mainColor))
                   : (widget.unselectedColor ?? AppColorManager.dividerColor),
             ),
             duration: const Duration(milliseconds: 150),

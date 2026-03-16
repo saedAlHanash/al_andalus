@@ -1,16 +1,24 @@
 {
   "data": [
     {
-      "id": 50,
-      "title": "تيست",
-      "body": "test body",
-      "type": "info",
-      "status": "NEW",
-      "created": "2026-03-14 | 12:08 م"
+      "id": 12,
+      "image": "https://admin.andalusapp.com/storage/advertisements/car-ins-1768126090-1773333839.jpeg",
+      "type": "slider"
+    },
+    {
+      "id": 11,
+      "image": "https://admin.andalusapp.com/storage/advertisements/zcczcz-1768117208-1773333751.jpeg",
+      "type": "slider"
+    },
+    {
+      "id": 10,
+      "image": "https://admin.andalusapp.com/storage/advertisements/background-2-1773327441.png",
+      "type": "slider"
+    },
+    {
+      "id": 5,
+      "image": "https://admin.andalusapp.com/storage/advertisements/car-ins-1768126090.jpeg",
+      "type": "banner"
     }
-  ],
-  "page": 1,
-  "perPage": 200,
-  "lastPage": 1,
-  "total": 1
+  ]
 }

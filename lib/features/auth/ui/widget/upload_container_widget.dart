@@ -28,19 +28,19 @@ class UploadContainerWidget extends StatelessWidget {
         decoration: DottedDecoration(
           shape: Shape.box,
           borderRadius: BorderRadius.circular(6.r),
-          color: AppColorManager.mainColor,
+          color: AppColorManager.mainColorDynamic,
         ),
         child:
             child ??
             Column(
               spacing: 8.h,
               children: [
-                Icon(Icons.cloud_upload_outlined, color: AppColorManager.mainColor, size: 22.sp),
+                Icon(Icons.cloud_upload_outlined, color: AppColorManager.mainColorDynamic, size: 22.sp),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(color: AppColorManager.mainColor),
+                    border: Border.all(color: AppColorManager.mainColorDynamic),
                   ),
                   child: DrawableText(
                     text: S.of(context).browseFiles,

@@ -50,11 +50,11 @@ class HomeScreen extends StatelessWidget {
                   child: ListView(
                     children: [
                       10.0.verticalSpace,
-                      AddsSlider(type: AdsType.banner, height: 150.0),
+                      AddsSlider(type: AdsType.slider, height: 150.0),
                       HowCanHelp(),
                       ListCars(take: 1),
                       20.0.verticalSpace,
-                      AddsSlider(type: AdsType.slider, height: 90.0),
+                      AddsSlider(type: AdsType.banner, height: 90.0),
                       150.0.verticalSpace,
                     ],
                   ),

@@ -611,6 +611,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نقل ملكية وثيقة التأمين",
     ),
     "underReview": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),
+    "unified": MessageLookupByLibrary.simpleMessage("الموحدة"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),

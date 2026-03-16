@@ -83,7 +83,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
       suffixIcon = Padding(
         padding: const EdgeInsets.symmetric(vertical: 14.0).r,
         child: ImageMultiType(
-          color: AppColorManager.mainColor,
+          color: AppColorManager.mainColorDynamic,
           url: widget.icon!,
           height: 15.0.r,
           width: 15.0.r,
@@ -146,7 +146,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
         fontFamily: FontManager.semeBold.name,
       ),
       filled: false,
-      labelStyle: TextStyle(color: widget.color),
+
       prefixIcon: widget.iconWidget ?? suffixIcon,
       suffixIcon: widget.iconWidgetLift ?? eye,
     );
@@ -154,7 +154,6 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
     final textStyle = TextStyle(
       fontFamily: FontManager.semeBold.name,
       fontSize: 16.0.spMin,
-      color: AppColorManager.black,
     );
 
     return StatefulBuilder(
@@ -315,128 +314,4 @@ class RectCustomClipper extends CustomClipper<Rect> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Rect> oldClipper) => oldClipper != this;
-}
-
-class MyEditTextWidgetWhite extends StatelessWidget {
-  const MyEditTextWidgetWhite({
-    super.key,
-    this.hint = '',
-    this.maxLines = 1,
-    this.textAlign,
-    this.maxLength = 1000,
-    this.onChanged,
-    this.controller,
-    this.keyBordType,
-    this.innerPadding,
-    this.backgroundColor,
-    this.focusNode,
-    this.obscureText = false,
-    this.icon,
-    this.enable,
-    this.radios,
-    this.textInputAction,
-    this.onFieldSubmitted,
-  });
-
-  final String hint;
-  final int maxLines;
-  final int maxLength;
-  final bool obscureText;
-  final bool? enable;
-  final TextAlign? textAlign;
-  final Function(String val)? onChanged;
-  final TextEditingController? controller;
-  final TextInputType? keyBordType;
-  final EdgeInsets? innerPadding;
-  final Color? backgroundColor;
-  final Widget? icon;
-  final FocusNode? focusNode;
-  final double? radios;
-  final TextInputAction? textInputAction;
-  final Function(String)? onFieldSubmitted;
-
-  @override
-  Widget build(BuildContext context) {
-    bool obscureText = this.obscureText;
-    Widget? suffixIcon;
-    late VoidCallback onChangeObscure;
-
-    if (icon != null) suffixIcon = icon;
-
-    if (obscureText) {
-      suffixIcon = StatefulBuilder(
-        builder: (context, state) {
-          return InkWell(
-            splashColor: Colors.transparent,
-            onTap: () {
-              state(() => obscureText = !obscureText);
-              onChangeObscure();
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
-              child: Icon(
-                obscureText ? Icons.visibility : Icons.visibility_off,
-                size: 20.0.spMin,
-              ),
-            ),
-          );
-        },
-      );
-    }
-
-    final border = OutlineInputBorder(
-      borderSide: BorderSide(
-        color: backgroundColor ?? AppColorManager.offWhit.withValues(alpha: 0.27),
-      ),
-      borderRadius: BorderRadius.circular(radios ?? 10.0.r),
-    );
-
-    final inputDecoration = InputDecoration(
-      hintText: hint,
-      hintStyle: TextStyle(
-        fontFamily: FontManager.semeBold.name,
-        fontSize: 18.0.spMin,
-        color: Colors.white54,
-      ),
-      contentPadding: innerPadding ?? const EdgeInsets.symmetric(horizontal: 10.0).w,
-      counter: const SizedBox(),
-      enabledBorder: border,
-      focusedErrorBorder: border,
-      disabledBorder: border,
-      focusedBorder: border,
-      errorMaxLines: 0,
-      constraints: BoxConstraints(maxWidth: .9.sw, minWidth: .3.sw),
-      border: border,
-      fillColor: backgroundColor ?? AppColorManager.offWhit.withValues(alpha: 0.27),
-      filled: true,
-      enabled: enable ?? true,
-      prefixIcon: suffixIcon ?? 0.0.verticalSpace,
-      prefixIconConstraints: BoxConstraints(maxWidth: 80.0.spMin, minHeight: 50.0.spMin),
-    );
-
-    return StatefulBuilder(
-      builder: (context, state) {
-        onChangeObscure = () => state(() {});
-        return TextFormField(
-          obscureText: obscureText,
-          decoration: inputDecoration,
-          maxLines: maxLines,
-          textAlign: textAlign ?? TextAlign.start,
-          onChanged: onChanged,
-          style: TextStyle(
-            fontFamily: FontManager.bold.name,
-            fontSize: 18.0.spMin,
-            color: Colors.white,
-          ),
-          cursorColor: Colors.white,
-          focusNode: focusNode,
-          maxLength: maxLength,
-          controller: controller,
-          keyboardType: keyBordType,
-          textInputAction: textInputAction,
-          onFieldSubmitted: onFieldSubmitted,
-        );
-      },
-    );
-  }
 }

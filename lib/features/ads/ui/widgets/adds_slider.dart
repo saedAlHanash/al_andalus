@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/card_slider_widget.dart';
 import 'package:al_andalus/features/ads/bloc/adss_cubit/adss_cubit.dart';
@@ -12,14 +13,15 @@ import '../../../../core/util/my_style.dart';
 class AddsSlider extends StatelessWidget {
   const AddsSlider({super.key, required this.type, this.height});
 
-  final AdsType type;
+  final AdsType? type;
   final double? height;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AdssCubit, AdssInitial>(
       builder: (context, state) {
-        final list = state.result.where((e) => e.type.index == type.index);
+        loggerObject.w(state.result.where((element) => element.type == 'slider').length);
+        final list = type == null ? state.result : state.result.where((e) => e.type == type!.name);
         if (list.isEmpty) return 0.0.verticalSpace;
         if (state.loading) {
           return MyStyle.loadingWidget();
