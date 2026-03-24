@@ -152,10 +152,11 @@ class _ThemeItem extends StatelessWidget {
   }
 }
 
-void showSupportCall(BuildContext context) {
+void showSupportCall(BuildContext context, {bool isDismissible = true}) {
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
+    isDismissible: isDismissible,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
@@ -386,8 +387,8 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
+    constraints: BoxConstraints(maxHeight: 0.7.sh),
     backgroundColor: Colors.transparent,
-
     builder: (ctx) {
       return Column(
         mainAxisSize: MainAxisSize.min,
@@ -441,7 +442,6 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                     );
                   },
                 ),
-                30.0.verticalSpace,
               ],
             ),
           ),
@@ -456,6 +456,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
     useSafeArea: true,
     context: context,
     backgroundColor: Colors.transparent,
+    constraints: BoxConstraints(maxHeight: 0.7.sh),
     builder: (ctx) {
       return Column(
         mainAxisSize: MainAxisSize.min,
@@ -589,6 +590,7 @@ void selectCar(
   BuildContext context,
   List<CarPolicy> cars,
   Function(CarPolicy value) onConfirm,
+  Function() onAddCar,
 ) {
   showModalBottomSheet(
     useSafeArea: true,
@@ -615,6 +617,11 @@ void selectCar(
                       matchParent: true,
                     ),
                     10.0.verticalSpace,
+                    if (cars.isEmpty)
+                      MyButton(
+                        text: S.of(context).addYourFirstCar,
+                        onTap: onAddCar,
+                      ),
                     ...cars.map(
                       (e) => Container(
                         decoration: MyStyle.roundBox12(),
@@ -747,7 +754,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () => Navigator.pop(ctx, false),
-                    child: DrawableText(text: S.of(context).cancel),
+                    child: DrawableText(text: S.of(context).cancel, color: Colors.white),
                   ),
                 ),
                 10.horizontalSpace,
@@ -757,7 +764,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                     onPressed: () {
                       Navigator.pop(ctx, true);
                     },
-                    child: DrawableText(text: S.of(context).confirm),
+                    child: DrawableText(text: S.of(context).confirm, color: Colors.white),
                   ),
                 ),
               ],

@@ -32,12 +32,30 @@ class HowCanHelp extends StatelessWidget {
               Expanded(
                 child: _Item(
                   onTap: () {
-                    selectCar(context, state.result, (value) {
-                      context.pushNamed(
-                        RouteName.addAccidentPage,
-                        queryParameters: {'vehicleId': value.vehicle.id.toString()},
-                      );
-                    });
+                    selectCar(
+                      context,
+                      state.result,
+                      (value) {
+                        context.pushNamed(
+                          RouteName.addAccidentPage,
+                          queryParameters: {'vehicleId': value.vehicle.id.toString()},
+                        );
+                      },
+                      () {
+                        Navigator.pop(context);
+                        showCalculationPrice(
+                          context,
+                          null,
+                          (queryParameters) {
+                            context.pop();
+                            context.pushNamed(
+                              RouteName.insurancePage,
+                              queryParameters: queryParameters,
+                            );
+                          },
+                        );
+                      },
+                    );
                   },
                   height: 160.0,
                   color: context.isDark ? const Color(0xFF6C4E22) : const Color(0x66F09D21),

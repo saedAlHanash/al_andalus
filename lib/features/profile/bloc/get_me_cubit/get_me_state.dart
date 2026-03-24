@@ -13,7 +13,7 @@ class GetMeInitial extends AbstractState<Profile> {
 
   factory GetMeInitial.initial() {
     return GetMeInitial(
-      result: Profile.fromJson({}),
+      result: AppProvider.getMe,
       error: '',
       // educationalGradeParam: false,
       // request: ProfileRequest(),
@@ -23,10 +23,10 @@ class GetMeInitial extends AbstractState<Profile> {
 
   @override
   List<Object> get props => [
-        statuses,
-        result,
-        error,
-      ];
+    statuses,
+    result,
+    error,
+  ];
 
   GetMeInitial copyWith({
     CubitStatuses? statuses,

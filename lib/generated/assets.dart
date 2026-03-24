@@ -6,6 +6,9 @@ class Assets {
   static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
   static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
   static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
+  static const String fontsCairo = 'assets/fonts/cairo.ttf';
+  static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
+  static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
   static const String iconsAccident = 'assets/icons/accident.png';
   static const String iconsAccident1 = 'assets/icons/accident1.png';
   static const String iconsActiveStep = 'assets/icons/active_step.svg';
@@ -13,6 +16,7 @@ class Assets {
   static const String iconsAppBarBack = 'assets/icons/app_bar_back.svg';
   static const String iconsArrpwDowne = 'assets/icons/arrpw_downe.svg';
   static const String iconsBack = 'assets/icons/back.svg';
+  static const String iconsBellNotification = 'assets/icons/bell-notification.svg';
   static const String iconsBottomSheetHeader = 'assets/icons/bottom_sheet_header.svg';
   static const String iconsBox = 'assets/icons/box.svg';
   static const String iconsCalendar = 'assets/icons/calendar.svg';
@@ -90,5 +94,4 @@ class Assets {
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';
-
 }

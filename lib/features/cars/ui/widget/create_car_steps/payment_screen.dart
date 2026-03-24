@@ -18,7 +18,6 @@ class PaymentScreen extends StatefulWidget {
   State<PaymentScreen> createState() => _PaymentScreenState();
 }
 
-//localization
 class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             20.0.verticalSpace,
             Container(
               decoration: MyStyle.roundBox12(
-                color:state.mRequest.paymentType == .qiCard ? AppColorManager.mainColorLight : null,
+                color: state.mRequest.paymentType == .qiCard ? AppColorManager.mainColorLight : null,
               ),
               child: ListTile(
                 onTap: () {
@@ -52,8 +51,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             25.0.verticalSpace,
             Container(
               decoration: MyStyle.roundBox12(
-              color:  state.mRequest.paymentType == .zainCash
-                    ? AppColorManager.secondColor : null,
+                color: state.mRequest.paymentType == .zainCash ? AppColorManager.secondColor : null,
               ),
               child: ListTile(
                 onTap: () {

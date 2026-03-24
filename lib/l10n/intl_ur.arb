@@ -267,7 +267,7 @@
   "rejected": "ڕەتکرایەوە",
   "rejectedByOperationStaff": "لەلایەن ستافی ئۆپەراسیۆنەوە ڕەتکرایەوە",
   "rejectedBySurveyorStaff": "لەلایەن ستافی ڕووپێوییەوە ڕەتکرایەوە",
-  "rememberMe": "بمخەرەوە یارم",
+  "rememberMe": "بمبیربێنەرەوە",
   "rememberPassword": "وشەی نهێنی بیربهێנەوە",
   "renewalSubscription": "نوێکردنەوەی هاوبەشیکردن",
   "reportAccident": "ڕاپۆرتکردنی ڕووداو",
@@ -344,5 +344,15 @@
   "confirmPin": "پشتڕاستکردنەوەی PIN",
   "today": "ئەمڕۆ",
   "yesterday": "دوێنێ",
-  "unified": "یەکگرتوو"
+  "unified": "یەکگرتوو",
+  "noNotifications": "هیچ ئاگادارییەک نییە",
+  "doneRefresh": "تازەکردنەوە کرا",
+  "packageDetails": "وردەکارییەکانی پاکێج",
+  "theRequestedInformationIsNotCurrentlyAvailable": "ئەم زانیارییەی داواکراوە لە ئێستادا بەردەست نییە.",
+  "addYourFirstCar": "یەکەم ئۆتۆمبێلت زیاد بکە",
+  "noteIsRequired": "پێویستە تێبینییەک بۆ {field} زیاد بکەیت",
+  "theme": "ڕووکار",
+  "light": "ڕووناک",
+  "dark": "تاریک",
+  "system": "سیستەمی ئامێر"
 }

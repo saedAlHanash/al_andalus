@@ -404,6 +404,7 @@ class NoteMessage {
       animType: AnimType.scale,
       title: S.of(context).done,
       desc: message,
+      headerAnimationLoop: false,
       onDismissCallback: (type) => onCancel?.call(),
     ).show();
   }

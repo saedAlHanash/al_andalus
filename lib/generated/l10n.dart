@@ -464,10 +464,10 @@ class S {
     );
   }
 
-  /// `confirm New Password`
+  /// `Confirm New Password`
   String get confirmNewPassword {
     return Intl.message(
-      'confirm New Password',
+      'Confirm New Password',
       name: 'confirmNewPassword',
       desc: '',
       args: [],
@@ -2444,10 +2444,10 @@ class S {
     );
   }
 
-  /// `سوف يتم حذف الحساب بجميع البيانات والكورسات`
+  /// `The account will be deleted along with all data and courses.`
   String get subTitleDeleteAccount {
     return Intl.message(
-      'سوف يتم حذف الحساب بجميع البيانات والكورسات',
+      'The account will be deleted along with all data and courses.',
       name: 'subTitleDeleteAccount',
       desc: '',
       args: [],
@@ -2862,6 +2862,56 @@ class S {
   /// `Unified`
   String get unified {
     return Intl.message('Unified', name: 'unified', desc: '', args: []);
+  }
+
+  /// `No notifications`
+  String get noNotifications {
+    return Intl.message(
+      'No notifications',
+      name: 'noNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done refresh`
+  String get doneRefresh {
+    return Intl.message(
+      'Done refresh',
+      name: 'doneRefresh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Package details`
+  String get packageDetails {
+    return Intl.message(
+      'Package details',
+      name: 'packageDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The requested information is not currently available.`
+  String get theRequestedInformationIsNotCurrentlyAvailable {
+    return Intl.message(
+      'The requested information is not currently available.',
+      name: 'theRequestedInformationIsNotCurrentlyAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your first car`
+  String get addYourFirstCar {
+    return Intl.message(
+      'Add your first car',
+      name: 'addYourFirstCar',
+      desc: '',
+      args: [],
+    );
   }
 }
 

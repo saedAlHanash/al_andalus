@@ -38,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "active": MessageLookupByLibrary.simpleMessage("Active"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("Add New Car"),
+    "addYourFirstCar": MessageLookupByLibrary.simpleMessage(
+      "Add your first car",
+    ),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Added to cart successfully",
     ),
@@ -113,7 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter Confirmation Code",
     ),
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
-      "confirm New Password",
+      "Confirm New Password",
     ),
     "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
@@ -153,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "donePick": MessageLookupByLibrary.simpleMessage("Done Pick"),
+    "doneRefresh": MessageLookupByLibrary.simpleMessage("Done refresh"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "Done resend code",
     ),
@@ -318,6 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternet": MessageLookupByLibrary.simpleMessage(
       "Please check your internet connection",
     ),
+    "noNotifications": MessageLookupByLibrary.simpleMessage("No notifications"),
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage(
       "No summary files available",
     ),
@@ -331,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ownership transfer status",
     ),
     "packageCost": MessageLookupByLibrary.simpleMessage("Package cost"),
+    "packageDetails": MessageLookupByLibrary.simpleMessage("Package details"),
     "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -603,7 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Start your insurance journey easily",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
-      "سوف يتم حذف الحساب بجميع البيانات والكورسات",
+      "The account will be deleted along with all data and courses.",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("Subscribe Now"),
@@ -620,6 +626,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
     ),
+    "theRequestedInformationIsNotCurrentlyAvailable":
+        MessageLookupByLibrary.simpleMessage(
+          "The requested information is not currently available.",
+        ),
     "theme": MessageLookupByLibrary.simpleMessage("Theme"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "Tires and Accessories",

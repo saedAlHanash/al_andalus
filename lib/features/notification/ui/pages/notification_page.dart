@@ -65,7 +65,10 @@ class _NotificationPageState extends State<NotificationPage> {
               context.read<NotificationCubit>().getData(newData: true);
             },
             child: state.isDataEmpty
-                ? const NotFoundWidget()
+                ? NotFoundNotificationsWidget(
+                    icon: Assets.iconsBellNotification,
+                    text: S.of(context).noNotifications,
+                  )
                 : ListView.separated(
                     itemCount: gList.length,
                     separatorBuilder: (context, i) => 10.0.verticalSpace,

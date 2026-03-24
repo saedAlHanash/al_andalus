@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
@@ -46,13 +47,20 @@ class LoginCubit extends Cubit<LoginInitial> {
 
     if (response.statusCode.success) {
       final pair = Pair(LoginResponse.fromJson(response.jsonBody), null);
-
       return pair;
     } else {
-      if (response.statusCode == 311) {
+      if (response.statusCode == 311 || response.statusCode == 420) {
         await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
-
         ctx!.goNamed(RouteName.confirmCode);
+      }
+
+      if (response.statusCode == 312 || response.statusCode == 430) {
+        await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
+        ctx!.goNamed(RouteName.pin);
+      }
+
+      if (response.statusCode == 403) {
+        showSupportCall(ctx!, isDismissible: false);
       }
       return response.getPairError as Pair<LoginResponse?, String?>;
     }

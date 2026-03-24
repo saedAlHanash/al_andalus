@@ -20,7 +20,7 @@ class InsurancePolicyRequest {
     this.plateNumber,
     this.fuelType,
     this.engineCapacity,
-    this.paymentType = PaymentType.zainCash,
+    this.paymentType,
     this.expiryStartDate,
     this.expiryEndDate,
     // Inspection fields

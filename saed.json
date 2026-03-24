@@ -1,24 +1,22 @@
 {
-  "data": [
-    {
-      "id": 12,
-      "image": "https://admin.andalusapp.com/storage/advertisements/car-ins-1768126090-1773333839.jpeg",
-      "type": "slider"
-    },
-    {
-      "id": 11,
-      "image": "https://admin.andalusapp.com/storage/advertisements/zcczcz-1768117208-1773333751.jpeg",
-      "type": "slider"
-    },
-    {
-      "id": 10,
-      "image": "https://admin.andalusapp.com/storage/advertisements/background-2-1773327441.png",
-      "type": "slider"
-    },
-    {
-      "id": 5,
-      "image": "https://admin.andalusapp.com/storage/advertisements/car-ins-1768126090.jpeg",
-      "type": "banner"
-    }
-  ]
+  "data": {
+    "id": 18,
+    "name": "مستخدم تجريبي",
+    "phone": "+9647388915233",
+    "identity_id": "123456789",
+    "address": "بغداد - الكرادة",
+    "birth_date": "1997-02-19",
+    "qrcode": "53db4ce9-f11b-49f4-af93-07f635e89cae",
+    "gender": "male",
+    "identity_front_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
+    "identity_back_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
+    "license_number": "987654321",
+    "license_type": "private",
+    "license_start_date": "2026-03-09",
+    "license_end_date": "2036-03-06",
+    "license_front_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
+    "license_back_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
+    "created": "2026-03-09 | 11:13 ص"
+  },
+  "token": "257|y9g03YHD0uBlUciRDfGOVje942NvTER7O1zkwAPvc3cbdc75"
 }

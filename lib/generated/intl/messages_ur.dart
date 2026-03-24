@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ur';
 
+  static String m0(field) => "پێویستە تێبینییەک بۆ ${field} زیاد بکەیت";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutUs": MessageLookupByLibrary.simpleMessage("دەربارەی ئێمە"),
@@ -37,6 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "active": MessageLookupByLibrary.simpleMessage("چالاک"),
     "addNewCar": MessageLookupByLibrary.simpleMessage(
       "زیادکردنی ئۆتۆمبێلی نوێ",
+    ),
+    "addYourFirstCar": MessageLookupByLibrary.simpleMessage(
+      "یەکەم ئۆتۆمبێلت زیاد بکە",
     ),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
       "بە سەرکەوتوویی خرایە سەبەتەوە",
@@ -136,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cylinders": MessageLookupByLibrary.simpleMessage("ژمارەی سلیندەرەکان"),
     "damage": MessageLookupByLibrary.simpleMessage("زیان"),
+    "dark": MessageLookupByLibrary.simpleMessage("تاریک"),
     "day": MessageLookupByLibrary.simpleMessage("ڕۆژ"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "رایدەگەیەنم کە هەموو ئەو زانیاری و فایلانەی بارم کردوون ڕاستن و بەرپرسیارێتی تەواوی یاسایی لە ئەستۆ دەگرم لە ئەگەری هەر زانیارییەکی نادروست.",
@@ -154,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("هەژمارت هەیە؟"),
     "done": MessageLookupByLibrary.simpleMessage("تەواو"),
     "donePick": MessageLookupByLibrary.simpleMessage("هەڵبژاردن تەواو بوو"),
+    "doneRefresh": MessageLookupByLibrary.simpleMessage("تازەکردنەوە کرا"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "کۆدەکە دووبارە نێردرایەوە",
     ),
@@ -277,6 +284,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "latest": MessageLookupByLibrary.simpleMessage("نوێترین"),
     "left": MessageLookupByLibrary.simpleMessage("چەپ"),
     "licenseType": MessageLookupByLibrary.simpleMessage("جۆری مۆڵەت"),
+    "light": MessageLookupByLibrary.simpleMessage("ڕووناک"),
     "loadMore": MessageLookupByLibrary.simpleMessage("زیاتر نیشان بدە"),
     "logInToYourAccount": MessageLookupByLibrary.simpleMessage(
       "چوونەژوورەوە بۆ هەژمارەکەت",
@@ -326,9 +334,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternet": MessageLookupByLibrary.simpleMessage(
       "تکایە هێڵی ئینتەرنێتەکەت بپشکنە",
     ),
+    "noNotifications": MessageLookupByLibrary.simpleMessage(
+      "هیچ ئاگادارییەک نییە",
+    ),
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage(
       "هیچ فایلێکی پوختە بەردەست نییە",
     ),
+    "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("ئاگانامەکان"),
     "notifications": MessageLookupByLibrary.simpleMessage("ئاگانامەکان"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("وشەی نهێنی کۆن"),
@@ -338,6 +350,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "دۆخی گواستنەوەی خاوەندارێتی",
     ),
     "packageCost": MessageLookupByLibrary.simpleMessage("تێچووی پاکێج"),
+    "packageDetails": MessageLookupByLibrary.simpleMessage(
+      "وردەکارییەکانی پاکێج",
+    ),
     "paid": MessageLookupByLibrary.simpleMessage("پارە دراوە"),
     "password": MessageLookupByLibrary.simpleMessage("وشەی نهێنی"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -558,7 +573,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "لەلایەن ستافی ڕووپێوییەوە ڕەتکرایەوە",
     ),
-    "rememberMe": MessageLookupByLibrary.simpleMessage("بمخەرەوە یارم"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("بمبیربێنەرەوە"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "وشەی نهێنی بیربهێנەوە",
     ),
@@ -620,6 +635,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "subscribeNow": MessageLookupByLibrary.simpleMessage("ئێستا بەشداربە"),
     "support": MessageLookupByLibrary.simpleMessage("پشتیوانی"),
     "sure": MessageLookupByLibrary.simpleMessage("دڵنیا"),
+    "system": MessageLookupByLibrary.simpleMessage("سیستەمی ئامێر"),
     "takePicture": MessageLookupByLibrary.simpleMessage("وێنەگرتن"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage("پاکێجی تەکنیکی"),
     "technicalSupport": MessageLookupByLibrary.simpleMessage(
@@ -628,6 +644,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "مەرج و ڕێنماییەکان",
     ),
+    "theRequestedInformationIsNotCurrentlyAvailable":
+        MessageLookupByLibrary.simpleMessage(
+          "ئەم زانیارییەی داواکراوە لە ئێستادا بەردەست نییە.",
+        ),
+    "theme": MessageLookupByLibrary.simpleMessage("ڕووکار"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "تایە و پێداویستییەکان",
     ),

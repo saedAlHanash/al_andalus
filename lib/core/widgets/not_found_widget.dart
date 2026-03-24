@@ -5,8 +5,8 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../generated/assets.dart';
 
-class NotFoundWidget extends StatelessWidget {
-  const NotFoundWidget({
+class NotFoundNotificationsWidget extends StatelessWidget {
+  const NotFoundNotificationsWidget({
     super.key,
     this.text,
     this.icon,
@@ -35,7 +35,7 @@ class NotFoundWidget extends StatelessWidget {
             matchParent: true,
             textAlign: TextAlign.center,
           ),
-        )
+        ),
       ],
     );
   }

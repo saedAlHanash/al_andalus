@@ -28,8 +28,6 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  bool get isDarkMode => context.isDark;
-
   @override
   Widget build(BuildContext context) {
     if (AppProvider.isGuest) {

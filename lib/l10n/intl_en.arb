@@ -52,7 +52,7 @@
   "completed": "Completed",
   "confirm": "Confirm",
   "confirmCode": "Enter Confirmation Code",
-  "confirmNewPassword": "confirm New Password",
+  "confirmNewPassword": "Confirm New Password",
   "confirmTheNextStep": "Confirm the next step",
   "congrats": "Congrats !",
   "continueTo": "Continue",
@@ -298,7 +298,7 @@
   "spareToolsGroup": "Spare Tools Group",
   "startNow": "Start now",
   "startYourInsuranceJourneyEasily": "Start your insurance journey easily",
-  "subTitleDeleteAccount": "سوف يتم حذف الحساب بجميع البيانات والكورسات",
+  "subTitleDeleteAccount": "The account will be deleted along with all data and courses.",
   "submit": "Submit",
   "subscribeNow": "Subscribe Now",
   "support": "Support",
@@ -350,5 +350,10 @@
   "light": "Light",
   "dark": "Dark",
   "system": "System",
-  "unified": "Unified"
+  "unified": "Unified",
+  "noNotifications": "No notifications",
+  "doneRefresh": "Done refresh",
+  "packageDetails": "Package details",
+  "theRequestedInformationIsNotCurrentlyAvailable": "The requested information is not currently available.",
+  "addYourFirstCar": "Add your first car"
 }

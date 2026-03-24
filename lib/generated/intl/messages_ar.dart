@@ -36,8 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "accidentLocation": MessageLookupByLibrary.simpleMessage("موقع الحادث"),
     "active": MessageLookupByLibrary.simpleMessage("نشط"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
+    "addYourFirstCar": MessageLookupByLibrary.simpleMessage(
+      "أضف سيارتك الأولى",
+    ),
     "addedToCartSuccessfully": MessageLookupByLibrary.simpleMessage(
-      "تم الأضافة الى السلة بنجاح",
+      "تمت إضافة المنتج إلى السلة بنجاح",
     ),
     "additionalCosts": MessageLookupByLibrary.simpleMessage("تكاليف إضافية"),
     "airConditionerAndType": MessageLookupByLibrary.simpleMessage(
@@ -72,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إرفاق صورة الإجازة الأمامية هنا",
     ),
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
-      " إرفق تقرير الشرطة:",
+      "أرفق تقرير الشرطة:",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
     "biometricData": MessageLookupByLibrary.simpleMessage(
@@ -83,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "browseFiles": MessageLookupByLibrary.simpleMessage("تصفح الملفات"),
     "buildNumber": MessageLookupByLibrary.simpleMessage("رقم الإصدار"),
     "calculateInsuranceCost": MessageLookupByLibrary.simpleMessage(
-      "إحسب تكلفة التأمين لسيارتك",
+      "احسب تكلفة التأمين لسيارتك",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage("إلغاء الوثيقة"),
@@ -111,7 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
-    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد PIN"),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد الرمز السري"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
@@ -143,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "donePick": MessageLookupByLibrary.simpleMessage("تم الاختيار"),
+    "doneRefresh": MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "تم إعادة الإرسال",
     ),
@@ -300,6 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternet": MessageLookupByLibrary.simpleMessage(
       "يرجى التحقق من اتصالك بالإنترنت",
     ),
+    "noNotifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage("لا توجد أي ملازم"),
     "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
@@ -311,6 +316,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "حالة نقل الملكية",
     ),
     "packageCost": MessageLookupByLibrary.simpleMessage("تكلفة الباقة"),
+    "packageDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الباقة"),
     "paid": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -340,7 +346,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
-    "pinCode": MessageLookupByLibrary.simpleMessage("رمز PIN"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("الرمز السري"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -453,7 +459,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ البداية",
     ),
     "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
-      "يرجى إرسال رمز PIN",
+      "يرجى إرسال الرمز السري",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "يرجى ذكر تفاصيل الحادث الذي جرى",
@@ -534,7 +540,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("رفع حادث"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(
-      "التعويض أسهل الآن.. صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي",
+      "التعويض أسهل الآن..\n صوّر الضرر وارفع طلبك فوراً..\nونحن نعتني بالباقي",
     ),
     "reportAccidentIntroTitle": MessageLookupByLibrary.simpleMessage(
       "الإبلاغ عن حادث",
@@ -566,7 +572,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sendCode": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
-    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
     "spareTire": MessageLookupByLibrary.simpleMessage("الإطار الإحتياط"),
     "spareTools": MessageLookupByLibrary.simpleMessage("الأدوات الإحتياطية"),
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(
@@ -577,7 +583,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابدأ رحلتك التأمينية بكل سهولة",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
-      "سوف يتم حذف الحساب بجميع البيانات والكورسات",
+      "سيتم حذف الحساب بجميع البيانات والدورات التدريبية",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("اشترك الان"),
@@ -590,6 +596,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
     ),
+    "theRequestedInformationIsNotCurrentlyAvailable":
+        MessageLookupByLibrary.simpleMessage(
+          "المعلومات المطلوبة غير متوفرة حالياً.",
+        ),
     "theme": MessageLookupByLibrary.simpleMessage("المظهر"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "الإطارات و ملحقاتها",

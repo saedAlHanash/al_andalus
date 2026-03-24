@@ -1,6 +1,8 @@
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import '../../../generated/l10n.dart';
 import '../../strings/app_color_manager.dart';
 
 class RefreshWidget extends StatefulWidget {
@@ -37,8 +39,9 @@ class _RefreshWidgetState extends State<RefreshWidget> {
     }
     return SmartRefresher(
       enablePullDown: true,
-      header: const WaterDropHeader(
+      header: WaterDropHeader(
         waterDropColor: AppColorManager.mainColor,
+        complete: DrawableText(text: S.of(context).doneRefresh),
       ),
       controller: _refreshController,
       onRefresh: _onRefresh,

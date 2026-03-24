@@ -42,7 +42,7 @@ class _PinPageState extends State<PinPage> {
     return MultiBlocListener(
       listeners: [
         BlocListener<ConfirmCodeCubit, ConfirmCodeInitial>(
-          listenWhen: (p, current) => current.statuses == CubitStatuses.done,
+          listenWhen: (p, current) => current.done,
           listener: (context, state) {
             context.goNamed(RouteName.donePage);
           },
