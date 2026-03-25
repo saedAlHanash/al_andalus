@@ -30,7 +30,7 @@ class SignupCubit extends MCubit<SignupInitial> {
       emit(state.copyWith(error: pair.second, statuses: CubitStatuses.error));
       showErrorFromApi(state);
     } else {
-      await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
+      await AppProvider.cachePhone(phone: state.mRequest.phone!, type: StartPage.signupOtp);
 
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
@@ -38,14 +38,13 @@ class SignupCubit extends MCubit<SignupInitial> {
 
   Future<Pair<bool?, String?>> _signupApi() async {
     for (var file in state.mRequest.files) {
-      file.localId = (await APIService().uploadFile(file: file)).toString();
+      file.remoteId = (await APIService().uploadFile(file: file)).toString();
     }
 
-    final response = await APIService().callApi(
+    final response = await APIService().uploadMultiPart(
       url: PostUrl.signup,
-      type: .post,
 
-      body: state.mRequest.toJson(),
+      fields: state.mRequest.toJson(),
     );
 
     if (response.statusCode.success) {

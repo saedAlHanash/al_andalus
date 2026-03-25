@@ -34,6 +34,8 @@
 	<string>يتم استخدام موقعك للمساعدة في تحديد عنوان التوصيل أثناء استخدام التطبيق.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>نحتاج للوصول إلى مكتبة الصور لاختيار صورة للملف الشخصي.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>نحتاج لاستخدام البصمة أو التعرف على الوجه لتسجيل الدخول بشكل أسرع وأكثر أماناً.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

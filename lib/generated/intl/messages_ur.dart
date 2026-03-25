@@ -82,8 +82,32 @@ class MessageLookup extends MessageLookupByLibrary {
       "ڕاپۆرتی پۆلیس هاوپێچ بکە:",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("تایەکانی دواوە"),
+    "biometricCanceled": MessageLookupByLibrary.simpleMessage(
+      "کردارەکە لەلایەن بەکارهێنەرەوە هەڵوەشێنرایەوە",
+    ),
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "زانیارییە بایۆمەترییەکان",
+    ),
+    "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
+      "ئامێرەکە بە شێوەیەکی کاتی قوفڵ دراوە، تکایە دواتر هەوڵبدەرەوە",
+    ),
+    "biometricNotCached": MessageLookupByLibrary.simpleMessage(
+      "پێویستە لایەنی کەم یەک جار بچیتە ژوورەوە بۆ پاشەکەوتکردنی زانیارییەکانت",
+    ),
+    "biometricNotEnrolled": MessageLookupByLibrary.simpleMessage(
+      "هیچ پەنجەمۆرێک یان ڕووخسارێک لە ئامێرەکەدا تۆمارنەکراوە",
+    ),
+    "biometricNotSupported": MessageLookupByLibrary.simpleMessage(
+      "ئامێرەکە پشتگیری پەنجەمۆر یان ناسینەوەی ڕووخسار ناکات",
+    ),
+    "biometricPermanentlyLockedOut": MessageLookupByLibrary.simpleMessage(
+      "ئامێرەکە بە تەواوی قوفڵ دراوە، تکایە بە وشەی نهێنی بچۆ ژوورەوە",
+    ),
+    "biometricReason": MessageLookupByLibrary.simpleMessage(
+      "تکایە پشتڕاستکردنەوە بکە بۆ چوونە ناو هەژمارەکەت",
+    ),
+    "biometricUnknown": MessageLookupByLibrary.simpleMessage(
+      "هەڵەیەکی نەزانراو لە کاتی پشتڕاستکردنەوە ڕوویدا",
     ),
     "birthday": MessageLookupByLibrary.simpleMessage("ڕۆژی لەدایکبوون"),
     "brandSign": MessageLookupByLibrary.simpleMessage("نیشانەی براند"),
@@ -576,6 +600,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("بمبیربێنەرەوە"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "وشەی نهێنی بیربهێנەوە",
+    ),
+    "removeBiometricData": MessageLookupByLibrary.simpleMessage(
+      "سڕینەوەی زانیارییەکانی چوونەژوورەوە بە پەنجەمۆر",
+    ),
+    "removeBiometricDataSub": MessageLookupByLibrary.simpleMessage(
+      "سڕینەوەی داتاکانی پاشەکەوتکراو بۆ چوونەژوورەوەی خێرا",
+    ),
+    "removeBiometricSuccess": MessageLookupByLibrary.simpleMessage(
+      "زانیارییەکانی پەنجەمۆر بە سەرکەوتوویی سڕایەوە",
+    ),
+    "removeBiometricWarning": MessageLookupByLibrary.simpleMessage(
+      "دڵنیایت دەتەوێت زانیارییەکانی پەنجەمۆر بسڕیتەوە؟ جارێکی تر دەبێت وشەی نهێنی بنووسیت.",
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
       "نوێکردنەوەی هاوبەشیکردن",

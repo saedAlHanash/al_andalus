@@ -48,14 +48,14 @@ class AppSharedPreference {
   //endregion
 
   //region Email
-  static Future<void> cashEmail(String? phone) async {
+  static Future<void> cashPhone(String? phone) async {
     if (phone == null) return;
     await _prefs?.setString(_phone, phone);
   }
 
   static String get getPhone => _prefs?.getString(_phone) ?? '';
 
-  static Future<void> removeEmail() async {
+  static Future<void> removePhone() async {
     await _prefs?.remove(_phone);
   }
 
@@ -181,8 +181,6 @@ class AppSharedPreference {
   }
 
   static ThemeMode get getThemeMode => ThemeMode.values[_prefs?.getInt(_keyThemeMode) ?? 1];
-
-
 
   //endregion
 }

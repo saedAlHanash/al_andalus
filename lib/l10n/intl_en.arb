@@ -355,5 +355,17 @@
   "doneRefresh": "Done refresh",
   "packageDetails": "Package details",
   "theRequestedInformationIsNotCurrentlyAvailable": "The requested information is not currently available.",
-  "addYourFirstCar": "Add your first car"
+  "addYourFirstCar": "Add your first car",
+  "biometricNotSupported": "Device does not support biometrics",
+  "biometricNotEnrolled": "No biometric identity enrolled",
+  "biometricLockedOut": "Device locked out temporarily",
+  "biometricPermanentlyLockedOut": "Device permanently locked out, login with password",
+  "biometricCanceled": "Operation canceled by user",
+  "biometricNotCached": "Please login at least once using password",
+  "biometricUnknown": "Unknown error during biometric authentication",
+  "biometricReason": "Authenticate to access your account",
+  "removeBiometricData": "Remove Biometrics",
+  "removeBiometricDataSub": "Delete saved data for quick auth",
+  "removeBiometricSuccess": "Biometric data removed successfully",
+  "removeBiometricWarning": "Are you sure you want to remove saved biometrics?"
 }

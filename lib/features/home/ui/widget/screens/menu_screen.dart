@@ -5,6 +5,7 @@ import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
+import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -117,25 +118,14 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.profile).then(
-                            (value) {
-                              context.read<GetMeCubit>().getData(newData: true);
-                            },
-                          );
+                          context.pushNamed(RouteName.biometricEnroll);
                         },
                         name: S.of(context).biometricData,
                         subTitle: S.of(context).manageBiometricSettings,
                         image: Assets.iconsPerson,
                       ),
-
                       ItemMenu(
-                        onTap: () {
-                          context.pushNamed(RouteName.profile).then(
-                            (value) {
-                              context.read<GetMeCubit>().getData(newData: true);
-                            },
-                          );
-                        },
+                        onTap: () {},
                         name: S.of(context).changePasscode,
                         subTitle: S.of(context).manageLoginPasscode,
                         image: Assets.iconsPerson,
@@ -186,15 +176,15 @@ class _MenuScreenState extends State<MenuScreen> {
                         subTitle: S.of(context).manageDrivingLicenseInfo,
                         image: Assets.iconsPerson,
                       ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(RouteName.carsPage);
-                        },
-                        name: S.of(context).myCars,
-                        subTitle: S.of(context).manageMyCars,
-                        image: Assets.iconsPerson,
-                        withD: false,
-                      ),
+                      // ItemMenu(
+                      //   onTap: () {
+                      //     context.pushNamed(RouteName.carsPage);
+                      //   },
+                      //   name: S.of(context).myCars,
+                      //   subTitle: S.of(context).manageMyCars,
+                      //   image: Assets.iconsPerson,
+                      //   withD: false,
+                      // ),
                     ],
                   ),
                 ),

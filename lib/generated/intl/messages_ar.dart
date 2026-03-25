@@ -78,8 +78,32 @@ class MessageLookup extends MessageLookupByLibrary {
       "أرفق تقرير الشرطة:",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
+    "biometricCanceled": MessageLookupByLibrary.simpleMessage(
+      "تم إلغاء العملية من قبل المستخدم",
+    ),
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "البيانات البيومترية",
+    ),
+    "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
+      "تم قفل المحاولة مؤقتاً لظروف أمنية، يرجى المحاولة لاحقاً",
+    ),
+    "biometricNotCached": MessageLookupByLibrary.simpleMessage(
+      "يجب تسجيل الدخول مرة واحدة على الأقل بالبيانات لحفظها للمصادقة بالبصمة",
+    ),
+    "biometricNotEnrolled": MessageLookupByLibrary.simpleMessage(
+      "لم يتم تسجيل أي بصمة أو وجه في الجهاز",
+    ),
+    "biometricNotSupported": MessageLookupByLibrary.simpleMessage(
+      "الجهاز لا يدعم البصمة أو التعرف على الوجه",
+    ),
+    "biometricPermanentlyLockedOut": MessageLookupByLibrary.simpleMessage(
+      "تم قفل المحاولة بشكل دائم، يرجى الدخول باستخدام كلمة المرور",
+    ),
+    "biometricReason": MessageLookupByLibrary.simpleMessage(
+      "يرجى المصادقة للوصول إلى بيانات حسابك",
+    ),
+    "biometricUnknown": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير معروف أثناء المصادقة والتأكد من البصمة",
     ),
     "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
     "brandSign": MessageLookupByLibrary.simpleMessage("علامة السيارة"),
@@ -534,6 +558,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
+    ),
+    "removeBiometricData": MessageLookupByLibrary.simpleMessage(
+      "إزالة بيانات الدخول عبر البصمة",
+    ),
+    "removeBiometricDataSub": MessageLookupByLibrary.simpleMessage(
+      "حذف البيانات المحفوظة للمصادقة السريعة",
+    ),
+    "removeBiometricSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم إزالة بيانات الدخول عبر البصمة بنجاح",
+    ),
+    "removeBiometricWarning": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من إزالة بيانات البصمة المحفوظة؟ سيتوجب عليك إعادة كتابة كلمة المرور المرة القادمة.",
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
       "تجديد الاشتراك",

@@ -22,12 +22,12 @@ class AccidentsCubit extends MCubit<AccidentsInitial> {
   Future<void> create() async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
     for (var file in state.mRequest.files) {
-      file.localId = (await APIService().uploadFile(file: file)).toString();
+      file.remoteId = (await APIService().uploadFile(file: file)).toString();
     }
-    final response = await APIService().callApi(
+    final response = await APIService().uploadMultiPart(
       url: PostUrl.claim,
-      type: .post,
-      body: state.mRequest.toJson(),
+
+      fields: state.mRequest.toJson(),
     );
 
     _createResult(response);

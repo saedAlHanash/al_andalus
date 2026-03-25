@@ -20,7 +20,7 @@ class RememberPassword extends StatelessWidget {
       drawablePadding: 7.0.w,
       drawableEnd: InkWell(
         onTap: () {
-          AppSharedPreference.removeEmail().then((value) {
+          AppSharedPreference.removePhone().then((value) {
             context.goNamed(RouteName.login);
           });
         },
@@ -49,7 +49,7 @@ class RememberAccount extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 20.0),
           drawableEnd: InkWell(
             onTap: () async {
-              await AppSharedPreference.removeEmail();
+              await AppSharedPreference.removePhone();
               await AppSharedPreference.cashStartPage(StartPage.login);
               if (context.mounted) {
                 context.goNamed(RouteName.login);

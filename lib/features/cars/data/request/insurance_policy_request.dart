@@ -116,31 +116,31 @@ class InsurancePolicyRequest {
 
     request.ownershipFrontImage
       ..remoteUrl = vehicle.ownershipFrontImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.ownershipBackImage
       ..remoteUrl = vehicle.ownershipBackImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.inspectionReport
       ..remoteUrl = vehicle.inspectionReport
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.frontImage
       ..remoteUrl = attachment.frontImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.backImage
       ..remoteUrl = attachment.backImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.rightSideImage
       ..remoteUrl = attachment.rightSideImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.leftSideImage
       ..remoteUrl = attachment.leftSideImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.interiorImage
       ..remoteUrl = attachment.interiorImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
     request.engineImage
       ..remoteUrl = attachment.engineImage
-      ..localId = S().uploadedFile;
+      ..remoteId = S().uploadedFile;
 
     return request;
   }
@@ -286,15 +286,15 @@ class InsurancePolicyRequest {
     'inspection[spare_tools]': spareTools?.nameApi,
     'inspection[spare_tools_note]': spareToolsNote ?? '-',
     'inspection[other_notes]': otherNotes,
-    'ownership_front_image': ownershipFrontImage.localId,
-    'ownership_back_image': ownershipBackImage.localId,
-    'inspection_report': inspectionReport.localId,
-    'attachments[front_image]': frontImage.localId,
-    'attachments[back_image]': backImage.localId,
-    'attachments[right_side_image]': rightSideImage.localId,
-    'attachments[left_side_image]': leftSideImage.localId,
-    'attachments[interior_image]': interiorImage.localId,
-    'attachments[engine_image]': engineImage.localId,
+    'ownership_front_image': ownershipFrontImage.remoteId,
+    'ownership_back_image': ownershipBackImage.remoteId,
+    'inspection_report': inspectionReport.remoteId,
+    'attachments[front_image]': frontImage.remoteId,
+    'attachments[back_image]': backImage.remoteId,
+    'attachments[right_side_image]': rightSideImage.remoteId,
+    'attachments[left_side_image]': leftSideImage.remoteId,
+    'attachments[interior_image]': interiorImage.remoteId,
+    'attachments[engine_image]': engineImage.remoteId,
   };
 
   void setTempImages(UploadFile file) {

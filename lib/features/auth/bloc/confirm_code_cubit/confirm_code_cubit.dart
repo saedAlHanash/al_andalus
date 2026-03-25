@@ -77,7 +77,7 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
       final pair = Pair(LoginResponse.fromJson(response.jsonBody), null);
 
       AppSharedPreference.cashToken(pair.first.token);
-      AppSharedPreference.removeEmail();
+      AppSharedPreference.removePhone();
       return pair;
     } else {
       return response.getPairError;

@@ -80,7 +80,31 @@ class MessageLookup extends MessageLookupByLibrary {
       "Attach Police Report:",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("Back Tires"),
+    "biometricCanceled": MessageLookupByLibrary.simpleMessage(
+      "Operation canceled by user",
+    ),
     "biometricData": MessageLookupByLibrary.simpleMessage("Biometric Data"),
+    "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
+      "Device locked out temporarily",
+    ),
+    "biometricNotCached": MessageLookupByLibrary.simpleMessage(
+      "Please login at least once using password",
+    ),
+    "biometricNotEnrolled": MessageLookupByLibrary.simpleMessage(
+      "No biometric identity enrolled",
+    ),
+    "biometricNotSupported": MessageLookupByLibrary.simpleMessage(
+      "Device does not support biometrics",
+    ),
+    "biometricPermanentlyLockedOut": MessageLookupByLibrary.simpleMessage(
+      "Device permanently locked out, login with password",
+    ),
+    "biometricReason": MessageLookupByLibrary.simpleMessage(
+      "Authenticate to access your account",
+    ),
+    "biometricUnknown": MessageLookupByLibrary.simpleMessage(
+      "Unknown error during biometric authentication",
+    ),
     "birthday": MessageLookupByLibrary.simpleMessage("birthday"),
     "brandSign": MessageLookupByLibrary.simpleMessage("Brand Sign"),
     "browseFiles": MessageLookupByLibrary.simpleMessage("Browse Files"),
@@ -558,6 +582,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "Remember Password",
+    ),
+    "removeBiometricData": MessageLookupByLibrary.simpleMessage(
+      "Remove Biometrics",
+    ),
+    "removeBiometricDataSub": MessageLookupByLibrary.simpleMessage(
+      "Delete saved data for quick auth",
+    ),
+    "removeBiometricSuccess": MessageLookupByLibrary.simpleMessage(
+      "Biometric data removed successfully",
+    ),
+    "removeBiometricWarning": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to remove saved biometrics?",
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
       "Renewal of subscription",

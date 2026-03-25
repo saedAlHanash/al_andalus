@@ -93,10 +93,10 @@ class SignupRequest {
     'license_start_date': licenseStartDate?.toIso8601String().split('T').first,
     'license_end_date': licenseEndDate?.toIso8601String().split('T').first,
     'biometric_id': biometricId,
-    'identity_front_image': identityFrontImage.localId,
-    'identity_back_image': identityBackImage.localId,
-    'license_front_image': licenseFrontImage.localId,
-    'license_back_image': licenseBackImage.localId,
+    'identity_front_image': identityFrontImage.remoteId,
+    'identity_back_image': identityBackImage.remoteId,
+    'license_front_image': licenseFrontImage.remoteId,
+    'license_back_image': licenseBackImage.remoteId,
   };
 }
 

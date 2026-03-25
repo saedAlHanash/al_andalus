@@ -354,5 +354,17 @@
   "doneRefresh": "تم التحديث بنجاح",
   "packageDetails": "تفاصيل الباقة",
   "theRequestedInformationIsNotCurrentlyAvailable": "المعلومات المطلوبة غير متوفرة حالياً.",
-  "addYourFirstCar": "أضف سيارتك الأولى"
+  "addYourFirstCar": "أضف سيارتك الأولى",
+  "biometricNotSupported": "الجهاز لا يدعم البصمة أو التعرف على الوجه",
+  "biometricNotEnrolled": "لم يتم تسجيل أي بصمة أو وجه في الجهاز",
+  "biometricLockedOut": "تم قفل المحاولة مؤقتاً لظروف أمنية، يرجى المحاولة لاحقاً",
+  "biometricPermanentlyLockedOut": "تم قفل المحاولة بشكل دائم، يرجى الدخول باستخدام كلمة المرور",
+  "biometricCanceled": "تم إلغاء العملية من قبل المستخدم",
+  "biometricNotCached": "يجب تسجيل الدخول مرة واحدة على الأقل بالبيانات لحفظها للمصادقة بالبصمة",
+  "biometricUnknown": "حدث خطأ غير معروف أثناء المصادقة والتأكد من البصمة",
+  "biometricReason": "يرجى المصادقة للوصول إلى بيانات حسابك",
+  "removeBiometricData": "إزالة بيانات الدخول عبر البصمة",
+  "removeBiometricDataSub": "حذف البيانات المحفوظة للمصادقة السريعة",
+  "removeBiometricSuccess": "تم إزالة بيانات الدخول عبر البصمة بنجاح",
+  "removeBiometricWarning": "هل أنت متأكد من إزالة بيانات البصمة المحفوظة؟ سيتوجب عليك إعادة كتابة كلمة المرور المرة القادمة."
 }

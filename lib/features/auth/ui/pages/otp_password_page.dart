@@ -63,7 +63,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
         appBar: AppBarWidget(titleText: S.of(context).forgetPassword),
         bottomNavigationBar: TextButton(
           onPressed: () {
-            AppSharedPreference.removeEmail();
+            AppSharedPreference.removePhone();
             context.pushNamed(RouteName.login);
           },
           child: DrawableText(

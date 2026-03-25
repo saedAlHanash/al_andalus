@@ -49,7 +49,7 @@ class ResendCodeCubit extends Cubit<ResendCodeInitial> {
 
     AppProvider.setResendTime(60 * 5);
     if (response.statusCode == 403) {
-      AppSharedPreference.removeEmail();
+      AppSharedPreference.removePhone();
     }
     if (response.statusCode == 422) {
       if (remaining != null) {

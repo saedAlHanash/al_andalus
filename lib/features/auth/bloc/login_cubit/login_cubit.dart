@@ -4,6 +4,7 @@ import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/features/auth/data/request/login_request.dart';
 import 'package:al_andalus/services/firebase_service.dart';
+import 'package:al_andalus/services/biometric_auth_service.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:m_cubit/m_cubit.dart';
@@ -21,7 +22,25 @@ import '../../data/response/login_response.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginInitial> {
-  LoginCubit() : super(LoginInitial.initial());
+  final BiometricAuthService biometricService;
+
+  LoginCubit({BiometricAuthService? authService}) 
+      : biometricService = authService ?? BiometricAuthService(),
+        super(LoginInitial.initial());
+
+  Future<void> loginWithBiometric() async {
+    emit(state.copyWith(statuses: CubitStatuses.loading));
+    final result = await biometricService.authenticateAndRetrieveCredentials();
+    if (result.success && result.phone != null && result.password != null) {
+      // Credentials fetched successfully via biometrics
+      state.mRequest.phone = result.phone;
+      state.mRequest.password = result.password;
+      await login(); // Execute standard login API call with unlocked credentials
+    } else {
+      emit(state.copyWith(statuses: CubitStatuses.error, error: result.failure?.message));
+      showErrorFromApi(state);
+    }
+  }
 
   Future<void> login() async {
     await FirebaseService.getFireTokenAsync();
@@ -33,6 +52,10 @@ class LoginCubit extends Cubit<LoginInitial> {
       showErrorFromApi(state);
     } else {
       await AppProvider.login(response: pair.first!);
+      if (!state.mRequest.phone.isBlank && !state.mRequest.password.isBlank) {
+        await biometricService.saveCredentialsSecurely(
+            phone: state.mRequest.phone!, password: state.mRequest.password!);
+      }
       CachingService.setSupperFilter(AppProvider.supperFilter);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
@@ -50,12 +73,12 @@ class LoginCubit extends Cubit<LoginInitial> {
       return pair;
     } else {
       if (response.statusCode == 311 || response.statusCode == 420) {
-        await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
+        await AppProvider.cachePhone(phone: state.mRequest.phone!, type: StartPage.signupOtp);
         ctx!.goNamed(RouteName.confirmCode);
       }
 
       if (response.statusCode == 312 || response.statusCode == 430) {
-        await AppProvider.cacheEmail(phone: state.mRequest.phone!, type: StartPage.signupOtp);
+        await AppProvider.cachePhone(phone: state.mRequest.phone!, type: StartPage.signupOtp);
         ctx!.goNamed(RouteName.pin);
       }
 

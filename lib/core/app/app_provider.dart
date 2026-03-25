@@ -110,6 +110,8 @@ class AppProvider {
           if (!confirm) return;
           await AppSharedPreference.logout();
           await AppSharedPreference.reload();
+          await AppSharedPreference.setHasSeenIntro(true);
+
           _myId = 0;
 
           ctx!.goNamed(RouteName.login);
@@ -123,8 +125,8 @@ class AppProvider {
     }
   }
 
-  static Future<void> cacheEmail({required String phone, required StartPage type}) async {
-    await AppSharedPreference.cashEmail(phone);
+  static Future<void> cachePhone({required String phone, required StartPage type}) async {
+    await AppSharedPreference.cashPhone(phone);
     await AppSharedPreference.cashStartPage(type);
   }
 

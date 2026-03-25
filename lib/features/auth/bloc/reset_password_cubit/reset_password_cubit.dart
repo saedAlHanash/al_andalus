@@ -25,7 +25,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordInitial> {
       emit(state.copyWith(statuses: CubitStatuses.error, error: pair.second));
       showErrorFromApi(state);
     } else {
-      AppSharedPreference.removeEmail();
+      AppSharedPreference.removePhone();
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }

@@ -47,13 +47,13 @@ class AccidentRequest {
     if (vehicleId != null) 'vehicle_id': vehicleId,
     if (location != null) 'location': location,
     if (description != null) 'description': description,
-    'police_report': policeReport.localId,
-    'attachments[front_image]': frontImage.localId,
-    'attachments[back_image]': backImage.localId,
-    'attachments[right_side_image]': rightSideImage.localId,
-    'attachments[left_side_image]': leftSideImage.localId,
-    'attachments[interior_image]': interiorImage.localId,
-    'attachments[engine_image]': engineImage.localId,
+    'police_report': policeReport.remoteId,
+    'attachments[front_image]': frontImage.remoteId,
+    'attachments[back_image]': backImage.remoteId,
+    'attachments[right_side_image]': rightSideImage.remoteId,
+    'attachments[left_side_image]': leftSideImage.remoteId,
+    'attachments[interior_image]': interiorImage.remoteId,
+    'attachments[engine_image]': engineImage.remoteId,
   };
 
   void setTempImages(UploadFile file) {

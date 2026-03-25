@@ -2913,6 +2913,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Device does not support biometrics`
+  String get biometricNotSupported {
+    return Intl.message(
+      'Device does not support biometrics',
+      name: 'biometricNotSupported',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No biometric identity enrolled`
+  String get biometricNotEnrolled {
+    return Intl.message(
+      'No biometric identity enrolled',
+      name: 'biometricNotEnrolled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Device locked out temporarily`
+  String get biometricLockedOut {
+    return Intl.message(
+      'Device locked out temporarily',
+      name: 'biometricLockedOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Device permanently locked out, login with password`
+  String get biometricPermanentlyLockedOut {
+    return Intl.message(
+      'Device permanently locked out, login with password',
+      name: 'biometricPermanentlyLockedOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation canceled by user`
+  String get biometricCanceled {
+    return Intl.message(
+      'Operation canceled by user',
+      name: 'biometricCanceled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please login at least once using password`
+  String get biometricNotCached {
+    return Intl.message(
+      'Please login at least once using password',
+      name: 'biometricNotCached',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error during biometric authentication`
+  String get biometricUnknown {
+    return Intl.message(
+      'Unknown error during biometric authentication',
+      name: 'biometricUnknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authenticate to access your account`
+  String get biometricReason {
+    return Intl.message(
+      'Authenticate to access your account',
+      name: 'biometricReason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Biometrics`
+  String get removeBiometricData {
+    return Intl.message(
+      'Remove Biometrics',
+      name: 'removeBiometricData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete saved data for quick auth`
+  String get removeBiometricDataSub {
+    return Intl.message(
+      'Delete saved data for quick auth',
+      name: 'removeBiometricDataSub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biometric data removed successfully`
+  String get removeBiometricSuccess {
+    return Intl.message(
+      'Biometric data removed successfully',
+      name: 'removeBiometricSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to remove saved biometrics?`
+  String get removeBiometricWarning {
+    return Intl.message(
+      'Are you sure you want to remove saved biometrics?',
+      name: 'removeBiometricWarning',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -47,6 +47,8 @@ class MyButton extends StatelessWidget {
           text: toUpper ? text.toUpperCase() : text,
           color: textColor ?? AppColorManager.white,
           drawablePadding: 5.0.w,
+
+          textAlign: .center,
           fontFamily: FontManager.bold.name,
           drawableEnd: loading
               ? SizedBox(
@@ -160,7 +162,7 @@ class OutLineButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radios ?? 10.0.r),
               side: BorderSide(
-                color:color?? AppColorManager.mainColorDynamic,
+                color: color ?? AppColorManager.mainColorDynamic,
               ),
             ),
           ),

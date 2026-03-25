@@ -24,7 +24,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordInitial> {
       emit(state.copyWith(statuses: CubitStatuses.error, error: pair.second));
       showErrorFromApi(state);
     } else {
-      await AppProvider.cacheEmail(phone: state.request.phone!, type: StartPage.passwordOtp);
+      await AppProvider.cachePhone(phone: state.request.phone!, type: StartPage.passwordOtp);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }

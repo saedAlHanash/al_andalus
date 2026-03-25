@@ -29,6 +29,7 @@ import '../features/auth/ui/pages/otp_password_page.dart';
 import '../features/auth/ui/pages/reset_password_page.dart';
 import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
+import '../features/auth/ui/pages/biometric_enrollment_page.dart';
 import '../features/cars/bloc/car_cubit/car_cubit.dart';
 import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../features/cars/data/response/cars_response.dart';
@@ -165,6 +166,14 @@ final goRouter = GoRouter(
           create: (_) => sl<ChangePasswordCubit>(),
           child: const ChangePasswordPage(),
         );
+      },
+    ),
+    GoRoute(
+      path: RouteName.biometricEnroll,
+      name: RouteName.biometricEnroll,
+      builder: (_, state) {
+        final fromLogin = state.uri.queryParameters['fromLogin'] == 'true';
+        return BiometricEnrollmentPage(fromLogin: fromLogin);
       },
     ),
     //endregion
@@ -431,4 +440,5 @@ class RouteName {
   static const qrScanner = '/qrScanner';
   static const transferOwnershipPage = '/transferOwnershipPage';
   static const pin = '/pin';
+  static const biometricEnroll = '/biometricEnroll';
 }

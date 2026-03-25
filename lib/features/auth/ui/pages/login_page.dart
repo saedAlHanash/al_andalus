@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
@@ -42,14 +43,21 @@ class _LoginPageState extends State<LoginPage> {
       listeners: [
         BlocListener<LoginCubit, LoginInitial>(
           listenWhen: (p, c) => c.done,
-          listener: (context, state) {
+          listener: (context, state) async {
             updateData();
-            context.goNamed(RouteName.home);
-            if (AppProvider.insurancePage.isNotEmpty) {
-              context.pushNamed(
-                RouteName.insurancePage,
-                queryParameters: AppProvider.insurancePage,
-              );
+            final enabled = await BiometricAuthService().isBiometricEnabled();
+            if (context.mounted) {
+              if (!enabled) {
+                context.goNamed(RouteName.biometricEnroll, queryParameters: {'fromLogin': 'true'});
+              } else {
+                context.goNamed(RouteName.home);
+                if (AppProvider.insurancePage.isNotEmpty) {
+                  context.pushNamed(
+                    RouteName.insurancePage,
+                    queryParameters: AppProvider.insurancePage,
+                  );
+                }
+              }
             }
           },
         ),
@@ -131,14 +139,25 @@ class _LoginPageState extends State<LoginPage> {
                 10.0.verticalSpace,
                 BlocBuilder<LoginCubit, LoginInitial>(
                   builder: (_, state) {
-                    return MyButton(
-                      text: S.of(context).login,
-                      loading: state.loading,
-                      onTap: () async {
-                        if (!_formKey.currentState!.validate()) return;
-                        TextInput.finishAutofillContext();
-                        loginCubit.login();
-                      },
+                    return Column(
+                      children: [
+                        MyButton(
+                          text: S.of(context).login,
+                          loading: state.loading,
+                          onTap: () async {
+                            if (!_formKey.currentState!.validate()) return;
+                            TextInput.finishAutofillContext();
+                            loginCubit.login();
+                          },
+                        ),
+                        10.0.verticalSpace,
+                        IconButton(
+                          icon: const Icon(Icons.fingerprint, size: 40, color: AppColorManager.mainColor),
+                          onPressed: () {
+                            loginCubit.loginWithBiometric();
+                          },
+                        ),
+                      ],
                     );
                   },
                 ),

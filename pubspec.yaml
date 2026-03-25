@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   flutter:
     sdk: flutter
+  local_auth: ^2.2.0
+  flutter_secure_storage: ^9.0.0
 
 
   drawable_text: ^1.0.0

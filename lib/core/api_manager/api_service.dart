@@ -145,13 +145,14 @@ class APIService {
     return response;
   }
 
-  Future<int> uploadFile({required UploadFile file}) async {
+  Future<String> uploadFile({required UploadFile file}) async {
+    if (!file.remoteId.isBlank) return file.remoteId!;
     final f = await uploadMultiPart(
       url: 'upload-media',
       files: [file..nameField = 'media'],
     );
 
-    return f.jsonBody['data']?['media_id'] ?? 0;
+    return (f.jsonBody['data']?['media_id'] ?? 0).toString();
   }
 }
 
@@ -161,6 +162,7 @@ class UploadFile {
     this.path,
     this.nameField = 'File',
     this.localId,
+    this.remoteId,
     this.extension,
     this.remoteUrl,
     this.fileType = FileType.other,
@@ -180,6 +182,7 @@ class UploadFile {
   String nameField;
   FileType fileType;
   String? localId;
+  String? remoteId;
   String? extension;
 
   UploadFile copyWith({
@@ -188,6 +191,7 @@ class UploadFile {
     String? path,
     FileType? fileType,
     String? localId,
+    String? remoteId,
     String? extension,
     String? remoteUrl,
   }) {
@@ -197,6 +201,7 @@ class UploadFile {
       path: path ?? this.path,
       fileType: fileType ?? this.fileType,
       localId: localId ?? this.localId,
+      remoteId: remoteId ?? this.remoteId,
       extension: extension ?? this.extension,
       remoteUrl: remoteUrl ?? this.remoteUrl,
     );
@@ -208,6 +213,7 @@ class UploadFile {
       'nameField': nameField,
       'path': path,
       'localId': localId,
+      'remoteId': remoteId,
       'extension': extension,
       'remoteUrl': remoteUrl,
       'fileType': fileType.name, // أو حسب طريقة تخزينك للـ Enum
@@ -219,6 +225,7 @@ class UploadFile {
       fileBytes: map['fileBytes'] != null ? Uint8List.fromList(List<int>.from(map['fileBytes'])) : null,
       nameField: map['nameField'] ?? 'File',
       localId: map['localId'],
+      remoteId: map['remoteId'],
       extension: map['extension'],
       // تأكد من طريقة استرجاع الـ Enum من الـ JSON
     );
