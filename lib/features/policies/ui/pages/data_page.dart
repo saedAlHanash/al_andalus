@@ -22,7 +22,7 @@ class _DataPageState extends State<DataPage> {
     return BlocBuilder<PolicyCubit, PolicyInitial>(
       builder: (context, state) {
         if (state.result.data.isUrl) {
-          return PdfViewerWidget(url: state.result.data);
+          return PdfViewerWidget(url: state.result.data, title: state.mRequest.name);
         }
         return Scaffold(
           appBar: AppBarWidget(titleText: state.mRequest.name),

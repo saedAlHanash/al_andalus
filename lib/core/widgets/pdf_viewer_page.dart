@@ -6,16 +6,15 @@ import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import '../../generated/l10n.dart';
 
 class PdfViewerWidget extends StatelessWidget {
-  const PdfViewerWidget({super.key, required this.url});
+  const PdfViewerWidget({super.key, required this.url, this.title});
 
   final String url;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
-        titleText: S.of(context).packageDetails,
-      ),
+      appBar: AppBarWidget(titleText: title),
       body: Builder(
         builder: (context) {
           if (url.isEmpty) {

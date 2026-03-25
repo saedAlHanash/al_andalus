@@ -19,24 +19,28 @@ class NotFoundNotificationsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ImageMultiType(
-          url: icon ?? Assets.iconsEmpty,
-          height: 1.0.sh,
-          width: 1.0.sw,
-        ),
-        Positioned(
-          bottom: 0.2.sh,
-          child: DrawableText(
-            size: 16.0.sp,
-            text: text ?? '',
-            fontWeight: FontWeight.bold,
-            matchParent: true,
-            textAlign: TextAlign.center,
+    return Center(
+      child: Column(
+        mainAxisSize: .min,
+        children: [
+          ImageMultiType(
+            url: icon ?? Assets.iconsEmpty,
+            height: 200.0.dg,
+            width: 200.0.dg,
           ),
-        ),
-      ],
+          10.0.verticalSpace,
+          Positioned(
+            bottom: 0.2.sh,
+            child: DrawableText(
+              size: 16.0.sp,
+              text: text ?? '',
+              fontWeight: FontWeight.bold,
+              matchParent: true,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

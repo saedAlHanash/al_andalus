@@ -1,22 +1,143 @@
 {
-  "data": {
-    "id": 18,
-    "name": "مستخدم تجريبي",
-    "phone": "+9647388915233",
-    "identity_id": "123456789",
-    "address": "بغداد - الكرادة",
-    "birth_date": "1997-02-19",
-    "qrcode": "53db4ce9-f11b-49f4-af93-07f635e89cae",
-    "gender": "male",
-    "identity_front_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
-    "identity_back_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
-    "license_number": "987654321",
-    "license_type": "private",
-    "license_start_date": "2026-03-09",
-    "license_end_date": "2036-03-06",
-    "license_front_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
-    "license_back_image": "https://admin.andalusapp.com/storage/clients/img-20260307-wa0012-1773044004.jpg",
-    "created": "2026-03-09 | 11:13 ص"
+  "request": {
+    "insurance_package_id": "3",
+    "cylinders": "6",
+    "name": "سيارة تجريبية",
+    "manufacture_year": 2020,
+    "color": "أبيض",
+    "brand": "تويوتا",
+    "value": "54.0",
+    "chassis_number": "65569",
+    "plate_number": "136234",
+    "fuel_type": "petrol",
+    "engine_capacity": "2000",
+    "payment_type": "qi_card",
+    "expiry_start_date": "2026-03-25",
+    "expiry_end_date": "2027-03-25",
+    "inspection[metal_body]": "intact",
+    "inspection[metal_body_note]": "-",
+    "inspection[glass_and_lamps]": "intact",
+    "inspection[glass_and_lamps_note]": "-",
+    "inspection[chrome_nickel]": "intact",
+    "inspection[chrome_nickel_note]": "-",
+    "inspection[brand_sign]": "damage",
+    "inspection[brand_sign_note]": "ملاحظة تجريبية لشعار السيارة",
+    "inspection[windshield_wipers]": "damage",
+    "inspection[windshield_wipers_note]": "ملاحظة تجريبية للمساحات",
+    "inspection[radio_antenna]": "damage",
+    "inspection[radio_antenna_note]": "ملاحظة تجريبية للهوائي",
+    "inspection[seats]": "damage",
+    "inspection[seats_note]": "ملاحظة تجريبية للمقاعد",
+    "inspection[floor_cover]": "intact",
+    "inspection[floor_cover_note]": "-",
+    "inspection[radio]": "intact",
+    "inspection[radio_note]": "-",
+    "inspection[air_conditioner]": "damage",
+    "inspection[air_conditioner_note]": "ملاحظة تجريبية للمكيف",
+    "inspection[front_tires]": "intact",
+    "inspection[front_tires_note]": "-",
+    "inspection[back_tires]": "intact",
+    "inspection[back_tires_note]": "-",
+    "inspection[spare_tire]": "damage",
+    "inspection[spare_tire_note]": "ملاحظة تجريبية للإطار الاحتياطي",
+    "inspection[tires_covers]": "damage",
+    "inspection[tires_covers_note]": "ملاحظة تجريبية لأغطية الإطارات",
+    "inspection[spare_tools]": "intact",
+    "inspection[spare_tools_note]": "-",
+    "ownership_front_image": "12",
+    "ownership_back_image": "13",
+    "inspection_report": "14",
+    "attachments[front_image]": "15",
+    "attachments[back_image]": "16",
+    "attachments[right_side_image]": "17",
+    "attachments[left_side_image]": "18",
+    "attachments[interior_image]": "19",
+    "attachments[engine_image]": "20"
   },
-  "token": "257|y9g03YHD0uBlUciRDfGOVje942NvTER7O1zkwAPvc3cbdc75"
+  "response": {
+    "message": "جميع فحوصات المركبة مطلوبة (and 20 more errors)",
+    "errors": {
+      "inspection.metal_body": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.glass_and_lamps": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.chrome_nickel": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.brand_sign": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.windshield_wipers": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.radio_antenna": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.seats": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.floor_cover": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.radio": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.air_conditioner": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.front_tires": [
+        "جميع فحوصات المركبة مطلوبة"
+      ],
+      "inspection.back_tires": [
+        "جميع فح�,"
+        inspection.tires_covers
+        ":["جميعفحوصاتالمركبةمطلوبة"],"
+        inspection.spare_tools
+        ":["
+        جميع
+        فحوصات
+        المركبة
+        مطلوبة
+        "],"
+        attachments.front_image
+        ":["
+        الصورة
+        الأمامية
+        مطلوبة.
+        "],"
+        attachments.right_side_image
+        ":["
+        صورة
+        الجانب
+        الأيمن
+        مطلوبة.
+        "],"
+        attachments.left_side_image
+        ":["
+        صورة
+        الجانب
+        الأيسر
+        مطلوبة.
+        "],"
+        attachments.interior_image
+        ":["
+        صورة
+        داخل
+        المركبة
+        مطلوبة.
+        "],"
+        attachments.back_image
+        ":["
+        الصورة
+        الخلفية
+        مطلوبة.
+        "],"
+        attachments.engine_image
+        ":["
+        صورة
+        المحرك
+        مطلوبة.
+        "]}},
 }

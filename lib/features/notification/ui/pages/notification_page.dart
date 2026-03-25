@@ -49,114 +49,110 @@ class _NotificationPageState extends State<NotificationPage> {
     if (AppProvider.isNotLogin) {
       return NeedLoginWidget();
     }
-    return Scaffold(
-      appBar: AppBarWidget(titleText: S.of(context).notifications),
-      body: BlocConsumer<NotificationCubit, NotificationsInitial>(
-        listenWhen: (p, c) => c.done,
-        listener: (context, state) {
-          context.read<NotificationCubit>().readAll();
-        },
-        builder: (context, state) {
-          final gList = state.result.groupListsBy((element) => element.created?.formatDate).values.toList();
+    return BlocConsumer<NotificationCubit, NotificationsInitial>(
+      listenWhen: (p, c) => c.done,
+      listener: (context, state) {
+        context.read<NotificationCubit>().readAll();
+      },
+      builder: (context, state) {
+        final gList = state.result.groupListsBy((element) => element.created?.formatDate).values.toList();
 
-          return RefreshWidget(
-            isLoading: state.loading,
-            onRefresh: () {
-              context.read<NotificationCubit>().getData(newData: true);
-            },
-            child: state.isDataEmpty
-                ? NotFoundNotificationsWidget(
-                    icon: Assets.iconsBellNotification,
-                    text: S.of(context).noNotifications,
-                  )
-                : ListView.separated(
-                    itemCount: gList.length,
-                    separatorBuilder: (context, i) => 10.0.verticalSpace,
-                    itemBuilder: (context, i) {
-                      final list = gList[i];
-                      loggerObject.w(list.length);
-                      if (list.isEmpty) return 0.0.verticalSpace;
-                      return Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              spacing: 15.0,
-                              children: [
-                                DrawableText(text: list.first.created?.formatDateNowOrYesterday ?? '-'),
-                                Expanded(child: Divider()),
-                              ],
-                            ),
+        return RefreshWidget(
+          isLoading: state.loading,
+          onRefresh: () {
+            context.read<NotificationCubit>().getData(newData: true);
+          },
+          child: state.isDataEmpty
+              ? NotFoundNotificationsWidget(
+                  icon: Assets.iconsBellNotification,
+                  text: S.of(context).noNotifications,
+                )
+              : ListView.separated(
+                  itemCount: gList.length,
+                  separatorBuilder: (context, i) => 10.0.verticalSpace,
+                  itemBuilder: (context, i) {
+                    final list = gList[i];
+                    if (list.isEmpty) return 0.0.verticalSpace;
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            spacing: 15.0,
+                            children: [
+                              DrawableText(text: list.first.created?.formatDateNowOrYesterday ?? '-'),
+                              Expanded(child: Divider()),
+                            ],
                           ),
-                          ListView.separated(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            separatorBuilder: (context, i) => 10.0.verticalSpace,
-                            itemCount: state.result.length,
-                            itemBuilder: (_, i) {
-                              final item = list[i];
-                              return Container(
-                                padding: EdgeInsets.symmetric(vertical: 10.0).r,
-                                decoration: BoxDecoration(
-                                  color: i % 2 != 0 ? null : AppColorManager.cardColor,
-                                  borderRadius: BorderRadius.circular(10.0.r),
-                                  boxShadow: i % 2 != 0
-                                      ? []
-                                      : [
-                                          BoxShadow(
-                                            color: Color(0x14000000),
-                                            blurRadius: 26.86,
-                                            offset: Offset(0, 3.58),
-                                            spreadRadius: 0,
-                                          ),
-                                        ],
+                        ),
+                        ListView.separated(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          separatorBuilder: (context, i) => 10.0.verticalSpace,
+                          itemCount: list.length,
+                          itemBuilder: (_, i) {
+                            final item = list[i];
+                            return Container(
+                              padding: EdgeInsets.symmetric(vertical: 10.0).r,
+                              decoration: BoxDecoration(
+                                color: i % 2 != 0 ? null : AppColorManager.cardColor,
+                                borderRadius: BorderRadius.circular(10.0.r),
+                                boxShadow: i % 2 != 0
+                                    ? []
+                                    : [
+                                        BoxShadow(
+                                          color: Color(0x14000000),
+                                          blurRadius: 26.86,
+                                          offset: Offset(0, 3.58),
+                                          spreadRadius: 0,
+                                        ),
+                                      ],
+                              ),
+                              child: ListTile(
+                                onTap: () {
+                                  // if (!item.productId.isBlankNumber) {
+                                  //   context.pushNamed(
+                                  //     RouteName.product,
+                                  //     queryParameters: {'id': item.productId.toString()},
+                                  //   );
+                                  // } else if (!item.orderId.isBlankNumber) {
+                                  //   context.pushNamed(
+                                  //     RouteName.order,
+                                  //     queryParameters: {'id': item.orderId.toString()},
+                                  //   );
+                                  // }
+                                },
+                                leading: ImageMultiType(
+                                  url: Assets.iconsNotificationCardIcon,
+                                  color: AppColorManager.mainColorDynamic,
                                 ),
-                                child: ListTile(
-                                  onTap: () {
-                                    // if (!item.productId.isBlankNumber) {
-                                    //   context.pushNamed(
-                                    //     RouteName.product,
-                                    //     queryParameters: {'id': item.productId.toString()},
-                                    //   );
-                                    // } else if (!item.orderId.isBlankNumber) {
-                                    //   context.pushNamed(
-                                    //     RouteName.order,
-                                    //     queryParameters: {'id': item.orderId.toString()},
-                                    //   );
-                                    // }
-                                  },
-                                  leading: ImageMultiType(
-                                    url: Assets.iconsNotificationCardIcon,
-                                    color: AppColorManager.mainColorDynamic,
-                                  ),
-                                  title: DrawableText(
-                                    text: item.title,
-                                    maxLines: 2,
-                                    textAlign: TextAlign.start,
-                                    fontWeight: .bold,
-                                    size: 16.0.sp,
-                                  ),
-                                  subtitle: DrawableText(
-                                    text: item.body,
-                                    maxLines: 2,
-                                    fontFamily: FontManager.regular.name,
-                                    textAlign: TextAlign.start,
-                                  ),
-                                  trailing: DrawableText(
-                                    text: item.created?.formatDuration() ?? '-',
-                                    size: 10.0.sp,
-                                  ),
+                                title: DrawableText(
+                                  text: item.title,
+                                  maxLines: 2,
+                                  textAlign: TextAlign.start,
+                                  fontWeight: .bold,
+                                  size: 16.0.sp,
                                 ),
-                              );
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-          );
-        },
-      ),
+                                subtitle: DrawableText(
+                                  text: item.body,
+                                  maxLines: 2,
+                                  fontFamily: FontManager.regular.name,
+                                  textAlign: TextAlign.start,
+                                ),
+                                trailing: DrawableText(
+                                  text: item.created?.formatDuration() ?? '-',
+                                  size: 10.0.sp,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                ),
+        );
+      },
     );
   }
 }

@@ -1,10 +1,6 @@
-import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
-
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/bloc/delete_account_cubit/delete_account_cubit.dart';
-
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
-import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
-
-import '../../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
@@ -25,7 +19,6 @@ import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../features/transfer_ownership/bloc/transfer_fees_cubit/transfer_fees_cubit.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-
 import '../../router/go_router.dart';
 import '../app_theme.dart';
 import '../injection/injection_container.dart';
@@ -87,6 +80,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    loggerObject.w(AppSharedPreference.getToken);
     return ScreenUtilInit(
       designSize: MediaQuery.of(context).size,
       // designSize: const Size(375, 812),

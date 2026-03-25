@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,19 +24,17 @@ class HiWidget extends StatelessWidget {
         title: AppProvider.isGuest
             ? DrawableText(
                 text: S.of(context).welcome,
-
               )
             : DrawableText(text: AppProvider.getMe.name),
         subtitle: AppProvider.isGuest
             ? DrawableText(
                 text: S.of(context).startYourInsuranceJourneyEasily,
-
               )
             : null,
         trailing: InkWell(
           onTap: () => showSupportCall(context),
           child: ImageMultiType(
-            url: Assets.iconsSupportBorder,
+            url: context.isDark ? Assets.iconsSupportBorder : Assets.iconsSupportBorder1,
             height: 40.0.r,
             width: 40.0.r,
           ),

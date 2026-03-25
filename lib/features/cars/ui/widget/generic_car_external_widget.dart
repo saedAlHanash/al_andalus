@@ -115,11 +115,18 @@ class _GenericCarExternalWidgetState extends State<GenericCarExternalWidget> {
                                   child: RadioGroup(
                                     groupValue: option.groupValue.call(),
                                     onChanged: (value) {
-                                      loggerObject.w(value);
                                       if (value == null) return;
-                                      setState(() {
-                                        option.onOptionChanged.call(value);
-                                      });
+                                      setState(() => option.onOptionChanged.call(value));
+                                      if (value == .intact) {
+                                        option.onDetailsButtonTap.call('');
+                                      } else {
+                                        showAddNote(
+                                          context,
+                                          title: '${S.of(context).enter} ${option.title}',
+                                          onDone: option.onDetailsButtonTap,
+                                          initial: option.note.call(),
+                                        );
+                                      }
                                     },
                                     child: Row(
                                       children:
@@ -147,18 +154,8 @@ class _GenericCarExternalWidgetState extends State<GenericCarExternalWidget> {
                                                       url: Assets.iconsEdit,
                                                       color: (option.groupValue.call()?.index == 0)
                                                           ? AppColorManager.mainColorLight
-                                                          : (option.note.call().toString().isBlank)
-                                                          ? AppColorManager.mainColor
-                                                          : Colors.green,
+                                                          : AppColorManager.mainColor,
                                                     ),
-                                                    if (option.groupValue.call()?.index != 0)
-                                                      DrawableText(
-                                                        text: '*',
-                                                        size: 30.0,
-                                                        color: (option.note.call().toString().isBlank)
-                                                            ? AppColorManager.red
-                                                            : Colors.green,
-                                                      ),
                                                   ],
                                                 ),
                                               ),

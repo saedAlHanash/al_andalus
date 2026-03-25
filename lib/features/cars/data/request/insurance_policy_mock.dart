@@ -14,14 +14,14 @@ extension InsurancePolicyRequestMock on InsurancePolicyRequest {
     color = 'أبيض';
     brand = 'تويوتا';
     value = '15000';
-    chassisNumber = '123456789';
-    plateNumber = '1234';
+    chassisNumber = '${Random().nextInt(1000000)}';
+    plateNumber = '${Random().nextInt(1000000)}';
     fuelType = FuelType.petrol;
     engineCapacity = '2000';
-    paymentType = PaymentType.zainCash;
+
     expiryStartDate = DateTime.now();
     expiryEndDate = DateTime.now().add(const Duration(days: 365));
-    
+
     final random = Random();
     metalBody = _getRandomStatus(random);
     if (metalBody != InspectionStatus.intact) metalBodyNote = 'ملاحظة تجريبية للهيكل';

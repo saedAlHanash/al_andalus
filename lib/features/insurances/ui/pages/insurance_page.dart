@@ -51,7 +51,7 @@ class InsurancePage extends StatelessWidget {
               InkWell(
                 onTap: () => showSupportCall(context),
                 child: ImageMultiType(
-                  url: Assets.iconsSupportBorder,
+                  url: context.isDark ? Assets.iconsSupportBorder : Assets.iconsSupportBorder1,
                   height: 40.0.r,
                   width: 40.0.r,
                 ),

@@ -144,6 +144,15 @@ class APIService {
 
     return response;
   }
+
+  Future<int> uploadFile({required UploadFile file}) async {
+    final f = await uploadMultiPart(
+      url: 'upload-media',
+      files: [file..nameField = 'media'],
+    );
+
+    return f.jsonBody['data']?['media_id'] ?? 0;
+  }
 }
 
 class UploadFile {

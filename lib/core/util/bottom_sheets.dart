@@ -411,37 +411,46 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 ),
 
                 10.0.verticalSpace,
-                MyButton(
-                  text: S.of(context).uploadFromFiles,
-                  icon: ImageMultiType(url: Icons.file_upload_outlined),
-                  onTap: () {
-                    Navigator.pop(ctx);
-                    pickAndUpload().then(
-                      (value) async {
-                        if (value == null || !context.mounted) return;
-                        final result = await showConfirmDialog(context, value);
-                        if (result == false) return;
-                        onConfirm.call(value);
-                      },
-                    );
-                  },
+                Row(
+                  spacing: 20.0.w,
+                  children: [
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).uploadFromFiles,
+                        icon: ImageMultiType(url: Icons.file_upload_outlined),
+                        onTap: () {
+                          Navigator.pop(ctx);
+                          pickAndUpload().then(
+                            (value) async {
+                              if (value == null || !context.mounted) return;
+                              final result = await showConfirmDialog(context, value);
+                              if (result == false) return;
+                              onConfirm.call(value);
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).takePicture,
+                        icon: ImageMultiType(url: Icons.camera_alt_outlined),
+                        onTap: () {
+                          Navigator.pop(ctx);
+                          takePhoto().then(
+                            (value) async {
+                              if (value == null || !context.mounted) return;
+                              final result = await showConfirmDialog(context, value);
+                              if (result == false) return;
+                              onConfirm.call(value);
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
                 10.0.verticalSpace,
-                MyButton(
-                  text: S.of(context).takePicture,
-                  icon: ImageMultiType(url: Icons.camera_alt_outlined),
-                  onTap: () {
-                    Navigator.pop(ctx);
-                    takePhoto().then(
-                      (value) async {
-                        if (value == null || !context.mounted) return;
-                        final result = await showConfirmDialog(context, value);
-                        if (result == false) return;
-                        onConfirm.call(value);
-                      },
-                    );
-                  },
-                ),
               ],
             ),
           ),

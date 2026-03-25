@@ -51,7 +51,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             25.0.verticalSpace,
             Container(
               decoration: MyStyle.roundBox12(
-                color: state.mRequest.paymentType == .zainCash ? AppColorManager.secondColor : null,
+                color: state.mRequest.paymentType == .zainCash ? AppColorManager.mainColorLight : null,
               ),
               child: ListTile(
                 onTap: () {

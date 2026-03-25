@@ -37,10 +37,15 @@ class SignupCubit extends MCubit<SignupInitial> {
   }
 
   Future<Pair<bool?, String?>> _signupApi() async {
-    final response = await APIService().uploadMultiPart(
+    for (var file in state.mRequest.files) {
+      file.localId = (await APIService().uploadFile(file: file)).toString();
+    }
+
+    final response = await APIService().callApi(
       url: PostUrl.signup,
-      files: state.mRequest.files,
-      fields: state.mRequest.toJson(),
+      type: .post,
+
+      body: state.mRequest.toJson(),
     );
 
     if (response.statusCode.success) {

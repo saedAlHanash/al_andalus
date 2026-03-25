@@ -28,15 +28,19 @@ class ListCars extends StatelessWidget {
     return BlocBuilder<CarsCubit, CarsInitial>(
       builder: (context, state) {
         if (state.isDataEmpty) {
-          return Container(
-            decoration: MyStyle.roundBox12(),
-            padding: EdgeInsets.all(30.0).r,
-            child: Column(
-              children: [
-                ImageMultiType(url: Assets.iconsCircleArow, color: AppColorManager.textColor),
-                30.0.verticalSpace,
-                DrawableText(text: S.of(context).pleaseAddYourVehicleToShowTheInsuranceDocument),
-              ],
+          return Center(
+            child: Container(
+              width: 1.0.sw,
+              decoration: MyStyle.roundBox12(),
+              padding: EdgeInsets.all(30.0).r,
+              child: Column(
+                mainAxisSize: .min,
+                children: [
+                  ImageMultiType(url: Assets.iconsCircleArow, color: AppColorManager.textColor),
+                  30.0.verticalSpace,
+                  DrawableText(text: S.of(context).pleaseAddYourVehicleToShowTheInsuranceDocument),
+                ],
+              ),
             ),
           );
         }

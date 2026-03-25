@@ -133,35 +133,30 @@ class CarsCubit extends MCubit<CarsInitial> {
   Future<void> create() async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.create));
 
-    loggerObject.w(
-      jsonEncode(
-        state.mRequest.files
-            .map(
-              (e) => {
-                'nameField': e.nameField,
-                'fileSize': e.fileBytes?.length,
-              },
-            )
-            .toList(),
-      ),
-    );
-    final response = await APIService().uploadMultiPart(
+    for (var file in state.mRequest.files) {
+      file.localId = (await APIService().uploadFile(file: file)).toString();
+    }
+
+    final response = await APIService().callApi(
       url: PostUrl.createInsurancePolicy,
-      files: state.mRequest.files,
-      fields: state.mRequest.toJson(),
+      body: state.mRequest.toJson(),
+      type: .post,
     );
+
     _pay(response);
   }
 
   Future<void> update() async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+    for (var file in state.mRequest.files) {
+      file.localId = (await APIService().uploadFile(file: file)).toString();
+    }
 
-    final response = await APIService().uploadMultiPart(
+    final response = await APIService().callApi(
+      type: ApiType.post,
       url: PutUrl.updateInsurancePolicy,
-      type: 'POST',
       path: state.mRequest.id.toString(),
-      files: state.mRequest.files,
-      fields: state.mRequest.toJson(),
+      body: state.mRequest.toJson(),
     );
     await _updateState(response);
   }

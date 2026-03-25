@@ -29,7 +29,7 @@ class GuestHomeScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.0).r,
           children: [
             HiWidget(),
-            AddsSlider(type: AdsType.banner, height: 150.0),
+            AddsSlider(type: AdsType.slider, height: 150.0),
             20.0.verticalSpace,
             DrawableText(
               text: S.of(context).firstCarInsurancePlatformInIraq,
@@ -48,7 +48,7 @@ class GuestHomeScreen extends StatelessWidget {
             20.0.verticalSpace,
             ListInsurances(),
             20.0.verticalSpace,
-            AddsSlider(type: AdsType.slider, height: 90.0),
+            AddsSlider(type: AdsType.banner, height: 90.0),
             150.0.verticalSpace,
           ],
         ),
