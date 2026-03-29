@@ -383,7 +383,8 @@ final goRouter = GoRouter(
       name: RouteName.pdf,
       builder: (_, state) {
         final String url = (state.uri.queryParameters['url'] ?? '').toString();
-        return PdfViewerWidget(url: url);
+        final String title = (state.uri.queryParameters['title'] ?? '').toString();
+        return PdfViewerWidget(url: url, title: title);
       },
     ),
   ],

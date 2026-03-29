@@ -35,6 +35,7 @@ class Assets {
   static const String iconsEmail = 'assets/icons/email.svg';
   static const String iconsEmpty = 'assets/icons/empty.svg';
   static const String iconsEmptyQuantity = 'assets/icons/empty_quantity.svg';
+  static const String iconsFaceId = 'assets/icons/face-id.svg';
   static const String iconsFile1 = 'assets/icons/file1.svg';
   static const String iconsFileList = 'assets/icons/file-list.svg';
   static const String iconsFolder = 'assets/icons/folder.svg';
@@ -95,5 +96,4 @@ class Assets {
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';
-
 }

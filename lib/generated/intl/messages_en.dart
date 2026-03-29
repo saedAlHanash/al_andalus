@@ -84,6 +84,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "Operation canceled by user",
     ),
     "biometricData": MessageLookupByLibrary.simpleMessage("Biometric Data"),
+    "biometricEnabledDescription": MessageLookupByLibrary.simpleMessage(
+      "Fingerprint or face login is currently enabled. You can turn it off using the button below.",
+    ),
+    "biometricEnrollmentDescription": MessageLookupByLibrary.simpleMessage(
+      "Use biometric login with your fingerprint or face to access your account faster and easier.\n\nYou can turn this feature on or off at any time in the settings.",
+    ),
+    "biometricEnrollmentFailedSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Please try again or use a different login method",
+    ),
+    "biometricEnrollmentFailedTitle": MessageLookupByLibrary.simpleMessage(
+      "Biometric Enrollment Failed",
+    ),
+    "biometricEnrollmentReason": MessageLookupByLibrary.simpleMessage(
+      "Please verify your fingerprint or face to enable the feature",
+    ),
+    "biometricEnrollmentSuccess": MessageLookupByLibrary.simpleMessage(
+      "Biometric login enabled successfully",
+    ),
+    "biometricFeatureEnabled": MessageLookupByLibrary.simpleMessage(
+      "Feature Enabled",
+    ),
     "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
       "Device locked out temporarily",
     ),
@@ -101,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biometricReason": MessageLookupByLibrary.simpleMessage(
       "Authenticate to access your account",
+    ),
+    "biometricSettingsTitle": MessageLookupByLibrary.simpleMessage(
+      "Biometric Settings",
     ),
     "biometricUnknown": MessageLookupByLibrary.simpleMessage(
       "Unknown error during biometric authentication",
@@ -172,6 +196,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
+    "disableBiometricFeature": MessageLookupByLibrary.simpleMessage(
+      "Disable Feature",
+    ),
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t Have An Account?",
     ),
@@ -195,6 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "editPhone": MessageLookupByLibrary.simpleMessage("Edit Phone Number"),
     "electronicCard": MessageLookupByLibrary.simpleMessage("Electronic Card"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "enableBiometricAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
+    "enableBiometricNow": MessageLookupByLibrary.simpleMessage("Enable Now"),
     "engine": MessageLookupByLibrary.simpleMessage("Engine"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
@@ -203,6 +232,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter": MessageLookupByLibrary.simpleMessage("Enter"),
     "enterCarValue": MessageLookupByLibrary.simpleMessage("Enter car value"),
+    "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
+      "Please enter your login details to re-enable the feature:",
+    ),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
       "Enter expiry date",
     ),
@@ -230,6 +262,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "expired": MessageLookupByLibrary.simpleMessage("Expired"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("Exterior Body"),
+    "fasterLoginMethod": MessageLookupByLibrary.simpleMessage(
+      "A Faster Way to Log In",
+    ),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "features": MessageLookupByLibrary.simpleMessage("Features"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
@@ -327,6 +362,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Manage your phone number.",
     ),
     "manufactureYear": MessageLookupByLibrary.simpleMessage("Manufacture year"),
+    "maybeLater": MessageLookupByLibrary.simpleMessage("Maybe Later"),
     "metalBody": MessageLookupByLibrary.simpleMessage("Metal Body"),
     "minute": MessageLookupByLibrary.simpleMessage("minute"),
     "missing": MessageLookupByLibrary.simpleMessage("Missing"),

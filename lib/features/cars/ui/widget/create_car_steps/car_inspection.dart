@@ -84,7 +84,10 @@ class _CarInspectionState extends State<CarInspection> {
                                   if (!state.mRequest.inspectionReport.remoteUrl.isBlank) {
                                     context.pushNamed(
                                       RouteName.pdf,
-                                      queryParameters: {'url': state.mRequest.inspectionReport.remoteUrl},
+                                      queryParameters: {
+                                        'url': state.mRequest.inspectionReport.remoteUrl,
+                                        'title': S.of(context).packageDetails,
+                                      },
                                     );
                                   }
                                 },

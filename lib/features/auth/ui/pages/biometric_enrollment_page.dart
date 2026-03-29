@@ -10,14 +10,16 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../../../core/util/snack_bar_message.dart';
 
 class BiometricEnrollmentPage extends StatefulWidget {
   final bool fromLogin;
-  
+
   const BiometricEnrollmentPage({super.key, this.fromLogin = false});
 
   @override
@@ -44,7 +46,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
     final service = BiometricAuthService();
     final enabled = await service.isBiometricEnabled();
     final hasCredentials = await service.hasCredentialsSaved();
-    
+
     if (mounted) {
       setState(() {
         _isEnabled = enabled;
@@ -98,27 +100,27 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
 
     // 2. Trigger OS Authentication exclusively
     final bool didAuthenticate = await service.authenticateForEnrollment(
-      localizedReason: 'يرجى التحقق من بصمتك أو وجهك لتفعيل الميزة',
+      localizedReason: S.of(context).biometricEnrollmentReason,
     );
-    
+
     if (didAuthenticate) {
-       if (_isManualInputRequired) {
-         await service.saveCredentialsSecurely(phone: _phone, password: _password);
-       }
-       await service.enableBiometric();
-       
-       if (mounted) {
-         NoteMessage.showSuccessSnackBar(
-           context: context,
-           message: 'تم تفعيل الدخول البيومتري بنجاح',
-         );
-       }
-       _completeFlow();
+      if (_isManualInputRequired) {
+        await service.saveCredentialsSecurely(phone: _phone, password: _password);
+      }
+      await service.enableBiometric();
+
+      if (mounted) {
+        NoteMessage.showSuccessSnackBar(
+          context: context,
+          message: S.of(context).biometricEnrollmentSuccess,
+        );
+      }
+      _completeFlow();
     } else {
-       setState(() {
-         _isLoading = false;
-         _isError = true;
-       });
+      setState(() {
+        _isLoading = false;
+        _isError = true;
+      });
     }
   }
 
@@ -126,7 +128,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
     NoteMessage.showCheckDialog(
       context,
       text: S.of(context).removeBiometricWarning,
-      textButton: 'إيقاف الميزة',
+      textButton: S.of(context).disableBiometricFeature,
       onConfirm: (confirm) async {
         if (!confirm) return;
         await BiometricAuthService().deleteSecureToken();
@@ -151,7 +153,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
 
     return Scaffold(
       appBar: AppBarWidget(
-        titleText: 'الإعدادات البيومترية',
+        titleText: S.of(context).biometricSettingsTitle,
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20.0).r,
@@ -160,18 +162,18 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
           children: [
             if (!_isEnabled)
               MyButton(
-                text: _isError ? 'فعل مجدداً' : 'فعل الآن',
+                text: _isError ? S.of(context).enableBiometricAgain : S.of(context).enableBiometricNow,
                 onTap: _enrollBiometric,
               )
             else
               MyButton(
-                text: 'إيقاف الميزة',
+                text: S.of(context).disableBiometricFeature,
                 color: Colors.redAccent,
                 onTap: _disableBiometric,
               ),
             10.0.verticalSpace,
             OutLineButton(
-              text: 'ربما لاحقاً',
+              text: S.of(context).maybeLater,
               onTap: _completeFlow,
               color: Colors.white,
             ),
@@ -199,14 +201,14 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           DrawableText(
-                            text: 'فشل في عملية تفعيل الدخول البيومتري',
+                            text: S.of(context).biometricEnrollmentFailedTitle,
                             color: Colors.white,
                             fontFamily: FontManager.bold.name,
                             size: 14.0.sp,
                           ),
                           5.0.verticalSpace,
                           DrawableText(
-                            text: 'يرجى المحاولة مرة أخرى أو إستخدام طريقة دخول مختلفة',
+                            text: S.of(context).biometricEnrollmentFailedSubtitle,
                             color: Colors.white,
                             size: 12.0.sp,
                           ),
@@ -219,15 +221,15 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
               30.0.verticalSpace,
             ],
             DrawableText(
-              text: _isEnabled ? 'الميزة مفعلة' : 'طريقة أسرع لتسجيل الدخول',
+              text: _isEnabled ? S.of(context).biometricFeatureEnabled : S.of(context).fasterLoginMethod,
               fontFamily: FontManager.bold.name,
               size: 18.0.sp,
             ),
             20.0.verticalSpace,
             DrawableText(
-              text: _isEnabled 
-                ? 'ميزة الدخول بالبصمة أو الوجه مفعلة حالياً. يمكنك إيقافها من خلال الزر في الأسفل.' 
-                : 'استخدم تسجيل الدخول البيومتري ببصمة إصبعك أو وجهك للوصول إلى حسابك بشكل أسرع وأسهل.\n\nيمكنك تشغيل هذه الميزة أو إيقافها في أي وقت من خلال الإعدادات.',
+              text: _isEnabled
+                  ? S.of(context).biometricEnabledDescription
+                  : S.of(context).biometricEnrollmentDescription,
               textAlign: TextAlign.center,
               color: Colors.grey.shade600,
               size: 14.0.sp,
@@ -236,9 +238,9 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.face_retouching_natural, size: 80, color: AppColorManager.black),
+                ImageMultiType(url: Assets.iconsFaceId, width: 80, color: AppColorManager.textColor),
                 20.0.horizontalSpace,
-                const Icon(Icons.fingerprint, size: 80, color: AppColorManager.black),
+                ImageMultiType(url: Icons.fingerprint, width: 80, color: AppColorManager.textColor),
               ],
             ),
             40.0.verticalSpace,
@@ -249,7 +251,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DrawableText(
-                      text: 'يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:',
+                      text: S.of(context).enterCredentialsToReEnableBiometric,
                       fontFamily: FontManager.bold.name,
                     ),
                     10.0.verticalSpace,
@@ -268,8 +270,8 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                     ),
                   ],
                 ),
-              )
-            ]
+              ),
+            ],
           ],
         ),
       ),

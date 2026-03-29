@@ -66,21 +66,33 @@ class BiometricAuthService {
     LocalAuthentication? localAuth,
     FlutterSecureStorage? secureStorage,
   })  : _localAuth = localAuth ?? LocalAuthentication(),
-        _secureStorage = secureStorage ?? const FlutterSecureStorage();
+        _secureStorage = secureStorage ?? const FlutterSecureStorage(
+          aOptions: AndroidOptions(encryptedSharedPreferences: true),
+        );
 
   Future<bool> isBiometricEnabled() async {
-    final enabled = await _secureStorage.read(key: _biometricEnabledKey);
-    return enabled == 'true';
+    try {
+      final enabled = await _secureStorage.read(key: _biometricEnabledKey);
+      return enabled == 'true';
+    } catch (_) {
+      return false;
+    }
   }
 
   Future<bool> hasCredentialsSaved() async {
-    final phone = await _secureStorage.read(key: _userPhoneKey);
-    final password = await _secureStorage.read(key: _userPasswordKey);
-    return phone != null && phone.isNotEmpty && password != null && password.isNotEmpty;
+    try {
+      final phone = await _secureStorage.read(key: _userPhoneKey);
+      final password = await _secureStorage.read(key: _userPasswordKey);
+      return phone != null && phone.isNotEmpty && password != null && password.isNotEmpty;
+    } catch (_) {
+      return false;
+    }
   }
 
   Future<void> enableBiometric() async {
-    await _secureStorage.write(key: _biometricEnabledKey, value: 'true');
+    try {
+      await _secureStorage.write(key: _biometricEnabledKey, value: 'true');
+    } catch (_) {}
   }
 
   /// 1. Hardware Validation
@@ -126,8 +138,12 @@ class BiometricAuthService {
       return const BiometricResult.failure(BiometricFailure.notCached);
     }
 
-    final String? cachedPhone = await _secureStorage.read(key: _userPhoneKey);
-    final String? cachedPassword = await _secureStorage.read(key: _userPasswordKey);
+    String? cachedPhone;
+    String? cachedPassword;
+    try {
+      cachedPhone = await _secureStorage.read(key: _userPhoneKey);
+      cachedPassword = await _secureStorage.read(key: _userPasswordKey);
+    } catch (_) {}
 
     if (cachedPhone == null || cachedPhone.trim().isEmpty || 
         cachedPassword == null || cachedPassword.trim().isEmpty) {
@@ -148,8 +164,12 @@ class BiometricAuthService {
 
       if (didAuthenticate) {
         // 3. Unlocking the stored User credentials only after successful verification
-        final String? phone = await _secureStorage.read(key: _userPhoneKey);
-        final String? password = await _secureStorage.read(key: _userPasswordKey);
+        String? phone;
+        String? password;
+        try {
+          phone = await _secureStorage.read(key: _userPhoneKey);
+          password = await _secureStorage.read(key: _userPasswordKey);
+        } catch (_) {}
         
         if (phone != null && phone.trim().isNotEmpty && password != null && password.trim().isNotEmpty) {
           return BiometricResult.success(phone, password);
@@ -178,15 +198,19 @@ class BiometricAuthService {
 
   /// Safely writes the credentials (Called upon standard login verification process).
   Future<void> saveCredentialsSecurely({required String phone, required String password}) async {
-    await _secureStorage.write(key: _userPhoneKey, value: phone);
-    await _secureStorage.write(key: _userPasswordKey, value: password);
+    try {
+      await _secureStorage.write(key: _userPhoneKey, value: phone);
+      await _secureStorage.write(key: _userPasswordKey, value: password);
+    } catch (_) {}
   }
   
   /// Deletes the credentials and disables biometric (Called upon app logout event or explicit removal).
   Future<void> deleteSecureToken() async {
-    await _secureStorage.delete(key: _userPhoneKey);
-    await _secureStorage.delete(key: _userPasswordKey);
-    await _secureStorage.delete(key: _biometricEnabledKey);
+    try {
+      await _secureStorage.delete(key: _userPhoneKey);
+      await _secureStorage.delete(key: _userPasswordKey);
+      await _secureStorage.delete(key: _biometricEnabledKey);
+    } catch (_) {}
   }
 
   Future<bool> authenticateForEnrollment({

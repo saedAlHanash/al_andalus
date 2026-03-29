@@ -88,6 +88,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "زانیارییە بایۆمەترییەکان",
     ),
+    "biometricEnabledDescription": MessageLookupByLibrary.simpleMessage(
+      "چوونە ژوورەوە بە پەنجەمۆر یان ڕووخسار لە ئێستادا چالاکە. دەتوانیت لە ڕێگەی دوگمەی خوارەوە ناچالاکی بکەیت.",
+    ),
+    "biometricEnrollmentDescription": MessageLookupByLibrary.simpleMessage(
+      "چوونە ژوورەوەی بایۆمەتری بە پەنجەمۆر یان ڕووخسار بەکاربهێنە بۆ گەیشتن بە هەژمارەکەت بە خێراتر و ئاسانتر.\n\nدەتوانیت لە هەموو کاتێکدا لە ڕێکخستنەکان ئەم تایبەتمەندییە چالاک یان ناچالاک بکەیت.",
+    ),
+    "biometricEnrollmentFailedSubtitle": MessageLookupByLibrary.simpleMessage(
+      "تکایە دووبارە هەوڵبدەرەوە یان ڕێگەیەکی تری چوونە ژوورەوە بەکاربهێنە",
+    ),
+    "biometricEnrollmentFailedTitle": MessageLookupByLibrary.simpleMessage(
+      "چالاککردنی بایۆمەتری سەرکەوتوو نەبوو",
+    ),
+    "biometricEnrollmentReason": MessageLookupByLibrary.simpleMessage(
+      "تکایە پەنجەمۆر یان ڕووخسارت پشتڕاست بکەرەوە بۆ چالاککردنی تایبەتمەندییەکە",
+    ),
+    "biometricEnrollmentSuccess": MessageLookupByLibrary.simpleMessage(
+      "چوونە ژوورەوەی بایۆمەتری بە سەرکەوتوویی چالاک کرا",
+    ),
+    "biometricFeatureEnabled": MessageLookupByLibrary.simpleMessage(
+      "تایبەتمەندی چالاککراوە",
+    ),
     "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
       "ئامێرەکە بە شێوەیەکی کاتی قوفڵ دراوە، تکایە دواتر هەوڵبدەرەوە",
     ),
@@ -105,6 +126,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biometricReason": MessageLookupByLibrary.simpleMessage(
       "تکایە پشتڕاستکردنەوە بکە بۆ چوونە ناو هەژمارەکەت",
+    ),
+    "biometricSettingsTitle": MessageLookupByLibrary.simpleMessage(
+      "ڕێکخستنەکانی بایۆمەتری",
     ),
     "biometricUnknown": MessageLookupByLibrary.simpleMessage(
       "هەڵەیەکی نەزانراو لە کاتی پشتڕاستکردنەوە ڕوویدا",
@@ -180,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
       "کۆدەکەت پێنەگەیشت؟",
     ),
+    "disableBiometricFeature": MessageLookupByLibrary.simpleMessage(
+      "ناچالاککردنی تایبەتمەندی",
+    ),
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage("هەژمارت نییە؟"),
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("هەژمارت هەیە؟"),
     "done": MessageLookupByLibrary.simpleMessage("تەواو"),
@@ -201,6 +228,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "electronicCard": MessageLookupByLibrary.simpleMessage("کارتی ئەلیکترۆنی"),
     "email": MessageLookupByLibrary.simpleMessage("ئیمەیڵ"),
+    "enableBiometricAgain": MessageLookupByLibrary.simpleMessage(
+      "دووبارە هەوڵبدەرەوە",
+    ),
+    "enableBiometricNow": MessageLookupByLibrary.simpleMessage(
+      "ئێستا چالاکی بکە",
+    ),
     "engine": MessageLookupByLibrary.simpleMessage("بزوێنەر"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("قەبارەی بزوێنەر"),
     "english": MessageLookupByLibrary.simpleMessage("ئینگلیزی"),
@@ -210,6 +243,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter": MessageLookupByLibrary.simpleMessage("چوونەژوورەوە"),
     "enterCarValue": MessageLookupByLibrary.simpleMessage(
       "نرخی ئۆتۆمبێل بنووسە",
+    ),
+    "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
+      "تکایە زانیارییەکانی چوونە ژوورەوەت بنووسە بۆ دووبارە چالاککردنەوەی تایبەتمەندییەکە:",
     ),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
       "بەرواری بەسەرچوون بنووسە",
@@ -236,6 +272,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "expired": MessageLookupByLibrary.simpleMessage("بەسەرچوو"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("بەرواری بەسەرچوون"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("پەیکەری دەرەوە"),
+    "fasterLoginMethod": MessageLookupByLibrary.simpleMessage(
+      "ڕێگەیەکی خێراتر بۆ چوونە ژوورەوە",
+    ),
     "fav": MessageLookupByLibrary.simpleMessage("دڵخوازەکان"),
     "features": MessageLookupByLibrary.simpleMessage("تایبەتمەندییەکان"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
@@ -337,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "بەڕێوەبردنی ژمارەی مۆبایلەکەت.",
     ),
     "manufactureYear": MessageLookupByLibrary.simpleMessage("ساڵی دروستکردن"),
+    "maybeLater": MessageLookupByLibrary.simpleMessage("لەوانەیە دواتر"),
     "metalBody": MessageLookupByLibrary.simpleMessage("پەیکەری کانزایی"),
     "minute": MessageLookupByLibrary.simpleMessage("خولەک"),
     "missing": MessageLookupByLibrary.simpleMessage("ونبوو"),

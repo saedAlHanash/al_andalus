@@ -3014,6 +3014,141 @@ class S {
     );
   }
 
+  /// `Please verify your fingerprint or face to enable the feature`
+  String get biometricEnrollmentReason {
+    return Intl.message(
+      'Please verify your fingerprint or face to enable the feature',
+      name: 'biometricEnrollmentReason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biometric login enabled successfully`
+  String get biometricEnrollmentSuccess {
+    return Intl.message(
+      'Biometric login enabled successfully',
+      name: 'biometricEnrollmentSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Disable Feature`
+  String get disableBiometricFeature {
+    return Intl.message(
+      'Disable Feature',
+      name: 'disableBiometricFeature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biometric Settings`
+  String get biometricSettingsTitle {
+    return Intl.message(
+      'Biometric Settings',
+      name: 'biometricSettingsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get enableBiometricAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'enableBiometricAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable Now`
+  String get enableBiometricNow {
+    return Intl.message(
+      'Enable Now',
+      name: 'enableBiometricNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maybe Later`
+  String get maybeLater {
+    return Intl.message('Maybe Later', name: 'maybeLater', desc: '', args: []);
+  }
+
+  /// `Biometric Enrollment Failed`
+  String get biometricEnrollmentFailedTitle {
+    return Intl.message(
+      'Biometric Enrollment Failed',
+      name: 'biometricEnrollmentFailedTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please try again or use a different login method`
+  String get biometricEnrollmentFailedSubtitle {
+    return Intl.message(
+      'Please try again or use a different login method',
+      name: 'biometricEnrollmentFailedSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feature Enabled`
+  String get biometricFeatureEnabled {
+    return Intl.message(
+      'Feature Enabled',
+      name: 'biometricFeatureEnabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A Faster Way to Log In`
+  String get fasterLoginMethod {
+    return Intl.message(
+      'A Faster Way to Log In',
+      name: 'fasterLoginMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fingerprint or face login is currently enabled. You can turn it off using the button below.`
+  String get biometricEnabledDescription {
+    return Intl.message(
+      'Fingerprint or face login is currently enabled. You can turn it off using the button below.',
+      name: 'biometricEnabledDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use biometric login with your fingerprint or face to access your account faster and easier.\n\nYou can turn this feature on or off at any time in the settings.`
+  String get biometricEnrollmentDescription {
+    return Intl.message(
+      'Use biometric login with your fingerprint or face to access your account faster and easier.\n\nYou can turn this feature on or off at any time in the settings.',
+      name: 'biometricEnrollmentDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your login details to re-enable the feature:`
+  String get enterCredentialsToReEnableBiometric {
+    return Intl.message(
+      'Please enter your login details to re-enable the feature:',
+      name: 'enterCredentialsToReEnableBiometric',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Biometric data removed successfully`
   String get removeBiometricSuccess {
     return Intl.message(

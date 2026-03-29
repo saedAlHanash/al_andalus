@@ -84,6 +84,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricData": MessageLookupByLibrary.simpleMessage(
       "البيانات البيومترية",
     ),
+    "biometricEnabledDescription": MessageLookupByLibrary.simpleMessage(
+      "ميزة الدخول بالبصمة أو الوجه مفعلة حالياً. يمكنك إيقافها من خلال الزر في الأسفل.",
+    ),
+    "biometricEnrollmentDescription": MessageLookupByLibrary.simpleMessage(
+      "استخدم تسجيل الدخول البيومتري ببصمة إصبعك أو وجهك للوصول إلى حسابك بشكل أسرع وأسهل.\n\nيمكنك تشغيل هذه الميزة أو إيقافها في أي وقت من خلال الإعدادات.",
+    ),
+    "biometricEnrollmentFailedSubtitle": MessageLookupByLibrary.simpleMessage(
+      "يرجى المحاولة مرة أخرى أو إستخدام طريقة دخول مختلفة",
+    ),
+    "biometricEnrollmentFailedTitle": MessageLookupByLibrary.simpleMessage(
+      "فشل في عملية تفعيل الدخول البيومتري",
+    ),
+    "biometricEnrollmentReason": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بصمتك أو وجهك لتفعيل الميزة",
+    ),
+    "biometricEnrollmentSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم تفعيل الدخول البيومتري بنجاح",
+    ),
+    "biometricFeatureEnabled": MessageLookupByLibrary.simpleMessage(
+      "الميزة مفعلة",
+    ),
     "biometricLockedOut": MessageLookupByLibrary.simpleMessage(
       "تم قفل المحاولة مؤقتاً لظروف أمنية، يرجى المحاولة لاحقاً",
     ),
@@ -101,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biometricReason": MessageLookupByLibrary.simpleMessage(
       "يرجى المصادقة للوصول إلى بيانات حسابك",
+    ),
+    "biometricSettingsTitle": MessageLookupByLibrary.simpleMessage(
+      "الإعدادات البيومترية",
     ),
     "biometricUnknown": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير معروف أثناء المصادقة والتأكد من البصمة",
@@ -122,7 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("تغيير الحساب"),
-    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير الرمز السري"),
+    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير كلمة السر"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
     "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
@@ -138,7 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
-    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد الرمز السري"),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كلمة السر"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
@@ -164,6 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "didntReceiveTheCode": MessageLookupByLibrary.simpleMessage(
       "لم يصلك الرمز؟",
     ),
+    "disableBiometricFeature": MessageLookupByLibrary.simpleMessage(
+      "إيقاف الميزة",
+    ),
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب؟",
     ),
@@ -183,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "electronicCard": MessageLookupByLibrary.simpleMessage("بطاقة الكترونية"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "enableBiometricAgain": MessageLookupByLibrary.simpleMessage("فعل مجدداً"),
+    "enableBiometricNow": MessageLookupByLibrary.simpleMessage("فعل الآن"),
     "engine": MessageLookupByLibrary.simpleMessage("المحرك"),
     "engineCapacity": MessageLookupByLibrary.simpleMessage("حجم المحرك"),
     "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
@@ -191,6 +220,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
     "enterCarValue": MessageLookupByLibrary.simpleMessage("أدخل قيمة السيارة"),
+    "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
+    ),
     "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
       "ادخل تاريخ الصلاحية",
     ),
@@ -218,6 +250,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "expired": MessageLookupByLibrary.simpleMessage("منتهي"),
     "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
+    "fasterLoginMethod": MessageLookupByLibrary.simpleMessage(
+      "طريقة أسرع لتسجيل الدخول",
+    ),
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "features": MessageLookupByLibrary.simpleMessage("المميزات"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
@@ -309,6 +344,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إدارة رقم الهاتف الخاص بك.",
     ),
     "manufactureYear": MessageLookupByLibrary.simpleMessage("سنة الصنع"),
+    "maybeLater": MessageLookupByLibrary.simpleMessage("ربما لاحقاً"),
     "metalBody": MessageLookupByLibrary.simpleMessage("الهيكل المعدني"),
     "minute": MessageLookupByLibrary.simpleMessage("دقيقة"),
     "missing": MessageLookupByLibrary.simpleMessage("مفقود"),
@@ -370,7 +406,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
-    "pinCode": MessageLookupByLibrary.simpleMessage("الرمز السري"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("كلمة السر"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -483,7 +519,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ البداية",
     ),
     "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
-      "يرجى إرسال الرمز السري",
+      "يرجى إرسال كلمة السر",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "يرجى ذكر تفاصيل الحادث الذي جرى",
@@ -541,7 +577,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
     "public": MessageLookupByLibrary.simpleMessage("عمومي"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
-    "qrCode": MessageLookupByLibrary.simpleMessage("الرمز السريع QR Code"),
+    "qrCode": MessageLookupByLibrary.simpleMessage("كلمة السرع QR Code"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "reUpload": MessageLookupByLibrary.simpleMessage("إعادة الرفع"),
