@@ -104,13 +104,13 @@ flutter:
   fonts:
     - family: regular
       fonts:
-        - asset: assets/fonts/cairo.ttf
+        - asset: assets/fonts/Tajawal-Regular.ttf
     - family: semeBold
       fonts:
-        - asset: assets/fonts/cairo_semi_bold.ttf
+        - asset: assets/fonts/Tajawal-Medium.ttf
     - family: bold
       fonts:
-        - asset: assets/fonts/cairo_bold.ttf
+        - asset: assets/fonts/Tajawal-Bold.ttf
 
 flutter_intl:
   enabled: true

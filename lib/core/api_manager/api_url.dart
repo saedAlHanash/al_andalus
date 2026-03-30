@@ -195,7 +195,7 @@ class PostUrl {
 
   static const socialVerifyPhone = 'social/verify-phone';
 
-  static var changePassword = 'auth/change-password';
+  static var changePassword = 'auth/pin-code/change';
   static var payCourse = 'course/active';
   static var paySummary = 'summary/active';
   static var payExam = 'exam/active';

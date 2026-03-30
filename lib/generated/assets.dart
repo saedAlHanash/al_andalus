@@ -9,6 +9,9 @@ class Assets {
   static const String fontsCairo = 'assets/fonts/cairo.ttf';
   static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';
+  static const String fontsTajawalBold = 'assets/fonts/Tajawal-Bold.ttf';
+  static const String fontsTajawalMedium = 'assets/fonts/Tajawal-Medium.ttf';
+  static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
   static const String iconsAccident = 'assets/icons/accident.png';
   static const String iconsAccident1 = 'assets/icons/accident1.png';
   static const String iconsActiveStep = 'assets/icons/active_step.svg';

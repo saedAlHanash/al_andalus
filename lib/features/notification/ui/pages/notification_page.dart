@@ -57,17 +57,17 @@ class _NotificationPageState extends State<NotificationPage> {
       builder: (context, state) {
         final gList = state.result.groupListsBy((element) => element.created?.formatDate).values.toList();
 
-        return RefreshWidget(
-          isLoading: state.loading,
-          onRefresh: () {
-            context.read<NotificationCubit>().getData(newData: true);
-          },
-          child: state.isDataEmpty
-              ? NotFoundNotificationsWidget(
-                  icon: Assets.iconsBellNotification,
-                  text: S.of(context).noNotifications,
-                )
-              : ListView.separated(
+        return state.isDataEmpty
+            ? NotFoundNotificationsWidget(
+                icon: Assets.iconsBellNotification,
+                text: S.of(context).noNotifications,
+              )
+            : RefreshWidget(
+                isLoading: state.loading,
+                onRefresh: () {
+                  context.read<NotificationCubit>().getData(newData: true);
+                },
+                child: ListView.separated(
                   itemCount: gList.length,
                   separatorBuilder: (context, i) => 10.0.verticalSpace,
                   itemBuilder: (context, i) {
@@ -151,7 +151,7 @@ class _NotificationPageState extends State<NotificationPage> {
                     );
                   },
                 ),
-        );
+              );
       },
     );
   }

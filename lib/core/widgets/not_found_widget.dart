@@ -29,15 +29,12 @@ class NotFoundNotificationsWidget extends StatelessWidget {
             width: 200.0.dg,
           ),
           10.0.verticalSpace,
-          Positioned(
-            bottom: 0.2.sh,
-            child: DrawableText(
-              size: 16.0.sp,
-              text: text ?? '',
-              fontWeight: FontWeight.bold,
-              matchParent: true,
-              textAlign: TextAlign.center,
-            ),
+          DrawableText(
+            size: 16.0.sp,
+            text: text ?? '',
+            fontWeight: FontWeight.bold,
+            matchParent: true,
+            textAlign: TextAlign.center,
           ),
         ],
       ),

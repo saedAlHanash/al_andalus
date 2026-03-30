@@ -125,7 +125,9 @@ class _MenuScreenState extends State<MenuScreen> {
                         image: Assets.iconsPerson,
                       ),
                       ItemMenu(
-                        onTap: () {},
+                        onTap: () {
+                          context.pushNamed(RouteName.changePasswordPage);
+                        },
                         name: S.of(context).changePasscode,
                         subTitle: S.of(context).manageLoginPasscode,
                         image: Assets.iconsPerson,
