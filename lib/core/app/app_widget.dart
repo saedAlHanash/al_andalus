@@ -46,6 +46,14 @@ class MyApp extends StatefulWidget {
       state?.setTheme(themeMode);
     }
   }
+
+  static Future<void> setFont(BuildContext context, String fontName) async {
+    await AppSharedPreference.cashFontName(fontName);
+    if (context.mounted) {
+      final state = context.findAncestorStateOfType<_MyAppState>();
+      state?.setFont(fontName);
+    }
+  }
 }
 
 class _MyAppState extends State<MyApp> {
@@ -74,6 +82,10 @@ class _MyAppState extends State<MyApp> {
 
   void setTheme(ThemeMode themeMode) {
     setState(() => this.themeMode = themeMode);
+  }
+
+  void setFont(String fontName) {
+    setState(() {});
   }
 
   ThemeMode themeMode = AppSharedPreference.getThemeMode;

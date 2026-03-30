@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
@@ -219,6 +220,16 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       ItemMenu(
                         onTap: () {
+                          showFontDialog(context);
+                        },
+                        name: 'الخط',
+                        image: ImageMultiType(
+                          url: Icons.font_download_outlined,
+                          color: AppColorManager.mainColor,
+                        ),
+                      ),
+                      ItemMenu(
+                        onTap: () {
                           context.pushNamed(
                             RouteName.dataPage,
                             queryParameters: {'type': DataPageType.terms.index.toString()},
@@ -300,14 +311,16 @@ class _MenuScreenState extends State<MenuScreen> {
                         trailing: 0.0.verticalSpace,
                       ),
                       ItemMenu(
-                        onTap: () {},
+                        onTap: () {
+                          LauncherHelper.openPage('https://bandtech.co/');
+                        },
                         name: S.of(context).devBy,
                         subTitle: S.of(context).technicalPackage,
                         withD: false,
                         trailing: ImageMultiType(
                           url: Assets.imagesBandtechLogo,
-                          height: 50.0.h,
-                          width: 100.0.w,
+                          height: 70.0.h,
+                          width: 70.0.w,
                         ),
                       ),
                     ],
@@ -328,6 +341,7 @@ class ItemMenu extends StatelessWidget {
     super.key,
     required this.name,
     this.subTitle,
+    this.leading,
     this.image,
     this.trailing,
     this.withD = true,
@@ -341,6 +355,7 @@ class ItemMenu extends StatelessWidget {
   final dynamic image;
   final Function()? onTap;
   final Widget? trailing;
+  final Widget? leading;
   final bool withD;
 
   @override
@@ -355,6 +370,7 @@ class ItemMenu extends StatelessWidget {
         children: [
           ListTile(
             tileColor: Colors.transparent,
+            leading: leading,
             onTap: () => onTap?.call(),
             title: DrawableText(
               text: name,

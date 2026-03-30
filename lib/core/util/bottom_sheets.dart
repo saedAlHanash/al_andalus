@@ -131,6 +131,59 @@ void showThemeDialog(BuildContext context) {
   );
 }
 
+void showFontDialog(BuildContext context) {
+  final List<String> fonts = [
+    'Cairo',
+    'Tajawal',
+    'Almarai',
+    'Changa',
+    'Readex Pro',
+    'Alexandria',
+  ];
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: AppColorManager.cardColor,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _Header(),
+            _Title(title: 'الخط'),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
+              child: Column(
+                children: [
+                  ...fonts.map(
+                    (font) => ListTile(
+                      onTap: () {
+                        MyApp.setFont(context, font);
+                        Navigator.pop(context);
+                      },
+                      title: DrawableText(text: font, fontFamily: font),
+                      leading: ImageMultiType(
+                        url: AppSharedPreference.getFontName == font
+                            ? Icons.radio_button_checked
+                            : Icons.radio_button_off,
+                        color: AppColorManager.mainColor,
+                      ),
+                    ),
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 class _ThemeItem extends StatelessWidget {
   const _ThemeItem({required this.title, required this.themeMode});
 

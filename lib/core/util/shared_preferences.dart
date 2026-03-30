@@ -183,4 +183,15 @@ class AppSharedPreference {
   static ThemeMode get getThemeMode => ThemeMode.values[_prefs?.getInt(_keyThemeMode) ?? 1];
 
   //endregion
+
+  //region FontName
+  static const _keyFontName = '_keyFontName';
+
+  static Future<void> cashFontName(String fontName) async {
+    await _prefs?.setString(_keyFontName, fontName);
+  }
+
+  static String get getFontName => _prefs?.getString(_keyFontName) ?? 'Cairo';
+
+  //endregion
 }

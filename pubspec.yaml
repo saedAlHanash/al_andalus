@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   local_auth: ^2.2.0
-  flutter_secure_storage: ^9.0.0
+  flutter_secure_storage: ^10.0.0
 
 
   drawable_text: ^1.0.0
@@ -26,7 +26,7 @@ dependencies:
     git:
       url: https://github.com/saedAlHanash/m_cubit
 
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
   intl_utils: ^2.8.14
 
   flutter_cached_pdfview: ^0.4.3
@@ -37,19 +37,19 @@ dependencies:
   equatable: ^2.0.8
   get_it: ^9.2.1
   http: ^1.6.0
-  shared_preferences: ^2.5.4
+  shared_preferences: ^2.5.5
   flutter_screenutil: ^5.9.3
   pinput: ^6.0.2
   carousel_slider: ^5.1.2
   #  image_picker: ^1.1.2
   url_launcher: ^6.3.2
   #  url_launcher_ios: ^6.3.3
-  logger: ^2.6.2
+  logger: ^2.7.0
   dropdown_button2: ^2.3.9
-  google_maps_flutter: ^2.14.2
-  firebase_core: ^4.4.0
-  firebase_messaging: ^16.1.1
-  firebase_remote_config: ^6.1.2
+  google_maps_flutter: ^2.16.0
+  firebase_core: ^4.6.0
+  firebase_messaging: ^16.1.3
+  firebase_remote_config: ^6.3.0
   #  firebase_auth: ^5.6.2
   #  app_links: ^6.4.0
   intl: ^0.20.2
@@ -57,7 +57,7 @@ dependencies:
   #  path_provider: ^2.1.5
   #  path: ^1.9.1
   geolocator: ^14.0.2
-  flutter_local_notifications: ^20.1.0
+  flutter_local_notifications: ^21.0.0
   package_info_plus: ^9.0.0
   #  hive: ^2.2.3
   #  share_plus: ^11.0.0
@@ -79,7 +79,7 @@ dependencies:
   flutter_inappwebview: ^6.1.5
   qr_flutter: ^4.1.0
   mobile_scanner: ^7.2.0
-  flutter_svg: ^2.0.10
+  google_fonts: ^8.0.2
 #  kiosk_mode: ^0.7.0
 
 dev_dependencies:

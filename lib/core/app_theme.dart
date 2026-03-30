@@ -2,13 +2,23 @@ import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app/app_widget.dart';
 
 var primaryColor = AppColorManager.mainColor;
 var secondaryColor = AppColorManager.white;
- const _dividerColor = Color(0xFFECEDF2);
+const _dividerColor = Color(0xFFECEDF2);
+
+String? get appFontFamily {
+  try {
+    return GoogleFonts.getFont(AppSharedPreference.getFontName).fontFamily;
+  } catch (_) {
+    return GoogleFonts.getFont('Cairo').fontFamily;
+  }
+}
+
 ThemeData get lightTheme => ThemeData(
   progressIndicatorTheme: ProgressIndicatorThemeData(
     borderRadius: BorderRadius.circular(8.0),
@@ -20,14 +30,14 @@ ThemeData get lightTheme => ThemeData(
   textTheme: TextTheme(
     bodyMedium: TextStyle(fontSize: 14.0.sp),
   ),
-  fontFamily: FontManager.semeBold.name,
+  fontFamily: appFontFamily,
   dividerColor: _dividerColor,
   dividerTheme: DividerThemeData(
     color: _dividerColor,
   ),
   primaryTextTheme: TextTheme(
     displayMedium: TextStyle(
-      fontFamily: FontManager.semeBold.name,
+      fontFamily: appFontFamily,
       color: Color(0xFF132332),
     ),
   ),
@@ -51,7 +61,7 @@ ThemeData get lightTheme => ThemeData(
     iconTheme: IconThemeData(color: AppColorManager.mainColor),
     titleTextStyle: TextStyle(
       color: Color(0xFF132332),
-      fontFamily: FontManager.semeBold.name,
+      fontFamily: appFontFamily,
       fontSize: 18.sp,
     ),
   ),
@@ -170,7 +180,7 @@ ThemeData get darkTheme => ThemeData(
     surface: AppColorManager.tileColor,
     error: AppColorManager.red,
   ),
-  fontFamily: FontManager.semeBold.name,
+  fontFamily: appFontFamily,
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: AppColorManager.secondColor,
     foregroundColor: AppColorManager.darkColor,
@@ -182,7 +192,7 @@ ThemeData get darkTheme => ThemeData(
     iconTheme: IconThemeData(color: AppColorManager.secondColor),
     titleTextStyle: TextStyle(
       color: AppColorManager.white,
-      fontFamily: FontManager.semeBold.name,
+      fontFamily: appFontFamily,
       fontSize: 18.sp,
     ),
   ),
@@ -321,13 +331,13 @@ ThemeData get darkTheme => ThemeData(
     }),
     dataTextStyle: TextStyle(
       color: AppColorManager.white,
-      fontFamily: FontManager.semeBold.name,
+      fontFamily: appFontFamily,
       fontSize: 14.sp,
     ),
     headingRowColor: WidgetStatePropertyAll(AppColorManager.mainColor),
     headingTextStyle: TextStyle(
       color: AppColorManager.white,
-      fontFamily: FontManager.semeBold.name,
+      fontFamily: appFontFamily,
       fontSize: 15.sp,
       fontWeight: FontWeight.bold,
     ),
@@ -344,4 +354,3 @@ ThemeData get darkTheme => ThemeData(
     },
   ),
 );
-

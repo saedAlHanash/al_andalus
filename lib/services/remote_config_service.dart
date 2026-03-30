@@ -19,6 +19,7 @@ class RemoteConfigService {
       {
         'show_old_price': true,
         'show_guest': true,
+        'bandtech_url': 'https://bandtech.co/',
       },
     );
 
@@ -50,4 +51,5 @@ class RemoteConfigService {
   bool get showOldPrice => _rc.getBool('show_old_price');
 
   bool get showGuest => _rc.getBool('show_guest');
+  bool get bandtechUrl => _rc.getBool('bandtech_url');
 }
