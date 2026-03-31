@@ -766,6 +766,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "uploadedFile": MessageLookupByLibrary.simpleMessage("فایلی بارکراو"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("کارپێکراوە تا"),
+    "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "Vehicle inspection report",
+    ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "کۆدی پشتڕاستکردنەوە",
     ),

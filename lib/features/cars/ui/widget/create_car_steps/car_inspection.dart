@@ -86,7 +86,7 @@ class _CarInspectionState extends State<CarInspection> {
                                       RouteName.pdf,
                                       queryParameters: {
                                         'url': state.mRequest.inspectionReport.remoteUrl,
-                                        'title': S.of(context).packageDetails,
+                                        'title': S.of(context).vehicleInspectionReport,
                                       },
                                     );
                                   }

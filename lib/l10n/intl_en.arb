@@ -381,5 +381,6 @@
   "biometricEnrollmentDescription": "Use biometric login with your fingerprint or face to access your account faster and easier.\n\nYou can turn this feature on or off at any time in the settings.",
   "enterCredentialsToReEnableBiometric": "Please enter your login details to re-enable the feature:",
   "removeBiometricSuccess": "Biometric data removed successfully",
-  "removeBiometricWarning": "Are you sure you want to remove saved biometrics?"
+  "removeBiometricWarning": "Are you sure you want to remove saved biometrics?",
+  "vehicleInspectionReport": "Vehicle inspection report"
 }

@@ -742,6 +742,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "uploadedFile": MessageLookupByLibrary.simpleMessage("Uploaded file"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("Validity until"),
+    "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "Vehicle inspection report",
+    ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),

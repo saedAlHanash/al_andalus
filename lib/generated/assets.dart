@@ -6,6 +6,9 @@ class Assets {
   static const String fontsAlmaraiBold = 'assets/fonts/Almarai-Bold.ttf';
   static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
   static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
+  static const String fontsAlyamamaBold = 'assets/fonts/Alyamama-Bold.ttf';
+  static const String fontsAlyamamaRegular = 'assets/fonts/Alyamama-Regular.ttf';
+  static const String fontsAlyamamaSemiBold = 'assets/fonts/Alyamama-SemiBold.ttf';
   static const String fontsCairo = 'assets/fonts/cairo.ttf';
   static const String fontsCairoBold = 'assets/fonts/cairo_bold.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/cairo_semi_bold.ttf';

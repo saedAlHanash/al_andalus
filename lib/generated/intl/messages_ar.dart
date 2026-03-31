@@ -309,7 +309,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage("إصدار وثيقة طلب تأمين"),
     "joined": MessageLookupByLibrary.simpleMessage("الإنضمام"),
     "knowMore": MessageLookupByLibrary.simpleMessage("معرفة المزيد"),
-    "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفه التفاصيل"),
+    "knowMoreDetails": MessageLookupByLibrary.simpleMessage("معرفة التفاصيل"),
     "kurdish": MessageLookupByLibrary.simpleMessage("كوردى"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
@@ -577,7 +577,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("بروفايل"),
     "public": MessageLookupByLibrary.simpleMessage("عمومي"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
-    "qrCode": MessageLookupByLibrary.simpleMessage("كلمة السرع QR Code"),
+    "qrCode": MessageLookupByLibrary.simpleMessage("رمز QR"),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "reUpload": MessageLookupByLibrary.simpleMessage("إعادة الرفع"),
@@ -710,6 +710,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "uploadedFile": MessageLookupByLibrary.simpleMessage("الملف المرفوع"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("صلاحية لغاية"),
+    "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
+      "تقرير فحص السيارة",
+    ),
     "verificationCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "verify": MessageLookupByLibrary.simpleMessage("التحقق"),
     "viewInsuranceStatement": MessageLookupByLibrary.simpleMessage(
