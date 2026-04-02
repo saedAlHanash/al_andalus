@@ -139,6 +139,7 @@ void showFontDialog(BuildContext context) {
     'Changa',
     'Readex Pro',
     'Alexandria',
+    'Alyamama',
   ];
   showModalBottomSheet(
     useSafeArea: true,

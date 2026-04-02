@@ -26,7 +26,7 @@ class RememberPassword extends StatelessWidget {
         },
         child: DrawableText(
           color: AppColorManager.mainColor,
-          fontFamily: FontManager.bold.name,
+          fontWeight: .bold,
           text: '${S.of(context).login}.',
         ),
       ),
@@ -57,7 +57,7 @@ class RememberAccount extends StatelessWidget {
             },
             child: DrawableText(
               color: AppColorManager.mainColor,
-              fontFamily: FontManager.bold.name,
+              fontWeight: .bold,
               text: '${S.of(context).changeAccount}.',
             ),
           ),

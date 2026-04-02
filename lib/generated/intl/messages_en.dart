@@ -272,6 +272,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("Fixed"),
     "floorCover": MessageLookupByLibrary.simpleMessage("Floor Cover"),
+    "font": MessageLookupByLibrary.simpleMessage("Font"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "from": MessageLookupByLibrary.simpleMessage("From"),

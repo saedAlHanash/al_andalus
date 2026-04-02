@@ -26,7 +26,7 @@ class NeedLoginWidget extends StatelessWidget {
               text: S.of(context).needLoginToContinue,
               size: 20.0.sp,
               textAlign: TextAlign.center,
-              fontFamily: FontManager.bold.name,
+              fontWeight: .bold,
             ),
             20.0.verticalSpace,
             MyButton(

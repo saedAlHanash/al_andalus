@@ -41,7 +41,6 @@ class _CarInspectionState extends State<CarInspection> {
 
             DrawableText(
               text: S.of(context).pleaseUploadInspectionDocument,
-              fontFamily: FontManager.regular.name,
             ),
             24.0.verticalSpace,
             Container(

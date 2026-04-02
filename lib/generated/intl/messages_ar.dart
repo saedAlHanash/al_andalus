@@ -260,6 +260,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("تم الإصلاح"),
     "floorCover": MessageLookupByLibrary.simpleMessage("غطاء الأرضية"),
+    "font": MessageLookupByLibrary.simpleMessage("الخط"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "from": MessageLookupByLibrary.simpleMessage("من"),

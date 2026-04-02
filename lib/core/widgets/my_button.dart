@@ -49,7 +49,7 @@ class MyButton extends StatelessWidget {
           drawablePadding: 5.0.w,
 
           textAlign: .center,
-          fontFamily: FontManager.bold.name,
+          fontWeight: .bold,
           drawableEnd: loading
               ? SizedBox(
                   height: 15.0.r,
@@ -60,7 +60,6 @@ class MyButton extends StatelessWidget {
                   ),
                 )
               : null,
-          fontWeight: FontWeight.bold,
         );
 
     return SizedBox(

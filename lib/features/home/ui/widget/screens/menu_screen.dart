@@ -71,9 +71,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 DrawableText(
                   text: S.of(context).personalData,
                   fontWeight: FontWeight.bold,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8.0,
-                  ).r,
+                  padding: EdgeInsets.symmetric(vertical: 8.0).r,
                   matchParent: true,
                   size: 18.0.sp,
                 ),
@@ -86,15 +84,13 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.editPhonePage).then(
-                            (value) {
-                              context.read<GetMeCubit>().getData(newData: true);
-                            },
-                          );
+                          context.pushNamed(RouteName.editPhonePage).then((value) {
+                            context.read<GetMeCubit>().getData(newData: true);
+                          });
                         },
                         name: S.of(context).phoneData,
                         subTitle: S.of(context).manageYourPhoneNumber,
-                        image: Assets.iconsPerson,
+                        iconData: Icons.phone_android_outlined,
                         withD: false,
                       ),
                     ],
@@ -104,9 +100,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 DrawableText(
                   text: S.of(context).securityData,
                   fontWeight: FontWeight.bold,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8.0,
-                  ).r,
+                  padding: EdgeInsets.symmetric(vertical: 8.0).r,
                   matchParent: true,
                   size: 18.0.sp,
                 ),
@@ -123,28 +117,26 @@ class _MenuScreenState extends State<MenuScreen> {
                         },
                         name: S.of(context).biometricData,
                         subTitle: S.of(context).manageBiometricSettings,
-                        image: Assets.iconsPerson,
-                      ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(RouteName.changePasswordPage);
-                        },
-                        name: S.of(context).changePasscode,
-                        subTitle: S.of(context).manageLoginPasscode,
-                        image: Assets.iconsPerson,
+                        iconData: Icons.fingerprint_outlined,
                         withD: false,
                       ),
+                      // ItemMenu(
+                      //   onTap: () {
+                      //     context.pushNamed(RouteName.changePasswordPage);
+                      //   },
+                      //   name: S.of(context).changePasscode,
+                      //   subTitle: S.of(context).manageLoginPasscode,
+                      //   iconData: Icons.lock_outline,
+                      //   withD: false,
+                      // ),
                     ],
                   ),
                 ),
-
                 20.0.verticalSpace,
                 DrawableText(
                   text: S.of(context).info,
                   fontWeight: FontWeight.bold,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8.0,
-                  ).r,
+                  padding: EdgeInsets.symmetric(vertical: 8.0).r,
                   matchParent: true,
                   size: 18.0.sp,
                 ),
@@ -157,43 +149,29 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.editIdentityInfo).then(
-                            (value) {
-                              context.read<GetMeCubit>().getData(newData: true);
-                            },
-                          );
+                          context.pushNamed(RouteName.editIdentityInfo).then((value) {
+                            context.read<GetMeCubit>().getData(newData: true);
+                          });
                         },
                         name: S.of(context).unifiedCardInfo,
                         subTitle: S.of(context).manageUnifiedCardInfo,
-                        image: Assets.iconsPerson,
+                        iconData: Icons.badge_outlined,
                       ),
                       ItemMenu(
                         onTap: () {
-                          context.pushNamed(RouteName.editDrivingLicense).then(
-                            (value) {
-                              context.read<GetMeCubit>().getData(newData: true);
-                            },
-                          );
+                          context.pushNamed(RouteName.editDrivingLicense).then((value) {
+                            context.read<GetMeCubit>().getData(newData: true);
+                          });
                         },
                         name: S.of(context).drivingLicenseInfo,
                         subTitle: S.of(context).manageDrivingLicenseInfo,
-                        image: Assets.iconsPerson,
+                        iconData: Icons.directions_car_outlined,
                         withD: false,
                       ),
-                      // ItemMenu(
-                      //   onTap: () {
-                      //     context.pushNamed(RouteName.carsPage);
-                      //   },
-                      //   name: S.of(context).myCars,
-                      //   subTitle: S.of(context).manageMyCars,
-                      //   image: Assets.iconsPerson,
-                      //   withD: false,
-                      // ),
                     ],
                   ),
                 ),
                 20.0.verticalSpace,
-
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: AppColorManager.cd),
@@ -202,88 +180,53 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: Column(
                     children: [
                       ItemMenu(
-                        onTap: () {
-                          showLanguageDialog(context);
-                        },
+                        onTap: () => showLanguageDialog(context),
                         name: S.of(context).language,
-                        image: Assets.iconsFileList,
+                        iconData: Icons.language_outlined,
                       ),
                       ItemMenu(
-                        onTap: () {
-                          showThemeDialog(context);
-                        },
+                        onTap: () => showThemeDialog(context),
                         name: S.of(context).theme,
-                        image: ImageMultiType(
-                          url: Icons.dark_mode,
-                          color: AppColorManager.mainColor,
-                        ),
+                        iconData: Icons.dark_mode_outlined,
                       ),
                       ItemMenu(
-                        onTap: () {
-                          showFontDialog(context);
-                        },
-                        name: 'الخط',
-                        image: ImageMultiType(
-                          url: Icons.font_download_outlined,
-                          color: AppColorManager.mainColor,
-                        ),
+                        onTap: () => showFontDialog(context),
+                        name: S.of(context).font,
+                        iconData: Icons.text_format_outlined,
                       ),
                       ItemMenu(
-                        onTap: () {
-                          context.pushNamed(
-                            RouteName.dataPage,
-                            queryParameters: {'type': DataPageType.terms.index.toString()},
-                          );
-                        },
+                        onTap: () => context.pushNamed(
+                          RouteName.dataPage,
+                          queryParameters: {'type': DataPageType.terms.index.toString()},
+                        ),
                         name: S.of(context).termsAndConditions,
-                        image: Assets.iconsPhoneFlip,
+                        iconData: Icons.description_outlined,
                       ),
                       ItemMenu(
-                        onTap: () {
-                          context.pushNamed(
-                            RouteName.dataPage,
-                            queryParameters: {'type': DataPageType.policy.index.toString()},
-                          );
-                        },
-                        name: S.of(context).policy,
-                        image: Assets.iconsFileList,
-                      ),
-                      ItemMenu(
-                        onTap: () {
-                          context.pushNamed(
-                            RouteName.dataPage,
-                            queryParameters: {'type': DataPageType.aboutUs.index.toString()},
-                          );
-                        },
-                        name: S.of(context).aboutUs,
-                        image: Assets.iconsFileList,
-                      ),
-                      // ItemMenu(
-                      //   onTap: () {
-                      //     context.pushNamed(
-                      //       RouteName.dataPage,
-                      //       queryParameters: {'type': DataPageType.ourService.index.toString()},
-                      //     );
-                      //   },
-                      //   name: S.of(context).ourService,
-                      //   image: Assets.iconsFileList,
-                      // ),
-                      ItemMenu(
-                        onTap: () {
-                          showSupportCall(context);
-                        },
-                        name: S.of(context).support,
-                        image: Assets.iconsPhoneFlip,
-                      ),
-                      ItemMenu(
-                        onTap: () {
-                          AppProvider.logout(withDialog: true);
-                        },
-                        name: S.of(context).logout,
-                        image: ImageMultiType(
-                          url: Icons.logout,
-                          color: AppColorManager.mainColor,
+                        onTap: () => context.pushNamed(
+                          RouteName.dataPage,
+                          queryParameters: {'type': DataPageType.policy.index.toString()},
                         ),
+                        name: S.of(context).policy,
+                        iconData: Icons.shield_outlined,
+                      ),
+                      ItemMenu(
+                        onTap: () => context.pushNamed(
+                          RouteName.dataPage,
+                          queryParameters: {'type': DataPageType.aboutUs.index.toString()},
+                        ),
+                        name: S.of(context).aboutUs,
+                        iconData: Icons.info_outline,
+                      ),
+                      ItemMenu(
+                        onTap: () => showSupportCall(context),
+                        name: S.of(context).support,
+                        iconData: Icons.support_agent_outlined,
+                      ),
+                      ItemMenu(
+                        onTap: () => AppProvider.logout(withDialog: true),
+                        name: S.of(context).logout,
+                        iconData: Icons.logout_outlined,
                       ),
                       if (AppProvider.isStoreTest)
                         ItemMenu(
@@ -301,7 +244,7 @@ class _MenuScreenState extends State<MenuScreen> {
                           },
                           name: S.of(context).deleteAccount,
                           subTitle: S.of(context).subTitleDeleteAccount,
-                          image: Assets.iconsDelete,
+                          iconData: Icons.delete_outline,
                           withD: false,
                         ),
                       ItemMenu(
@@ -309,19 +252,15 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).buildNumber,
                         subTitle: AppInfoService.fullVersionName,
                         trailing: 0.0.verticalSpace,
+                        iconData: Icons.info_outline,
                       ),
                       ItemMenu(
-                        onTap: () {
-                          LauncherHelper.openPage('https://bandtech.co/');
-                        },
+                        onTap: () => LauncherHelper.openPage('https://bandtech.co/'),
                         name: S.of(context).devBy,
                         subTitle: S.of(context).technicalPackage,
                         withD: false,
-                        trailing: ImageMultiType(
-                          url: Assets.imagesBandtechLogo,
-                          height: 70.0.h,
-                          width: 70.0.w,
-                        ),
+                        iconData: Icons.code_outlined,
+                        trailing: ImageMultiType(url: Assets.imagesBandtechLogo, height: 70.0.h, width: 70.0.w),
                       ),
                     ],
                   ),
@@ -341,6 +280,7 @@ class ItemMenu extends StatelessWidget {
     super.key,
     required this.name,
     this.subTitle,
+    this.iconData,
     this.leading,
     this.image,
     this.trailing,
@@ -349,13 +289,12 @@ class ItemMenu extends StatelessWidget {
   });
 
   final String name;
-
   final String? subTitle;
-
+  final IconData? iconData;
+  final dynamic leading;
   final dynamic image;
   final Function()? onTap;
   final Widget? trailing;
-  final Widget? leading;
   final bool withD;
 
   @override
@@ -363,43 +302,21 @@ class ItemMenu extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15.0).w,
       padding: const EdgeInsets.symmetric(vertical: 2.0).r,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0.r),
-      ),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0.r)),
       child: Column(
         children: [
           ListTile(
             tileColor: Colors.transparent,
-            leading: leading,
+            leading: iconData != null
+                ? Icon(iconData, color: AppColorManager.mainColor)
+                : (leading == null ? null : ImageMultiType(url: leading)),
             onTap: () => onTap?.call(),
-            title: DrawableText(
-              text: name,
-              fontFamily: FontManager.bold.name,
-            ),
+            title: DrawableText(text: name, fontWeight: FontWeight.bold),
             minLeadingWidth: 0,
-            subtitle: subTitle == null
-                ? null
-                : DrawableText(
-                    text: subTitle!,
-                    size: 12.0.sp,
-                    color: Colors.grey,
-                  ),
-            trailing:
-                trailing ??
-                ImageMultiType(
-                  url: Icons.arrow_forward_ios,
-                  height: 15.0.r,
-                  color: Color(0xff667085),
-                ),
+            subtitle: subTitle == null ? null : DrawableText(text: subTitle!, size: 12.0.sp, color: Colors.grey),
+            trailing: trailing ?? Icon(Icons.arrow_forward_ios, size: 15.0.r, color: const Color(0xff667085)),
           ),
-
-          if (withD)
-            Divider(
-              height: 0,
-              color: AppColorManager.cd,
-              endIndent: 5.0.w,
-              indent: 5.0.w,
-            ),
+          if (withD) Divider(height: 0, color: AppColorManager.cd, endIndent: 5.0.w, indent: 5.0.w),
         ],
       ),
     );

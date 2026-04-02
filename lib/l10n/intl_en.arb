@@ -382,5 +382,6 @@
   "enterCredentialsToReEnableBiometric": "Please enter your login details to re-enable the feature:",
   "removeBiometricSuccess": "Biometric data removed successfully",
   "removeBiometricWarning": "Are you sure you want to remove saved biometrics?",
-  "vehicleInspectionReport": "Vehicle inspection report"
+  "vehicleInspectionReport": "Vehicle inspection report",
+  "font": "Font"
 }

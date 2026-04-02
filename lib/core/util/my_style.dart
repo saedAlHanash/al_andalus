@@ -57,7 +57,6 @@ class MyStyle {
   );
 
   static final hintStyle = TextStyle(
-    fontFamily: FontManager.semeBold.name,
     fontSize: 18.0.spMin,
     color: AppColorManager.grey.withValues(alpha: 0.6),
   );
@@ -75,8 +74,8 @@ class MyStyle {
     borderRadius: BorderRadius.circular(8.0.r),
   );
 
-  static BoxDecoration  roundBox12({Color? color}) => BoxDecoration(
-    color: color??AppColorManager.cardColor,
+  static BoxDecoration roundBox12({Color? color}) => BoxDecoration(
+    color: color ?? AppColorManager.cardColor,
     borderRadius: BorderRadius.circular(12.0.r),
     boxShadow: [
       BoxShadow(

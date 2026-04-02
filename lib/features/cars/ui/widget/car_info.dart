@@ -25,7 +25,6 @@ class CarInfo extends StatelessWidget {
         return Container(
           padding: EdgeInsets.all(15.0).r,
           decoration: BoxDecoration(
-
             borderRadius: BorderRadius.circular(16.0).r,
             border: Border.all(color: AppColorManager.dividerColor, width: 1.sp),
           ),
@@ -145,7 +144,7 @@ class _ItemInfo extends StatelessWidget {
               : null,
           drawablePadding: 8.w,
           matchParent: true,
-          fontFamily: FontManager.regular.name,
+
           drawableAlin: .between,
         ),
         8.verticalSpace,

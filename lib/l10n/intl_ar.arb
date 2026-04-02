@@ -381,5 +381,6 @@
   "biometricEnabledDescription": "ميزة الدخول بالبصمة أو الوجه مفعلة حالياً. يمكنك إيقافها من خلال الزر في الأسفل.",
   "biometricEnrollmentDescription": "استخدم تسجيل الدخول البيومتري ببصمة إصبعك أو وجهك للوصول إلى حسابك بشكل أسرع وأسهل.\n\nيمكنك تشغيل هذه الميزة أو إيقافها في أي وقت من خلال الإعدادات.",
   "enterCredentialsToReEnableBiometric": "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
-  "vehicleInspectionReport": "تقرير فحص السيارة"
+  "vehicleInspectionReport": "تقرير فحص السيارة",
+  "font": "الخط"
 }

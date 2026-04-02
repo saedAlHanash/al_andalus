@@ -68,7 +68,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
           },
           child: DrawableText(
             size: 18.0.sp,
-            fontFamily: FontManager.bold.name,
+            fontWeight: .bold,
             text: '${S.of(context).login}.',
           ),
         ),
@@ -99,7 +99,7 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
                       }
                       return DrawableText(
                         text: S.of(context).resend,
-                        fontFamily: FontManager.bold.name,
+                        fontWeight: .bold,
                       );
                     },
                   ),

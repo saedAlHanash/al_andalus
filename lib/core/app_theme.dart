@@ -13,6 +13,9 @@ const _dividerColor = Color(0xFFECEDF2);
 
 String? get appFontFamily {
   try {
+    if (FontManager.values.any((element) => element.name == AppSharedPreference.getFontName)) {
+      return AppSharedPreference.getFontName;
+    }
     return GoogleFonts.getFont(AppSharedPreference.getFontName).fontFamily;
   } catch (_) {
     return GoogleFonts.getFont('Cairo').fontFamily;
@@ -28,7 +31,7 @@ ThemeData get lightTheme => ThemeData(
   primaryColorDark: Colors.grey[200],
 
   textTheme: TextTheme(
-    bodyMedium: TextStyle(fontSize: 14.0.sp),
+    bodyMedium: TextStyle(fontSize: 14.0.sp, fontFamily: appFontFamily),
   ),
   fontFamily: appFontFamily,
   dividerColor: _dividerColor,

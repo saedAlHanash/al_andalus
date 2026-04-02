@@ -282,6 +282,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("جێگیرکراو"),
     "floorCover": MessageLookupByLibrary.simpleMessage("ڕووپۆشی زەوی"),
+    "font": MessageLookupByLibrary.simpleMessage("فۆنت"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage(
       "وشەی نهێنیت بیرچووە؟",
     ),
@@ -767,7 +768,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "uploadedFile": MessageLookupByLibrary.simpleMessage("فایلی بارکراو"),
     "validityUntil": MessageLookupByLibrary.simpleMessage("کارپێکراوە تا"),
     "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
-      "Vehicle inspection report",
+      "ڕاپۆرتی پشکنینی ئۆتۆمبێل",
     ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "کۆدی پشتڕاستکردنەوە",

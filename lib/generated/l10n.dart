@@ -3178,6 +3178,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Font`
+  String get font {
+    return Intl.message('Font', name: 'font', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

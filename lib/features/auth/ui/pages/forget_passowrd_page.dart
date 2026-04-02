@@ -55,7 +55,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 drawableEnd: TextButton(
                   onPressed: () => context.goNamed(RouteName.login),
                   child: DrawableText(
-                    fontFamily: FontManager.bold.name,
+                    fontWeight: .bold,
                     text: S.of(context).login,
                   ),
                 ),
