@@ -59,11 +59,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAS0Das8VfRwHKk7uz73cOfbftA8SqeTn4',
-    appId: '1:406274118642:ios:63ca59e4ab4a10aa61516b',
+    appId: '1:406274118642:ios:8b81b5ecdbe575b361516b',
     messagingSenderId: '406274118642',
     projectId: 'al-andalus-467d7',
     storageBucket: 'al-andalus-467d7.firebasestorage.app',
-    iosBundleId: 'com.bandtech.al-andalus',
+    iosBundleId: 'com.bandtech.alAndalus',
   );
-
 }
