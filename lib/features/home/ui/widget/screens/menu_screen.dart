@@ -32,7 +32,7 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
-    if (AppProvider.isGuest) {
+    if (AppProvider.isNotLogin) {
       return NeedLoginWidget();
     }
     return Scaffold(
@@ -44,7 +44,6 @@ class _MenuScreenState extends State<MenuScreen> {
               context.read<GetMeCubit>().getData(newData: true);
             },
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
               children: [
                 Container(
                   decoration: BoxDecoration(

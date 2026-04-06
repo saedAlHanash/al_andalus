@@ -703,7 +703,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "startNow": MessageLookupByLibrary.simpleMessage("ئێستا دەستپێبکە"),
     "startYourInsuranceJourneyEasily": MessageLookupByLibrary.simpleMessage(
-      "گەشتی دڵنیاییەکەت بە ئاسانی دەست پێ بکە",
+      "گەشتە بیمەییەکەت بە ئاسانی دەست پێ بکە",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "هەژمارەکە لەگەڵ هەموو زانیاری و خولەکان دەسڕێتەوە",

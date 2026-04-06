@@ -30,7 +30,7 @@ class PickImageHelper {
   }
 
   Future<FilePickerResult?> pickFile(List<String>? allowedExtensions) async {
-    return await FilePicker.platform.pickFiles(
+    return await FilePicker.pickFiles(
       allowedExtensions: allowedExtensions,
       type: allowedExtensions != null ? FileType.custom : FileType.any,
       withData: true,

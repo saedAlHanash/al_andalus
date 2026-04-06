@@ -5,7 +5,7 @@ import 'package:al_andalus/core/util/my_style.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:intl/intl.dart';
@@ -144,7 +144,6 @@ extension SplitByLength on String {
   }
 
   DateTime? get parseArabicDate {
-
     var tryPars = DateTime.tryParse(this);
     if (tryPars != null) return tryPars;
 
@@ -559,10 +558,6 @@ extension GetDateTimesBetween on DateTime {
     }
     return dateTimes;
   }
-}
-
-extension LatLngH on LatLng {
-  String get stringPrint => 'N:$latitude°  E:$longitude°';
 }
 
 extension FileTypeDetector on String {

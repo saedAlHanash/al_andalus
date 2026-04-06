@@ -21,31 +21,34 @@ class AuthCardImage extends StatefulWidget {
 class _AuthCardImageState extends State<AuthCardImage> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: .start,
-      children: [
-        Container(
-          width: 50.0.w,
-          child: BackBtnWidget(
-            appBarColor: AppColorManager.mainColorLight,
+    return Directionality(
+      textDirection: .rtl,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: .start,
+        children: [
+          Container(
+            width: 50.0.w,
+            child: BackBtnWidget(
+              appBarColor: AppColorManager.mainColorLight,
+            ),
           ),
-        ),
-        ImageMultiType(
-          url: Assets.imagesLogo,
-          height: 100.0.r,
-          fit: .fill,
-          width: 100.0.r,
-        ),
-        InkWell(
-          onTap: () => showLanguageDialog(context),
-          child: ImageMultiType(
-            url: Assets.iconsLanguage,
-            height: 40.0.r,
-            width: 40.0.r,
+          ImageMultiType(
+            url: Assets.imagesLogo,
+            height: 100.0.r,
+            fit: .fill,
+            width: 100.0.r,
           ),
-        ),
-      ],
+          InkWell(
+            onTap: () => showLanguageDialog(context),
+            child: ImageMultiType(
+              url: Assets.iconsLanguage,
+              height: 40.0.r,
+              width: 40.0.r,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -93,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                 AuthCardImage(
                   titleText: S.of(context).logInToYourAccount,
                   description: S.of(context).enterYourPhoneAndPasswordToLogIn,
+                  back: false,
                 ),
                 30.0.verticalSpace,
                 AutofillGroup(

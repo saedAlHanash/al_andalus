@@ -65,7 +65,10 @@ class _HomepageState extends State<Homepage> {
                         padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: ListCars(),
                       ),
-                      MenuScreen(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
+                        child: MenuScreen(),
+                      ),
                     ],
                   );
                 },

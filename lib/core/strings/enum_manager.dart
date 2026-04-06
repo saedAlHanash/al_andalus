@@ -1,7 +1,7 @@
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:string_similarity/string_similarity.dart';
 
 import '../../generated/l10n.dart';
@@ -79,46 +79,7 @@ enum IraqGovernorate {
   maysan
   ;
 
-  LatLng get getGovernorateLatLng {
-    switch (this) {
-      case IraqGovernorate.baghdad:
-        return LatLng(33.3152, 44.3661);
-      case IraqGovernorate.basra:
-        return LatLng(30.5085, 47.7804);
-      case IraqGovernorate.nineveh:
-        return LatLng(36.3350, 43.1189);
-      case IraqGovernorate.erbil:
-        return LatLng(36.1900, 44.0090);
-      case IraqGovernorate.sulaymaniyah:
-        return LatLng(35.5610, 45.4408);
-      case IraqGovernorate.dhiQar:
-        return LatLng(31.0420, 46.2570);
-      case IraqGovernorate.anbar:
-        return LatLng(33.4200, 43.3000);
-      case IraqGovernorate.najaf:
-        return LatLng(31.9950, 44.3140);
-      case IraqGovernorate.karbala:
-        return LatLng(32.6160, 44.0240);
-      case IraqGovernorate.diyala:
-        return LatLng(33.7500, 44.6400);
-      case IraqGovernorate.muthanna:
-        return LatLng(31.3090, 45.2800);
-      case IraqGovernorate.salahaddin:
-        return LatLng(34.6110, 43.6780);
-      case IraqGovernorate.babil:
-        return LatLng(32.4720, 44.4210);
-      case IraqGovernorate.kirkuk:
-        return LatLng(35.4680, 44.3920);
-      case IraqGovernorate.wasit:
-        return LatLng(32.5000, 45.8200);
-      case IraqGovernorate.dahuk:
-        return LatLng(36.8670, 42.9880);
-      case IraqGovernorate.diwaniyah:
-        return LatLng(31.9870, 44.9240);
-      case IraqGovernorate.maysan:
-        return LatLng(31.8350, 47.1440);
-    }
-  }
+
 
   String get name {
     switch (this) {
