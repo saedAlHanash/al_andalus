@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAIUafmEt5-1tGoCpsCysy-LI_ifsbQCl4',
-    appId: '1:688487094588:android:c3d4eadfdc1ee0b32fe639',
-    messagingSenderId: '688487094588',
-    projectId: 'al_andalus-83536',
-    storageBucket: 'al_andalus-83536.firebasestorage.app',
+    apiKey: 'AIzaSyAPa0dqFrVqcV95lUzO-MjHf7WR0CEdlaw',
+    appId: '1:406274118642:android:e6b67247dd6efc0561516b',
+    messagingSenderId: '406274118642',
+    projectId: 'al-andalus-467d7',
+    storageBucket: 'al-andalus-467d7.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyASXX5q0pVEE3Nxb_5dLQhb_W9U0LhgZUs',
-    appId: '1:688487094588:ios:a67cba81dbca65df2fe639',
-    messagingSenderId: '688487094588',
-    projectId: 'al_andalus-83536',
-    storageBucket: 'al_andalus-83536.firebasestorage.app',
-    iosBundleId: 'com.bandtech.al_andalus',
+    apiKey: 'AIzaSyAS0Das8VfRwHKk7uz73cOfbftA8SqeTn4',
+    appId: '1:406274118642:ios:63ca59e4ab4a10aa61516b',
+    messagingSenderId: '406274118642',
+    projectId: 'al-andalus-467d7',
+    storageBucket: 'al-andalus-467d7.firebasestorage.app',
+    iosBundleId: 'com.bandtech.al-andalus',
   );
 
 }

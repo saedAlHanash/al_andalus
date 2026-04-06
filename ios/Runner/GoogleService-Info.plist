@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAEx5Vx1S-BUP-fWYe4-LwxqSyGTfAWm3U</string>
+	<string>AIzaSyAS0Das8VfRwHKk7uz73cOfbftA8SqeTn4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>121318433129</string>
+	<string>406274118642</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bandtech.alrayan</string>
+	<string>com.bandtech.al-andalus</string>
 	<key>PROJECT_ID</key>
-	<string>alrayan-543a9</string>
+	<string>al-andalus-467d7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>alrayan-543a9.firebasestorage.app</string>
+	<string>al-andalus-467d7.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:121318433129:ios:757b9b6832f659c1c11df8</string>
+	<string>1:406274118642:ios:63ca59e4ab4a10aa61516b</string>
 </dict>
 </plist>

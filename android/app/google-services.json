@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "688487094588",
-    "project_id": "al_andalus-83536",
-    "storage_bucket": "al_andalus-83536.firebasestorage.app"
+    "project_number": "406274118642",
+    "project_id": "al-andalus-467d7",
+    "storage_bucket": "al-andalus-467d7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:688487094588:android:c3d4eadfdc1ee0b32fe639",
+        "mobilesdk_app_id": "1:406274118642:android:e6b67247dd6efc0561516b",
         "android_client_info": {
           "package_name": "com.bandtech.al_andalus"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAIUafmEt5-1tGoCpsCysy-LI_ifsbQCl4"
+          "current_key": "AIzaSyAPa0dqFrVqcV95lUzO-MjHf7WR0CEdlaw"
         }
       ],
       "services": {
