@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                 drawableEnd: TextButton(
                   onPressed: () => context.pushNamed(RouteName.signup),
                   child: DrawableText(
-                    fontFamily: FontManager.bold.name,
+                    fontWeight: .bold,
                     color: AppColorManager.mainColor,
                     text: S.of(context).createNewAccount,
                   ),
@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                     text: S.of(context).forgetPassword,
                     color: AppColorManager.mainColor,
                     textDecoration: .underline,
-                    fontFamily: FontManager.bold.name,
+                    fontWeight: .bold,
                   ),
                 ),
 

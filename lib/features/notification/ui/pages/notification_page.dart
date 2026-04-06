@@ -136,7 +136,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                 subtitle: DrawableText(
                                   text: item.body,
                                   maxLines: 2,
-                                  fontFamily: FontManager.regular.name,
+
                                   textAlign: TextAlign.start,
                                 ),
                                 trailing: DrawableText(

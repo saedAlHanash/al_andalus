@@ -143,7 +143,6 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
       hintStyle: TextStyle(
         color: AppColorManager.grey,
         fontSize: widget.enable == false ? 10.0.sp : 14.0.sp,
-        fontFamily: FontManager.semeBold.name,
       ),
       filled: false,
 
@@ -152,7 +151,6 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
     );
 
     final textStyle = TextStyle(
-      fontFamily: FontManager.semeBold.name,
       fontSize: 16.0.spMin,
     );
 

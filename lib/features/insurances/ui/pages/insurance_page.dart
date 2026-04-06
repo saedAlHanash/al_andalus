@@ -149,7 +149,10 @@ class _Item extends StatelessWidget {
                         onPressed: () {
                           context.pushNamed(
                             RouteName.pdf,
-                            queryParameters: {'url': item.descriptionFile},
+                            queryParameters: {
+                              'url': item.descriptionFile,
+                              'title': S.of(context).packageDetails,
+                            },
                           );
                         },
                         child: DrawableText(

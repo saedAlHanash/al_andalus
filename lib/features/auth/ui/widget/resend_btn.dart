@@ -86,7 +86,7 @@ class _ResendBtnState extends State<ResendBtn> {
                     },
                     child: DrawableText(
                       text: S.of(context).resend,
-                      fontFamily: FontManager.bold.name,
+                      fontWeight: .bold,
                       color: AppColorManager.mainColor,
                     ),
                   ),

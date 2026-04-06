@@ -203,7 +203,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                           DrawableText(
                             text: S.of(context).biometricEnrollmentFailedTitle,
                             color: Colors.white,
-                            fontFamily: FontManager.bold.name,
+                            fontWeight: .bold,
                             size: 14.0.sp,
                           ),
                           5.0.verticalSpace,
@@ -222,7 +222,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
             ],
             DrawableText(
               text: _isEnabled ? S.of(context).biometricFeatureEnabled : S.of(context).fasterLoginMethod,
-              fontFamily: FontManager.bold.name,
+              fontWeight: .bold,
               size: 18.0.sp,
             ),
             20.0.verticalSpace,
@@ -252,7 +252,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                   children: [
                     DrawableText(
                       text: S.of(context).enterCredentialsToReEnableBiometric,
-                      fontFamily: FontManager.bold.name,
+                      fontWeight: .bold,
                     ),
                     10.0.verticalSpace,
                     MyTextFormOutLineWidget(

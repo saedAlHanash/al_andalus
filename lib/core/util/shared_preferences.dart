@@ -72,6 +72,7 @@ class AppSharedPreference {
   static Future<void> removeUnconfirmedPhone() async {
     await _prefs?.remove(_unconfirmedPhone);
   }
+
   //endregion
 
   //region User
@@ -188,7 +189,11 @@ class AppSharedPreference {
   static const _keyFontName = '_keyFontName';
 
   static Future<void> cashFontName(String fontName) async {
-    await _prefs?.setString(_keyFontName, fontName);
+    if (fontName == 'Alyamama') {
+      await _prefs?.setString(_keyFontName, FontManager.semeBold.name);
+    } else {
+      await _prefs?.setString(_keyFontName, fontName);
+    }
   }
 
   static String get getFontName => _prefs?.getString(_keyFontName) ?? 'Cairo';

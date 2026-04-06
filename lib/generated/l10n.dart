@@ -3168,6 +3168,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Vehicle inspection report`
+  String get vehicleInspectionReport {
+    return Intl.message(
+      'Vehicle inspection report',
+      name: 'vehicleInspectionReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Font`
+  String get font {
+    return Intl.message('Font', name: 'font', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

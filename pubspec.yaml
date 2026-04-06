@@ -104,13 +104,13 @@ flutter:
   fonts:
     - family: regular
       fonts:
-        - asset: assets/fonts/Tajawal-Regular.ttf
+        - asset: assets/fonts/Alyamama-Regular.ttf
     - family: semeBold
       fonts:
-        - asset: assets/fonts/Tajawal-Medium.ttf
+        - asset: assets/fonts/Alyamama-SemiBold.ttf
     - family: bold
       fonts:
-        - asset: assets/fonts/Tajawal-Bold.ttf
+        - asset: assets/fonts/Alyamama-Bold.ttf
 
 flutter_intl:
   enabled: true

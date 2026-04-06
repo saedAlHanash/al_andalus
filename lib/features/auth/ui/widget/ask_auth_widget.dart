@@ -33,7 +33,7 @@ class AskAuthWidget extends StatelessWidget {
         child: DrawableText(
           text: (login ?? false) ? S.of(context).register : S.of(context).login,
           color: AppColorManager.mainColor,
-          fontFamily: FontManager.bold.name,
+          fontWeight: .bold,
         ),
       ),
     );

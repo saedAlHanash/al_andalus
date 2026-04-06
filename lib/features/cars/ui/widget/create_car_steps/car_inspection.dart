@@ -41,7 +41,6 @@ class _CarInspectionState extends State<CarInspection> {
 
             DrawableText(
               text: S.of(context).pleaseUploadInspectionDocument,
-              fontFamily: FontManager.regular.name,
             ),
             24.0.verticalSpace,
             Container(
@@ -86,7 +85,7 @@ class _CarInspectionState extends State<CarInspection> {
                                       RouteName.pdf,
                                       queryParameters: {
                                         'url': state.mRequest.inspectionReport.remoteUrl,
-                                        'title': S.of(context).packageDetails,
+                                        'title': S.of(context).vehicleInspectionReport,
                                       },
                                     );
                                   }

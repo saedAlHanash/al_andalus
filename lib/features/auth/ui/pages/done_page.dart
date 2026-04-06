@@ -12,6 +12,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
 import '../widget/custom_stepper_widget.dart';
 import 'package:lottie/lottie.dart';
+
 class DonePage extends StatelessWidget {
   const DonePage({super.key});
 
@@ -58,13 +59,13 @@ class DonePage extends StatelessWidget {
           DrawableText(
             text: S.of(context).congrats,
             size: 24.0.sp,
-            fontFamily: FontManager.bold.name,
+            fontWeight: .bold,
             textAlign: TextAlign.center,
           ),
           10.0.verticalSpace,
           DrawableText(
             text: S.of(context).yourAccountHasBeenSuccessfullyCreatedYouWillNowBe,
-            
+
             textAlign: TextAlign.center,
           ),
           Spacer(),
