@@ -1,4 +1,19 @@
 {
-  "old-pin_code": "111111",
-  "pin_code": "111111"
+  "name": "مستخدم تجريبي",
+  "password": "12345678",
+  "pin_code": "12345678",
+  "phone": "+9647801234567",
+  "gender": "male",
+  "genderID": "0",
+  "birth_date": "1997-02-19",
+  "address": "بغداد - الكرادة",
+  "identity_id": "84858595",
+  "license_number": "987654321",
+  "license_type": "private",
+  "license_start_date": "2026-04-19",
+  "license_end_date": "2036-04-16",
+  "identity_front_image": "104",
+  "identity_back_image": "105",
+  "license_front_image": "106",
+  "license_back_image": "107"
 }

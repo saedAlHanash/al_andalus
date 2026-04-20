@@ -474,7 +474,14 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                         icon: ImageMultiType(url: Icons.file_upload_outlined),
                         onTap: () {
                           Navigator.pop(ctx);
-                          pickAndUpload().then(
+                          pickAndUpload(
+                            allowedExtensions: [
+                              'jpg',
+                              'jpeg',
+                              'png',
+                              'webp',
+                            ],
+                          ).then(
                             (value) async {
                               if (value == null || !context.mounted) return;
                               final result = await showConfirmDialog(context, value);
@@ -545,7 +552,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                   icon: ImageMultiType(url: Icons.file_upload_outlined),
                   onTap: () {
                     Navigator.pop(ctx);
-                    pickAndUpload(allowedExtensions: ['pdf', 'doc', 'PDF', 'DOC']).then(
+                    pickAndUpload(allowedExtensions: ['pdf', 'PDF']).then(
                       (value) async {
                         if (value == null || !context.mounted) return;
                         onConfirm.call(value);
