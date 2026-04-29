@@ -276,6 +276,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "from": MessageLookupByLibrary.simpleMessage("From"),
+    "fromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
     "front": MessageLookupByLibrary.simpleMessage("Front"),
     "frontTires": MessageLookupByLibrary.simpleMessage("Front Tires"),
     "fuelType": MessageLookupByLibrary.simpleMessage("Fuel Type"),

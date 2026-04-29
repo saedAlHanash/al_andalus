@@ -8,7 +8,7 @@ import '../../../data/request/insurance_policy_request.dart';
 
 class AddCarValidator {
   static bool validateStep(BuildContext context, int step, InsurancePolicyRequest request) {
-    if (step == 0) return _validateStep0(context, request);
+    // if (step == 0) return _validateStep0(context, request);
     if (step == 1) return _validateStep1(context, request);
     if (step == 2) return _validateStep2(context, request);
     if (step == 3) return _validateStep3(context, request);

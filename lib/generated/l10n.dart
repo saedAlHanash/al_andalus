@@ -3183,6 +3183,16 @@ class S {
   String get font {
     return Intl.message('Font', name: 'font', desc: '', args: []);
   }
+
+  /// `From gallery`
+  String get fromGallery {
+    return Intl.message(
+      'From gallery',
+      name: 'fromGallery',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

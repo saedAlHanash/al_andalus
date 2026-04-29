@@ -383,5 +383,6 @@
   "removeBiometricSuccess": "Biometric data removed successfully",
   "removeBiometricWarning": "Are you sure you want to remove saved biometrics?",
   "vehicleInspectionReport": "Vehicle inspection report",
-  "font": "Font"
+  "font": "Font",
+  "fromGallery": "From gallery"
 }

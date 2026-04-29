@@ -288,6 +288,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fourName": MessageLookupByLibrary.simpleMessage("ناوی چواری"),
     "from": MessageLookupByLibrary.simpleMessage("لە"),
+    "fromGallery": MessageLookupByLibrary.simpleMessage("لە گالەرییەوە"),
     "front": MessageLookupByLibrary.simpleMessage("پێشەوە"),
     "frontTires": MessageLookupByLibrary.simpleMessage("تایەکانی پێشەوە"),
     "fuelType": MessageLookupByLibrary.simpleMessage("جۆری سووتەمەنی"),

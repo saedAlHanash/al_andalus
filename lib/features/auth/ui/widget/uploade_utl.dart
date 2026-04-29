@@ -33,10 +33,9 @@ Future<UploadFile?> pickAndUpload({String? nameFiled,List<String>? allowedExtens
   );
 }
 
-Future<UploadFile?> takePhoto({String? nameFiled}) async {
+Future<UploadFile?> pickImage({String? nameFiled, ImageSource source = ImageSource.gallery}) async {
   final helper = PickImageHelper();
-
-  final xFile = await helper.pickImageBytes(source: ImageSource.camera);
+  final xFile = await helper.pickImageBytes(source: source);
   if (xFile == null) return null;
   var bytes = await xFile.readAsBytes();
 
@@ -56,4 +55,8 @@ Future<UploadFile?> takePhoto({String? nameFiled}) async {
     nameField: nameFiled ?? 'File',
     extension: xFile.name.fileExtension,
   );
+}
+
+Future<UploadFile?> takePhoto({String? nameFiled}) async {
+  return pickImage(nameFiled: nameFiled, source: ImageSource.camera);
 }

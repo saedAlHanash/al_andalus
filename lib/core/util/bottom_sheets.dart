@@ -473,18 +473,11 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                   children: [
                     Expanded(
                       child: MyButton(
-                        text: S.of(context).uploadFromFiles,
+                        text: S.of(context).fromGallery,
                         icon: ImageMultiType(url: Icons.file_upload_outlined),
                         onTap: () {
                           Navigator.pop(ctx);
-                          pickAndUpload(
-                            allowedExtensions: [
-                              'jpg',
-                              'jpeg',
-                              'png',
-                              'webp',
-                            ],
-                          ).then(
+                          pickImage().then(
                             (value) async {
                               if (value == null || !context.mounted) return;
                               final result = await showConfirmDialog(context, value);
