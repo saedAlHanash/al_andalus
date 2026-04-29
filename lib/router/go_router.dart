@@ -1,8 +1,10 @@
 import 'dart:convert';
 
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/pin_page.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
+import 'package:al_andalus/services/remote_config_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -269,11 +271,15 @@ final goRouter = GoRouter(
         final id = state.uri.queryParameters['id'] ?? '';
         final estimatedPrice = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
         final cylindersCount = int.tryParse(state.uri.queryParameters['cylindersCount'] ?? '0') ?? 0;
-
+        final type = RemoteConfigService.instance.privetType
+            ? InsuranceType.private
+            : InsuranceType.values[int.tryParse(state.uri.queryParameters['type'] ?? '0') ?? 0];
+        loggerObject.w(cylindersCount);
         return InsurancePage(
           id: id,
           estimatedPrice: estimatedPrice,
           cylindersCount: cylindersCount,
+          type: type,
         );
       },
     ),

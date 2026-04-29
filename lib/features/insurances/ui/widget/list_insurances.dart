@@ -28,7 +28,7 @@ class ListInsurances extends StatefulWidget {
 }
 
 class _ListInsurancesState extends State<ListInsurances> {
-  InsuranceType type = InsuranceType.private;
+  var type = InsuranceType.private;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class _ListInsurancesState extends State<ListInsurances> {
                             (queryParameters) {
                               context.pushNamed(
                                 RouteName.insurancePage,
-                                queryParameters: queryParameters,
+                                queryParameters: queryParameters..addAll({'type': type.index}),
                               );
                             },
                           );

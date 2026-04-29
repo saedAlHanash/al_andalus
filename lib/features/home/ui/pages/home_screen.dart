@@ -34,33 +34,26 @@ class HomeScreen extends StatelessWidget {
         );
       },
       child: Scaffold(
-        body: RefreshWidget(
-          isLoading: false,
-          onRefresh: () {
-            context.read<AdssCubit>().getData(newData: true);
-            context.read<CarsCubit>().getData(newData: true);
-          },
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0).r,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0).r,
 
-            child: Column(
-              children: [
-                HiWidget(),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      10.0.verticalSpace,
-                      AddsSlider(type: AdsType.slider, height: 150.0),
-                      HowCanHelp(),
-                      ListCars(take: 1),
-                      20.0.verticalSpace,
-                      AddsSlider(type: AdsType.banner, height: 90.0),
-                      150.0.verticalSpace,
-                    ],
-                  ),
+          child: Column(
+            children: [
+              HiWidget(),
+              Expanded(
+                child: ListView(
+                  children: [
+                    10.0.verticalSpace,
+                    AddsSlider(type: AdsType.slider, height: 150.0),
+                    HowCanHelp(),
+                    ListCars(take: 1),
+                    20.0.verticalSpace,
+                    AddsSlider(type: AdsType.banner, height: 90.0),
+                    150.0.verticalSpace,
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

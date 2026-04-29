@@ -45,7 +45,7 @@ Future<UploadFile?> takePhoto({String? nameFiled}) async {
       bytes = await CompressService().compressImage(bytes);
     }
   } catch (e) {
-    loggerObject.w(e);
+    loggerObject.e(e);
   }
 
   return UploadFile(

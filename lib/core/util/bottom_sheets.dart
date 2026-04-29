@@ -214,7 +214,7 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
-      var iconSize = 25.0.dg;
+      var iconSize = 22.0.dg;
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
         child: BlocBuilder<SupportInfoCubit, SupportInfoInitial>(
@@ -326,7 +326,10 @@ void showCalculationPrice(
                             SpinnerItem(name: '8', id: 8),
                           ],
                       onSelected: (value, i, isSelected) {
-                        cylindersCount = value.id;
+                        cylindersCount =
+                            int.tryParse(value.name) ??
+                            (value.item is Cylinder ? int.parse((value.item as Cylinder).cylinders) : value.id);
+
                       },
                       isRadio: true,
                       buttonBuilder: (selected, value, context) {
@@ -350,7 +353,7 @@ void showCalculationPrice(
                       onChanged: (p0) {
                         p = double.parse(p0);
                       },
-                      keyBordType: TextInputType.number,
+                      keyBordType: .number,
                       labelText: S.of(context).enterCarValue,
                       hint: '0.0',
                     ),

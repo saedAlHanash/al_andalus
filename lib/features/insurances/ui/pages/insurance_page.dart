@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/refresh_widget/refresh_widget.dart';
@@ -31,17 +32,19 @@ class InsurancePage extends StatelessWidget {
     required this.id,
     required this.estimatedPrice,
     required this.cylindersCount,
+    required this.type,
   });
 
   final String id;
   final double estimatedPrice;
   final int cylindersCount;
+  final InsuranceType type;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
-        final list = state.result.where((e) => e.type == .private).toList()
+        final list = state.result.where((e) => e.type == type).toList()
           ..sort((a, b) => a.level.index.compareTo(b.level.index));
         return Scaffold(
           appBar: AppBarWidget(
@@ -134,6 +137,8 @@ class _Item extends StatelessWidget {
               children:
                   item.features.map((feature) {
                     return ListTile(
+                          minVerticalPadding: 0,
+                          minTileHeight: 50.0.h,
                           leading: ImageMultiType(
                             url: Assets.iconsDoneStep,
                             height: 20.0.r,
@@ -160,7 +165,7 @@ class _Item extends StatelessWidget {
                           textDecoration: .underline,
                         ),
                       ),
-                      20.0.verticalSpace,
+                      10.0.verticalSpace,
                     ],
                   ),
             ),

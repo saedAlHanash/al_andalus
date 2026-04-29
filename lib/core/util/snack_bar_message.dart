@@ -68,7 +68,7 @@ class NoteMessage {
     required BuildContext context,
     required Widget widget,
   }) {
-    loggerObject.w(MediaQuery.of(ctx!).padding.top);
+
     final overlay = Overlay.of(context);
     late OverlayEntry entry;
 

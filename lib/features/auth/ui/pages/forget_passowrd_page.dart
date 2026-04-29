@@ -8,8 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/util/my_style.dart';
+import '../../../../core/util/shared_preferences.dart';
+import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/forget_password_cubit/forget_password_cubit.dart';
@@ -86,7 +89,24 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     MyTextFormOutLineWidget(
                       hint: '07xxxxxxxxxx',
                       textDirection: TextDirection.ltr,
-                      keyBordType: TextInputType.phone,
+                      iconWidgetLift: Row(
+                        mainAxisSize: .min,
+                        children: [
+                          15.0.horizontalSpace,
+                          DrawableText(
+                            text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
+                            fontWeight: .bold,
+                          ),
+                          15.0.horizontalSpace,
+                          ImageMultiType(
+                            url: Assets.iconsFlagOfIraq,
+                            height: 24.h,
+                            width: 24.w,
+                          ),
+                          15.0.horizontalSpace,
+                        ],
+                      ),
+                      keyBordType: .phone,
                       initialValue: widget.phone,
                       label: S.of(context).phoneNumber,
                       validator: (p0) => forgetPasswordCubit.validatePhone,

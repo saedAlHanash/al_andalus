@@ -50,6 +50,7 @@ class InsurancePackage {
       cylinders.firstWhereOrNull((e) => e.cylinders == cylindersCount.toString()) ?? Cylinder.fromJson({});
 
   num get price {
+    loggerObject.f(cylindersCount);
     return cylinder.pricingType == .fixed ? cylinder.value : (cylinder.value * estimatedPrice) / 100;
   }
 
