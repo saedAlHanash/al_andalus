@@ -133,41 +133,48 @@ class _Item extends StatelessWidget {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(24.0).r),
               boxShadow: MyStyle.allShadow,
             ),
+            padding: EdgeInsets.all(15.0).r,
             child: Column(
-              children:
-                  item.features.map((feature) {
-                    return ListTile(
-                          minVerticalPadding: 0,
-                          minTileHeight: 50.0.h,
-                          leading: ImageMultiType(
-                            url: Assets.iconsDoneStep,
-                            height: 20.0.r,
-                            width: 20.0.r,
-                          ),
-                          title: DrawableText(text: feature.title),
-                        )
-                        as Widget;
-                  }).toList()..addAll(
-                    [
-                      Spacer(),
-                      TextButton(
-                        onPressed: () {
-                          context.pushNamed(
-                            RouteName.pdf,
-                            queryParameters: {
-                              'url': item.descriptionFile,
-                              'title': S.of(context).packageDetails,
-                            },
-                          );
-                        },
-                        child: DrawableText(
-                          text: S.of(context).knowMoreDetails,
-                          textDecoration: .underline,
-                        ),
-                      ),
-                      10.0.verticalSpace,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      ...item.features.map((feature) {
+                        return DrawableText(
+                              text: feature.title,
+                              matchParent: true,
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
+                              drawableStart: ImageMultiType(
+                                url: Assets.iconsDoneStep,
+                                height: 20.0.r,
+                                width: 20.0.r,
+                              ),
+                              drawablePadding: 10.0,
+                            )
+                            as Widget;
+                      }).toList(),
                     ],
                   ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.pushNamed(
+                      RouteName.pdf,
+                      queryParameters: {
+                        'url': item.descriptionFile,
+                        'title': S.of(context).packageDetails,
+                      },
+                    );
+                  },
+                  child: DrawableText(
+                    text: S.of(context).knowMoreDetails,
+                    textDecoration: .underline,
+                  ),
+                ),
+                10.0.verticalSpace,
+              ],
             ),
           ),
         ),

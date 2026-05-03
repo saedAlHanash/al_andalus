@@ -289,7 +289,7 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
 void showCalculationPrice(
   BuildContext context,
   InsurancePackage? insurancePackage,
-  Function(Map<String, dynamic> queryParameters) onTap,
+  Function(Map<String, String> queryParameters) onTap,
 ) {
   var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
   var p = 0.0;
@@ -329,7 +329,6 @@ void showCalculationPrice(
                         cylindersCount =
                             int.tryParse(value.name) ??
                             (value.item is Cylinder ? int.parse((value.item as Cylinder).cylinders) : value.id);
-
                       },
                       isRadio: true,
                       buttonBuilder: (selected, value, context) {
@@ -353,6 +352,7 @@ void showCalculationPrice(
                       onChanged: (p0) {
                         p = double.parse(p0);
                       },
+                      inputFormatters: [IntInputFormatter()],
                       keyBordType: .number,
                       labelText: S.of(context).enterCarValue,
                       hint: '0.0',
@@ -362,7 +362,7 @@ void showCalculationPrice(
                       onTap: () {
                         onTap.call(
                           {
-                            'id': insurancePackage?.id.toString(),
+                            'id': insurancePackage?.id.toString() ?? "",
                             'price': p.toString(),
                             'cylindersCount': cylindersCount.toString(),
                             'json': jsonEncode(insurancePackage?.toJson()),

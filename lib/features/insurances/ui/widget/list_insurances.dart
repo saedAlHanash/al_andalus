@@ -81,9 +81,11 @@ class _ListInsurancesState extends State<ListInsurances> {
                             context,
                             e,
                             (queryParameters) {
+                              loggerObject.w(queryParameters);
+                              final q = queryParameters..addAll({'type': type.index.toString()});
                               context.pushNamed(
                                 RouteName.insurancePage,
-                                queryParameters: queryParameters..addAll({'type': type.index}),
+                                queryParameters: q,
                               );
                             },
                           );

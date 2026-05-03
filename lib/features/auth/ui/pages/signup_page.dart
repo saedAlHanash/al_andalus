@@ -27,6 +27,21 @@ class _SignupPageState extends State<SignupPage> {
 
   SignupInitial get signupState => context.read<SignupCubit>().state;
 
+  void _onBack(SignupInitial state) {
+    if (state.step > 0) {
+      context.read<SignupCubit>().next(step: state.step - 1);
+    } else {
+      NoteMessage.showCheckDialog(
+        context,
+        text: S.of(context).exitSignUpConfirmation,
+        textButton: S.of(context).yes,
+        onConfirm: (confirm) {
+          if (confirm) context.pop();
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupInitial>(
@@ -36,97 +51,86 @@ class _SignupPageState extends State<SignupPage> {
       },
       child: BlocBuilder<SignupCubit, SignupInitial>(
         builder: (context, state) {
-          return PopScope(
-            canPop: false,
-            onPopInvokedWithResult: (didPop, result) {
-              if (didPop) return;
-              if (state.step > 0) {
-                context.read<SignupCubit>().next(step: state.step - 1);
-              } else {
-                NoteMessage.showCheckDialog(
-                  context,
-                  text: S.of(context).exitSignUpConfirmation,
-                  textButton: S.of(context).yes,
-                  onConfirm: (confirm) {
-                    if (confirm) context.pop();
-                  },
-                );
-              }
-            },
-            child: Scaffold(
-              appBar: AppBarWidget(titleText: S.of(context).signUp),
-              bottomNavigationBar: Padding(
-                padding: EdgeInsetsGeometry.all(20.0),
-                child: MyButton(
-                  onTap: () {
-                    final request = state.mRequest;
-                    if (!SignupValidator.validateStep(context, state.step, request)) return;
+          return Scaffold(
+            appBar: AppBarWidget(
+              titleText: S.of(context).signUp,
+              canPop: false,
+              onPopInvoked: (b, result) {
+                if (b) return;
+                _onBack(state);
+              },
+            ),
+            bottomNavigationBar: Padding(
+              padding: EdgeInsetsGeometry.all(20.0),
+              child: MyButton(
+                onTap: () {
+                  final request = state.mRequest;
+                  if (!SignupValidator.validateStep(context, state.step, request)) return;
 
-                    if (state.step >= 2) {
-                      context.read<SignupCubit>().signup();
-                      return;
-                    }
-                    context.read<SignupCubit>().next();
-                  },
-                  loading: state.loading,
-                  text: S.of(context).continueTo,
-                ),
+                  if (state.step >= 2) {
+                    context.read<SignupCubit>().signup();
+                    return;
+                  }
+                  context.read<SignupCubit>().next();
+                },
+                loading: state.loading,
+                text: S.of(context).continueTo,
               ),
-              body: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 37.0).r,
-                    child: CustomStepperWidget(
-                      activeStep: state.step,
-                      onStepReached: (p0) {
-                        final request = state.mRequest;
-                        if (p0 > state.step) {
-                          for (int i = state.step; i < p0; i++) {
-                            if (!SignupValidator.validateStep(context, i, request)) return;
-                          }
+            ),
+            body: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 37.0).r,
+                  child: CustomStepperWidget(
+                    activeStep: state.step,
+                    onStepReached: (p0) {
+                      final request = state.mRequest;
+                      if (p0 > state.step) {
+                        for (int i = state.step; i < p0; i++) {
+                          if (!SignupValidator.validateStep(context, i, request)) return;
                         }
-                        context.read<SignupCubit>().next(step: p0);
-                      },
-                      steps: [
-                        customStepWidget(
-                          title: S.of(context).unified,
-                          isCompleted: state.step > 0,
-                          isSelected: state.step == 0,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).drivingLicense,
-                          isCompleted: state.step > 1,
-                          isSelected: state.step == 1,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).phoneNumber,
-                          isCompleted: state.step > 2,
-                          isSelected: state.step == 2,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).verificationCode,
-                          isCompleted: state.step > 3,
-                          isSelected: state.step == 3,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).pinCode,
-                          isCompleted: state.step > 4,
-                          isSelected: state.step == 4,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: switch (state.step) {
-                      0 => IdentityInfo(),
-                      1 => DrivingLicense(),
-                      2 => PhoneNumber(),
-                      3 => Container(),
-                      int() => SizedBox(),
+                      }
+                      context.read<SignupCubit>().next(step: p0);
                     },
+                    steps: [
+                      customStepWidget(
+                        title: S.of(context).unified,
+                        isCompleted: state.step > 0,
+                        isSelected: state.step == 0,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).drivingLicense,
+                        isCompleted: state.step > 1,
+                        isSelected: state.step == 1,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).phoneNumber,
+                        isCompleted: state.step > 2,
+                        isSelected: state.step == 2,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).verificationCode,
+                        isCompleted: state.step > 3,
+                        isSelected: state.step == 3,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).pinCode,
+                        isCompleted: state.step > 4,
+                        isSelected: state.step == 4,
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Expanded(
+                  child: switch (state.step) {
+                    0 => IdentityInfo(),
+                    1 => DrivingLicense(),
+                    2 => PhoneNumber(),
+                    3 => Container(),
+                    int() => SizedBox(),
+                  },
+                ),
+              ],
             ),
           );
         },

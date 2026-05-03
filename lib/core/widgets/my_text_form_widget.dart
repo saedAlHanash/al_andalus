@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
@@ -38,11 +39,13 @@ class MyTextFormOutLineWidget extends StatefulWidget {
     this.labelText,
     this.textInputAction,
     this.onFieldSubmitted,
+    this.inputFormatters,
   });
 
   final Function(String)? onFieldSubmitted;
   final TextInputAction? textInputAction;
   final bool? enable;
+  final List<TextInputFormatter>? inputFormatters;
   final String label;
   final String? labelText;
   final String hint;
@@ -143,10 +146,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
       hintText: widget.hint,
       floatingLabelBehavior: FloatingLabelBehavior.always,
       hintTextDirection: widget.textDirection,
-      hintStyle: TextStyle(
-        color: AppColorManager.grey,
-        fontSize: widget.enable == false ? 10.0.sp : 14.0.sp,
-      ),
+      hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.grey),
       filled: false,
 
       prefixIcon: widget.iconWidget ?? suffixIcon,
@@ -185,6 +185,7 @@ class _MyTextFormOutLineWidgetState extends State<MyTextFormOutLineWidget> {
               controller: widget.controller,
               textInputAction: widget.textInputAction,
               onFieldSubmitted: widget.onFieldSubmitted,
+              inputFormatters: widget.inputFormatters,
               keyboardType: widget.keyBordType,
             ),
           ],
@@ -213,6 +214,7 @@ class MyEditTextWidget extends StatelessWidget {
     this.radios,
     this.textInputAction,
     this.onFieldSubmitted,
+    this.inputFormatters,
   });
 
   final String hint;
@@ -231,6 +233,7 @@ class MyEditTextWidget extends StatelessWidget {
   final double? radios;
   final TextInputAction? textInputAction;
   final Function(String)? onFieldSubmitted;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -302,6 +305,7 @@ class MyEditTextWidget extends StatelessWidget {
           controller: controller,
           keyboardType: keyBordType,
           textInputAction: textInputAction,
+          inputFormatters: inputFormatters,
           onFieldSubmitted: onFieldSubmitted,
         );
       },
@@ -519,6 +523,21 @@ class _MyTextFormPhoneWidgetState extends State<MyTextFormPhoneWidget> {
           ],
         );
       },
+    );
+  }
+}
+
+class IntInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    if (newValue.text.isEmpty) return newValue;
+
+    // Only allow digits
+    final filteredText = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
+
+    return TextEditingValue(
+      text: filteredText,
+      selection: TextSelection.collapsed(offset: filteredText.length),
     );
   }
 }

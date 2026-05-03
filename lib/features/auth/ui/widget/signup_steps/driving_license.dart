@@ -130,7 +130,7 @@ class _DrivingLicenseState extends State<DrivingLicense> {
             Container(
               padding: const EdgeInsets.all(14.62),
               decoration: ShapeDecoration(
-                color: Colors.white,
+                color: AppColorManager.cardColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9.75),
                 ),
