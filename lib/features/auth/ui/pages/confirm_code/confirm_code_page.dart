@@ -3,6 +3,7 @@ import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/remember_account.dart';
 import 'package:al_andalus/features/auth/ui/widget/resend_btn.dart';
+import 'package:al_andalus/features/auth/ui/widget/slider.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -63,32 +64,7 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
         bottomNavigationBar: RememberAccount(),
         body: ListView(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 37.0).r,
-              child: CustomStepperWidget(
-                activeStep: 3,
-
-                steps: [
-                  customStepWidget(
-                    title: S.of(context).info,
-                    isCompleted: true,
-                  ),
-                  customStepWidget(
-                    title: S.of(context).drivingLicense,
-                    isCompleted: true,
-                  ),
-                  customStepWidget(
-                    title: S.of(context).phoneNumber,
-                    isCompleted: true,
-                  ),
-                  customStepWidget(
-                    title: S.of(context).verificationCode,
-                    isCompleted: false,
-                    isSelected: true,
-                  ),
-                ],
-              ),
-            ),
+            SliderSignup(step: 3),
 
             Container(
               padding: const EdgeInsets.all(20.0).r,

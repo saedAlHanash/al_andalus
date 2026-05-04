@@ -42,7 +42,7 @@
   "carName": "اسم السيارة",
   "cart": "السلة",
   "changeAccount": "تغيير الحساب",
-  "changePasscode": "تغيير كلمة السر",
+  "changePasscode": "تغيير كود السر",
   "changePassword": "تغيير كلمة المرور",
   "chassisNumber": "رقم الشاصي",
   "chooseEngineCapacity": "اختر حجم المحرك",
@@ -290,7 +290,7 @@
   "see_all": "عرض الكل",
   "selectDesiredCar": "اختر السيارة المرغوبة",
   "selectPaymentMethod": "قم بتحديد طريقة الدفع المرغوبة",
-  "sendCode": "إرسال الرمز",
+  "sendCode": "إدخال الرمز",
   "signUp": "إنشاء حساب",
   "skip": "تخطى",
   "spareTire": "الإطار الإحتياط",
@@ -339,9 +339,9 @@
   "transferOfOwnershipCosts": "تكاليف نقل الملكية",
   "ownershipTransferStatus": "حالة نقل الملكية",
   "claimStatus": "حالة المطالبة",
-  "pinCode": "كلمة السر",
-  "pleaseSendThePinCode": "يرجى إرسال كلمة السر",
-  "confirmPin": "تأكيد كلمة السر",
+  "pinCode": "كود السر",
+  "pleaseSendThePinCode": "يرجى إرسال كود السر",
+  "confirmPin": "تأكيد كود السر",
   "today": "اليوم",
   "yesterday": "أمس",
   "noteIsRequired": "يجب إضافة ملاحظة لـ {field}",
@@ -383,5 +383,6 @@
   "enterCredentialsToReEnableBiometric": "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
   "vehicleInspectionReport": "تقرير فحص السيارة",
   "font": "الخط",
-  "fromGallery": "من معرض الصور"
+  "fromGallery": "من معرض الصور",
+  "pleaseEnterASecretCode": "Please enter a secret code"
 }

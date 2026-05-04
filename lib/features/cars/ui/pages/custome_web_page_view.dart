@@ -12,7 +12,6 @@ final _successUrls = [
   'payment-success',
   'status=success',
 ];
-//'https://admin.andalusapp.com/qicard/callback?requestId=bf0ff5a5-fc2d-4779-aa33-96efc37fa973&paymentId=2281565f-ddb5-4b0a-b712-ea714a074c97&paymentType=CARD&status=SUCCESS',
 
 class MyCustomWebPage extends StatefulWidget {
   const MyCustomWebPage({super.key, this.urlWebPage});

@@ -460,6 +460,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseCompleteAllInspectionFields": MessageLookupByLibrary.simpleMessage(
       "Please select the status of all car parts",
     ),
+    "pleaseEnterASecretCode": MessageLookupByLibrary.simpleMessage(
+      "Please enter a secret code",
+    ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "Please enter address",
     ),
@@ -770,7 +773,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe":
         MessageLookupByLibrary.simpleMessage(
-          "Your account has been successfully created. You will now be redirected to the home screen.",
+          "Your account has been successfully created.",
         ),
     "zainCash": MessageLookupByLibrary.simpleMessage("Zain Cash"),
     "zainCashWallet": MessageLookupByLibrary.simpleMessage("Zain Cash Wallet"),

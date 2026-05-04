@@ -2739,10 +2739,10 @@ class S {
     );
   }
 
-  /// `Your account has been successfully created. You will now be redirected to the home screen.`
+  /// `Your account has been successfully created.`
   String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
     return Intl.message(
-      'Your account has been successfully created. You will now be redirected to the home screen.',
+      'Your account has been successfully created.',
       name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
       desc: '',
       args: [],
@@ -3189,6 +3189,16 @@ class S {
     return Intl.message(
       'From gallery',
       name: 'fromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a secret code`
+  String get pleaseEnterASecretCode {
+    return Intl.message(
+      'Please enter a secret code',
+      name: 'pleaseEnterASecretCode',
       desc: '',
       args: [],
     );

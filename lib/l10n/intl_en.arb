@@ -332,7 +332,7 @@
   "wrongPhone": "Invalid phone number",
   "yes": "Yes",
   "youWillBeAbleToChooseTheDesiredLanguageFor": "You will be able to choose the desired language for the document.",
-  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created. You will now be redirected to the home screen.",
+  "yourAccountHasBeenSuccessfullyCreatedYouWillNowBe": "Your account has been successfully created.",
   "zainCash": "Zain Cash",
 
   "zainCashWallet": "Zain Cash Wallet",
@@ -384,5 +384,6 @@
   "removeBiometricWarning": "Are you sure you want to remove saved biometrics?",
   "vehicleInspectionReport": "Vehicle inspection report",
   "font": "Font",
-  "fromGallery": "From gallery"
+  "fromGallery": "From gallery",
+  "pleaseEnterASecretCode": "Please enter a secret code"
 }

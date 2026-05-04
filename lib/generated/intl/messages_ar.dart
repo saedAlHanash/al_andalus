@@ -146,7 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("تغيير الحساب"),
-    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير كلمة السر"),
+    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير كود السر"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
     "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
@@ -162,7 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
-    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كلمة السر"),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كود السر"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
@@ -408,7 +408,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
-    "pinCode": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("كود السر"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -435,6 +435,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseCompleteAllInspectionFields": MessageLookupByLibrary.simpleMessage(
       "يرجى تحديد حالة جميع أجزاء المركبة",
+    ),
+    "pleaseEnterASecretCode": MessageLookupByLibrary.simpleMessage(
+      "Please enter a secret code",
     ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال محل السكن",
@@ -521,7 +524,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ البداية",
     ),
     "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
-      "يرجى إرسال كلمة السر",
+      "يرجى إرسال كود السر",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "يرجى ذكر تفاصيل الحادث الذي جرى",
@@ -644,7 +647,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
       "قم بتحديد طريقة الدفع المرغوبة",
     ),
-    "sendCode": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+    "sendCode": MessageLookupByLibrary.simpleMessage("إدخال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
     "spareTire": MessageLookupByLibrary.simpleMessage("الإطار الإحتياط"),

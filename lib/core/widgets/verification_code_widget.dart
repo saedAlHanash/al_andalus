@@ -9,11 +9,17 @@ class PinCodeWidget extends StatelessWidget {
     this.onCompleted,
     this.onChange,
     this.validator,
+    this.controller,
+    this.readOnly = false,
+    this.useNativeKeyboard = true,
   });
 
   final Function(String)? onCompleted;
   final Function(String)? onChange;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
+  final bool readOnly;
+  final bool useNativeKeyboard;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +49,9 @@ class PinCodeWidget extends StatelessWidget {
         textDirection: TextDirection.ltr,
         child: Pinput(
           length: 6,
+          controller: controller,
+          readOnly: readOnly,
+          useNativeKeyboard: useNativeKeyboard,
           defaultPinTheme: defaultPinTheme,
           focusedPinTheme: defaultPinTheme.copyDecorationWith(
             border: Border.all(color: AppColorManager.mainColor),

@@ -2,6 +2,7 @@ import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/signup_steps/signup_validator.dart';
+import 'package:al_andalus/features/auth/ui/widget/slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,47 +80,17 @@ class _SignupPageState extends State<SignupPage> {
             ),
             body: Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 37.0).r,
-                  child: CustomStepperWidget(
-                    activeStep: state.step,
-                    onStepReached: (p0) {
-                      final request = state.mRequest;
-                      if (p0 > state.step) {
-                        for (int i = state.step; i < p0; i++) {
-                          if (!SignupValidator.validateStep(context, i, request)) return;
-                        }
+                SliderSignup(
+                  step: state.step,
+                  onStepReached: (p0) {
+                    final request = state.mRequest;
+                    if (p0 > state.step) {
+                      for (int i = state.step; i < p0; i++) {
+                        if (!SignupValidator.validateStep(context, i, request)) return;
                       }
-                      context.read<SignupCubit>().next(step: p0);
-                    },
-                    steps: [
-                      customStepWidget(
-                        title: S.of(context).unified,
-                        isCompleted: state.step > 0,
-                        isSelected: state.step == 0,
-                      ),
-                      customStepWidget(
-                        title: S.of(context).drivingLicense,
-                        isCompleted: state.step > 1,
-                        isSelected: state.step == 1,
-                      ),
-                      customStepWidget(
-                        title: S.of(context).phoneNumber,
-                        isCompleted: state.step > 2,
-                        isSelected: state.step == 2,
-                      ),
-                      customStepWidget(
-                        title: S.of(context).verificationCode,
-                        isCompleted: state.step > 3,
-                        isSelected: state.step == 3,
-                      ),
-                      customStepWidget(
-                        title: S.of(context).pinCode,
-                        isCompleted: state.step > 4,
-                        isSelected: state.step == 4,
-                      ),
-                    ],
-                  ),
+                    }
+                    context.read<SignupCubit>().next(step: p0);
+                  },
                 ),
                 Expanded(
                   child: switch (state.step) {
