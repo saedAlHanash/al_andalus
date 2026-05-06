@@ -274,7 +274,7 @@ final goRouter = GoRouter(
         final type = RemoteConfigService.instance.privetType
             ? InsuranceType.private
             : InsuranceType.values[int.tryParse(state.uri.queryParameters['type'] ?? '0') ?? 0];
-        loggerObject.w(cylindersCount);
+
         return InsurancePage(
           id: id,
           estimatedPrice: estimatedPrice,

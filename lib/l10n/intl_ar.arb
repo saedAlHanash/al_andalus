@@ -384,6 +384,6 @@
   "vehicleInspectionReport": "تقرير فحص السيارة",
   "font": "الخط",
   "fromGallery": "من معرض الصور",
-  "pleaseEnterASecretCode": "Please enter a secret code",
-  "releaseDate": "Release date"
+  "pleaseEnterASecretCode": "يرجى إدخال الرمز السري",
+  "releaseDate": "تاريخ الإصدار"
 }

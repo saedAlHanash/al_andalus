@@ -145,7 +145,7 @@ class _Item extends StatelessWidget {
                         return DrawableText(
                               text: feature.title,
                               matchParent: true,
-                              padding: EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(vertical: 7.0),
                               drawableStart: ImageMultiType(
                                 url: Assets.iconsDoneStep,
                                 height: 20.0.r,
