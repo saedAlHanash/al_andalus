@@ -15,21 +15,21 @@ class ItemInsurance extends StatelessWidget {
 
   final InsurancePackage insurance;
   final Function()? onTapInfo;
+
   @override
   Widget build(BuildContext context) {
-    final tagText = insurance.tag.isEmpty?insurance.level.name: insurance.tag;
-
+    final tagText = insurance.tag.isEmpty ? insurance.level.name : insurance.tag;
 
     return Container(
       decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  insurance.level.color,
-                  insurance.level.color.withValues(alpha: 0.7),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(24.0.r),
-            ),
+        gradient: LinearGradient(
+          colors: [
+            insurance.level.color,
+            insurance.level.color.withValues(alpha: 0.7),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(24.0.r),
+      ),
       padding: EdgeInsets.only(top: 4.0, right: 4, left: 4, bottom: 4).r,
 
       child: Column(
@@ -87,7 +87,7 @@ class ItemInsurance extends StatelessWidget {
                           onTap: () => onTapInfo?.call(),
                           height: 35.0.h,
                           text: S.of(context).knowMore,
-                          color: insurance.level.color ,
+                          color: insurance.level.color,
                         ),
                       ],
                     ),
@@ -97,13 +97,15 @@ class ItemInsurance extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: insurance.features.map((feature) {
-                          return ListTile(
-                            leading: ImageMultiType(
+                          return DrawableText(
+                            text: feature.title,
+                            padding: EdgeInsets.symmetric(vertical: 5.0),
+                            drawableStart: ImageMultiType(
                               url: Assets.iconsDoneStep,
                               height: 20.0.r,
                               width: 20.0.r,
                             ),
-                            title: DrawableText(text: feature.title),
+                            drawablePadding: 5.0,
                           );
                         }).toList(),
                       ),
