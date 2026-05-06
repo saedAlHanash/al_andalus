@@ -127,7 +127,7 @@ class CarPage extends StatelessWidget {
                       url: Assets.iconsEdit,
                       color: AppColorManager.white,
                     ),
-                    text: 'تعديل',
+                    text: S.of(context).edit,
                   ),
                 80.0.verticalSpace,
               ],

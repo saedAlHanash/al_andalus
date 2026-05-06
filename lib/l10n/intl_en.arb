@@ -386,5 +386,16 @@
   "font": "Font",
   "fromGallery": "From gallery",
   "pleaseEnterASecretCode": "Please enter a secret code",
-  "releaseDate": "Release date"
+  "releaseDate": "Release date",
+  "quantityNotAvailable": "Sorry, this quantity is not available currently",
+  "tryAgain": "Try Again",
+  "ok": "OK",
+  "doneSuccessfully": "Done successfully",
+  "newUpdateAvailable": "New update available",
+  "newVersionAvailable": "A new version of the app is available, please update to continue",
+  "updateApp": "Update",
+  "licenseNumber": "License Number",
+  "edit": "Edit",
+  "confirmLogout": "Confirm logout",
+  "enterA6digitCode": "Enter a 6-digit code"
 }

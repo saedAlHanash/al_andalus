@@ -385,5 +385,15 @@
   "font": "الخط",
   "fromGallery": "من معرض الصور",
   "pleaseEnterASecretCode": "يرجى إدخال الرمز السري",
-  "releaseDate": "تاريخ الإصدار"
+  "releaseDate": "تاريخ الإصدار",
+  "quantityNotAvailable": "عذرا هذه الكمية غير متوفرة حاليا",
+  "tryAgain": "حاول مجدداً",
+  "ok": "موافق",
+  "doneSuccessfully": "تم بنجاح",
+  "newUpdateAvailable": "تحديث جديد متاح",
+  "newVersionAvailable": "اصدار جديد من التطبيق يجب تحديث التطبيق للمتابعة",
+  "updateApp": "تحديث",
+  "licenseNumber": "رقم الإجازة",
+  "edit": "تعديل",
+  "enterA6digitCode": "أدخل الرمز المكون من 6 أرقام"
 }

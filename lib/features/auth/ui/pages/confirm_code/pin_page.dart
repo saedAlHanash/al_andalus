@@ -102,7 +102,7 @@ class _PinPageState extends State<PinPage> {
                         ),
                         10.0.verticalSpace,
                         DrawableText(
-                          text: 'Enter a 6-digit code',
+                          text: S.of(context).enterA6digitCode,
                           matchParent: true,
                           textAlign: TextAlign.center,
                         ),

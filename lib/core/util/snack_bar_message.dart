@@ -33,7 +33,7 @@ class NoteMessage {
         child: ListTile(
           leading: ImageMultiType(url: Assets.iconsAddToCart),
           title: DrawableText(
-            text: message ?? 'تم الأضافة الى السلة بنجاح',
+            text: message ?? S.of(context).addedToCartSuccessfully,
             color: Colors.white,
           ),
         ),
@@ -57,7 +57,7 @@ class NoteMessage {
         child: ListTile(
           leading: ImageMultiType(url: Icons.warning_amber),
           title: DrawableText(
-            text: message ?? 'عذرا هذا الكمية غير متوفر حاليا',
+            text: message ?? S.of(context).quantityNotAvailable,
           ),
         ),
       ),
@@ -281,7 +281,7 @@ class NoteMessage {
             mainAxisSize: MainAxisSize.min,
             children: [
               DrawableText(
-                text: 'Oops!',
+                text: S.of(context).oops,
                 size: 20.0.spMin,
                 padding: const EdgeInsets.symmetric(vertical: 15.0).h,
                 fontWeight: .bold,
@@ -299,7 +299,7 @@ class NoteMessage {
               Divider(height: 25.0.h, color: Colors.black),
               TextButton(
                 onPressed: () => context.pop(true),
-                child: DrawableText(text: tryAgne ? 'Try Again' : 'OK'),
+                child: DrawableText(text: tryAgne ? S.of(context).tryAgain : S.of(context).ok),
               ),
             ],
           ),
@@ -332,7 +332,7 @@ class NoteMessage {
             mainAxisSize: MainAxisSize.min,
             children: [
               DrawableText(
-                text: 'Oops!',
+                text: S.of(context).oops,
                 size: 20.0.spMin,
                 padding: const EdgeInsets.symmetric(vertical: 15.0).h,
                 fontWeight: .bold,
@@ -350,7 +350,7 @@ class NoteMessage {
               Divider(height: 25.0.h, color: Colors.black),
               TextButton(
                 onPressed: () => context.pop(true),
-                child: const DrawableText(text: 'OK'),
+                child: DrawableText(text: S.of(context).ok),
               ),
             ],
           ),
@@ -601,7 +601,7 @@ class NoteMessage {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 15).r,
                 child: MyButton(
-                  text: 'تم بنجاح',
+                  text: S.of(context).doneSuccessfully,
                   onTap: () {
                     onCancel?.call();
                     context.pop();

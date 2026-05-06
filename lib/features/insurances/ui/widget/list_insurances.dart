@@ -35,6 +35,7 @@ class _ListInsurancesState extends State<ListInsurances> {
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
         final list = state.result.where((e) => e.type == type).toList();
+
         return Column(
           children: [
             20.0.verticalSpace,

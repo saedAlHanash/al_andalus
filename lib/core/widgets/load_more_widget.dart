@@ -35,9 +35,7 @@
 //             if (statuses == CubitStatuses.loading) {
 //               return MyStyle.loadingWidget();
 //             }
-//             return MyButton(
-//               width: 177.0.w,
-//               text: 'تحميل المزيد',
+//             return MyButton
 //               onTap: () {
 //                 // command.pag = (command.pag ?? 0) + 1;
 //                 onNewCommand(command);

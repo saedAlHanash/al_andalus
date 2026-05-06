@@ -56,8 +56,8 @@ class _DrivingLicenseState extends State<DrivingLicense> {
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.licenseNumber = p0,
               initialValue: state.mRequest.licenseNumber,
-              labelText: S.of(context).idCardNumber,
-              hint: S.of(context).idCardNumber,
+              labelText: S.of(context).licenseNumber,
+              hint: S.of(context).licenseNumber,
               keyBordType: .number,
             ),
             Container(

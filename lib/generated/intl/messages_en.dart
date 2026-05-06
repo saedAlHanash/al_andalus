@@ -163,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmCode": MessageLookupByLibrary.simpleMessage(
       "Enter Confirmation Code",
     ),
+    "confirmLogout": MessageLookupByLibrary.simpleMessage("Confirm logout"),
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "Confirm New Password",
     ),
@@ -208,6 +209,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "donePick": MessageLookupByLibrary.simpleMessage("Done Pick"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("Done refresh"),
+    "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Done successfully",
+    ),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "Done resend code",
     ),
@@ -219,6 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "Driving License Info",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editPhone": MessageLookupByLibrary.simpleMessage("Edit Phone Number"),
     "electronicCard": MessageLookupByLibrary.simpleMessage("Electronic Card"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -231,6 +236,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions",
     ),
     "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+    "enterA6digitCode": MessageLookupByLibrary.simpleMessage(
+      "Enter a 6-digit code",
+    ),
     "enterCarValue": MessageLookupByLibrary.simpleMessage("Enter car value"),
     "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
       "Please enter your login details to re-enable the feature:",
@@ -332,6 +340,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "latest": MessageLookupByLibrary.simpleMessage("latest"),
     "left": MessageLookupByLibrary.simpleMessage("Left"),
+    "licenseNumber": MessageLookupByLibrary.simpleMessage("License Number"),
     "licenseType": MessageLookupByLibrary.simpleMessage("License Type"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
     "loadMore": MessageLookupByLibrary.simpleMessage("Load More"),
@@ -377,6 +386,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "needPay": MessageLookupByLibrary.simpleMessage("Need Pay"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+    "newUpdateAvailable": MessageLookupByLibrary.simpleMessage(
+      "New update available",
+    ),
+    "newVersionAvailable": MessageLookupByLibrary.simpleMessage(
+      "A new version of the app is available, please update to continue",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "noInternet": MessageLookupByLibrary.simpleMessage(
@@ -389,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("Notifications"),
     "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
     "oops": MessageLookupByLibrary.simpleMessage("Oops!"),
     "ourService": MessageLookupByLibrary.simpleMessage("Our service"),
@@ -605,6 +621,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "public": MessageLookupByLibrary.simpleMessage("public"),
     "qiCard": MessageLookupByLibrary.simpleMessage("Qi Card"),
     "qrCode": MessageLookupByLibrary.simpleMessage("QR Code"),
+    "quantityNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "Sorry, this quantity is not available currently",
+    ),
     "radioAndType": MessageLookupByLibrary.simpleMessage("Radio and Type"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("Radio Antenna"),
     "reUpload": MessageLookupByLibrary.simpleMessage("Re upload"),
@@ -726,12 +745,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "Transfer Policy Ownership",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
     "underReview": MessageLookupByLibrary.simpleMessage("Under Review"),
     "unified": MessageLookupByLibrary.simpleMessage("Unified"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "Unified Card Info",
     ),
     "update": MessageLookupByLibrary.simpleMessage("update"),
+    "updateApp": MessageLookupByLibrary.simpleMessage("Update"),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage(
       "Upload from files",
     ),

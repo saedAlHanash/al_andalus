@@ -53,7 +53,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ar');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'العربية'),
+                    title: DrawableText(text: S.of(context).arabic),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -63,7 +63,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ur');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'كوردی'),
+                    title: DrawableText(text: S.of(context).kurdish),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -73,7 +73,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'en');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'English'),
+                    title: DrawableText(text: S.of(context).english),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -153,7 +153,7 @@ void showFontDialog(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           children: [
             _Header(),
-            _Title(title: 'الخط'),
+            _Title(title: S.of(context).font),
             Container(
               color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,

@@ -212,6 +212,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("تهواو"),
     "donePick": MessageLookupByLibrary.simpleMessage("ههڵبژاردن تهواو بوو"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تازهکردنهوه کرا"),
+    "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "به سهرکهوتوویی ئهنجامدرا",
+    ),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "کۆدهکه دووباره نێردرایهوه",
     ),
@@ -223,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "زانیاری مۆڵهتی شۆفێری",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("دهستکاریکردن"),
     "editPhone": MessageLookupByLibrary.simpleMessage(
       "دهستکاریکردنی ژمارهی مۆبایل",
     ),
@@ -241,6 +245,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "دڵنیابه لهوهی دهقهکه ڕوون و ئاسانه بۆ خوێندنهوه\n\n تکایه دووربکهوهرهوه له درهوشانهوه یان کاردانهوهی ڕووناکی لهسهر ناسنامهکه و باکگراوندهکه به خاوێنی بهێڵهرهوه",
     ),
     "enter": MessageLookupByLibrary.simpleMessage("چوونهژوورهوه"),
+    "enterA6digitCode": MessageLookupByLibrary.simpleMessage(
+      "کۆدێکی ٦ ژمارهیی بنووسه",
+    ),
     "enterCarValue": MessageLookupByLibrary.simpleMessage(
       "نرخی ئۆتۆمبێل بنووسه",
     ),
@@ -346,6 +353,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("زمان"),
     "latest": MessageLookupByLibrary.simpleMessage("نوێترین"),
     "left": MessageLookupByLibrary.simpleMessage("چهپ"),
+    "licenseNumber": MessageLookupByLibrary.simpleMessage("ژمارهی مۆڵهت"),
     "licenseType": MessageLookupByLibrary.simpleMessage("جۆری مۆڵهت"),
     "light": MessageLookupByLibrary.simpleMessage("ڕووناک"),
     "loadMore": MessageLookupByLibrary.simpleMessage("زیاتر نیشان بده"),
@@ -393,6 +401,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "needPay": MessageLookupByLibrary.simpleMessage("پێویستی به پارهدانه"),
     "newPassword": MessageLookupByLibrary.simpleMessage("وشهی نهێنی نوێ"),
+    "newUpdateAvailable": MessageLookupByLibrary.simpleMessage(
+      "نوێکردنهوهی نوێ بهردهسته",
+    ),
+    "newVersionAvailable": MessageLookupByLibrary.simpleMessage(
+      "وهشانێکی نوێی ئهپڵیکهشنهکه بهردهسته، تکایه نوێی بکهرهوه بۆ بهردهوامبوون",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("دواتر"),
     "no": MessageLookupByLibrary.simpleMessage("نهخێر"),
     "noInternet": MessageLookupByLibrary.simpleMessage(
@@ -407,6 +421,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("ئاگانامهکان"),
     "notifications": MessageLookupByLibrary.simpleMessage("ئاگانامهکان"),
+    "ok": MessageLookupByLibrary.simpleMessage("باشه"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("وشهی نهێنی کۆن"),
     "oops": MessageLookupByLibrary.simpleMessage("ئۆهـ!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خزمهتگوزارییهکانمان"),
@@ -627,6 +642,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "public": MessageLookupByLibrary.simpleMessage("گشتی"),
     "qiCard": MessageLookupByLibrary.simpleMessage("کێ کارد - Qi Card"),
     "qrCode": MessageLookupByLibrary.simpleMessage("کۆدی QR"),
+    "quantityNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "ببووره، ئهم بڕه له ئێستادا بهردهست نییه",
+    ),
     "radioAndType": MessageLookupByLibrary.simpleMessage("ڕادیۆ و جۆرهکهی"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("ئهنتێنای ڕادیۆ"),
     "reUpload": MessageLookupByLibrary.simpleMessage("دووباره بارکردنهوه"),
@@ -640,7 +658,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "لهلایهن ستافی ڕووپێوییهوه ڕهتکرایهوه",
     ),
-    "releaseDate": MessageLookupByLibrary.simpleMessage("Release date"),
+    "releaseDate": MessageLookupByLibrary.simpleMessage("بهرواری بڵاوکردنهوه"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("بمبیربێنهرهوه"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "وشهی نهێنی بیربهێנهوه",
@@ -748,6 +766,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "گواستنهوهی خاوهندارێتی بهڵگهنامه",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("دووباره ههوڵبدهرهوه"),
     "underReview": MessageLookupByLibrary.simpleMessage(
       "لهژێر پێداچوونهوهدایه",
     ),
@@ -756,6 +775,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "زانیاری کارتی نیشتمانی",
     ),
     "update": MessageLookupByLibrary.simpleMessage("نوێکردنهوه"),
+    "updateApp": MessageLookupByLibrary.simpleMessage("نوێکردنهوه"),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage(
       "بارکردن له فایلهکانهوه",
     ),

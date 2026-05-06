@@ -385,5 +385,15 @@
   "font": "فۆنت",
   "fromGallery": "له گالهرییهوه",
   "pleaseEnterASecretCode": "تکایه کۆدێکی نهێنی بنووسه",
-  "releaseDate": "Release date"
+  "releaseDate": "بهرواری بڵاوکردنهوه",
+  "quantityNotAvailable": "ببووره، ئهم بڕه له ئێستادا بهردهست نییه",
+  "tryAgain": "دووباره ههوڵبدهرهوه",
+  "ok": "باشه",
+  "doneSuccessfully": "به سهرکهوتوویی ئهنجامدرا",
+  "newUpdateAvailable": "نوێکردنهوهی نوێ بهردهسته",
+  "newVersionAvailable": "وهشانێکی نوێی ئهپڵیکهشنهکه بهردهسته، تکایه نوێی بکهرهوه بۆ بهردهوامبوون",
+  "updateApp": "نوێکردنهوه",
+  "licenseNumber": "ژمارهی مۆڵهت",
+  "edit": "دهستکاریکردن",
+  "enterA6digitCode": "کۆدێکی ٦ ژمارهیی بنووسه"
 }

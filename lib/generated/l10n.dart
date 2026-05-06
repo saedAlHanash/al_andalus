@@ -3213,6 +3213,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Sorry, this quantity is not available currently`
+  String get quantityNotAvailable {
+    return Intl.message(
+      'Sorry, this quantity is not available currently',
+      name: 'quantityNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message('Try Again', name: 'tryAgain', desc: '', args: []);
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Done successfully`
+  String get doneSuccessfully {
+    return Intl.message(
+      'Done successfully',
+      name: 'doneSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New update available`
+  String get newUpdateAvailable {
+    return Intl.message(
+      'New update available',
+      name: 'newUpdateAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A new version of the app is available, please update to continue`
+  String get newVersionAvailable {
+    return Intl.message(
+      'A new version of the app is available, please update to continue',
+      name: 'newVersionAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get updateApp {
+    return Intl.message('Update', name: 'updateApp', desc: '', args: []);
+  }
+
+  /// `License Number`
+  String get licenseNumber {
+    return Intl.message(
+      'License Number',
+      name: 'licenseNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Confirm logout`
+  String get confirmLogout {
+    return Intl.message(
+      'Confirm logout',
+      name: 'confirmLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a 6-digit code`
+  String get enterA6digitCode {
+    return Intl.message(
+      'Enter a 6-digit code',
+      name: 'enterA6digitCode',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

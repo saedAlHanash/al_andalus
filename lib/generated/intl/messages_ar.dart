@@ -198,6 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "donePick": MessageLookupByLibrary.simpleMessage("تم الاختيار"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
+    "doneSuccessfully": MessageLookupByLibrary.simpleMessage("تم بنجاح"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "تم إعادة الإرسال",
     ),
@@ -207,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات إجازة السوق",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "electronicCard": MessageLookupByLibrary.simpleMessage("بطاقة الكترونية"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -219,6 +221,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكد أن النص واضح وقابل للقراءة \n\n يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات",
     ),
     "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
+    "enterA6digitCode": MessageLookupByLibrary.simpleMessage(
+      "أدخل الرمز المكون من 6 أرقام",
+    ),
     "enterCarValue": MessageLookupByLibrary.simpleMessage("أدخل قيمة السيارة"),
     "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
@@ -314,6 +319,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
     "left": MessageLookupByLibrary.simpleMessage("اليسار"),
+    "licenseNumber": MessageLookupByLibrary.simpleMessage("رقم الإجازة"),
     "licenseType": MessageLookupByLibrary.simpleMessage("نوع الإجازة"),
     "light": MessageLookupByLibrary.simpleMessage("فاتح"),
     "loadMore": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
@@ -359,6 +365,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "needPay": MessageLookupByLibrary.simpleMessage("الدفع مطلوب"),
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "newUpdateAvailable": MessageLookupByLibrary.simpleMessage(
+      "تحديث جديد متاح",
+    ),
+    "newVersionAvailable": MessageLookupByLibrary.simpleMessage(
+      "اصدار جديد من التطبيق يجب تحديث التطبيق للمتابعة",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "noInternet": MessageLookupByLibrary.simpleMessage(
@@ -369,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "ok": MessageLookupByLibrary.simpleMessage("موافق"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
@@ -435,7 +448,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى تحديد حالة جميع أجزاء المركبة",
     ),
     "pleaseEnterASecretCode": MessageLookupByLibrary.simpleMessage(
-      "Please enter a secret code",
+      "يرجى إدخال الرمز السري",
     ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال محل السكن",
@@ -581,6 +594,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "public": MessageLookupByLibrary.simpleMessage("عمومي"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
     "qrCode": MessageLookupByLibrary.simpleMessage("رمز QR"),
+    "quantityNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "عذرا هذه الكمية غير متوفرة حاليا",
+    ),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "reUpload": MessageLookupByLibrary.simpleMessage("إعادة الرفع"),
@@ -594,7 +610,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "مرفوض من المساح",
     ),
-    "releaseDate": MessageLookupByLibrary.simpleMessage("Release date"),
+    "releaseDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
@@ -696,12 +712,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مجدداً"),
     "underReview": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),
     "unified": MessageLookupByLibrary.simpleMessage("الموحدة"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "updateApp": MessageLookupByLibrary.simpleMessage("تحديث"),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage("رفع من الملفات"),
     "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
       "قم برفع تقرير فحص السيارة",
