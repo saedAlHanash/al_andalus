@@ -223,9 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
     ),
-    "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
-      "ادخل تاريخ الصلاحية",
-    ),
+    "enterExpiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الصلاحية"),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التفعيل الخاص بك هنا.",
     ),
@@ -596,6 +594,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "مرفوض من المساح",
     ),
+    "releaseDate": MessageLookupByLibrary.simpleMessage("Release date"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",

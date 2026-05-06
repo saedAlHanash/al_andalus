@@ -87,7 +87,7 @@
   "ensureTextIsClear": "Ensure the text is clear and readable \n\n Please avoid glare or light reflections on the ID and keep the background free of any distractions",
   "enter": "Enter",
   "enterCarValue": "Enter car value",
-  "enterExpiryDate": "Enter expiry date",
+  "enterExpiryDate": "expiry date",
   "enterOTP": "Enter Your OTP Code Here.",
   "enterRequiredDetails": "Enter required details",
   "enterThe6digitCode": "Enter the 6-digit code",
@@ -385,5 +385,6 @@
   "vehicleInspectionReport": "Vehicle inspection report",
   "font": "Font",
   "fromGallery": "From gallery",
-  "pleaseEnterASecretCode": "Please enter a secret code"
+  "pleaseEnterASecretCode": "Please enter a secret code",
+  "releaseDate": "Release date"
 }

@@ -87,7 +87,7 @@
   "ensureTextIsClear": "دڵنیابه لهوهی دهقهکه ڕوون و ئاسانه بۆ خوێندنهوه\n\n تکایه دووربکهوهرهوه له درهوشانهوه یان کاردانهوهی ڕووناکی لهسهر ناسنامهکه و باکگراوندهکه به خاوێنی بهێڵهرهوه",
   "enter": "چوونهژوورهوه",
   "enterCarValue": "نرخی ئۆتۆمبێل بنووسه",
-  "enterExpiryDate": "بهرواری بهسهرچوون بنووسه",
+  "enterExpiryDate": "بهسهرچوون بنووسه",
   "enterOTP": "کۆدی OTP لێره بنووسه.",
   "enterRequiredDetails": "وردهکارییه داواکراوهکان بنووسه",
   "enterThe6digitCode": "کۆده ٦ ژمارهییهکه بنووسه",
@@ -384,5 +384,6 @@
   "vehicleInspectionReport": "ڕاپۆرتی پشکنینی ئۆتۆمبێل",
   "font": "فۆنت",
   "fromGallery": "له گالهرییهوه",
-  "pleaseEnterASecretCode": "تکایه کۆدێکی نهێنی بنووسه"
+  "pleaseEnterASecretCode": "تکایه کۆدێکی نهێنی بنووسه",
+  "releaseDate": "Release date"
 }

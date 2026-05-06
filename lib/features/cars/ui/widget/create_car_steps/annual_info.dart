@@ -188,7 +188,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                       expiryStartDate.text = (state.mRequest.expiryStartDate?.formatDate) ?? '';
                     },
                     controller: expiryStartDate,
-                    labelText: S.of(context).from,
+                    labelText: S.of(context).releaseDate,
                     hint: S.of(context).enterExpiryDate,
                   ),
                 ),
@@ -210,7 +210,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                       expiryEndDate.text = (state.mRequest.expiryEndDate?.formatDate) ?? '';
                     },
                     controller: expiryEndDate,
-                    labelText: S.of(context).to,
+                    labelText: S.of(context).expiryDate,
                     hint: S.of(context).enterExpiryDate,
                   ),
                 ),

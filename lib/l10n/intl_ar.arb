@@ -87,7 +87,7 @@
   "ensureTextIsClear": "تأكد أن النص واضح وقابل للقراءة \n\n يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات",
   "enter": "أدخل",
   "enterCarValue": "أدخل قيمة السيارة",
-  "enterExpiryDate": "ادخل تاريخ الصلاحية",
+  "enterExpiryDate": "تاريخ الصلاحية",
   "enterOTP": "أدخل رمز التفعيل الخاص بك هنا.",
   "enterRequiredDetails": "إدخل التفاصيل المطلوبه",
   "enterThe6digitCode": "أدخل الرمز المكون من 6 أرقام",
@@ -384,5 +384,6 @@
   "vehicleInspectionReport": "تقرير فحص السيارة",
   "font": "الخط",
   "fromGallery": "من معرض الصور",
-  "pleaseEnterASecretCode": "Please enter a secret code"
+  "pleaseEnterASecretCode": "Please enter a secret code",
+  "releaseDate": "Release date"
 }

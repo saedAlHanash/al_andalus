@@ -749,10 +749,10 @@ class S {
     );
   }
 
-  /// `Enter expiry date`
+  /// `expiry date`
   String get enterExpiryDate {
     return Intl.message(
-      'Enter expiry date',
+      'expiry date',
       name: 'enterExpiryDate',
       desc: '',
       args: [],
@@ -3199,6 +3199,16 @@ class S {
     return Intl.message(
       'Please enter a secret code',
       name: 'pleaseEnterASecretCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Release date`
+  String get releaseDate {
+    return Intl.message(
+      'Release date',
+      name: 'releaseDate',
       desc: '',
       args: [],
     );

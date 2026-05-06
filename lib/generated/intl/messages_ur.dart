@@ -247,9 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
       "تکایه زانیارییهکانی چوونه ژوورهوهت بنووسه بۆ دووباره چالاککردنهوهی تایبهتمهندییهکه:",
     ),
-    "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
-      "بهرواری بهسهرچوون بنووسه",
-    ),
+    "enterExpiryDate": MessageLookupByLibrary.simpleMessage("بهسهرچوون بنووسه"),
     "enterOTP": MessageLookupByLibrary.simpleMessage("کۆدی OTP لێره بنووسه."),
     "enterRequiredDetails": MessageLookupByLibrary.simpleMessage(
       "وردهکارییه داواکراوهکان بنووسه",
@@ -642,6 +640,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "لهلایهن ستافی ڕووپێوییهوه ڕهتکرایهوه",
     ),
+    "releaseDate": MessageLookupByLibrary.simpleMessage("Release date"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("بمبیربێنهرهوه"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "وشهی نهێنی بیربهێנهوه",
