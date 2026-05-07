@@ -820,7 +820,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () => Navigator.pop(ctx, false),
-                    child: DrawableText(text: S.of(context).cancel, color: Colors.white),
+                    child: DrawableText(text: S.of(context).back, color: Colors.white),
                   ),
                 ),
                 10.horizontalSpace,

@@ -8,8 +8,8 @@ import 'package:image_multi_type/image_multi_type.dart';
 import '../app/app_provider.dart';
 import '../strings/app_color_manager.dart';
 import '../util/my_style.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:intl_phone_field/phone_number.dart';
+/*import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:intl_phone_field/phone_number.dart';*/
 
 class MyTextFormOutLineWidget extends StatefulWidget {
   const MyTextFormOutLineWidget({
@@ -321,6 +321,7 @@ class RectCustomClipper extends CustomClipper<Rect> {
   bool shouldReclip(covariant CustomClipper<Rect> oldClipper) => oldClipper != this;
 }
 
+/*
 class MyTextFormPhoneWidget extends StatefulWidget {
   const MyTextFormPhoneWidget({
     super.key,
@@ -526,6 +527,7 @@ class _MyTextFormPhoneWidgetState extends State<MyTextFormPhoneWidget> {
     );
   }
 }
+*/
 
 class IntInputFormatter extends TextInputFormatter {
   @override

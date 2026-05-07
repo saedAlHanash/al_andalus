@@ -184,6 +184,11 @@ class S {
     return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
   }
 
+  /// `Back`
+  String get back {
+    return Intl.message('Back', name: 'back', desc: '', args: []);
+  }
+
   /// `ascending`
   String get ascending {
     return Intl.message('ascending', name: 'ascending', desc: '', args: []);
@@ -1964,10 +1969,10 @@ class S {
     );
   }
 
-  /// `Please take an engine image`
+  /// `Please take a back side image`
   String get pleaseTakeEngineImage {
     return Intl.message(
-      'Please take an engine image',
+      'Please take a back side image',
       name: 'pleaseTakeEngineImage',
       desc: '',
       args: [],

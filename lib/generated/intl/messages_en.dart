@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "Attach Police Report:",
     ),
+    "back": MessageLookupByLibrary.simpleMessage("Back"),
     "backTires": MessageLookupByLibrary.simpleMessage("Back Tires"),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "Operation canceled by user",
@@ -571,7 +572,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please specify the location of the accident",
     ),
     "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
-      "Please take an engine image",
+      "Please take a back side image",
     ),
     "pleaseTakeFrontImage": MessageLookupByLibrary.simpleMessage(
       "Please take a front image",

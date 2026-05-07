@@ -77,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "أرفق تقرير الشرطة:",
     ),
+    "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء العملية من قبل المستخدم",
@@ -251,7 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل أنت متأكد من الخروج من عملية إنشاء الحساب؟",
     ),
     "expired": MessageLookupByLibrary.simpleMessage("منتهي"),
-    "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+    "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ النفاد"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
     "fasterLoginMethod": MessageLookupByLibrary.simpleMessage(
       "طريقة أسرع لتسجيل الدخول",
@@ -517,7 +518,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ النهاية",
     ),
     "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
-      "يرجى اختيار تاريخ الانتهاء",
+      "يرجى اختيار تاريخ النفاد",
     ),
     "pleaseSelectFuelType": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار نوع الوقود",
@@ -544,7 +545,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى ذكر موقع الحادث",
     ),
     "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
-      "يرجى التقاط صورة لمحرك السيارة",
+      "يرجى التقاط صورة للجزء الخلفي من السيارة",
     ),
     "pleaseTakeFrontImage": MessageLookupByLibrary.simpleMessage(
       "يرجى التقاط صورة الجزء الأمامي",

@@ -232,7 +232,7 @@ class NoteMessage {
                         children: [
                           Expanded(
                             child: MyButton(
-                              text: S.of(context).cancel,
+                              text: S.of(context).back,
                               onTap: () => context.pop(false),
                               color: AppColorManager.black.withOpacity(0.7),
                             ),
