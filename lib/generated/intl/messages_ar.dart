@@ -167,7 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
-    "congrats": MessageLookupByLibrary.simpleMessage("تهانينا !"),
+    "congrats": MessageLookupByLibrary.simpleMessage("مبروك !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),

@@ -43,7 +43,8 @@ class DonePage extends StatelessWidget {
           10.0.verticalSpace,
           DrawableText(
             text: S.of(context).yourAccountHasBeenSuccessfullyCreatedYouWillNowBe,
-
+            size: 18.0.sp,
+            padding: EdgeInsets.symmetric(horizontal: 50.0).r,
             textAlign: TextAlign.center,
           ),
           Spacer(),

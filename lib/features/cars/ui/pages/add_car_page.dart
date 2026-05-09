@@ -8,6 +8,7 @@ import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:http/http.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
@@ -59,6 +60,8 @@ class _AddCarPageState extends State<AddCarPage> {
                 if (context.mounted) {
                   context.read<CarsCubit>().getData(newData: true);
                   context.goNamed(RouteName.home);
+
+                  
                 }
               },
             );

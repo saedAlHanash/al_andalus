@@ -214,7 +214,6 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
-      var iconSize = 22.0.dg;
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
         child: BlocBuilder<SupportInfoCubit, SupportInfoInitial>(
@@ -228,49 +227,25 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
                   child: Column(
                     children: [
                       _Title(title: S.of(context).technicalSupport),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.sendEmail(email: state.result.email);
-                          },
-                          title: DrawableText(text: state.result.email),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsEmail,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.sendWhatsApp(phone: state.result.whatsApp);
-                          },
-                          title: DrawableText(text: state.result.whatsApp),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsWhatsapp,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.callPhone(phone: state.result.phone);
-                          },
-                          title: DrawableText(text: state.result.phone),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsPhone,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
+                      20.0.verticalSpace,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
+                        child: Row(
+                          spacing: 12.0.w,
+                          children: [
+                            _SupportCard(
+                              onTap: () => LauncherHelper.sendEmail(email: state.result.email),
+                              icon: Assets.iconsEmail,
+                            ),
+                            _SupportCard(
+                              onTap: () => LauncherHelper.sendWhatsApp(phone: state.result.whatsApp),
+                              icon: Assets.iconsWhatsapp,
+                            ),
+                            _SupportCard(
+                              onTap: () => LauncherHelper.callPhone(phone: state.result.phone),
+                              icon: Assets.iconsPhone,
+                            ),
+                          ],
                         ),
                       ),
                       30.0.verticalSpace,
@@ -905,6 +880,33 @@ class _Header extends StatelessWidget {
         color: AppColorManager.cardColor,
         height: 30.0.h,
         fit: BoxFit.fill,
+      ),
+    );
+  }
+}
+
+class _SupportCard extends StatelessWidget {
+  const _SupportCard({required this.onTap, required this.icon});
+
+  final VoidCallback onTap;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          height: 100.0.h,
+          decoration: MyStyle.outlineBorder,
+          child: Center(
+            child: ImageMultiType(
+              url: icon,
+              height: 35.0.dg,
+              width: 35.0.dg,
+            ),
+          ),
+        ),
       ),
     );
   }
