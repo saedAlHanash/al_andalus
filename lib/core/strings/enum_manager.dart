@@ -79,8 +79,6 @@ enum IraqGovernorate {
   maysan
   ;
 
-
-
   String get name {
     switch (this) {
       case IraqGovernorate.baghdad:
@@ -382,6 +380,24 @@ enum InsuranceType {
   private,
   public,
   ;
+
+  IconData? get icon {
+    switch (this) {
+      case InsuranceType.private:
+        return Icons.person_outline_rounded;
+      case InsuranceType.public:
+        return Icons.business_center_outlined;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case InsuranceType.private:
+        return AppColorManager.ampere;
+      case InsuranceType.public:
+        return Colors.blue;
+    }
+  }
 
   String get name {
     switch (this) {

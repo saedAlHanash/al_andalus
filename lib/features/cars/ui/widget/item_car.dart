@@ -37,7 +37,7 @@ class ItemCar extends StatelessWidget {
             matchParent: true,
             drawableAlin: .between,
           ),
-          16.0.verticalSpace,
+          10.0.verticalSpace,
           _RowItems(
             dataRow: {
               S.of(context).expiryDate: car.endDate,
@@ -46,7 +46,14 @@ class ItemCar extends StatelessWidget {
               S.of(context).packageCost: car.annualSubscriptionPrice.formatPrice,
             },
           ),
-          16.0.verticalSpace,
+          Divider(),
+          DrawableText(
+            text: 'Creation at:',
+            drawableEnd: DrawableText(text: car.created),
+            matchParent: true,
+            drawableAlin: .between,
+          ),
+          10.0.verticalSpace,
 
           if (car.status == .paymentPending)
             BlocBuilder<CarsCubit, CarsInitial>(
@@ -75,7 +82,6 @@ class ItemCar extends StatelessWidget {
             ),
             text: S.of(context).viewInsuranceStatement,
           ),
-          16.0.verticalSpace,
         ],
       ),
     );

@@ -8,6 +8,7 @@ import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import '../../generated/l10n.dart';
 import '../api_manager/api_service.dart';
 import '../app/app_provider.dart';
 
@@ -71,14 +72,14 @@ class UpdateDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('تحديث جديد متاح'),
-      content: const Text('اصدار جديد من التطبيق يجب تحديث التطبيق للمتابعة'),
+      title: Text(S.of(context).newUpdateAvailable),
+      content: Text(S.of(context).newVersionAvailable),
       actions: [
         MyButton(
           onTap: () {
             LauncherHelper.openPage(AppProvider.systemParams.updateLink);
           },
-          text: 'تحديث',
+          text: S.of(context).updateApp,
         ),
       ],
     );

@@ -34,7 +34,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final bool imageAppBar;
   final Widget? imageFromPage;
 
-  final Function(bool, dynamic result)? onPopInvoked;
+  final Function(bool b, dynamic result)? onPopInvoked;
 
   @override
   Widget build(BuildContext context) {

@@ -28,13 +28,14 @@ class ListInsurances extends StatefulWidget {
 }
 
 class _ListInsurancesState extends State<ListInsurances> {
-  InsuranceType type = InsuranceType.private;
+  var type = InsuranceType.private;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
         final list = state.result.where((e) => e.type == type).toList();
+
         return Column(
           children: [
             20.0.verticalSpace,
@@ -81,9 +82,11 @@ class _ListInsurancesState extends State<ListInsurances> {
                             context,
                             e,
                             (queryParameters) {
+
+                              final q = queryParameters..addAll({'type': type.index.toString()});
                               context.pushNamed(
                                 RouteName.insurancePage,
-                                queryParameters: queryParameters,
+                                queryParameters: q,
                               );
                             },
                           );

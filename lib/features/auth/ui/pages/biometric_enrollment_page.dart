@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
@@ -258,12 +259,29 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                     MyTextFormOutLineWidget(
                       validator: (p0) => p0.validateEmpty,
                       hint: S.of(context).phoneNumber,
-                      keyBordType: TextInputType.phone,
+                      iconWidgetLift: Row(
+                        mainAxisSize: .min,
+                        children: [
+                          15.0.horizontalSpace,
+                          DrawableText(
+                            text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
+                            fontWeight: .bold,
+                          ),
+                          15.0.horizontalSpace,
+                          ImageMultiType(
+                            url: Assets.iconsFlagOfIraq,
+                            height: 24.h,
+                            width: 24.w,
+                          ),
+                          15.0.horizontalSpace,
+                        ],
+                      ),
+                      keyBordType: .phone,
                       onChanged: (val) => _phone = val,
                     ),
                     MyTextFormOutLineWidget(
                       validator: (p0) => p0.validateEmpty,
-                      keyBordType: TextInputType.number,
+                      keyBordType: .number,
                       hint: S.of(context).pinCode,
                       obscureText: true,
                       onChanged: (val) => _password = val,

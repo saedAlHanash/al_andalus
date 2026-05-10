@@ -31,8 +31,14 @@ class ListCars extends StatelessWidget {
           return Center(
             child: Container(
               width: 1.0.sw,
-              decoration: MyStyle.roundBox12(),
+              decoration: take != null
+                  ? BoxDecoration(
+                      border: Border.all(color: AppColorManager.cd),
+                      borderRadius: BorderRadius.circular(24.0.r),
+                    )
+                  : null,
               padding: EdgeInsets.all(30.0).r,
+              margin: EdgeInsets.symmetric(horizontal: 5.0),
               child: Column(
                 mainAxisSize: .min,
                 children: [

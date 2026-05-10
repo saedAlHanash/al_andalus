@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:al_andalus/services/remote_config_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -23,6 +24,7 @@ class FirebaseService {
         options: DefaultFirebaseOptions.currentPlatform,
       );
     }
+    RemoteConfigService.instance.init();
     getFireTokenAsync();
     requestPermission();
     setListener();

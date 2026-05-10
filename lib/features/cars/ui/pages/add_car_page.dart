@@ -8,6 +8,7 @@ import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:http/http.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
@@ -31,6 +32,22 @@ class _AddCarPageState extends State<AddCarPage> {
 
   CarsInitial get carsState => context.read<CarsCubit>().state;
 
+  void _onBack(CarsInitial state) {
+
+    if (state.step > 0) {
+      context.read<CarsCubit>().next(step: state.step - 1);
+    } else {
+      NoteMessage.showCheckDialog(
+        context,
+        text: S.of(context).exitAddCarConfirmation,
+        textButton: S.of(context).yes,
+        onConfirm: (confirm) {
+          if (confirm) context.pop();
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocListener(
@@ -43,6 +60,8 @@ class _AddCarPageState extends State<AddCarPage> {
                 if (context.mounted) {
                   context.read<CarsCubit>().getData(newData: true);
                   context.goNamed(RouteName.home);
+
+                  
                 }
               },
             );
@@ -58,106 +77,95 @@ class _AddCarPageState extends State<AddCarPage> {
       ],
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
-          return PopScope(
-            canPop: false,
-            onPopInvokedWithResult: (didPop, result) {
-              if (didPop) return;
-              if (state.step > 0) {
-                context.read<CarsCubit>().next(step: state.step - 1);
-              } else {
-                NoteMessage.showCheckDialog(
-                  context,
-                  text: S.of(context).exitAddCarConfirmation,
-                  textButton: S.of(context).yes,
-                  onConfirm: (confirm) {
-                    if (confirm) context.pop();
-                  },
-                );
-              }
-            },
-            child: Scaffold(
-              appBar: AppBarWidget(titleText: S.of(context).addNewCar),
-              bottomNavigationBar: Padding(
-                padding: EdgeInsetsGeometry.all(20.0),
-                child: MyButton(
-                  loading: state.loading,
-                  onTap: () {
-                    final request = state.mRequest;
+          return Scaffold(
+            appBar: AppBarWidget(
+              titleText: S.of(context).addNewCar,
+              canPop: false,
+              onPopInvoked: (b, result) {
+                if (b) return;
+                _onBack(state);
+              },
+            ),
+            bottomNavigationBar: Padding(
+              padding: EdgeInsetsGeometry.all(20.0),
+              child: MyButton(
+                loading: state.loading,
+                onTap: () {
+                  final request = state.mRequest;
 
-                    if (state.mRequest.id != null && state.step >= 3) {
-                      context.read<CarsCubit>().update();
-                      return;
-                    }
-                    if (state.step >= 4) {
-                      context.read<CarsCubit>().create();
-                      return;
-                    }
+                  if (state.mRequest.id != null && state.step >= 3) {
+                    context.read<CarsCubit>().update();
+                    return;
+                  }
+                  if (state.step >= 4) {
+                    context.read<CarsCubit>().create();
+                    return;
+                  }
 
-                    if (!AddCarValidator.validateStep(context, state.step, request)) return;
+                  if (!AddCarValidator.validateStep(context, state.step, request)) return;
 
-                    context.read<CarsCubit>().next();
-                  },
-                  // loading: state.loading,
-                  text: state.step == 4 ? S.of(context).pay : S.of(context).continueTo,
-                ),
+                  context.read<CarsCubit>().next();
+                },
+                // loading: state.loading,
+                text: state.step == 4 ? S.of(context).pay : S.of(context).continueTo,
               ),
-              body: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 37.0).r,
-                    child: CustomStepperWidget(
-                      activeStep: state.step,
-                      onStepReached: (p0) {
-                        final request = state.mRequest;
-                        if (p0 > state.step) {
-                          for (int i = state.step; i < p0; i++) {
-                            if (!AddCarValidator.validateStep(context, i, request)) return;
-                          }
+            ),
+            body: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 37.0).r,
+                  child: CustomStepperWidget(
+                    activeStep: state.step,
+                    onStepReached: (p0) {
+                      final request = state.mRequest;
+                      if (p0 > state.step) {
+                        for (int i = state.step; i < p0; i++) {
+                          if (!AddCarValidator.validateStep(context, i, request)) return;
                         }
-                        context.read<CarsCubit>().next(step: p0);
-                      },
-                      steps: [
-                        customStepWidget(
-                          title: S.of(context).inspection,
-                          isCompleted: state.step > 0,
-                          isSelected: state.step == 0,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).annual,
-                          isCompleted: state.step > 1,
-                          isSelected: state.step == 1,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).preview,
-                          isCompleted: state.step > 2,
-                          isSelected: state.step == 2,
-                        ),
-                        customStepWidget(
-                          title: S.of(context).carImages,
-                          isCompleted: state.step > 3,
-                          isSelected: state.step == 3,
-                        ),
-                        if (state.mRequest.id == null)
-                          customStepWidget(
-                            title: S.of(context).payment,
-                            isCompleted: state.step > 4,
-                            isSelected: state.step == 4,
-                          ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: switch (state.step) {
-                      0 => CarInspection(),
-                      1 => AnnualInfo(),
-                      2 => CarPreview(),
-                      3 => CarInspectionScreen(),
-                      4 => PaymentScreen(),
-                      int() => SizedBox(),
+                      }
+                      context.read<CarsCubit>().next(step: p0);
                     },
+                    steps: [
+                      customStepWidget(
+                        title: S.of(context).inspection,
+                        isCompleted: state.step > 0,
+                        isSelected: state.step == 0,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).annual,
+                        isCompleted: state.step > 1,
+                        isSelected: state.step == 1,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).preview,
+                        isCompleted: state.step > 2,
+                        isSelected: state.step == 2,
+                      ),
+                      customStepWidget(
+                        title: S.of(context).carImages,
+                        isCompleted: state.step > 3,
+                        isSelected: state.step == 3,
+                      ),
+                      if (state.mRequest.id == null)
+                        customStepWidget(
+                          title: S.of(context).payment,
+                          isCompleted: state.step > 4,
+                          isSelected: state.step == 4,
+                        ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Expanded(
+                  child: switch (state.step) {
+                    0 => CarInspection(),
+                    1 => AnnualInfo(),
+                    2 => CarPreview(),
+                    3 => CarInspectionScreen(),
+                    4 => PaymentScreen(),
+                    int() => SizedBox(),
+                  },
+                ),
+              ],
             ),
           );
         },

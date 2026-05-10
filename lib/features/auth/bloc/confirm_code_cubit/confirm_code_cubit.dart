@@ -19,7 +19,7 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
   ConfirmCodeCubit() : super(ConfirmCodeInitial.initial());
 
   Future<void> confirmCode() async {
-    emit(state.copyWith(statuses: CubitStatuses.loading));
+    emit(state.copyWith(statuses: .loading));
 
     final pair = await _confirmCodeApi();
 
@@ -51,7 +51,7 @@ class ConfirmCodeCubit extends Cubit<ConfirmCodeInitial> {
   }
 
   Future<void> confirmPine() async {
-    emit(state.copyWith(statuses: CubitStatuses.loading));
+    emit(state.copyWith(statuses: .loading));
 
     final pair = await _confirmPineApi();
 

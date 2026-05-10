@@ -20,7 +20,7 @@ class AddsSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AdssCubit, AdssInitial>(
       builder: (context, state) {
-        loggerObject.w(state.result.where((element) => element.type == 'slider').length);
+
         final list = type == null ? state.result : state.result.where((e) => e.type == type!.name);
         if (list.isEmpty) return 0.0.verticalSpace;
         if (state.loading) {

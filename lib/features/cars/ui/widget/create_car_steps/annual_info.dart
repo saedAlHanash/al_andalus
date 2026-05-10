@@ -34,7 +34,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
   void initState() {
     expiryStartDate.text = context.read<CarsCubit>().state.mRequest.expiryStartDate?.formatDate ?? '';
     expiryEndDate.text = context.read<CarsCubit>().state.mRequest.expiryEndDate?.formatDate ?? '';
-    manufactureYear.text = context.read<CarsCubit>().state.mRequest.manufactureYear?.formatDate ?? '';
+    manufactureYear.text = context.read<CarsCubit>().state.mRequest.manufactureYear?.year.toString() ?? '';
     super.initState();
   }
 
@@ -55,17 +55,29 @@ class _AnnualInfoState extends State<AnnualInfo> {
               enable: false,
               icon: Assets.iconsCalendar,
               onTap: () async {
-                final datePicked = await showDatePicker(
+                showDialog(
                   context: context,
-                  initialDate: state.mRequest.manufactureYear,
-                  firstDate: DateTime(1900),
-                  lastDate: APIService().serverTime,
-                  initialDatePickerMode: DatePickerMode.year,
-                  initialEntryMode: DatePickerEntryMode.calendarOnly,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: DrawableText(text: S.of(context).manufactureYear),
+                      content: SizedBox(
+                        width: 300.w,
+                        height: 300.h,
+                        child: YearPicker(
+                          firstDate: DateTime(1900),
+                          lastDate: APIService().serverTime,
+                          selectedDate: state.mRequest.manufactureYear ?? APIService().serverTime,
+                          onChanged: (DateTime dateTime) {
+                            state.mRequest.manufactureYear = dateTime;
+                            manufactureYear.text = dateTime.year.toString();
+                            Navigator.pop(context);
+                            setState(() {});
+                          },
+                        ),
+                      ),
+                    );
+                  },
                 );
-                if (datePicked == null) return;
-                state.mRequest.manufactureYear = datePicked;
-                manufactureYear.text = (state.mRequest.manufactureYear?.formatDate) ?? '';
               },
               controller: manufactureYear,
               labelText: S.of(context).manufactureYear,
@@ -104,7 +116,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.chassisNumber,
                     labelText: S.of(context).chassisNumber,
                     hint: S.of(context).chassisNumber,
-                    keyBordType: .number,
+
                   ),
                 ),
                 Expanded(
@@ -176,7 +188,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                       expiryStartDate.text = (state.mRequest.expiryStartDate?.formatDate) ?? '';
                     },
                     controller: expiryStartDate,
-                    labelText: S.of(context).from,
+                    labelText: S.of(context).releaseDate,
                     hint: S.of(context).enterExpiryDate,
                   ),
                 ),
@@ -198,7 +210,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                       expiryEndDate.text = (state.mRequest.expiryEndDate?.formatDate) ?? '';
                     },
                     controller: expiryEndDate,
-                    labelText: S.of(context).to,
+                    labelText: S.of(context).expiryDate,
                     hint: S.of(context).enterExpiryDate,
                   ),
                 ),

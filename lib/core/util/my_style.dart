@@ -122,7 +122,7 @@ class MyStyle {
   static BoxDecoration get outlineBorder => BoxDecoration(
     border: Border.all(color: AppColorManager.mainColor),
     borderRadius: BorderRadius.circular(12.0.r),
-    color: AppColorManager.lightGray,
+    color: AppColorManager.cardColor,
   );
 
   static var lightShadowMainColor = [

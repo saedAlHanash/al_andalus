@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
+import 'package:al_andalus/features/auth/ui/widget/slider.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,37 +23,14 @@ class DonePage extends StatelessWidget {
       appBar: AppBarWidget(titleText: S.of(context).signUp),
       body: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 37.0).r,
-            child: CustomStepperWidget(
-              activeStep: 3,
-
-              steps: [
-                customStepWidget(
-                  title: S.of(context).info,
-                  isCompleted: true,
-                ),
-                customStepWidget(
-                  title: S.of(context).drivingLicense,
-                  isCompleted: true,
-                ),
-                customStepWidget(
-                  title: S.of(context).phoneNumber,
-                  isCompleted: true,
-                ),
-                customStepWidget(
-                  title: S.of(context).verificationCode,
-                  isCompleted: true,
-                ),
-              ],
-            ),
-          ),
+          SliderSignup(step: 5),
           Lottie.asset(
             Assets.imagesDone,
             frameRate: .composition,
             filterQuality: .medium,
             width: 1.0.sw,
             height: 0.4.sh,
+            repeat: false,
             alignment: .bottomCenter,
           ),
           10.0.verticalSpace,
@@ -65,7 +43,8 @@ class DonePage extends StatelessWidget {
           10.0.verticalSpace,
           DrawableText(
             text: S.of(context).yourAccountHasBeenSuccessfullyCreatedYouWillNowBe,
-
+            size: 18.0.sp,
+            padding: EdgeInsets.symmetric(horizontal: 50.0).r,
             textAlign: TextAlign.center,
           ),
           Spacer(),

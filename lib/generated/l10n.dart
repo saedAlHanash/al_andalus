@@ -184,6 +184,11 @@ class S {
     return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
   }
 
+  /// `Back`
+  String get back {
+    return Intl.message('Back', name: 'back', desc: '', args: []);
+  }
+
   /// `ascending`
   String get ascending {
     return Intl.message('ascending', name: 'ascending', desc: '', args: []);
@@ -749,10 +754,10 @@ class S {
     );
   }
 
-  /// `Enter expiry date`
+  /// `expiry date`
   String get enterExpiryDate {
     return Intl.message(
-      'Enter expiry date',
+      'expiry date',
       name: 'enterExpiryDate',
       desc: '',
       args: [],
@@ -1964,10 +1969,10 @@ class S {
     );
   }
 
-  /// `Please take an engine image`
+  /// `Please take a back side image`
   String get pleaseTakeEngineImage {
     return Intl.message(
-      'Please take an engine image',
+      'Please take a back side image',
       name: 'pleaseTakeEngineImage',
       desc: '',
       args: [],
@@ -2739,10 +2744,10 @@ class S {
     );
   }
 
-  /// `Your account has been successfully created. You will now be redirected to the home screen.`
+  /// `Your account has been successfully created.`
   String get yourAccountHasBeenSuccessfullyCreatedYouWillNowBe {
     return Intl.message(
-      'Your account has been successfully created. You will now be redirected to the home screen.',
+      'Your account has been successfully created.',
       name: 'yourAccountHasBeenSuccessfullyCreatedYouWillNowBe',
       desc: '',
       args: [],
@@ -3182,6 +3187,126 @@ class S {
   /// `Font`
   String get font {
     return Intl.message('Font', name: 'font', desc: '', args: []);
+  }
+
+  /// `From gallery`
+  String get fromGallery {
+    return Intl.message(
+      'From gallery',
+      name: 'fromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a secret code`
+  String get pleaseEnterASecretCode {
+    return Intl.message(
+      'Please enter a secret code',
+      name: 'pleaseEnterASecretCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Release date`
+  String get releaseDate {
+    return Intl.message(
+      'Release date',
+      name: 'releaseDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry, this quantity is not available currently`
+  String get quantityNotAvailable {
+    return Intl.message(
+      'Sorry, this quantity is not available currently',
+      name: 'quantityNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message('Try Again', name: 'tryAgain', desc: '', args: []);
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Done successfully`
+  String get doneSuccessfully {
+    return Intl.message(
+      'Done successfully',
+      name: 'doneSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New update available`
+  String get newUpdateAvailable {
+    return Intl.message(
+      'New update available',
+      name: 'newUpdateAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A new version of the app is available, please update to continue`
+  String get newVersionAvailable {
+    return Intl.message(
+      'A new version of the app is available, please update to continue',
+      name: 'newVersionAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get updateApp {
+    return Intl.message('Update', name: 'updateApp', desc: '', args: []);
+  }
+
+  /// `License Number`
+  String get licenseNumber {
+    return Intl.message(
+      'License Number',
+      name: 'licenseNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Confirm logout`
+  String get confirmLogout {
+    return Intl.message(
+      'Confirm logout',
+      name: 'confirmLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a 6-digit code`
+  String get enterA6digitCode {
+    return Intl.message(
+      'Enter a 6-digit code',
+      name: 'enterA6digitCode',
+      desc: '',
+      args: [],
+    );
   }
 }
 

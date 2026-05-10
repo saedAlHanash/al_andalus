@@ -103,8 +103,8 @@ class AppProvider {
     if (withDialog) {
       NoteMessage.showCheckDialog(
         ctx!,
-        text: 'تأكيد تسجيل الخروج',
-        textButton: 'تسجيل الخروج',
+        text: S().confirmLogout,
+        textButton: S().logout,
         image: ImageMultiType(url: Assets.imagesLogo, height: 100.0.r, width: 100.0.r),
         onConfirm: (confirm) async {
           if (!confirm) return;

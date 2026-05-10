@@ -86,7 +86,7 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
                 initialValue: state.mRequest.licenseNumber,
                 labelText: S.of(context).idCardNumber,
                 hint: S.of(context).idCardNumber,
-                keyBordType: TextInputType.number,
+                keyBordType: .number,
               ),
               Container(
                 padding: EdgeInsets.only(bottom: 20.0.h),
@@ -158,7 +158,7 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
               Container(
                 padding: const EdgeInsets.all(14.62),
                 decoration: ShapeDecoration(
-                  color: Colors.white,
+                  color: AppColorManager.cardColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9.75),
                   ),

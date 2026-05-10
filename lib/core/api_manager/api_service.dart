@@ -145,14 +145,15 @@ class APIService {
     return response;
   }
 
-  Future<String> uploadFile({required UploadFile file}) async {
+  Future<String?> uploadFile({required UploadFile file}) async {
     if (!file.remoteId.isBlank) return file.remoteId!;
     final f = await uploadMultiPart(
       url: 'upload-media',
       files: [file..nameField = 'media'],
     );
-
-    return (f.jsonBody['data']?['media_id'] ?? 0).toString();
+    final id = f.jsonBody['data']?['media_id'];
+    if (id == null) return null;
+    return id.toString();
   }
 }
 

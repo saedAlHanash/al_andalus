@@ -239,12 +239,12 @@ extension StringHelper on String? {
   }
 }
 
-final oCcy = NumberFormat("#,###", "en_US");
+final oCcy = NumberFormat("#,#", "en_US");
 
 extension MaxInt on num {
   int get max => 2147483647;
 
-  String get formatPrice => oCcy.format(this);
+  String get formatPrice => this.toString(); //oCcy.format(this);
 
   Widget get counterWidget => Container(
     height: 40.0.r,

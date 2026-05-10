@@ -61,6 +61,7 @@ ThemeData get lightTheme => ThemeData(
     centerTitle: true,
     elevation: 0,
     backgroundColor: AppColorManager.lightGray,
+    surfaceTintColor: AppColorManager.lightGray,
     iconTheme: IconThemeData(color: AppColorManager.mainColor),
     titleTextStyle: TextStyle(
       color: Color(0xFF132332),
@@ -192,6 +193,7 @@ ThemeData get darkTheme => ThemeData(
     centerTitle: true,
     elevation: 0,
     backgroundColor: AppColorManager.darkColor,
+    surfaceTintColor: AppColorManager.darkColor,
     iconTheme: IconThemeData(color: AppColorManager.secondColor),
     titleTextStyle: TextStyle(
       color: AppColorManager.white,

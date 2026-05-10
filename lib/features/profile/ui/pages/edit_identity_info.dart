@@ -76,7 +76,7 @@ class _EditIdentityInfoState extends State<EditIdentityInfo> {
                 initialValue: state.mRequest.identityId,
                 labelText: S.of(context).idCardNumber,
                 hint: S.of(context).idCardNumber,
-                keyBordType: TextInputType.number,
+                keyBordType: .number,
               ),
               MyTextFormOutLineWidget(
                 onChanged: (p0) => state.mRequest.name = p0,
@@ -140,7 +140,7 @@ class _EditIdentityInfoState extends State<EditIdentityInfo> {
               Container(
                 padding: const EdgeInsets.all(14.62),
                 decoration: ShapeDecoration(
-                  color: Colors.white,
+                  color: AppColorManager.cardColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9.75),
                   ),

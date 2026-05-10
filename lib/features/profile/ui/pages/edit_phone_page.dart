@@ -9,7 +9,9 @@ import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../bloc/update_profile_cubit/update_profile_cubit.dart';
@@ -120,6 +122,23 @@ class _EditPhonePageState extends State<EditPhonePage> {
                       validator: (p0) => p0.validateEmpty,
                       label: S.of(context).phoneNumber,
                       hint: S.of(context).phoneNumber,
+                      iconWidgetLift: Row(
+                        mainAxisSize: .min,
+                        children: [
+                          15.0.horizontalSpace,
+                          DrawableText(
+                            text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
+                            fontWeight: .bold,
+                          ),
+                          15.0.horizontalSpace,
+                          ImageMultiType(
+                            url: Assets.iconsFlagOfIraq,
+                            height: 24.h,
+                            width: 24.w,
+                          ),
+                          15.0.horizontalSpace,
+                        ],
+                      ),
                       keyBordType: .phone,
                       onChanged: (val) => updateCubit.setPhone = val,
                     ),

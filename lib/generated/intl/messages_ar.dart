@@ -77,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "أرفق تقرير الشرطة:",
     ),
+    "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء العملية من قبل المستخدم",
@@ -146,7 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "carName": MessageLookupByLibrary.simpleMessage("اسم السيارة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "changeAccount": MessageLookupByLibrary.simpleMessage("تغيير الحساب"),
-    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير كلمة السر"),
+    "changePasscode": MessageLookupByLibrary.simpleMessage("تغيير كود السر"),
     "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "chassisNumber": MessageLookupByLibrary.simpleMessage("رقم الشاصي"),
     "chooseEngineCapacity": MessageLookupByLibrary.simpleMessage(
@@ -162,11 +163,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
-    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كلمة السر"),
+    "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كود السر"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",
     ),
-    "congrats": MessageLookupByLibrary.simpleMessage("تهانينا !"),
+    "congrats": MessageLookupByLibrary.simpleMessage("مبروك !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
@@ -198,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "donePick": MessageLookupByLibrary.simpleMessage("تم الاختيار"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
+    "doneSuccessfully": MessageLookupByLibrary.simpleMessage("تم بنجاح"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "تم إعادة الإرسال",
     ),
@@ -207,6 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "drivingLicenseInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات إجازة السوق",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editPhone": MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
     "electronicCard": MessageLookupByLibrary.simpleMessage("بطاقة الكترونية"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -219,13 +222,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكد أن النص واضح وقابل للقراءة \n\n يرجى تجنب الوهج أو الانعكاسات الضوئية على الهوية و أبقِ الخلفية خالية من أي مشتتات",
     ),
     "enter": MessageLookupByLibrary.simpleMessage("أدخل"),
+    "enterA6digitCode": MessageLookupByLibrary.simpleMessage(
+      "أدخل الرمز المكون من 6 أرقام",
+    ),
     "enterCarValue": MessageLookupByLibrary.simpleMessage("أدخل قيمة السيارة"),
     "enterCredentialsToReEnableBiometric": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بيانات الدخول لإعادة تفعيل الميزة:",
     ),
-    "enterExpiryDate": MessageLookupByLibrary.simpleMessage(
-      "ادخل تاريخ الصلاحية",
-    ),
+    "enterExpiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الصلاحية"),
     "enterOTP": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز التفعيل الخاص بك هنا.",
     ),
@@ -248,7 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل أنت متأكد من الخروج من عملية إنشاء الحساب؟",
     ),
     "expired": MessageLookupByLibrary.simpleMessage("منتهي"),
-    "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+    "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ النفاد"),
     "exteriorBody": MessageLookupByLibrary.simpleMessage("الهيكل الخارجي"),
     "fasterLoginMethod": MessageLookupByLibrary.simpleMessage(
       "طريقة أسرع لتسجيل الدخول",
@@ -264,6 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
     "from": MessageLookupByLibrary.simpleMessage("من"),
+    "fromGallery": MessageLookupByLibrary.simpleMessage("من معرض الصور"),
     "front": MessageLookupByLibrary.simpleMessage("الأمام"),
     "frontTires": MessageLookupByLibrary.simpleMessage("الإطارات الأمامية"),
     "fuelType": MessageLookupByLibrary.simpleMessage("نوع الوقود"),
@@ -315,6 +320,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "latest": MessageLookupByLibrary.simpleMessage("الأحدث"),
     "left": MessageLookupByLibrary.simpleMessage("اليسار"),
+    "licenseNumber": MessageLookupByLibrary.simpleMessage("رقم الإجازة"),
     "licenseType": MessageLookupByLibrary.simpleMessage("نوع الإجازة"),
     "light": MessageLookupByLibrary.simpleMessage("فاتح"),
     "loadMore": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
@@ -360,6 +366,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "needPay": MessageLookupByLibrary.simpleMessage("الدفع مطلوب"),
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "newUpdateAvailable": MessageLookupByLibrary.simpleMessage(
+      "تحديث جديد متاح",
+    ),
+    "newVersionAvailable": MessageLookupByLibrary.simpleMessage(
+      "اصدار جديد من التطبيق يجب تحديث التطبيق للمتابعة",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "noInternet": MessageLookupByLibrary.simpleMessage(
@@ -370,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noteIsRequired": m0,
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "ok": MessageLookupByLibrary.simpleMessage("موافق"),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "oops": MessageLookupByLibrary.simpleMessage("حدث خطأ ما!"),
     "ourService": MessageLookupByLibrary.simpleMessage("خدماتنا"),
@@ -407,7 +420,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneData": MessageLookupByLibrary.simpleMessage("بيانات الهاتف"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
-    "pinCode": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+    "pinCode": MessageLookupByLibrary.simpleMessage("كود السر"),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -434,6 +447,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pleaseCompleteAllInspectionFields": MessageLookupByLibrary.simpleMessage(
       "يرجى تحديد حالة جميع أجزاء المركبة",
+    ),
+    "pleaseEnterASecretCode": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال الرمز السري",
     ),
     "pleaseEnterAddress": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال محل السكن",
@@ -502,7 +518,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ النهاية",
     ),
     "pleaseSelectExpiryDate": MessageLookupByLibrary.simpleMessage(
-      "يرجى اختيار تاريخ الانتهاء",
+      "يرجى اختيار تاريخ النفاد",
     ),
     "pleaseSelectFuelType": MessageLookupByLibrary.simpleMessage(
       "يرجى إختيار نوع الوقود",
@@ -520,7 +536,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إختيار تاريخ البداية",
     ),
     "pleaseSendThePinCode": MessageLookupByLibrary.simpleMessage(
-      "يرجى إرسال كلمة السر",
+      "يرجى إرسال كود السر",
     ),
     "pleaseSpecifyAccidentDetails": MessageLookupByLibrary.simpleMessage(
       "يرجى ذكر تفاصيل الحادث الذي جرى",
@@ -529,7 +545,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى ذكر موقع الحادث",
     ),
     "pleaseTakeEngineImage": MessageLookupByLibrary.simpleMessage(
-      "يرجى التقاط صورة لمحرك السيارة",
+      "يرجى التقاط صورة للجزء الخلفي من السيارة",
     ),
     "pleaseTakeFrontImage": MessageLookupByLibrary.simpleMessage(
       "يرجى التقاط صورة الجزء الأمامي",
@@ -579,6 +595,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "public": MessageLookupByLibrary.simpleMessage("عمومي"),
     "qiCard": MessageLookupByLibrary.simpleMessage("كي كارد"),
     "qrCode": MessageLookupByLibrary.simpleMessage("رمز QR"),
+    "quantityNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "عذرا هذه الكمية غير متوفرة حاليا",
+    ),
     "radioAndType": MessageLookupByLibrary.simpleMessage("الراديو و نوعه"),
     "radioAntenna": MessageLookupByLibrary.simpleMessage("هوائي الراديو"),
     "reUpload": MessageLookupByLibrary.simpleMessage("إعادة الرفع"),
@@ -592,6 +611,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "مرفوض من المساح",
     ),
+    "releaseDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "rememberPassword": MessageLookupByLibrary.simpleMessage(
       "أتذكر كلمة المرور",
@@ -643,7 +663,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
       "قم بتحديد طريقة الدفع المرغوبة",
     ),
-    "sendCode": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+    "sendCode": MessageLookupByLibrary.simpleMessage("إدخال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
     "spareTire": MessageLookupByLibrary.simpleMessage("الإطار الإحتياط"),
@@ -693,12 +713,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مجدداً"),
     "underReview": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),
     "unified": MessageLookupByLibrary.simpleMessage("الموحدة"),
     "unifiedCardInfo": MessageLookupByLibrary.simpleMessage(
       "معلومات البطاقة الموحدة",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "updateApp": MessageLookupByLibrary.simpleMessage("تحديث"),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage("رفع من الملفات"),
     "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
       "قم برفع تقرير فحص السيارة",

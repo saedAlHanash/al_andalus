@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
@@ -13,7 +14,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../../notification/bloc/all_notification_cubit/all_notification_cubit.dart';
@@ -103,9 +106,28 @@ class _LoginPageState extends State<LoginPage> {
                         autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
                         validator: (p0) => p0.validateEmpty,
                         hint: S.of(context).phoneNumber,
+
                         initialValue: loginCubit.state.mRequest.phone,
-                        keyBordType: TextInputType.phone,
+                        keyBordType: .phone,
+                        textAlign: .end,
                         onChanged: (val) => loginCubit.setPhone = val,
+                        iconWidgetLift: Row(
+                          mainAxisSize: .min,
+                          children: [
+                            15.0.horizontalSpace,
+                            DrawableText(
+                              text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
+                              fontWeight: .bold,
+                            ),
+                            15.0.horizontalSpace,
+                            ImageMultiType(
+                              url: Assets.iconsFlagOfIraq,
+                              height: 24.h,
+                              width: 24.w,
+                            ),
+                            15.0.horizontalSpace,
+                          ],
+                        ),
                       ),
                       MyTextFormOutLineWidget(
                         autofillHints: const [AutofillHints.password],

@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/refresh_widget/refresh_widget.dart';
@@ -31,17 +32,19 @@ class InsurancePage extends StatelessWidget {
     required this.id,
     required this.estimatedPrice,
     required this.cylindersCount,
+    required this.type,
   });
 
   final String id;
   final double estimatedPrice;
   final int cylindersCount;
+  final InsuranceType type;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
-        final list = state.result.where((e) => e.type == .private).toList()
+        final list = state.result.where((e) => e.type == type).toList()
           ..sort((a, b) => a.level.index.compareTo(b.level.index));
         return Scaffold(
           appBar: AppBarWidget(
@@ -130,39 +133,48 @@ class _Item extends StatelessWidget {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(24.0).r),
               boxShadow: MyStyle.allShadow,
             ),
+            padding: EdgeInsets.all(15.0).r,
             child: Column(
-              children:
-                  item.features.map((feature) {
-                    return ListTile(
-                          leading: ImageMultiType(
-                            url: Assets.iconsDoneStep,
-                            height: 20.0.r,
-                            width: 20.0.r,
-                          ),
-                          title: DrawableText(text: feature.title),
-                        )
-                        as Widget;
-                  }).toList()..addAll(
-                    [
-                      Spacer(),
-                      TextButton(
-                        onPressed: () {
-                          context.pushNamed(
-                            RouteName.pdf,
-                            queryParameters: {
-                              'url': item.descriptionFile,
-                              'title': S.of(context).packageDetails,
-                            },
-                          );
-                        },
-                        child: DrawableText(
-                          text: S.of(context).knowMoreDetails,
-                          textDecoration: .underline,
-                        ),
-                      ),
-                      20.0.verticalSpace,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      ...item.features.map((feature) {
+                        return DrawableText(
+                              text: feature.title,
+                              matchParent: true,
+                              padding: EdgeInsets.symmetric(vertical: 7.0),
+                              drawableStart: ImageMultiType(
+                                url: Assets.iconsDoneStep,
+                                height: 20.0.r,
+                                width: 20.0.r,
+                              ),
+                              drawablePadding: 10.0,
+                            )
+                            as Widget;
+                      }).toList(),
                     ],
                   ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.pushNamed(
+                      RouteName.pdf,
+                      queryParameters: {
+                        'url': item.descriptionFile,
+                        'title': S.of(context).packageDetails,
+                      },
+                    );
+                  },
+                  child: DrawableText(
+                    text: S.of(context).knowMoreDetails,
+                    textDecoration: .underline,
+                  ),
+                ),
+                10.0.verticalSpace,
+              ],
             ),
           ),
         ),

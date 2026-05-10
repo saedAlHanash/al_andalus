@@ -46,14 +46,14 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               100.0.verticalSpace,
               MyTextFormOutLineWidget(
                 textDirection: TextDirection.ltr,
-                keyBordType: TextInputType.number,
+                keyBordType: .number,
                 label: S.of(context).oldPassword,
                 onChanged: (val) => request.oldPass = val,
               ),
               20.0.verticalSpace,
               MyTextFormOutLineWidget(
                 textDirection: TextDirection.ltr,
-                keyBordType: TextInputType.number,
+                keyBordType: .number,
                 label: S.of(context).newPassword,
                 onChanged: (val) => request.newPass = val,
               ),

@@ -307,8 +307,8 @@ class ItemMenu extends StatelessWidget {
           ListTile(
             tileColor: Colors.transparent,
             leading: iconData != null
-                ? Icon(iconData, color: AppColorManager.mainColor)
-                : (leading == null ? null : ImageMultiType(url: leading)),
+                ? Icon(iconData, color: AppColorManager.mainColorDynamic)
+                : (leading == null ? null : ImageMultiType(url: leading,color: AppColorManager.mainColorDynamic)),
             onTap: () => onTap?.call(),
             title: DrawableText(text: name, fontWeight: FontWeight.bold),
             minLeadingWidth: 0,

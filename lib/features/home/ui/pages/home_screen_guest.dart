@@ -20,38 +20,32 @@ class GuestHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: RefreshWidget(
-        isLoading: false,
-        onRefresh: () {
-          context.read<AdssCubit>().getData(newData: true);
-        },
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0).r,
-          children: [
-            HiWidget(),
-            AddsSlider(type: AdsType.slider, height: 150.0),
-            20.0.verticalSpace,
-            DrawableText(
-              text: S.of(context).firstCarInsurancePlatformInIraq,
-              matchParent: true,
-              textAlign: .center,
-              fontWeight: .bold,
-              size: 18.0.sp,
-            ),
-            DrawableText(
-              text: S.of(context).insuranceIsEasierForBetterLife,
-              matchParent: true,
-              color: Colors.grey,
-              textAlign: .center,
-            ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 24.0).r,
+        children: [
+          HiWidget(),
+          AddsSlider(type: AdsType.slider, height: 150.0),
+          20.0.verticalSpace,
+          DrawableText(
+            text: S.of(context).firstCarInsurancePlatformInIraq,
+            matchParent: true,
+            textAlign: .center,
+            fontWeight: .bold,
+            size: 18.0.sp,
+          ),
+          DrawableText(
+            text: S.of(context).insuranceIsEasierForBetterLife,
+            matchParent: true,
+            color: Colors.grey,
+            textAlign: .center,
+          ),
 
-            20.0.verticalSpace,
-            ListInsurances(),
-            20.0.verticalSpace,
-            AddsSlider(type: AdsType.banner, height: 90.0),
-            150.0.verticalSpace,
-          ],
-        ),
+          20.0.verticalSpace,
+          ListInsurances(),
+          20.0.verticalSpace,
+          AddsSlider(type: AdsType.banner, height: 90.0),
+          150.0.verticalSpace,
+        ],
       ),
     );
   }

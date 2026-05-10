@@ -1,10 +1,12 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
+import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
@@ -15,21 +17,21 @@ class ItemInsurance extends StatelessWidget {
 
   final InsurancePackage insurance;
   final Function()? onTapInfo;
+
   @override
   Widget build(BuildContext context) {
-    final tagText = insurance.tag.isEmpty?insurance.level.name: insurance.tag;
-
+    final tagText = insurance.tag.isEmpty ? insurance.level.name : insurance.tag;
 
     return Container(
       decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  insurance.level.color,
-                  insurance.level.color.withValues(alpha: 0.7),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(24.0.r),
-            ),
+        gradient: LinearGradient(
+          colors: [
+            insurance.level.color,
+            insurance.level.color.withValues(alpha: 0.7),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(24.0.r),
+      ),
       padding: EdgeInsets.only(top: 4.0, right: 4, left: 4, bottom: 4).r,
 
       child: Column(
@@ -55,7 +57,7 @@ class ItemInsurance extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 15.h),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: AppColorManager.cardColor,
                       borderRadius: BorderRadius.circular(20.0.r),
                       border: Border.all(color: Colors.grey.shade200),
                       boxShadow: [
@@ -72,8 +74,26 @@ class ItemInsurance extends StatelessWidget {
                         DrawableText(
                           text: insurance.title,
                           size: 20.sp,
+
+                          drawableStart: ImageMultiType(
+                            url: insurance.type.icon,
+                            color: insurance.type.color,
+                            height: 24.dg,
+                            width: 24.dg,
+                          ),
+                          drawablePadding: 5.0,
+                          matchParent: true,
                           fontWeight: FontWeight.bold,
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
+                          drawableEnd: Container(
+                            decoration: MyStyle.roundBoxGray,
+                            padding: EdgeInsets.all(5.0),
+
+                            child: DrawableText(
+                              text: insurance.type.name,
+                              size: 11.0.sp,
+                            ),
+                          ),
                         ),
                         10.verticalSpace,
                         DrawableText(
@@ -87,23 +107,26 @@ class ItemInsurance extends StatelessWidget {
                           onTap: () => onTapInfo?.call(),
                           height: 35.0.h,
                           text: S.of(context).knowMore,
-                          color: insurance.level.color ,
+                          color: insurance.level.color,
                         ),
                       ],
                     ),
                   ),
-
+                  10.0.verticalSpace,
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         children: insurance.features.map((feature) {
-                          return ListTile(
-                            leading: ImageMultiType(
+                          return DrawableText(
+                            text: feature.title,
+                            matchParent: true,
+                            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 12.0),
+                            drawableStart: ImageMultiType(
                               url: Assets.iconsDoneStep,
                               height: 20.0.r,
                               width: 20.0.r,
                             ),
-                            title: DrawableText(text: feature.title),
+                            drawablePadding: 5.0,
                           );
                         }).toList(),
                       ),

@@ -53,7 +53,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ar');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'العربية'),
+                    title: DrawableText(text: S.of(context).arabic),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -63,7 +63,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ur');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'كوردی'),
+                    title: DrawableText(text: S.of(context).kurdish),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -73,7 +73,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'en');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: 'English'),
+                    title: DrawableText(text: S.of(context).english),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -153,7 +153,7 @@ void showFontDialog(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           children: [
             _Header(),
-            _Title(title: 'الخط'),
+            _Title(title: S.of(context).font),
             Container(
               color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
@@ -214,7 +214,6 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
-      var iconSize = 25.0.dg;
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
         child: BlocBuilder<SupportInfoCubit, SupportInfoInitial>(
@@ -228,49 +227,25 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
                   child: Column(
                     children: [
                       _Title(title: S.of(context).technicalSupport),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.sendEmail(email: state.result.email);
-                          },
-                          title: DrawableText(text: state.result.email),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsEmail,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.sendWhatsApp(phone: state.result.whatsApp);
-                          },
-                          title: DrawableText(text: state.result.whatsApp),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsWhatsapp,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: MyStyle.outlineBorder,
-                        margin: EdgeInsets.symmetric(horizontal: 24.0, vertical: 5.0).r,
-                        child: ListTile(
-                          onTap: () {
-                            LauncherHelper.callPhone(phone: state.result.phone);
-                          },
-                          title: DrawableText(text: state.result.phone),
-                          trailing: ImageMultiType(
-                            url: Assets.iconsPhone,
-                            height: iconSize,
-                            width: iconSize,
-                          ),
+                      20.0.verticalSpace,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
+                        child: Row(
+                          spacing: 12.0.w,
+                          children: [
+                            _SupportCard(
+                              onTap: () => LauncherHelper.sendEmail(email: state.result.email),
+                              icon: Assets.iconsEmail,
+                            ),
+                            _SupportCard(
+                              onTap: () => LauncherHelper.sendWhatsApp(phone: state.result.whatsApp),
+                              icon: Assets.iconsWhatsapp,
+                            ),
+                            _SupportCard(
+                              onTap: () => LauncherHelper.callPhone(phone: state.result.phone),
+                              icon: Assets.iconsPhone,
+                            ),
+                          ],
                         ),
                       ),
                       30.0.verticalSpace,
@@ -289,7 +264,7 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
 void showCalculationPrice(
   BuildContext context,
   InsurancePackage? insurancePackage,
-  Function(Map<String, dynamic> queryParameters) onTap,
+  Function(Map<String, String> queryParameters) onTap,
 ) {
   var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
   var p = 0.0;
@@ -326,7 +301,9 @@ void showCalculationPrice(
                             SpinnerItem(name: '8', id: 8),
                           ],
                       onSelected: (value, i, isSelected) {
-                        cylindersCount = value.id;
+                        cylindersCount =
+                            int.tryParse(value.name) ??
+                            (value.item is Cylinder ? int.parse((value.item as Cylinder).cylinders) : value.id);
                       },
                       isRadio: true,
                       buttonBuilder: (selected, value, context) {
@@ -350,7 +327,8 @@ void showCalculationPrice(
                       onChanged: (p0) {
                         p = double.parse(p0);
                       },
-                      keyBordType: TextInputType.number,
+                      inputFormatters: [IntInputFormatter()],
+                      keyBordType: .number,
                       labelText: S.of(context).enterCarValue,
                       hint: '0.0',
                     ),
@@ -359,7 +337,7 @@ void showCalculationPrice(
                       onTap: () {
                         onTap.call(
                           {
-                            'id': insurancePackage?.id.toString(),
+                            'id': insurancePackage?.id.toString() ?? "",
                             'price': p.toString(),
                             'cylindersCount': cylindersCount.toString(),
                             'json': jsonEncode(insurancePackage?.toJson()),
@@ -470,11 +448,11 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                   children: [
                     Expanded(
                       child: MyButton(
-                        text: S.of(context).uploadFromFiles,
+                        text: S.of(context).fromGallery,
                         icon: ImageMultiType(url: Icons.file_upload_outlined),
                         onTap: () {
                           Navigator.pop(ctx);
-                          pickAndUpload().then(
+                          pickImage().then(
                             (value) async {
                               if (value == null || !context.mounted) return;
                               final result = await showConfirmDialog(context, value);
@@ -545,7 +523,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                   icon: ImageMultiType(url: Icons.file_upload_outlined),
                   onTap: () {
                     Navigator.pop(ctx);
-                    pickAndUpload(allowedExtensions: ['pdf', 'doc', 'PDF', 'DOC']).then(
+                    pickAndUpload(allowedExtensions: ['pdf', 'PDF']).then(
                       (value) async {
                         if (value == null || !context.mounted) return;
                         onConfirm.call(value);
@@ -817,7 +795,7 @@ Future<dynamic> showConfirmDialog(BuildContext context, UploadFile file) async {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () => Navigator.pop(ctx, false),
-                    child: DrawableText(text: S.of(context).cancel, color: Colors.white),
+                    child: DrawableText(text: S.of(context).back, color: Colors.white),
                   ),
                 ),
                 10.horizontalSpace,
@@ -902,6 +880,33 @@ class _Header extends StatelessWidget {
         color: AppColorManager.cardColor,
         height: 30.0.h,
         fit: BoxFit.fill,
+      ),
+    );
+  }
+}
+
+class _SupportCard extends StatelessWidget {
+  const _SupportCard({required this.onTap, required this.icon});
+
+  final VoidCallback onTap;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          height: 100.0.h,
+          decoration: MyStyle.outlineBorder,
+          child: Center(
+            child: ImageMultiType(
+              url: icon,
+              height: 35.0.dg,
+              width: 35.0.dg,
+            ),
+          ),
+        ),
       ),
     );
   }

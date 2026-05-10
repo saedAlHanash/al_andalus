@@ -25,14 +25,12 @@ class NotFoundNotificationsWidget extends StatelessWidget {
         children: [
           ImageMultiType(
             url: icon ?? Assets.iconsEmpty,
-            height: 200.0.dg,
-            width: 200.0.dg,
+            height: 180.0.dg,
+            width: 180.0.dg,
           ),
-          10.0.verticalSpace,
+          20.0.verticalSpace,
           DrawableText(
-            size: 16.0.sp,
             text: text ?? '',
-            fontWeight: FontWeight.bold,
             matchParent: true,
             textAlign: TextAlign.center,
           ),
