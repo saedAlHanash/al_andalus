@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_multi_type/image_multi_type.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
@@ -51,7 +53,11 @@ class _ListInsurancesState extends State<ListInsurances> {
                         height: 40.0.h,
                         alignment: .center,
                         decoration: type == .private ? MyStyle.outlineBorder : MyStyle.roundBox12(),
-                        child: DrawableText(text: InsuranceType.private.name),
+                        child: DrawableText(
+                          text: InsuranceType.private.name,
+                          drawableStart: InsuranceType.private.icon,
+                          drawablePadding: 5.0,
+                        ),
                       ),
                     ),
                   ),
@@ -62,7 +68,11 @@ class _ListInsurancesState extends State<ListInsurances> {
                         height: 40.0.h,
                         alignment: .center,
                         decoration: type == .public ? MyStyle.outlineBorder : MyStyle.roundBox12(),
-                        child: DrawableText(text: InsuranceType.public.name),
+                        child: DrawableText(
+                          text: InsuranceType.public.name,
+                          drawableStart: InsuranceType.public.icon,
+                          drawablePadding: 5.0,
+                        ),
                       ),
                     ),
                   ),
@@ -82,7 +92,6 @@ class _ListInsurancesState extends State<ListInsurances> {
                             context,
                             e,
                             (queryParameters) {
-
                               final q = queryParameters..addAll({'type': type.index.toString()});
                               context.pushNamed(
                                 RouteName.insurancePage,

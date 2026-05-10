@@ -86,7 +86,7 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
                 initialValue: state.mRequest.licenseNumber,
                 labelText: S.of(context).idCardNumber,
                 hint: S.of(context).idCardNumber,
-                keyBordType: .number,
+
               ),
               Container(
                 padding: EdgeInsets.only(bottom: 20.0.h),

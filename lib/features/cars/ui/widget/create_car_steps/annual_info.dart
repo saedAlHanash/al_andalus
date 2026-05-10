@@ -64,7 +64,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                         width: 300.w,
                         height: 300.h,
                         child: YearPicker(
-                          firstDate: DateTime(1900),
+                          firstDate: DateTime(APIService().serverTime.year - 10),
                           lastDate: APIService().serverTime,
                           selectedDate: state.mRequest.manufactureYear ?? APIService().serverTime,
                           onChanged: (DateTime dateTime) {
@@ -116,7 +116,6 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.chassisNumber,
                     labelText: S.of(context).chassisNumber,
                     hint: S.of(context).chassisNumber,
-
                   ),
                 ),
                 Expanded(
@@ -125,7 +124,6 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     initialValue: state.mRequest.plateNumber,
                     labelText: S.of(context).plateNumber,
                     hint: S.of(context).plateNumber,
-                    keyBordType: .number,
                   ),
                 ),
               ],

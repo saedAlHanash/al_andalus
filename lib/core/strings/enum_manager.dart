@@ -1,6 +1,8 @@
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_multi_type/image_multi_type.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
 import 'package:string_similarity/string_similarity.dart';
 
@@ -381,19 +383,19 @@ enum InsuranceType {
   public,
   ;
 
-  IconData? get icon {
+  Widget get icon {
     switch (this) {
       case InsuranceType.private:
-        return Icons.person_outline_rounded;
+        return ImageMultiType(url: Icons.person_outline_rounded,color: color);
       case InsuranceType.public:
-        return Icons.business_center_outlined;
+        return ImageMultiType(url: Icons.business_center_outlined,color: color);
     }
   }
 
   Color get color {
     switch (this) {
       case InsuranceType.private:
-        return AppColorManager.ampere;
+        return AppColorManager.c8f;
       case InsuranceType.public:
         return Colors.blue;
     }

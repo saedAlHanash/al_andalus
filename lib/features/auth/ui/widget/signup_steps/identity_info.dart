@@ -44,7 +44,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
               initialValue: state.mRequest.identityId,
               labelText: S.of(context).idCardNumber,
               hint: S.of(context).idCardNumber,
-              keyBordType: .number,
+
             ),
             MyTextFormOutLineWidget(
               onChanged: (p0) => state.mRequest.name = p0,

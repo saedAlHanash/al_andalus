@@ -160,34 +160,41 @@ class _Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(24.42),
-        ),
-        clipBehavior: .hardEdge,
-        child: Stack(
-          children: [
-            Align(
-              alignment: .topRight,
-              child: DrawableText(
-                matchParent: true,
-                text: title,
-                size: 16.0.sp,
-                padding: EdgeInsets.all(20.0).r,
-                fontWeight: FontWeight.w700,
+      child: Transform.scale(
+        scaleX: isRtl ? 1.0 : -1.0,
+        child: Container(
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(24.42),
+          ),
+          clipBehavior: Clip.hardEdge,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: Transform.scale(
+                  scaleX: isRtl ? 1.0 : -1.0,
+                  child: DrawableText(
+                    matchParent: true,
+                    text: title,
+                    size: 16.0.sp,
+                    padding: const EdgeInsets.all(20.0).r,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
-            ),
-            Positioned(
-              bottom: -6,
-              left: 0,
-              child: image,
-            ),
-          ],
+              Positioned(
+                bottom: -6,
+                left: 0,
+                child: image,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -75,25 +75,11 @@ class ItemInsurance extends StatelessWidget {
                           text: insurance.title,
                           size: 20.sp,
 
-                          drawableStart: ImageMultiType(
-                            url: insurance.type.icon,
-                            color: insurance.type.color,
-                            height: 24.dg,
-                            width: 24.dg,
-                          ),
+                          drawableStart: insurance.type.icon,
                           drawablePadding: 5.0,
                           matchParent: true,
                           fontWeight: FontWeight.bold,
                           textAlign: TextAlign.start,
-                          drawableEnd: Container(
-                            decoration: MyStyle.roundBoxGray,
-                            padding: EdgeInsets.all(5.0),
-
-                            child: DrawableText(
-                              text: insurance.type.name,
-                              size: 11.0.sp,
-                            ),
-                          ),
                         ),
                         10.verticalSpace,
                         DrawableText(

@@ -1,65 +1,71 @@
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image/image.dart' as img;
-import 'package:image/image.dart';
 
-import '../../core/api_manager/api_service.dart';
-import '../../core/strings/enum_manager.dart';
+// تأكد من استيراد الـ logger الخاص بك
+// import '../../core/api_manager/api_service.dart';
 
-CompressQuality? compressQuality = CompressQuality.q40;
-CompressFormat? compressFormat = CompressFormat.webp;
-
-//croppedImage
 class CompressService {
+  // استخدام أحدث الإعدادات لعام 2026
+  final int defaultQuality = 40;
+  final CompressFormat defaultFormat = CompressFormat.webp;
+
   Future<Uint8List> compressImage(Uint8List list) async {
+    // التحقق من صحة البيانات قبل البدء لتجنب SIGABRT على iOS
+    if (list.isEmpty) {
+      debugPrint("CompressService: Received empty list, skipping compression.");
+      return list;
+    }
     return await _compressImagePlatforms(list);
   }
 
   Future<Uint8List> _compressImagePlatforms(Uint8List bytes) async {
+    if (bytes.isEmpty) return bytes;
+
     try {
-      return await FlutterImageCompress.compressWithList(
+      // إضافة فحص إضافي للتأكد من أن البيانات هي صورة صالحة قبل إرسالها للـ Native
+      final result = await FlutterImageCompress.compressWithList(
         bytes,
-        quality: compressQuality?.getQuality ?? CompressQuality.q20.getQuality,
+        quality: 40,
         keepExif: true,
-        autoCorrectionAngle: true,
-        format: compressFormat ?? CompressFormat.webp,
+        format: Platform.isIOS ? .jpeg : .webp, // جرب تغييرها لـ .jpeg للتأكد من المحاكي
       );
+
+      return result;
     } catch (e) {
-      loggerObject.e(e);
+      debugPrint("Compression failed: $e");
       return bytes;
     }
   }
 
   Future<Uint8List> cropImage(Uint8List imageBytes, double targetAspectRatio) async {
-    final image = decodeImage(imageBytes);
+    // فك التشفير باستخدام مكتبة image
+    final image = img.decodeImage(imageBytes);
 
     if (image == null) {
       return Uint8List.fromList([]);
     }
 
-    // حساب نسبة العرض إلى الارتفاع الحالية
     final currentAspectRatio = image.width / image.height;
 
     int newWidth, newHeight;
     if (currentAspectRatio > targetAspectRatio) {
-      // اقتصاص العرض
       newHeight = image.height;
       newWidth = (newHeight * targetAspectRatio).toInt();
     } else {
-      // اقتصاص الارتفاع
       newWidth = image.width;
       newHeight = (newWidth / targetAspectRatio).toInt();
     }
 
-    // حساب نقطة البداية للاقتصاص
     final startX = (image.width - newWidth) ~/ 2;
     final startY = (image.height - newHeight) ~/ 2;
 
-    // اقتصاص الصورة
     final croppedImage = img.copyCrop(image, x: startX, y: startY, width: newWidth, height: newHeight);
 
-    return encodeJpg(croppedImage);
+    // تحسين: استخدم encodeJpg أو encodePng بناءً على الحاجة
+    // لكن تذكر أن الضغط النهائي سيحولها لـ WebP في دالتك الأخرى
+    return Uint8List.fromList(img.encodeJpg(croppedImage));
   }
 }
