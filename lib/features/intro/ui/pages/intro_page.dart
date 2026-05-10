@@ -23,19 +23,20 @@ class _IntroPageState extends State<IntroPage> {
 
   List<IntroPageModel> get _pages => [
     IntroPageModel(
-      image: Assets.imagesIntro1, // ضع صورتك هنا
-      title: S.of(context).reportAccidentIntroTitle,
-      description: S.of(context).reportAccidentIntroDesc,
+      image: Assets.imagesIntro3, // ضع صورتك هنا
+      title: S.of(context).insureCarIntroTitle,
+      description: S.of(context).insureCarIntroDesc,
     ),
+
     IntroPageModel(
       image: Assets.imagesIntro2, // ضع صورتك هنا
       title: S.of(context).transferOwnershipIntroTitle,
       description: S.of(context).transferOwnershipIntroDesc,
     ),
     IntroPageModel(
-      image: Assets.imagesIntro3, // ضع صورتك هنا
-      title: S.of(context).insureCarIntroTitle,
-      description: S.of(context).insureCarIntroDesc,
+      image: Assets.imagesIntro1, // ضع صورتك هنا
+      title: S.of(context).reportAccidentIntroTitle,
+      description: S.of(context).reportAccidentIntroDesc,
     ),
   ];
 

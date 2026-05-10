@@ -20,6 +20,7 @@ import 'core/util/shared_preferences.dart';
 import 'features/home/bloc/home_cubit/home_cubit.dart';
 import 'features/notification/bloc/notification_count_cubit/notification_count_cubit.dart';
 import 'package:intl/date_symbol_data_local.dart';
+
 final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
 void main() async {
