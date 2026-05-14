@@ -327,7 +327,9 @@ void showCalculationPrice(
                       onChanged: (p0) {
                         p = double.parse(p0);
                       },
-                      inputFormatters: [IntInputFormatter()],
+                      inputFormatters: [
+                        PriceInputFormatter(currencySymbol: 'دع'),
+                      ],
                       keyBordType: .number,
                       labelText: S.of(context).enterCarValue,
                       hint: '0.0',
@@ -415,7 +417,11 @@ void showAddNote(
   );
 }
 
-void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
+void showOptionBottomSheet(
+  BuildContext context,
+  Function(UploadFile value) onConfirm, {
+  bool justCamera = false,
+}) {
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
@@ -446,23 +452,24 @@ void showOptionBottomSheet(BuildContext context, Function(UploadFile value) onCo
                 Row(
                   spacing: 20.0.w,
                   children: [
-                    Expanded(
-                      child: MyButton(
-                        text: S.of(context).fromGallery,
-                        icon: ImageMultiType(url: Icons.file_upload_outlined),
-                        onTap: () {
-                          Navigator.pop(ctx);
-                          pickImage().then(
-                            (value) async {
-                              if (value == null || !context.mounted) return;
-                              final result = await showConfirmDialog(context, value);
-                              if (result == false) return;
-                              onConfirm.call(value);
-                            },
-                          );
-                        },
+                    if (!justCamera)
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).fromGallery,
+                          icon: ImageMultiType(url: Icons.file_upload_outlined),
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            pickImage().then(
+                              (value) async {
+                                if (value == null || !context.mounted) return;
+                                final result = await showConfirmDialog(context, value);
+                                if (result == false) return;
+                                onConfirm.call(value);
+                              },
+                            );
+                          },
+                        ),
                       ),
-                    ),
                     Expanded(
                       child: MyButton(
                         text: S.of(context).takePicture,

@@ -23,18 +23,17 @@ class _IntroPageState extends State<IntroPage> {
 
   List<IntroPageModel> get _pages => [
     IntroPageModel(
-      image: Assets.imagesIntro3, // ضع صورتك هنا
+      image: Assets.imagesIntro3,
       title: S.of(context).insureCarIntroTitle,
       description: S.of(context).insureCarIntroDesc,
     ),
-
     IntroPageModel(
-      image: Assets.imagesIntro2, // ضع صورتك هنا
+      image: Assets.imagesIntro2,
       title: S.of(context).transferOwnershipIntroTitle,
       description: S.of(context).transferOwnershipIntroDesc,
     ),
     IntroPageModel(
-      image: Assets.imagesIntro1, // ضع صورتك هنا
+      image: Assets.imagesIntro1,
       title: S.of(context).reportAccidentIntroTitle,
       description: S.of(context).reportAccidentIntroDesc,
     ),
@@ -86,8 +85,8 @@ class _IntroPageState extends State<IntroPage> {
               controller: _pageController,
               onPageChanged: _onPageChanged,
               itemCount: _pages.length,
-              itemBuilder: (context, index) {
-                final page = _pages[index];
+              itemBuilder: (context, i) {
+                final page = _pages[i];
                 return IntroCardWidget(image: page.image, title: page.title, description: page.description);
               },
             ),
@@ -109,7 +108,7 @@ class _IntroPageState extends State<IntroPage> {
                       child: DrawableText(text: S.of(context).skip, color: AppColorManager.grey, size: 16.0.sp),
                     ),
                     // Page Indicators
-                    Row(children: List.generate(_pages.length, (index) => _buildPageIndicator(index))),
+                    Row(children: List.generate(_pages.length, (i) => _buildPageIndicator(i))),
 
                     // Next Button
                     TextButton(
@@ -126,8 +125,8 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 
-  Widget _buildPageIndicator(int index) {
-    bool isActive = _currentPage == index;
+  Widget _buildPageIndicator(int i) {
+    bool isActive = _currentPage == i;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       margin: EdgeInsets.only(right: 8.0.w),

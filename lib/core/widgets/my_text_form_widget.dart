@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+import 'package:intl/intl.dart' as intl;
 
 import '../app/app_provider.dart';
 import '../strings/app_color_manager.dart';
@@ -321,225 +322,80 @@ class RectCustomClipper extends CustomClipper<Rect> {
   bool shouldReclip(covariant CustomClipper<Rect> oldClipper) => oldClipper != this;
 }
 
-/*
-class MyTextFormPhoneWidget extends StatefulWidget {
-  const MyTextFormPhoneWidget({
-    super.key,
-    this.label = '',
-    this.hint = '',
-    this.helperText = '',
-    this.maxLines = 1,
-    this.obscureText = false,
-    this.textAlign = TextAlign.start,
-    this.maxLength = 1000,
-    this.onChanged,
-    this.controller,
-    this.keyBordType,
-    this.innerPadding,
-    this.enable,
-    this.icon,
-    this.color = Colors.black,
-    this.initialValue,
-    this.textDirection,
-    this.validator,
-    this.iconWidget,
-    this.iconWidgetLift,
-    this.onChangedFocus,
-    this.onTap,
-    this.autofillHints,
-    this.errorText,
-    this.required = false,
-  });
-
-  final bool? enable;
-  final String label;
-  final String hint;
-  final String? helperText;
-  final dynamic icon;
-  final Widget? iconWidget;
-  final Widget? iconWidgetLift;
-  final Color color;
-  final int maxLines;
-  final int maxLength;
-  final bool obscureText;
-  final TextAlign textAlign;
-  final Function(PhoneNumber)? onChanged;
-  final Function(bool)? onChangedFocus;
-  final Function()? onTap;
-  final bool required;
-  final String? errorText;
-  final List<String>? autofillHints;
-  final String? Function(PhoneNumber? phone)? validator;
-  final TextEditingController? controller;
-  final TextInputType? keyBordType;
-  final EdgeInsets? innerPadding;
-  final String? initialValue;
-  final TextDirection? textDirection;
-
-  @override
-  State<MyTextFormPhoneWidget> createState() => _MyTextFormPhoneWidgetState();
-}
-
-class _MyTextFormPhoneWidgetState extends State<MyTextFormPhoneWidget> {
-  FocusNode? focusNode;
-
-  @override
-  void initState() {
-    if (widget.onChangedFocus != null) {
-      focusNode = FocusNode()
-        ..addListener(() {
-          widget.onChangedFocus!.call(focusNode!.hasFocus);
-        });
-    }
-
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final padding = widget.innerPadding ?? const EdgeInsets.symmetric(horizontal: 24.0).w;
-
-    bool obscureText = widget.obscureText;
-    Widget? suffixIcon;
-    Widget? eye;
-    VoidCallback? onChangeObscure;
-
-    if (widget.iconWidget != null) {
-      suffixIcon = widget.iconWidget!;
-    } else if (widget.icon != null) {
-      suffixIcon = Padding(
-        padding: const EdgeInsets.symmetric(vertical: 14.0).r,
-        child: ImageMultiType(
-          color: AppColorManager.mainColorDynamic,
-          url: widget.icon!,
-          height: 15.0.r,
-          width: 15.0.r,
-        ),
-      );
-    }
-
-    if (obscureText) {
-      eye = StatefulBuilder(
-        builder: (context, state) {
-          return IconButton(
-            splashRadius: 0.01,
-            onPressed: () {
-              state(() => obscureText = !obscureText);
-              if (onChangeObscure != null) onChangeObscure!();
-            },
-            icon: Icon(
-              obscureText ? Icons.visibility : Icons.visibility_off,
-              color: Colors.grey,
-            ),
-          );
-        },
-      );
-    }
-
-    final border = OutlineInputBorder(
-      borderSide: BorderSide(color: AppColorManager.cd),
-      borderRadius: BorderRadius.circular(10.0.r),
-    );
-
-    final errorBorder = OutlineInputBorder(
-      borderSide: BorderSide(
-        color: AppColorManager.red,
-        width: 1.0.spMin,
-      ),
-      borderRadius: BorderRadius.circular(10.0.r),
-    );
-
-    final inputDecoration = InputDecoration(
-      contentPadding: padding,
-      errorBorder: errorBorder,
-      border: border,
-      focusedBorder: border,
-      enabledBorder: border,
-      helperText: widget.helperText,
-      helperStyle: const TextStyle(color: Colors.grey),
-      fillColor: AppColorManager.f9,
-      label: DrawableText(
-        text: widget.label,
-        color: AppColorManager.grey,
-        size: 16.0.spMin,
-      ),
-      counter: const SizedBox(),
-      hintText: widget.hint,
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-      hintTextDirection: widget.textDirection,
-      hintStyle: TextStyle(
-        color: AppColorManager.grey,
-        fontSize: widget.enable == false ? 10.0.sp : 14.0.sp,
-      ),
-      filled: false,
-
-      prefixIcon: widget.iconWidget ?? suffixIcon,
-      suffixIcon: widget.iconWidgetLift ?? eye,
-    );
-
-    final textStyle = TextStyle(
-      fontSize: 16.0.spMin,
-    );
-
-    return StatefulBuilder(
-      builder: (context, state) {
-        onChangeObscure = () => state(() {});
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DrawableText(
-              text: widget.label,
-              padding: const EdgeInsets.symmetric(horizontal: 3.0).w,
-              color: AppColorManager.white,
-              size: 14.0.sp,
-              drawableEnd: widget.required
-                  ? DrawableText(
-                      text: '*',
-                      size: 18.0.sp,
-                      color: Colors.red,
-                    )
-                  : null,
-            ),
-            3.0.verticalSpace,
-            Directionality(
-              textDirection: TextDirection.ltr,
-              child: IntlPhoneField(
-                onTap: () => widget.onTap?.call(),
-                validator: widget.validator,
-                decoration: inputDecoration,
-                dropdownTextStyle: TextStyle(color: Colors.white),
-                initialCountryCode: 'IQ',
-                dropdownIcon: Icon(Icons.arrow_drop_down, color: Colors.white),
-                cursorColor: Colors.white,
-                readOnly: !(widget.enable ?? true),
-                initialValue: widget.initialValue,
-                obscureText: obscureText,
-                textAlign: widget.textAlign,
-                onChanged: widget.onChanged,
-                style: textStyle,
-                focusNode: focusNode,
-                controller: widget.controller,
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
-*/
-
 class IntInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     if (newValue.text.isEmpty) return newValue;
 
     // Only allow digits
-    final filteredText = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
+    final double value = double.parse(newValue.text.replaceAll(RegExp(r'[^0-9]'), ''));
+
+    final oCcy = intl.NumberFormat("#,###.###", "en_US");
+
+    final newString = oCcy.format(value);
 
     return TextEditingValue(
-      text: filteredText,
-      selection: TextSelection.collapsed(offset: filteredText.length),
+      text: newString,
+      selection: TextSelection.collapsed(offset: newString.length),
     );
+  }
+}
+
+
+
+class PriceInputFormatter extends TextInputFormatter {
+  final String currencySymbol; // اسم أو رمز العملة الذي تريده
+  final numFormat = intl.NumberFormat("#,###.###", "en_US");
+
+  PriceInputFormatter({required this.currencySymbol});
+
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+
+    // إذا كان الحقل فارغاً
+    if (newValue.text.isEmpty) {
+      return newValue;
+    }
+
+    // 1. تنظيف النص الجديد من الفواصل ومن رمز العملة لنحصل على الرقم الصافي
+    String cleanText = newValue.text
+        .replaceAll(',', '')
+        .replaceAll(currencySymbol, '')
+        .trim();
+
+    // إذا قام المستخدم بحذف كل شيء ما عدا رمز العملة، نفرغ الحقل
+    if (cleanText.isEmpty) {
+      return const TextEditingValue(
+        text: '',
+        selection: TextSelection.collapsed(offset: 0),
+      );
+    }
+
+    // 2. السماح للمستخدم بكتابة الفاصلة العشرية في النهاية دون إعاقة
+    if (cleanText.endsWith('.')) {
+      return newValue;
+    }
+
+    try {
+      // 3. تحويل النص الصافي إلى رقم وتنسيقه
+      double value = double.parse(cleanText);
+      String formattedNumber = numFormat.format(value);
+
+      // 4. دمج الرقم المنسق مع رمز العملة في النهاية
+      String finalWithCurrency = "$formattedNumber $currencySymbol";
+
+      // 5. ضبط مكان مؤشر الكتابة (Cursor) ليكون دائماً قبل رمز العملة وليس بعده
+      // لكي لا يقوم المستخدم بالكتابة داخل اسم العملة بالخطأ
+      int cursorOffset = formattedNumber.length;
+
+      return TextEditingValue(
+        text: finalWithCurrency,
+        selection: TextSelection.collapsed(offset: cursorOffset),
+      );
+    } catch (e) {
+      // في حال إدخال قيم خاطئة احتفظ بالقديمة
+      return oldValue;
+    }
   }
 }

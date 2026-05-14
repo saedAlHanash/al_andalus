@@ -105,7 +105,18 @@ class AppProvider {
         ctx!,
         text: S().confirmLogout,
         textButton: S().logout,
-        image: ImageMultiType(url: Assets.imagesLogo, height: 100.0.r, width: 100.0.r),
+        image: Container(
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: Theme.of(ctx!).colorScheme.errorContainer.withOpacity(0.1),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            Icons.logout_rounded,
+            color: Theme.of(ctx!).colorScheme.error,
+            size: 40.r,
+          ),
+        ),
         onConfirm: (confirm) async {
           if (!confirm) return;
           await AppSharedPreference.logout();

@@ -110,17 +110,37 @@ class _NotificationPageState extends State<NotificationPage> {
                               ),
                               child: ListTile(
                                 onTap: () {
-                                  // if (!item.productId.isBlankNumber) {
-                                  //   context.pushNamed(
-                                  //     RouteName.product,
-                                  //     queryParameters: {'id': item.productId.toString()},
-                                  //   );
-                                  // } else if (!item.orderId.isBlankNumber) {
-                                  //   context.pushNamed(
-                                  //     RouteName.order,
-                                  //     queryParameters: {'id': item.orderId.toString()},
-                                  //   );
-                                  // }
+                                  showModalBottomSheet(
+                                    context: context,
+                                    isScrollControlled: true,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+                                    ),
+                                    builder: (context) => Padding(
+                                      padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 40.h),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Center(
+                                            child: Container(
+                                              width: 40.w,
+                                              height: 4.h,
+                                              decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(10)),
+                                            ),
+                                          ),
+                                          20.verticalSpace,
+                                          DrawableText(
+                                            text: item.title,
+                                            fontWeight: FontWeight.bold,
+                                            size: 18.sp,
+                                          ),
+                                          15.verticalSpace,
+                                          DrawableText(text: item.body),
+                                        ],
+                                      ),
+                                    ),
+                                  );
                                 },
                                 leading: ImageMultiType(
                                   url: Assets.iconsNotificationCardIcon,

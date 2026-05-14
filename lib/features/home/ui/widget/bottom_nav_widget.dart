@@ -64,35 +64,10 @@ class _NavbarState extends State<Navbar> {
             bottom: 20.h,
           ),
           child: Row(
+            textDirection: TextDirection.rtl,
             mainAxisAlignment: .center,
             crossAxisAlignment: .center,
             children: [
-              // ========== Component A: Main Capsule ==========
-              Flexible(
-                child: _GlassCapsule(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.h),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: List.generate(
-                        mainItems.length,
-                        (i) => _NavItem(
-                          icon: mainItems[i].icon,
-                          title: mainItems[i].title,
-                          isActive: i == currentIndex,
-                          onTap: () {
-                            context.read<HomeCubit>().jumpPage(i);
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              15.0.horizontalSpace,
-
               // ========== Component B: Detached Action Button ==========
               _DetachedButton(
                 isActive: isMenuActive,
@@ -103,8 +78,33 @@ class _NavbarState extends State<Navbar> {
                 icon: ImageMultiType(
                   color: isMenuActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
                   url: Assets.iconsUser,
-                  height: 24.0.r,
-                  width: 24.0.r,
+                  height: 20.0.r,
+                  width: 20.0.r,
+                ),
+              ),
+
+              12.0.horizontalSpace,
+
+              // ========== Component A: Main Capsule ==========
+              Flexible(
+                child: _GlassCapsule(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 6.h),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      textDirection: TextDirection.rtl,
+                      children: List.generate(
+                        mainItems.length,
+                        (i) => _NavItem(
+                          icon: mainItems[i].icon,
+                          title: mainItems[i].title,
+                          isActive: i == currentIndex,
+                          onTap: () => context.read<HomeCubit>().jumpPage(i),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -183,49 +183,37 @@ class _DetachedButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.opaque,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: 70.dg,
-            height: 70.dg,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: context.isDark ? 0.4 : 0.15),
-                  blurRadius: 15,
-                  spreadRadius: 0.5,
-                  offset: const Offset(0, 3),
-                ),
-              ],
+      child: Container(
+        width: 60.dg,
+        height: 60.dg,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: context.isDark ? 0.4 : 0.15),
+              blurRadius: 15,
+              spreadRadius: 0.5,
+              offset: const Offset(0, 3),
             ),
-            child: ClipOval(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                child: Container(
-                  padding: const EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    color: isActive ? theme.primaryColor.withValues(alpha: 0.9) : AppColorManager.cardColor.withValues(alpha: 0.5),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: AppColorManager.dividerColor.withValues(alpha: 0.1),
-                      width: 1,
-                    ),
-                  ),
-                  child: icon,
+          ],
+        ),
+        child: ClipOval(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+            child: Container(
+              padding: const EdgeInsets.all(18.0),
+              decoration: BoxDecoration(
+                color: isActive ? theme.primaryColor : AppColorManager.cardColor.withValues(alpha: 0.5),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: AppColorManager.dividerColor.withValues(alpha: 0.1),
+                  width: 1,
                 ),
               ),
+              child: icon,
             ),
           ),
-          // 2.0.verticalSpace,
-          // DrawableText(
-          //   text: title,
-          //   size: 10.sp,
-          //   color: isActive ? theme.primaryColor : AppColorManager.grey,
-          //   fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-          // ),
-        ],
+        ),
       ),
     );
   }
@@ -260,20 +248,21 @@ class _NavItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.all(12.r),
+              padding: EdgeInsets.all(8.r),
               decoration: BoxDecoration(
                 color: isActive ? theme.primaryColor : Colors.transparent,
                 shape: BoxShape.circle,
               ),
               child: icon,
             ),
-            2.0.verticalSpace,
+            if (isActive) 2.0.verticalSpace,
             DrawableText(
               text: title,
-              size: 12.sp,
+              size: 11.sp,
               color: isActive ? theme.primaryColor : (context.isDark ? Colors.white70 : AppColorManager.grey),
               fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
             ),
+            if (!isActive) 2.0.verticalSpace,
           ],
         ),
       ),
@@ -295,8 +284,8 @@ class _Home extends StatelessWidget {
     return ImageMultiType(
       color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
       url: Assets.iconsHome,
-      height: 24.0.r,
-      width: 24.0.r,
+      height: 20.0.r,
+      width: 20.0.r,
     );
   }
 }
@@ -310,7 +299,7 @@ class _Notifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotificationCubit, NotificationsInitial>(
       builder: (context, state) {
-        final notRead = /*state.result.any((e) => !e.isRead)*/false;
+        final notRead = /*state.result.any((e) => !e.isRead)*/ false;
 
         return Stack(
           clipBehavior: Clip.none,
@@ -318,8 +307,8 @@ class _Notifications extends StatelessWidget {
             ImageMultiType(
               color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
               url: Assets.iconsNotification,
-              height: 24.0.r,
-              width: 24.0.r,
+              height: 20.0.r,
+              width: 20.0.r,
             ),
             if (notRead)
               Positioned(
@@ -362,8 +351,8 @@ class _Insurance extends StatelessWidget {
     return ImageMultiType(
       color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
       url: Assets.iconsClipboardList,
-      height: 24.0.r,
-      width: 24.0.r,
+      height: 20.0.r,
+      width: 20.0.r,
     );
   }
 }

@@ -47,12 +47,12 @@ class ItemCar extends StatelessWidget {
             },
           ),
           Divider(),
-          DrawableText(
-            text: 'Creation at:',
-            drawableEnd: DrawableText(text: car.created),
-            matchParent: true,
-            drawableAlin: .between,
-          ),
+          // DrawableText(
+          //   text: 'Creation at:',
+          //   drawableEnd: DrawableText(text: car.created),
+          //   matchParent: true,
+          //   drawableAlin: .between,
+          // ),
           10.0.verticalSpace,
 
           if (car.status == .paymentPending)

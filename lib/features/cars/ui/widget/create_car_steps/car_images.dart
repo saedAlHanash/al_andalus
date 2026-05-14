@@ -152,6 +152,7 @@ class CarInspectionScreen extends StatelessWidget {
     }
     showOptionBottomSheet(
       context,
+      justCamera: true,
       (value) {
         context.read<CarsCubit>().setImage(value, zone);
       },

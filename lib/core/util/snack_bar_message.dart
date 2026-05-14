@@ -68,7 +68,6 @@ class NoteMessage {
     required BuildContext context,
     required Widget widget,
   }) {
-
     final overlay = Overlay.of(context);
     late OverlayEntry entry;
 
@@ -441,12 +440,7 @@ class NoteMessage {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (image != null)
-                        ImageMultiType(
-                          url: image,
-                          height: 60.0.r,
-                          width: 60.0.r,
-                        ),
+                      ?image,
                       20.0.verticalSpace,
                       DrawableText(
                         text: text,
@@ -459,7 +453,18 @@ class NoteMessage {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0).r,
                   child: Row(
+                    spacing: 15.0,
                     children: [
+                      Expanded(
+                        child: MyButton(
+                          color: AppColorManager.lightGrayAb,
+                          onTap: () {
+                            context.pop(false);
+                            onConfirm?.call(false);
+                          },
+                          text: S.of(context).back,
+                        ),
+                      ),
                       Expanded(
                         child: MyButton(
                           color: Colors.red,
@@ -468,17 +473,6 @@ class NoteMessage {
                             onConfirm?.call(true);
                           },
                           text: textButton,
-                        ),
-                      ),
-                      15.0.horizontalSpace,
-                      Expanded(
-                        child: MyButton(
-                          color: AppColorManager.lightGrayAb,
-                          onTap: () {
-                            context.pop(false);
-                            onConfirm?.call(false);
-                          },
-                          text: S.of(context).no,
                         ),
                       ),
                     ],

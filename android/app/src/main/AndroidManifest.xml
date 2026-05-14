@@ -9,7 +9,7 @@
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="Al-Andalus INS">
+        android:label="Al-Andalus Int Ins">
 
         <activity
             android:name=".MainActivity"
