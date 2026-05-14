@@ -81,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "backTires": MessageLookupByLibrary.simpleMessage("Back Tires"),
+    "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "Operation canceled by user",
     ),
@@ -184,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cylinders": MessageLookupByLibrary.simpleMessage("Number of cylinders"),
     "damage": MessageLookupByLibrary.simpleMessage("Damage"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+    "date": MessageLookupByLibrary.simpleMessage("Date"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "I declare the authenticity of all information and files uploaded by me and assume full legal responsibility for any incorrect data.",
@@ -279,6 +281,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("Fixed"),
     "floorCover": MessageLookupByLibrary.simpleMessage("Floor Cover"),
+    "followOrderHome": MessageLookupByLibrary.simpleMessage(
+      "You can follow your order from the home page",
+    ),
     "font": MessageLookupByLibrary.simpleMessage("Font"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -326,6 +331,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("Intact"),
     "interior": MessageLookupByLibrary.simpleMessage("Interior"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("Interior Body"),
+    "iqd": MessageLookupByLibrary.simpleMessage("IQD"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),
     "issuingAnInsuranceApplicationDocument":
@@ -414,6 +420,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "packageCost": MessageLookupByLibrary.simpleMessage("Package cost"),
     "packageDetails": MessageLookupByLibrary.simpleMessage("Package details"),
+    "packageType": MessageLookupByLibrary.simpleMessage("Package Type"),
     "paid": MessageLookupByLibrary.simpleMessage("Paid"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -427,7 +434,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+    "paymentConfirmed": MessageLookupByLibrary.simpleMessage(
+      "Payment Confirmation",
+    ),
     "paymentPending": MessageLookupByLibrary.simpleMessage("Payment Pending"),
+    "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
+      "Operation Successful!",
+    ),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "Payment will be made via electronic card",
     ),
@@ -727,12 +740,14 @@ class MessageLookup extends MessageLookupByLibrary {
           "The requested information is not currently available.",
         ),
     "theme": MessageLookupByLibrary.simpleMessage("Theme"),
+    "time": MessageLookupByLibrary.simpleMessage("Time"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "Tires and Accessories",
     ),
     "tiresCovers": MessageLookupByLibrary.simpleMessage("Tire Covers"),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "today": MessageLookupByLibrary.simpleMessage("Today"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("Total Amount"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "Transfer of ownership costs",

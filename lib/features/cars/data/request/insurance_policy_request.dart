@@ -55,6 +55,8 @@ class InsurancePolicyRequest {
     this.spareTools /*= .intact*/,
     this.spareToolsNote,
     this.otherNotes,
+    this.packageName,
+    this.totalPrice,
   }) {
     if (kDebugMode) fillMockData();
   }
@@ -112,6 +114,8 @@ class InsurancePolicyRequest {
       spareTools: InspectionStatus.getByNameOrIndex(inspection.spareTools),
       spareToolsNote: inspection.spareToolsNote,
       otherNotes: inspection.otherNotes,
+      packageName: car.insurancePackage.title,
+      totalPrice: car.annualSubscriptionPrice.toString(),
     );
 
     request.ownershipFrontImage
@@ -160,6 +164,9 @@ class InsurancePolicyRequest {
   PaymentType? paymentType;
   DateTime? expiryStartDate;
   DateTime? expiryEndDate;
+  String? packageName;
+  String? totalPrice;
+
 
   // Inspection
   InspectionStatus? metalBody;
@@ -286,15 +293,15 @@ class InsurancePolicyRequest {
     'inspection[spare_tools]': spareTools?.nameApi,
     'inspection[spare_tools_note]': spareToolsNote ?? '-',
     'inspection[other_notes]': otherNotes,
-    'ownership_front_image': ?ownershipFrontImage.remoteId,
-    'ownership_back_image': ?ownershipBackImage.remoteId,
-    'inspection_report': ?inspectionReport.remoteId,
-    'attachments[front_image]': ?frontImage.remoteId,
-    'attachments[back_image]': ?backImage.remoteId,
-    'attachments[right_side_image]': ?rightSideImage.remoteId,
-    'attachments[left_side_image]': ?leftSideImage.remoteId,
-    'attachments[interior_image]': ?interiorImage.remoteId,
-    'attachments[engine_image]': ?engineImage.remoteId,
+    'ownership_front_image': ownershipFrontImage.remoteId,
+    'ownership_back_image': ownershipBackImage.remoteId,
+    'inspection_report': inspectionReport.remoteId,
+    'attachments[front_image]': frontImage.remoteId,
+    'attachments[back_image]': backImage.remoteId,
+    'attachments[right_side_image]': rightSideImage.remoteId,
+    'attachments[left_side_image]': leftSideImage.remoteId,
+    'attachments[interior_image]': interiorImage.remoteId,
+    'attachments[engine_image]': engineImage.remoteId,
   };
 
   void setTempImages(UploadFile file) {

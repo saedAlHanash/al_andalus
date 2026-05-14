@@ -34,11 +34,13 @@ import '../features/auth/ui/pages/splash_screen_page.dart';
 import '../features/auth/ui/pages/biometric_enrollment_page.dart';
 import '../features/cars/bloc/car_cubit/car_cubit.dart';
 import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
+import '../features/cars/data/request/insurance_policy_request.dart';
 import '../features/cars/data/response/cars_response.dart';
 import '../features/cars/ui/pages/add_car_page.dart';
 import '../features/cars/ui/pages/car_page.dart';
 import '../features/cars/ui/pages/cars_page.dart';
 import '../features/cars/ui/pages/custome_web_page_view.dart';
+import '../features/cars/ui/pages/payment_success_page.dart';
 import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
 import '../features/accident/ui/pages/add_accident_page.dart';
 import '../features/category/ui/pages/categorys_page.dart';
@@ -294,6 +296,7 @@ final goRouter = GoRouter(
         final id = state.uri.queryParameters['id'] ?? '';
         final price = double.tryParse(state.uri.queryParameters['price'] ?? '0.0') ?? 0;
         final cylindersCount = int.tryParse(state.uri.queryParameters['cylindersCount'] ?? '0') ?? 0;
+        final name = state.uri.queryParameters['name'] ?? '';
 
         final CarPolicy? car = state.extra as CarPolicy?;
 
@@ -305,6 +308,8 @@ final goRouter = GoRouter(
           create: (context) => bloc
             ..state.mRequest.cylinders = cylindersCount.toString()
             ..state.mRequest.value = price.toString()
+            ..state.mRequest.totalPrice = price.toString()
+            ..state.mRequest.packageName = name
             ..state.mRequest.insurancePackageId = id,
           child: AddCarPage(),
         );
@@ -393,6 +398,13 @@ final goRouter = GoRouter(
         return PdfViewerWidget(url: url, title: title);
       },
     ),
+    GoRoute(
+      path: RouteName.paymentSuccess,
+      name: RouteName.paymentSuccess,
+      builder: (_, state) => PaymentSuccessPage(
+        request: state.extra as InsurancePolicyRequest,
+      ),
+    ),
   ],
 );
 
@@ -448,4 +460,5 @@ class RouteName {
   static const transferOwnershipPage = '/transferOwnershipPage';
   static const pin = '/pin';
   static const biometricEnroll = '/biometricEnroll';
+  static const paymentSuccess = '/paymentSuccess';
 }

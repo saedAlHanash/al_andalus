@@ -6,6 +6,7 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import 'package:string_similarity/string_similarity.dart';
 
+import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
 import 'app_color_manager.dart';
 
@@ -386,9 +387,9 @@ enum InsuranceType {
   Widget get icon {
     switch (this) {
       case InsuranceType.private:
-        return ImageMultiType(url: Icons.person_outline_rounded,color: color);
+        return ImageMultiType(url: Icons.person_outline_rounded, color: color);
       case InsuranceType.public:
-        return ImageMultiType(url: Icons.business_center_outlined,color: color);
+        return ImageMultiType(url: Icons.business_center_outlined, color: color);
     }
   }
 
@@ -723,6 +724,21 @@ enum PaymentType {
         return 'zain_cash';
       case PaymentType.qiCard:
         return 'qi_card';
+    }
+  }
+
+  Widget get icon {
+    switch (this) {
+      case PaymentType.zainCash:
+        return ImageMultiType(
+          url: Assets.imagesZainCash,
+          width: 71.0.w,
+        );
+      case PaymentType.qiCard:
+        return ImageMultiType(
+          url: Assets.imagesVisa,
+          width: 71.0.w,
+        );
     }
   }
 

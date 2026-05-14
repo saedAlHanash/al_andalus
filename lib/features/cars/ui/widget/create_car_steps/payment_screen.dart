@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../../core/strings/enum_manager.dart';
 import '../../../../../generated/assets.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../bloc/cars_cubit/cars_cubit.dart';
@@ -41,10 +42,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 },
                 title: DrawableText(text: S.of(context).electronicCard),
                 subtitle: DrawableText(text: S.of(context).paymentViaElectronicCard),
-                trailing: ImageMultiType(
-                  url: Assets.imagesVisa,
-                  width: 71.0.w,
-                ),
+                trailing: PaymentType.qiCard.icon,
               ),
             ),
 
@@ -61,10 +59,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 },
                 title: DrawableText(text: S.of(context).zainCashWallet),
                 subtitle: DrawableText(text: S.of(context).paymentViaWallet),
-                trailing: ImageMultiType(
-                  url: Assets.imagesZainCash,
-                  width: 71.0.w,
-                ),
+                trailing: PaymentType.zainCash.icon,
               ),
             ),
             30.0.verticalSpace,

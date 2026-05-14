@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
         context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
           (value) {
             if (context.mounted) {
-              context.goNamed(RouteName.home);
+              context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
             }
           },
         );

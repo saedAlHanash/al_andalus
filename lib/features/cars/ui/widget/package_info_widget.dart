@@ -84,7 +84,7 @@ class PackageInfoWidget extends StatelessWidget {
                         state.result.annualSubscriptionPrice,
                         (value) {
                           context.read<CarsCubit>().resubscribe(
-                            id: state.result.id.toString(),
+                            car: state.result,
                             insurancePackageId: state.result.insurancePackage.id.toString(),
                             paymentType: value,
                           );

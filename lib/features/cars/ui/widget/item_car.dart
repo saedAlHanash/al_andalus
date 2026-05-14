@@ -65,7 +65,7 @@ class ItemCar extends StatelessWidget {
                       context,
                       car.annualSubscriptionPrice,
                       (value) {
-                        context.read<CarsCubit>().rePay(id: car.id.toString(), type: value);
+                        context.read<CarsCubit>().rePay(car: car, type: value);
                       },
                     );
                   },

@@ -82,6 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "ڕاپۆرتی پۆلیس هاوپێچ بکه:",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("تایهکانی دواوه"),
+    "backToHome": MessageLookupByLibrary.simpleMessage(
+      "گهڕانهوه بۆ لاپهڕهی سهرهکی",
+    ),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "کردارهکه لهلایهن بهکارهێنهرهوه ههڵوهشێنرایهوه",
     ),
@@ -190,6 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cylinders": MessageLookupByLibrary.simpleMessage("ژمارهی سلیندهرهکان"),
     "damage": MessageLookupByLibrary.simpleMessage("زیان"),
     "dark": MessageLookupByLibrary.simpleMessage("تاریک"),
+    "date": MessageLookupByLibrary.simpleMessage("بهروار"),
     "day": MessageLookupByLibrary.simpleMessage("ڕۆژ"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "رایدهگهیهنم که ههموو ئهو زانیاری و فایلانهی بارم کردوون ڕاستن و بهرپرسیارێتی تهواوی یاسایی له ئهستۆ دهگرم له ئهگهری ههر زانیارییهکی نادروست.",
@@ -287,6 +291,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("جێگیرکراو"),
     "floorCover": MessageLookupByLibrary.simpleMessage("ڕووپۆشی زهوی"),
+    "followOrderHome": MessageLookupByLibrary.simpleMessage(
+      "دهتوانیت له ڕێگهی لاپهڕهی سهرهکییهوه چاودێری داواکارییهکهت بکهیت",
+    ),
     "font": MessageLookupByLibrary.simpleMessage("فۆنت"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage(
       "وشهی نهێنیت بیرچووه؟",
@@ -338,6 +345,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سهلامهته"),
     "interior": MessageLookupByLibrary.simpleMessage("ناوهوه"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("پهیکهری ناوهوه"),
+    "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("پێویسته"),
     "issueDate": MessageLookupByLibrary.simpleMessage("بهرواری دهرچوون"),
     "issuingAnInsuranceApplicationDocument":
@@ -432,6 +440,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "packageDetails": MessageLookupByLibrary.simpleMessage(
       "وردهکارییهکانی پاکێج",
     ),
+    "packageType": MessageLookupByLibrary.simpleMessage("جۆری پاکێج"),
     "paid": MessageLookupByLibrary.simpleMessage("پاره دراوه"),
     "password": MessageLookupByLibrary.simpleMessage("وشهی نهێنی"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -445,8 +454,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("پارهدان"),
     "payment": MessageLookupByLibrary.simpleMessage("پارهدان"),
+    "paymentConfirmed": MessageLookupByLibrary.simpleMessage(
+      "پشتڕاستکردنهوهی پارهدان",
+    ),
     "paymentPending": MessageLookupByLibrary.simpleMessage(
       "پارهدان له چاوهڕوانیدایه",
+    ),
+    "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
+      "کردارهکه به سهرکهوتوویی ئهنجامدرا!",
     ),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "پارهدان له ڕێگهی کارتی ئهلیکترۆنییهوه دهکرێت",
@@ -747,12 +762,14 @@ class MessageLookup extends MessageLookupByLibrary {
           "ئهم زانیارییهی داواکراوه له ئێستادا بهردهست نییه.",
         ),
     "theme": MessageLookupByLibrary.simpleMessage("ڕووکار"),
+    "time": MessageLookupByLibrary.simpleMessage("کات"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "تایه و پێداویستییهکان",
     ),
     "tiresCovers": MessageLookupByLibrary.simpleMessage("بهرگی تایه"),
     "to": MessageLookupByLibrary.simpleMessage("بۆ"),
     "today": MessageLookupByLibrary.simpleMessage("ئهمڕۆ"),
+    "total": MessageLookupByLibrary.simpleMessage("کۆ"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("بڕی گشتی"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "تێچووی گواستنهوهی خاوهندارێتی",

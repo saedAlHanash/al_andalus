@@ -180,6 +180,7 @@ class _InsurancePageState extends State<InsurancePage> {
                                       'id': insurance.id.toString(),
                                       'price': insurance.price.toString(),
                                       'cylindersCount': insurance.cylinder.cylinders,
+                                      'name': insurance.title,
                                     },
                                   );
                                 },

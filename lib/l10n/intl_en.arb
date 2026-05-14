@@ -398,5 +398,14 @@
   "licenseNumber": "License Number",
   "edit": "Edit",
   "confirmLogout": "Confirm logout",
-  "enterA6digitCode": "Enter a 6-digit code"
+  "enterA6digitCode": "Enter a 6-digit code",
+  "paymentSuccessTitle": "Operation Successful!",
+  "followOrderHome": "You can follow your order from the home page",
+  "backToHome": "Back to Home",
+  "paymentConfirmed": "Payment Confirmation",
+  "time": "Time",
+  "date": "Date",
+  "packageType": "Package Type",
+  "total": "Total",
+  "iqd": "IQD"
 }

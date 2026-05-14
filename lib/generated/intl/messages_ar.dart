@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
+    "backToHome": MessageLookupByLibrary.simpleMessage("العودة إلى الرئيسية"),
     "biometricCanceled": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء العملية من قبل المستخدم",
     ),
@@ -177,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cylinders": MessageLookupByLibrary.simpleMessage("عدد الاسطوانات"),
     "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
     "dark": MessageLookupByLibrary.simpleMessage("داكن"),
+    "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
     "declarationText": MessageLookupByLibrary.simpleMessage(
       "أقرّ بصحة جميع المعلومات والملفات المرفوعة من قبلي وأتحمل المسؤولية القانونية الكاملة عن أي بيانات غير صحيحة.",
@@ -264,6 +266,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fixed": MessageLookupByLibrary.simpleMessage("تم الإصلاح"),
     "floorCover": MessageLookupByLibrary.simpleMessage("غطاء الأرضية"),
+    "followOrderHome": MessageLookupByLibrary.simpleMessage(
+      "بإمكانك متابعه طلبك من خلال الرئيسية",
+    ),
     "font": MessageLookupByLibrary.simpleMessage("الخط"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
@@ -309,6 +314,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سليم"),
     "interior": MessageLookupByLibrary.simpleMessage("الداخل"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("الهيكل الداخلي"),
+    "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "issuingAnInsuranceApplicationDocument":
@@ -391,6 +397,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "packageCost": MessageLookupByLibrary.simpleMessage("تكلفة الباقة"),
     "packageDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الباقة"),
+    "packageType": MessageLookupByLibrary.simpleMessage("نوع الباقة"),
     "paid": MessageLookupByLibrary.simpleMessage("مدفوع"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
@@ -404,7 +411,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "paymentConfirmed": MessageLookupByLibrary.simpleMessage("تأكيد الدفع"),
     "paymentPending": MessageLookupByLibrary.simpleMessage("بانتظار الدفع"),
+    "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
+      "تمت العملية بنجاح!",
+    ),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع عبر البطاقة الالكترونية",
     ),
@@ -694,6 +705,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "المعلومات المطلوبة غير متوفرة حالياً.",
         ),
     "theme": MessageLookupByLibrary.simpleMessage("المظهر"),
+    "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "tiresAndAccessories": MessageLookupByLibrary.simpleMessage(
       "الإطارات و ملحقاتها",
     ),
@@ -702,6 +714,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "today": MessageLookupByLibrary.simpleMessage("اليوم"),
+    "total": MessageLookupByLibrary.simpleMessage("المجموع"),
     "totalAmount": MessageLookupByLibrary.simpleMessage("المجموع الكلي"),
     "transferOfOwnershipCosts": MessageLookupByLibrary.simpleMessage(
       "تكاليف نقل الملكية",

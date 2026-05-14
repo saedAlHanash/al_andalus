@@ -25,6 +25,7 @@ import 'package:al_andalus/generated/assets.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+import 'package:al_andalus/features/cars/data/request/insurance_policy_request.dart';
 
 class CarPage extends StatelessWidget {
   const CarPage({super.key});
@@ -40,8 +41,9 @@ class CarPage extends StatelessWidget {
               context.read<CarsCubit>().doneOpenUrl();
               context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
                 (value) {
-                  if (context.mounted && value == true) {
+                  if (context.mounted) {
                     context.read<CarCubit>().getData(newData: true);
+                    context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
                   }
                 },
               );

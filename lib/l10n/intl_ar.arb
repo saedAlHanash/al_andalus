@@ -396,5 +396,14 @@
   "updateApp": "تحديث",
   "licenseNumber": "رقم الإجازة",
   "edit": "تعديل",
-  "enterA6digitCode": "أدخل الرمز المكون من 6 أرقام"
+  "enterA6digitCode": "أدخل الرمز المكون من 6 أرقام",
+  "paymentSuccessTitle": "تمت العملية بنجاح!",
+  "followOrderHome": "بإمكانك متابعه طلبك من خلال الرئيسية",
+  "backToHome": "العودة إلى الرئيسية",
+  "paymentConfirmed": "تأكيد الدفع",
+  "time": "الوقت",
+  "date": "التاريخ",
+  "packageType": "نوع الباقة",
+  "total": "المجموع",
+  "iqd": "د.ع"
 }

@@ -18,6 +18,9 @@ class CarCubit extends MCubit<CarInitial> {
   @override
   AbstractState get mState => state;
 
+  @override
+  String get filter => state.filter;
+
   void getDataFromCache() => getFromCache(
     fromJson: CarPolicy.fromJson,
     state: state,

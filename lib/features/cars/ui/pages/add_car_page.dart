@@ -33,7 +33,6 @@ class _AddCarPageState extends State<AddCarPage> {
   CarsInitial get carsState => context.read<CarsCubit>().state;
 
   void _onBack(CarsInitial state) {
-
     if (state.step > 0) {
       context.read<CarsCubit>().next(step: state.step - 1);
     } else {
@@ -59,9 +58,7 @@ class _AddCarPageState extends State<AddCarPage> {
               (value) {
                 if (context.mounted) {
                   context.read<CarsCubit>().getData(newData: true);
-                  context.goNamed(RouteName.home);
-
-                  
+                  context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
                 }
               },
             );

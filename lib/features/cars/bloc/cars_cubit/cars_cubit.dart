@@ -60,12 +60,19 @@ class CarsCubit extends MCubit<CarsInitial> {
 
   //region CRUD
 
-  Future<void> rePay({required String id, required PaymentType type}) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+  Future<void> rePay({required CarPolicy car, required PaymentType type}) async {
+    final request = InsurancePolicyRequest.fromCarPolicy(car);
+    request.paymentType = type;
+
+    emit(state.copyWith(
+      statuses: CubitStatuses.loading,
+      cubitCrud: CubitCrud.update,
+      request: request,
+    ));
 
     final response = await APIService().callApi(
       type: ApiType.put,
-      url: PutUrl.rePay(id),
+      url: PutUrl.rePay(car.id.toString()),
       body: {'payment_type': type.nameApi},
     );
 
@@ -101,15 +108,23 @@ class CarsCubit extends MCubit<CarsInitial> {
   }
 
   Future<void> resubscribe({
-    required String id,
+    required CarPolicy car,
     required String insurancePackageId,
     required PaymentType paymentType,
   }) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+    final request = InsurancePolicyRequest.fromCarPolicy(car);
+    request.insurancePackageId = insurancePackageId;
+    request.paymentType = paymentType;
+
+    emit(state.copyWith(
+      statuses: CubitStatuses.loading,
+      cubitCrud: CubitCrud.update,
+      request: request,
+    ));
 
     final response = await APIService().callApi(
       type: ApiType.put,
-      url: PutUrl.resubscribe(id),
+      url: PutUrl.resubscribe(car.id.toString()),
       body: {
         'payment_type': paymentType.nameApi,
         'insurance_package_id': insurancePackageId,

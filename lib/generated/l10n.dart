@@ -3308,6 +3308,71 @@ class S {
       args: [],
     );
   }
+
+  /// `Operation Successful!`
+  String get paymentSuccessTitle {
+    return Intl.message(
+      'Operation Successful!',
+      name: 'paymentSuccessTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can follow your order from the home page`
+  String get followOrderHome {
+    return Intl.message(
+      'You can follow your order from the home page',
+      name: 'followOrderHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Home`
+  String get backToHome {
+    return Intl.message('Back to Home', name: 'backToHome', desc: '', args: []);
+  }
+
+  /// `Payment Confirmation`
+  String get paymentConfirmed {
+    return Intl.message(
+      'Payment Confirmation',
+      name: 'paymentConfirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message('Time', name: 'time', desc: '', args: []);
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message('Date', name: 'date', desc: '', args: []);
+  }
+
+  /// `Package Type`
+  String get packageType {
+    return Intl.message(
+      'Package Type',
+      name: 'packageType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `IQD`
+  String get iqd {
+    return Intl.message('IQD', name: 'iqd', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

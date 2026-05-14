@@ -33,6 +33,7 @@ class Assets {
   static const String iconsCoins = 'assets/icons/coins.svg';
   static const String iconsDelete = 'assets/icons/delete.svg';
   static const String iconsDone = 'assets/icons/done.svg';
+  static const String iconsDonePay = 'assets/icons/done_pay.svg';
   static const String iconsDoneShild = 'assets/icons/done_shild.svg';
   static const String iconsDoneStep = 'assets/icons/done_step.svg';
   static const String iconsDoneTake = 'assets/icons/done_take.svg';
