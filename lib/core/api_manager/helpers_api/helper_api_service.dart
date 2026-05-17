@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:m_cubit/m_cubit.dart';
 
 import '../../strings/enum_manager.dart';
+import '../api_service.dart';
 import '../api_url.dart';
 import 'log_api.dart';
 
@@ -20,7 +21,6 @@ final _rnd = Random();
 
 String getRandomString(int length) =>
     String.fromCharCodes(Iterable.generate(length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
-
 
 void fixQuery(Map<String, dynamic>? query) {
   query?.removeWhere((key, value) {
@@ -79,13 +79,6 @@ void fixBody(Map? body) {
   });
 }
 
-
-
-
-
-
-
-
 void fixPath(String url, String? path) {
   if (path != null) url = '$url/$path';
 }
@@ -98,6 +91,8 @@ Uri getUri({
   String? path,
   String? hostName,
   String? additional,
+
+  List<UploadFile>? files,
 }) {
   url = (additional ?? additionalConst) + url;
 
@@ -108,12 +103,18 @@ Uri getUri({
   if (path != null) url = '$url/$path';
 
   final uri = Uri.https((hostName ?? baseUrl), url, query);
+  final mapFiles = {
+    for (var file in (files ?? <UploadFile>[]))
+       file.nameField: file.path,
+  };
 
   logRequest(
-      type: type,
-      url: url,
-      q: {}
-        ..addAll(query ?? {})
-        ..addAll(body ?? {}));
+    type: type,
+    url: url,
+    q: {}
+      ..addAll(query ?? {})
+      ..addAll(mapFiles)
+      ..addAll(body ?? {}),
+  );
   return uri;
 }

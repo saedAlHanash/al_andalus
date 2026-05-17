@@ -1,6 +1,10 @@
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
+import '../app/app_widget.dart';
+import '../../generated/l10n.dart';
+import '../util/snack_bar_message.dart';
+
 class LauncherHelper {
   static Future<void> openMap(num lat, num lng) async {
     final googleUrl = Uri.parse('https://www.google.com/maps/search/?api=1&query=$lat,$lng');
@@ -77,5 +81,41 @@ class LauncherHelper {
     } catch (e) {
       rethrow;
     }
+  }
+
+  static Future<void> downloadFile({required String fileUrl}) async {
+    final url = fileUrl;
+    if (url.isEmpty) {
+      NoteMessage.showErrorSnackBar(
+        message: S.of(ctx!).fileNotAvailable,
+        context: ctx!,
+      );
+      return;
+    }
+
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      NoteMessage.showErrorSnackBar(
+        message: S.of(ctx!).invalidLink,
+        context: ctx!,
+      );
+      return;
+    }
+
+    launchUrl(uri, mode: LaunchMode.externalApplication)
+        .then((ok) {
+          if (!ok) {
+            NoteMessage.showErrorSnackBar(
+              message: S.of(ctx!).couldNotOpenFile,
+              context: ctx!,
+            );
+          }
+        })
+        .catchError((_) {
+          NoteMessage.showErrorSnackBar(
+            message: S.of(ctx!).couldNotOpenFile,
+            context: ctx!,
+          );
+        });
   }
 }

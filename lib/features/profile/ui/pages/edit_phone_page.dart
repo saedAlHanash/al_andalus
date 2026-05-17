@@ -122,6 +122,8 @@ class _EditPhonePageState extends State<EditPhonePage> {
                       validator: (p0) => p0.validateEmpty,
                       label: S.of(context).phoneNumber,
                       hint: S.of(context).phoneNumber,
+                      initialValue: AppProvider.getMe.phone.fixPhoneForShow,
+                      textAlign: .end,
                       iconWidgetLift: Row(
                         mainAxisSize: .min,
                         children: [

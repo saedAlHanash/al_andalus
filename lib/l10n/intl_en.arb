@@ -407,5 +407,8 @@
   "date": "Date",
   "packageType": "Package Type",
   "total": "Total",
-  "iqd": "IQD"
+  "iqd": "IQD",
+  "fileNotAvailable": "File not available",
+  "invalidLink": "Invalid link",
+  "couldNotOpenFile": "Could not open the file. Try again"
 }

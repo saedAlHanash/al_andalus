@@ -225,7 +225,7 @@ extension StringHelper on String? {
         .replaceAll('٨', '8')
         .replaceAll('٩', '9');
 
-    return p.replaceAll('+9640', '0');
+    return p.replaceAll(RegExp(r'^(\+9640|\+964|009640|00964)'), '');
   }
 
   String? get getVideoId => this?.split('/').lastOrNull;

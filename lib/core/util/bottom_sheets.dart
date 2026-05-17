@@ -325,7 +325,7 @@ void showCalculationPrice(
                     10.0.verticalSpace,
                     MyTextFormOutLineWidget(
                       onChanged: (p0) {
-                        p = double.parse(p0);
+                        p = double.parse(p0.numberOnly.toString());
                       },
                       inputFormatters: [
                         PriceInputFormatter(currencySymbol: 'دع'),

@@ -3373,6 +3373,36 @@ class S {
   String get iqd {
     return Intl.message('IQD', name: 'iqd', desc: '', args: []);
   }
+
+  /// `File not available`
+  String get fileNotAvailable {
+    return Intl.message(
+      'File not available',
+      name: 'fileNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid link`
+  String get invalidLink {
+    return Intl.message(
+      'Invalid link',
+      name: 'invalidLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not open the file. Try again`
+  String get couldNotOpenFile {
+    return Intl.message(
+      'Could not open the file. Try again',
+      name: 'couldNotOpenFile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

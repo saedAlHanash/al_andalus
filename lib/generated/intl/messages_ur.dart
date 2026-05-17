@@ -183,6 +183,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "congrats": MessageLookupByLibrary.simpleMessage("پیرۆزه !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("بهردهوام به"),
+    "couldNotOpenFile": MessageLookupByLibrary.simpleMessage(
+      "فایلەکە نەکرایەوە. دووبارە هەوڵ بدەرەوە",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("دروستکردنی ههژمار"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
       "ههژمارێکی نوێ دروست بکه",
@@ -286,6 +289,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fav": MessageLookupByLibrary.simpleMessage("دڵخوازهکان"),
     "features": MessageLookupByLibrary.simpleMessage("تایبهتمهندییهکان"),
+    "fileNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "فایلەکە بەردەست نییە",
+    ),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "یهکهمین پلاتفۆرمی دڵنیایی ئۆتۆمبێل له عێراق",
     ),
@@ -345,6 +351,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سهلامهته"),
     "interior": MessageLookupByLibrary.simpleMessage("ناوهوه"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("پهیکهری ناوهوه"),
+    "invalidLink": MessageLookupByLibrary.simpleMessage("بەستەرەکە نادروستە"),
     "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("پێویسته"),
     "issueDate": MessageLookupByLibrary.simpleMessage("بهرواری دهرچوون"),

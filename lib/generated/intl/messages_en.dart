@@ -175,6 +175,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "congrats": MessageLookupByLibrary.simpleMessage("Congrats !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("Continue"),
+    "couldNotOpenFile": MessageLookupByLibrary.simpleMessage(
+      "Could not open the file. Try again",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
@@ -276,6 +279,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "features": MessageLookupByLibrary.simpleMessage("Features"),
+    "fileNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "File not available",
+    ),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "First car insurance platform in Iraq",
     ),
@@ -331,6 +337,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("Intact"),
     "interior": MessageLookupByLibrary.simpleMessage("Interior"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("Interior Body"),
+    "invalidLink": MessageLookupByLibrary.simpleMessage("Invalid link"),
     "iqd": MessageLookupByLibrary.simpleMessage("IQD"),
     "is_required": MessageLookupByLibrary.simpleMessage("Required"),
     "issueDate": MessageLookupByLibrary.simpleMessage("Issue Date"),

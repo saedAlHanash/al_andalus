@@ -64,27 +64,12 @@ class _NavbarState extends State<Navbar> {
             bottom: 20.h,
           ),
           child: Row(
+            spacing: 10.0.w,
             textDirection: TextDirection.rtl,
+
             mainAxisAlignment: .center,
             crossAxisAlignment: .center,
             children: [
-              // ========== Component B: Detached Action Button ==========
-              _DetachedButton(
-                isActive: isMenuActive,
-                title: S.of(context).profile,
-                onTap: () {
-                  context.read<HomeCubit>().jumpPage(menuIndex);
-                },
-                icon: ImageMultiType(
-                  color: isMenuActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
-                  url: Assets.iconsUser,
-                  height: 20.0.r,
-                  width: 20.0.r,
-                ),
-              ),
-
-              12.0.horizontalSpace,
-
               // ========== Component A: Main Capsule ==========
               Flexible(
                 child: _GlassCapsule(
@@ -105,6 +90,20 @@ class _NavbarState extends State<Navbar> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              // ========== Component B: Detached Action Button ==========
+              _DetachedButton(
+                isActive: isMenuActive,
+                title: S.of(context).profile,
+                onTap: () {
+                  context.read<HomeCubit>().jumpPage(menuIndex);
+                },
+                icon: ImageMultiType(
+                  color: isMenuActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
+                  url: Assets.iconsUser,
+                  height: 20.0.r,
+                  width: 20.0.r,
                 ),
               ),
             ],
@@ -142,7 +141,7 @@ class _GlassCapsule extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(50.r),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+          filter: ImageFilter.blur(sigmaX: 32, sigmaY: 32),
           child: Container(
             decoration: BoxDecoration(
               color: AppColorManager.cardColor.withValues(alpha: 0.5),
@@ -199,7 +198,7 @@ class _DetachedButton extends StatelessWidget {
         ),
         child: ClipOval(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+            filter: ImageFilter.blur(sigmaX: 32, sigmaY: 32),
             child: Container(
               padding: const EdgeInsets.all(18.0),
               decoration: BoxDecoration(

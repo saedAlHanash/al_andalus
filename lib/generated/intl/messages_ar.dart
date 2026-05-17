@@ -171,6 +171,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "congrats": MessageLookupByLibrary.simpleMessage("مبروك !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("متابعة"),
+    "couldNotOpenFile": MessageLookupByLibrary.simpleMessage(
+      "تعذر فتح الملف. حاول مرة أخرى",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
@@ -262,6 +265,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "features": MessageLookupByLibrary.simpleMessage("المميزات"),
+    "fileNotAvailable": MessageLookupByLibrary.simpleMessage("ملف غير متوفر"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "أول منصة لتأمين السيارات في العراق",
     ),
@@ -315,6 +319,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سليم"),
     "interior": MessageLookupByLibrary.simpleMessage("الداخل"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("الهيكل الداخلي"),
+    "invalidLink": MessageLookupByLibrary.simpleMessage("رابط غير صالح"),
     "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "issueDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),

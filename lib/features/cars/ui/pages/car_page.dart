@@ -1,14 +1,21 @@
 import 'dart:convert';
 
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/helper/launcher_helper.dart';
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
-import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
+import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
+import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/cars/ui/widget/car_info.dart';
 import 'package:al_andalus/features/cars/ui/widget/package_info_widget.dart';
+import 'package:al_andalus/generated/assets.dart';
+import 'package:al_andalus/generated/l10n.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +23,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
-
-import 'package:al_andalus/core/injection/injection_container.dart';
-import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
-import 'package:m_cubit/m_cubit.dart';
-import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/generated/assets.dart';
-import 'package:al_andalus/generated/l10n.dart';
-import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
-import 'package:al_andalus/features/cars/data/response/cars_response.dart';
-import 'package:al_andalus/features/cars/data/request/insurance_policy_request.dart';
 
 class CarPage extends StatelessWidget {
   const CarPage({super.key});
@@ -85,7 +82,7 @@ class CarPage extends StatelessWidget {
                 20.verticalSpace,
                 CarInfo(),
                 20.verticalSpace,
-                if (car.status == .draft) _PolicyFileWidget(car: car),
+                _PolicyFileWidget(car: car),
 
                 20.verticalSpace,
                 if (state.result.status != .cancelled)
@@ -276,28 +273,93 @@ class _PolicyFileWidget extends StatelessWidget {
       },
       child: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
-          return Container(
-            margin: EdgeInsets.symmetric(vertical: 10.h),
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: AppColorManager.mainColor.withOpacity(0.05),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: AppColorManager.mainColor.withOpacity(0.1)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                DrawableText(
-                  text: S.of(context).insurancePolicyReview,
-                  fontWeight: FontWeight.bold,
-                  color: AppColorManager.mainColor,
-                  size: 16.sp,
-                ),
-                15.verticalSpace,
-                Container(
+          return car.status == .draft
+              ? Container(
+                  margin: EdgeInsets.symmetric(vertical: 10.h),
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    color: AppColorManager.mainColor.withOpacity(0.05),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(color: AppColorManager.mainColor.withOpacity(0.1)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DrawableText(
+                        text: S.of(context).insurancePolicyReview,
+                        fontWeight: FontWeight.bold,
+                        color: AppColorManager.mainColor,
+                        size: 16.sp,
+                      ),
+                      15.verticalSpace,
+                      Container(
+                        decoration: MyStyle.roundBox,
+                        child: ListTile(
+                          onTap: () {
+                            context.pushNamed(
+                              RouteName.pdf,
+                              queryParameters: {'url': car.policyFile},
+                            );
+                          },
+                          leading: ImageMultiType(
+                            url: Assets.iconsPdfBorder,
+                            height: 50.0.r,
+                            width: 50.0.r,
+                          ),
+                          title: DrawableText(
+                            text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
+                            padding: EdgeInsets.symmetric(vertical: 5.0),
+                            fontWeight: .bold,
+                          ),
+                          trailing: ImageMultiType(url: Icons.visibility_rounded),
+                        ),
+                      ),
+                      20.verticalSpace,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: MyButton(
+                              text: S.of(context).confirm,
+                              onTap: () {
+                                NoteMessage.showConfirm(
+                                  context,
+                                  text: S.of(context).confirmTheNextStep,
+                                  onConfirm: () {
+                                    context.read<CarsCubit>().approve(id: car.id.toString());
+                                  },
+                                );
+                              },
+                              loading: state.loading,
+                            ),
+                          ),
+                          12.horizontalSpace,
+                          Expanded(
+                            child: MyButton(
+                              text: S.of(context).reject,
+                              color: Colors.white,
+                              textColor: Colors.red,
+                              onTap: () {
+                                NoteMessage.showConfirm(
+                                  context,
+                                  text: S.of(context).confirmTheNextStep,
+                                  onConfirm: () {
+                                    context.read<CarsCubit>().reject(id: car.id.toString());
+                                  },
+                                );
+                              },
+                              loading: state.loading,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              : Container(
                   decoration: MyStyle.roundBox,
                   child: ListTile(
                     onTap: () {
+                      loggerObject.w(car.policyFile);
                       context.pushNamed(
                         RouteName.pdf,
                         queryParameters: {'url': car.policyFile},
@@ -313,50 +375,14 @@ class _PolicyFileWidget extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 5.0),
                       fontWeight: .bold,
                     ),
-                    trailing: ImageMultiType(url: Icons.visibility_rounded),
+                    trailing: IconButton(
+                      onPressed: () {
+                        LauncherHelper.downloadFile(fileUrl: car.policyFile);
+                      },
+                      icon: ImageMultiType(url: Icons.download_outlined),
+                    ),
                   ),
-                ),
-                20.verticalSpace,
-                Row(
-                  children: [
-                    Expanded(
-                      child: MyButton(
-                        text: S.of(context).confirm,
-                        onTap: () {
-                          NoteMessage.showConfirm(
-                            context,
-                            text: S.of(context).confirmTheNextStep,
-                            onConfirm: () {
-                              context.read<CarsCubit>().approve(id: car.id.toString());
-                            },
-                          );
-                        },
-                        loading: state.loading,
-                      ),
-                    ),
-                    12.horizontalSpace,
-                    Expanded(
-                      child: MyButton(
-                        text: S.of(context).reject,
-                        color: Colors.white,
-                        textColor: Colors.red,
-                        onTap: () {
-                          NoteMessage.showConfirm(
-                            context,
-                            text: S.of(context).confirmTheNextStep,
-                            onConfirm: () {
-                              context.read<CarsCubit>().reject(id: car.id.toString());
-                            },
-                          );
-                        },
-                        loading: state.loading,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
+                );
         },
       ),
     );

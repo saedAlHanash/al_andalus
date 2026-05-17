@@ -406,5 +406,8 @@
   "date": "التاريخ",
   "packageType": "نوع الباقة",
   "total": "المجموع",
-  "iqd": "د.ع"
+  "iqd": "د.ع",
+  "fileNotAvailable": "ملف غير متوفر",
+  "invalidLink": "رابط غير صالح",
+  "couldNotOpenFile": "تعذر فتح الملف. حاول مرة أخرى"
 }

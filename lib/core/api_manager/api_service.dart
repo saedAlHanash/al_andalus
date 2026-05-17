@@ -109,10 +109,10 @@ class APIService {
     required String url,
     String? path,
     String type = 'POST',
-    List<UploadFile?>? files,
+    List<UploadFile>? files,
     Map<String, dynamic>? fields,
   }) async {
-    final uri = getUri(url: url, query: fields ?? {}, path: path, type: ApiType.post);
+    final uri = getUri(url: url, query: fields ?? {}, path: path, type: ApiType.post,files: files);
 
     var request = http.MultipartRequest(type, uri);
 

@@ -440,7 +440,7 @@ class NoteMessage {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      ?image,
+                      if (image != null) ImageMultiType(url: image),
                       20.0.verticalSpace,
                       DrawableText(
                         text: text,
