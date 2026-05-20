@@ -126,7 +126,10 @@ class _NotificationPageState extends State<NotificationPage> {
                                             child: Container(
                                               width: 40.w,
                                               height: 4.h,
-                                              decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(10)),
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey[300],
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
                                             ),
                                           ),
                                           20.verticalSpace,

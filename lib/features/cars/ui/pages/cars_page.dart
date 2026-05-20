@@ -16,11 +16,6 @@ class CarsPage extends StatefulWidget {
 }
 
 class _CarsPageState extends State<CarsPage> {
-  @override
-  void initState() {
-    context.read<CarsCubit>().getData();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +23,12 @@ class _CarsPageState extends State<CarsPage> {
       appBar: AppBarWidget(titleText: S.of(context).myCars),
       body: BlocBuilder<CarsCubit, CarsInitial>(
         builder: (context, state) {
-          return RefreshWidget(
-            isLoading: state.loading,
-            onRefresh: () => context.read<CarsCubit>().getData(newData: true),
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(vertical: 16.h),
-              itemCount: state.result.length,
-              itemBuilder: (context, index) {
-                return ItemCar(car: state.result[index]);
-              },
-            ),
+          return ListView.builder(
+            padding: EdgeInsets.symmetric(vertical: 16.h),
+            itemCount: state.result.length,
+            itemBuilder: (context, index) {
+              return ItemCar(car: state.result[index]);
+            },
           );
         },
       ),

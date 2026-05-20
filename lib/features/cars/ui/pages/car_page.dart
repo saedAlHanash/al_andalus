@@ -40,7 +40,11 @@ class CarPage extends StatelessWidget {
                 (value) {
                   if (context.mounted) {
                     context.read<CarCubit>().getData(newData: true);
-                    context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
+                    context.pushNamed(
+                      RouteName.paymentSuccess,
+                      extra: state.mRequest,
+                      queryParameters: {'isSuccessPayment': (value == true).toString()},
+                    );
                   }
                 },
               );

@@ -1,3 +1,4 @@
+import '../../../../core/extensions/extensions.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../insurances/data/response/insurance_package.dart';
 
@@ -48,7 +49,7 @@ class CarPolicy {
   final Vehicle vehicle;
   final String policyFile;
   final List<String> fieldsToBeRefilled;
-  final String created;
+  final DateTime? created;
 
   factory CarPolicy.fromJson(Map<String, dynamic> json) {
     return CarPolicy(
@@ -66,7 +67,7 @@ class CarPolicy {
       fieldsToBeRefilled: json["fields_to_be_refilled"] == null
           ? []
           : List<String>.from(json["fields_to_be_refilled"]!.map((x) => x.toString())),
-      created: json["created"] ?? "",
+      created: (json["created"] ?? '').toString().parseDate,
     );
   }
 
@@ -83,8 +84,10 @@ class CarPolicy {
     "vehicle": vehicle.toJson(),
     "policy_file": policyFile,
     "fields_to_be_refilled": fieldsToBeRefilled,
-    "created": created,
+    "created": created?.toIso8601String(),
   };
+
+
 }
 
 class HasTransferRequest {
@@ -238,8 +241,8 @@ class Vehicle {
       ownershipFrontImage: json["ownership_front_image"] ?? "",
       ownershipBackImage: json["ownership_back_image"] ?? "",
       inspectionReport: json["inspection_report"] ?? "",
-      inspection: Inspection.fromJson(json["inspection"]??{}),
-      attachment: Attachment.fromJson(json["attachment"]??{}),
+      inspection: Inspection.fromJson(json["inspection"] ?? {}),
+      attachment: Attachment.fromJson(json["attachment"] ?? {}),
       created: json["created"] ?? "",
     );
   }
@@ -382,7 +385,7 @@ class Inspection {
   final String spareTools;
   final String spareToolsNote;
   final String otherNotes;
-  final String created;
+  final DateTime? created;
 
   factory Inspection.fromJson(Map<String, dynamic> json) {
     return Inspection(
@@ -418,7 +421,7 @@ class Inspection {
       spareTools: json["spare_tools"] ?? "",
       spareToolsNote: json["spare_tools_note"] ?? "",
       otherNotes: json["other_notes"] ?? "",
-      created: json["created"] ?? "",
+      created: (json["created"] ?? '').toString().parseDate,
     );
   }
 
@@ -455,6 +458,6 @@ class Inspection {
     "spare_tools": spareTools,
     "spare_tools_note": spareToolsNote,
     "other_notes": otherNotes,
-    "created": created,
+    "created": created?.toIso8601String(),
   };
 }

@@ -9,6 +9,9 @@ import '../../../../generated/l10n.dart';
 var _isSusses = false;
 final _successUrls = [
   'success',
+  'callback',
+  'qicard/callback',
+  'zaincash/callback',
   'payment-success',
   'status=success',
 ];
@@ -40,12 +43,6 @@ class _MyCustomWebPageState extends State<MyCustomWebPage> {
           final currentUrl = (url?.uriValue.toString() ?? '').toLowerCase();
 
           if (_successUrls.any((pattern) => currentUrl.contains(pattern))) {
-            _isSusses = true;
-          }
-
-          if (currentUrl.contains('status=success') ||
-              currentUrl.contains('admin.andalusapp.com/qicard/callback') ||
-              currentUrl.contains('admin.andalusapp.com/zaincash/callback')) {
             _isSusses = true;
             context.pop(_isSusses);
           }

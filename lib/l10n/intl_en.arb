@@ -399,7 +399,7 @@
   "edit": "Edit",
   "confirmLogout": "Confirm logout",
   "enterA6digitCode": "Enter a 6-digit code",
-  "paymentSuccessTitle": "Operation Successful!",
+  "paymentSuccessTitle": "Operation Creation Successful!",
   "followOrderHome": "You can follow your order from the home page",
   "backToHome": "Back to Home",
   "paymentConfirmed": "Payment Confirmation",
@@ -410,5 +410,16 @@
   "iqd": "IQD",
   "fileNotAvailable": "File not available",
   "invalidLink": "Invalid link",
-  "couldNotOpenFile": "Could not open the file. Try again"
+  "couldNotOpenFile": "Could not open the file. Try again",
+  "documentIdScanner": "Document / ID Scanner",
+  "errorProcessingImage": "An error occurred while processing the image. Please try again.",
+  "cameraPermissionRequired": "Camera Permission Required",
+  "cameraPermissionDesc": "Please grant camera access to scan and capture your ID card.",
+  "grantPermission": "Grant Permission",
+  "documentPreview": "Document Preview",
+  "retake": "Retake",
+  "placeIdInsideFrame": "Place your ID card inside the frame",
+  "doneProcess": "Done Process",
+  "sorryThePaymentProcessWasNotCompleted": "Sorry, the payment process was not completed.",
+  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the "
 }

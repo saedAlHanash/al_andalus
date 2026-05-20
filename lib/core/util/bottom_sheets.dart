@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:al_andalus/core/extensions/extensions.dart';
@@ -27,6 +28,7 @@ import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart'
 import '../../generated/l10n.dart';
 import '../api_manager/api_service.dart';
 import '../strings/enum_manager.dart';
+import '../widgets/document_scanner_page.dart';
 import 'my_style.dart';
 
 void showLanguageDialog(BuildContext context) {
@@ -439,53 +441,86 @@ void showOptionBottomSheet(
               children: [
                 ImageMultiType(
                   url: Assets.imagesIdScan,
-                  height: 170.0.h,
+                  height: 140.0.h,
                 ),
+                10.0.verticalSpace,
                 DrawableText(
                   text: S.of(context).ensureTextIsClear,
                   matchParent: true,
                   textAlign: .center,
                   fontWeight: FontWeight.bold,
                 ),
-
-                10.0.verticalSpace,
-                Row(
-                  spacing: 20.0.w,
+                15.0.verticalSpace,
+                Column(
+                  spacing: 12.0.h,
                   children: [
                     if (!justCamera)
-                      Expanded(
-                        child: MyButton(
-                          text: S.of(context).fromGallery,
-                          icon: ImageMultiType(url: Icons.file_upload_outlined),
-                          onTap: () {
-                            Navigator.pop(ctx);
-                            pickImage().then(
-                              (value) async {
-                                if (value == null || !context.mounted) return;
-                                final result = await showConfirmDialog(context, value);
-                                if (result == false) return;
-                                onConfirm.call(value);
-                              },
-                            );
-                          },
+                      MyButton(
+                        text: S.of(context).documentIdScanner,
+                        icon: ImageMultiType(
+                          url: Icons.document_scanner_outlined,
+                          color: AppColorManager.white,
                         ),
-                      ),
-                    Expanded(
-                      child: MyButton(
-                        text: S.of(context).takePicture,
-                        icon: ImageMultiType(url: Icons.camera_alt_outlined),
                         onTap: () {
                           Navigator.pop(ctx);
-                          takePhoto().then(
-                            (value) async {
-                              if (value == null || !context.mounted) return;
-                              final result = await showConfirmDialog(context, value);
-                              if (result == false) return;
-                              onConfirm.call(value);
-                            },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DocumentScannerPage(
+                                onDocumentCaptured: (croppedImagePath, croppedImageBytes) {
+                                  final uploadFile = UploadFile(
+                                    path: croppedImagePath,
+                                    localId: croppedImagePath,
+                                    fileType: FileType.image,
+                                    extension: 'jpg',
+                                    fileBytes: croppedImageBytes,
+                                  );
+                                  onConfirm.call(uploadFile);
+                                },
+                              ),
+                            ),
                           );
                         },
                       ),
+                    Row(
+                      spacing: 12.0.w,
+                      children: [
+                        if (!justCamera)
+                          Expanded(
+                            child: MyButton(
+                              text: S.of(context).fromGallery,
+                              icon: ImageMultiType(url: Icons.file_upload_outlined),
+                              onTap: () {
+                                Navigator.pop(ctx);
+                                pickImage().then(
+                                  (value) async {
+                                    if (value == null || !context.mounted) return;
+                                    final result = await showConfirmDialog(context, value);
+                                    if (result == false) return;
+                                    onConfirm.call(value);
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        Expanded(
+                          child: MyButton(
+                            text: S.of(context).takePicture,
+                            icon: ImageMultiType(url: Icons.camera_alt_outlined),
+                            onTap: () {
+                              Navigator.pop(ctx);
+                              takePhoto().then(
+                                (value) async {
+                                  if (value == null || !context.mounted) return;
+                                  final result = await showConfirmDialog(context, value);
+                                  if (result == false) return;
+                                  onConfirm.call(value);
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

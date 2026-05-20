@@ -9,7 +9,7 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_multi_type/image_multi_type_pakage.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 import 'package:go_router/go_router.dart';
 import 'package:m_cubit/m_cubit.dart';
 

@@ -13,6 +13,7 @@ import '../../../../generated/l10n.dart';
 import '../../bloc/cars_cubit/cars_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
 import 'item_car.dart';
 
 class ListCars extends StatelessWidget {
@@ -25,8 +26,11 @@ class ListCars extends StatelessWidget {
     if (AppProvider.isNotLogin) {
       return NeedLoginWidget();
     }
-    return BlocBuilder<CarsCubit, CarsInitial>(
+    return BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
       builder: (context, state) {
+        if (state.loading) {
+          return MyStyle.loadingWidget();
+        }
         if (state.isDataEmpty) {
           return Center(
             child: Container(
@@ -50,7 +54,7 @@ class ListCars extends StatelessWidget {
             ),
           );
         }
-        final list = take != null ? state.result.reversed.take(take!).toList() : state.result;
+        final list = take != null ? [?state.result.firstOrNull] : state.result;
         return ListView.builder(
           physics: take == null ? null : NeverScrollableScrollPhysics(),
           shrinkWrap: true,

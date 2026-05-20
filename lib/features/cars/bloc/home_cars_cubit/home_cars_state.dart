@@ -1,7 +1,7 @@
-part of 'cars_cubit.dart';
+part of 'home_cars_cubit.dart';
 
-class CarsInitial extends AbstractState<List<CarPolicy>> {
-  const CarsInitial({
+class HomeCarsInitial extends AbstractState<List<CarPolicy>> {
+  const HomeCarsInitial({
     required super.result,
     super.error,
     super.statuses,
@@ -20,8 +20,8 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
   final int step;
   final double uploadProgress;
 
-  factory CarsInitial.initial() {
-    return CarsInitial(
+  factory HomeCarsInitial.initial() {
+    return HomeCarsInitial(
       result: [],
       error: '',
       request: InsurancePolicyRequest(),
@@ -47,7 +47,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
     cubitCrud,
   ];
 
-  CarsInitial copyWith({
+  HomeCarsInitial copyWith({
     CubitStatuses? statuses,
     List<CarPolicy>? result,
     String? error,
@@ -59,7 +59,7 @@ class CarsInitial extends AbstractState<List<CarPolicy>> {
     double? uploadProgress,
     dynamic id,
   }) {
-    return CarsInitial(
+    return HomeCarsInitial(
       statuses: statuses ?? this.statuses,
       result: result ?? this.result,
       error: error ?? this.error,

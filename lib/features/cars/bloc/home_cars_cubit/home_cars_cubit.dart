@@ -13,10 +13,10 @@ import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 
 import '../../../../core/error/error_manager.dart';
 
-part 'cars_state.dart';
+part 'home_cars_state.dart';
 
-class CarsCubit extends MCubit<CarsInitial> {
-  CarsCubit() : super(CarsInitial.initial());
+class HomeCarsCubit extends MCubit<HomeCarsInitial> {
+  HomeCarsCubit() : super(HomeCarsInitial.initial());
 
   @override
   String get nameCache => 'my_cars';

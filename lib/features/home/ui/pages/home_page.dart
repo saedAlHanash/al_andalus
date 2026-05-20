@@ -1,5 +1,4 @@
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/features/home/ui/pages/home_screen_guest.dart';
 

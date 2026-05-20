@@ -2,14 +2,12 @@ import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_multi_type/image_multi_type_pakage.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../../core/strings/app_color_manager.dart';
 import '../../../../../core/strings/enum_manager.dart';

@@ -1,6 +1,7 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart';
 
+import '../../../../core/widgets/shimmer_widget.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/cars_cubit/cars_cubit.dart';
@@ -57,8 +59,11 @@ class _AddCarPageState extends State<AddCarPage> {
             context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
               (value) {
                 if (context.mounted) {
-                  context.read<CarsCubit>().getData(newData: true);
-                  context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
+                  context.pushNamed(
+                    RouteName.paymentSuccess,
+                    extra: state.mRequest,
+                    queryParameters: {'isSuccessPayment': (value == true).toString()},
+                  );
                 }
               },
             );
@@ -85,26 +90,40 @@ class _AddCarPageState extends State<AddCarPage> {
             ),
             bottomNavigationBar: Padding(
               padding: EdgeInsetsGeometry.all(20.0),
-              child: MyButton(
-                loading: state.loading,
-                onTap: () {
-                  final request = state.mRequest;
+              child: Column(
+                spacing: 5.0,
+                mainAxisSize: .min,
+                children: [
+                  MyButton(
+                    loading: state.loading,
+                    onTap: () {
+                      final request = state.mRequest;
 
-                  if (state.mRequest.id != null && state.step >= 3) {
-                    context.read<CarsCubit>().update();
-                    return;
-                  }
-                  if (state.step >= 4) {
-                    context.read<CarsCubit>().create();
-                    return;
-                  }
+                      if (state.mRequest.id != null && state.step >= 3) {
+                        context.read<CarsCubit>().update();
+                        return;
+                      }
 
-                  if (!AddCarValidator.validateStep(context, state.step, request)) return;
+                      if (state.step >= 4) {
+                        context.read<CarsCubit>().create();
+                        return;
+                      }
 
-                  context.read<CarsCubit>().next();
-                },
-                // loading: state.loading,
-                text: state.step == 4 ? S.of(context).pay : S.of(context).continueTo,
+                      if (!AddCarValidator.validateStep(context, state.step, request)) return;
+
+                      context.read<CarsCubit>().next();
+                    },
+                    // loading: state.loading,
+                    text: state.step == 4 ? S.of(context).pay : S.of(context).continueTo,
+                  ),
+                  if ((state.create || state.update) && state.loading)
+                    ShimmerWidget(
+                      child: DrawableText(
+                        textAlign: TextAlign.center,
+                        text: 'يتم الآن تحميل الملفات: ${(state.uploadProgress * 100).toInt()}%',
+                      ),
+                    ),
+                ],
               ),
             ),
             body: Column(

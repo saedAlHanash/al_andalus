@@ -24,6 +24,7 @@ import '../../features/auth/bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../../features/auth/bloc/reset_password_cubit/reset_password_cubit.dart';
 import '../../features/auth/bloc/signup_cubit/signup_cubit.dart';
 
+import '../../features/cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
 import '../../features/home/bloc/home_cubit/home_cubit.dart';
@@ -40,6 +41,7 @@ import '../app/bloc/loading_cubit.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
+
   //region Governorate
 
   sl.registerFactory(() => GovernorateCubit());
@@ -69,6 +71,7 @@ Future<void> init() async {
   sl.registerFactory(() => InsuranceCubit());
   sl.registerFactory(() => InsurancesCubit());
   sl.registerFactory(() => CarsCubit());
+  sl.registerLazySingleton(() => HomeCarsCubit());
   sl.registerFactory(() => CarCubit());
   sl.registerFactory(() => AccidentsCubit());
   sl.registerFactory(() => AccidentCubit());

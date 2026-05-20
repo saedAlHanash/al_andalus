@@ -237,6 +237,42 @@ extension StringHelper on String? {
       return null;
     }
   }
+
+  DateTime? get parseDate {
+    if (this is! String) return null;
+    if (toString().isEmpty) return null;
+    var tryParsing = DateTime.tryParse(toString());
+    if (tryParsing != null) return tryParsing;
+
+    try {
+      // Expected format: "2026-05-18 | 11:27 ص"
+      final parts = toString().split('|');
+      if (parts.length < 2) return DateTime.tryParse(toString());
+
+      final datePart = parts[0].trim();
+      final timePart = parts[1].trim(); // "11:27 ص"
+
+      final timeParts = timePart.split(' ');
+      if (timeParts.length < 2) return DateTime.tryParse(datePart);
+
+      final hhmm = timeParts[0].split(':');
+      if (hhmm.length < 2) return DateTime.tryParse(datePart);
+
+      int hour = int.parse(hhmm[0]);
+      int minute = int.parse(hhmm[1]);
+      String period = timeParts[1];
+
+      if (period == 'م' && hour < 12) {
+        hour += 12;
+      } else if (period == 'ص' && hour == 12) {
+        hour = 0;
+      }
+
+      return DateTime.tryParse("$datePart ${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}:00");
+    } catch (e) {
+      return null;
+    }
+  }
 }
 
 final oCcy = NumberFormat("#,###.###", "en_US");
@@ -433,7 +469,7 @@ extension DateUtcHelper on DateTime {
 
   String get formatDateAther => DateFormat('yyyy/MM/dd HH:MM').format(this);
 
-  String get formatTime => DateFormat('h:mm a','en').format(this);
+  String get formatTime => DateFormat('h:mm a', 'en').format(this);
 
   String get formatDateTime => '$formatTime $formatDate';
 

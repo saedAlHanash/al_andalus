@@ -11,15 +11,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:intl/intl.dart' as intl;
 
+import '../../../../core/injection/injection_container.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
+import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../data/request/insurance_policy_request.dart';
 
 class PaymentSuccessPage extends StatelessWidget {
   final InsurancePolicyRequest request;
+  final bool isSuccessPayment;
 
-  const PaymentSuccessPage({super.key, required this.request});
+  const PaymentSuccessPage({
+    super.key,
+    required this.request,
+    this.isSuccessPayment = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +35,8 @@ class PaymentSuccessPage extends StatelessWidget {
     final time = now.formatTime;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBarWidget(
-        titleText: S.of(context).paymentConfirmed,
+        titleText: S.of(context).doneProcess,
         canPop: false,
       ),
       body: SingleChildScrollView(
@@ -40,7 +46,6 @@ class PaymentSuccessPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 50.h),
               padding: EdgeInsets.fromLTRB(14.w, 60.h, 14.w, 24.h),
-
               decoration: BoxDecoration(
                 color: AppColorManager.dividerColor,
                 borderRadius: BorderRadius.circular(20.r),
@@ -61,6 +66,18 @@ class PaymentSuccessPage extends StatelessWidget {
                     fontFamily: GoogleFonts.almarai().fontFamily,
                     textAlign: TextAlign.center,
                   ),
+                  if (!isSuccessPayment)
+                    Padding(
+                      padding: EdgeInsets.only(top: 8.h),
+                      child: DrawableText(
+                        text:
+                            '${S.of(context).sorryThePaymentProcessWasNotCompleted}\n${S.of(context).dontWorryYouCanCompleteThePurchaseAtAnyTime}',
+                        size: 14.sp,
+                        fontFamily: GoogleFonts.almarai().fontFamily,
+                        textAlign: TextAlign.center,
+                        color: AppColorManager.ampere,
+                      ),
+                    ),
                   32.verticalSpace,
                   _buildRow(S.of(context).date, date),
                   20.verticalSpace,
@@ -89,6 +106,7 @@ class PaymentSuccessPage extends StatelessWidget {
                   OutLineButton(
                     onTap: () {
                       context.goNamed(RouteName.home);
+                      sl<HomeCarsCubit>().getData(newData: true);
                     },
                     text: S.of(context).backToHome,
                     color: AppColorManager.mainColorDynamic,
@@ -100,16 +118,18 @@ class PaymentSuccessPage extends StatelessWidget {
             Positioned(
               top: 0,
               child: Container(
+                height: 100.0.r,
+                width: 100.0.r,
                 decoration: BoxDecoration(
                   shape: .circle,
-                  color: AppColorManager.dividerColor,
+                  color: isSuccessPayment ? AppColorManager.dividerColor : AppColorManager.ampere,
                 ),
                 padding: EdgeInsets.all(5.0).r,
                 child: Center(
                   child: ImageMultiType(
-                    url: Assets.iconsDonePay,
-                    width: 100.r,
-                    height: 100.r,
+                    url: isSuccessPayment ? Assets.iconsDonePay : Icons.warning,
+                    width: isSuccessPayment ? 100.r : 30.0.r,
+                    height: isSuccessPayment ? 100.r : 30.0.r,
                   ),
                 ),
               ),
@@ -120,7 +140,7 @@ class PaymentSuccessPage extends StatelessWidget {
               child: Container(
                 height: 40.0.h,
                 width: 40.0.w,
-                decoration: BoxDecoration(shape: .circle, color: AppColorManager.white),
+                decoration: BoxDecoration(shape: .circle, color: AppColorManager.scaffoldColor),
               ),
             ),
             Positioned(
@@ -129,7 +149,7 @@ class PaymentSuccessPage extends StatelessWidget {
               child: Container(
                 height: 40.0.h,
                 width: 40.0.w,
-                decoration: BoxDecoration(shape: .circle, color: AppColorManager.white),
+                decoration: BoxDecoration(shape: .circle, color: AppColorManager.scaffoldColor),
               ),
             ),
           ],

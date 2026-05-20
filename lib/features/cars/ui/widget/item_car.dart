@@ -12,6 +12,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
+import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../data/response/cars_response.dart';
 
 class ItemCar extends StatelessWidget {
@@ -56,7 +57,7 @@ class ItemCar extends StatelessWidget {
           10.0.verticalSpace,
 
           if (car.status == .paymentPending)
-            BlocBuilder<CarsCubit, CarsInitial>(
+            BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
               builder: (context, state) {
                 return MyButton(
                   loading: state.loading,
@@ -65,7 +66,7 @@ class ItemCar extends StatelessWidget {
                       context,
                       car.annualSubscriptionPrice,
                       (value) {
-                        context.read<CarsCubit>().rePay(car: car, type: value);
+                        context.read<HomeCarsCubit>().rePay(car: car, type: value);
                       },
                     );
                   },

@@ -3309,10 +3309,10 @@ class S {
     );
   }
 
-  /// `Operation Successful!`
+  /// `Operation Creation Successful!`
   String get paymentSuccessTitle {
     return Intl.message(
-      'Operation Successful!',
+      'Operation Creation Successful!',
       name: 'paymentSuccessTitle',
       desc: '',
       args: [],
@@ -3399,6 +3399,111 @@ class S {
     return Intl.message(
       'Could not open the file. Try again',
       name: 'couldNotOpenFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Document / ID Scanner`
+  String get documentIdScanner {
+    return Intl.message(
+      'Document / ID Scanner',
+      name: 'documentIdScanner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while processing the image. Please try again.`
+  String get errorProcessingImage {
+    return Intl.message(
+      'An error occurred while processing the image. Please try again.',
+      name: 'errorProcessingImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera Permission Required`
+  String get cameraPermissionRequired {
+    return Intl.message(
+      'Camera Permission Required',
+      name: 'cameraPermissionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please grant camera access to scan and capture your ID card.`
+  String get cameraPermissionDesc {
+    return Intl.message(
+      'Please grant camera access to scan and capture your ID card.',
+      name: 'cameraPermissionDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grant Permission`
+  String get grantPermission {
+    return Intl.message(
+      'Grant Permission',
+      name: 'grantPermission',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Document Preview`
+  String get documentPreview {
+    return Intl.message(
+      'Document Preview',
+      name: 'documentPreview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retake`
+  String get retake {
+    return Intl.message('Retake', name: 'retake', desc: '', args: []);
+  }
+
+  /// `Place your ID card inside the frame`
+  String get placeIdInsideFrame {
+    return Intl.message(
+      'Place your ID card inside the frame',
+      name: 'placeIdInsideFrame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done Process`
+  String get doneProcess {
+    return Intl.message(
+      'Done Process',
+      name: 'doneProcess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry, the payment process was not completed.`
+  String get sorryThePaymentProcessWasNotCompleted {
+    return Intl.message(
+      'Sorry, the payment process was not completed.',
+      name: 'sorryThePaymentProcessWasNotCompleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't worry, you can complete the purchase at any time that suits you. Just go to your car card and press the `
+  String get dontWorryYouCanCompleteThePurchaseAtAnyTime {
+    return Intl.message(
+      'Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ',
+      name: 'dontWorryYouCanCompleteThePurchaseAtAnyTime',
       desc: '',
       args: [],
     );

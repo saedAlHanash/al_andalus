@@ -34,6 +34,7 @@ import '../features/auth/ui/pages/splash_screen_page.dart';
 import '../features/auth/ui/pages/biometric_enrollment_page.dart';
 import '../features/cars/bloc/car_cubit/car_cubit.dart';
 import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
+import '../features/cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../features/cars/data/request/insurance_policy_request.dart';
 import '../features/cars/data/response/cars_response.dart';
 import '../features/cars/ui/pages/add_car_page.dart';
@@ -186,11 +187,13 @@ final goRouter = GoRouter(
     GoRoute(
       path: RouteName.home,
       name: RouteName.home,
+
       builder: (_, state) {
+        loggerObject.f(state.uri.queryParameters);
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => sl<AdsCubit>()..getData()),
-            BlocProvider(create: (_) => sl<CarsCubit>()..getData()),
+            BlocProvider(create: (_) => sl<HomeCarsCubit>()..getData()),
           ],
           child: Homepage(),
         );
@@ -304,13 +307,18 @@ final goRouter = GoRouter(
 
         if (car != null) bloc.setRequest(car);
 
-        return BlocProvider(
-          create: (context) => bloc
-            ..state.mRequest.cylinders = cylindersCount.toString()
-            ..state.mRequest.value = price.toString()
-            ..state.mRequest.totalPrice = price.toString()
-            ..state.mRequest.packageName = name
-            ..state.mRequest.insurancePackageId = id,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => bloc
+                ..state.mRequest.cylinders = cylindersCount.toString()
+                ..state.mRequest.value = price.toString()
+                ..state.mRequest.totalPrice = price.toString()
+                ..state.mRequest.packageName = name
+                ..state.mRequest.insurancePackageId = id,
+            ),
+            BlocProvider(create: (context) => sl<HomeCarsCubit>()),
+          ],
           child: AddCarPage(),
         );
       },
@@ -401,9 +409,13 @@ final goRouter = GoRouter(
     GoRoute(
       path: RouteName.paymentSuccess,
       name: RouteName.paymentSuccess,
-      builder: (_, state) => PaymentSuccessPage(
-        request: state.extra as InsurancePolicyRequest,
-      ),
+      builder: (_, state) {
+        final bool isSuccessPayment = state.uri.queryParameters['isSuccessPayment'] == 'true';
+        return PaymentSuccessPage(
+          request: state.extra as InsurancePolicyRequest,
+          isSuccessPayment: isSuccessPayment,
+        );
+      },
     ),
   ],
 );

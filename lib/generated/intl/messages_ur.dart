@@ -184,7 +184,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "congrats": MessageLookupByLibrary.simpleMessage("پیرۆزه !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("بهردهوام به"),
     "couldNotOpenFile": MessageLookupByLibrary.simpleMessage(
-      "فایلەکە نەکرایەوە. دووبارە هەوڵ بدەرەوە",
+      "فائل نہیں کھولی جا سکی۔ دوبارہ کوشش کریں",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("دروستکردنی ههژمار"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
@@ -216,8 +216,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage("ههژمارت نییه؟"),
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("ههژمارت ههیه؟"),
+    "documentIdScanner": MessageLookupByLibrary.simpleMessage(
+      "دستاویز / شناختی کارڈ اسکینر",
+    ),
     "done": MessageLookupByLibrary.simpleMessage("تهواو"),
     "donePick": MessageLookupByLibrary.simpleMessage("ههڵبژاردن تهواو بوو"),
+    "doneProcess": MessageLookupByLibrary.simpleMessage("Done Process"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تازهکردنهوه کرا"),
     "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
       "به سهرکهوتوویی ئهنجامدرا",
@@ -225,6 +229,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "کۆدهکه دووباره نێردرایهوه",
     ),
+    "dontWorryYouCanCompleteThePurchaseAtAnyTime":
+        MessageLookupByLibrary.simpleMessage(
+          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+        ),
     "draft": MessageLookupByLibrary.simpleMessage("ڕهشنووس"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage(
       "ئامادهکردنی ڕهشنووس",
@@ -290,7 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("دڵخوازهکان"),
     "features": MessageLookupByLibrary.simpleMessage("تایبهتمهندییهکان"),
     "fileNotAvailable": MessageLookupByLibrary.simpleMessage(
-      "فایلەکە بەردەست نییە",
+      "فائل دستیاب نہیں ہے",
     ),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "یهکهمین پلاتفۆرمی دڵنیایی ئۆتۆمبێل له عێراق",
@@ -351,7 +359,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سهلامهته"),
     "interior": MessageLookupByLibrary.simpleMessage("ناوهوه"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("پهیکهری ناوهوه"),
-    "invalidLink": MessageLookupByLibrary.simpleMessage("بەستەرەکە نادروستە"),
+    "invalidLink": MessageLookupByLibrary.simpleMessage("لنک درست نہیں ہے"),
     "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("پێویسته"),
     "issueDate": MessageLookupByLibrary.simpleMessage("بهرواری دهرچوون"),
@@ -739,6 +747,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendCode": MessageLookupByLibrary.simpleMessage("ناردنی کۆد"),
     "signUp": MessageLookupByLibrary.simpleMessage("خۆتۆمارکردن"),
     "skip": MessageLookupByLibrary.simpleMessage("تێپهڕاندن"),
+    "sorryThePaymentProcessWasNotCompleted":
+        MessageLookupByLibrary.simpleMessage(
+          "Sorry, the payment process was not completed.",
+        ),
     "spareTire": MessageLookupByLibrary.simpleMessage("تایهی یهدهگ"),
     "spareTools": MessageLookupByLibrary.simpleMessage("کهرهستهی یهدهگ"),
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(

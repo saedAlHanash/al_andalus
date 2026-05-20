@@ -138,6 +138,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "calculateInsuranceCost": MessageLookupByLibrary.simpleMessage(
       "Calculate your car insurance cost",
     ),
+    "cameraPermissionDesc": MessageLookupByLibrary.simpleMessage(
+      "Please grant camera access to scan and capture your ID card.",
+    ),
+    "cameraPermissionRequired": MessageLookupByLibrary.simpleMessage(
+      "Camera Permission Required",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage(
       "Cancel the document",
@@ -212,8 +218,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Do you have an account?",
     ),
+    "documentIdScanner": MessageLookupByLibrary.simpleMessage(
+      "Document / ID Scanner",
+    ),
+    "documentPreview": MessageLookupByLibrary.simpleMessage("Document Preview"),
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "donePick": MessageLookupByLibrary.simpleMessage("Done Pick"),
+    "doneProcess": MessageLookupByLibrary.simpleMessage("Done Process"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("Done refresh"),
     "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Done successfully",
@@ -221,6 +232,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "Done resend code",
     ),
+    "dontWorryYouCanCompleteThePurchaseAtAnyTime":
+        MessageLookupByLibrary.simpleMessage(
+          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+        ),
     "draft": MessageLookupByLibrary.simpleMessage("Draft"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage(
       "Draft Preparation",
@@ -261,6 +276,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "Enter your phone and password to log in.",
+    ),
+    "errorProcessingImage": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while processing the image. Please try again.",
     ),
     "exitAddAccidentConfirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to exit the report accident process?",
@@ -305,6 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "glassAndLamps": MessageLookupByLibrary.simpleMessage("Glass and Lamps"),
     "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
+    "grantPermission": MessageLookupByLibrary.simpleMessage("Grant Permission"),
     "guestLogin": MessageLookupByLibrary.simpleMessage("Guest Login"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hour": MessageLookupByLibrary.simpleMessage("hour"),
@@ -446,7 +465,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "paymentPending": MessageLookupByLibrary.simpleMessage("Payment Pending"),
     "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
-      "Operation Successful!",
+      "Operation Creation Successful!",
     ),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "Payment will be made via electronic card",
@@ -466,6 +485,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Photos of the accident",
     ),
     "pinCode": MessageLookupByLibrary.simpleMessage("PIN code"),
+    "placeIdInsideFrame": MessageLookupByLibrary.simpleMessage(
+      "Place your ID card inside the frame",
+    ),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage(
       "Place of Residence",
     ),
@@ -693,6 +715,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resubscriptionPaymentPending": MessageLookupByLibrary.simpleMessage(
       "Resubscription Payment Pending",
     ),
+    "retake": MessageLookupByLibrary.simpleMessage("Retake"),
     "retakeImage": MessageLookupByLibrary.simpleMessage("Retake Image"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "right": MessageLookupByLibrary.simpleMessage("Right"),
@@ -715,6 +738,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendCode": MessageLookupByLibrary.simpleMessage("Send code"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "sorryThePaymentProcessWasNotCompleted":
+        MessageLookupByLibrary.simpleMessage(
+          "Sorry, the payment process was not completed.",
+        ),
     "spareTire": MessageLookupByLibrary.simpleMessage("Spare Tire"),
     "spareTools": MessageLookupByLibrary.simpleMessage("Spare Tools"),
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(

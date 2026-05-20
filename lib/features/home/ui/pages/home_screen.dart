@@ -13,6 +13,7 @@ import '../../../../core/helper/launcher_helper.dart';
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../router/go_router.dart';
 import '../../../cars/bloc/cars_cubit/cars_cubit.dart';
+import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../../cars/ui/widget/list_cars.dart';
 import '../../../category/ui/widget/home_categories.dart';
 
@@ -21,14 +22,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CarsCubit, CarsInitial>(
+    return BlocListener<HomeCarsCubit, HomeCarsInitial>(
       listenWhen: (p, c) => c.done && c.url.isNotEmpty,
       listener: (context, state) {
-        context.read<CarsCubit>().doneOpenUrl();
+        context.read<HomeCarsCubit>().doneOpenUrl();
         context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
           (value) {
             if (context.mounted) {
-              context.pushNamed(RouteName.paymentSuccess, extra: state.mRequest);
+              context.pushNamed(
+                RouteName.paymentSuccess,
+                extra: state.mRequest,
+                queryParameters: {'isSuccessPayment': (value == true).toString()},
+              );
             }
           },
         );

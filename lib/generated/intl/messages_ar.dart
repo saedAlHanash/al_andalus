@@ -138,6 +138,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "calculateInsuranceCost": MessageLookupByLibrary.simpleMessage(
       "احسب تكلفة التأمين لسيارتك",
     ),
+    "cameraPermissionDesc": MessageLookupByLibrary.simpleMessage(
+      "يرجى منح التطبيق إذن الوصول للكاميرا لمسح وتصوير بطاقة الهوية الشخصية.",
+    ),
+    "cameraPermissionRequired": MessageLookupByLibrary.simpleMessage(
+      "مطلوب إذن الوصول إلى الكاميرا",
+    ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage("إلغاء الوثيقة"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
@@ -202,13 +208,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تمتلك حساب؟",
     ),
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
+    "documentIdScanner": MessageLookupByLibrary.simpleMessage(
+      "ماسح للمستندات / الهوية",
+    ),
+    "documentPreview": MessageLookupByLibrary.simpleMessage("معاينة المستند"),
     "done": MessageLookupByLibrary.simpleMessage("تم"),
     "donePick": MessageLookupByLibrary.simpleMessage("تم الاختيار"),
+    "doneProcess": MessageLookupByLibrary.simpleMessage("Done Process"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
     "doneSuccessfully": MessageLookupByLibrary.simpleMessage("تم بنجاح"),
     "done_resend_code": MessageLookupByLibrary.simpleMessage(
       "تم إعادة الإرسال",
     ),
+    "dontWorryYouCanCompleteThePurchaseAtAnyTime":
+        MessageLookupByLibrary.simpleMessage(
+          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+        ),
     "draft": MessageLookupByLibrary.simpleMessage("مسودة"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage("تجهيز مسودة"),
     "drivingLicense": MessageLookupByLibrary.simpleMessage("رخصة القيادة"),
@@ -247,6 +262,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enterYourPhoneAndPasswordToLogIn": MessageLookupByLibrary.simpleMessage(
       "أدخل رقم هاتفك وكلمة المرور لتسجيل الدخول.",
+    ),
+    "errorProcessingImage": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء معالجة الصورة، يرجى المحاولة مرة أخرى.",
     ),
     "exitAddAccidentConfirmation": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من الخروج من عملية الإبلاغ عن الحادث؟",
@@ -287,6 +305,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "generalInformation": MessageLookupByLibrary.simpleMessage("معلومات عامة"),
     "glassAndLamps": MessageLookupByLibrary.simpleMessage("الزجاج و المصابيح"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
+    "grantPermission": MessageLookupByLibrary.simpleMessage("منح الإذن"),
     "guestLogin": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
@@ -420,7 +439,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentConfirmed": MessageLookupByLibrary.simpleMessage("تأكيد الدفع"),
     "paymentPending": MessageLookupByLibrary.simpleMessage("بانتظار الدفع"),
     "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
-      "تمت العملية بنجاح!",
+      "تمت عملية الإنشاء بنجاح!",
     ),
     "paymentViaElectronicCard": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع عبر البطاقة الالكترونية",
@@ -438,6 +457,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "photosOfTheAccident": MessageLookupByLibrary.simpleMessage("صور الحادث"),
     "pinCode": MessageLookupByLibrary.simpleMessage("كود السر"),
+    "placeIdInsideFrame": MessageLookupByLibrary.simpleMessage(
+      "ضع بطاقة الهوية داخل الإطار",
+    ),
     "placeOfResidence": MessageLookupByLibrary.simpleMessage("محل السكن"),
     "plateNumber": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
     "pleaseAcceptDeclaration": MessageLookupByLibrary.simpleMessage(
@@ -663,6 +685,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resubscriptionPaymentPending": MessageLookupByLibrary.simpleMessage(
       "بانتظار إعادة الدفع",
     ),
+    "retake": MessageLookupByLibrary.simpleMessage("إعادة التقاط"),
     "retakeImage": MessageLookupByLibrary.simpleMessage("إعادة التصوير"),
     "returned": MessageLookupByLibrary.simpleMessage("استعادة"),
     "right": MessageLookupByLibrary.simpleMessage("اليمين"),
@@ -683,6 +706,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendCode": MessageLookupByLibrary.simpleMessage("إدخال الرمز"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
+    "sorryThePaymentProcessWasNotCompleted":
+        MessageLookupByLibrary.simpleMessage(
+          "Sorry, the payment process was not completed.",
+        ),
     "spareTire": MessageLookupByLibrary.simpleMessage("الإطار الإحتياط"),
     "spareTools": MessageLookupByLibrary.simpleMessage("الأدوات الإحتياطية"),
     "spareToolsGroup": MessageLookupByLibrary.simpleMessage(

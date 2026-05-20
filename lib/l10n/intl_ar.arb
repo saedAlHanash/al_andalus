@@ -397,7 +397,7 @@
   "licenseNumber": "رقم الإجازة",
   "edit": "تعديل",
   "enterA6digitCode": "أدخل الرمز المكون من 6 أرقام",
-  "paymentSuccessTitle": "تمت العملية بنجاح!",
+  "paymentSuccessTitle": "تمت عملية الإنشاء بنجاح!",
   "followOrderHome": "بإمكانك متابعه طلبك من خلال الرئيسية",
   "backToHome": "العودة إلى الرئيسية",
   "paymentConfirmed": "تأكيد الدفع",
@@ -409,5 +409,16 @@
   "iqd": "د.ع",
   "fileNotAvailable": "ملف غير متوفر",
   "invalidLink": "رابط غير صالح",
-  "couldNotOpenFile": "تعذر فتح الملف. حاول مرة أخرى"
+  "couldNotOpenFile": "تعذر فتح الملف. حاول مرة أخرى",
+  "documentIdScanner": "ماسح للمستندات / الهوية",
+  "errorProcessingImage": "حدث خطأ أثناء معالجة الصورة، يرجى المحاولة مرة أخرى.",
+  "cameraPermissionRequired": "مطلوب إذن الوصول إلى الكاميرا",
+  "cameraPermissionDesc": "يرجى منح التطبيق إذن الوصول للكاميرا لمسح وتصوير بطاقة الهوية الشخصية.",
+  "grantPermission": "منح الإذن",
+  "documentPreview": "معاينة المستند",
+  "retake": "إعادة التقاط",
+  "placeIdInsideFrame": "ضع بطاقة الهوية داخل الإطار",
+  "doneProcess": "Done Process",
+  "sorryThePaymentProcessWasNotCompleted": "Sorry, the payment process was not completed.",
+  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the "
 }

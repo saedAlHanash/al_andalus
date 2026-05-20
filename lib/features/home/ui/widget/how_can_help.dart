@@ -12,6 +12,7 @@ import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../../cars/bloc/cars_cubit/cars_cubit.dart';
+import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../../insurances/bloc/insurances_cubit/insurances_cubit.dart';
 import '../../../insurances/ui/widget/list_insurances.dart';
 import '../../../../core/injection/injection_container.dart';
@@ -22,7 +23,7 @@ class HowCanHelp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CarsCubit, CarsInitial>(
+    return BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
       builder: (context, state) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0).r,
