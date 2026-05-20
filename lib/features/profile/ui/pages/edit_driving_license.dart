@@ -9,6 +9,7 @@ import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
 
+import 'package:al_andalus/core/widgets/shimmer_widget.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -255,6 +256,13 @@ class _EditDrivingLicenseState extends State<EditDrivingLicense> {
                   context.read<UpdateProfileCubit>().updateDrivingLicense();
                 },
               ),
+              if (state.loading)
+                ShimmerWidget(
+                  child: DrawableText(
+                    textAlign: TextAlign.center,
+                    text: 'يتم الآن تحميل الملفات: ${(state.uploadProgress * 100).toInt()}%',
+                  ),
+                ),
               20.0.verticalSpace,
             ],
           ),

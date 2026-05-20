@@ -70,6 +70,8 @@ class UpdateProfileRequest {
     'birth_date': birthday?.toIso8601String().split('T').first ?? "1997-02-19",
     'gender': gender?.nameApi ?? 'male',
     'genderID': gender?.index ?? 0,
+    'identity_front_image': identityFrontImage.remoteId,
+    'identity_back_image': identityBackImage.remoteId,
   };
 
   Map<String, dynamic> toJsonLicense() => {
@@ -77,6 +79,8 @@ class UpdateProfileRequest {
     'license_type': licenseType?.nameApi,
     'license_start_date': licenseStartDate?.toIso8601String().split('T').first,
     'license_end_date': licenseEndDate?.toIso8601String().split('T').first,
+    'license_front_image': licenseFrontImage.remoteId,
+    'license_back_image': licenseBackImage.remoteId,
   };
 
   Map<String, dynamic> toJsonProfile() => {

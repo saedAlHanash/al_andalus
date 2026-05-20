@@ -25,7 +25,13 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
   String get nameCache => 'updateProfile';
 
   Future<void> updateIdentity() async {
-    emit(state.copyWith(statuses: CubitStatuses.loading));
+    emit(state.copyWith(statuses: CubitStatuses.loading, uploadProgress: 0.0));
+
+    final files = state.mRequest.identityFiles;
+    for (int i = 0; i < files.length; i++) {
+      files[i].remoteId = (await APIService().uploadFile(file: files[i])).toString();
+      emit(state.copyWith(uploadProgress: (i + 1) / files.length));
+    }
 
     final pair = await _updateIdentityApi();
 
@@ -42,7 +48,7 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
     final response = await APIService().uploadMultiPart(
       url: PostUrl.updateIdentity,
       fields: state.mRequest.toJsonIdentity(),
-      files: state.mRequest.identityFiles,
+      files: [],
     );
 
     if (response.statusCode.success) {
@@ -80,7 +86,13 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
   }
 
   Future<void> updateDrivingLicense() async {
-    emit(state.copyWith(statuses: CubitStatuses.loading));
+    emit(state.copyWith(statuses: CubitStatuses.loading, uploadProgress: 0.0));
+
+    final files = state.mRequest.licenseFiles;
+    for (int i = 0; i < files.length; i++) {
+      files[i].remoteId = (await APIService().uploadFile(file: files[i])).toString();
+      emit(state.copyWith(uploadProgress: (i + 1) / files.length));
+    }
 
     final pair = await _updateDrivingLicenseApi();
 
@@ -96,7 +108,7 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
     final response = await APIService().uploadMultiPart(
       url: PostUrl.updateLicense,
       fields: state.mRequest.toJsonLicense(),
-      files: state.mRequest.licenseFiles,
+      files: [],
     );
 
     if (response.statusCode.success) {

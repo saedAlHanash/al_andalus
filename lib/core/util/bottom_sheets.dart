@@ -235,6 +235,7 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
                         child: Row(
                           spacing: 12.0.w,
                           children: [
+                            30.0.horizontalSpace,
                             _SupportCard(
                               onTap: () => LauncherHelper.sendEmail(email: state.result.email),
                               icon: Assets.iconsEmail,
@@ -247,6 +248,7 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
                               onTap: () => LauncherHelper.callPhone(phone: state.result.phone),
                               icon: Assets.iconsPhone,
                             ),
+                            30.0.horizontalSpace,
                           ],
                         ),
                       ),
@@ -939,13 +941,14 @@ class _SupportCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          height: 100.0.h,
+          height: 55.0.h,
           decoration: MyStyle.outlineBorder,
           child: Center(
             child: ImageMultiType(
               url: icon,
-              height: 35.0.dg,
-              width: 35.0.dg,
+              color: AppColorManager.textColor,
+              height: 24.0.dg,
+              width: 24.0.dg,
             ),
           ),
         ),

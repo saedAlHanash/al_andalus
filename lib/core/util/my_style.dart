@@ -120,7 +120,7 @@ class MyStyle {
   }
 
   static BoxDecoration get outlineBorder => BoxDecoration(
-    border: Border.all(color: AppColorManager.mainColor),
+    border: Border.all(color: AppColorManager.textColor),
     borderRadius: BorderRadius.circular(12.0.r),
     color: AppColorManager.cardColor,
   );
