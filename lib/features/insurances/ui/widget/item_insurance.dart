@@ -1,25 +1,37 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../core/strings/enum_manager.dart';
-import '../../../../core/util/bottom_sheets.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
+import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
 
 class ItemInsurance extends StatelessWidget {
-  const ItemInsurance({super.key, required this.insurance, this.onTapInfo});
+  const ItemInsurance({
+    super.key,
+    required this.insurance,
+    this.onTapInfo,
+    this.isDetail = false,
+  });
 
   final InsurancePackage insurance;
   final Function()? onTapInfo;
+  final bool isDetail;
 
   @override
   Widget build(BuildContext context) {
+    if (isDetail) return _DetailItem(item: insurance);
+
     final tagText = insurance.tag.isEmpty ? insurance.level.name : insurance.tag;
 
     return Container(
@@ -33,7 +45,6 @@ class ItemInsurance extends StatelessWidget {
         borderRadius: BorderRadius.circular(24.0.r),
       ),
       padding: EdgeInsets.only(top: 4.0, right: 4, left: 4, bottom: 4).r,
-
       child: Column(
         children: [
           DrawableText(
@@ -74,7 +85,6 @@ class ItemInsurance extends StatelessWidget {
                         DrawableText(
                           text: insurance.title,
                           size: 20.sp,
-
                           drawableStart: insurance.type.icon,
                           drawablePadding: 5.0,
                           matchParent: true,
@@ -120,6 +130,185 @@ class ItemInsurance extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DetailItem extends StatefulWidget {
+  const _DetailItem({required this.item});
+
+  final InsurancePackage item;
+
+  @override
+  State<_DetailItem> createState() => _DetailItemState();
+}
+
+class _DetailItemState extends State<_DetailItem> {
+  static var _showedHint = false;
+  var _showScrollHint = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loggerObject.f(_showedHint);
+    if (!_showedHint) {
+      _showScrollHint = true;
+      _showedHint = true;
+      loggerObject.f(_showedHint);
+      Future.delayed(const Duration(seconds: 2), () {
+        if (mounted) setState(() => _showScrollHint = false);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        _Top(item: widget.item),
+        2.0.verticalSpace,
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColorManager.cardColor,
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(24.0).r),
+              boxShadow: MyStyle.allShadow,
+            ),
+            padding: EdgeInsets.all(15.0).r,
+            child: Column(
+              children: [
+                Expanded(
+                  child: Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      ListView(
+                        padding: EdgeInsets.zero,
+                        children: [
+                          ...widget.item.features.map((feature) {
+                            return DrawableText(
+                              text: feature.title,
+                              matchParent: true,
+                              padding: const EdgeInsets.symmetric(vertical: 7.0),
+                              drawableStart: ImageMultiType(
+                                url: Assets.iconsDoneStep,
+                                height: 20.0.r,
+                                width: 20.0.r,
+                              ),
+                              drawablePadding: 10.0,
+                            );
+                          }).toList(),
+                        ],
+                      ),
+                      if (_showScrollHint)
+                        Align(
+                          alignment: .center,
+                          child: IgnorePointer(
+                            child: Lottie.asset(
+                              Assets.lottiesAnimatedMoveUpwardsLinearIcon,
+                              height: 120.0.r,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.pushNamed(
+                      RouteName.pdf,
+                      queryParameters: {
+                        'url': widget.item.descriptionFile,
+                        'title': S.of(context).packageDetails,
+                      },
+                    );
+                  },
+                  child: DrawableText(
+                    text: S.of(context).knowMoreDetails,
+                    textDecoration: TextDecoration.underline,
+                  ),
+                ),
+                10.0.verticalSpace,
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _Top extends StatelessWidget {
+  const _Top({required this.item});
+
+  final InsurancePackage item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200.0.h,
+      clipBehavior: Clip.hardEdge,
+      width: 1.0.sw,
+      decoration: BoxDecoration(
+        color: AppColorManager.cardColor,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.0).r),
+        boxShadow: MyStyle.allShadow,
+      ),
+      child: Stack(
+        children: [
+          ImageMultiType(
+            height: 1.0.sh,
+            width: 1.0.sw,
+            url: Assets.iconsTopCard,
+            color: item.level.color,
+            fit: BoxFit.fill,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0).r,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(4.0).r,
+                      decoration: BoxDecoration(
+                        color: Colors.black12,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(24.0).r,
+                          bottomLeft: Radius.circular(24.0).r,
+                        ),
+                      ),
+                      child: DrawableText(
+                        text: item.title,
+                        color: Colors.white,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0).r,
+                        size: 20.0.sp,
+                      ),
+                    ),
+                    Spacer(),
+                    item.type.icon,
+                  ],
+                ),
+                10.0.verticalSpace,
+                DrawableText(
+                  text: item.price.formatPrice,
+                  color: Colors.white,
+                  size: 32.0.sp,
+                  drawableEnd: DrawableText(
+                    text: '/${S.of(context).annually}',
+                    color: Colors.white,
+                  ),
+                ),
+                Spacer(),
+                DrawableText(
+                  text: S.of(context).features,
+                  size: 18.0.sp,
+                ),
+              ],
             ),
           ),
         ],

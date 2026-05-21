@@ -1,5 +1,7 @@
+import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:go_router/go_router.dart';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
@@ -81,7 +83,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         actions: actions,
         elevation: elevation ?? 0.0,
         shadowColor: elevation == 0 ? null : AppColorManager.black.withValues(alpha: 0.28),
-        iconTheme:  IconThemeData(color: AppColorManager.textColor),
+        iconTheme: IconThemeData(color: AppColorManager.textColor),
       ),
     );
   }
@@ -115,9 +117,12 @@ class BackBtnWidget extends StatelessWidget {
         if (!context.canPop()) return;
         context.pop();
       },
-      icon: ImageMultiType(
-        url: Assets.iconsBack,
-        color: AppColorManager.textColor,
+      icon: Transform.rotate(
+        angle: AppSharedPreference.getLocal == 'en' ? math.pi : 0,
+        child: ImageMultiType(
+          url: Assets.iconsBack,
+          color: AppColorManager.textColor,
+        ),
       ),
     );
   }

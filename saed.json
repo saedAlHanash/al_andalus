@@ -1,1181 +1,425 @@
 {
   "data": [
     {
-      "id": 68,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 3,
-        "title": "الباقة الذهبية",
-        "level": "gold",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "008e131a-a337-4678-9ae0-d6f24c33affd",
-      "annual_subscription_price": 194,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 64,
-        "name": "تجريبيو",
-        "brand": "شيري",
-        "cylinders": "6",
-        "manufacture_year": "2023",
-        "color": "فضي",
-        "chassis_number": "827362v",
-        "plate_number": "7282663",
-        "fuel_type": "petrol",
-        "engine_capacity": 1600,
-        "value": 10800,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-img-20250719-wa0009-7fff319b-dd9b-45ee-86da-ce42a1eb6f6e-1779092828.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-1000001296-0f8b8c35-37ab-479b-ac2c-920818aef099-1779092833.jpg",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/7adef83e-c8cf-450a-b45e-3a7349979dde-1779092833.pdf",
-        "inspection": {
-          "id": 61,
-          "metal_body": "intact",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": null,
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "intact",
-          "brand_sign_note": null,
-          "windshield_wipers": "intact",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": null,
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": null,
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-05-18 | 11:27 ص"
+      "id": 1,
+      "title": "الباقة الفضية",
+      "brief": "حماية أساسية موثوقة تغطي احتياجاتك اليومية وتمنحك بداية آمنة بتكلفة مناسبة.",
+      "type": "private",
+      "level": "silver",
+      "tag": "الباقة الاساسية",
+      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
+      "features": [
+        {
+          "id": 222,
+          "title": "تغطي تعويض الأضرار التي تصيب السيارة في حالات حوادث الاصطدام أو الانقلاب",
+          "created": "2026-05-19 | 12:48 ص"
         },
-        "attachment": {
-          "id": 61,
-          "front_image": "https://admin.andalusapp.com/storage/media/scaled-8df5b463-2f12-46b8-a544-51621915b3ec6982460391358130407-7c7db02d-fcc1-46c9-aadd-8f773690d129-1779092836.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-0a2d57de-e88c-44dd-bc40-227c2d6932763718629948163036033-fe89c743-3d08-4dff-b83d-05056b8e6e4f-1779092837.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-a228f52b-3a8f-4163-b033-b4a9fb042f5f8753506915382274879-70829a3b-13c5-4437-b793-478852fe9531-1779092838.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/scaled-8688f093-b1ca-4cf3-a84d-a2ffce56f0543246370534769809738-98181592-7475-48a6-a187-d293e4d5253e-1779092839.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/scaled-92f06afb-a016-4d25-a66f-4b10ac61f5a97028377542273264674-9e8639e5-7143-4f33-8855-6a15797f4adb-1779092837.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/scaled-9d45d468-532c-44df-9f18-a6293ae7e698979353461667946961-9e854280-f3d9-430f-9a23-734933a46706-1779092839.jpg",
-          "created": "2026-05-18 | 11:27 ص"
+        {
+          "id": 223,
+          "title": "تعويض أضرار السيارة بحد أقصى (سقف) يصل إلى 10,000,000 د.ع",
+          "created": "2026-05-19 | 12:48 ص"
         },
-        "created": "2026-05-18 | 11:27 ص"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/gold-008e131a-a337-4678-9ae0-d6f24c33affd.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-05-18 | 11:27 ص"
-    },
-    {
-      "id": 65,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 5,
-        "title": "الباقة البلاتينية",
-        "level": "platinum",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "3b23156e-bb9a-48b7-abc3-68f9f4afb8db",
-      "annual_subscription_price": 13520,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 61,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "6",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "87317551",
-        "plate_number": "770244543",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 520000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-df58f8f5-64f2-4ad3-81e2-f0817d6caa9a-1778750362.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-30455aaa-7f23-4196-ba31-fcea1c6ecbe1-1778750362.jpg",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/0a8cc690-68de-4481-a601-ac0589b606df-1778750363.pdf",
-        "inspection": {
-          "id": 58,
-          "metal_body": "damage",
-          "metal_body_note": "ملاحظة تجريبية للهيكل",
-          "glass_and_lamps": "damage",
-          "glass_and_lamps_note": "ملاحظة تجريبية للزجاج والمصابيح",
-          "chrome_nickel": "damage",
-          "chrome_nickel_note": "ملاحظة تجريبية للكروم",
-          "brand_sign": "intact",
-          "brand_sign_note": "-",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "intact",
-          "seats_note": "-",
-          "floor_cover": "damage",
-          "floor_cover_note": "ملاحظة تجريبية للأرضية",
-          "radio": "damage",
-          "radio_note": "ملاحظة تجريبية للراديو",
-          "air_conditioner": "damage",
-          "air_conditioner_note": "ملاحظة تجريبية للمكيف",
-          "front_tires": "damage",
-          "front_tires_note": "ملاحظة تجريبية للإطارات الأمامية",
-          "back_tires": "intact",
-          "back_tires_note": "-",
-          "spare_tire": "damage",
-          "spare_tire_note": "ملاحظة تجريبية للإطار الاحتياطي",
-          "tires_covers": "intact",
-          "tires_covers_note": "-",
-          "spare_tools": "intact",
-          "spare_tools_note": "-",
-          "other_notes": null,
-          "created": "2026-05-14 | 12:19 م"
+        {
+          "id": 224,
+          "title": "تعويض الأضرار التي تصيب الممتلكات العامة أو الخاصة للغير بسقف 5,000,000 د.ع",
+          "created": "2026-05-19 | 12:48 ص"
         },
-        "attachment": {
-          "id": 58,
-          "front_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-d328cf7f-391f-4d8d-a53b-a9ac09573177-1778750364.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-3a7afa05-7035-49a2-a89f-89796539aa65-1778750365.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-3d8ccd42-86ce-4c90-8dc9-8c1f9d742808-1778750365.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-69eb7772-b71f-47be-b86d-5c62fdc3cd8b-1778750366.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-c46719c2-17d5-4ebd-a21c-438f0574dbb8-1778750364.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733598975878-d915d3ff-dc8b-4bb4-82dc-84e6472bfc72-1778750366.jpg",
-          "created": "2026-05-14 | 12:19 م"
+        {
+          "id": 225,
+          "title": "تغطية الأضرار الجسدية التي قد �05-19 | 12:48 ص"
         },
-        "created": "2026-05-14 | 12:19 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/platinum-3b23156e-bb9a-48b7-abc3-68f9f4afb8db.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-05-14 | 12:19 م"
-    },
-    {
-      "id": 64,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "bf867503-fc1d-4294-96f7-3b2917eb1810",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 60,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "4",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "456434",
-        "plate_number": "87645",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 180000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-d08caf23-0365-4fb7-9a75-be790ca7138c-1778749649.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-f046c690-39d0-427d-9dc1-86d84bbc6bb6-1778749650.jpg",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/9ef6aa75-5a0f-4cb5-af52-9a2c9e51f141-1778749651.pdf",
-        "inspection": {
-          "id": 57,
-          "metal_body": "intact",
-          "metal_body_note": "-",
-          "glass_and_lamps": "damage",
-          "glass_and_lamps_note": "ملاحظة تجريبية للزجاج والمصابيح",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": "-",
-          "brand_sign": "intact",
-          "brand_sign_note": "-",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "damage",
-          "seats_note": "ملاحظة تجريبية للمقاعد",
-          "floor_cover": "damage",
-          "floor_cover_note": "ملاحظة تجريبية للأرضية",
-          "radio": "intact",
-          "radio_note": "-",
-          "air_conditioner": "damage",
-          "air_conditioner_note": "ملاحظة تجريبية للمكيف",
-          "front_tires": "damage",
-          "front_tires_note": "ملاحظة تجريبية للإطارات الأمامية",
-          "back_tires": "intact",
-          "back_tires_note": "-",
-          "spare_tire": "damage",
-          "spare_tire_note": "ملاحظة تجريبية للإطار الاحتياطي",
-          "tires_covers": "intact",
-          "tires_covers_note": "-",
-          "spare_tools": "intact",
-          "spare_tools_note": "-",
-          "other_notes": null,
-          "created": "2026-05-14 | 12:07 م"
-        },
-        "attachment": {
-          "id": 57,
-          "front_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-4f8b5483-4be7-43c2-876a-d18f9267780b-1778749651.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-34836cbb-5f70-4bcf-9c07-bf65b7b96c06-1778749652.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-a52aa139-6e62-4d72-b714-1b045130fdd1-1778749652.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-eca6fe61-4904-4944-b432-11b8bf0b3ec6-1778749653.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-11f0e0e1-2abd-4cf5-b7f2-8e58b149d4fc-1778749652.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/scaled-fb-img-1733622181563-1591b4bd-c67b-41ec-b264-ad4f8bbc687c-1778749653.jpg",
-          "created": "2026-05-14 | 12:07 م"
-        },
-        "created": "2026-05-14 | 12:07 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-bf867503-fc1d-4294-96f7-3b2917eb1810.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-05-14 | 12:07 م"
-    },
-    {
-      "id": 61,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 3,
-        "title": "الباقة الذهبية",
-        "level": "gold",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "86f840a4-ad06-4992-a53e-c171288f6b8f",
-      "annual_subscription_price": 1,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 57,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "6",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "635559",
-        "plate_number": "987951",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 54,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-e1d57c63-26ae-4b5e-989d-2376adc3924c-1778170350.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-cd151f80-cdaa-4066-a795-6d511ddc4bbd-1778170350.jpg",
-        "inspection_report": null,
-        "inspection": {
-          "id": 54,
-          "metal_body": "intact",
-          "metal_body_note": "-",
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "-",
-          "chrome_nickel": "damage",
-          "chrome_nickel_note": "ملاحظة تجريبية للكروم",
-          "brand_sign": "intact",
-          "brand_sign_note": "-",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "intact",
-          "seats_note": "-",
-          "floor_cover": "damage",
-          "floor_cover_note": "ملاحظة تجريبية للأرضية",
-          "radio": "intact",
-          "radio_note": "-",
-          "air_conditioner": "damage",
-          "air_conditioner_note": "ملاحظة تجريبية للمكيف",
-          "front_tires": "intact",
-          "front_tires_note": "-",
-          "back_tires": "intact",
-          "back_tires_note": "-",
-          "spare_tire": "damage",
-          "spare_tire_note": "ملاحظة تجريبية للإطار الاحتياطي",
-          "tires_covers": "damage",
-          "tires_covers_note": "ملاحظة تجريبية لأغطية الإطارات",
-          "spare_tools": "intact",
-          "spare_tools_note": "-",
-          "other_notes": null,
-          "created": "2026-05-07 | 7:12 م"
-        },
-        "attachment": {
-          "id": 54,
-          "front_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-195c9386-f0e5-4576-9b04-052875c1c10f-1778170351.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-af50266c-9dfa-471d-b216-7507dff71deb-1778170351.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-83d89d64-8317-43bf-b51b-b02b42007d45-1778170352.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-9599f3ba-afef-4075-92a0-c9273f406b6c-1778170352.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-6c54d663-8325-41d2-9cea-f78496ed3b25-1778170351.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-ea077191-583a-4f0b-92ca-776962df6561-1778170352.jpg",
-          "created": "2026-05-07 | 7:12 م"
-        },
-        "created": "2026-05-07 | 7:12 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/gold-86f840a4-ad06-4992-a53e-c171288f6b8f.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-05-07 | 7:12 م"
-    },
-    {
-      "id": 49,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "fb5075ce-5e34-4b86-af02-20ced8946812",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 45,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "6",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "273718",
-        "plate_number": "171588",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 180000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-6c2b4b68-6bfe-480d-bbe0-9fc458df2f54-1778051084.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-f1a2d0b0-1b7e-424d-9892-76ebc1849966-1778051085.jpg",
-        "inspection_report": null,
-        "inspection": {
-          "id": 42,
-          "metal_body": "damage",
-          "metal_body_note": "ملاحظة تجريبية للهيكل",
-          "glass_and_lamps": "damage",
-          "glass_and_lamps_note": "ملاحظة تجريبية للزجاج والمصابيح",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": "-",
-          "brand_sign": "intact",
-          "brand_sign_note": "-",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "intact",
-          "seats_note": "-",
-          "floor_cover": "intact",
-          "floor_cover_note": "-",
-          "radio": "intact",
-          "radio_note": "-",
-          "air_conditioner": "intact",
-          "air_conditioner_note": "-",
-          "front_tires": "damage",
-          "front_tires_note": "ملاحظة تجريبية للإطارات الأمامية",
-          "back_tires": "damage",
-          "back_tires_note": "ملاحظة تجريبية للإطارات الخلفية",
-          "spare_tire": "intact",
-          "spare_tire_note": "-",
-          "tires_covers": "damage",
-          "tires_covers_note": "ملاحظة تجريبية لأغطية الإطارات",
-          "spare_tools": "damage",
-          "spare_tools_note": "ملاحظة تجريبية لأدوات الاحتياط",
-          "other_notes": null,
-          "created": "2026-05-06 | 10:04 ص"
-        },
-        "attachment": {
-          "id": 42,
-          "front_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-531c32b1-785b-4c13-930a-3252bc068754-1778051085.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-f936ea63-92a5-4fbe-aff7-c5eaa05d1408-1778051086.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-26083037-22b5-4d0e-88f5-5ef050cd6111-1778051087.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-a00ddb44-f595-4f61-ba11-fffb252a8121-1778051087.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-2dccafc1-0f38-491d-b636-18ad42078c83-1778051086.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/scaled-1773852260782-42d9763e-f3ab-473a-8218-a96bbc38a3d2-1778051088.jpg",
-          "created": "2026-05-06 | 10:04 ص"
-        },
-        "created": "2026-05-06 | 10:04 ص"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-fb5075ce-5e34-4b86-af02-20ced8946812.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-05-06 | 10:04 ص"
-    },
-    {
-      "id": 44,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 6,
-        "title": "الباقة البلاتينية",
-        "level": "platinum",
-        "type": "public"
-      },
-      "status": "payment_pending",
-      "qrcode": "7d1976df-248a-4525-a69e-8bb47425a60d",
-      "annual_subscription_price": 1772976,
-      "start_date": "2026-04-11",
-      "end_date": "2027-04-11",
-      "vehicle": {
-        "id": 40,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "656565998942377",
-        "plate_number": "999998881142379",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50656444,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 37,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-26 | 5:08 م"
-        },
-        "attachment": {
-          "id": 37,
-          "front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "created": "2026-03-26 | 5:08 م"
-        },
-        "created": "2026-03-26 | 5:08 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/platinum-7d1976df-248a-4525-a69e-8bb47425a60d.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-26 | 5:08 م"
-    },
-    {
-      "id": 43,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "8509e181-98b6-4c55-8057-fab937ba688f",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 39,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "65656599894237",
-        "plate_number": "99999888114237",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50656444,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 36,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-26 | 5:03 م"
-        },
-        "attachment": {
-          "id": 36,
-          "front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "created": "2026-03-26 | 5:03 م"
-        },
-        "created": "2026-03-26 | 5:03 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-8509e181-98b6-4c55-8057-fab937ba688f.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-26 | 5:03 م"
-    },
-    {
-      "id": 42,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "1db88341-5821-48c3-993b-3d7f88fbcd0f",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 38,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "6565659989423",
-        "plate_number": "9999988811423",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 35,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-26 | 2:02 م"
-        },
-        "attachment": {
-          "id": 35,
-          "front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "created": "2026-03-26 | 2:02 م"
-        },
-        "created": "2026-03-26 | 2:02 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-1db88341-5821-48c3-993b-3d7f88fbcd0f.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-26 | 2:02 م"
-    },
-    {
-      "id": 41,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "resubmitted",
-      "qrcode": "49be7d14-bb74-4775-9769-c1321b0c9413",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 37,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "65656599894",
-        "plate_number": "99999888114",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 34,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-26 | 2:02 م"
-        },
-        "attachment": {
-          "id": 34,
-          "front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "created": "2026-03-26 | 2:02 م"
-        },
-        "created": "2026-03-26 | 2:02 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-49be7d14-bb74-4775-9769-c1321b0c9413.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-26 | 2:02 م"
-    },
-    {
-      "id": 40,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "paid",
-      "qrcode": "66a12dd9-cea2-4f0b-9a78-7526ad8cd565",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 36,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "6565659989",
-        "plate_number": "9999988811",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 33,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-26 | 1:58 م"
-        },
-        "attachment": {
-          "id": 33,
-          "front_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/screenshot-2026-02-19-141606-a4c5caf0-50a0-47b5-88ff-ff98515e679e-1774434479.png",
-          "created": "2026-03-26 | 1:58 م"
-        },
-        "created": "2026-03-26 | 1:58 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-66a12dd9-cea2-4f0b-9a78-7526ad8cd565.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-26 | 1:58 م"
-    },
-    {
-      "id": 37,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 3,
-        "title": "الباقة الذهبية",
-        "level": "gold",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "856b8f9c-950f-4024-8021-e446b28d777e",
-      "annual_subscription_price": 162,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 33,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "6",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "191117",
-        "plate_number": "359288",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 90,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-c56a47d5-7735-44d6-9f2a-7f445c492454-1774439964.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-42b6bcc3-bd47-4b1d-913d-79000916e0aa-1774439965.jpg",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/b46dcbac-1f97-41ed-8d28-53f74f2d46e1-1774439965.pdf",
-        "inspection": {
-          "id": 30,
-          "metal_body": "damage",
-          "metal_body_note": "ملاحظة تجريبية للهيكل",
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "-",
-          "chrome_nickel": "damage",
-          "chrome_nickel_note": "ملاحظة تجريبية للكروم",
-          "brand_sign": "damage",
-          "brand_sign_note": "ملاحظة تجريبية لشعار السيارة",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "intact",
-          "seats_note": "-",
-          "floor_cover": "damage",
-          "floor_cover_note": "ملاحظة تجريبية للأرضية",
-          "radio": "intact",
-          "radio_note": "-",
-          "air_conditioner": "intact",
-          "air_conditioner_note": "-",
-          "front_tires": "damage",
-          "front_tires_note": "ملاحظة تجريبية للإطارات الأمامية",
-          "back_tires": "damage",
-          "back_tires_note": "ملاحظة تجريبية للإطارات الخلفية",
-          "spare_tire": "damage",
-          "spare_tire_note": "ملاحظة تجريبية للإطار الاحتياطي",
-          "tires_covers": "damage",
-          "tires_covers_note": "ملاحظة تجريبية لأغطية الإطارات",
-          "spare_tools": "damage",
-          "spare_tools_note": "ملاحظة تجريبية لأدوات الاحتياط",
-          "other_notes": null,
-          "created": "2026-03-25 | 3:02 م"
-        },
-        "attachment": {
-          "id": 30,
-          "front_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-d5410356-a5ac-4682-849e-faac763014ef-1774439966.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-9a23cd81-f91b-4551-bda5-6a1b7b8070f3-1774439967.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-53819cf0-60ad-41b7-979e-dbffe4e78b21-1774439967.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-bacc03eb-4d5f-4c8c-aa26-cc49f85c1035-1774439968.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-4608865b-700d-41ad-8816-1bd853433bb3-1774439966.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-a47bf921-1a01-42ab-bba6-88d0400f12a2-1774439968.jpg",
-          "created": "2026-03-25 | 3:02 م"
-        },
-        "created": "2026-03-25 | 3:02 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/gold-856b8f9c-950f-4024-8021-e446b28d777e.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-25 | 3:02 م"
-    },
-    {
-      "id": 36,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "paid",
-      "qrcode": "ffc371cc-0186-4e5d-b577-2f658afd9b7a",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 32,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "656565992",
-        "plate_number": "999998882",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 29,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-25 | 1:58 م"
-        },
-        "attachment": {
-          "id": 29,
-          "front_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/detective-conan-22800899-47b6-4413-8071-0c892457a0d5-1774434260.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/detective-conan-22800899-47b6-4413-8071-0c892457a0d5-1774434260.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "created": "2026-03-25 | 1:58 م"
-        },
-        "created": "2026-03-25 | 1:58 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-ffc371cc-0186-4e5d-b577-2f658afd9b7a.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-25 | 1:58 م"
-    },
-    {
-      "id": 33,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "payment_pending",
-      "qrcode": "9c742b94-7e16-4930-8ad7-1709eecaf633",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 29,
-        "name": "456",
-        "brand": "123",
-        "cylinders": "6",
-        "manufacture_year": "1990",
-        "color": "red",
-        "chassis_number": "65656599",
-        "plate_number": "99999888",
-        "fuel_type": "hybrid",
-        "engine_capacity": 5000,
-        "value": 50000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/678c5e39-fc49-4799-9495-72de32aadc21-1774435957.pdf",
-        "inspection": {
-          "id": 26,
-          "metal_body": "missing",
-          "metal_body_note": null,
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "dd",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": null,
-          "brand_sign": "damage",
-          "brand_sign_note": "damage notes",
-          "windshield_wipers": "missing",
-          "windshield_wipers_note": null,
-          "radio_antenna": "intact",
-          "radio_antenna_note": "test note",
-          "seats": "intact",
-          "seats_note": null,
-          "floor_cover": "intact",
-          "floor_cover_note": "test",
-          "radio": "intact",
-          "radio_note": null,
-          "air_conditioner": "intact",
-          "air_conditioner_note": null,
-          "front_tires": "intact",
-          "front_tires_note": null,
-          "back_tires": "intact",
-          "back_tires_note": null,
-          "spare_tire": "intact",
-          "spare_tire_note": null,
-          "tires_covers": "intact",
-          "tires_covers_note": null,
-          "spare_tools": "intact",
-          "spare_tools_note": null,
-          "other_notes": null,
-          "created": "2026-03-25 | 1:53 م"
-        },
-        "attachment": {
-          "id": 26,
-          "front_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/detective-conan-22800899-47b6-4413-8071-0c892457a0d5-1774434260.png",
-          "interior_image": "https://admin.andalusapp.com/storage/media/detective-conan-22800899-47b6-4413-8071-0c892457a0d5-1774434260.png",
-          "back_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "engine_image": "https://admin.andalusapp.com/storage/media/default-5c121d9e-3654-4472-b3ad-3de82c5fea72-1774435933.png",
-          "created": "2026-03-25 | 1:53 م"
-        },
-        "created": "2026-03-25 | 1:53 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-9c742b94-7e16-4930-8ad7-1709eecaf633.docx",
-      "fields_to_be_refilled": null,
-      "created": "2026-03-25 | 1:53 م"
-    },
-    {
-      "id": 30,
-      "has_transfer_request": null,
-      "has_claim_request": null,
-      "insurance_package": {
-        "id": 1,
-        "title": "الباقة الفضية",
-        "level": "silver",
-        "type": "private"
-      },
-      "status": "resubmitted",
-      "qrcode": "5b9abc06-b2ad-45ba-bcbc-2512adf71b74",
-      "annual_subscription_price": 180000,
-      "start_date": null,
-      "end_date": null,
-      "vehicle": {
-        "id": 26,
-        "name": "سيارة تجريبية",
-        "brand": "تويوتا",
-        "cylinders": "6",
-        "manufacture_year": "2020",
-        "color": "أبيض",
-        "chassis_number": "604031",
-        "plate_number": "880664",
-        "fuel_type": "petrol",
-        "engine_capacity": 2000,
-        "value": 180000,
-        "expiry_start_date": null,
-        "expiry_end_date": null,
-        "ownership_front_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-378477d7-7db4-4c95-af5d-fb4258278f95-1774440540.jpg",
-        "ownership_back_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-2e7c40f7-7864-4d71-b18c-f8fb07d6b5b2-1774440540.jpg",
-        "inspection_report": "https://admin.andalusapp.com/storage/media/efc2c666-f4d3-48d7-b178-36810b7b0e69-1774440541.pdf",
-        "inspection": {
-          "id": 23,
-          "metal_body": "intact",
-          "metal_body_note": "-",
-          "glass_and_lamps": "intact",
-          "glass_and_lamps_note": "-",
-          "chrome_nickel": "intact",
-          "chrome_nickel_note": "-",
-          "brand_sign": "intact",
-          "brand_sign_note": "-",
-          "windshield_wipers": "damage",
-          "windshield_wipers_note": "ملاحظة تجريبية للمساحات",
-          "radio_antenna": "intact",
-          "radio_antenna_note": "-",
-          "seats": "damage",
-          "seats_note": "ملاحظة تجريبية للمقاعد",
-          "floor_cover": "damage",
-          "floor_cover_note": "ملاحظة تجريبية للأرضية",
-          "radio": "intact",
-          "radio_note": "-",
-          "air_conditioner": "intact",
-          "air_conditioner_note": "-",
-          "front_tires": "damage",
-          "front_tires_note": "ملاحظة تجريبية للإطارات الأمامية",
-          "back_tires": "intact",
-          "back_tires_note": "-",
-          "spare_tire": "damage",
-          "spare_tire_note": "ملاحظة تجريبية للإطار الاحتياطي",
-          "tires_covers": "intact",
-          "tires_covers_note": "-",
-          "spare_tools": "damage",
-          "spare_tools_note": "ملاحظة تجريبية لأدوات الاحتياط",
-          "other_notes": null,
-          "created": "2026-03-09 | 12:20 م"
-        },
-        "attachment": {
-          "id": 23,
-          "front_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-5b17f93b-6652-445b-91e6-ca49b5b69de1-1774440542.jpg",
-          "right_side_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-19c9d305-8a2c-4e63-af94-cb88623edc70-1774440542.jpg",
-          "left_side_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-e8cd1ed0-7507-41f6-a52c-2829c8b6e943-1774440543.jpg",
-          "interior_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-88b90db5-0d75-4919-afb4-37650dfa2fe1-1774440543.jpg",
-          "back_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-52bdd48f-5881-4513-8e1f-bd5dbc67697a-1774440542.jpg",
-          "engine_image": "https://admin.andalusapp.com/storage/media/img-20260319-wa0002-66d9b7ab-c1a9-4ca9-bba6-950888bdde5a-1774440544.jpg",
-          "created": "2026-03-09 | 12:20 م"
-        },
-        "created": "2026-03-09 | 12:20 م"
-      },
-      "policy_file": "https://admin.andalusapp.com/storage/contracts/silver-5b9abc06-b2ad-45ba-bcbc-2512adf71b74.docx",
-      "fields_to_be_refilled": [
-        "ownership_front_image",
-        "ownership_back_image",
-        "expiry_start_date",
-        "front_image",
-        "right_side_image",
-        "left_side_image",
-        "interior_image",
-        "expiry_end_date",
-        "engine_capacity",
-        "fuel_type",
-        "plate_number",
-        "chassis_number",
-        "inspection_report",
-        "color"
+        {
+          "id": 226,
+          "title": "تكلفة البرنامج ثابتة للسيارات الخصوصي (180,000 د.ع) بغض النظر عن القيمة السوقية للسيارة",
+          "created": "2026-05-19 | 12:48 ص"
+        }
       ],
-      "created": "2026-03-09 | 12:20 م"
-    }
-  ]
-}
+      "cylinders": [
+        {
+          "id": 1,
+          "cylinders": "4",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 2,
+          "cylinders": "6",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 3,
+          "cylinders": "8",
+          "pricing_type": "fixed",
+          "value": 180000,
+          "created": "2026-01-04 | 4:23 م"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 م"
+    },
+    {
+      "id": 2,
+      "title": "الباقة الفضية",
+      "brief": "حماية أساسية موثوقة تغطي احتياجاتك اليومية وتمنحك بداية آمنة بتكلفة مناسبة.",
+      "type": "public",
+      "level": "silver",
+      "tag": "الباقة الاساسية",
+      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
+      "features": [
+        {
+          "id": 172,
+          "title": "سرقة المركبة",
+          "created": "2026-05-14 | 12:15 ص"
+        },
+        {
+          "id": 173,
+          "title": "أضرار المحرك و هيكل السيارة بسبب حادث",
+          "created": "2026-05-14 | 12:15 ص"
+        },
+        {
+          "id": 174,
+          "title": "حريق المحرك بسبب حادث أو انتشار حريق أو اشتعال ذاتي",
+          "created": "2026-05-14 | 12:15 ص"
+        },
+        {
+          "id": 175,
+          "title": "5,000,000 د.ع لتغطية الاضرار المادية",
+          "created": "2026-05-14 | 12:15 ص"
+        },
+        {
+          "id": 176,
+          "title": "5,000,000 د.ع لتغطية لاضرار الجسدية",
+          "created": "2026-05-14 | 12:15 ص"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 4,
+          "cylinders": "4",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 5,
+          "cylinders": "6",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 6,
+          "cylinders": "8",
+          "pricing_type": "fixed",
+          "value": 250000,
+          "created": "2026-01-04 | 4:23 م"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 م"
+    },
+    {
+      "id": 3,
+      "title": "الباقة الذهبية",
+      "brief": "تغطية شاملة ومزايا متقدمة توفر حماية موثوقة وخدمات سريعة، لتمنحك توازناً مثالياً بين القيمة والراحة في كل رحلة.",
+      "type": "private",
+      "level": "gold",
+      "tag": "الاكثر طلباً",
+      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
+      "features": [
+        {
+          "id": 212,
+          "title": "يشمل الأضرار أو فقدان المحرك وهيكل المركبة نتيجة حادث طريق أو تصادم أو انقلاب",
+          "created": "2026-05-19 | 12:34 ص"
+        },
+        {
+          "id": 213,
+          "title": "يغطي حريق المحرك أو الهيكل الناتج عن حادث، انتشار حريق أو اشتعال ذاتي (جزئي أو كلي)",
+          "created": "2026-05-19 | 12:34 ص"
+        },
+        {
+          "id": 214,
+          "title": "يتضمن البرنامج تغطية شاملة في حال تعرض المركبة المؤمنة للسرقة",
+          "created": "2026-05-19 | 12:34 �ً ثابتاً صغيراً)",
+          "created": "2026-05-19 | 12:34 ص"
+        },
+        {
+          "id": 216,
+          "title": "• تعويض ممتلكات وأرواح الآخرين نتيجة اصطدام المركبة المؤمنة بسقف يصل إلى 10,000,000 د.ع",
+          "created": "2026-05-19 | 12:34 ص"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 7,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 1.6,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 8,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 1.8,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 9,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 2,
+          "created": "2026-01-04 | 4:23 م"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 م"
+    },
+    {
+      "id": 4,
+      "title": "الباقة الذهبية",
+      "brief": "تغطية شاملة ومزايا متقدمة توفر حماية موثوقة وخدمات سريعة، لتمنحك توازناً مثالياً بين القيمة والراحة في كل رحلة.",
+      "type": "public",
+      "level": "gold",
+      "tag": "الاكثر طلباً",
+      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
+      "features": [
+        {
+          "id": 152,
+          "title": "أضرار المحرك و هيكل السيارة بسبب حادث",
+          "created": "2026-05-14 | 12:12 ص"
+        },
+        {
+          "id": 153,
+          "title": "حريق المحرك بسبب حادث أو انتشار حريق أو اشتعال ذاتي",
+          "created": "2026-05-14 | 12:12 ص"
+        },
+        {
+          "id": 154,
+          "title": "5,000,000 د.ع لتغطية الاضرار المادية",
+          "created": "2026-05-14 | 12:12 ص"
+        },
+        {
+          "id": 155,
+          "title": "5,000,000 د.ع لتغطية لاضرار الجسدية",
+          "created": "2026-05-14 | 12:12 ص"
+        },
+        {
+          "id": 156,
+          "title": "سرقة المركبة",
+          "created": "2026-05-14 | 12:12 ص"
+        }
+      ],
+      "cylinders": [
+        {
+          "id": 10,
+          "cylinders": "4",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 11,
+          "cylinders": "6",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 | 4:23 م"
+        },
+        {
+          "id": 12,
+          "cylinders": "8",
+          "pricing_type": "percent",
+          "value": 2.5,
+          "created": "2026-01-04 |4:23 م"
+        }
+      ],
+      "created": "2026-01-04 | 4:23 م"
+    },
+    {
+      "id": 5,
+      "title": "الباقة البلاتينية",
+      "brief": "تغطية متكاملة بأعلى مستوى من الحماية والخدمات المميزة، تشمل إصلاحات سريعة، دعم فوري على مدار الساعة، ومزايا حصرية تمنحك راحة واطمئنان في كل رحلة",
+      "type": "private",
+      "level": "platinum",
+      "tag": "اكثر قيمة",
+      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
+      "features": [
+        {
+          "id": 207,
+          "title": "كافة تغطيات الحوادث - الانقلاب - الحريق - وسرقة المركبة",
+          "created": "2026-05-19 | 12:33 ص"
+        },
+        {
+          "id": 208,
+          "title": "تعويض الأضرار الناتجة عن الأعمال الإرهابية مثل التفجيرات أو الهجمات المسلحة",
+          "created": "2026-05-19 | 12:33 ص"
+        },
+        {
+          "id": 209,
+          "title": "التعويض عن الأضرار الناتجة عن الفيضان"
+          id
+          ":210,"
+          title
+          ":"
+          حماية
+          الممتلكات
+          العامة
+          والخاصة
+          والأشخاص
+          المتضررين
+          بسقف
+          تعويضي
+          يصل
+          إلى
+          10,
+          000,
+          000
+          د.ع
+          ","
+          created
+          ":"
+          2026-05-19
+          |
+          12: 33
+          ص
+          "},{"
+          id
+          ":211,"
+          title
+          ":"
+          تغطية
+          الأضرار
+          التي
+          قد
+          تصيب
+          المركبة
+          ليس
+          فقط
+          أثناء
+          القيادة
+          بل
+          وعند
+          ركنها
+          في
+          الأماكن
+          المخصصة
+          ","
+          created
+          ":"
+          2026-05-19
+          |
+          12: 33
+          ص
+          "}],"
+          cylinders
+          ":[{"
+          id
+          ":13,"
+          cylinders
+          ":"
+          4
+          ","
+          pricing_type
+          ":"
+          percent
+          ","
+          value
+          ":2.4,"
+          created
+          ":"
+          2026-01-04
+          |
+          4: 23
+          م
+          "},{"
+          id
+          ":14,"
+          cylinders
+          ":"
+          6
+          ","
+          pricing_type
+          ":"
+          percent
+          ","
+          value
+          ":2.6,"
+          created
+          ":"
+          2026-01-04
+          |
+          4: 23
+          م
+          "},{"
+          id
+          ":15,"
+          cylinders
+          ":"
+          8
+          ","
+          pricing_type
+          ":"
+          percent
+          ","
+          value
+          ":3,"
+          created
+          ":"
+          2026-01-04
+          |
+          4: 23
+          م
+          "}],"
+          created
+          ":"
+          2026-01-04
+          |
+          4: 23
+          م
+          "},{"
+          id
+          ":6,"
+          title
+          ":"
+          الباقة
+          البلاتينية
+          ","
+          brief
+          ":"
+          تغطية
+          متكاملة
+          بأعلى
+          مستوى
+          من
+          الحماية
+          والخدمات
+          المميزة
+          ،
+          تشمل
+          إصلاحات
+          سريعة
+          ،
+          دعم
+          فوري
+          على
+          مدار
+          الساعة
+          ،
+          ومزلة
+          ","
+          type
+          ":"
+          public
+          ","
+          level
+          ":"
+          platinum
+          ","
+          tag
+          ":"
+          اكثر
+          قيمة
+          ","
+          description_file
+          ":"
+          https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf","features":[{"id":187,"title":"كافة تغطيات الحوادث - الانقلاب - الحريق - وسرقة المركبة","created":"2026-05-18 | 10:54 م"},{"id":188,"title":"تعويض الأضرار الناتجة عن الأعمال الإرهابية مثل التفجيرات أو الهجمات المسلحة","created":"2026-05-18 | 10:54 م"},{"id":189,"title":"التعويض عن الأضرار الناتجة عن الفيضانات - الزلازل - العواصف - والانهيارات الأرضية","created":"2026-05-18 | 10:54 م"},{"id":190,"title":"حماية الممتلكات العامة والخاصة والأشخاص المتضررين بسقف تعويضي يصل إلى 10,000,000 د.ع","created":"2026-05-18 | 10:54 م"},{"id":191,"title":"تغطية الأضرار التالأماكن المخصصة","created":"2026-05-18 | 10:54 م"}],"cylinders":[{"id":16,"cylinders":"4","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"},{"id":17,"cylinders":"6","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"},{"id":18,"cylinders":"8","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"}],"created":"2026-01-04 | 4:23 م"}]}

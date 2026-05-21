@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -136,6 +137,8 @@ class MyStyle {
   );
 
   static final authPagesPadding = const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 30.0).r;
+
+  static bool get isAr => AppSharedPreference.getLocal == 'ar';
 
   static final productGridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,

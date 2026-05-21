@@ -221,7 +221,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "done": MessageLookupByLibrary.simpleMessage("تهواو"),
     "donePick": MessageLookupByLibrary.simpleMessage("ههڵبژاردن تهواو بوو"),
-    "doneProcess": MessageLookupByLibrary.simpleMessage("Done Process"),
+    "doneProcess": MessageLookupByLibrary.simpleMessage("عمل مکمل ہو گیا"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تازهکردنهوه کرا"),
     "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
       "به سهرکهوتوویی ئهنجامدرا",
@@ -231,7 +231,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dontWorryYouCanCompleteThePurchaseAtAnyTime":
         MessageLookupByLibrary.simpleMessage(
-          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+          "پریشان نہ ہوں، آپ کسی بھی وقت خریداری مکمل کر سکتے ہیں جو آپ کے لیے موزوں ہو۔ بس اپنی کار کے کارڈ پر جائیں اور دبائیں ",
         ),
     "draft": MessageLookupByLibrary.simpleMessage("ڕهشنووس"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage(
@@ -668,6 +668,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "previewFile": MessageLookupByLibrary.simpleMessage("پێشبینینی فایل"),
     "price": MessageLookupByLibrary.simpleMessage("نرخ"),
     "private": MessageLookupByLibrary.simpleMessage("تایبهت"),
+    "privateInsuranceNote": MessageLookupByLibrary.simpleMessage(
+      "ذاتی استعمال کے لیے استعمال ہونے والی گاڑیاں",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("پڕۆفایل"),
     "public": MessageLookupByLibrary.simpleMessage("گشتی"),
     "qiCard": MessageLookupByLibrary.simpleMessage("کێ کارد - Qi Card"),
@@ -749,7 +752,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "skip": MessageLookupByLibrary.simpleMessage("تێپهڕاندن"),
     "sorryThePaymentProcessWasNotCompleted":
         MessageLookupByLibrary.simpleMessage(
-          "Sorry, the payment process was not completed.",
+          "معذرت، ادائیگی کا عمل مکمل نہیں ہو سکا۔",
         ),
     "spareTire": MessageLookupByLibrary.simpleMessage("تایهی یهدهگ"),
     "spareTools": MessageLookupByLibrary.simpleMessage("کهرهستهی یهدهگ"),
@@ -829,6 +832,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
       "ڕاپۆرتی پشکنینی ئۆتۆمبێل",
     ),
+    "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods":
+        MessageLookupByLibrary.simpleMessage(
+          "تجارتی استعمال یا لوگوں یا سامان کی نقل و حمل کے لیے ڈیزائن کی گئی گاڑیاں، بشمول (ٹیکسی - بس - پک اپ - ٹپر ٹرک...)",
+        ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "کۆدی پشتڕاستکردنهوه",
     ),

@@ -86,6 +86,7 @@ flutter:
     - assets/fonts/
     - assets/icons/
     - assets/images/
+    - assets/lotties/
     - assets/
   fonts:
     - family: regular

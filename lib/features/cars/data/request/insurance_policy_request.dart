@@ -71,7 +71,7 @@ class InsurancePolicyRequest {
       insurancePackageId: car.insurancePackage.id.toString(),
       cylinders: vehicle.cylinders,
       name: vehicle.name,
-      manufactureYear: DateTime(int.parse(vehicle.manufactureYear)),
+      manufactureYear: DateTime(int.tryParse(vehicle.manufactureYear)??0),
       color: vehicle.color,
       brand: vehicle.brand,
       value: vehicle.value.toString(),

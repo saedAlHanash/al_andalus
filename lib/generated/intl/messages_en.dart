@@ -660,6 +660,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "private": MessageLookupByLibrary.simpleMessage("private"),
+    "privateInsuranceNote": MessageLookupByLibrary.simpleMessage(
+      "Cars used for personal use",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "public": MessageLookupByLibrary.simpleMessage("public"),
     "qiCard": MessageLookupByLibrary.simpleMessage("Qi Card"),
@@ -820,6 +823,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "vehicleInspectionReport": MessageLookupByLibrary.simpleMessage(
       "Vehicle inspection report",
     ),
+    "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods":
+        MessageLookupByLibrary.simpleMessage(
+          "Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)",
+        ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "Verification Code",
     ),

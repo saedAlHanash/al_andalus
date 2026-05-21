@@ -56,7 +56,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ar');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).arabic),
+                    title: DrawableText(text: 'العربية'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ar' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -66,7 +66,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'ur');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).kurdish),
+                    title: DrawableText(text: 'کوردی'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'ur' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -76,7 +76,7 @@ void showLanguageDialog(BuildContext context) {
                       MyApp.setLocale(context, 'en');
                       Navigator.pop(context);
                     },
-                    title: DrawableText(text: S.of(context).english),
+                    title: DrawableText(text: 'English'),
                     leading: ImageMultiType(
                       url: AppSharedPreference.getLocal == 'en' ? Icons.radio_button_checked : Icons.radio_button_off,
                     ),
@@ -596,54 +596,62 @@ void selectCar(
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
+    isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (ctx) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          HeaderBottomSheet(),
-          StatefulBuilder(
-            builder: (context, setState) {
-              return Container(
-                color: AppColorManager.cardColor,
-                padding: const EdgeInsets.all(20.0).r,
-                child: Column(
-                  children: [
-                    TitleBottomSheet(
-                      title: S.of(context).selectDesiredCar,
-                    ),
-                    30.0.verticalSpace,
-                    DrawableText(
-                      text: S.of(context).pleaseSelectCarToViewDetails,
-                      matchParent: true,
-                    ),
-                    10.0.verticalSpace,
-                    if (cars.isEmpty)
-                      MyButton(
-                        text: S.of(context).addYourFirstCar,
-                        onTap: onAddCar,
+      return ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: 0.75.sh),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            HeaderBottomSheet(),
+            Flexible(
+              child: SingleChildScrollView(
+                child: StatefulBuilder(
+                  builder: (context, setState) {
+                    return Container(
+                      color: AppColorManager.cardColor,
+                      padding: const EdgeInsets.all(20.0).r,
+                      child: Column(
+                        children: [
+                          TitleBottomSheet(
+                            title: S.of(context).selectDesiredCar,
+                          ),
+                          30.0.verticalSpace,
+                          DrawableText(
+                            text: S.of(context).pleaseSelectCarToViewDetails,
+                            matchParent: true,
+                          ),
+                          10.0.verticalSpace,
+                          if (cars.isEmpty)
+                            MyButton(
+                              text: S.of(context).addYourFirstCar,
+                              onTap: onAddCar,
+                            ),
+                          ...cars.map(
+                            (e) => Container(
+                              decoration: MyStyle.roundBox12(),
+                              margin: EdgeInsets.symmetric(vertical: 5.0),
+                              child: ListTile(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                  onConfirm.call(e);
+                                },
+                                title: DrawableText(text: e.vehicle.name),
+                                leading: ImageMultiType(url: Assets.iconsTaxi),
+                              ),
+                            ),
+                          ),
+                          30.0.verticalSpace,
+                        ],
                       ),
-                    ...cars.map(
-                      (e) => Container(
-                        decoration: MyStyle.roundBox12(),
-                        margin: EdgeInsets.symmetric(vertical: 5.0),
-                        child: ListTile(
-                          onTap: () {
-                            Navigator.pop(context);
-                            onConfirm.call(e);
-                          },
-                          title: DrawableText(text: e.vehicle.name),
-                          leading: ImageMultiType(url: Assets.iconsTaxi),
-                        ),
-                      ),
-                    ),
-                    30.0.verticalSpace,
-                  ],
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        ],
+              ),
+            ),
+          ],
+        ),
       );
     },
   );

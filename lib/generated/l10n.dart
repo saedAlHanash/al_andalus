@@ -3508,6 +3508,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Cars used for personal use`
+  String get privateInsuranceNote {
+    return Intl.message(
+      'Cars used for personal use',
+      name: 'privateInsuranceNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)`
+  String get vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods {
+    return Intl.message(
+      'Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)',
+      name: 'vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

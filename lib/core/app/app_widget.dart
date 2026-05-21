@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
+import 'package:m_cubit/caching_service/caching_service.dart';
 
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
 import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
@@ -23,6 +24,7 @@ import '../../router/go_router.dart';
 import '../app_theme.dart';
 import '../injection/injection_container.dart';
 import '../util/shared_preferences.dart';
+import 'app_provider.dart';
 import 'bloc/loading_cubit.dart';
 
 class MyApp extends StatefulWidget {
@@ -33,6 +35,7 @@ class MyApp extends StatefulWidget {
 
   static Future<void> setLocale(BuildContext context, String langCode) async {
     await AppSharedPreference.cashLocal(langCode);
+    CachingService.setSupperFilter(AppProvider.supperFilter);
     if (context.mounted) {
       final state = context.findAncestorStateOfType<_MyAppState>();
       await state?.setLocale(Locale.fromSubtags(languageCode: AppSharedPreference.getLocal));
@@ -114,13 +117,12 @@ class _MyAppState extends State<MyApp> {
             return MultiBlocProvider(
               providers: [
                 BlocProvider(create: (_) => sl<LoadingCubit>()),
+                BlocProvider(create: (_) => sl<GovernorateCubit>()),
                 BlocProvider(create: (_) => sl<DeleteAccountCubit>()),
                 BlocProvider(create: (_) => sl<UpdateProfileCubit>()),
                 BlocProvider(create: (_) => sl<GetMeCubit>()..getData()),
-                BlocProvider(create: (_) => sl<GovernorateCubit>()..getData()),
                 BlocProvider(create: (_) => sl<GovernoratesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<AdssCubit>()..getData()),
-                BlocProvider(create: (_) => sl<CategoriesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<InsurancesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),
                 BlocProvider(create: (_) => sl<TransferFeesCubit>()..getData(), lazy: false),

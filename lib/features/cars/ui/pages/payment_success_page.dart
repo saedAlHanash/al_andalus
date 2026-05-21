@@ -19,14 +19,14 @@ import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../data/request/insurance_policy_request.dart';
 
 class PaymentSuccessPage extends StatelessWidget {
-  final InsurancePolicyRequest request;
-  final bool isSuccessPayment;
-
   const PaymentSuccessPage({
     super.key,
     required this.request,
     this.isSuccessPayment = true,
   });
+  final InsurancePolicyRequest request;
+  final bool isSuccessPayment;
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,11 @@ class PaymentSuccessPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBarWidget(
-        titleText: S.of(context).doneProcess,
+        zeroHeight: true,
         canPop: false,
       ),
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 40.0),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
@@ -52,6 +53,7 @@ class PaymentSuccessPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
+
                   DrawableText(
                     text: S.of(context).paymentSuccessTitle,
                     size: 20.sp,
@@ -102,7 +104,7 @@ class PaymentSuccessPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  80.verticalSpace,
+                  Spacer(),
                   OutLineButton(
                     onTap: () {
                       context.goNamed(RouteName.home);

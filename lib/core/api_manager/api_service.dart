@@ -46,6 +46,7 @@ class APIService {
     'Content-Type': 'application/json',
     'Accept': 'Application/json',
     'lang': AppSharedPreference.getLocal,
+    'X-localization': AppSharedPreference.getLocal,
     'Authorization': 'Bearer ${AppSharedPreference.getToken}',
   };
 

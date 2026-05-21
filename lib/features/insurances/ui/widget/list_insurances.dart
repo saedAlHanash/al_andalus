@@ -9,10 +9,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
 import '../../data/response/insurance_package.dart';
 import 'item_insurance.dart';
+import 'tapbar_insurances.dart';
 
 class ListInsurances extends StatefulWidget {
   const ListInsurances({super.key, this.onTapInfo});
@@ -36,43 +38,9 @@ class _ListInsurancesState extends State<ListInsurances> {
         return Column(
           children: [
             20.0.verticalSpace,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                spacing: 20.0.w,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () => setState(() => type = .private),
-                      child: Container(
-                        height: 40.0.h,
-                        alignment: .center,
-                        decoration: type == .private ? MyStyle.outlineBorder : MyStyle.roundBox12(),
-                        child: DrawableText(
-                          text: InsuranceType.private.name,
-                          drawableStart: InsuranceType.private.icon,
-                          drawablePadding: 5.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () => setState(() => type = .public),
-                      child: Container(
-                        height: 40.0.h,
-                        alignment: .center,
-                        decoration: type == .public ? MyStyle.outlineBorder : MyStyle.roundBox12(),
-                        child: DrawableText(
-                          text: InsuranceType.public.name,
-                          drawableStart: InsuranceType.public.icon,
-                          drawablePadding: 5.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            TapBarInsurances(
+              type: type,
+              onTap: (val) => setState(() => type = val),
             ),
             20.0.verticalSpace,
             _CardSlider(
@@ -156,3 +124,5 @@ class _CardSliderState extends State<_CardSlider> {
     );
   }
 }
+
+//

@@ -244,15 +244,7 @@ final goRouter = GoRouter(
     ),
     //endregion
 
-    //region categories
-    GoRoute(
-      path: RouteName.categories,
-      name: RouteName.categories,
-      builder: (_, state) {
-        return CategoriesPage();
-      },
-    ),
-    //endregion
+
 
     //region dataPage
     GoRoute(

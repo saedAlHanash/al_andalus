@@ -409,7 +409,9 @@
   "invalidLink": "لنک درست نہیں ہے",
   "couldNotOpenFile": "فائل نہیں کھولی جا سکی۔ دوبارہ کوشش کریں",
   "documentIdScanner": "دستاویز / شناختی کارڈ اسکینر",
-  "doneProcess": "Done Process",
-  "sorryThePaymentProcessWasNotCompleted": "Sorry, the payment process was not completed.",
-  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the "
+  "doneProcess": "عمل مکمل ہو گیا",
+  "sorryThePaymentProcessWasNotCompleted": "معذرت، ادائیگی کا عمل مکمل نہیں ہو سکا۔",
+  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "پریشان نہ ہوں، آپ کسی بھی وقت خریداری مکمل کر سکتے ہیں جو آپ کے لیے موزوں ہو۔ بس اپنی کار کے کارڈ پر جائیں اور دبائیں ",
+  "privateInsuranceNote": "ذاتی استعمال کے لیے استعمال ہونے والی گاڑیاں",
+  "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "تجارتی استعمال یا لوگوں یا سامان کی نقل و حمل کے لیے ڈیزائن کی گئی گاڑیاں، بشمول (ٹیکسی - بس - پک اپ - ٹپر ٹرک...)"
 }

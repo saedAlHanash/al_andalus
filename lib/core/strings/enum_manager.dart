@@ -386,36 +386,45 @@ enum InsuranceType {
 
   Widget get icon {
     switch (this) {
-      case InsuranceType.private:
+      case .private:
         return ImageMultiType(url: Icons.person_outline_rounded, color: color);
-      case InsuranceType.public:
+      case .public:
         return ImageMultiType(url: Icons.business_center_outlined, color: color);
     }
   }
 
   Color get color {
     switch (this) {
-      case InsuranceType.private:
+      case .private:
         return AppColorManager.c8f;
-      case InsuranceType.public:
+      case .public:
         return Colors.blue;
     }
   }
 
   String get name {
     switch (this) {
-      case InsuranceType.private:
+      case .private:
         return S().private;
-      case InsuranceType.public:
+      case .public:
         return S().public;
+    }
+  }
+
+  String get note {
+    switch (this) {
+      case .private:
+        return S().privateInsuranceNote;
+      case .public:
+        return S().vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods;
     }
   }
 
   String get nameApi {
     switch (this) {
-      case InsuranceType.private:
+      case .private:
         return 'private';
-      case InsuranceType.public:
+      case .public:
         return 'public';
     }
   }
@@ -423,15 +432,15 @@ enum InsuranceType {
   static InsuranceType getByNameOrIndex(dynamic name) {
     final i = int.tryParse(name.toString());
     if (i != null) {
-      return InsuranceType.values[i];
+      return .values[i];
     }
     switch (name.toString().toLowerCase()) {
       case 'private':
-        return InsuranceType.private;
+        return .private;
       case 'public':
-        return InsuranceType.public;
+        return .public;
       default:
-        return InsuranceType.private;
+        return .private;
     }
   }
 }
