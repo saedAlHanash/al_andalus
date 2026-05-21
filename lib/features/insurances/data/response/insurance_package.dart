@@ -85,7 +85,7 @@ class InsurancePackage {
 
   List<SpinnerItem> get getCylinders {
     return cylinders
-        .mapIndexed((i, e) => SpinnerItem(id: e.id, item: e, name: e.cylinders, isSelected: i == 0))
+        .mapIndexed((i, e) => SpinnerItem(id: e.id, item: e, name: e.cylinders, isSelected: i == -1))
         .toList();
   }
 }

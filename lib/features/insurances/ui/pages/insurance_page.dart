@@ -83,6 +83,13 @@ class _InsurancePageState extends State<InsurancePage> {
 
   @override
   Widget build(BuildContext context) {
+    loggerObject.w('''
+    id:${widget.id},
+    estimatedPrice:${widget.estimatedPrice},
+    cylindersCount:${widget.cylindersCount},
+    type:${widget.type.name},
+    
+    ''');
     return BlocBuilder<InsurancesCubit, InsurancesInitial>(
       builder: (context, state) {
         final list = state.result.where((e) => e.type == type).toList()

@@ -32,6 +32,7 @@ class _ListInsurancesState extends State<ListInsurances> {
       builder: (context, state) {
         final list = state.result.where((e) => e.type == type).sortedBy((e) => e.level.index);
 
+        if (list.isEmpty) return 0.0.verticalSpace;
         return Column(
           children: [
             20.0.verticalSpace,
@@ -109,30 +110,42 @@ class _ListInsurancesState extends State<ListInsurances> {
   }
 }
 
-class _CardSlider extends StatelessWidget {
+class _CardSlider extends StatefulWidget {
   const _CardSlider({
     required this.images,
     this.height,
     this.viewportFraction,
-
-
   });
 
   final List<Widget> images;
   final double? height;
   final double? viewportFraction;
 
+  @override
+  State<_CardSlider> createState() => _CardSliderState();
+}
 
+class _CardSliderState extends State<_CardSlider> {
+  final _controller = CarouselSliderController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.images.isNotEmpty) {
+        _controller.jumpToPage(widget.images.length ~/ 2);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      items: images,
+      carouselController: _controller,
+      items: widget.images,
       options: CarouselOptions(
-
-        initialPage: images.length ~/ 2,
-        viewportFraction: viewportFraction ?? 1,
-        height: height,
+        viewportFraction: widget.viewportFraction ?? 1,
+        height: widget.height,
         enlargeCenterPage: true,
         disableCenter: true,
         enableInfiniteScroll: false,
@@ -141,10 +154,5 @@ class _CardSlider extends StatelessWidget {
         },
       ),
     );
-    // return Column(
-    //   children: [
-    //     IndicatorSliderWidget(key: key, length: images.length),
-    //   ],
-    // );
   }
 }

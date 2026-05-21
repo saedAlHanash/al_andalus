@@ -11,6 +11,7 @@ import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/insurances/data/response/insurance_package.dart';
+import 'package:al_andalus/features/insurances/ui/widget/calculate_price_dialog.dart';
 import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +44,8 @@ void showLanguageDialog(BuildContext context) {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _Header(),
-            _Title(title: S.of(context).chooseLanguage),
+            HeaderBottomSheet(),
+            TitleBottomSheet(title: S.of(context).chooseLanguage),
             Container(
               color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
@@ -103,8 +104,8 @@ void showThemeDialog(BuildContext context) {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _Header(),
-            _Title(title: S.of(context).theme),
+            HeaderBottomSheet(),
+            TitleBottomSheet(title: S.of(context).theme),
             Container(
               color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
@@ -154,8 +155,8 @@ void showFontDialog(BuildContext context) {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _Header(),
-            _Title(title: S.of(context).font),
+            HeaderBottomSheet(),
+            TitleBottomSheet(title: S.of(context).font),
             Container(
               color: AppColorManager.cardColor,
               padding: const EdgeInsets.symmetric(horizontal: 20.0).r,
@@ -223,12 +224,12 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
             return Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _Header(),
+                HeaderBottomSheet(),
                 Container(
                   color: AppColorManager.cardColor,
                   child: Column(
                     children: [
-                      _Title(title: S.of(context).technicalSupport),
+                      TitleBottomSheet(title: S.of(context).technicalSupport),
                       20.0.verticalSpace,
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24.0).r,
@@ -270,97 +271,12 @@ void showCalculationPrice(
   InsurancePackage? insurancePackage,
   Function(Map<String, String> queryParameters) onTap,
 ) {
-  var cylindersCount = insurancePackage?.getCylinders.firstWhereOrNull((e) => e.isSelected)?.id ?? 4;
-  var p = 0.0;
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
-    builder: (ctx) {
-      return Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _Header(),
-              Container(
-                color: AppColorManager.cardColor,
-                padding: EdgeInsets.all(20.0).r,
-                child: Column(
-                  children: [
-                    _Title(title: S.of(context).calculateInsuranceCost),
-                    10.0.verticalSpace,
-                    DrawableText(
-                      text: S.of(context).chooseEngineCapacity,
-                      matchParent: true,
-                    ),
-                    MyCheckboxWidget(
-                      items:
-                          insurancePackage?.getCylinders ??
-                          [
-                            SpinnerItem(name: '4', id: 4),
-                            SpinnerItem(name: '6', id: 6),
-                            SpinnerItem(name: '8', id: 8),
-                          ],
-                      onSelected: (value, i, isSelected) {
-                        cylindersCount =
-                            int.tryParse(value.name) ??
-                            (value.item is Cylinder ? int.parse((value.item as Cylinder).cylinders) : value.id);
-                      },
-                      isRadio: true,
-                      buttonBuilder: (selected, value, context) {
-                        return Container(
-                          width: 0.25.sw,
-                          margin: EdgeInsets.symmetric(horizontal: 5.0).w,
-                          child: ListTile(
-                            tileColor: AppColorManager.cd,
-                            title: DrawableText(text: value.name),
-                            leading: ImageMultiType(
-                              url: selected ? Assets.iconsRadio : Icons.radio_button_off,
-                              height: 24.0.r,
-                              width: 24.0.r,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    10.0.verticalSpace,
-                    MyTextFormOutLineWidget(
-                      onChanged: (p0) {
-                        p = double.parse(p0.numberOnly.toString());
-                      },
-                      inputFormatters: [
-                        PriceInputFormatter(currencySymbol: 'دع'),
-                      ],
-                      keyBordType: .number,
-                      labelText: S.of(context).enterCarValue,
-                      hint: '0.0',
-                    ),
-                    10.0.verticalSpace,
-                    MyButton(
-                      onTap: () {
-                        onTap.call(
-                          {
-                            'id': insurancePackage?.id.toString() ?? "",
-                            'price': p.toString(),
-                            'cylindersCount': cylindersCount.toString(),
-                            'json': jsonEncode(insurancePackage?.toJson()),
-                          },
-                        );
-                      },
-                      text: S.of(context).startNow,
-                    ),
-                    30.0.verticalSpace,
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
+    builder: (ctx) => CalculatePriceDialog(context: context, onTap: onTap),
   );
 }
 
@@ -383,13 +299,13 @@ void showAddNote(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _Header(),
+              HeaderBottomSheet(),
               Container(
                 color: AppColorManager.cardColor,
                 padding: EdgeInsets.symmetric(horizontal: 24.0).r,
                 child: Column(
                   children: [
-                    _Title(title: title),
+                    TitleBottomSheet(title: title),
                     DrawableText(
                       text: S.of(context).enterRequiredDetails,
                       size: 12.0.sp,
@@ -435,7 +351,7 @@ void showOptionBottomSheet(
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _Header(),
+          HeaderBottomSheet(),
           Container(
             color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(20.0).r,
@@ -546,7 +462,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _Header(),
+          HeaderBottomSheet(),
           Container(
             color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(20.0).r,
@@ -595,7 +511,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _Header(),
+          HeaderBottomSheet(),
           StatefulBuilder(
             builder: (context, setState) {
               return Container(
@@ -685,7 +601,7 @@ void selectCar(
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _Header(),
+          HeaderBottomSheet(),
           StatefulBuilder(
             builder: (context, setState) {
               return Container(
@@ -693,7 +609,7 @@ void selectCar(
                 padding: const EdgeInsets.all(20.0).r,
                 child: Column(
                   children: [
-                    _Title(
+                    TitleBottomSheet(
                       title: S.of(context).selectDesiredCar,
                     ),
                     30.0.verticalSpace,
@@ -743,13 +659,13 @@ void showQr(BuildContext context, String qr) {
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _Header(),
+          HeaderBottomSheet(),
           Container(
             color: AppColorManager.cardColor,
             padding: const EdgeInsets.all(24.0).r,
             child: Column(
               children: [
-                _Title(title: S.of(context).qrCode),
+                TitleBottomSheet(title: S.of(context).qrCode),
                 20.0.verticalSpace,
                 Container(
                   padding: EdgeInsets.all(12.0).r,
@@ -911,8 +827,8 @@ Future<bool?> showImageReviewDialog(BuildContext context, UploadFile file, Funct
   );
 }
 
-class _Header extends StatelessWidget {
-  const _Header({super.key});
+class HeaderBottomSheet extends StatelessWidget {
+  const HeaderBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -957,8 +873,8 @@ class _SupportCard extends StatelessWidget {
   }
 }
 
-class _Title extends StatelessWidget {
-  const _Title({super.key, required this.title});
+class TitleBottomSheet extends StatelessWidget {
+  const TitleBottomSheet({super.key, required this.title});
 
   final String title;
 
