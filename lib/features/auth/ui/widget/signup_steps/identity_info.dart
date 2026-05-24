@@ -147,6 +147,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
                     onTap: () {
                       showOptionBottomSheet(
                         context,
+
                         (value) {
                           setState(() {
                             final nameField = state.mRequest.identityFrontImage.nameField;
@@ -171,6 +172,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
                     onTap: () {
                       showOptionBottomSheet(
                         context,
+
                         (value) {
                           setState(() {
                             final nameField = state.mRequest.identityBackImage.nameField;

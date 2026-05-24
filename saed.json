@@ -1,425 +1,85 @@
 {
-  "data": [
-    {
-      "id": 1,
-      "title": "الباقة الفضية",
-      "brief": "حماية أساسية موثوقة تغطي احتياجاتك اليومية وتمنحك بداية آمنة بتكلفة مناسبة.",
-      "type": "private",
-      "level": "silver",
-      "tag": "الباقة الاساسية",
-      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
-      "features": [
-        {
-          "id": 222,
-          "title": "تغطي تعويض الأضرار التي تصيب السيارة في حالات حوادث الاصطدام أو الانقلاب",
-          "created": "2026-05-19 | 12:48 ص"
-        },
-        {
-          "id": 223,
-          "title": "تعويض أضرار السيارة بحد أقصى (سقف) يصل إلى 10,000,000 د.ع",
-          "created": "2026-05-19 | 12:48 ص"
-        },
-        {
-          "id": 224,
-          "title": "تعويض الأضرار التي تصيب الممتلكات العامة أو الخاصة للغير بسقف 5,000,000 د.ع",
-          "created": "2026-05-19 | 12:48 ص"
-        },
-        {
-          "id": 225,
-          "title": "تغطية الأضرار الجسدية التي قد �05-19 | 12:48 ص"
-        },
-        {
-          "id": 226,
-          "title": "تكلفة البرنامج ثابتة للسيارات الخصوصي (180,000 د.ع) بغض النظر عن القيمة السوقية للسيارة",
-          "created": "2026-05-19 | 12:48 ص"
-        }
-      ],
-      "cylinders": [
-        {
-          "id": 1,
-          "cylinders": "4",
-          "pricing_type": "fixed",
-          "value": 180000,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 2,
-          "cylinders": "6",
-          "pricing_type": "fixed",
-          "value": 180000,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 3,
-          "cylinders": "8",
-          "pricing_type": "fixed",
-          "value": 180000,
-          "created": "2026-01-04 | 4:23 م"
-        }
-      ],
-      "created": "2026-01-04 | 4:23 م"
-    },
-    {
-      "id": 2,
-      "title": "الباقة الفضية",
-      "brief": "حماية أساسية موثوقة تغطي احتياجاتك اليومية وتمنحك بداية آمنة بتكلفة مناسبة.",
-      "type": "public",
-      "level": "silver",
-      "tag": "الباقة الاساسية",
-      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
-      "features": [
-        {
-          "id": 172,
-          "title": "سرقة المركبة",
-          "created": "2026-05-14 | 12:15 ص"
-        },
-        {
-          "id": 173,
-          "title": "أضرار المحرك و هيكل السيارة بسبب حادث",
-          "created": "2026-05-14 | 12:15 ص"
-        },
-        {
-          "id": 174,
-          "title": "حريق المحرك بسبب حادث أو انتشار حريق أو اشتعال ذاتي",
-          "created": "2026-05-14 | 12:15 ص"
-        },
-        {
-          "id": 175,
-          "title": "5,000,000 د.ع لتغطية الاضرار المادية",
-          "created": "2026-05-14 | 12:15 ص"
-        },
-        {
-          "id": 176,
-          "title": "5,000,000 د.ع لتغطية لاضرار الجسدية",
-          "created": "2026-05-14 | 12:15 ص"
-        }
-      ],
-      "cylinders": [
-        {
-          "id": 4,
-          "cylinders": "4",
-          "pricing_type": "fixed",
-          "value": 250000,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 5,
-          "cylinders": "6",
-          "pricing_type": "fixed",
-          "value": 250000,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 6,
-          "cylinders": "8",
-          "pricing_type": "fixed",
-          "value": 250000,
-          "created": "2026-01-04 | 4:23 م"
-        }
-      ],
-      "created": "2026-01-04 | 4:23 م"
-    },
-    {
+  "data": {
+    "id": 79,
+    "has_transfer_request": null,
+    "has_claim_request": null,
+    "insurance_package": {
       "id": 3,
       "title": "الباقة الذهبية",
-      "brief": "تغطية شاملة ومزايا متقدمة توفر حماية موثوقة وخدمات سريعة، لتمنحك توازناً مثالياً بين القيمة والراحة في كل رحلة.",
-      "type": "private",
       "level": "gold",
-      "tag": "الاكثر طلباً",
-      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
-      "features": [
-        {
-          "id": 212,
-          "title": "يشمل الأضرار أو فقدان المحرك وهيكل المركبة نتيجة حادث طريق أو تصادم أو انقلاب",
-          "created": "2026-05-19 | 12:34 ص"
-        },
-        {
-          "id": 213,
-          "title": "يغطي حريق المحرك أو الهيكل الناتج عن حادث، انتشار حريق أو اشتعال ذاتي (جزئي أو كلي)",
-          "created": "2026-05-19 | 12:34 ص"
-        },
-        {
-          "id": 214,
-          "title": "يتضمن البرنامج تغطية شاملة في حال تعرض المركبة المؤمنة للسرقة",
-          "created": "2026-05-19 | 12:34 �ً ثابتاً صغيراً)",
-          "created": "2026-05-19 | 12:34 ص"
-        },
-        {
-          "id": 216,
-          "title": "• تعويض ممتلكات وأرواح الآخرين نتيجة اصطدام المركبة المؤمنة بسقف يصل إلى 10,000,000 د.ع",
-          "created": "2026-05-19 | 12:34 ص"
-        }
-      ],
-      "cylinders": [
-        {
-          "id": 7,
-          "cylinders": "4",
-          "pricing_type": "percent",
-          "value": 1.6,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 8,
-          "cylinders": "6",
-          "pricing_type": "percent",
-          "value": 1.8,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 9,
-          "cylinders": "8",
-          "pricing_type": "percent",
-          "value": 2,
-          "created": "2026-01-04 | 4:23 م"
-        }
-      ],
-      "created": "2026-01-04 | 4:23 م"
+      "type": "private"
     },
-    {
-      "id": 4,
-      "title": "الباقة الذهبية",
-      "brief": "تغطية شاملة ومزايا متقدمة توفر حماية موثوقة وخدمات سريعة، لتمنحك توازناً مثالياً بين القيمة والراحة في كل رحلة.",
-      "type": "public",
-      "level": "gold",
-      "tag": "الاكثر طلباً",
-      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
-      "features": [
-        {
-          "id": 152,
-          "title": "أضرار المحرك و هيكل السيارة بسبب حادث",
-          "created": "2026-05-14 | 12:12 ص"
-        },
-        {
-          "id": 153,
-          "title": "حريق المحرك بسبب حادث أو انتشار حريق أو اشتعال ذاتي",
-          "created": "2026-05-14 | 12:12 ص"
-        },
-        {
-          "id": 154,
-          "title": "5,000,000 د.ع لتغطية الاضرار المادية",
-          "created": "2026-05-14 | 12:12 ص"
-        },
-        {
-          "id": 155,
-          "title": "5,000,000 د.ع لتغطية لاضرار الجسدية",
-          "created": "2026-05-14 | 12:12 ص"
-        },
-        {
-          "id": 156,
-          "title": "سرقة المركبة",
-          "created": "2026-05-14 | 12:12 ص"
-        }
-      ],
-      "cylinders": [
-        {
-          "id": 10,
-          "cylinders": "4",
-          "pricing_type": "percent",
-          "value": 2.5,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 11,
-          "cylinders": "6",
-          "pricing_type": "percent",
-          "value": 2.5,
-          "created": "2026-01-04 | 4:23 م"
-        },
-        {
-          "id": 12,
-          "cylinders": "8",
-          "pricing_type": "percent",
-          "value": 2.5,
-          "created": "2026-01-04 |4:23 م"
-        }
-      ],
-      "created": "2026-01-04 | 4:23 م"
+    "status": "payment_pending",
+    "qrcode": "fe9c7b5e-11d7-407f-a939-f8b25851968a",
+    "annual_subscription_price": 648,
+    "start_date": null,
+    "end_date": null,
+    "vehicle": {
+      "id": 75,
+      "name": "سيارة تجريبية",
+      "brand": "تويوتا",
+      "cylinders": "6",
+      "manufacture_year": "2025",
+      "color": "أبيض",
+      "chassis_number": "627ur445",
+      "plate_number": "392drb737",
+      "fuel_type": "petrol",
+      "engine_capacity": 2000,
+      "value": 36000,
+      "expiry_start_date": null,
+      "expiry_end_date": null,
+      "ownership_front_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-3b645f93-3ccf-4140-8d47-c35d4d0146c1-1779279195.jpg",
+      "ownership_back_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-8cfaf50d-4b4f-477e-bd80-47f26bc553e6-1779279196.jpg",
+      "inspection_report": null,
+      "inspection": {
+        "id": 72,
+        "metal_body": "damage",
+        "metal_body_note": "ملاحظة تجريبية للهيكل",
+        "glass_and_lamps": "damage",
+        "glass_and_lamps_note": "ملاحظة تجريبية للزجاج والمصابيح",
+        "chrome_nickel": "damage",
+        "chrome_nickel_note": "ملاحظة تجريبية للكروم",
+        "brand_sign": "intact",
+        "brand_sign_note": "-",
+        "windshield_wipers": "intact",
+        "windshield_wipers_note": "-",
+        "radio_antenna": "intact",
+        "radio_antenna_note": "-",
+        "seats": "damage",
+        "seats_note": "ملاحظة تجريبية للمقاعد",
+        "floor_cover": "damage",
+        "floor_cover_note": "ملاحظة تجريبية للأرضية",
+        "radio": "damage",
+        "radio_note": "ملاحظة تجريبية للراديو",
+        "air_conditioner": "intact",
+        "air_conditioner_note": "-",
+        "front_tires": "intact",
+        "front_tires_note": "-",
+        "back_tires": "intact",
+        "back_tires_note": "-",
+        "spare_tire": "intact",
+        "spare_tire_note": "-",
+        "tires_covers": "intact",
+        "tires_covers_note": "-",
+        "spare_tools": "intact",
+        "spare_tools_note": "-",
+        "other_notes": null,
+        "created": "2026-05-20 | 3:13 م"
+      },
+      "attachment": {
+        "id": 72,
+        "front_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-2860a960-631b-4c16-be92-24b252ac0420-1779279197.jpg",
+        "right_side_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-55cc25e4-603e-4f65-9ea4-1b5485566ca2-1779279199.jpg",
+        "left_side_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-4d4d1d59-e3fe-41b9-9901-c5c9f47354f2-1779279200.jpg",
+        "interior_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-22e46534-5184-48f1-9007-408de21919a2-1779279200.jpg",
+        "back_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-7369d903-6882-47dd-9912-b7d068cde880-1779279198.jpg",
+        "engine_image": "https://admin.andalusapp.com/storage/media/scaled-1000028227-01ad85d1-25fc-4b8d-aa71-fe9f2bbe9afe-1779279201.jpg",
+        "created": "2026-05-20 | 3:13 م"
+      },
+      "created": "2026-05-20 | 3:13 م"
     },
-    {
-      "id": 5,
-      "title": "الباقة البلاتينية",
-      "brief": "تغطية متكاملة بأعلى مستوى من الحماية والخدمات المميزة، تشمل إصلاحات سريعة، دعم فوري على مدار الساعة، ومزايا حصرية تمنحك راحة واطمئنان في كل رحلة",
-      "type": "private",
-      "level": "platinum",
-      "tag": "اكثر قيمة",
-      "description_file": "https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf",
-      "features": [
-        {
-          "id": 207,
-          "title": "كافة تغطيات الحوادث - الانقلاب - الحريق - وسرقة المركبة",
-          "created": "2026-05-19 | 12:33 ص"
-        },
-        {
-          "id": 208,
-          "title": "تعويض الأضرار الناتجة عن الأعمال الإرهابية مثل التفجيرات أو الهجمات المسلحة",
-          "created": "2026-05-19 | 12:33 ص"
-        },
-        {
-          "id": 209,
-          "title": "التعويض عن الأضرار الناتجة عن الفيضان"
-          id
-          ":210,"
-          title
-          ":"
-          حماية
-          الممتلكات
-          العامة
-          والخاصة
-          والأشخاص
-          المتضررين
-          بسقف
-          تعويضي
-          يصل
-          إلى
-          10,
-          000,
-          000
-          د.ع
-          ","
-          created
-          ":"
-          2026-05-19
-          |
-          12: 33
-          ص
-          "},{"
-          id
-          ":211,"
-          title
-          ":"
-          تغطية
-          الأضرار
-          التي
-          قد
-          تصيب
-          المركبة
-          ليس
-          فقط
-          أثناء
-          القيادة
-          بل
-          وعند
-          ركنها
-          في
-          الأماكن
-          المخصصة
-          ","
-          created
-          ":"
-          2026-05-19
-          |
-          12: 33
-          ص
-          "}],"
-          cylinders
-          ":[{"
-          id
-          ":13,"
-          cylinders
-          ":"
-          4
-          ","
-          pricing_type
-          ":"
-          percent
-          ","
-          value
-          ":2.4,"
-          created
-          ":"
-          2026-01-04
-          |
-          4: 23
-          م
-          "},{"
-          id
-          ":14,"
-          cylinders
-          ":"
-          6
-          ","
-          pricing_type
-          ":"
-          percent
-          ","
-          value
-          ":2.6,"
-          created
-          ":"
-          2026-01-04
-          |
-          4: 23
-          م
-          "},{"
-          id
-          ":15,"
-          cylinders
-          ":"
-          8
-          ","
-          pricing_type
-          ":"
-          percent
-          ","
-          value
-          ":3,"
-          created
-          ":"
-          2026-01-04
-          |
-          4: 23
-          م
-          "}],"
-          created
-          ":"
-          2026-01-04
-          |
-          4: 23
-          م
-          "},{"
-          id
-          ":6,"
-          title
-          ":"
-          الباقة
-          البلاتينية
-          ","
-          brief
-          ":"
-          تغطية
-          متكاملة
-          بأعلى
-          مستوى
-          من
-          الحماية
-          والخدمات
-          المميزة
-          ،
-          تشمل
-          إصلاحات
-          سريعة
-          ،
-          دعم
-          فوري
-          على
-          مدار
-          الساعة
-          ،
-          ومزلة
-          ","
-          type
-          ":"
-          public
-          ","
-          level
-          ":"
-          platinum
-          ","
-          tag
-          ":"
-          اكثر
-          قيمة
-          ","
-          description_file
-          ":"
-          https://admin.andalusapp.com/storage/insurancePolicy/6/vehicle/Hussein_Elbhrawy_Flutter_Developer.pdf","features":[{"id":187,"title":"كافة تغطيات الحوادث - الانقلاب - الحريق - وسرقة المركبة","created":"2026-05-18 | 10:54 م"},{"id":188,"title":"تعويض الأضرار الناتجة عن الأعمال الإرهابية مثل التفجيرات أو الهجمات المسلحة","created":"2026-05-18 | 10:54 م"},{"id":189,"title":"التعويض عن الأضرار الناتجة عن الفيضانات - الزلازل - العواصف - والانهيارات الأرضية","created":"2026-05-18 | 10:54 م"},{"id":190,"title":"حماية الممتلكات العامة والخاصة والأشخاص المتضررين بسقف تعويضي يصل إلى 10,000,000 د.ع","created":"2026-05-18 | 10:54 م"},{"id":191,"title":"تغطية الأضرار التالأماكن المخصصة","created":"2026-05-18 | 10:54 م"}],"cylinders":[{"id":16,"cylinders":"4","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"},{"id":17,"cylinders":"6","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"},{"id":18,"cylinders":"8","pricing_type":"percent","value":3.5,"created":"2026-01-04 | 4:23 م"}],"created":"2026-01-04 | 4:23 م"}]}
+    "policy_file": "https://admin.andalusapp.com/storage/contracts/gold-fe9c7b5e-11d7-407f-a939-f8b25851968a.docx",
+    "fields_to_be_refilled": null,
+    "created": "2026-05-20 | 3:13 م"
+  }
+}

@@ -341,6 +341,7 @@ void showOptionBottomSheet(
   BuildContext context,
   Function(UploadFile value) onConfirm, {
   bool justCamera = false,
+  bool scanDoc = true,
 }) {
   showModalBottomSheet(
     useSafeArea: true,
@@ -372,34 +373,6 @@ void showOptionBottomSheet(
                 Column(
                   spacing: 12.0.h,
                   children: [
-                    if (!justCamera)
-                      MyButton(
-                        text: S.of(context).documentIdScanner,
-                        icon: ImageMultiType(
-                          url: Icons.document_scanner_outlined,
-                          color: AppColorManager.white,
-                        ),
-                        onTap: () {
-                          Navigator.pop(ctx);
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DocumentScannerPage(
-                                onDocumentCaptured: (croppedImagePath, croppedImageBytes) {
-                                  final uploadFile = UploadFile(
-                                    path: croppedImagePath,
-                                    localId: croppedImagePath,
-                                    fileType: FileType.image,
-                                    extension: 'jpg',
-                                    fileBytes: croppedImageBytes,
-                                  );
-                                  onConfirm.call(uploadFile);
-                                },
-                              ),
-                            ),
-                          );
-                        },
-                      ),
                     Row(
                       spacing: 12.0.w,
                       children: [
@@ -425,17 +398,40 @@ void showOptionBottomSheet(
                           child: MyButton(
                             text: S.of(context).takePicture,
                             icon: ImageMultiType(url: Icons.camera_alt_outlined),
-                            onTap: () {
-                              Navigator.pop(ctx);
-                              takePhoto().then(
-                                (value) async {
-                                  if (value == null || !context.mounted) return;
-                                  final result = await showConfirmDialog(context, value);
-                                  if (result == false) return;
-                                  onConfirm.call(value);
-                                },
-                              );
-                            },
+                            onTap: (justCamera || !scanDoc)
+                                ? () {
+                                    Navigator.pop(ctx);
+                                    takePhoto().then(
+                                      (value) async {
+                                        if (value == null || !context.mounted) return;
+                                        final result = await showConfirmDialog(context, value);
+                                        if (result == false) return;
+                                        onConfirm.call(value);
+                                      },
+                                    );
+                                  }
+                                : scanDoc
+                                ? () {
+                                    Navigator.pop(ctx);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DocumentScannerPage(
+                                          onDocumentCaptured: (croppedImagePath, croppedImageBytes) {
+                                            final uploadFile = UploadFile(
+                                              path: croppedImagePath,
+                                              localId: croppedImagePath,
+                                              fileType: FileType.image,
+                                              extension: 'jpg',
+                                              fileBytes: croppedImageBytes,
+                                            );
+                                            onConfirm.call(uploadFile);
+                                          },
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                : () {},
                           ),
                         ),
                       ],

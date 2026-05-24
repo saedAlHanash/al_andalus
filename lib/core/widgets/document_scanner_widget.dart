@@ -349,6 +349,7 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
 
           SafeArea(
             child: Column(
+              mainAxisAlignment: .spaceBetween,
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -369,7 +370,6 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
                     ],
                   ),
                 ),
-                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(bottom: 40.h),
                   child: _isProcessing

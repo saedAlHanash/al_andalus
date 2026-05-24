@@ -157,6 +157,7 @@ class AccidentImages extends StatelessWidget {
     }
     showOptionBottomSheet(
       context,
+      justCamera: true,
       (value) {
         context.read<AccidentsCubit>().setImage(value, zone);
       },

@@ -255,6 +255,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     onTap: () {
                       showOptionBottomSheet(
                         context,
+
                         (value) {
                           setState(() {
                             state.mRequest.ownershipFrontImage = value;
@@ -277,6 +278,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                     onTap: () {
                       showOptionBottomSheet(
                         context,
+
                         (value) {
                           setState(() {
                             state.mRequest.ownershipBackImage = value;
