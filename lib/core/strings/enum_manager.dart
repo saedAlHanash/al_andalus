@@ -1135,3 +1135,76 @@ enum AccidentStatus {
     }
   }
 }
+
+enum ResourceType {
+  pdf,
+  docx,
+  html,
+  txt,
+  mp4,
+  jpeg,
+  pptx,
+  xlsx,
+  h5p,
+  ;
+
+  dynamic get icon {
+    switch (this) {
+      case .pdf:
+        return Icons.picture_as_pdf;
+
+      case .docx:
+        return Icons.description;
+
+      case .html:
+        return Icons.code;
+
+      case .txt:
+        return Icons.notes;
+
+      case .mp4:
+        return Icons.play_circle_fill;
+
+      case .jpeg:
+        return Icons.image;
+
+      case .pptx:
+        return Icons.slideshow;
+
+      case .xlsx:
+      case .h5p:
+        return Icons.table_chart;
+    }
+  }
+
+  static ResourceType getByNameOrIndex(dynamic name) {
+    final index = int.tryParse(name.toString());
+
+    if (index != null) {
+      return .values[index];
+    }
+
+    switch (name.toLowerCase()) {
+      case 'pdf':
+        return .pdf;
+      case 'docx':
+        return .docx;
+      case 'html':
+        return .html;
+      case 'txt':
+        return .txt;
+      case 'mp4':
+        return .mp4;
+      case 'jpeg':
+      case 'png':
+      case 'jpg':
+      case 'webp':
+        return .jpeg;
+      case 'pptx':
+        return .pptx;
+      case 'xlsx':
+        return .xlsx;
+    }
+    return .txt;
+  }
+}

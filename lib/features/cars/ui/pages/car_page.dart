@@ -301,8 +301,11 @@ class _PolicyFileWidget extends StatelessWidget {
                         child: ListTile(
                           onTap: () {
                             context.pushNamed(
-                              RouteName.pdf,
-                              queryParameters: {'url': car.policyFile},
+                              RouteName.media,
+                              queryParameters: {
+                                'url': car.policyFile,
+                                'type': car.mediaType.index.toString(),
+                              },
                             );
                           },
                           leading: ImageMultiType(
@@ -363,14 +366,17 @@ class _PolicyFileWidget extends StatelessWidget {
                   decoration: MyStyle.roundBox,
                   child: ListTile(
                     onTap: () {
-                      loggerObject.w(car.policyFile);
                       context.pushNamed(
-                        RouteName.pdf,
-                        queryParameters: {'url': car.policyFile},
+                        RouteName.media,
+                        queryParameters: {
+                          'url': car.policyFile,
+                          'type': car.mediaType.index.toString(),
+                        },
                       );
                     },
                     leading: ImageMultiType(
                       url: Assets.iconsPdfBorder,
+                      color: AppColorManager.textColor,
                       height: 50.0.r,
                       width: 50.0.r,
                     ),

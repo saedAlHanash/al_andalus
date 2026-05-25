@@ -57,6 +57,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "annually": MessageLookupByLibrary.simpleMessage("Annually"),
     "approved": MessageLookupByLibrary.simpleMessage("Approved"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete your account?",
+    ),
+    "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
     "ascending": MessageLookupByLibrary.simpleMessage("ascending"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "Attach the back of the ID card here",
@@ -78,6 +84,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "Attach Police Report:",
+    ),
+    "attachThePoliceReport": MessageLookupByLibrary.simpleMessage(
+      "Attach the police report",
     ),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "backTires": MessageLookupByLibrary.simpleMessage("Back Tires"),
@@ -234,7 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dontWorryYouCanCompleteThePurchaseAtAnyTime":
         MessageLookupByLibrary.simpleMessage(
-          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+          "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and retry ",
         ),
     "draft": MessageLookupByLibrary.simpleMessage("Draft"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage(
@@ -806,6 +815,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update": MessageLookupByLibrary.simpleMessage("update"),
     "updateApp": MessageLookupByLibrary.simpleMessage("Update"),
+    "uploadACopyOfThePoliceReportAfterReportingThe":
+        MessageLookupByLibrary.simpleMessage(
+          "Upload a copy of the police report after reporting the incident.",
+        ),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage(
       "Upload from files",
     ),

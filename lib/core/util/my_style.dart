@@ -65,8 +65,8 @@ class MyStyle {
     color: Colors.black87,
   );
 
-  static var roundBox = BoxDecoration(
-    color: AppColorManager.lightGray,
+  static BoxDecoration get roundBox => BoxDecoration(
+    color: AppColorManager.cardColor,
     borderRadius: BorderRadius.circular(16.0.r),
   );
 
@@ -77,6 +77,18 @@ class MyStyle {
 
   static BoxDecoration roundBox12({Color? color}) => BoxDecoration(
     color: color ?? AppColorManager.cardColor,
+    borderRadius: BorderRadius.circular(12.0.r),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black12,
+        blurRadius: 5.r,
+        offset: Offset(0, 2),
+      ),
+    ],
+  );
+  static BoxDecoration roundBoxBorder({Color? color}) => BoxDecoration(
+    color: color ?? AppColorManager.cardColor,
+    border: Border.all(color: AppColorManager.mainColorDynamic),
     borderRadius: BorderRadius.circular(12.0.r),
     boxShadow: [
       BoxShadow(

@@ -1,5 +1,5 @@
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
-import 'package:al_andalus/core/widgets/pdf_viewer_page.dart';
+import 'package:al_andalus/features/files/ui/pages/pdf_viewer_page.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

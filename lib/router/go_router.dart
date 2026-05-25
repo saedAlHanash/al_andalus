@@ -11,7 +11,7 @@ import 'package:go_router/go_router.dart';
 
 import '../core/injection/injection_container.dart';
 import '../core/strings/enum_manager.dart';
-import '../core/widgets/pdf_viewer_page.dart';
+import '../features/files/ui/pages/pdf_viewer_page.dart';
 import '../core/widgets/qr_scanner_page.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
@@ -399,6 +399,16 @@ final goRouter = GoRouter(
       },
     ),
     GoRoute(
+      path: RouteName.media,
+      name: RouteName.media,
+      builder: (_, state) {
+        final String url = (state.uri.queryParameters['url'] ?? '').toString();
+        final String title = (state.uri.queryParameters['title'] ?? '').toString();
+        final ResourceType type = ResourceType.values[int.tryParse(state.uri.queryParameters['type'] ?? '0')??0];
+        return MediaTypePage(url: url, title: title, mediaType: type);
+      },
+    ),
+    GoRoute(
       path: RouteName.paymentSuccess,
       name: RouteName.paymentSuccess,
       builder: (_, state) {
@@ -430,6 +440,7 @@ class RouteName {
   static const changePasswordPage = '/changePasswordPage';
   static const notifications = '/notifications';
   static const pdf = '/pdf';
+  static const media = '/media';
   static const lesson = '/lesson';
   static const pay = '/pay';
   static const chapters = '/chapters';

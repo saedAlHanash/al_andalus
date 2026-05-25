@@ -420,7 +420,11 @@
   "placeIdInsideFrame": "ضع بطاقة الهوية داخل الإطار",
   "doneProcess": "إتمام العملية",
   "sorryThePaymentProcessWasNotCompleted": "عذراً، لم تكتمل عملية الدفع.",
-  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "لا تقلق، يمكنك إكمال عملية الشراء في أي وقت يناسبك. فقط اذهب إلى بطاقة السيارة واضغط على ",
+  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "لا تقلق، يمكنك إكمال عملية الشراء في أي وقت يناسبك. فقط اذهب إلى بطاقة السيارة و اعد الدفع ",
   "privateInsuranceNote": "السيارات المستخدمة للاستعمال الشخصي",
-  "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "المركبات المصممة للاستخدام التجاري أو نقل الأشخاص أو البضائع، بما في ذلك (تاكسي - باص - بيك آب - شاحنة قلابة...)"
+  "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "المركبات المصممة للاستخدام التجاري أو نقل الأشخاص أو البضائع، بما في ذلك (تاكسي - باص - بيك آب - شاحنة قلابة...)",
+  "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+  "areYouSureYouWantToDeleteAccount": "هل أنت متأكد من رغبتك في حذف الحساب؟",
+  "uploadACopyOfThePoliceReportAfterReportingThe": "ارفع نسخه لتقرير الشرطه بعد الإبلاغ عن الحادث",
+  "attachThePoliceReport": " إرفق تقرير الشرطة"
 }

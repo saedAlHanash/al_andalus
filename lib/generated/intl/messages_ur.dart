@@ -59,6 +59,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "annually": MessageLookupByLibrary.simpleMessage("ساڵانه"),
     "approved": MessageLookupByLibrary.simpleMessage("پهسهندکراو"),
     "arabic": MessageLookupByLibrary.simpleMessage("عهرهبی"),
+    "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
+      "ئایا دڵنیایت دهتهوێت ههژمارهکهت بسڕیتهوه؟",
+    ),
+    "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
+      "ئایا دڵنیایت دهتهوێت بچیته دهرهوه؟",
+    ),
     "ascending": MessageLookupByLibrary.simpleMessage("سهرهوژوور"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "وێنهی پشتی ناسنامهکه لێره دابنێ",
@@ -80,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "ڕاپۆرتی پۆلیس هاوپێچ بکه:",
+    ),
+    "attachThePoliceReport": MessageLookupByLibrary.simpleMessage(
+      "ڕاپۆرتی پۆلیس هاوپێچ بکه",
     ),
     "backTires": MessageLookupByLibrary.simpleMessage("تایهکانی دواوه"),
     "backToHome": MessageLookupByLibrary.simpleMessage(
@@ -184,7 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "congrats": MessageLookupByLibrary.simpleMessage("پیرۆزه !"),
     "continueTo": MessageLookupByLibrary.simpleMessage("بهردهوام به"),
     "couldNotOpenFile": MessageLookupByLibrary.simpleMessage(
-      "فائل نہیں کھولی جا سکی۔ دوبارہ کوشش کریں",
+      "فایلهکه نهکرایهوه. تکایه دووباره ههوڵبدهرهوه",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("دروستکردنی ههژمار"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
@@ -217,11 +226,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "doNotHaveAnAccount": MessageLookupByLibrary.simpleMessage("ههژمارت نییه؟"),
     "doYouHaveAccount": MessageLookupByLibrary.simpleMessage("ههژمارت ههیه؟"),
     "documentIdScanner": MessageLookupByLibrary.simpleMessage(
-      "دستاویز / شناختی کارڈ اسکینر",
+      "سکانهری بهڵگهنامه / ناسنامه",
     ),
     "done": MessageLookupByLibrary.simpleMessage("تهواو"),
     "donePick": MessageLookupByLibrary.simpleMessage("ههڵبژاردن تهواو بوو"),
-    "doneProcess": MessageLookupByLibrary.simpleMessage("عمل مکمل ہو گیا"),
+    "doneProcess": MessageLookupByLibrary.simpleMessage("پرۆسهکه تهواو بوو"),
     "doneRefresh": MessageLookupByLibrary.simpleMessage("تازهکردنهوه کرا"),
     "doneSuccessfully": MessageLookupByLibrary.simpleMessage(
       "به سهرکهوتوویی ئهنجامدرا",
@@ -231,7 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dontWorryYouCanCompleteThePurchaseAtAnyTime":
         MessageLookupByLibrary.simpleMessage(
-          "پریشان نہ ہوں، آپ کسی بھی وقت خریداری مکمل کر سکتے ہیں جو آپ کے لیے موزوں ہو۔ بس اپنی کار کے کارڈ پر جائیں اور دبائیں ",
+          "نیگهران مهبه، دهتوانیت له ههر کاتێکی گونجاودا پرۆسهی کڕینهکه تهواو بکهیت. تهنها بڕۆ سهر کارتی ئۆتۆمبێلهکهت و دووباره ههوڵبدهرهوه.",
         ),
     "draft": MessageLookupByLibrary.simpleMessage("ڕهشنووس"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage(
@@ -298,7 +307,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("دڵخوازهکان"),
     "features": MessageLookupByLibrary.simpleMessage("تایبهتمهندییهکان"),
     "fileNotAvailable": MessageLookupByLibrary.simpleMessage(
-      "فائل دستیاب نہیں ہے",
+      "فایلهکه بهردهست نییه",
     ),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "یهکهمین پلاتفۆرمی دڵنیایی ئۆتۆمبێل له عێراق",
@@ -359,7 +368,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "intact": MessageLookupByLibrary.simpleMessage("سهلامهته"),
     "interior": MessageLookupByLibrary.simpleMessage("ناوهوه"),
     "interiorBody": MessageLookupByLibrary.simpleMessage("پهیکهری ناوهوه"),
-    "invalidLink": MessageLookupByLibrary.simpleMessage("لنک درست نہیں ہے"),
+    "invalidLink": MessageLookupByLibrary.simpleMessage("لینکهکه نادروسته"),
     "iqd": MessageLookupByLibrary.simpleMessage("د.ع"),
     "is_required": MessageLookupByLibrary.simpleMessage("پێویسته"),
     "issueDate": MessageLookupByLibrary.simpleMessage("بهرواری دهرچوون"),
@@ -669,7 +678,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price": MessageLookupByLibrary.simpleMessage("نرخ"),
     "private": MessageLookupByLibrary.simpleMessage("تایبهت"),
     "privateInsuranceNote": MessageLookupByLibrary.simpleMessage(
-      "ذاتی استعمال کے لیے استعمال ہونے والی گاڑیاں",
+      "ئهو ئۆتۆمبێلانهی بۆ بهکارهێنانی تایبهت بهکاردێن",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("پڕۆفایل"),
     "public": MessageLookupByLibrary.simpleMessage("گشتی"),
@@ -752,7 +761,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "skip": MessageLookupByLibrary.simpleMessage("تێپهڕاندن"),
     "sorryThePaymentProcessWasNotCompleted":
         MessageLookupByLibrary.simpleMessage(
-          "معذرت، ادائیگی کا عمل مکمل نہیں ہو سکا۔",
+          "ببووره، پرۆسهی پارهدانهکه تهواو نهکرا.",
         ),
     "spareTire": MessageLookupByLibrary.simpleMessage("تایهی یهدهگ"),
     "spareTools": MessageLookupByLibrary.simpleMessage("کهرهستهی یهدهگ"),
@@ -815,6 +824,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update": MessageLookupByLibrary.simpleMessage("نوێکردنهوه"),
     "updateApp": MessageLookupByLibrary.simpleMessage("نوێکردنهوه"),
+    "uploadACopyOfThePoliceReportAfterReportingThe":
+        MessageLookupByLibrary.simpleMessage(
+          "دوای ڕاپۆرتکردنی ڕووداوهکه، کۆپییهکی ڕاپۆرتی پۆلیس باربکه.",
+        ),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage(
       "بارکردن له فایلهکانهوه",
     ),
@@ -834,7 +847,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods":
         MessageLookupByLibrary.simpleMessage(
-          "تجارتی استعمال یا لوگوں یا سامان کی نقل و حمل کے لیے ڈیزائن کی گئی گاڑیاں، بشمول (ٹیکسی - بس - پک اپ - ٹپر ٹرک...)",
+          "ئهو ئۆتۆمبێلانهی بۆ بهکارهێنانی بازرگانی یان گواستنهوهی خهڵک یان کاڵا دروستکراون، لهوانه (تهکسی - پاس - پیکاپ - لۆری...)",
         ),
     "verificationCode": MessageLookupByLibrary.simpleMessage(
       "کۆدی پشتڕاستکردنهوه",

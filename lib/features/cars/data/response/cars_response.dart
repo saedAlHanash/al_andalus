@@ -33,6 +33,7 @@ class CarPolicy {
     required this.endDate,
     required this.vehicle,
     required this.policyFile,
+    required this.mediaType,
     required this.fieldsToBeRefilled,
     required this.created,
   });
@@ -48,6 +49,7 @@ class CarPolicy {
   final String endDate;
   final Vehicle vehicle;
   final String policyFile;
+  final ResourceType mediaType;
   final List<String> fieldsToBeRefilled;
   final DateTime? created;
 
@@ -64,6 +66,7 @@ class CarPolicy {
       endDate: json["end_date"] ?? "",
       vehicle: Vehicle.fromJson(json["vehicle"] ?? {}),
       policyFile: json["policy_file"] ?? "",
+      mediaType: ResourceType.getByNameOrIndex((json["policy_file"] ?? '').toString().fileExtension),
       fieldsToBeRefilled: json["fields_to_be_refilled"] == null
           ? []
           : List<String>.from(json["fields_to_be_refilled"]!.map((x) => x.toString())),
@@ -83,6 +86,7 @@ class CarPolicy {
     "end_date": endDate,
     "vehicle": vehicle.toJson(),
     "policy_file": policyFile,
+    "mediaType": mediaType.index,
     "fields_to_be_refilled": fieldsToBeRefilled,
     "created": created?.toIso8601String(),
   };

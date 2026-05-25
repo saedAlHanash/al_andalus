@@ -17,7 +17,7 @@ class AccidentImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColorManager.cardColor,
       body: SafeArea(
         child: BlocBuilder<AccidentsCubit, AccidentsInitial>(
           builder: (context, state) {
@@ -132,7 +132,7 @@ class AccidentImages extends StatelessWidget {
               5.0.verticalSpace,
               ImageMultiType(
                 url: isCompleted ? Assets.iconsDoneTake : Assets.imagesCamera,
-                color: Colors.black,
+                color: AppColorManager.mainColorDynamic,
                 width: 35.0.r,
                 height: 35.0.r,
               ),
@@ -157,7 +157,7 @@ class AccidentImages extends StatelessWidget {
     }
     showOptionBottomSheet(
       context,
-      justCamera: true,
+      scanDoc: false,
       (value) {
         context.read<AccidentsCubit>().setImage(value, zone);
       },

@@ -48,6 +48,8 @@ class UploadContainerWidget extends StatelessWidget {
                 ),
                 DrawableText(
                   text: title,
+                  matchParent: true,
+                  textAlign: .center,
                 ),
               ],
             ),

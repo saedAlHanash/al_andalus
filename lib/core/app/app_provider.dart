@@ -12,6 +12,7 @@ import '../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import '../../router/go_router.dart';
 import '../strings/enum_manager.dart';
+import '../util/bottom_sheets.dart';
 import '../util/checker_helper.dart';
 import '../util/shared_preferences.dart';
 import '../util/snack_bar_message.dart';
@@ -101,24 +102,10 @@ class AppProvider {
   static Future<void> logout({bool withDialog = true}) async {
     if (ctx == null) return;
     if (withDialog) {
-      NoteMessage.showCheckDialog(
+      showLogoutBottomSheet(
         ctx!,
-        text: S().confirmLogout,
-        textButton: S().logout,
-        image: Container(
-          padding: EdgeInsets.all(16.r),
-          decoration: BoxDecoration(
-            color: Theme.of(ctx!).colorScheme.errorContainer.withOpacity(0.1),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.logout_rounded,
-            color: Theme.of(ctx!).colorScheme.error,
-            size: 40.r,
-          ),
-        ),
-        onConfirm: (confirm) async {
-          if (!confirm) return;
+
+        onConfirm: () async {
           await AppSharedPreference.logout();
           await AppSharedPreference.reload();
           await AppSharedPreference.setHasSeenIntro(true);

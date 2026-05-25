@@ -53,8 +53,14 @@ class _AccidentInfoState extends State<AccidentInfo> {
               maxLines: 2,
             ),
             20.0.verticalSpace,
+            DrawableText(
+              text: S.of(context).attachThePoliceReport,
+              padding: EdgeInsets.only(bottom: 10.0).r,
+              matchParent: true,
+            ),
             UploadContainerWidget(
-              title: S.of(context).uploadOneFileOnly,
+              title:
+                  '${S.of(context).uploadACopyOfThePoliceReportAfterReportingThe}\n${S.of(context).uploadOneFileOnly}',
               child: state.mRequest.policeReport.notHaveValue
                   ? null
                   : ListTile(

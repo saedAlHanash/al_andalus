@@ -227,25 +227,20 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).logout,
                         iconData: Icons.logout_outlined,
                       ),
-                      if (AppProvider.isStoreTest)
-                        ItemMenu(
-                          onTap: () {
-                            NoteMessage.showCheckDialog(
-                              context,
-                              text: S.of(context).deleteAccount,
-                              textButton: S.of(context).sure,
-                              image: ImageMultiType(url: Assets.iconsDelete, height: 120.0.r, width: 120.0.r),
-                              onConfirm: (confirm) {
-                                if (!confirm) return;
-                                context.read<DeleteAccountCubit>().deleteAccount(context);
-                              },
-                            );
-                          },
-                          name: S.of(context).deleteAccount,
-                          subTitle: S.of(context).subTitleDeleteAccount,
-                          iconData: Icons.delete_outline,
-                          withD: false,
-                        ),
+                      ItemMenu(
+                        onTap: () {
+                          showDeleteAccountBottomSheet(
+                            context,
+                            onConfirm: () {
+                              context.read<DeleteAccountCubit>().deleteAccount(context);
+                            },
+                          );
+                        },
+                        color: Colors.red,
+                        name: S.of(context).deleteAccount,
+                        subTitle: S.of(context).subTitleDeleteAccount,
+                        iconData: Icons.delete_outline,
+                      ),
                       ItemMenu(
                         onTap: () {},
                         name: S.of(context).buildNumber,
@@ -283,6 +278,7 @@ class ItemMenu extends StatelessWidget {
     this.leading,
     this.image,
     this.trailing,
+    this.color,
     this.withD = true,
     this.onTap,
   });
@@ -294,6 +290,7 @@ class ItemMenu extends StatelessWidget {
   final dynamic image;
   final Function()? onTap;
   final Widget? trailing;
+  final Color? color;
   final bool withD;
 
   @override
@@ -307,13 +304,19 @@ class ItemMenu extends StatelessWidget {
           ListTile(
             tileColor: Colors.transparent,
             leading: iconData != null
-                ? Icon(iconData, color: AppColorManager.mainColorDynamic)
-                : (leading == null ? null : ImageMultiType(url: leading,color: AppColorManager.mainColorDynamic)),
+                ? Icon(iconData, color: color ?? AppColorManager.mainColorDynamic)
+                : (leading == null ? null : ImageMultiType(url: leading, color: AppColorManager.mainColorDynamic)),
             onTap: () => onTap?.call(),
-            title: DrawableText(text: name, fontWeight: FontWeight.bold),
+            title: DrawableText(
+              text: name,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
             minLeadingWidth: 0,
-            subtitle: subTitle == null ? null : DrawableText(text: subTitle!, size: 12.0.sp, color: Colors.grey),
-            trailing: trailing ?? Icon(Icons.arrow_forward_ios, size: 15.0.r, color: const Color(0xff667085)),
+            subtitle: subTitle == null
+                ? null
+                : DrawableText(text: subTitle!, size: 12.0.sp, color: color ?? Colors.grey),
+            trailing: trailing ?? Icon(Icons.arrow_forward_ios, size: 15.0.r, color: color ?? const Color(0xff667085)),
           ),
           if (withD) Divider(height: 0, color: AppColorManager.cd, endIndent: 5.0.w, indent: 5.0.w),
         ],

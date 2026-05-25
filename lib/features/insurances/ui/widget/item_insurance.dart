@@ -148,17 +148,15 @@ class _DetailItem extends StatefulWidget {
 }
 
 class _DetailItemState extends State<_DetailItem> {
-  static var _showedHint = false;
+   var _showedHint = false;
   var _showScrollHint = false;
 
   @override
   void initState() {
     super.initState();
-    loggerObject.f(_showedHint);
     if (!_showedHint) {
       _showScrollHint = true;
       _showedHint = true;
-      loggerObject.f(_showedHint);
       Future.delayed(const Duration(seconds: 2), () {
         if (mounted) setState(() => _showScrollHint = false);
       });
@@ -210,6 +208,17 @@ class _DetailItemState extends State<_DetailItem> {
                             child: Lottie.asset(
                               Assets.lottiesAnimatedMoveUpwardsLinearIcon,
                               height: 120.0.r,
+                              delegates: LottieDelegates(
+                                values: [
+                                  ValueDelegate.colorFilter(
+                                    ['**'], // هنا الـ ** ستجبر الفلتر يغطي كل الطبقات غصب عنها
+                                    value: ColorFilter.mode(
+                                      AppColorManager.textColor,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -219,10 +228,11 @@ class _DetailItemState extends State<_DetailItem> {
                 TextButton(
                   onPressed: () {
                     context.pushNamed(
-                      RouteName.pdf,
+                      RouteName.media,
                       queryParameters: {
                         'url': widget.item.descriptionFile,
                         'title': S.of(context).packageDetails,
+                        'type': widget.item.mediaType.index.toString(),
                       },
                     );
                   },

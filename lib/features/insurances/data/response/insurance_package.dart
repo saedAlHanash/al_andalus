@@ -3,6 +3,8 @@ import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:collection/collection.dart';
 
+import '../../../../core/extensions/extensions.dart';
+
 class InsurancesResponse {
   InsurancesResponse({required this.data});
 
@@ -26,6 +28,7 @@ class InsurancePackage {
     required this.level,
     required this.tag,
     required this.descriptionFile,
+    required this.mediaType,
     required this.features,
     required this.cylinders,
     required this.created,
@@ -38,6 +41,7 @@ class InsurancePackage {
   final InsuranceLevel level;
   final String tag;
   final String descriptionFile;
+  final ResourceType mediaType;
   final List<Feature> features;
   final List<Cylinder> cylinders;
   final String created;
@@ -62,6 +66,7 @@ class InsurancePackage {
       level: InsuranceLevel.getByNameOrIndex(json["level"]),
       tag: json["tag"]?.toString() ?? "",
       descriptionFile: json["description_file"] ?? "",
+      mediaType: ResourceType.getByNameOrIndex((json["description_file"] ?? '').toString().fileExtension),
       features: json["features"] == null ? [] : List<Feature>.from(json["features"]!.map((x) => Feature.fromJson(x))),
       cylinders: json["cylinders"] == null
           ? []
@@ -78,6 +83,7 @@ class InsurancePackage {
     "level": level.index,
     "tag": tag,
     "description_file": descriptionFile,
+    "mediaType": mediaType.index,
     "features": features.map((x) => x.toJson()).toList(),
     "cylinders": cylinders.map((x) => x.toJson()).toList(),
     "created": created,

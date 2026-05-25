@@ -380,7 +380,10 @@ void showOptionBottomSheet(
                           Expanded(
                             child: MyButton(
                               text: S.of(context).fromGallery,
-                              icon: ImageMultiType(url: Icons.file_upload_outlined),
+                              icon: ImageMultiType(
+                                url: Icons.file_upload_outlined,
+                                color: AppColorManager.textColor,
+                              ),
                               onTap: () {
                                 Navigator.pop(ctx);
                                 pickImage().then(
@@ -397,7 +400,10 @@ void showOptionBottomSheet(
                         Expanded(
                           child: MyButton(
                             text: S.of(context).takePicture,
-                            icon: ImageMultiType(url: Icons.camera_alt_outlined),
+                            icon: ImageMultiType(
+                              url: Icons.camera_alt_outlined,
+                              color: AppColorManager.textColor,
+                            ),
                             onTap: (justCamera || !scanDoc)
                                 ? () {
                                     Navigator.pop(ctx);
@@ -626,15 +632,16 @@ void selectCar(
                             ),
                           ...cars.map(
                             (e) => Container(
-                              decoration: MyStyle.roundBox12(),
+                              decoration: MyStyle.roundBox12(color: AppColorManager.appBarColor),
                               margin: EdgeInsets.symmetric(vertical: 5.0),
                               child: ListTile(
+
                                 onTap: () {
                                   Navigator.pop(context);
                                   onConfirm.call(e);
                                 },
                                 title: DrawableText(text: e.vehicle.name),
-                                leading: ImageMultiType(url: Assets.iconsTaxi),
+                                leading: ImageMultiType(url: Assets.iconsTaxi,color: AppColorManager.textColor,),
                               ),
                             ),
                           ),
@@ -906,4 +913,146 @@ class TitleBottomSheet extends StatelessWidget {
       ),
     );
   }
+}
+
+void showLogoutBottomSheet(
+  BuildContext context, {
+  required VoidCallback onConfirm,
+}) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HeaderBottomSheet(),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
+              child: Column(
+                children: [
+                  TitleBottomSheet(title: S.of(context).logout),
+                  30.0.verticalSpace,
+                  DrawableText(
+                    text: S.of(context).areYouSureYouWantToLogout,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 16.0.sp,
+                  ),
+                  40.0.verticalSpace,
+                  Row(
+                    spacing: 15.0.w,
+                    children: [
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).cancel,
+                          color: const Color(0xffF5F5F5),
+                          textColor: AppColorManager.textColor,
+                          onTap: () => Navigator.pop(ctx),
+                          radios: 12.0.r,
+                        ),
+                      ),
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).logout,
+                          color: const Color(0xffFFF1F1),
+                          textColor: Colors.red,
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            onConfirm.call();
+                          },
+                          radios: 12.0.r,
+                        ),
+                      ),
+                    ],
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+void showDeleteAccountBottomSheet(
+  BuildContext context, {
+  required VoidCallback onConfirm,
+}) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HeaderBottomSheet(),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
+              child: Column(
+                children: [
+                  TitleBottomSheet(title: S.of(context).deleteAccount),
+                  30.0.verticalSpace,
+                  DrawableText(
+                    text: S.of(context).areYouSureYouWantToDeleteAccount,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 16.0.sp,
+                  ),
+                  10.0.verticalSpace,
+                  DrawableText(
+                    text: S.of(context).subTitleDeleteAccount,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 12.0.sp,
+                    color: Colors.grey,
+                  ),
+                  40.0.verticalSpace,
+                  Row(
+                    spacing: 15.0.w,
+                    children: [
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).cancel,
+                          color: const Color(0xffF5F5F5),
+                          textColor: AppColorManager.textColor,
+                          onTap: () => Navigator.pop(ctx),
+                          radios: 12.0.r,
+                        ),
+                      ),
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).deleteAccount,
+                          color: const Color(0xffFFF1F1),
+                          textColor: Colors.red,
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            onConfirm.call();
+                          },
+                          radios: 12.0.r,
+                        ),
+                      ),
+                    ],
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }

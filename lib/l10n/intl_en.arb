@@ -421,7 +421,11 @@
   "placeIdInsideFrame": "Place your ID card inside the frame",
   "doneProcess": "Done Process",
   "sorryThePaymentProcessWasNotCompleted": "Sorry, the payment process was not completed.",
-  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ",
+  "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and retry ",
   "privateInsuranceNote": "Cars used for personal use",
-  "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)"
+  "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)",
+  "areYouSureYouWantToLogout": "Are you sure you want to log out?",
+  "areYouSureYouWantToDeleteAccount": "Are you sure you want to delete your account?",
+  "uploadACopyOfThePoliceReportAfterReportingThe": "Upload a copy of the police report after reporting the incident.",
+  "attachThePoliceReport": "Attach the police report"
 }

@@ -32,7 +32,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             20.0.verticalSpace,
             Container(
               decoration: MyStyle.roundBox12(
-                color: state.mRequest.paymentType == .qiCard ? AppColorManager.mainColorLight : null,
+                color: state.mRequest.paymentType == .qiCard ? AppColorManager.mainColorDynamic.withValues(alpha: 0.4) : null,
               ),
               child: ListTile(
                 onTap: () {
@@ -49,7 +49,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             25.0.verticalSpace,
             Container(
               decoration: MyStyle.roundBox12(
-                color: state.mRequest.paymentType == .zainCash ? AppColorManager.mainColorLight : null,
+                color: state.mRequest.paymentType == .zainCash ? AppColorManager.mainColorDynamic.withValues(alpha: 0.4) : null,
               ),
               child: ListTile(
                 onTap: () {

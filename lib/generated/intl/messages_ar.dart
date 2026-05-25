@@ -55,6 +55,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "annually": MessageLookupByLibrary.simpleMessage("سنويا"),
     "approved": MessageLookupByLibrary.simpleMessage("مقبول"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+    "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من رغبتك في حذف الحساب؟",
+    ),
+    "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+    ),
     "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
     "attachIdBackHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة البطاقة الخلفية هنا",
@@ -76,6 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
       "أرفق تقرير الشرطة:",
+    ),
+    "attachThePoliceReport": MessageLookupByLibrary.simpleMessage(
+      " إرفق تقرير الشرطة",
     ),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "backTires": MessageLookupByLibrary.simpleMessage("الإطارات الخلفية"),
@@ -222,7 +231,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dontWorryYouCanCompleteThePurchaseAtAnyTime":
         MessageLookupByLibrary.simpleMessage(
-          "لا تقلق، يمكنك إكمال عملية الشراء في أي وقت يناسبك. فقط اذهب إلى بطاقة السيارة واضغط على ",
+          "لا تقلق، يمكنك إكمال عملية الشراء في أي وقت يناسبك. فقط اذهب إلى بطاقة السيارة و اعد الدفع ",
         ),
     "draft": MessageLookupByLibrary.simpleMessage("مسودة"),
     "draftPreparation": MessageLookupByLibrary.simpleMessage("تجهيز مسودة"),
@@ -764,6 +773,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update": MessageLookupByLibrary.simpleMessage("تعديل"),
     "updateApp": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "uploadACopyOfThePoliceReportAfterReportingThe":
+        MessageLookupByLibrary.simpleMessage(
+          "ارفع نسخه لتقرير الشرطه بعد الإبلاغ عن الحادث",
+        ),
     "uploadFromFiles": MessageLookupByLibrary.simpleMessage("رفع من الملفات"),
     "uploadInspectionReport": MessageLookupByLibrary.simpleMessage(
       "قم برفع تقرير فحص السيارة",

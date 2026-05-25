@@ -3499,10 +3499,10 @@ class S {
     );
   }
 
-  /// `Don't worry, you can complete the purchase at any time that suits you. Just go to your car card and press the `
+  /// `Don't worry, you can complete the purchase at any time that suits you. Just go to your car card and retry `
   String get dontWorryYouCanCompleteThePurchaseAtAnyTime {
     return Intl.message(
-      'Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and press the ',
+      'Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and retry ',
       name: 'dontWorryYouCanCompleteThePurchaseAtAnyTime',
       desc: '',
       args: [],
@@ -3524,6 +3524,46 @@ class S {
     return Intl.message(
       'Vehicles designed for commercial use or transporting people or goods, including (taxi - bus - pickup - tipper truck...)',
       name: 'vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get areYouSureYouWantToLogout {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'areYouSureYouWantToLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete your account?`
+  String get areYouSureYouWantToDeleteAccount {
+    return Intl.message(
+      'Are you sure you want to delete your account?',
+      name: 'areYouSureYouWantToDeleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload a copy of the police report after reporting the incident.`
+  String get uploadACopyOfThePoliceReportAfterReportingThe {
+    return Intl.message(
+      'Upload a copy of the police report after reporting the incident.',
+      name: 'uploadACopyOfThePoliceReportAfterReportingThe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach the police report`
+  String get attachThePoliceReport {
+    return Intl.message(
+      'Attach the police report',
+      name: 'attachThePoliceReport',
       desc: '',
       args: [],
     );

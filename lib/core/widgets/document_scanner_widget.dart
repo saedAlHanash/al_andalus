@@ -4,6 +4,9 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
+import 'package:drawable_text/drawable_text.dart';
+import 'package:drawable_text/drawable_text.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image/image.dart' as img;
@@ -208,7 +211,10 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
       setState(() => _isProcessing = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.of(context).oops), backgroundColor: AppColorManager.red),
+          SnackBar(
+            content: DrawableText(text: S.of(context).oops),
+            backgroundColor: AppColorManager.red,
+          ),
         );
       }
     }
@@ -232,7 +238,14 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
               children: [
                 Icon(Icons.camera_alt, size: 80.r, color: Colors.white70),
                 20.verticalSpace,
-                Text(S.of(context).cameraPermissionRequired, style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, color: Colors.white), textAlign: TextAlign.center),
+                DrawableText(
+                  text: S.of(context).cameraPermissionRequired,
+                  size: 20.sp,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+
+                  textAlign: TextAlign.center,
+                ),
                 10.verticalSpace,
                 MyButton(text: S.of(context).grantPermission, onTap: _checkPermissionAndInitCamera),
               ],
@@ -266,8 +279,11 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          leading: IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white), onPressed: _retake),
-          title: Text(S.of(context).documentPreview, style: const TextStyle(color: Colors.white)),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: _retake,
+          ),
+          title: DrawableText(text: S.of(context).documentPreview, color: Colors.white),
           centerTitle: true,
         ),
         body: Column(
@@ -294,9 +310,23 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
               color: AppColorManager.mainColor,
               child: Row(
                 children: [
-                  Expanded(child: MyButton(color: Colors.red, textColor: Colors.white, text: S.of(context).retake, onTap: _retake)),
+                  Expanded(
+                    child: MyButton(
+                      color: Colors.red,
+                      textColor: Colors.white,
+                      text: S.of(context).retake,
+                      onTap: _retake,
+                    ),
+                  ),
                   16.horizontalSpace,
-                  Expanded(child: MyButton(text: S.of(context).confirm, onTap: () => widget.onCapture(_croppedImagePath!, _croppedImageBytes!))),
+                  Expanded(
+                    child: OutLineButton(
+                      color: Colors.white,
+                      textColor: Colors.white,
+                      text: S.of(context).confirm,
+                      onTap: () => widget.onCapture(_croppedImagePath!, _croppedImageBytes!),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -328,6 +358,7 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
           CustomPaint(
             painter: ScannerOverlayPainter(
               scanWindow: frameRect,
+              context: context,
               instructionText: S.of(context).placeIdInsideFrame,
             ),
             child: Container(),
@@ -356,15 +387,25 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28), onPressed: () => Navigator.pop(context)),
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                        onPressed: () => Navigator.pop(context),
+                      ),
                       Row(
                         children: [
                           IconButton(
-                            icon: Icon(_controller?.value.flashMode == FlashMode.torch ? Icons.flash_on : Icons.flash_off, color: Colors.white, size: 28),
+                            icon: Icon(
+                              _controller?.value.flashMode == FlashMode.torch ? Icons.flash_on : Icons.flash_off,
+                              color: Colors.white,
+                              size: 28,
+                            ),
                             onPressed: _toggleFlash,
                           ),
                           10.horizontalSpace,
-                          IconButton(icon: const Icon(Icons.cameraswitch, color: Colors.white, size: 28), onPressed: _toggleCamera),
+                          IconButton(
+                            icon: const Icon(Icons.cameraswitch, color: Colors.white, size: 28),
+                            onPressed: _toggleCamera,
+                          ),
                         ],
                       ),
                     ],
@@ -379,9 +420,14 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
                           child: Container(
                             height: 80.r,
                             width: 80.r,
-                            decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Colors.white, width: 4)),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white, width: 4),
+                            ),
                             padding: const EdgeInsets.all(4.0),
-                            child: Container(decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white)),
+                            child: Container(
+                              decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                            ),
                           ),
                         ),
                 ),
@@ -397,31 +443,46 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
 class ScannerOverlayPainter extends CustomPainter {
   final Rect scanWindow;
   final String instructionText;
+  final BuildContext context;
 
-  ScannerOverlayPainter({required this.scanWindow, required this.instructionText});
+  ScannerOverlayPainter({
+    required this.scanWindow,
+    required this.instructionText,
+    required this.context,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
     final backgroundPath = Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height));
     final cutoutPath = Path()..addRRect(RRect.fromRectAndRadius(scanWindow, const Radius.circular(16.0)));
 
-    final backgroundPaint = Paint()..color = Colors.black.withOpacity(0.65)..style = PaintingStyle.fill;
+    final backgroundPaint = Paint()
+      ..color = Colors.black.withOpacity(0.65)
+      ..style = PaintingStyle.fill;
     canvas.drawPath(Path.combine(PathOperation.difference, backgroundPath, cutoutPath), backgroundPaint);
 
-    final borderPaint = Paint()..color = Colors.white.withOpacity(0.8)..style = PaintingStyle.stroke..strokeWidth = 3.0;
+    final borderPaint = Paint()
+      ..color = Colors.white.withOpacity(0.8)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3.0;
     canvas.drawRRect(RRect.fromRectAndRadius(scanWindow, const Radius.circular(16.0)), borderPaint);
 
     // Draw resize handles (corners)
-    final handlePaint = Paint()..color = Colors.white..style = PaintingStyle.fill;
+    final handlePaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.fill;
     const double handleSize = 20.0;
-    
+
     // Bottom Right handle
     canvas.drawCircle(scanWindow.bottomRight, 8.0, handlePaint);
 
     final textPainter = TextPainter(
       text: TextSpan(
         text: instructionText,
-        style: TextStyle(color: Colors.white, fontSize: 16.sp, fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
@@ -431,5 +492,6 @@ class ScannerOverlayPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant ScannerOverlayPainter oldDelegate) => oldDelegate.scanWindow != scanWindow || oldDelegate.instructionText != instructionText;
+  bool shouldRepaint(covariant ScannerOverlayPainter oldDelegate) =>
+      oldDelegate.scanWindow != scanWindow || oldDelegate.instructionText != instructionText;
 }
