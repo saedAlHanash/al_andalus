@@ -13,10 +13,11 @@ const _dividerColor = Color(0xFFECEDF2);
 
 String? get appFontFamily {
   try {
-    if (FontManager.values.any((element) => element.name == AppSharedPreference.getFontName)) {
-      return AppSharedPreference.getFontName;
+    final local = AppSharedPreference.getLocal;
+    if (local == 'ur') {
+      return FontManager.semeBold.name;
     }
-    return GoogleFonts.getFont(AppSharedPreference.getFontName).fontFamily;
+    return GoogleFonts.getFont('Cairo').fontFamily;
   } catch (_) {
     return GoogleFonts.getFont('Cairo').fontFamily;
   }

@@ -188,11 +188,7 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).theme,
                         iconData: Icons.dark_mode_outlined,
                       ),
-                      ItemMenu(
-                        onTap: () => showFontDialog(context),
-                        name: S.of(context).font,
-                        iconData: Icons.text_format_outlined,
-                      ),
+
                       ItemMenu(
                         onTap: () => context.pushNamed(
                           RouteName.dataPage,

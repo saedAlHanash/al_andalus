@@ -15,6 +15,8 @@ import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
+import 'package:collection/collection.dart';
+
 
 class ItemInsurance extends StatelessWidget {
   const ItemInsurance({
@@ -157,7 +159,7 @@ class _DetailItemState extends State<_DetailItem> {
     if (!_showedHint) {
       _showScrollHint = true;
       _showedHint = true;
-      Future.delayed(const Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 4), () {
         if (mounted) setState(() => _showScrollHint = false);
       });
     }
@@ -206,19 +208,20 @@ class _DetailItemState extends State<_DetailItem> {
                           alignment: .center,
                           child: IgnorePointer(
                             child: Lottie.asset(
-                              Assets.lottiesAnimatedMoveUpwardsLinearIcon,
+                              Assets.lottiesAnimatedMoveUpwardsLinearIconFixed,
                               height: 120.0.r,
-                              delegates: LottieDelegates(
-                                values: [
-                                  ValueDelegate.colorFilter(
-                                    ['**'], // هنا الـ ** ستجبر الفلتر يغطي كل الطبقات غصب عنها
-                                    value: ColorFilter.mode(
-                                      AppColorManager.textColor,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              decoder: customDecoder,
+                              // delegates: LottieDelegates(
+                              //   values: [
+                              //     ValueDelegate.colorFilter(
+                              //       ['**'], // هنا الـ ** ستجبر الفلتر يغطي كل الطبقات غصب عنها
+                              //       value: ColorFilter.mode(
+                              //         AppColorManager.textColor,
+                              //         BlendMode.srcIn,
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                             ),
                           ),
                         ),
@@ -325,4 +328,14 @@ class _Top extends StatelessWidget {
       ),
     );
   }
+}
+Future<LottieComposition?> customDecoder(List<int> bytes) {
+  return LottieComposition.decodeZip(
+    bytes,
+    filePicker: (files) {
+      return files.firstWhereOrNull(
+            (f) => f.name.startsWith('animations/') && f.name.endsWith('.json'),
+      );
+    },
+  );
 }

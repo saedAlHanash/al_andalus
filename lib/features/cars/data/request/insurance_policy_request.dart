@@ -58,7 +58,7 @@ class InsurancePolicyRequest {
     this.packageName,
     this.totalPrice,
   }) {
-    if (kDebugMode) fillMockData();
+    // if (kDebugMode) fillMockData();
   }
 
   factory InsurancePolicyRequest.fromCarPolicy(CarPolicy car) {
@@ -305,6 +305,6 @@ class InsurancePolicyRequest {
   };
 
   void setTempImages(UploadFile file) {
-    if (kDebugMode) fillMockImages(file);
+    // if (kDebugMode) fillMockImages(file);
   }
 }
