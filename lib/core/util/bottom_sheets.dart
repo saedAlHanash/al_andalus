@@ -382,7 +382,7 @@ void showOptionBottomSheet(
                               text: S.of(context).fromGallery,
                               icon: ImageMultiType(
                                 url: Icons.file_upload_outlined,
-                                color: AppColorManager.textColor,
+                                color: AppColorManager.white,
                               ),
                               onTap: () {
                                 Navigator.pop(ctx);
@@ -402,7 +402,7 @@ void showOptionBottomSheet(
                             text: S.of(context).takePicture,
                             icon: ImageMultiType(
                               url: Icons.camera_alt_outlined,
-                              color: AppColorManager.textColor,
+                              color: AppColorManager.white,
                             ),
                             onTap: (justCamera || !scanDoc)
                                 ? () {
@@ -482,7 +482,10 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
                 10.0.verticalSpace,
                 MyButton(
                   text: S.of(context).uploadFromFiles,
-                  icon: ImageMultiType(url: Icons.file_upload_outlined),
+                  icon: ImageMultiType(
+                    url: Icons.file_upload_outlined,
+                    color: Colors.white,
+                  ),
                   onTap: () {
                     Navigator.pop(ctx);
                     pickAndUpload(allowedExtensions: ['pdf', 'PDF']).then(
@@ -635,13 +638,15 @@ void selectCar(
                               decoration: MyStyle.roundBox12(color: AppColorManager.appBarColor),
                               margin: EdgeInsets.symmetric(vertical: 5.0),
                               child: ListTile(
-
                                 onTap: () {
                                   Navigator.pop(context);
                                   onConfirm.call(e);
                                 },
                                 title: DrawableText(text: e.vehicle.name),
-                                leading: ImageMultiType(url: Assets.iconsTaxi,color: AppColorManager.textColor,),
+                                leading: ImageMultiType(
+                                  url: Assets.iconsTaxi,
+                                  color: AppColorManager.textColor,
+                                ),
                               ),
                             ),
                           ),

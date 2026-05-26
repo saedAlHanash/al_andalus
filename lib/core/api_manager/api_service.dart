@@ -45,8 +45,8 @@ class APIService {
   Map<String, String> get innerHeader => {
     'Content-Type': 'application/json',
     'Accept': 'Application/json',
-    'lang': AppSharedPreference.getLocal,
-    'X-localization': AppSharedPreference.getLocal,
+    'lang': AppSharedPreference.getLocalApi,
+    'X-localization': AppSharedPreference.getLocalApi,
     'Authorization': 'Bearer ${AppSharedPreference.getToken}',
   };
 

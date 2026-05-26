@@ -672,6 +672,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "privateInsuranceNote": MessageLookupByLibrary.simpleMessage(
       "Cars used for personal use",
     ),
+    "processingImage": MessageLookupByLibrary.simpleMessage(
+      "Processing image...",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "public": MessageLookupByLibrary.simpleMessage("public"),
     "qiCard": MessageLookupByLibrary.simpleMessage("Qi Card"),

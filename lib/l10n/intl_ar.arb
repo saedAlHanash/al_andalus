@@ -418,6 +418,7 @@
   "documentPreview": "معاينة المستند",
   "retake": "إعادة التقاط",
   "placeIdInsideFrame": "ضع بطاقة الهوية داخل الإطار",
+  "processingImage": "جارٍ معالجة الصورة...",
   "doneProcess": "إتمام العملية",
   "sorryThePaymentProcessWasNotCompleted": "عذراً، لم تكتمل عملية الدفع.",
   "dontWorryYouCanCompleteThePurchaseAtAnyTime": "لا تقلق، يمكنك إكمال عملية الشراء في أي وقت يناسبك. فقط اذهب إلى بطاقة السيارة و اعد الدفع ",

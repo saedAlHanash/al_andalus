@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -68,6 +69,7 @@ class _AccidentInfoState extends State<AccidentInfo> {
                         url: Assets.iconsFolder,
                         height: 50.0.dg,
                         width: 50.0.dg,
+                        color: AppColorManager.textColor,
                       ),
                       title: DrawableText(text: state.mRequest.policeReport.localId ?? '-'),
                     ),

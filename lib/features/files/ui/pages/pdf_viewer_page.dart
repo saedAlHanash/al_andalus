@@ -41,7 +41,7 @@ class MediaTypePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(titleText: title),
+      // appBar: AppBarWidget(titleText: title),
       body: Builder(
         builder: (context) {
           if (url.isEmpty) {

@@ -17,6 +17,8 @@ import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
+import '../../../cars/data/request/insurance_policy_request.dart';
+import '../../../cars/data/response/cars_response.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
 import '../../data/response/insurance_package.dart';
 import '../widget/item_insurance.dart';

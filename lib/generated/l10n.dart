@@ -3479,6 +3479,16 @@ class S {
     );
   }
 
+  /// `Processing image...`
+  String get processingImage {
+    return Intl.message(
+      'Processing image...',
+      name: 'processingImage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Done Process`
   String get doneProcess {
     return Intl.message(

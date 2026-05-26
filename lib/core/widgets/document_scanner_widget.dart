@@ -5,8 +5,7 @@ import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:drawable_text/drawable_text.dart';
-import 'package:drawable_text/drawable_text.dart';
-import 'package:drawable_text/drawable_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image/image.dart' as img;
@@ -119,8 +118,9 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
     final camera = _cameras[_selectedCameraIndex];
     _controller = CameraController(
       camera,
-      ResolutionPreset.max,
+      ResolutionPreset.high, // max is overkill and very slow to decode
       enableAudio: false,
+      imageFormatGroup: ImageFormatGroup.jpeg,
     );
 
     try {
@@ -157,38 +157,24 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
     }
   }
 
-  Future<String> _cropImage(XFile photo, Rect frameRect, Size screenSize) async {
-    final Uint8List bytes = await photo.readAsBytes();
-    img.Image? original = img.decodeImage(bytes);
-    if (original == null) throw Exception("Failed to decode image");
+  /// Runs entirely in a background isolate via [compute].
+  static Future<Uint8List> _cropIsolate(_CropParams p) async {
+    img.Image? original = img.decodeImage(p.bytes);
+    if (original == null) throw Exception('Failed to decode image');
 
     original = img.bakeOrientation(original);
 
-    final double screenWidth = screenSize.width;
-    final double screenHeight = screenSize.height;
-    final double imgWidth = original.width.toDouble();
-    final double imgHeight = original.height.toDouble();
+    final double scale = math.max(p.screenWidth / original.width, p.screenHeight / original.height);
+    final double offsetX = (p.screenWidth - original.width * scale) / 2;
+    final double offsetY = (p.screenHeight - original.height * scale) / 2;
 
-    final double scale = math.max(screenWidth / imgWidth, screenHeight / imgHeight);
-    final double offsetX = (screenWidth - imgWidth * scale) / 2;
-    final double offsetY = (screenHeight - imgHeight * scale) / 2;
-
-    final double cropLeft = (frameRect.left - offsetX) / scale;
-    final double cropTop = (frameRect.top - offsetY) / scale;
-    final double cropWidth = frameRect.width / scale;
-    final double cropHeight = frameRect.height / scale;
-
-    final int x = cropLeft.round().clamp(0, original.width - 1);
-    final int y = cropTop.round().clamp(0, original.height - 1);
-    final int w = cropWidth.round().clamp(1, original.width - x);
-    final int h = cropHeight.round().clamp(1, original.height - y);
+    final int x = ((p.frameLeft - offsetX) / scale).round().clamp(0, original.width - 1);
+    final int y = ((p.frameTop - offsetY) / scale).round().clamp(0, original.height - 1);
+    final int w = (p.frameWidth / scale).round().clamp(1, original.width - x);
+    final int h = (p.frameHeight / scale).round().clamp(1, original.height - y);
 
     final img.Image cropped = img.copyCrop(original, x: x, y: y, width: w, height: h);
-
-    final tempDir = await getTemporaryDirectory();
-    final String croppedPath = '${tempDir.path}/cropped_doc_${DateTime.now().millisecondsSinceEpoch}.jpg';
-    await File(croppedPath).writeAsBytes(img.encodeJpg(cropped, quality: 90));
-    return croppedPath;
+    return Uint8List.fromList(img.encodeJpg(cropped, quality: 85));
   }
 
   Future<void> _captureAndProcess(Rect frameRect, Size screenSize) async {
@@ -198,8 +184,25 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
 
     try {
       final XFile photo = await _controller!.takePicture();
-      final croppedPath = await _cropImage(photo, frameRect, screenSize);
-      final croppedBytes = await File(croppedPath).readAsBytes();
+      final Uint8List rawBytes = await photo.readAsBytes();
+
+      // Heavy decode+crop+encode runs in background isolate — UI stays smooth
+      final Uint8List croppedBytes = await compute(
+        _cropIsolate,
+        _CropParams(
+          bytes: rawBytes,
+          screenWidth: screenSize.width,
+          screenHeight: screenSize.height,
+          frameLeft: frameRect.left,
+          frameTop: frameRect.top,
+          frameWidth: frameRect.width,
+          frameHeight: frameRect.height,
+        ),
+      );
+
+      final tempDir = await getTemporaryDirectory();
+      final String croppedPath = '${tempDir.path}/cropped_doc_${DateTime.now().millisecondsSinceEpoch}.jpg';
+      await File(croppedPath).writeAsBytes(croppedBytes, flush: true);
 
       setState(() {
         _croppedImagePath = croppedPath;
@@ -207,7 +210,7 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
         _isProcessing = false;
       });
     } catch (e) {
-      debugPrint("Capture and process error: $e");
+      debugPrint('Capture and process error: $e');
       setState(() => _isProcessing = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -399,12 +402,12 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
                               color: Colors.white,
                               size: 28,
                             ),
-                            onPressed: _toggleFlash,
+                            onPressed: _isProcessing ? null : _toggleFlash,
                           ),
                           10.horizontalSpace,
                           IconButton(
                             icon: const Icon(Icons.cameraswitch, color: Colors.white, size: 28),
-                            onPressed: _toggleCamera,
+                            onPressed: _isProcessing ? null : _toggleCamera,
                           ),
                         ],
                       ),
@@ -413,31 +416,87 @@ class _DocumentScannerWidgetState extends State<DocumentScannerWidget> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 40.h),
-                  child: _isProcessing
-                      ? const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white))
-                      : GestureDetector(
-                          onTap: () => _captureAndProcess(frameRect, screenSize),
-                          child: Container(
-                            height: 80.r,
-                            width: 80.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 4),
-                            ),
-                            padding: const EdgeInsets.all(4.0),
-                            child: Container(
-                              decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-                            ),
-                          ),
+                  child: GestureDetector(
+                    onTap: _isProcessing ? null : () => _captureAndProcess(frameRect, screenSize),
+                    child: AnimatedOpacity(
+                      opacity: _isProcessing ? 0.3 : 1.0,
+                      duration: const Duration(milliseconds: 200),
+                      child: Container(
+                        height: 80.r,
+                        width: 80.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.white, width: 4),
                         ),
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
+
+          // Full-screen processing overlay — shown while background isolate is working
+          if (_isProcessing)
+            Positioned.fill(
+              child: IgnorePointer(
+                // blocks all touches
+                ignoring: false,
+                child: Container(
+                  color: Colors.black.withOpacity(0.55),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        width: 56,
+                        height: 56,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          strokeWidth: 3.5,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      DrawableText(
+                        text: S.of(context).processingImage,
+                        color: Colors.white,
+                        size: 16.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );
   }
+}
+
+/// Parameter bag for [_DocumentScannerWidgetState._cropIsolate].
+/// Must be a plain class (no Flutter objects) to cross isolate boundaries.
+class _CropParams {
+  final Uint8List bytes;
+  final double screenWidth;
+  final double screenHeight;
+  final double frameLeft;
+  final double frameTop;
+  final double frameWidth;
+  final double frameHeight;
+
+  const _CropParams({
+    required this.bytes,
+    required this.screenWidth,
+    required this.screenHeight,
+    required this.frameLeft,
+    required this.frameTop,
+    required this.frameWidth,
+    required this.frameHeight,
+  });
 }
 
 class ScannerOverlayPainter extends CustomPainter {

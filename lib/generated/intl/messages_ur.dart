@@ -680,6 +680,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "privateInsuranceNote": MessageLookupByLibrary.simpleMessage(
       "ئهو ئۆتۆمبێلانهی بۆ بهکارهێنانی تایبهت بهکاردێن",
     ),
+    "processingImage": MessageLookupByLibrary.simpleMessage(
+      "وێنەکە لێکدەدرێتەوە...",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("پڕۆفایل"),
     "public": MessageLookupByLibrary.simpleMessage("گشتی"),
     "qiCard": MessageLookupByLibrary.simpleMessage("کێ کارد - Qi Card"),

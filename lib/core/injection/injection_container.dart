@@ -32,7 +32,7 @@ import '../../features/notification/bloc/all_notification_cubit/all_notification
 import '../../features/notification/bloc/notification_count_cubit/notification_count_cubit.dart';
 import '../../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
-import '../../features/profile/bloc/delete_my_account_cubit/delete_my_account_cubit.dart';
+
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import '../../features/transfer_ownership/bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';
@@ -93,7 +93,6 @@ Future<void> init() async {
   //endregion
 
   // region profile
-  sl.registerFactory(() => DeleteMyAccountCubit());
   sl.registerFactory(() => GetMeCubit());
   sl.registerFactory(() => UpdateProfileCubit());
 

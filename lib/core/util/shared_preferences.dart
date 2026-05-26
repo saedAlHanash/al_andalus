@@ -101,6 +101,12 @@ class AppSharedPreference {
 
   static String get getLocal => _prefs?.getString(_lang) ?? 'ar';
 
+  static String get getLocalApi {
+    final f = _prefs?.getString(_lang) ?? 'ar';
+    if (f == 'ur') return 'ku';
+    return f;
+  }
+
   //endregion
 
   //region StartPage

@@ -419,6 +419,7 @@
   "documentPreview": "Document Preview",
   "retake": "Retake",
   "placeIdInsideFrame": "Place your ID card inside the frame",
+  "processingImage": "Processing image...",
   "doneProcess": "Done Process",
   "sorryThePaymentProcessWasNotCompleted": "Sorry, the payment process was not completed.",
   "dontWorryYouCanCompleteThePurchaseAtAnyTime": "Don`t worry, you can complete the purchase at any time that suits you. Just go to your car card and retry ",

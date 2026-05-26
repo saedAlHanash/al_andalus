@@ -26,7 +26,7 @@ class UploadContainerWidget extends StatelessWidget {
         width: 1.0.sw,
         padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0).r,
         decoration: DottedDecoration(
-          shape: Shape.box,
+          shape: .box,
           borderRadius: BorderRadius.circular(6.r),
           color: AppColorManager.mainColorDynamic,
         ),

@@ -767,7 +767,7 @@ enum PaymentType {
   }
 }
 
-enum InsurancePolicyStatus {
+enum InsurancePolicyStatus  {
   paymentPending,
   paid,
   missingInfo,

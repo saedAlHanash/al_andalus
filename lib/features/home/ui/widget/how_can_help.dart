@@ -180,12 +180,15 @@ class _Item extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child: Transform.scale(
                   scaleX: isRtl ? 1.0 : -1.0,
-                  child: DrawableText(
-                    matchParent: true,
-                    text: title,
-                    size: 16.0.sp,
-                    padding: const EdgeInsets.all(20.0).r,
-                    fontWeight: FontWeight.w700,
+                  child: SizedBox(
+                    width: 0.36.sw,
+                    child: DrawableText(
+                      matchParent: true,
+                      text: title,
+                      size: 15.0.sp,
+                      padding: const EdgeInsets.all(20.0).r,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),

@@ -92,6 +92,7 @@ class _CarInspectionState extends State<CarInspection> {
                                 },
                                 leading: ImageMultiType(
                                   url: Assets.iconsFolder,
+                                  color: AppColorManager.textColor,
                                   height: 50.0.dg,
                                   width: 50.0.dg,
                                 ),
@@ -99,7 +100,10 @@ class _CarInspectionState extends State<CarInspection> {
                               ),
                               10.0.verticalSpace,
                               MyButton(
-                                icon: ImageMultiType(url: Icons.upload_outlined),
+                                icon: ImageMultiType(
+                                  url: Icons.upload_outlined,
+                                  color: Colors.white,
+                                ),
                                 text: S.of(context).reUpload,
                                 onTap: () {
                                   showFileUploadBottomSheet(
