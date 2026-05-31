@@ -107,5 +107,6 @@ class Assets {
   static const String lottiesAnimatedMoveUpwardsLinearIcon = 'assets/lotties/Animated-move-upwards-linear-icon.json';
   static const String lottiesAnimatedMoveUpwardsLinearIconFixed = 'assets/lotties/Animated_move_upwards_linear_icon_fixed.lottie';
   static const String lottiesAnimatedMoveUpwardsLinearIconFixed2 = 'assets/lotties/Animated move upwards linear icon_fixed_2.lottie';
+  static const String lottiesMoveUpwardsAnimationDark = 'assets/lotties/move_upwards_animation_dark.lottie';
 
 }

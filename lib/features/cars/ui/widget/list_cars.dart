@@ -7,10 +7,8 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/app/app_provider.dart';
 import '../../../../core/widgets/need_login_widget.dart';
-import '../../../../core/widgets/refresh_widget/refresh_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import '../../bloc/cars_cubit/cars_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/home_cars_cubit/home_cars_cubit.dart';

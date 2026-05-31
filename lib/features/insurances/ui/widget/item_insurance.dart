@@ -17,7 +17,6 @@ import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
 import 'package:collection/collection.dart';
 
-
 class ItemInsurance extends StatelessWidget {
   const ItemInsurance({
     super.key,
@@ -150,7 +149,7 @@ class _DetailItem extends StatefulWidget {
 }
 
 class _DetailItemState extends State<_DetailItem> {
-   var _showedHint = false;
+  var _showedHint = false;
   var _showScrollHint = false;
 
   @override
@@ -208,20 +207,11 @@ class _DetailItemState extends State<_DetailItem> {
                           alignment: .center,
                           child: IgnorePointer(
                             child: Lottie.asset(
-                              Assets.lottiesAnimatedMoveUpwardsLinearIconFixed2,
+                              context.isDark
+                                  ? Assets.lottiesMoveUpwardsAnimationDark
+                                  : Assets.lottiesAnimatedMoveUpwardsLinearIconFixed2,
                               height: 120.0.r,
                               decoder: customDecoder,
-                              // delegates: LottieDelegates(
-                              //   values: [
-                              //     ValueDelegate.colorFilter(
-                              //       ['**'], // هنا الـ ** ستجبر الفلتر يغطي كل الطبقات غصب عنها
-                              //       value: ColorFilter.mode(
-                              //         AppColorManager.textColor,
-                              //         BlendMode.srcIn,
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
                             ),
                           ),
                         ),
@@ -329,12 +319,13 @@ class _Top extends StatelessWidget {
     );
   }
 }
+
 Future<LottieComposition?> customDecoder(List<int> bytes) {
   return LottieComposition.decodeZip(
     bytes,
     filePicker: (files) {
       return files.firstWhereOrNull(
-            (f) => f.name.startsWith('animations/') && f.name.endsWith('.json'),
+        (f) => f.name.startsWith('animations/') && f.name.endsWith('.json'),
       );
     },
   );
