@@ -317,6 +317,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "followOrderHome": MessageLookupByLibrary.simpleMessage(
       "You can follow your order from the home page",
     ),
+    "followRepaymentHome": MessageLookupByLibrary.simpleMessage(
+      "You can follow the insurance status from the home page",
+    ),
     "font": MessageLookupByLibrary.simpleMessage("Font"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fourName": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -471,6 +474,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "paymentConfirmed": MessageLookupByLibrary.simpleMessage(
       "Payment Confirmation",
+    ),
+    "paymentFailedTitle": MessageLookupByLibrary.simpleMessage(
+      "Operation Incomplete!",
     ),
     "paymentPending": MessageLookupByLibrary.simpleMessage("Payment Pending"),
     "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
@@ -714,6 +720,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
       "Renewal of subscription",
+    ),
+    "repaymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
+      "Payment Successful!",
     ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("Report Accident"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(

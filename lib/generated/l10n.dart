@@ -3319,11 +3319,41 @@ class S {
     );
   }
 
+  /// `Payment Successful!`
+  String get repaymentSuccessTitle {
+    return Intl.message(
+      'Payment Successful!',
+      name: 'repaymentSuccessTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation Incomplete!`
+  String get paymentFailedTitle {
+    return Intl.message(
+      'Operation Incomplete!',
+      name: 'paymentFailedTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You can follow your order from the home page`
   String get followOrderHome {
     return Intl.message(
       'You can follow your order from the home page',
       name: 'followOrderHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can follow the insurance status from the home page`
+  String get followRepaymentHome {
+    return Intl.message(
+      'You can follow the insurance status from the home page',
+      name: 'followRepaymentHome',
       desc: '',
       args: [],
     );

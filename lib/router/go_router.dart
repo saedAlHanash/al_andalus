@@ -244,8 +244,6 @@ final goRouter = GoRouter(
     ),
     //endregion
 
-
-
     //region dataPage
     GoRoute(
       path: RouteName.dataPage,
@@ -404,7 +402,7 @@ final goRouter = GoRouter(
       builder: (_, state) {
         final String url = (state.uri.queryParameters['url'] ?? '').toString();
         final String title = (state.uri.queryParameters['title'] ?? '').toString();
-        final ResourceType type = ResourceType.values[int.tryParse(state.uri.queryParameters['type'] ?? '0')??0];
+        final ResourceType type = ResourceType.values[int.tryParse(state.uri.queryParameters['type'] ?? '0') ?? 0];
         return MediaTypePage(url: url, title: title, mediaType: type);
       },
     ),
@@ -412,10 +410,12 @@ final goRouter = GoRouter(
       path: RouteName.paymentSuccess,
       name: RouteName.paymentSuccess,
       builder: (_, state) {
-        final bool isSuccessPayment = state.uri.queryParameters['isSuccessPayment'] == 'true';
+        final isSuccessPayment = state.uri.queryParameters['isSuccessPayment'] == 'true';
+        final isRepay = state.uri.queryParameters['isRepay'] == 'true';
         return PaymentSuccessPage(
           request: state.extra as InsurancePolicyRequest,
           isSuccessPayment: isSuccessPayment,
+          isRepay: isRepay,
         );
       },
     ),

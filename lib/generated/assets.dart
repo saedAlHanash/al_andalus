@@ -106,5 +106,6 @@ class Assets {
   static const String imagesZainCash = 'assets/images/zain_cash.png';
   static const String lottiesAnimatedMoveUpwardsLinearIcon = 'assets/lotties/Animated-move-upwards-linear-icon.json';
   static const String lottiesAnimatedMoveUpwardsLinearIconFixed = 'assets/lotties/Animated_move_upwards_linear_icon_fixed.lottie';
+  static const String lottiesAnimatedMoveUpwardsLinearIconFixed2 = 'assets/lotties/Animated move upwards linear icon_fixed_2.lottie';
 
 }

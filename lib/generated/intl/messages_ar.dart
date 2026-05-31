@@ -301,6 +301,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "followOrderHome": MessageLookupByLibrary.simpleMessage(
       "بإمكانك متابعه طلبك من خلال الرئيسية",
     ),
+    "followRepaymentHome": MessageLookupByLibrary.simpleMessage(
+      "بإمكانك متابعة حالة التأمين من خلال الرئيسية",
+    ),
     "font": MessageLookupByLibrary.simpleMessage("الخط"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كود السر؟"),
     "fourName": MessageLookupByLibrary.simpleMessage("الاسم الرباعي"),
@@ -444,6 +447,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pay": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "paymentConfirmed": MessageLookupByLibrary.simpleMessage("تأكيد الدفع"),
+    "paymentFailedTitle": MessageLookupByLibrary.simpleMessage(
+      "لم تكتمل العملية!",
+    ),
     "paymentPending": MessageLookupByLibrary.simpleMessage("بانتظار الدفع"),
     "paymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
       "تمت عملية الإنشاء بنجاح!",
@@ -680,6 +686,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "renewalSubscription": MessageLookupByLibrary.simpleMessage(
       "تجديد الاشتراك",
+    ),
+    "repaymentSuccessTitle": MessageLookupByLibrary.simpleMessage(
+      "تمت عملية الدفع بنجاح!",
     ),
     "reportAccident": MessageLookupByLibrary.simpleMessage("رفع حادث"),
     "reportAccidentIntroDesc": MessageLookupByLibrary.simpleMessage(

@@ -32,7 +32,10 @@ class HomeScreen extends StatelessWidget {
               context.pushNamed(
                 RouteName.paymentSuccess,
                 extra: state.mRequest,
-                queryParameters: {'isSuccessPayment': (value == true).toString()},
+                queryParameters: {
+                  'isSuccessPayment': (value == true).toString(),
+                  'isRepay': true.toString(),
+                },
               );
             }
           },

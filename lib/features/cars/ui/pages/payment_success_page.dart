@@ -22,10 +22,12 @@ class PaymentSuccessPage extends StatelessWidget {
   const PaymentSuccessPage({
     super.key,
     required this.request,
+    required this.isRepay,
     this.isSuccessPayment = true,
   });
   final InsurancePolicyRequest request;
   final bool isSuccessPayment;
+  final bool isRepay;
 
 
   @override
@@ -55,19 +57,23 @@ class PaymentSuccessPage extends StatelessWidget {
                 children: [
 
                   DrawableText(
-                    text: S.of(context).paymentSuccessTitle,
+                    text: !isSuccessPayment
+                        ? S.of(context).paymentFailedTitle
+                        : (isRepay ? S.of(context).repaymentSuccessTitle : S.of(context).paymentSuccessTitle),
                     size: 20.sp,
                     fontFamily: GoogleFonts.almarai().fontFamily,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.bold,
                   ),
-                  8.verticalSpace,
-                  DrawableText(
-                    text: S.of(context).followOrderHome,
-                    size: 14.sp,
-                    fontFamily: GoogleFonts.almarai().fontFamily,
-                    textAlign: TextAlign.center,
-                  ),
+                  if (isSuccessPayment) ...[
+                    8.verticalSpace,
+                    DrawableText(
+                      text: isRepay ? S.of(context).followRepaymentHome : S.of(context).followOrderHome,
+                      size: 14.sp,
+                      fontFamily: GoogleFonts.almarai().fontFamily,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                   if (!isSuccessPayment)
                     Padding(
                       padding: EdgeInsets.only(top: 8.h),

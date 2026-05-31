@@ -62,7 +62,10 @@ class _AddCarPageState extends State<AddCarPage> {
                   context.pushNamed(
                     RouteName.paymentSuccess,
                     extra: state.mRequest,
-                    queryParameters: {'isSuccessPayment': (value == true).toString()},
+                    queryParameters: {
+                      'isSuccessPayment': (value == true).toString(),
+                      'isRepay': 'false',
+                    },
                   );
                 }
               },

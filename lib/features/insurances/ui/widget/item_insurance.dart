@@ -208,7 +208,7 @@ class _DetailItemState extends State<_DetailItem> {
                           alignment: .center,
                           child: IgnorePointer(
                             child: Lottie.asset(
-                              Assets.lottiesAnimatedMoveUpwardsLinearIconFixed,
+                              Assets.lottiesAnimatedMoveUpwardsLinearIconFixed2,
                               height: 120.0.r,
                               decoder: customDecoder,
                               // delegates: LottieDelegates(
