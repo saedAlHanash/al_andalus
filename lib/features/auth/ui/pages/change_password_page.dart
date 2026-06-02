@@ -26,7 +26,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<ChangePasswordCubit, ChangePasswordInitial>(
-      listenWhen: (p, c) => c.statuses == CubitStatuses.done,
+      listenWhen: (p, c) => c.done,
       listener: (context, state) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(S.of(context).passwordChangedSuccessfully)));
         context.pop();

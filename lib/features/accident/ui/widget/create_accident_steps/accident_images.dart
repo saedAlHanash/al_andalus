@@ -1,5 +1,6 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:drawable_text/drawable_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -160,6 +161,10 @@ class AccidentImages extends StatelessWidget {
       scanDoc: false,
       (value) {
         context.read<AccidentsCubit>().setImage(value, zone);
+        if(kDebugMode) {
+          context.read<AccidentsCubit>().state.mRequest.setTempImages(value);
+        }
+
       },
     );
   }

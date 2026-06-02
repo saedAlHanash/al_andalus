@@ -33,6 +33,7 @@ class CarPolicy {
     required this.endDate,
     required this.vehicle,
     required this.policyFile,
+    required this.canShowFile,
     required this.mediaType,
     required this.fieldsToBeRefilled,
     required this.created,
@@ -49,6 +50,8 @@ class CarPolicy {
   final String endDate;
   final Vehicle vehicle;
   final String policyFile;
+  final bool canShowFile;
+
   final ResourceType mediaType;
   final List<String> fieldsToBeRefilled;
   final DateTime? created;
@@ -66,6 +69,7 @@ class CarPolicy {
       endDate: json["end_date"] ?? "",
       vehicle: Vehicle.fromJson(json["vehicle"] ?? {}),
       policyFile: json["policy_file"] ?? "",
+      canShowFile: json["can_show_file"] ?? false,
       mediaType: ResourceType.getByNameOrIndex((json["policy_file"] ?? '').toString().fileExtension),
       fieldsToBeRefilled: json["fields_to_be_refilled"] == null
           ? []
@@ -86,6 +90,7 @@ class CarPolicy {
     "end_date": endDate,
     "vehicle": vehicle.toJson(),
     "policy_file": policyFile,
+    "can_show_file": canShowFile,
     "mediaType": mediaType.index,
     "fields_to_be_refilled": fieldsToBeRefilled,
     "created": created?.toIso8601String(),

@@ -647,6 +647,11 @@ void selectCar(
                                   url: Assets.iconsTaxi,
                                   color: AppColorManager.textColor,
                                 ),
+                                trailing: DrawableText(
+                                  text: e.status.name,
+                                  size: 10.0.sp,
+                                  color: e.status.color,
+                                ),
                               ),
                             ),
                           ),
@@ -1060,4 +1065,59 @@ void showDeleteAccountBottomSheet(
       );
     },
   );
+}
+
+void showAccidentReportedBottomSheet(
+  BuildContext context, {
+  required VoidCallback onClosed,
+}) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HeaderBottomSheet(),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
+              child: Column(
+                children: [
+                  40.0.verticalSpace,
+                  DrawableText(
+                    text: S.of(context).accidentReportedSuccessfully,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 22.0.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  20.0.verticalSpace,
+                  DrawableText(
+                    text: S.of(context).accidentReportedDesc,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 16.0.sp,
+                    color: AppColorManager.grey,
+                  ),
+                  60.0.verticalSpace,
+                  OutLineButton(
+                    text: S.of(context).backToHome,
+                    onTap: () {
+                      Navigator.pop(ctx);
+                    },
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  ).then((_) => onClosed());
 }

@@ -24,7 +24,7 @@ class TransferOwnershipPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<TransferOwnershipCubit, TransferOwnershipState>(
-      listenWhen: (p, c) => c.statuses == CubitStatuses.done,
+      listenWhen: (p, c) => c.done,
       listener: (context, state) {
         NoteMessage.showSnakeBar(context: context, message: state.result?.message ?? '');
         context.go(RouteName.home);
@@ -37,7 +37,7 @@ class TransferOwnershipPage extends StatelessWidget {
             builder: (context, state) {
               return MyButton(
                 enable: state.mRequest.canSend,
-                loading: state.statuses == CubitStatuses.loading,
+                loading: state.loading,
                 onTap: () {
                   context.read<TransferOwnershipCubit>().transferOwnership();
                 },

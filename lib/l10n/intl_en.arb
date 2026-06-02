@@ -431,5 +431,7 @@
   "areYouSureYouWantToLogout": "Are you sure you want to log out?",
   "areYouSureYouWantToDeleteAccount": "Are you sure you want to delete your account?",
   "uploadACopyOfThePoliceReportAfterReportingThe": "Upload a copy of the police report after reporting the incident.",
-  "attachThePoliceReport": "Attach the police report"
+  "attachThePoliceReport": "Attach the police report",
+  "accidentReportedSuccessfully": "The accident has been reported",
+  "accidentReportedDesc": "The submitted request will be reviewed and you will be notified of updates. You can track the request status through \"Insurances\""
 }

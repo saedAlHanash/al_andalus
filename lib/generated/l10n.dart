@@ -3608,6 +3608,26 @@ class S {
       args: [],
     );
   }
+
+  /// `The accident has been reported`
+  String get accidentReportedSuccessfully {
+    return Intl.message(
+      'The accident has been reported',
+      name: 'accidentReportedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The submitted request will be reviewed and you will be notified of updates. You can track the request status through "Insurances"`
+  String get accidentReportedDesc {
+    return Intl.message(
+      'The submitted request will be reviewed and you will be notified of updates. You can track the request status through "Insurances"',
+      name: 'accidentReportedDesc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

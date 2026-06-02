@@ -46,7 +46,7 @@ class _ConfirmEditPhonePageState extends State<ConfirmEditPhonePage> {
     return MultiBlocListener(
       listeners: [
         BlocListener<ConfirmCodeCubit, ConfirmCodeInitial>(
-          listenWhen: (p, current) => current.statuses == CubitStatuses.done,
+          listenWhen: (p, current) => current.done,
           listener: (context, state) {
             AppSharedPreference.removeUnconfirmedPhone();
             //

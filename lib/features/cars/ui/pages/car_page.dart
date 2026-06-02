@@ -299,29 +299,37 @@ class _PolicyFileWidget extends StatelessWidget {
                         size: 16.sp,
                       ),
                       15.verticalSpace,
-                      Container(
-                        decoration: MyStyle.roundBox,
-                        child: ListTile(
-                          onTap: () {
-                            context.pushNamed(
-                              RouteName.media,
-                              queryParameters: {
-                                'url': car.policyFile,
-                                'type': car.mediaType.index.toString(),
-                              },
-                            );
-                          },
-                          leading: ImageMultiType(
-                            url: Assets.iconsPdfBorder,
-                            height: 50.0.r,
-                            width: 50.0.r,
+                      Opacity(
+                        opacity: car.canShowFile ? 1 : 0.5,
+                        child: Container(
+                          decoration: MyStyle.roundBox,
+                          child: ListTile(
+                            onTap: !car.canShowFile
+                                ? null
+                                : () {
+                                    context.pushNamed(
+                                      RouteName.media,
+                                      queryParameters: {
+                                        'url': car.policyFile,
+                                        'type': car.mediaType.index.toString(),
+                                      },
+                                    );
+                                  },
+                            leading: ImageMultiType(
+                              url: Assets.iconsPdfBorder,
+                              height: 50.0.r,
+                              width: 50.0.r,
+                            ),
+                            title: DrawableText(
+                              text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
+                              padding: EdgeInsets.symmetric(vertical: 5.0),
+                              fontWeight: .bold,
+                            ),
+                            trailing: ImageMultiType(
+                              url: Icons.visibility_rounded,
+                              color: !car.canShowFile ? Colors.grey : null,
+                            ),
                           ),
-                          title: DrawableText(
-                            text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
-                            padding: EdgeInsets.symmetric(vertical: 5.0),
-                            fontWeight: .bold,
-                          ),
-                          trailing: ImageMultiType(url: Icons.visibility_rounded),
                         ),
                       ),
                       20.verticalSpace,
@@ -365,34 +373,44 @@ class _PolicyFileWidget extends StatelessWidget {
                     ],
                   ),
                 )
-              : Container(
-                  decoration: MyStyle.roundBox,
-                  child: ListTile(
-                    onTap: () {
-                      context.pushNamed(
-                        RouteName.media,
-                        queryParameters: {
-                          'url': car.policyFile,
-                          'type': car.mediaType.index.toString(),
-                        },
-                      );
-                    },
-                    leading: ImageMultiType(
-                      url: Assets.iconsPdfBorder,
-                      color: AppColorManager.textColor,
-                      height: 50.0.r,
-                      width: 50.0.r,
-                    ),
-                    title: DrawableText(
-                      text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
-                      padding: EdgeInsets.symmetric(vertical: 5.0),
-                      fontWeight: .bold,
-                    ),
-                    trailing: IconButton(
-                      onPressed: () {
-                        LauncherHelper.downloadFile(fileUrl: car.policyFile);
-                      },
-                      icon: ImageMultiType(url: Icons.download_outlined),
+              : Opacity(
+                  opacity: car.canShowFile ? 1 : 0.5,
+                  child: Container(
+                    decoration: MyStyle.roundBox,
+                    child: ListTile(
+                      onTap: !car.canShowFile
+                          ? null
+                          : () {
+                              context.pushNamed(
+                                RouteName.media,
+                                queryParameters: {
+                                  'url': car.policyFile,
+                                  'type': car.mediaType.index.toString(),
+                                },
+                              );
+                            },
+                      leading: ImageMultiType(
+                        url: Assets.iconsPdfBorder,
+                        color: AppColorManager.textColor,
+                        height: 50.0.r,
+                        width: 50.0.r,
+                      ),
+                      title: DrawableText(
+                        text: '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
+                        padding: EdgeInsets.symmetric(vertical: 5.0),
+                        fontWeight: .bold,
+                      ),
+
+                      trailing: IconButton(
+                        onPressed: !car.canShowFile
+                            ? null
+                            : () {
+                                LauncherHelper.downloadFile(fileUrl: car.policyFile);
+                              },
+                        icon: ImageMultiType(
+                          url: Icons.visibility_rounded,
+                        ),
+                      ),
                     ),
                   ),
                 );

@@ -32,7 +32,7 @@
 //         10.0.verticalSpace,
 //         if (length < totalCount)
 //           Builder(builder: (context) {
-//             if (statuses == CubitStatuses.loading) {
+//             if (loading) {
 //               return MyStyle.loadingWidget();
 //             }
 //             return MyButton

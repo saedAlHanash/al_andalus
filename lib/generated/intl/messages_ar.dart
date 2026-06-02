@@ -34,6 +34,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accidentDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الحادث"),
     "accidentLocation": MessageLookupByLibrary.simpleMessage("موقع الحادث"),
+    "accidentReportedDesc": MessageLookupByLibrary.simpleMessage(
+      "سيتم معاينة الطلب المرفوع و إبلاغك بالمستجدات. بالإمكان متابعة حالة الطلب من خلال \"التأمينات\"",
+    ),
+    "accidentReportedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم رفع الحادث",
+    ),
     "active": MessageLookupByLibrary.simpleMessage("نشط"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
     "addYourFirstCar": MessageLookupByLibrary.simpleMessage(

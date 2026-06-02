@@ -44,13 +44,13 @@ class _OtpPasswordPageState extends State<OtpPasswordPage> {
     return MultiBlocListener(
       listeners: [
         BlocListener<OtpPasswordCubit, OtpPasswordInitial>(
-          listenWhen: (p, current) => current.statuses == CubitStatuses.done,
+          listenWhen: (p, current) => current.done,
           listener: (context, state) {
             context.goNamed(RouteName.resetPasswordPage);
           },
         ),
         BlocListener<ResendCodeCubit, ResendCodeInitial>(
-          listenWhen: (p, current) => current.statuses == CubitStatuses.done,
+          listenWhen: (p, current) => current.done,
           listener: (context, state) {
             NoteMessage.showAwesomeDoneDialog(
               context,

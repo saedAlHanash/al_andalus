@@ -672,7 +672,6 @@ extension HasClaimRequestH on HasClaimRequest {
 
     return Container(
       width: 1.0.sw,
-      height: 220.0.h,
       padding: EdgeInsets.all(12.0).r,
       margin: EdgeInsets.symmetric(vertical: 12.0).r,
       decoration: MyStyle.outlineBorder,
@@ -681,14 +680,18 @@ extension HasClaimRequestH on HasClaimRequest {
           DrawableText(
             text: S().claimStatus,
             fontWeight: .bold,
-            size: 18.0.sp,
-            drawableEnd: ImageMultiType(url: Assets.iconsTransport),
+            size: 16.0.sp,
+            drawableEnd: ImageMultiType(
+              url: Assets.iconsTransport,
+              height: 25.0.r,
+              width: 25.0.r,
+            ),
             drawableAlin: .between,
             matchParent: true,
           ),
-          5.0.verticalSpace,
+          10.0.verticalSpace,
           ImageMultiType(url: Assets.iconsDotedLine, width: 1.0.sw),
-          5.0.verticalSpace,
+          10.0.verticalSpace,
           ImageMultiType(
             url: status.icon,
             color: status.color,

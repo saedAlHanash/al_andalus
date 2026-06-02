@@ -59,7 +59,7 @@ class AccidentRequest {
   void setTempImages(UploadFile file) {
     if (!kDebugMode) return;
 
-    policeReport = file.copyWith();
+    // policeReport = file.copyWith();
     frontImage = file.copyWith();
 
     backImage = file.copyWith();

@@ -1,4 +1,5 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,9 +43,12 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AccidentsCubit, AccidentsInitial>(
-      listenWhen: (p, c) => c.statuses == CubitStatuses.done,
+      listenWhen: (p, c) => c.done,
       listener: (context, state) {
-        context.pop(); // Go back when created
+        showAccidentReportedBottomSheet(
+          context,
+          onClosed: () => context.pop(),
+        );
       },
       child: BlocBuilder<AccidentsCubit, AccidentsInitial>(
         builder: (context, state) {
@@ -60,7 +64,7 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
             bottomNavigationBar: Padding(
               padding: EdgeInsetsGeometry.all(20.0),
               child: MyButton(
-                loading: state.statuses == CubitStatuses.loading,
+                loading: state.loading,
                 onTap: () {
                   final request = state.mRequest;
 

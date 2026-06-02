@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "accidentLocation": MessageLookupByLibrary.simpleMessage(
       "Accident Location",
     ),
+    "accidentReportedDesc": MessageLookupByLibrary.simpleMessage(
+      "The submitted request will be reviewed and you will be notified of updates. You can track the request status through \"Insurances\"",
+    ),
+    "accidentReportedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "The accident has been reported",
+    ),
     "active": MessageLookupByLibrary.simpleMessage("Active"),
     "addNewCar": MessageLookupByLibrary.simpleMessage("Add New Car"),
     "addYourFirstCar": MessageLookupByLibrary.simpleMessage(

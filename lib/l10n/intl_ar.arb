@@ -430,5 +430,7 @@
   "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
   "areYouSureYouWantToDeleteAccount": "هل أنت متأكد من رغبتك في حذف الحساب؟",
   "uploadACopyOfThePoliceReportAfterReportingThe": "ارفع نسخه لتقرير الشرطه بعد الإبلاغ عن الحادث",
-  "attachThePoliceReport": " إرفق تقرير الشرطة"
+  "attachThePoliceReport": " إرفق تقرير الشرطة",
+  "accidentReportedSuccessfully": "تم رفع الحادث",
+  "accidentReportedDesc": "سيتم معاينة الطلب المرفوع و إبلاغك بالمستجدات. بالإمكان متابعة حالة الطلب من خلال \"التأمينات\""
 }
