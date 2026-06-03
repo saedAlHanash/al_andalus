@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:app_links/app_links.dart';
 import 'package:al_andalus/router/go_router.dart';
@@ -27,7 +28,7 @@ class DeepLinkService {
         _handleFirebaseMessage(initialMessage, isFromTerminatedState: true);
       }
     } catch (e) {
-      // Handle or log error
+      loggerObject.e(e);
     }
 
     // 2. FCM Background/Foreground State click
@@ -45,7 +46,7 @@ class DeepLinkService {
         }
       }
     } catch (e) {
-      // Handle or log error
+      loggerObject.e(e);
     }
 
     // 4. Native Deep Links (using app_links)
@@ -56,15 +57,20 @@ class DeepLinkService {
         _setPendingDeepLink(initialUri.toString());
       }
     } catch (e) {
+      loggerObject.e(e);
       // Log or handle error
     }
 
     // B. Foreground/Background state (Native Stream)
-    _appLinks.uriLinkStream.listen((uri) {
-      navigateToUrl(uri.toString());
-    }, onError: (err) {
-      // Log or handle error
-    });
+    _appLinks.uriLinkStream.listen(
+      (uri) {
+        navigateToUrl(uri.toString());
+      },
+      onError: (err) {
+        loggerObject.e(err);
+        // Log or handle error
+      },
+    );
   }
 
   /// Set pending deep link
@@ -89,27 +95,27 @@ class DeepLinkService {
 
   /// Parse the URL and extract path & query parameters.
   /// Supported:
-  /// - https://back.al_andalus.com/carPage?id=123 -> /carPage?id=123
-  /// - al_andalus://carPage?id=123 -> /carPage?id=123
+  /// - https://back.al-andalus.com/carPage?id=123 -> /carPage?id=123
+  /// - al-andalus://carPage?id=123 -> /carPage?id=123
   /// - /carPage?id=123 -> /carPage?id=123
   static String? cleanUrl(String url) {
     try {
       String processedUrl = url.trim();
 
-      // If it's a custom scheme like al_andalus://path, convert it to al_andalus:/path
+      // If it's a custom scheme like al-andalus://path, convert it to al-andalus:/path
       // to prevent Uri.parse from lowercasing the host part.
-      if (processedUrl.startsWith('al_andalus://')) {
-        processedUrl = processedUrl.replaceFirst('al_andalus://', 'al_andalus:/');
+      if (processedUrl.startsWith('al-andalus://')) {
+        processedUrl = processedUrl.replaceFirst('al-andalus://', 'al-andalus:/');
       }
 
       final uri = Uri.parse(processedUrl);
       String path = uri.path;
 
       // Check scheme and host to extract path
-      if (uri.scheme == 'al_andalus' || uri.host == 'back.al_andalus.com') {
-        if (path.isEmpty && uri.host.isNotEmpty && uri.host != 'back.al_andalus.com') {
+      if (uri.scheme == 'al-andalus' || uri.host == 'back.al-andalus.com') {
+        if (path.isEmpty && uri.host.isNotEmpty && uri.host != 'back.al-andalus.com') {
           path = uri.host;
-        } else if (uri.host.isNotEmpty && uri.host != 'back.al_andalus.com') {
+        } else if (uri.host.isNotEmpty && uri.host != 'back.al-andalus.com') {
           path = '/${uri.host}$path';
         }
       } else {
