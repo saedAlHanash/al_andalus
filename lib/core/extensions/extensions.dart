@@ -635,7 +635,7 @@ extension HasTransferRequestH on HasTransferRequest {
             text: S().ownershipTransferStatus,
             fontWeight: .bold,
             size: 18.0.sp,
-            drawableEnd: ImageMultiType(url: Assets.iconsTransport),
+            drawableEnd: ImageMultiType(url: Assets.iconsUserChange),
             drawableAlin: .between,
             matchParent: true,
           ),
@@ -678,11 +678,11 @@ extension HasClaimRequestH on HasClaimRequest {
       child: Column(
         children: [
           DrawableText(
-            text: S().claimStatus,
+            text: S().accidentRemovalCase,
             fontWeight: .bold,
             size: 16.0.sp,
             drawableEnd: ImageMultiType(
-              url: Assets.iconsTransport,
+              url: Assets.assetsIconsAccident,
               height: 25.0.r,
               width: 25.0.r,
             ),
@@ -705,14 +705,14 @@ extension HasClaimRequestH on HasClaimRequest {
           ),
           15.0.verticalSpace,
           DrawableText(
-            text: status.description,
+            text: status.description(compensationValue.formatPrice, compensationType),
             size: 12.0.sp,
             color: Colors.grey,
+            textAlign: TextAlign.center,
           ),
         ],
       ),
     );
-    return 0.0.verticalSpace;
   }
 }
 

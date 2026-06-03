@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(field) => "يجب إضافة ملاحظة لـ ${field}";
+  static String m0(value) => "قيمة التعويض: ${value}";
+
+  static String m1(field) => "يجب إضافة ملاحظة لـ ${field}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -32,8 +34,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "مقبول من المساح",
     ),
+    "accidentAcceptedOpDesc": MessageLookupByLibrary.simpleMessage(
+      "تم قبول الطلب من قبل موظفي العمليات",
+    ),
+    "accidentAcceptedSurveyorDesc": MessageLookupByLibrary.simpleMessage(
+      "تم قبول طلب الحادث. ",
+    ),
     "accidentDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الحادث"),
+    "accidentFixedDesc": MessageLookupByLibrary.simpleMessage(
+      "تمت الصيانة بنجاح",
+    ),
     "accidentLocation": MessageLookupByLibrary.simpleMessage("موقع الحادث"),
+    "accidentPaidDesc": MessageLookupByLibrary.simpleMessage("تم الدفع"),
+    "accidentPendingDesc": MessageLookupByLibrary.simpleMessage(
+      "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
+    ),
+    "accidentRejectedOpDesc": MessageLookupByLibrary.simpleMessage(
+      "تم رفض الطلب من قبل موظفي العمليات",
+    ),
+    "accidentRejectedSurveyorDesc": MessageLookupByLibrary.simpleMessage(
+      "تم رفض الطلب من قبل المساح",
+    ),
+    "accidentRemovalCase": MessageLookupByLibrary.simpleMessage(
+      "حالة رفع الحادث",
+    ),
     "accidentReportedDesc": MessageLookupByLibrary.simpleMessage(
       "سيتم معاينة الطلب المرفوع و إبلاغك بالمستجدات. بالإمكان متابعة حالة الطلب من خلال \"التأمينات\"",
     ),
@@ -162,6 +186,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancelTheDocument": MessageLookupByLibrary.simpleMessage("إلغاء الوثيقة"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "cannotDeleteAccountWithActiveInsurance":
+        MessageLookupByLibrary.simpleMessage(
+          "لا يمكن حذف الحساب اثناء وجود تأمين فعال",
+        ),
     "carColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
     "carImages": MessageLookupByLibrary.simpleMessage("صور المركبة"),
     "carInfo": MessageLookupByLibrary.simpleMessage("معلومات السيارة"),
@@ -179,6 +207,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
     "claimStatus": MessageLookupByLibrary.simpleMessage("حالة المطالبة"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
+    "compensationMaintenanceDesc": MessageLookupByLibrary.simpleMessage(
+      "سيتم إرشادك لورشة صيانة مختصة",
+    ),
+    "compensationValuePrefix": m0,
     "completed": MessageLookupByLibrary.simpleMessage("منتهي"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "confirmCode": MessageLookupByLibrary.simpleMessage("أدخل رمز التأكيد"),
@@ -299,6 +331,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "features": MessageLookupByLibrary.simpleMessage("المميزات"),
     "fileNotAvailable": MessageLookupByLibrary.simpleMessage("ملف غير متوفر"),
+    "financial": MessageLookupByLibrary.simpleMessage("مالي"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "أول منصة لتأمين السيارات في العراق",
     ),
@@ -378,6 +411,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "maintenance": MessageLookupByLibrary.simpleMessage("صيانة"),
     "manageBiometricSettings": MessageLookupByLibrary.simpleMessage(
       "إدارة أعدادات البيانات البيومترية الخاص بتسجيل الدخول.",
     ),
@@ -428,7 +462,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noNotifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage("لا توجد أي ملازم"),
-    "noteIsRequired": m0,
+    "noteIsRequired": m1,
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "ok": MessageLookupByLibrary.simpleMessage("موافق"),
@@ -644,6 +678,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseUploadPoliceReport": MessageLookupByLibrary.simpleMessage(
       "يرجى إرفاق تقرير الشرطة",
     ),
+    "pleaseWaitPolicyUnderReview": MessageLookupByLibrary.simpleMessage(
+      "يرجى الانتظار، يتم رفع ملف التأمين بعد المراجعة",
+    ),
     "policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "preview": MessageLookupByLibrary.simpleMessage("المعاينة"),
     "previewFile": MessageLookupByLibrary.simpleMessage("معاينة الملف"),
@@ -777,11 +814,20 @@ class MessageLookup extends MessageLookupByLibrary {
       "تكاليف نقل الملكية",
     ),
     "transferOwnership": MessageLookupByLibrary.simpleMessage("نقل ملكية"),
+    "transferOwnershipAcceptedDesc": MessageLookupByLibrary.simpleMessage(
+      "تم قبول نقل الملكية لمالك آخر",
+    ),
     "transferOwnershipIntroDesc": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين بسهولة إلى مستخدم آخر عن طريق رمز ال QR",
     ),
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "نقل ملكية وثيقة التأمين",
+    ),
+    "transferOwnershipPendingDesc": MessageLookupByLibrary.simpleMessage(
+      "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
+    ),
+    "transferOwnershipRejectedDesc": MessageLookupByLibrary.simpleMessage(
+      "تم رفض طلب نقل الملكية",
     ),
     "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مجدداً"),
     "underReview": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),

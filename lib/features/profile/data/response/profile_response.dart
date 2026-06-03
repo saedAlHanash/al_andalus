@@ -30,6 +30,7 @@ class Profile {
     required this.licenseBackImage,
     required this.biometricId,
     required this.created,
+    required this.canDeleteAccount,
   });
 
   final int id;
@@ -50,6 +51,7 @@ class Profile {
   final String licenseBackImage;
   final String biometricId;
   final String created;
+  final bool canDeleteAccount;
 
   factory Profile.fromJson(Map<String, dynamic> json) {
     return Profile(
@@ -71,6 +73,7 @@ class Profile {
       licenseBackImage: json["license_back_image"] ?? "",
       biometricId: json["biometric_id"] ?? "",
       created: json["created"] ?? "",
+      canDeleteAccount: json["can_delete_account"] ?? false,
     );
   }
 
@@ -93,6 +96,6 @@ class Profile {
     "license_back_image": licenseBackImage,
     "biometric_id": biometricId,
     "created": created,
-
+    "can_delete_account": canDeleteAccount,
   };
 }

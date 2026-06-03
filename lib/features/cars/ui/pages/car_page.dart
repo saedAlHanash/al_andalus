@@ -84,7 +84,7 @@ class CarPage extends StatelessWidget {
               children: [
                 _MissingInfoWidget(car: car),
                 car.hasTransferRequest.getWidget,
-                car.hasClaimRequest.getWidget,
+                (car.hasClaimRequest..status = .rejectedByOperationStaff).getWidget,
                 PackageInfoWidget(),
                 20.verticalSpace,
                 CarInfo(),
@@ -304,17 +304,22 @@ class _PolicyFileWidget extends StatelessWidget {
                         child: Container(
                           decoration: MyStyle.roundBox,
                           child: ListTile(
-                            onTap: !car.canShowFile
-                                ? null
-                                : () {
-                                    context.pushNamed(
-                                      RouteName.media,
-                                      queryParameters: {
-                                        'url': car.policyFile,
-                                        'type': car.mediaType.index.toString(),
-                                      },
-                                    );
-                                  },
+                            onTap: () {
+                              if (!car.canShowFile) {
+                                showNoticeBottomSheet(
+                                  context,
+                                  message: S.of(context).pleaseWaitPolicyUnderReview,
+                                );
+                                return;
+                              }
+                              context.pushNamed(
+                                RouteName.media,
+                                queryParameters: {
+                                  'url': car.policyFile,
+                                  'type': car.mediaType.index.toString(),
+                                },
+                              );
+                            },
                             leading: ImageMultiType(
                               url: Assets.iconsPdfBorder,
                               height: 50.0.r,
@@ -378,17 +383,22 @@ class _PolicyFileWidget extends StatelessWidget {
                   child: Container(
                     decoration: MyStyle.roundBox,
                     child: ListTile(
-                      onTap: !car.canShowFile
-                          ? null
-                          : () {
-                              context.pushNamed(
-                                RouteName.media,
-                                queryParameters: {
-                                  'url': car.policyFile,
-                                  'type': car.mediaType.index.toString(),
-                                },
-                              );
-                            },
+                      onTap: () {
+                        if (!car.canShowFile) {
+                          showNoticeBottomSheet(
+                            context,
+                            message: S.of(context).pleaseWaitPolicyUnderReview,
+                          );
+                          return;
+                        }
+                        context.pushNamed(
+                          RouteName.media,
+                          queryParameters: {
+                            'url': car.policyFile,
+                            'type': car.mediaType.index.toString(),
+                          },
+                        );
+                      },
                       leading: ImageMultiType(
                         url: Assets.iconsPdfBorder,
                         color: AppColorManager.textColor,
@@ -400,13 +410,17 @@ class _PolicyFileWidget extends StatelessWidget {
                         padding: EdgeInsets.symmetric(vertical: 5.0),
                         fontWeight: .bold,
                       ),
-
                       trailing: IconButton(
-                        onPressed: !car.canShowFile
-                            ? null
-                            : () {
-                                LauncherHelper.downloadFile(fileUrl: car.policyFile);
-                              },
+                        onPressed: () {
+                          if (!car.canShowFile) {
+                            showNoticeBottomSheet(
+                              context,
+                              message: S.of(context).pleaseWaitPolicyUnderReview,
+                            );
+                            return;
+                          }
+                          LauncherHelper.downloadFile(fileUrl: car.policyFile);
+                        },
                         icon: ImageMultiType(
                           url: Icons.visibility_rounded,
                         ),

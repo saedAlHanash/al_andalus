@@ -433,5 +433,22 @@
   "uploadACopyOfThePoliceReportAfterReportingThe": "Upload a copy of the police report after reporting the incident.",
   "attachThePoliceReport": "Attach the police report",
   "accidentReportedSuccessfully": "The accident has been reported",
-  "accidentReportedDesc": "The submitted request will be reviewed and you will be notified of updates. You can track the request status through \"Insurances\""
+  "accidentReportedDesc": "The submitted request will be reviewed and you will be notified of updates. You can track the request status through \"Insurances\"",
+  "pleaseWaitPolicyUnderReview": "Please wait, the insurance file will be uploaded after review",
+  "cannotDeleteAccountWithActiveInsurance": "Account cannot be deleted while there is an active insurance",
+  "maintenance": "Maintenance",
+  "financial": "Financial",
+  "accidentRemovalCase": "Accident removal case",
+  "accidentPendingDesc": "Please wait until the request review is completed",
+  "accidentAcceptedOpDesc": "The request has been accepted by the operations staff",
+  "accidentRejectedOpDesc": "The request has been rejected by the operations staff",
+  "accidentAcceptedSurveyorDesc": "The accident request has been accepted. ",
+  "accidentRejectedSurveyorDesc": "The request has been rejected by the surveyor",
+  "accidentPaidDesc": "Paid",
+  "accidentFixedDesc": "Maintenance completed successfully",
+  "compensationValuePrefix": "Compensation value: {value}",
+  "compensationMaintenanceDesc": "You will be guided to a specialized maintenance workshop",
+  "transferOwnershipPendingDesc": "Please wait until the request review is completed",
+  "transferOwnershipAcceptedDesc": "Ownership transfer to another owner has been accepted",
+  "transferOwnershipRejectedDesc": "Ownership transfer request has been rejected"
 }

@@ -432,5 +432,22 @@
   "uploadACopyOfThePoliceReportAfterReportingThe": "ارفع نسخه لتقرير الشرطه بعد الإبلاغ عن الحادث",
   "attachThePoliceReport": " إرفق تقرير الشرطة",
   "accidentReportedSuccessfully": "تم رفع الحادث",
-  "accidentReportedDesc": "سيتم معاينة الطلب المرفوع و إبلاغك بالمستجدات. بالإمكان متابعة حالة الطلب من خلال \"التأمينات\""
+  "accidentReportedDesc": "سيتم معاينة الطلب المرفوع و إبلاغك بالمستجدات. بالإمكان متابعة حالة الطلب من خلال \"التأمينات\"",
+  "pleaseWaitPolicyUnderReview": "يرجى الانتظار، يتم رفع ملف التأمين بعد المراجعة",
+  "cannotDeleteAccountWithActiveInsurance": "لا يمكن حذف الحساب اثناء وجود تأمين فعال",
+  "accidentRemovalCase": "حالة رفع الحادث",
+  "maintenance": "صيانة",
+  "financial": "مالي",
+  "accidentPendingDesc": "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
+  "accidentAcceptedOpDesc": "تم قبول الطلب من قبل موظفي العمليات",
+  "accidentRejectedOpDesc": "تم رفض الطلب من قبل موظفي العمليات",
+  "accidentAcceptedSurveyorDesc": "تم قبول طلب الحادث. ",
+  "accidentRejectedSurveyorDesc": "تم رفض الطلب من قبل المساح",
+  "accidentPaidDesc": "تم الدفع",
+  "accidentFixedDesc": "تمت الصيانة بنجاح",
+  "compensationValuePrefix": "قيمة التعويض: {value}",
+  "compensationMaintenanceDesc": "سيتم إرشادك لورشة صيانة مختصة",
+  "transferOwnershipPendingDesc": "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
+  "transferOwnershipAcceptedDesc": "تم قبول نقل الملكية لمالك آخر",
+  "transferOwnershipRejectedDesc": "تم رفض طلب نقل الملكية"
 }

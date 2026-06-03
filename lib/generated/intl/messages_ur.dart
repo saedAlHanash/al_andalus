@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ur';
 
-  static String m0(field) => "پێویسته تێبینییهک بۆ ${field} زیاد بکهیت";
+  static String m1(field) => "پێویسته تێبینییهک بۆ ${field} زیاد بکهیت";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "وردهکارییهکانی ڕووداو",
     ),
     "accidentLocation": MessageLookupByLibrary.simpleMessage("شوێنی ڕووداو"),
+    "accidentRemovalCase": MessageLookupByLibrary.simpleMessage(
+      "کەیسی لابردنی ڕووداو",
+    ),
     "active": MessageLookupByLibrary.simpleMessage("چالاک"),
     "addNewCar": MessageLookupByLibrary.simpleMessage(
       "زیادکردنی ئۆتۆمبێلی نوێ",
@@ -450,7 +453,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage(
       "هیچ فایلێکی پوخته بهردهست نییه",
     ),
-    "noteIsRequired": m0,
+    "noteIsRequired": m1,
     "notification": MessageLookupByLibrary.simpleMessage("ئاگانامهکان"),
     "notifications": MessageLookupByLibrary.simpleMessage("ئاگانامهکان"),
     "ok": MessageLookupByLibrary.simpleMessage("باشه"),

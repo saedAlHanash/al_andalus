@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(field) => "Please add a note for ${field}";
+  static String m0(value) => "Compensation value: ${value}";
+
+  static String m1(field) => "Please add a note for ${field}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -32,9 +34,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
       "Accepted by Surveyor Staff",
     ),
+    "accidentAcceptedOpDesc": MessageLookupByLibrary.simpleMessage(
+      "The request has been accepted by the operations staff",
+    ),
+    "accidentAcceptedSurveyorDesc": MessageLookupByLibrary.simpleMessage(
+      "The accident request has been accepted. ",
+    ),
     "accidentDetails": MessageLookupByLibrary.simpleMessage("Accident Details"),
+    "accidentFixedDesc": MessageLookupByLibrary.simpleMessage(
+      "Maintenance completed successfully",
+    ),
     "accidentLocation": MessageLookupByLibrary.simpleMessage(
       "Accident Location",
+    ),
+    "accidentPaidDesc": MessageLookupByLibrary.simpleMessage("Paid"),
+    "accidentPendingDesc": MessageLookupByLibrary.simpleMessage(
+      "Please wait until the request review is completed",
+    ),
+    "accidentRejectedOpDesc": MessageLookupByLibrary.simpleMessage(
+      "The request has been rejected by the operations staff",
+    ),
+    "accidentRejectedSurveyorDesc": MessageLookupByLibrary.simpleMessage(
+      "The request has been rejected by the surveyor",
+    ),
+    "accidentRemovalCase": MessageLookupByLibrary.simpleMessage(
+      "Accident removal case",
     ),
     "accidentReportedDesc": MessageLookupByLibrary.simpleMessage(
       "The submitted request will be reviewed and you will be notified of updates. You can track the request status through \"Insurances\"",
@@ -164,6 +188,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cancel the document",
     ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "cannotDeleteAccountWithActiveInsurance":
+        MessageLookupByLibrary.simpleMessage(
+          "Account cannot be deleted while there is an active insurance",
+        ),
     "carColor": MessageLookupByLibrary.simpleMessage("Car Color"),
     "carImages": MessageLookupByLibrary.simpleMessage("Car Images"),
     "carInfo": MessageLookupByLibrary.simpleMessage("Car Information"),
@@ -181,6 +209,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "chromeNickel": MessageLookupByLibrary.simpleMessage("Chrome or Nickel"),
     "claimStatus": MessageLookupByLibrary.simpleMessage("Claim request status"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("Click To Update"),
+    "compensationMaintenanceDesc": MessageLookupByLibrary.simpleMessage(
+      "You will be guided to a specialized maintenance workshop",
+    ),
+    "compensationValuePrefix": m0,
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "confirmCode": MessageLookupByLibrary.simpleMessage(
@@ -315,6 +347,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fileNotAvailable": MessageLookupByLibrary.simpleMessage(
       "File not available",
     ),
+    "financial": MessageLookupByLibrary.simpleMessage("Financial"),
     "firstCarInsurancePlatformInIraq": MessageLookupByLibrary.simpleMessage(
       "First car insurance platform in Iraq",
     ),
@@ -400,6 +433,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "maintenance": MessageLookupByLibrary.simpleMessage("Maintenance"),
     "manageBiometricSettings": MessageLookupByLibrary.simpleMessage(
       "Manage biometric settings for login.",
     ),
@@ -452,7 +486,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noSummaryFiles": MessageLookupByLibrary.simpleMessage(
       "No summary files available",
     ),
-    "noteIsRequired": m0,
+    "noteIsRequired": m1,
     "notification": MessageLookupByLibrary.simpleMessage("Notifications"),
     "notifications": MessageLookupByLibrary.simpleMessage("notifications"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
@@ -676,6 +710,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseUploadPoliceReport": MessageLookupByLibrary.simpleMessage(
       "Please upload police report",
     ),
+    "pleaseWaitPolicyUnderReview": MessageLookupByLibrary.simpleMessage(
+      "Please wait, the insurance file will be uploaded after review",
+    ),
     "policy": MessageLookupByLibrary.simpleMessage("Policy"),
     "preview": MessageLookupByLibrary.simpleMessage("Preview"),
     "previewFile": MessageLookupByLibrary.simpleMessage("Preview file"),
@@ -819,11 +856,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "transferOwnership": MessageLookupByLibrary.simpleMessage(
       "Transfer Ownership",
     ),
+    "transferOwnershipAcceptedDesc": MessageLookupByLibrary.simpleMessage(
+      "Ownership transfer to another owner has been accepted",
+    ),
     "transferOwnershipIntroDesc": MessageLookupByLibrary.simpleMessage(
       "Easily transfer policy ownership to another user via QR code",
     ),
     "transferOwnershipIntroTitle": MessageLookupByLibrary.simpleMessage(
       "Transfer Policy Ownership",
+    ),
+    "transferOwnershipPendingDesc": MessageLookupByLibrary.simpleMessage(
+      "Please wait until the request review is completed",
+    ),
+    "transferOwnershipRejectedDesc": MessageLookupByLibrary.simpleMessage(
+      "Ownership transfer request has been rejected",
     ),
     "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
     "underReview": MessageLookupByLibrary.simpleMessage("Under Review"),

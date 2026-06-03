@@ -20,6 +20,7 @@ import 'core/util/shared_preferences.dart';
 import 'features/home/bloc/home_cubit/home_cubit.dart';
 import 'features/notification/bloc/notification_count_cubit/notification_count_cubit.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'services/deep_link_service.dart';
 
 final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
@@ -48,6 +49,7 @@ void main() async {
       await FirebaseService.initial();
 
       FirebaseService.saveFCM();
+      await DeepLinkService.initialize();
     }
 
     await Note.initialize();
@@ -86,7 +88,15 @@ class Note {
     var androidInitialize = const AndroidInitializationSettings('mipmap/ic_launcher');
     var iOSInitialize = const DarwinInitializationSettings();
     var initializationsSettings = InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
-    await flutterLocalNotificationsPlugin.initialize(settings: initializationsSettings);
+    await flutterLocalNotificationsPlugin.initialize(
+      settings: initializationsSettings,
+      onDidReceiveNotificationResponse: (NotificationResponse response) {
+        final payload = response.payload;
+        if (payload != null && payload.isNotEmpty) {
+          DeepLinkService.navigateToUrl(payload);
+        }
+      },
+    );
   }
 
   static Future showBigTextNotification({
@@ -120,6 +130,7 @@ class Note {
       title: title,
       body: body,
       notificationDetails: not,
+      payload: payload,
     );
   }
 }

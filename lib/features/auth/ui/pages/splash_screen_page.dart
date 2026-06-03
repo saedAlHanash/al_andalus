@@ -12,6 +12,7 @@ import '../../../../core/util/shared_preferences.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../generated/assets.dart';
 import '../../../../router/go_router.dart';
+import '../../../../services/deep_link_service.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});
@@ -43,8 +44,14 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
           return;
         }
 
-        // إذا شاهد الـ intro، نتابع كالمعتاد
         if (!ctx!.mounted) return;
+
+        // التحقق من وجود deep link معلق والتنقل إليه
+        if (DeepLinkService.hasPendingDeepLink) {
+          DeepLinkService.handlePendingNavigation();
+          return;
+        }
+
         switch (getStartPage) {
           case StartPage.login:
           // ctx!.goNamed(RouteName.login);

@@ -48,10 +48,14 @@ class FirebaseService {
         body = message.data['body'] ?? '';
       }
 
-      Note.showBigTextNotification(title: title, body: body);
+      final url = message.data['url'] ?? message.data['link'] ?? message.data['path'];
 
       if (AppSharedPreference.getNotificationState) {
-        Note.showBigTextNotification(title: title, body: body);
+        Note.showBigTextNotification(
+          title: title,
+          body: body,
+          payload: url?.toString(),
+        );
       }
 
       AppSharedPreference.addNotificationCount();
@@ -141,8 +145,14 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
     body = message.data['body'] ?? '';
   }
 
+  final url = message.data['url'] ?? message.data['link'] ?? message.data['path'];
+
   if (AppSharedPreference.getNotificationState) {
-    Note.showBigTextNotification(title: title, body: body);
+    Note.showBigTextNotification(
+      title: title,
+      body: body,
+      payload: url?.toString(),
+    );
   }
   AppSharedPreference.addNotificationCount();
 }

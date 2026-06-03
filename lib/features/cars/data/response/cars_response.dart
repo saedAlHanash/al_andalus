@@ -143,9 +143,9 @@ class HasClaimRequest {
   });
 
   final int id;
-  final AccidentStatus status;
+   AccidentStatus status;
   final num compensationValue;
-  final String compensationType;
+  final CompensationType compensationType;
   final String created;
 
   factory HasClaimRequest.fromJson(Map<String, dynamic> json) {
@@ -153,7 +153,7 @@ class HasClaimRequest {
       id: json["id"] ?? 0,
       status: AccidentStatus.getByNameOrIndex(json["status"]),
       compensationValue: json["compensation_value"] ?? 0,
-      compensationType: json["compensation_type"] ?? "",
+      compensationType: CompensationType.getByNameOrIndex(json["compensation_type"]),
       created: json["created"] ?? "",
     );
   }
@@ -162,7 +162,7 @@ class HasClaimRequest {
     "id": id,
     "status": status.index,
     "compensation_value": compensationValue,
-    "compensation_type": compensationType,
+    "compensation_type": compensationType.index,
     "created": created,
   };
 }

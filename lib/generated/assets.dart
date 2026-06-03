@@ -15,6 +15,7 @@ class Assets {
   static const String fontsTajawalBold = 'assets/fonts/Tajawal-Bold.ttf';
   static const String fontsTajawalMedium = 'assets/fonts/Tajawal-Medium.ttf';
   static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
+  static const String iconsAccepted = 'assets/icons/accepted.svg';
   static const String iconsAccident = 'assets/icons/accident.png';
   static const String iconsAccident1 = 'assets/icons/accident1.png';
   static const String iconsActiveStep = 'assets/icons/active_step.svg';
@@ -84,7 +85,9 @@ class Assets {
   static const String iconsUploadDragUpload = 'assets/icons/upload_drag_upload.svg';
   static const String iconsUploadDragUploadBack = 'assets/icons/upload_drag_upload_back.svg';
   static const String iconsUser = 'assets/icons/user.svg';
+  static const String iconsUserChange = 'assets/icons/user-change.svg';
   static const String iconsUserSearch = 'assets/icons/user-search.svg';
+  static const String iconsWaiting = 'assets/icons/waiting.svg';
   static const String iconsWhatsapp = 'assets/icons/whatsapp.svg';
   static const String imagesBandtechLogo = 'assets/images/bandtech_logo.png';
   static const String imagesCamera = 'assets/images/camera.png';
@@ -104,9 +107,7 @@ class Assets {
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesVisa = 'assets/images/visa.png';
   static const String imagesZainCash = 'assets/images/zain_cash.png';
-  static const String lottiesAnimatedMoveUpwardsLinearIcon = 'assets/lotties/Animated-move-upwards-linear-icon.json';
-  static const String lottiesAnimatedMoveUpwardsLinearIconFixed = 'assets/lotties/Animated_move_upwards_linear_icon_fixed.lottie';
-  static const String lottiesAnimatedMoveUpwardsLinearIconFixed2 = 'assets/lotties/Animated move upwards linear icon_fixed_2.lottie';
+  static const String lottiesAnimatedMoveUpwardsLinearIconFixed2 = 'assets/lotties/Animated_move_upwards_linear_icon_fixed_2.lottie';
   static const String lottiesMoveUpwardsAnimationDark = 'assets/lotties/move_upwards_animation_dark.lottie';
 
 }

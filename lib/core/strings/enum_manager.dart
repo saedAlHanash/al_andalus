@@ -767,7 +767,7 @@ enum PaymentType {
   }
 }
 
-enum InsurancePolicyStatus  {
+enum InsurancePolicyStatus {
   paymentPending,
   paid,
   missingInfo,
@@ -937,14 +937,15 @@ enum TransferOwnershipStatus {
   }
 
   String get description {
+    final s = S();
     switch (this) {
       case TransferOwnershipStatus.pending:
       case TransferOwnershipStatus.underReview:
-        return 'يرجى الإنتظار لغاية إتمام مراجعة الطلب';
+        return s.transferOwnershipPendingDesc;
       case TransferOwnershipStatus.accepted:
-        return 'تم قبول نقل الملكية لمالك آخر';
+        return s.transferOwnershipAcceptedDesc;
       case TransferOwnershipStatus.rejected:
-        return 'تم رفض طلب نقل الملكية';
+        return s.transferOwnershipRejectedDesc;
     }
   }
 
@@ -1073,20 +1074,19 @@ enum AccidentStatus {
     }
   }
 
-  IconData? get icon {
+  dynamic get icon {
     switch (this) {
       case AccidentStatus.pending:
-        return Icons.timer_outlined;
+        return Assets.iconsWaiting;
       case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
-        return Icons.check_circle_outline;
+      case AccidentStatus.fixed:
+        return Assets.iconsAccepted;
       case AccidentStatus.rejectedByOperationStaff:
       case AccidentStatus.rejectedBySurveyorStaff:
-        return Icons.cancel_outlined;
+        return Assets.iconsReject;
       case AccidentStatus.paid:
         return Icons.paid_outlined;
-      case AccidentStatus.fixed:
-        return Icons.build_outlined;
     }
   }
 
@@ -1116,26 +1116,89 @@ enum AccidentStatus {
     }
   }
 
-  String get description {
+  String description(String? value, CompensationType? type) {
+    final s = S();
     switch (this) {
       case AccidentStatus.pending:
-        return 'في انتظار المراجعة';
+        return s.accidentPendingDesc;
       case AccidentStatus.acceptedByOperationStaff:
-        return 'تم قبول الطلب من قبل موظفي العمليات';
+        return s.accidentAcceptedOpDesc;
       case AccidentStatus.rejectedByOperationStaff:
-        return 'تم رفض الطلب من قبل موظفي العمليات';
+        return s.accidentRejectedOpDesc;
       case AccidentStatus.acceptedBySurveyorStaff:
-        return 'تم قبول الطلب من قبل المساح';
+        String desc = s.accidentAcceptedSurveyorDesc;
+        if (type == CompensationType.maintenance) {
+          desc += s.compensationMaintenanceDesc;
+        } else if (type == CompensationType.financial) {
+          desc += s.compensationValuePrefix(value ?? '0');
+        }
+        return desc;
       case AccidentStatus.rejectedBySurveyorStaff:
-        return 'تم رفض الطلب من قبل المساح';
+        return s.accidentRejectedSurveyorDesc;
       case AccidentStatus.paid:
-        return 'تم الدفع';
+        return s.accidentPaidDesc;
       case AccidentStatus.fixed:
-        return 'تم الإصلاح';
+        return s.accidentFixedDesc;
     }
   }
 }
 
+enum CompensationType {
+  maintenance,
+  financial,
+  ;
+
+  String get name {
+    switch (this) {
+      case CompensationType.maintenance:
+        return S().maintenance;
+      case CompensationType.financial:
+        return S().financial;
+    }
+  }
+
+  String get nameApi {
+    switch (this) {
+      case CompensationType.maintenance:
+        return 'maintenance';
+      case CompensationType.financial:
+        return 'financial';
+    }
+  }
+
+  IconData get icon {
+    switch (this) {
+      case CompensationType.maintenance:
+        return Icons.payments_outlined;
+      case CompensationType.financial:
+        return Icons.build_circle_outlined;
+    }
+  }
+
+  static CompensationType getByNameOrIndex(dynamic name) {
+    if (name == null) return CompensationType.financial;
+    final i = int.tryParse(name.toString());
+    if (i != null) {
+      return CompensationType.values[i];
+    }
+    switch (name.toString().toLowerCase()) {
+      case 'maintenance':
+        return CompensationType.maintenance;
+      case 'financial':
+        return CompensationType.financial;
+      default:
+        return CompensationType.financial;
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
 enum ResourceType {
   pdf,
   docx,

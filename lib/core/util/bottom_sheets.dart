@@ -1121,3 +1121,55 @@ void showAccidentReportedBottomSheet(
     },
   ).then((_) => onClosed());
 }
+
+void showNoticeBottomSheet(
+  BuildContext context, {
+  required String message,
+}) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HeaderBottomSheet(),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
+              child: Column(
+                children: [
+                  30.0.verticalSpace,
+                  const Icon(
+                    Icons.info_outline_rounded,
+                    color: AppColorManager.mainColor,
+                    size: 60.0,
+                  ),
+                  20.0.verticalSpace,
+                  DrawableText(
+                    text: message,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 16.0.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  40.0.verticalSpace,
+                  MyButton(
+                    text: S.of(context).ok,
+                    onTap: () => Navigator.pop(ctx),
+                    radios: 12.0.r,
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}

@@ -223,19 +223,29 @@ class _MenuScreenState extends State<MenuScreen> {
                         name: S.of(context).logout,
                         iconData: Icons.logout_outlined,
                       ),
-                      ItemMenu(
-                        onTap: () {
-                          showDeleteAccountBottomSheet(
-                            context,
-                            onConfirm: () {
-                              context.read<DeleteAccountCubit>().deleteAccount(context);
-                            },
-                          );
-                        },
-                        color: Colors.red,
-                        name: S.of(context).deleteAccount,
-                        subTitle: S.of(context).subTitleDeleteAccount,
-                        iconData: Icons.delete_outline,
+                      Opacity(
+                        opacity: state.result.canDeleteAccount ? 1.0 : 0.5,
+                        child: ItemMenu(
+                          onTap: () {
+                            if (!state.result.canDeleteAccount) {
+                              showNoticeBottomSheet(
+                                context,
+                                message: S.of(context).cannotDeleteAccountWithActiveInsurance,
+                              );
+                              return;
+                            }
+                            showDeleteAccountBottomSheet(
+                              context,
+                              onConfirm: () {
+                                context.read<DeleteAccountCubit>().deleteAccount(context);
+                              },
+                            );
+                          },
+                          color: Colors.red,
+                          name: S.of(context).deleteAccount,
+                          subTitle: S.of(context).subTitleDeleteAccount,
+                          iconData: Icons.delete_outline,
+                        ),
                       ),
                       ItemMenu(
                         onTap: () {},

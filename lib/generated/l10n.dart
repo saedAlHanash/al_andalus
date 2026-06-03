@@ -3628,6 +3628,161 @@ class S {
       args: [],
     );
   }
+
+  /// `Please wait, the insurance file will be uploaded after review`
+  String get pleaseWaitPolicyUnderReview {
+    return Intl.message(
+      'Please wait, the insurance file will be uploaded after review',
+      name: 'pleaseWaitPolicyUnderReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account cannot be deleted while there is an active insurance`
+  String get cannotDeleteAccountWithActiveInsurance {
+    return Intl.message(
+      'Account cannot be deleted while there is an active insurance',
+      name: 'cannotDeleteAccountWithActiveInsurance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maintenance`
+  String get maintenance {
+    return Intl.message('Maintenance', name: 'maintenance', desc: '', args: []);
+  }
+
+  /// `Financial`
+  String get financial {
+    return Intl.message('Financial', name: 'financial', desc: '', args: []);
+  }
+
+  /// `Accident removal case`
+  String get accidentRemovalCase {
+    return Intl.message(
+      'Accident removal case',
+      name: 'accidentRemovalCase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait until the request review is completed`
+  String get accidentPendingDesc {
+    return Intl.message(
+      'Please wait until the request review is completed',
+      name: 'accidentPendingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The request has been accepted by the operations staff`
+  String get accidentAcceptedOpDesc {
+    return Intl.message(
+      'The request has been accepted by the operations staff',
+      name: 'accidentAcceptedOpDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The request has been rejected by the operations staff`
+  String get accidentRejectedOpDesc {
+    return Intl.message(
+      'The request has been rejected by the operations staff',
+      name: 'accidentRejectedOpDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The accident request has been accepted. `
+  String get accidentAcceptedSurveyorDesc {
+    return Intl.message(
+      'The accident request has been accepted. ',
+      name: 'accidentAcceptedSurveyorDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The request has been rejected by the surveyor`
+  String get accidentRejectedSurveyorDesc {
+    return Intl.message(
+      'The request has been rejected by the surveyor',
+      name: 'accidentRejectedSurveyorDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paid`
+  String get accidentPaidDesc {
+    return Intl.message('Paid', name: 'accidentPaidDesc', desc: '', args: []);
+  }
+
+  /// `Maintenance completed successfully`
+  String get accidentFixedDesc {
+    return Intl.message(
+      'Maintenance completed successfully',
+      name: 'accidentFixedDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compensation value: {value}`
+  String compensationValuePrefix(Object value) {
+    return Intl.message(
+      'Compensation value: $value',
+      name: 'compensationValuePrefix',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `You will be guided to a specialized maintenance workshop`
+  String get compensationMaintenanceDesc {
+    return Intl.message(
+      'You will be guided to a specialized maintenance workshop',
+      name: 'compensationMaintenanceDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait until the request review is completed`
+  String get transferOwnershipPendingDesc {
+    return Intl.message(
+      'Please wait until the request review is completed',
+      name: 'transferOwnershipPendingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ownership transfer to another owner has been accepted`
+  String get transferOwnershipAcceptedDesc {
+    return Intl.message(
+      'Ownership transfer to another owner has been accepted',
+      name: 'transferOwnershipAcceptedDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ownership transfer request has been rejected`
+  String get transferOwnershipRejectedDesc {
+    return Intl.message(
+      'Ownership transfer request has been rejected',
+      name: 'transferOwnershipRejectedDesc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
