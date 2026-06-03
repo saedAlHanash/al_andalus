@@ -145,15 +145,12 @@ class DeepLinkService {
 
     if (ctx != null && ctx!.mounted) {
       try {
-        goRouter.push(cleanedUrl);
-      } catch (e) {
-        // Fallback if push fails
-        try {
-          goRouter.go(cleanedUrl);
-        } catch (err) {
-          // Log route navigation error
-        }
-      }
+        goRouter.push(cleanedUrl).then(
+          (value) {
+            goRouter.go(RouteName.splash);
+          },
+        );
+      } catch (e) {}
     } else {
       // Save it to pending if context/navigator is not ready
       _pendingDeepLinkUrl = cleanedUrl;
