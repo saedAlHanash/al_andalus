@@ -429,6 +429,7 @@
   "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "المركبات المصممة للاستخدام التجاري أو نقل الأشخاص أو البضائع، بما في ذلك (تاكسي - باص - بيك آب - شاحنة قلابة...)",
   "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
   "areYouSureYouWantToDeleteAccount": "هل أنت متأكد من رغبتك في حذف الحساب؟",
+  "areYouSureYouWantToCancelInsurance": "هل أنت متأكد من رغبتك في إلغاء التأمين؟",
   "uploadACopyOfThePoliceReportAfterReportingThe": "ارفع نسخه لتقرير الشرطه بعد الإبلاغ عن الحادث",
   "attachThePoliceReport": " إرفق تقرير الشرطة",
   "accidentReportedSuccessfully": "تم رفع الحادث",

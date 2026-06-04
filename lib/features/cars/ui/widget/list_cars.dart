@@ -26,7 +26,7 @@ class ListCars extends StatelessWidget {
     }
     return BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
       builder: (context, state) {
-        if (state.loading) {
+        if (state.loading && !state.delete) {
           return MyStyle.loadingWidget();
         }
         if (state.isDataEmpty) {
@@ -58,8 +58,8 @@ class ListCars extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(vertical: 16.h),
           itemCount: list.length,
-          itemBuilder: (context, index) {
-            return ItemCar(car: list[index]);
+          itemBuilder: (context, i) {
+            return ItemCar(car: list[i]);
           },
         );
       },

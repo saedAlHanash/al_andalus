@@ -3289,6 +3289,16 @@ class S {
     return Intl.message('Edit', name: 'edit', desc: '', args: []);
   }
 
+  /// `Are you sure you want to cancel the insurance?`
+  String get areYouSureYouWantToCancelInsurance {
+    return Intl.message(
+      'Are you sure you want to cancel the insurance?',
+      name: 'areYouSureYouWantToCancelInsurance',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm logout`
   String get confirmLogout {
     return Intl.message(

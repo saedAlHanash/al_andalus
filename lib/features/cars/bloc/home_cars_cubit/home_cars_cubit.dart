@@ -40,17 +40,18 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
       state: state,
       getDataApi: _getData,
       newData: newData,
-      // onSuccess: (data, emitState) {
-      //   final list = data as List<CarPolicy>;
-      //
-      //   list.sort((a, b) {
-      //     final aTime = a.created?.millisecondsSinceEpoch ?? 0;
-      //     final bTime = b.created?.millisecondsSinceEpoch ?? 0;
-      //     return bTime.compareTo(aTime);
-      //   });
-      //
-      //   emit(state.copyWith(result: list, statuses: emitState));
-      // },
+      onSuccess: (data, emitState) {
+        final list = data as List<CarPolicy>;
+
+        list.removeWhere((element) => element.id.isBlankNumber);
+        // list.sort((a, b) {
+        //   final aTime = a.created?.millisecondsSinceEpoch ?? 0;
+        //   final bTime = b.created?.millisecondsSinceEpoch ?? 0;
+        //   return bTime.compareTo(aTime);
+        // });
+
+        emit(state.copyWith(result: list, statuses: emitState));
+      },
     );
   }
 
@@ -150,8 +151,9 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
   }
 
   Future<void> cancelInsurance({required String id}) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.update));
+    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: .update, id: id));
 
+    loggerObject.w(id);
     final response = await APIService().callApi(
       type: ApiType.put,
       url: PutUrl.cancelInsurance(id),
@@ -199,8 +201,8 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
 
     final response = await APIService().callApi(
       type: ApiType.delete,
-      url: DeleteUrl.deleteInsurancePolicy,
-      path: state.id.toString(),
+      url: DeleteUrl.deleteInsurancePolicy(id),
+      // path: state.id.toString(),
     );
 
     await _updateState(response, isDelete: true);
@@ -210,6 +212,7 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
     if (response.statusCode.success) {
       if (isDelete) {
         await deleteCarFromCache(state.id.toString());
+        await getData(newData: true);
       } else {
         final item = CarPolicy.fromJson(response.jsonBodyData);
         await addOrUpdateCarToCache(item);

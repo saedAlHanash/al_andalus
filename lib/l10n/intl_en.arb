@@ -397,6 +397,7 @@
   "updateApp": "Update",
   "licenseNumber": "License Number",
   "edit": "Edit",
+  "areYouSureYouWantToCancelInsurance": "Are you sure you want to cancel the insurance?",
   "confirmLogout": "Confirm logout",
   "enterA6digitCode": "Enter a 6-digit code",
   "paymentSuccessTitle": "Operation Creation Successful!",

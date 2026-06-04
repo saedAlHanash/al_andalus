@@ -199,7 +199,7 @@ class CarsCubit extends MCubit<CarsInitial> {
 
     final response = await APIService().callApi(
       type: ApiType.delete,
-      url: DeleteUrl.deleteInsurancePolicy,
+      url: DeleteUrl.deleteInsurancePolicy(id),
       path: state.id.toString(),
     );
 

@@ -784,7 +784,7 @@ enum InsurancePolicyStatus {
 
   bool get canRenew => this == .expired || this == .active;
 
-  bool get canCancel => this == .draft;
+  bool get canCancel => this == .cancelled || this == .paymentPending;
 
   String get name {
     switch (this) {

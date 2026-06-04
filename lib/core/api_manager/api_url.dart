@@ -283,7 +283,7 @@ class DeleteUrl {
 
   static var deleteGroup = '';
 
-  static const deleteInsurancePolicy = 'insurance-policy';
+  static String deleteInsurancePolicy(String id) => 'insurance-policy/$id/delete';
 }
 
 const additionalConst = '/client/v1/';

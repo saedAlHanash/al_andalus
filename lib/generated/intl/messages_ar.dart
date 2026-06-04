@@ -85,6 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "annually": MessageLookupByLibrary.simpleMessage("سنويا"),
     "approved": MessageLookupByLibrary.simpleMessage("مقبول"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+    "areYouSureYouWantToCancelInsurance": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من رغبتك في إلغاء التأمين؟",
+    ),
     "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من رغبتك في حذف الحساب؟",
     ),

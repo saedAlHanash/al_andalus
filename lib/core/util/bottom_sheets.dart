@@ -1122,6 +1122,78 @@ void showAccidentReportedBottomSheet(
   ).then((_) => onClosed());
 }
 
+void showConfirmBottomSheet(
+  BuildContext context, {
+  required String title,
+  required String message,
+  required VoidCallback onConfirm,
+  String? confirmText,
+  String? cancelText,
+  bool isDanger = false,
+}) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(ctx).viewInsets.bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const HeaderBottomSheet(),
+            Container(
+              color: AppColorManager.cardColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0).r,
+              child: Column(
+                children: [
+                  TitleBottomSheet(title: title),
+                  30.0.verticalSpace,
+                  DrawableText(
+                    text: message,
+                    textAlign: TextAlign.center,
+                    matchParent: true,
+                    size: 16.0.sp,
+                  ),
+                  40.0.verticalSpace,
+                  Row(
+                    spacing: 15.0.w,
+                    children: [
+                      Expanded(
+                        child: MyButton(
+                          text: cancelText ?? S.of(context).cancel,
+                          color: const Color(0xffF5F5F5),
+                          textColor: AppColorManager.textColor,
+                          onTap: () => Navigator.pop(ctx),
+                          radios: 12.0.r,
+                        ),
+                      ),
+                      Expanded(
+                        child: MyButton(
+                          text: confirmText ?? S.of(context).confirm,
+                          color: isDanger ? const Color(0xffFFF1F1) : AppColorManager.mainColorLight,
+                          textColor: isDanger ? Colors.red : AppColorManager.mainColor,
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            onConfirm.call();
+                          },
+                          radios: 12.0.r,
+                        ),
+                      ),
+                    ],
+                  ),
+                  30.0.verticalSpace,
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 void showNoticeBottomSheet(
   BuildContext context, {
   required String message,

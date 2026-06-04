@@ -86,6 +86,7 @@ class MyStyle {
       ),
     ],
   );
+
   static BoxDecoration roundBoxBorder({Color? color}) => BoxDecoration(
     color: color ?? AppColorManager.cardColor,
     border: Border.all(color: AppColorManager.mainColorDynamic),
@@ -99,8 +100,10 @@ class MyStyle {
     ],
   );
 
-  static Widget loadingWidget({Color? color}) {
-    return Padding(
+  static Widget loadingWidget({Color? color, double? size}) {
+    return Container(
+      height: size,
+      width: size,
       padding: const EdgeInsets.all(8.0).r,
       child: Center(
         child: CircularProgressIndicator.adaptive(backgroundColor: color),
@@ -133,8 +136,8 @@ class MyStyle {
   }
 
   static BoxDecoration get outlineBorder => BoxDecoration(
-    border: Border.all(color: AppColorManager.textColor),
-    borderRadius: BorderRadius.circular(12.0.r),
+    borderRadius: BorderRadius.circular(16.0).r,
+    border: Border.all(color: AppColorManager.dividerColor, width: 1.sp),
     color: AppColorManager.cardColor,
   );
 

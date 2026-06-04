@@ -84,7 +84,7 @@ class CarPage extends StatelessWidget {
               children: [
                 _MissingInfoWidget(car: car),
                 car.hasTransferRequest.getWidget,
-                (car.hasClaimRequest..status = .rejectedByOperationStaff).getWidget,
+                (car.hasClaimRequest).getWidget,
                 PackageInfoWidget(),
                 20.verticalSpace,
                 CarInfo(),

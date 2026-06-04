@@ -1,15 +1,15 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
+import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
-import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:go_router/go_router.dart';
-import '../../../../core/strings/enum_manager.dart';
+
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
@@ -60,7 +60,7 @@ class ItemCar extends StatelessWidget {
             BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
               builder: (context, state) {
                 return MyButton(
-                  loading: state.loading,
+                  loading: state.loading && !state.delete,
                   onTap: () {
                     showRePay(
                       context,
@@ -76,12 +76,50 @@ class ItemCar extends StatelessWidget {
             ),
 
           5.0.verticalSpace,
-          OutLineButton(
-            onTap: () => context.pushNamed(
-              RouteName.carPage,
-              queryParameters: {'id': car.id.toString()},
-            ),
-            text: S.of(context).viewInsuranceStatement,
+          Row(
+            children: [
+              Expanded(
+                child: OutLineButton(
+                  onTap: () => context.pushNamed(
+                    RouteName.carPage,
+                    queryParameters: {'id': car.id.toString()},
+                  ),
+                  text: S.of(context).viewInsuranceStatement,
+                ),
+              ),
+              if (car.status.canCancel) ...[
+                10.0.horizontalSpace,
+                BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
+                  buildWhen: (previous, current) => current.id.toString() == car.id.toString(),
+                  builder: (context, state) {
+                    return InkWell(
+                      onTap: () {
+                        showConfirmBottomSheet(
+                          context,
+                          title: S.of(context).confirmTheNextStep,
+                          message: S.of(context).areYouSureYouWantToCancelInsurance,
+                          isDanger: true,
+                          onConfirm: () {
+                            context.read<HomeCarsCubit>().delete(id: car.id.toString());
+                          },
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(9.0).r,
+                        decoration: BoxDecoration(
+                          color: Colors.red.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12.0).r,
+                          border: Border.all(color: Colors.red.withOpacity(0.2)),
+                        ),
+                        child: state.loading && state.delete
+                            ? MyStyle.loadingWidget(size: 24.0.dg)
+                            : Icon(Icons.delete_outline, color: Colors.red, size: 24.r),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ],
           ),
         ],
       ),

@@ -62,6 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "annually": MessageLookupByLibrary.simpleMessage("ساڵانه"),
     "approved": MessageLookupByLibrary.simpleMessage("پهسهندکراو"),
     "arabic": MessageLookupByLibrary.simpleMessage("عهرهبی"),
+    "areYouSureYouWantToCancelInsurance": MessageLookupByLibrary.simpleMessage(
+      "ئایا دڵنیایت دەتەوێت دڵنیاییەکە هەڵبوەشێنیتەوە؟",
+    ),
     "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "ئایا دڵنیایت دهتهوێت ههژمارهکهت بسڕیتهوه؟",
     ),
