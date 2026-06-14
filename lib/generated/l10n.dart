@@ -479,6 +479,16 @@ class S {
     );
   }
 
+  /// `Confirm Personal Info`
+  String get confirmPersonalInfo {
+    return Intl.message(
+      'Confirm Personal Info',
+      name: 'confirmPersonalInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm the next step`
   String get confirmTheNextStep {
     return Intl.message(

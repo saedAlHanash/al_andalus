@@ -192,6 +192,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "وشهی نهێنی نوێ پشتڕاست بکهرهوه",
     ),
+    "confirmPersonalInfo": MessageLookupByLibrary.simpleMessage(
+      "پشتڕاستکردنهوهی زانیارییه کهسییهکان",
+    ),
     "confirmPin": MessageLookupByLibrary.simpleMessage("پشتڕاستکردنهوهی PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "ههنگاوی داهاتوو پشتڕاست بکهرهوه",

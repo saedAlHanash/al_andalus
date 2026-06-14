@@ -44,7 +44,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                   child: ListTile(
                     onTap: () {
                       setState(() {
-                        state.mRequest.paymentType = .qiCard;
+                        context.read<TransferOwnershipCubit>().setPaymentType(.qiCard);
                       });
                     },
                     title: DrawableText(text: S.of(context).electronicCard),
@@ -64,7 +64,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                   child: ListTile(
                     onTap: () {
                       setState(() {
-                        state.mRequest.paymentType = .zainCash;
+                        context.read<TransferOwnershipCubit>().setPaymentType(.zainCash);
                       });
                     },
                     title: DrawableText(text: S.of(context).zainCashWallet),

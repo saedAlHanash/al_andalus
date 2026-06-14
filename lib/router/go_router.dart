@@ -371,6 +371,7 @@ final goRouter = GoRouter(
           providers: [
             BlocProvider(create: (context) => sl<TransferOwnershipCubit>()..setQr(qrcode)),
             BlocProvider(create: (context) => sl<CarCubit>()..getData(id: id)),
+            BlocProvider(create: (context) => sl<UpdateProfileCubit>()),
           ],
           child: TransferOwnershipPage(),
         );

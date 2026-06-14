@@ -39,6 +39,7 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
       emit(state.copyWith(error: pair.second, statuses: CubitStatuses.error));
       showErrorFromApi(state);
     } else {
+      await AppSharedPreference.cashUser(pair.first!);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }
@@ -67,6 +68,7 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
       emit(state.copyWith(error: pair.second, statuses: CubitStatuses.error));
       showErrorFromApi(state);
     } else {
+      await AppSharedPreference.cashUser(pair.first!);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }
@@ -100,6 +102,7 @@ class UpdateProfileCubit extends MCubit<UpdateProfileInitial> {
       emit(state.copyWith(error: pair.second, statuses: CubitStatuses.error));
       showErrorFromApi(state);
     } else {
+      await AppSharedPreference.cashUser(pair.first!);
       emit(state.copyWith(statuses: CubitStatuses.done, result: pair.first));
     }
   }

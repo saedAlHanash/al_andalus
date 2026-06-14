@@ -221,6 +221,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كود السر الجديد",
     ),
+    "confirmPersonalInfo": MessageLookupByLibrary.simpleMessage(
+      "تأكيد المعلومات الشخصية",
+    ),
     "confirmPin": MessageLookupByLibrary.simpleMessage("تأكيد كود السر"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "تأكيد الخطوة التالية",

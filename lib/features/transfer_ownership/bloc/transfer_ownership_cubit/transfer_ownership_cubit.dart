@@ -4,6 +4,7 @@ import 'package:al_andalus/core/error/error_manager.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:m_cubit/m_cubit.dart';
 
+import '../../../../core/strings/enum_manager.dart';
 import '../../data/request/transfer_ownership_request.dart';
 import '../../data/response/transfer_ownership_response.dart';
 
@@ -38,6 +39,11 @@ class TransferOwnershipCubit extends MCubit<TransferOwnershipState> {
 
   void setQr(String id) {
     state.mRequest.qrcode = id;
+    emit(state.copyWith(idNotifier: state.idNotifier + 1));
+  }
+
+  void setPaymentType(PaymentType paymentType) {
+    state.mRequest.paymentType = paymentType;
     emit(state.copyWith(idNotifier: state.idNotifier + 1));
   }
 }

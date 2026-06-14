@@ -225,6 +225,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "Confirm New Password",
     ),
+    "confirmPersonalInfo": MessageLookupByLibrary.simpleMessage(
+      "Confirm Personal Info",
+    ),
     "confirmPin": MessageLookupByLibrary.simpleMessage("Confirm PIN"),
     "confirmTheNextStep": MessageLookupByLibrary.simpleMessage(
       "Confirm the next step",
