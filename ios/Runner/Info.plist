@@ -66,10 +66,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>back.al_andalus.com</string>
+			<string>back.al-andalus.com</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>al_andalus</string>
+				<string>al-andalus</string>
 			</array>
 		</dict>
 	</array>

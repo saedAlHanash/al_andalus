@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:back.al_andalus.com</string>
+		<string>applinks:back.al-andalus.com</string>
 	</array>
 </dict>
 </plist>
