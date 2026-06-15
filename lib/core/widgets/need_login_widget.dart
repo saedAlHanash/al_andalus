@@ -32,7 +32,7 @@ class NeedLoginWidget extends StatelessWidget {
             MyButton(
               text: S.of(context).login,
               onTap: () {
-                context.goNamed(RouteName.login);
+                context.pushNamed(RouteName.login);
               },
             ),
           ],

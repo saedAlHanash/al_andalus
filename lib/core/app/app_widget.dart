@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
@@ -95,7 +97,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     return ScreenUtilInit(
       designSize: MediaQuery.of(context).size,
       // designSize: const Size(375, 812),
@@ -131,7 +132,7 @@ class _MyAppState extends State<MyApp> {
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(.85)),
                 child: SafeArea(
-                  bottom: true,
+                  bottom: Platform.isAndroid,
                   top: false,
                   left: false,
                   right: false,
