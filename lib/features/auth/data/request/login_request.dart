@@ -9,7 +9,8 @@ class LoginRequest {
 
   LoginRequest({this.phone, this.password, this.code}) {
     if (kDebugMode) {
-      phone = '07388915233';
+      // phone = '07388915233';
+      phone = '07853578186';
       password = '111111';
     }
   }

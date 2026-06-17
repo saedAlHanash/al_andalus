@@ -7,6 +7,8 @@ import 'package:al_andalus/core/widgets/my_expansion/item_expansion.dart';
 import 'package:al_andalus/core/widgets/my_expansion/my_expansion_widget.dart';
 import 'package:al_andalus/core/widgets/shimmer_widget.dart';
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
+import 'package:al_andalus/features/profile/data/request/update_profile_request.dart';
+import 'package:al_andalus/features/profile/data/response/profile_response.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -100,6 +102,33 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
     return null;
   }
 
+  bool _hasIdentityChanged(UpdateProfileRequest req, Profile profile) {
+    final profileGender = profile.gender.toLowerCase() == 'male'
+        ? GenderEnum.male
+        : profile.gender.toLowerCase() == 'female'
+            ? GenderEnum.female
+            : null;
+
+    return req.name != profile.name ||
+        req.address != profile.address ||
+        req.identityId != profile.identityId ||
+        req.birthday != profile.birthDate ||
+        req.gender != profileGender ||
+        req.identityFrontImage.haveValue ||
+        req.identityBackImage.haveValue;
+  }
+
+  bool _hasLicenseChanged(UpdateProfileRequest req, Profile profile) {
+    final profileLicenseType = LicenseType.values.where((element) => element.nameApi == profile.licenseType).firstOrNull;
+
+    return req.licenseNumber != profile.licenseNumber ||
+        req.licenseType != profileLicenseType ||
+        req.licenseStartDate != profile.licenseStartDate ||
+        req.licenseEndDate != profile.licenseEndDate ||
+        req.licenseFrontImage.haveValue ||
+        req.licenseBackImage.haveValue;
+  }
+
   Future<void> _saveAndContinue() async {
     final validationError = _getValidationError(context);
     if (validationError != null) {
@@ -108,20 +137,20 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
     }
 
     final cubit = context.read<UpdateProfileCubit>();
+    final req = cubit.state.mRequest;
+    final profile = AppProvider.getMe;
 
-    await cubit.updateIdentity();
-    if (cubit.state.statuses == CubitStatuses.error) {
-      return;
+    if (_hasIdentityChanged(req, profile)) {
+      await cubit.updateIdentity();
+      if (cubit.state.statuses == CubitStatuses.error) return;
     }
 
-    await cubit.updateDrivingLicense();
-    if (cubit.state.statuses == CubitStatuses.error) {
-      return;
+    if (_hasLicenseChanged(req, profile)) {
+      await cubit.updateDrivingLicense();
+      if (cubit.state.statuses == CubitStatuses.error) return;
     }
 
-    setState(() {
-      _step = 1;
-    });
+    setState(() => _step = 1);
   }
 
   @override
@@ -175,7 +204,7 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
                   },
                 ),
         ),
-        body: _step == 0
+        body:/* _step == 0
             ? ListView(
                 padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.0.h),
                 children: [
@@ -223,36 +252,23 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
                     },
                   ),
                   20.verticalSpace,
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Checkbox(
-                        activeColor: AppColorManager.mainColor,
-                        value: _agreementAccepted,
-                        onChanged: (val) {
-                          setState(() {
-                            _agreementAccepted = val ?? false;
-                          });
-                        },
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 12.0.h),
-                          child: Text(
-                            S.of(context).declarationText,
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontFamily: 'Almarai',
-                              color: AppColorManager.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                  CheckboxListTile(
+                    contentPadding: EdgeInsets.zero,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    activeColor: AppColorManager.mainColor,
+                    value: _agreementAccepted,
+                    onChanged: (val) {
+                      setState(() {
+                        _agreementAccepted = val ?? false;
+                      });
+                    },
+                    title: DrawableText(
+                      text: S.of(context).declarationText,
+                    ),
                   ),
                 ],
               )
-            : BlocBuilder<TransferOwnershipCubit, TransferOwnershipState>(
+            :*/ BlocBuilder<TransferOwnershipCubit, TransferOwnershipState>(
                 builder: (context, state) {
                   return const PaymentTransferScreen();
                 },
