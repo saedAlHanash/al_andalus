@@ -213,6 +213,14 @@ class _MenuScreenState extends State<MenuScreen> {
                         iconData: Icons.info_outline,
                       ),
                       ItemMenu(
+                        onTap: () => context.pushNamed(
+                          RouteName.dataPage,
+                          queryParameters: {'type': DataPageType.ourService.index.toString()},
+                        ),
+                        name: S.of(context).ourService,
+                        iconData:  Assets.iconsFileList,
+                      ),
+                      ItemMenu(
                         onTap: () => showSupportCall(context),
                         name: S.of(context).support,
                         iconData: Icons.support_agent_outlined,
@@ -290,7 +298,7 @@ class ItemMenu extends StatelessWidget {
 
   final String name;
   final String? subTitle;
-  final IconData? iconData;
+  final dynamic? iconData;
   final dynamic leading;
   final dynamic image;
   final Function()? onTap;
@@ -309,7 +317,7 @@ class ItemMenu extends StatelessWidget {
           ListTile(
             tileColor: Colors.transparent,
             leading: iconData != null
-                ? Icon(iconData, color: color ?? AppColorManager.mainColorDynamic)
+                ? ImageMultiType(url:iconData, color: color ?? AppColorManager.mainColorDynamic)
                 : (leading == null ? null : ImageMultiType(url: leading, color: AppColorManager.mainColorDynamic)),
             onTap: () => onTap?.call(),
             title: DrawableText(
