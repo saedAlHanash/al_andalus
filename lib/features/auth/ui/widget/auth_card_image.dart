@@ -27,7 +27,7 @@ class _AuthCardImageState extends State<AuthCardImage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: .start,
         children: [
-          Container(
+          SizedBox(
             width: 50.0.w,
             child: BackBtnWidget(
               appBarColor: AppColorManager.mainColorLight,
@@ -35,9 +35,9 @@ class _AuthCardImageState extends State<AuthCardImage> {
           ),
           ImageMultiType(
             url: Assets.imagesLogo,
-            height: 100.0.r,
-            fit: .fill,
-            width: 100.0.r,
+            height: 110.0.r,
+            width: 110.0.r,
+            // fit: .fill,
           ),
           InkWell(
             onTap: () => showLanguageDialog(context),

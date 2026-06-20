@@ -1,5 +1,5 @@
 {
-  "aboutUs": "معلومات عنا",
+  "aboutUs": "نبذة عنا",
   "accepted": "مقبول",
   "acceptedByOperationStaff": "مقبول من موظف العمليات",
   "acceptedBySurveyorStaff": "مقبول من المساح",
@@ -24,7 +24,7 @@
   "attachLicenseBackHere": "إرفاق صورة الإجازة الخلفية هنا",
   "attachLicenseFrontAndBack": "إرفاق صورة الإجازة الأمامية والخلفية:",
   "attachLicenseFrontHere": "إرفاق صورة الإجازة الأمامية هنا",
-  "attachPoliceReport": "أرفق تقرير الشرطة:",
+
   "backTires": "الإطارات الخلفية",
   "biometricData": "البيانات البيومترية",
   "birthday": "تاريخ الميلاد",
@@ -451,5 +451,6 @@
   "compensationMaintenanceDesc": "سيتم إرشادك لورشة صيانة مختصة",
   "transferOwnershipPendingDesc": "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
   "transferOwnershipAcceptedDesc": "تم قبول نقل الملكية لمالك آخر",
+  "currencySymbol": "دع",
   "transferOwnershipRejectedDesc": "تم رفض طلب نقل الملكية"
 }

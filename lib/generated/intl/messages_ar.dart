@@ -26,7 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "aboutUs": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
+    "aboutUs": MessageLookupByLibrary.simpleMessage("نبذة عنا"),
     "accepted": MessageLookupByLibrary.simpleMessage("مقبول"),
     "acceptedByOperationStaff": MessageLookupByLibrary.simpleMessage(
       "مقبول من موظف العمليات",
@@ -112,9 +112,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attachLicenseFrontHere": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة الإجازة الأمامية هنا",
-    ),
-    "attachPoliceReport": MessageLookupByLibrary.simpleMessage(
-      "أرفق تقرير الشرطة:",
     ),
     "attachThePoliceReport": MessageLookupByLibrary.simpleMessage(
       " إرفق تقرير الشرطة",
@@ -238,6 +235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد؟",
     ),
+    "currencySymbol": MessageLookupByLibrary.simpleMessage("دع"),
     "cylinders": MessageLookupByLibrary.simpleMessage("عدد الاسطوانات"),
     "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
     "dark": MessageLookupByLibrary.simpleMessage("داكن"),

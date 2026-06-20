@@ -379,15 +379,15 @@ class PriceInputFormatter extends TextInputFormatter {
 
     try {
       // 3. تحويل النص الصافي إلى رقم وتنسيقه
-      double value = double.parse(cleanText);
-      String formattedNumber = numFormat.format(value);
+      final  value = double.parse(cleanText);
+      final  formattedNumber = numFormat.format(value);
 
       // 4. دمج الرقم المنسق مع رمز العملة في النهاية
-      String finalWithCurrency = "$formattedNumber $currencySymbol";
+      final  finalWithCurrency = "$formattedNumber $currencySymbol";
 
       // 5. ضبط مكان مؤشر الكتابة (Cursor) ليكون دائماً قبل رمز العملة وليس بعده
       // لكي لا يقوم المستخدم بالكتابة داخل اسم العملة بالخطأ
-      int cursorOffset = formattedNumber.length;
+      final  cursorOffset = formattedNumber.length;
 
       return TextEditingValue(
         text: finalWithCurrency,

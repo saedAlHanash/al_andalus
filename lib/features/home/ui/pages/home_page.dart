@@ -63,29 +63,26 @@ class _HomepageState extends State<Homepage> {
                         padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: NotificationPage(),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
-                        child: BlocListener<HomeCarsCubit, HomeCarsInitial>(
-                          listenWhen: (p, c) => c.done && c.url.isNotEmpty,
-                          listener: (context, state) {
-                            context.read<HomeCarsCubit>().doneOpenUrl();
-                            context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
-                              (value) {
-                                if (context.mounted) {
-                                  context.pushNamed(
-                                    RouteName.paymentSuccess,
-                                    extra: state.mRequest,
-                                    queryParameters: {
-                                      'isSuccessPayment': (value == true).toString(),
-                                      'isRepay': true.toString(),
-                                    },
-                                  );
-                                }
-                              },
-                            );
-                          },
-                          child: ListCars(),
-                        ),
+                      BlocListener<HomeCarsCubit, HomeCarsInitial>(
+                        listenWhen: (p, c) => c.done && c.url.isNotEmpty,
+                        listener: (context, state) {
+                          context.read<HomeCarsCubit>().doneOpenUrl();
+                          context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+                            (value) {
+                              if (context.mounted) {
+                                context.pushNamed(
+                                  RouteName.paymentSuccess,
+                                  extra: state.mRequest,
+                                  queryParameters: {
+                                    'isSuccessPayment': (value == true).toString(),
+                                    'isRepay': true.toString(),
+                                  },
+                                );
+                              }
+                            },
+                          );
+                        },
+                        child: ListCars(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,

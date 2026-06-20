@@ -25,66 +25,71 @@ class _AccidentInfoState extends State<AccidentInfo> {
   Widget build(BuildContext context) {
     return BlocBuilder<AccidentsCubit, AccidentsInitial>(
       builder: (context, state) {
-        return ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0).r,
-          children: [
-            ListTile(
-              title: DrawableText(
-                text: S.of(context).generalInformation,
-                fontWeight: FontWeight.bold,
+        return GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          behavior: HitTestBehavior.opaque,
+          child: ListView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            padding: EdgeInsets.symmetric(horizontal: 24.0).r,
+            children: [
+              ListTile(
+                title: DrawableText(
+                  text: S.of(context).generalInformation,
+                  fontWeight: FontWeight.bold,
+                ),
+                subtitle: DrawableText(text: S.of(context).pleaseEnterRequiredAccidentInfo),
               ),
-              subtitle: DrawableText(text: S.of(context).pleaseEnterRequiredAccidentInfo),
-            ),
-            10.0.verticalSpace,
-            MyTextFormOutLineWidget(
-              innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              onChanged: (p0) => state.mRequest.description = p0,
-              initialValue: state.mRequest.description,
-              labelText: S.of(context).accidentDetails,
-              hint: S.of(context).pleaseSpecifyAccidentDetails,
-              maxLines: 4,
-            ),
-            10.0.verticalSpace,
-            MyTextFormOutLineWidget(
-              innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              onChanged: (p0) => state.mRequest.location = p0,
-              initialValue: state.mRequest.location,
-              labelText: S.of(context).accidentLocation,
-              hint: S.of(context).pleaseSpecifyAccidentLocation,
-              maxLines: 2,
-            ),
-            20.0.verticalSpace,
-            DrawableText(
-              text: S.of(context).attachThePoliceReport,
-              padding: EdgeInsets.only(bottom: 10.0).r,
-              matchParent: true,
-            ),
-            UploadContainerWidget(
-              title:
-                  '${S.of(context).uploadACopyOfThePoliceReportAfterReportingThe}\n${S.of(context).uploadOneFileOnly}',
-              child: state.mRequest.policeReport.notHaveValue
-                  ? null
-                  : ListTile(
-                      leading: ImageMultiType(
-                        url: Assets.iconsFolder,
-                        height: 50.0.dg,
-                        width: 50.0.dg,
-                        color: AppColorManager.textColor,
+              10.0.verticalSpace,
+              MyTextFormOutLineWidget(
+                innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                onChanged: (p0) => state.mRequest.description = p0,
+                initialValue: state.mRequest.description,
+                labelText: S.of(context).accidentDetails,
+                hint: S.of(context).pleaseSpecifyAccidentDetails,
+                maxLines: 4,
+              ),
+              10.0.verticalSpace,
+              MyTextFormOutLineWidget(
+                innerPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                onChanged: (p0) => state.mRequest.location = p0,
+                initialValue: state.mRequest.location,
+                labelText: S.of(context).accidentLocation,
+                hint: S.of(context).pleaseSpecifyAccidentLocation,
+                maxLines: 2,
+              ),
+              20.0.verticalSpace,
+              DrawableText(
+                text: S.of(context).attachThePoliceReport,
+                padding: EdgeInsets.only(bottom: 10.0).r,
+                matchParent: true,
+              ),
+              UploadContainerWidget(
+                title:
+                    '${S.of(context).uploadACopyOfThePoliceReportAfterReportingThe}\n${S.of(context).uploadOneFileOnly}',
+                child: state.mRequest.policeReport.notHaveValue
+                    ? null
+                    : ListTile(
+                        leading: ImageMultiType(
+                          url: Assets.iconsFolder,
+                          height: 50.0.dg,
+                          width: 50.0.dg,
+                          color: AppColorManager.textColor,
+                        ),
+                        title: DrawableText(text: state.mRequest.policeReport.localId ?? '-'),
                       ),
-                      title: DrawableText(text: state.mRequest.policeReport.localId ?? '-'),
-                    ),
-              onTap: () {
-                showFileUploadBottomSheet(
-                  context,
-                  (value) {
-                    setState(() {
-                      state.mRequest.policeReport = value;
-                    });
-                  },
-                );
-              },
-            ),
-          ],
+                onTap: () {
+                  showFileUploadBottomSheet(
+                    context,
+                    (value) {
+                      setState(() {
+                        state.mRequest.policeReport = value;
+                      });
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         );
       },
     );

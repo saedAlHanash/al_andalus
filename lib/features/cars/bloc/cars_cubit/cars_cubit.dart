@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
+import 'package:al_andalus/core/app/app_widget.dart';
 import 'package:al_andalus/core/util/pair_class.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/features/cars/data/request/insurance_policy_request.dart';
+import 'package:go_router/go_router.dart';
 import 'package:http/http.dart';
 import 'package:m_cubit/m_cubit.dart';
 
@@ -214,7 +216,9 @@ class CarsCubit extends MCubit<CarsInitial> {
         final item = CarPolicy.fromJson(response.jsonBodyData);
         await addOrUpdateCarToCache(item);
       }
+      await getData(newData: true);
       emit(state.copyWith(statuses: CubitStatuses.done));
+      ctx?.pop(true);
     } else {
       emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
       showErrorFromApi(state);

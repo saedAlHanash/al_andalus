@@ -212,12 +212,12 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
     if (response.statusCode.success) {
       if (isDelete) {
         await deleteCarFromCache(state.id.toString());
-        await getData(newData: true);
       } else {
         final item = CarPolicy.fromJson(response.jsonBodyData);
         await addOrUpdateCarToCache(item);
       }
-      emit(state.copyWith(statuses: CubitStatuses.done));
+      await getData(newData: true);
+      emit(state.copyWith(statuses: CubitStatuses.done,cubitCrud: .get));
     } else {
       emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
       showErrorFromApi(state);

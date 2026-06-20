@@ -211,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
       "ههژمارێکی نوێ دروست دهکهیت؟",
     ),
+    "currencySymbol": MessageLookupByLibrary.simpleMessage("IQD"),
     "cylinders": MessageLookupByLibrary.simpleMessage("ژمارهی سلیندهرهکان"),
     "damage": MessageLookupByLibrary.simpleMessage("زیان"),
     "dark": MessageLookupByLibrary.simpleMessage("تاریک"),

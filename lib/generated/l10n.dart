@@ -3764,6 +3764,11 @@ class S {
     );
   }
 
+  /// `IQD`
+  String get currencySymbol {
+    return Intl.message('IQD', name: 'currencySymbol', desc: '', args: []);
+  }
+
   /// `You will be guided to a specialized maintenance workshop`
   String get compensationMaintenanceDesc {
     return Intl.message(

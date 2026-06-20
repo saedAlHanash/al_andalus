@@ -93,7 +93,7 @@ class _CalculatePriceDialogState extends State<CalculatePriceDialog> {
                       });
                     },
                     inputFormatters: [
-                      PriceInputFormatter(currencySymbol: 'دع'),
+                      PriceInputFormatter(currencySymbol: S.of(context).currencySymbol),
                     ],
                     keyBordType: .number,
                     labelText: S.of(context).enterCarValue,

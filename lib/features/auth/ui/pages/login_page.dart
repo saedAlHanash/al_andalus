@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
 
                         initialValue: loginCubit.state.mRequest.phone,
                         keyBordType: .phone,
-                        textAlign: .end,
+                        // textAlign: .end,
                         onChanged: (val) => loginCubit.setPhone = val,
                         iconWidgetLift: Row(
                           mainAxisSize: .min,

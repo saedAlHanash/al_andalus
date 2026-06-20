@@ -11,6 +11,7 @@ import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
 import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
+import 'package:al_andalus/features/cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/cars/ui/widget/car_info.dart';
 import 'package:al_andalus/features/cars/ui/widget/package_info_widget.dart';
@@ -34,6 +35,7 @@ class CarPage extends StatelessWidget {
         BlocListener<CarsCubit, CarsInitial>(
           listenWhen: (p, c) => c.done,
           listener: (context, state) {
+            context.read<HomeCarsCubit>().getData(newData: true);
             if (state.url.isNotEmpty) {
               context.read<CarsCubit>().doneOpenUrl();
               context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(

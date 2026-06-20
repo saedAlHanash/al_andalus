@@ -129,6 +129,8 @@ class AppProvider {
   }
 
   static Map<String, dynamic> insurancePage = {};
+
+
 }
 
 StartPage get getStartPage {

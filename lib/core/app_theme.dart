@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'app/app_widget.dart';
 
 var primaryColor = AppColorManager.mainColor;
 var secondaryColor = AppColorManager.white;
@@ -14,9 +13,9 @@ const _dividerColor = Color(0xFFECEDF2);
 
 String? get appFontFamily {
   try {
-    final local = AppSharedPreference.getLocal;
-    if (local == 'ur') {
-      return FontManager.semeBold.name;
+
+    if (AppSharedPreference.getLocal == 'ur') {
+      return FontManager.bold.name;
     }
     return GoogleFonts.getFont('Cairo').fontFamily;
   } catch (_) {

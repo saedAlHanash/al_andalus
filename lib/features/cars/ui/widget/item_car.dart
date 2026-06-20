@@ -1,4 +1,3 @@
-
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
@@ -80,10 +79,20 @@ class ItemCar extends StatelessWidget {
             children: [
               Expanded(
                 child: OutLineButton(
-                  onTap: () => context.pushNamed(
-                    RouteName.carPage,
-                    queryParameters: {'id': car.id.toString()},
-                  ),
+                  onTap: () {
+                    //عملية الخروج من الصفحة بعد إتمام الحذف موجودة في ال cubit نفسها ك  ctx?.pop(true)
+                    return context
+                        .pushNamed(
+                          RouteName.carPage,
+                          queryParameters: {'id': car.id.toString()},
+                        )
+                        .then(
+                          (value) {
+                            if (!context.mounted || value != true) return;
+                            context.read<HomeCarsCubit>().getData(newData: true);
+                          },
+                        );
+                  },
                   text: S.of(context).viewInsuranceStatement,
                 ),
               ),

@@ -1,5 +1,7 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
+import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,14 +55,25 @@ class ListCars extends StatelessWidget {
           );
         }
         final list = take != null ? [?state.result.firstOrNull] : state.result;
-        return ListView.builder(
+        final widget = ListView.builder(
           physics: take == null ? null : NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          padding: EdgeInsets.symmetric(vertical: 16.h),
+          padding: take == null
+              ? const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 100.0).r
+              : EdgeInsets.symmetric(vertical: 16.h),
           itemCount: list.length,
           itemBuilder: (context, i) {
             return ItemCar(car: list[i]);
           },
+        );
+
+        if (take != null) return widget;
+        return RefreshWidget(
+          onRefresh: () {
+            context.read<HomeCarsCubit>().getData(newData: true);
+          },
+          isLoading: state.loading,
+          child: widget,
         );
       },
     );

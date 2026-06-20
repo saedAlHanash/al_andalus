@@ -244,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createNewAccountQuestion": MessageLookupByLibrary.simpleMessage(
       "Create a new account?",
     ),
+    "currencySymbol": MessageLookupByLibrary.simpleMessage("IQD"),
     "cylinders": MessageLookupByLibrary.simpleMessage("Number of cylinders"),
     "damage": MessageLookupByLibrary.simpleMessage("Damage"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),

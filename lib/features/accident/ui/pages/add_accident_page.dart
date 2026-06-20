@@ -25,6 +25,7 @@ class AddAccidentPage extends StatefulWidget {
 
 class _AddAccidentPageState extends State<AddAccidentPage> {
   void _onBack(AccidentsInitial state) {
+    FocusManager.instance.primaryFocus?.unfocus();
     if (state.step > 0) {
       context.read<AccidentsCubit>().next(step: state.step - 1);
     } else {
@@ -34,10 +35,19 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
         textButton: S.of(context).yes,
         onConfirm: (confirm) {
           loggerObject.w(confirm);
-          if (confirm) context.pop();
+          if (confirm) {
+            FocusManager.instance.primaryFocus?.unfocus();
+            context.pop();
+          }
         },
       );
     }
+  }
+
+  @override
+  void dispose() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    super.dispose();
   }
 
   @override
@@ -45,9 +55,13 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
     return BlocListener<AccidentsCubit, AccidentsInitial>(
       listenWhen: (p, c) => c.done,
       listener: (context, state) {
+        FocusManager.instance.primaryFocus?.unfocus();
         showAccidentReportedBottomSheet(
           context,
-          onClosed: () => context.pop(),
+          onClosed: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+            context.pop();
+          },
         );
       },
       child: BlocBuilder<AccidentsCubit, AccidentsInitial>(
@@ -69,6 +83,8 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
                   final request = state.mRequest;
 
                   if (!AddAccidentValidator.validateStep(context, state.step, request)) return;
+
+                  FocusManager.instance.primaryFocus?.unfocus();
 
                   if (state.step >= 1) {
                     context.read<AccidentsCubit>().create();
@@ -93,6 +109,7 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
                           if (!AddAccidentValidator.validateStep(context, i, request)) return;
                         }
                       }
+                      FocusManager.instance.primaryFocus?.unfocus();
                       context.read<AccidentsCubit>().next(step: p0);
                     },
                     steps: [
