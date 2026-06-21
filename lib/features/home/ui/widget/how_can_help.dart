@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -78,17 +79,18 @@ class HowCanHelp extends StatelessWidget {
                       Expanded(
                         child: _Item(
                           onTap: () async {
-                          //   context.pushNamed(
-                          //   RouteName.transferOwnershipPage,
-                          //   queryParameters: {
-                          //     'qrcode':'9845589a-a23f-4b13-807e-7f304bdf9d29',
-                          //     'id': '85',
-                          //   },
-                          // );
-                          //   return;
+                            //   context.pushNamed(
+                            //   RouteName.transferOwnershipPage,
+                            //   queryParameters: {
+                            //     'qrcode':'9845589a-a23f-4b13-807e-7f304bdf9d29',
+                            //     'id': '85',
+                            //   },
+                            // );
+                            //   return;
                             final qrcode = await context.pushNamed(RouteName.qrScanner);
 
                             final json = jsonDecode((qrcode ?? "{}").toString());
+                            loggerObject.e(json);
                             if (json.isNotEmpty && context.mounted) {
                               context.pushNamed(
                                 RouteName.transferOwnershipPage,
