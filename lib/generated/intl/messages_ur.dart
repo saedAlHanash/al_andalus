@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "لهلایهن ستافی ئۆپهراسیۆنهوه پهسهندکرا",
     ),
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
-      "لهلایهن ستافی ڕووپێوییهوه پهسهندکرا",
+      "پشکنینی زیان",
     ),
     "accidentDetails": MessageLookupByLibrary.simpleMessage(
       "وردهکارییهکانی ڕووداو",
@@ -214,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "currencySymbol": MessageLookupByLibrary.simpleMessage("IQD"),
     "cylinders": MessageLookupByLibrary.simpleMessage("ژمارهی سلیندهرهکان"),
     "damage": MessageLookupByLibrary.simpleMessage("زیان"),
+    "damageInspection": MessageLookupByLibrary.simpleMessage("پشکنینی زیان"),
     "dark": MessageLookupByLibrary.simpleMessage("تاریک"),
     "date": MessageLookupByLibrary.simpleMessage("بهروار"),
     "day": MessageLookupByLibrary.simpleMessage("ڕۆژ"),
@@ -800,6 +801,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "مهرج و ڕێنماییهکان",
+    ),
+    "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
+      "داواکاری ڕووداوەکە ڕەتکرایەوە",
     ),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(

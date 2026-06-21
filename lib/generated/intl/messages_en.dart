@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Accepted by Operation Staff",
     ),
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
-      "Accepted by Surveyor Staff",
+      "Damage inspection",
     ),
     "accidentAcceptedOpDesc": MessageLookupByLibrary.simpleMessage(
       "The request has been accepted by the operations staff",
@@ -247,6 +247,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "currencySymbol": MessageLookupByLibrary.simpleMessage("IQD"),
     "cylinders": MessageLookupByLibrary.simpleMessage("Number of cylinders"),
     "damage": MessageLookupByLibrary.simpleMessage("Damage"),
+    "damageInspection": MessageLookupByLibrary.simpleMessage(
+      "Damage inspection",
+    ),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "date": MessageLookupByLibrary.simpleMessage("Date"),
     "day": MessageLookupByLibrary.simpleMessage("day"),
@@ -842,6 +845,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms And Conditions",
+    ),
+    "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
+      "The accident request was rejected",
     ),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(

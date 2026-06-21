@@ -1,3 +1,4 @@
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,8 +15,7 @@ enum StartPage { login, home, signupOtp, pinCode, passwordOtp }
 
 enum GenderEnum {
   male,
-  female
-  ;
+  female;
 
   String get name {
     switch (this) {
@@ -79,8 +79,7 @@ enum IraqGovernorate {
   wasit,
   dahuk,
   diwaniyah,
-  maysan
-  ;
+  maysan;
 
   String get name {
     switch (this) {
@@ -165,8 +164,7 @@ enum GetProductsType { non, topSell, latest, offers }
 
 enum SortBy {
   price,
-  createdAt
-  ;
+  createdAt;
 
   String get name {
     switch (this) {
@@ -189,8 +187,7 @@ enum SortBy {
 
 enum SortOrder {
   asc,
-  desc
-  ;
+  desc;
 
   String get name {
     switch (this) {
@@ -215,8 +212,7 @@ enum FontManager { regular, semeBold, bold }
 
 enum CouponType {
   fixed,
-  percentage
-  ;
+  percentage;
 
   static CouponType getByNameOrIndex(String name) {
     final i = int.tryParse(name);
@@ -287,8 +283,7 @@ enum OrderStatus {
 
 enum AdsType {
   banner,
-  slider
-  ;
+  slider;
 
   Color get getOrderStateColorText {
     switch (this) {
@@ -312,8 +307,7 @@ enum CompressQuality {
   q40,
   q60,
   q80,
-  q100
-  ;
+  q100;
 
   int get getQuality {
     switch (this) {
@@ -337,8 +331,7 @@ enum FileType {
   audio,
   pdf,
   document,
-  other
-  ;
+  other;
 
   IconData get fileTypeIcon {
     switch (this) {
@@ -1010,27 +1003,25 @@ enum TransferOwnershipStatus {
 }
 
 enum AccidentStatus {
-  pending,
-  acceptedByOperationStaff,
-  rejectedByOperationStaff,
-  acceptedBySurveyorStaff,
-  rejectedBySurveyorStaff,
-  paid,
-  fixed,
+  pending, // قيد الانتظار
+  acceptedByOperationStaff, // تم القبول من قبل موظف العمليات
+  rejectedByOperationStaff, // تم الرفض من قبل موظف العمليات
+  acceptedBySurveyorStaff, // تم القبول من قبل موظف الكشف
+  rejectedBySurveyorStaff, // تم الرفض من قبل موظف الكشف
+  paid, // تم الدفع
+  fixed, // تم الإصلاح
   ;
 
   String get name {
     switch (this) {
       case AccidentStatus.pending:
         return S().pending;
-      case AccidentStatus.acceptedByOperationStaff:
-        return S().acceptedByOperationStaff;
+      case AccidentStatus.rejectedBySurveyorStaff:
       case AccidentStatus.rejectedByOperationStaff:
-        return S().rejectedByOperationStaff;
+        return S().rejected;
+      case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
         return S().acceptedBySurveyorStaff;
-      case AccidentStatus.rejectedBySurveyorStaff:
-        return S().rejectedBySurveyorStaff;
       case AccidentStatus.paid:
         return S().paid;
       case AccidentStatus.fixed:
@@ -1080,6 +1071,7 @@ enum AccidentStatus {
         return Assets.iconsWaiting;
       case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
+        return Assets.iconsDamageInspection;
       case AccidentStatus.fixed:
         return Assets.iconsAccepted;
       case AccidentStatus.rejectedByOperationStaff:
@@ -1121,24 +1113,22 @@ enum AccidentStatus {
     switch (this) {
       case AccidentStatus.pending:
         return s.accidentPendingDesc;
-      case AccidentStatus.acceptedByOperationStaff:
-        return s.accidentAcceptedOpDesc;
-      case AccidentStatus.rejectedByOperationStaff:
-        return s.accidentRejectedOpDesc;
-      case AccidentStatus.acceptedBySurveyorStaff:
-        String desc = s.accidentAcceptedSurveyorDesc;
-        if (type == CompensationType.maintenance) {
-          desc += s.compensationMaintenanceDesc;
-        } else if (type == CompensationType.financial) {
-          desc += s.compensationValuePrefix(value ?? '0');
-        }
-        return desc;
       case AccidentStatus.rejectedBySurveyorStaff:
-        return s.accidentRejectedSurveyorDesc;
+      case AccidentStatus.rejectedByOperationStaff:
+        return S().theAccidentRequestWasRejected;
+      case AccidentStatus.acceptedByOperationStaff:
+      case AccidentStatus.acceptedBySurveyorStaff:
+        return S().damageInspection;
       case AccidentStatus.paid:
-        return s.accidentPaidDesc;
       case AccidentStatus.fixed:
-        return s.accidentFixedDesc;
+        var desc = s.accidentAcceptedSurveyorDesc;
+        if (type == .maintenance) {
+          desc += s.compensationMaintenanceDesc;
+        } else if (type == .financial) {
+          desc += s.compensationValuePrefix(num.tryParse(value ?? '0')?.formatPrice ?? '$value');
+        }
+
+        return desc;
     }
   }
 }

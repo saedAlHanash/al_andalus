@@ -74,10 +74,10 @@ class S {
     );
   }
 
-  /// `Accepted by Surveyor Staff`
+  /// `Damage inspection`
   String get acceptedBySurveyorStaff {
     return Intl.message(
-      'Accepted by Surveyor Staff',
+      'Damage inspection',
       name: 'acceptedBySurveyorStaff',
       desc: '',
       args: [],
@@ -3804,6 +3804,26 @@ class S {
     return Intl.message(
       'Ownership transfer request has been rejected',
       name: 'transferOwnershipRejectedDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The accident request was rejected`
+  String get theAccidentRequestWasRejected {
+    return Intl.message(
+      'The accident request was rejected',
+      name: 'theAccidentRequestWasRejected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Damage inspection`
+  String get damageInspection {
+    return Intl.message(
+      'Damage inspection',
+      name: 'damageInspection',
       desc: '',
       args: [],
     );

@@ -204,7 +204,7 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
                   },
                 ),
         ),
-        body:/* _step == 0
+        body: _step == 0
             ? ListView(
                 padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.0.h),
                 children: [
@@ -268,7 +268,7 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
                   ),
                 ],
               )
-            :*/ BlocBuilder<TransferOwnershipCubit, TransferOwnershipState>(
+            : BlocBuilder<TransferOwnershipCubit, TransferOwnershipState>(
                 builder: (context, state) {
                   return const PaymentTransferScreen();
                 },

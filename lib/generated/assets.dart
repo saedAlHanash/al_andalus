@@ -64,6 +64,7 @@ class Assets {
   static const String iconsPdfBorder = 'assets/icons/pdf_border.svg';
   static const String iconsPerson = 'assets/icons/person.svg';
   static const String iconsPersonF = 'assets/icons/person_f.svg';
+  static const String iconsDamageInspection = 'assets/icons/damage_inspection.svg';
   static const String iconsPhone = 'assets/icons/phone.svg';
   static const String iconsPhoneFlip = 'assets/icons/phone-flip.svg';
   static const String iconsPlate = 'assets/icons/plate.svg';

@@ -2,7 +2,7 @@
   "aboutUs": "دهربارهی ئێمه",
   "accepted": "قبوڵکرا",
   "acceptedByOperationStaff": "لهلایهن ستافی ئۆپهراسیۆنهوه پهسهندکرا",
-  "acceptedBySurveyorStaff": "لهلایهن ستافی ڕووپێوییهوه پهسهندکرا",
+  "acceptedBySurveyorStaff": "پشکنینی زیان",
   "accidentDetails": "وردهکارییهکانی ڕووداو",
   "accidentLocation": "شوێنی ڕووداو",
   "active": "چالاک",
@@ -423,5 +423,7 @@
   "attachThePoliceReport": "ڕاپۆرتی پۆلیس هاوپێچ بکه",
   "currencySymbol": "IQD",
 
-  "accidentRemovalCase": "کەیسی لابردنی ڕووداو"
+  "accidentRemovalCase": "کەیسی لابردنی ڕووداو",
+  "theAccidentRequestWasRejected": "داواکاری ڕووداوەکە ڕەتکرایەوە",
+  "damageInspection": "پشکنینی زیان"
 }

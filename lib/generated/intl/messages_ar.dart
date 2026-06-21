@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(value) => "قيمة التعويض: ${value}";
+  static String m0(value) => " سيتم التعويض بقيمة: ${value}";
 
   static String m1(field) => "يجب إضافة ملاحظة لـ ${field}";
 
@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مقبول من موظف العمليات",
     ),
     "acceptedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
-      "مقبول من المساح",
+      "فحص الاضرار",
     ),
     "accidentAcceptedOpDesc": MessageLookupByLibrary.simpleMessage(
       "تم قبول الطلب من قبل موظفي العمليات",
@@ -53,7 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم رفض الطلب من قبل موظفي العمليات",
     ),
     "accidentRejectedSurveyorDesc": MessageLookupByLibrary.simpleMessage(
-      "تم رفض الطلب من قبل المساح",
+      "تم رفض الطلب من قبل موظف الكشف",
     ),
     "accidentRemovalCase": MessageLookupByLibrary.simpleMessage(
       "حالة رفع الحادث",
@@ -238,6 +238,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "currencySymbol": MessageLookupByLibrary.simpleMessage("دع"),
     "cylinders": MessageLookupByLibrary.simpleMessage("عدد الاسطوانات"),
     "damage": MessageLookupByLibrary.simpleMessage("ضرر"),
+    "damageInspection": MessageLookupByLibrary.simpleMessage("فحص الأضرار"),
     "dark": MessageLookupByLibrary.simpleMessage("داكن"),
     "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
     "day": MessageLookupByLibrary.simpleMessage("يوم"),
@@ -504,7 +505,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentViaWallet": MessageLookupByLibrary.simpleMessage(
       "سيتم الدفع من خلال المحفظة",
     ),
-    "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+    "pending": MessageLookupByLibrary.simpleMessage("قيد المراجعة"),
     "pendingPhoneConfirmation": MessageLookupByLibrary.simpleMessage(
       "يوجد عملية تأكيد رقم قيد الانتظار",
     ),
@@ -714,7 +715,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مرفوض من موظف العمليات",
     ),
     "rejectedBySurveyorStaff": MessageLookupByLibrary.simpleMessage(
-      "مرفوض من المساح",
+      "مرفوض من موظف الكشف",
     ),
     "releaseDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
@@ -797,6 +798,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "technicalSupport": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
+    ),
+    "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
+      "تم رفض طلب الحادث",
     ),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(
