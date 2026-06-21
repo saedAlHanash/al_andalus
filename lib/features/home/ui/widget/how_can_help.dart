@@ -78,14 +78,14 @@ class HowCanHelp extends StatelessWidget {
                       Expanded(
                         child: _Item(
                           onTap: () async {
-                            context.pushNamed(
-                            RouteName.transferOwnershipPage,
-                            queryParameters: {
-                              'qrcode':'9845589a-a23f-4b13-807e-7f304bdf9d29',
-                              'id': '85',
-                            },
-                          );
-                            return;
+                          //   context.pushNamed(
+                          //   RouteName.transferOwnershipPage,
+                          //   queryParameters: {
+                          //     'qrcode':'9845589a-a23f-4b13-807e-7f304bdf9d29',
+                          //     'id': '85',
+                          //   },
+                          // );
+                          //   return;
                             final qrcode = await context.pushNamed(RouteName.qrScanner);
 
                             final json = jsonDecode((qrcode ?? "{}").toString());
