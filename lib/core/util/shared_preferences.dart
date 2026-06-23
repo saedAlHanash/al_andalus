@@ -176,9 +176,13 @@ class AppSharedPreference {
   //endregion
 
   //region Clear/Logout
-  static Future<void> clear() async => await _prefs?.clear();
+  // static Future<void> clear() async => await _prefs?.clear();
 
-  static Future<void> logout() async => await _prefs?.clear();
+  static Future<void> logout() async {
+    final lang = AppSharedPreference.getLocal;
+    await _prefs?.clear();
+    await AppSharedPreference.cashLocal(lang);
+  }
 
   //endregion
 

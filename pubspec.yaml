@@ -2,7 +2,7 @@ name: al_andalus
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.1+2.5
+version: 1.0.1+2.6
 environment:
   sdk: '>=3.10.0 <4.0.0'
 
