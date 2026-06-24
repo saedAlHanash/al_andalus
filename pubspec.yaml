@@ -2,7 +2,7 @@ name: al_andalus
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.1+2.6
+version: 1.0.1+2.7
 environment:
   sdk: '>=3.10.0 <4.0.0'
 
@@ -69,6 +69,7 @@ dependencies:
   flutter_svg: ^2.3.0
   intl_phone_field: ^3.2.0
   app_links: ^7.1.2
+  map_launcher: ^4.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

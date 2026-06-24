@@ -299,7 +299,7 @@
   "spareToolsGroup": "کۆمهڵهی کهرهستهی یهدهگ",
   "startNow": "ئێستا دهستپێبکه",
   "startYourInsuranceJourneyEasily": "گهشته بیمهییهکهت به ئاسانی دهست پێ بکه",
-  "subTitleDeleteAccount": "ههژمارهکه لهگهڵ ههموو زانیاری و خولهکان دهسڕێتهوه",
+  "subTitleDeleteAccount": "ههژمارهکه دهسڕێتهوه لهگهڵ تهواوی زانیارییهکان.",
   "submit": "ناردن",
   "subscribeNow": "ئێستا بهشداربه",
   "support": "پشتیوانی",
@@ -417,13 +417,13 @@
   "vehiclesDesignedForCommercialUseOrTransportingPeopleOrGoods": "ئهو ئۆتۆمبێلانهی بۆ بهکارهێنانی بازرگانی یان گواستنهوهی خهڵک یان کاڵا دروستکراون، لهوانه (تهکسی - پاس - پیکاپ - لۆری...)",
   "areYouSureYouWantToLogout": "ئایا دڵنیایت دهتهوێت بچیته دهرهوه؟",
   "areYouSureYouWantToDeleteAccount": "ئایا دڵنیایت دهتهوێت ههژمارهکهت بسڕیتهوه؟",
-  "areYouSureYouWantToCancelInsurance": "ئایا دڵنیایت دەتەوێت دڵنیاییەکە هەڵبوەشێنیتەوە؟",
-  "processingImage": "وێنەکە لێکدەدرێتەوە...",
+  "areYouSureYouWantToCancelInsurance": "ئایا دڵنیایت دهتهوێت دڵنیاییهکه ههڵبوهشێنیتهوه؟",
+  "processingImage": "وێنهکه لێکدهدرێتهوه...",
   "uploadACopyOfThePoliceReportAfterReportingThe": "دوای ڕاپۆرتکردنی ڕووداوهکه، کۆپییهکی ڕاپۆرتی پۆلیس باربکه.",
   "attachThePoliceReport": "ڕاپۆرتی پۆلیس هاوپێچ بکه",
   "currencySymbol": "IQD",
 
-  "accidentRemovalCase": "کەیسی لابردنی ڕووداو",
-  "theAccidentRequestWasRejected": "داواکاری ڕووداوەکە ڕەتکرایەوە",
+  "accidentRemovalCase": "کهیسی لابردنی ڕووداو",
+  "theAccidentRequestWasRejected": "داواکاری ڕووداوهکه ڕهتکرایهوه",
   "damageInspection": "پشکنینی زیان"
 }

@@ -24,7 +24,10 @@ class ListCars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (AppProvider.isNotLogin) {
-      return NeedLoginWidget();
+      return Padding(
+        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
+        child: NeedLoginWidget(),
+      );
     }
     return BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
       builder: (context, state) {
@@ -37,18 +40,22 @@ class ListCars extends StatelessWidget {
               width: 1.0.sw,
               decoration: take != null
                   ? BoxDecoration(
-                      border: Border.all(color: AppColorManager.cd),
-                      borderRadius: BorderRadius.circular(24.0.r),
-                    )
+                border: Border.all(color: AppColorManager.cd),
+                borderRadius: BorderRadius.circular(24.0.r),
+              )
                   : null,
-              padding: EdgeInsets.all(30.0).r,
+              padding: EdgeInsets
+                  .all(30.0)
+                  .r,
               margin: EdgeInsets.symmetric(horizontal: 5.0),
               child: Column(
                 mainAxisSize: .min,
                 children: [
                   ImageMultiType(url: Assets.iconsCircleArow, color: AppColorManager.textColor),
                   30.0.verticalSpace,
-                  DrawableText(text: S.of(context).pleaseAddYourVehicleToShowTheInsuranceDocument),
+                  DrawableText(text: S
+                      .of(context)
+                      .pleaseAddYourVehicleToShowTheInsuranceDocument),
                 ],
               ),
             ),

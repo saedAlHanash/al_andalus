@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/util/my_style.dart';
+import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../router/go_router.dart';
 import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
@@ -63,27 +64,27 @@ class _HomepageState extends State<Homepage> {
                         padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: NotificationPage(),
                       ),
-                      BlocListener<HomeCarsCubit, HomeCarsInitial>(
-                        listenWhen: (p, c) => c.done && c.url.isNotEmpty,
-                        listener: (context, state) {
-                          context.read<HomeCarsCubit>().doneOpenUrl();
-                          context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
-                            (value) {
-                              if (context.mounted) {
-                                context.pushNamed(
-                                  RouteName.paymentSuccess,
-                                  extra: state.mRequest,
-                                  queryParameters: {
-                                    'isSuccessPayment': (value == true).toString(),
-                                    'isRepay': true.toString(),
-                                  },
-                                );
-                              }
-                            },
-                          );
-                        },
-                        child: ListCars(),
-                      ),
+                        BlocListener<HomeCarsCubit, HomeCarsInitial>(
+                          listenWhen: (p, c) => c.done && c.url.isNotEmpty,
+                          listener: (context, state) {
+                            context.read<HomeCarsCubit>().doneOpenUrl();
+                            context.pushNamed(RouteName.webView, queryParameters: {'url': state.url}).then(
+                              (value) {
+                                if (context.mounted) {
+                                  context.pushNamed(
+                                    RouteName.paymentSuccess,
+                                    extra: state.mRequest,
+                                    queryParameters: {
+                                      'isSuccessPayment': (value == true).toString(),
+                                      'isRepay': true.toString(),
+                                    },
+                                  );
+                                }
+                              },
+                            );
+                          },
+                          child: ListCars(),
+                        ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
                         child: MenuScreen(),

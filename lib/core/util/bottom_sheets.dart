@@ -454,6 +454,7 @@ void showOptionBottomSheet(
   );
 }
 
+
 void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
   showModalBottomSheet(
     useSafeArea: true,
@@ -1241,6 +1242,91 @@ void showNoticeBottomSheet(
             ),
           ],
         ),
+      );
+    },
+  );
+}
+
+void showFileOrGalleryBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
+  showModalBottomSheet(
+    useSafeArea: true,
+    context: context,
+    backgroundColor: Colors.transparent,
+    constraints: BoxConstraints(maxHeight: 0.7.sh),
+    builder: (ctx) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          HeaderBottomSheet(),
+          Container(
+            color: AppColorManager.cardColor,
+            padding: const EdgeInsets.all(20.0).r,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisSize: .min,
+                  children: [
+                ImageMultiType(
+                  url: Assets.iconsFile1,
+                  height: 100.0.h,
+                ),
+
+                  ],
+                ),
+                10.0.verticalSpace,
+                DrawableText(
+                  text: S.of(context).browseFiles,
+                  fontWeight: FontWeight.bold,
+                ),
+                20.0.verticalSpace,
+                Row(
+                  spacing: 12.0.w,
+                  children: [
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).fromGallery,
+                        icon: ImageMultiType(
+                          url: Icons.image_outlined,
+                          color: Colors.white,
+                        ),
+                        onTap: () {
+                          Navigator.pop(ctx);
+                          pickImage().then(
+                            (value) async {
+                              if (value == null || !context.mounted) return;
+                              final result = await showConfirmDialog(context, value);
+                              if (result == false) return;
+                              onConfirm.call(value);
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).uploadFromFiles,
+                        icon: ImageMultiType(
+                          url: Icons.file_upload_outlined,
+                          color: Colors.white,
+                        ),
+                        onTap: () {
+                          Navigator.pop(ctx);
+                          pickAndUpload(allowedExtensions: ['pdf', 'PDF']).then(
+                            (value) async {
+                              if (value == null || !context.mounted) return;
+                              onConfirm.call(value);
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                30.0.verticalSpace,
+              ],
+            ),
+          ),
+        ],
       );
     },
   );

@@ -786,7 +786,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ابدأ رحلتك التأمينية بكل سهولة",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
-      "سيتم حذف الحساب بجميع البيانات والدورات التدريبية",
+      "سيتم حذف الحساب بجميع البيانات",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("اشترك الان"),

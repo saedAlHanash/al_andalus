@@ -829,7 +829,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Start your insurance journey easily",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
-      "The account will be deleted along with all data and courses.",
+      "The account will be deleted along with all data.",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("Subscribe Now"),

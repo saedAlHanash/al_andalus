@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "accidentLocation": MessageLookupByLibrary.simpleMessage("شوێنی ڕووداو"),
     "accidentRemovalCase": MessageLookupByLibrary.simpleMessage(
-      "کەیسی لابردنی ڕووداو",
+      "کهیسی لابردنی ڕووداو",
     ),
     "active": MessageLookupByLibrary.simpleMessage("چالاک"),
     "addNewCar": MessageLookupByLibrary.simpleMessage(
@@ -63,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "approved": MessageLookupByLibrary.simpleMessage("پهسهندکراو"),
     "arabic": MessageLookupByLibrary.simpleMessage("عهرهبی"),
     "areYouSureYouWantToCancelInsurance": MessageLookupByLibrary.simpleMessage(
-      "ئایا دڵنیایت دەتەوێت دڵنیاییەکە هەڵبوەشێنیتەوە؟",
+      "ئایا دڵنیایت دهتهوێت دڵنیاییهکه ههڵبوهشێنیتهوه؟",
     ),
     "areYouSureYouWantToDeleteAccount": MessageLookupByLibrary.simpleMessage(
       "ئایا دڵنیایت دهتهوێت ههژمارهکهت بسڕیتهوه؟",
@@ -692,7 +692,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ئهو ئۆتۆمبێلانهی بۆ بهکارهێنانی تایبهت بهکاردێن",
     ),
     "processingImage": MessageLookupByLibrary.simpleMessage(
-      "وێنەکە لێکدەدرێتەوە...",
+      "وێنهکه لێکدهدرێتهوه...",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("پڕۆفایل"),
     "public": MessageLookupByLibrary.simpleMessage("گشتی"),
@@ -787,7 +787,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "گهشته بیمهییهکهت به ئاسانی دهست پێ بکه",
     ),
     "subTitleDeleteAccount": MessageLookupByLibrary.simpleMessage(
-      "ههژمارهکه لهگهڵ ههموو زانیاری و خولهکان دهسڕێتهوه",
+      "ههژمارهکه دهسڕێتهوه لهگهڵ تهواوی زانیارییهکان.",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("ناردن"),
     "subscribeNow": MessageLookupByLibrary.simpleMessage("ئێستا بهشداربه"),
@@ -803,7 +803,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مهرج و ڕێنماییهکان",
     ),
     "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
-      "داواکاری ڕووداوەکە ڕەتکرایەوە",
+      "داواکاری ڕووداوهکه ڕهتکرایهوه",
     ),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(

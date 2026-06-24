@@ -15,9 +15,10 @@ class CarPolicies {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "data": data.map((x) => x.toJson()).toList(),
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "data": data.map((x) => x.toJson()).toList(),
+      };
 }
 
 class CarPolicy {
@@ -70,31 +71,36 @@ class CarPolicy {
       vehicle: Vehicle.fromJson(json["vehicle"] ?? {}),
       policyFile: json["policy_file"] ?? "",
       canShowFile: json["can_show_file"] ?? false,
-      mediaType: ResourceType.getByNameOrIndex((json["policy_file"] ?? '').toString().fileExtension),
+      mediaType: ResourceType.getByNameOrIndex((json["policy_file"] ?? '')
+          .toString()
+          .fileExtension),
       fieldsToBeRefilled: json["fields_to_be_refilled"] == null
           ? []
           : List<String>.from(json["fields_to_be_refilled"]!.map((x) => x.toString())),
-      created: (json["created"] ?? '').toString().parseDate,
+      created: (json["created"] ?? '')
+          .toString()
+          .parseDate,
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "has_transfer_request": hasTransferRequest.toJson(),
-    "has_claim_request": hasClaimRequest.toJson(),
-    "insurance_package": insurancePackage.toJson(),
-    "status": status.index,
-    "qrcode": qrcode,
-    "annual_subscription_price": annualSubscriptionPrice,
-    "start_date": startDate,
-    "end_date": endDate,
-    "vehicle": vehicle.toJson(),
-    "policy_file": policyFile,
-    "can_show_file": canShowFile,
-    "mediaType": mediaType.index,
-    "fields_to_be_refilled": fieldsToBeRefilled,
-    "created": created?.toIso8601String(),
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "has_transfer_request": hasTransferRequest.toJson(),
+        "has_claim_request": hasClaimRequest.toJson(),
+        "insurance_package": insurancePackage.toJson(),
+        "status": status.index,
+        "qrcode": qrcode,
+        "annual_subscription_price": annualSubscriptionPrice,
+        "start_date": startDate,
+        "end_date": endDate,
+        "vehicle": vehicle.toJson(),
+        "policy_file": policyFile,
+        "can_show_file": canShowFile,
+        "mediaType": mediaType.index,
+        "fields_to_be_refilled": fieldsToBeRefilled,
+        "created": created?.toIso8601String(),
+      };
 
 
 }
@@ -124,13 +130,14 @@ class HasTransferRequest {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "status": status.index,
-    "note": note,
-    "to_client": toClient.toJson(),
-    "created": created,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "status": status.index,
+        "note": note,
+        "to_client": toClient.toJson(),
+        "created": created,
+      };
 }
 
 class HasClaimRequest {
@@ -139,13 +146,21 @@ class HasClaimRequest {
     required this.status,
     required this.compensationValue,
     required this.compensationType,
+    required this.maintenanceLocation,
+    required this.lat,
+    required this.lng,
+    required this.address,
     required this.created,
   });
 
   final int id;
-   AccidentStatus status;
+  AccidentStatus status;
   final num compensationValue;
   final CompensationType compensationType;
+  final String maintenanceLocation;
+  final num lat;
+  final num lng;
+  final String address;
   final String created;
 
   factory HasClaimRequest.fromJson(Map<String, dynamic> json) {
@@ -154,17 +169,26 @@ class HasClaimRequest {
       status: AccidentStatus.getByNameOrIndex(json["status"]),
       compensationValue: json["compensation_value"] ?? 0,
       compensationType: CompensationType.getByNameOrIndex(json["compensation_type"]),
+      maintenanceLocation: json["maintenance_location"] ?? "",
+      lat: json["lat"] ?? 0,
+      lng: json["lng"] ?? 0,
+      address: json["address"] ?? "",
       created: json["created"] ?? "",
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "status": status.index,
-    "compensation_value": compensationValue,
-    "compensation_type": compensationType.index,
-    "created": created,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "status": status.index,
+        "compensation_value": compensationValue,
+        "compensation_type": compensationType.index,
+        "maintenance_location": maintenanceLocation,
+        "lat": lat,
+        "lng": lng,
+        "address": address,
+        "created": created,
+      };
 }
 
 class ToClient {
@@ -183,10 +207,11 @@ class ToClient {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "name": name,
-    "phone": phone,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "name": name,
+        "phone": phone,
+      };
 }
 
 class Vehicle {
@@ -256,27 +281,28 @@ class Vehicle {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "brand": brand,
-    "cylinders": cylinders,
-    "manufacture_year": manufactureYear,
-    "color": color,
-    "chassis_number": chassisNumber,
-    "plate_number": plateNumber,
-    "fuel_type": fuelType.index,
-    "engine_capacity": engineCapacity,
-    "value": value,
-    "expiry_start_date": expiryStartDate,
-    "expiry_end_date": expiryEndDate,
-    "ownership_front_image": ownershipFrontImage,
-    "ownership_back_image": ownershipBackImage,
-    "inspection_report": inspectionReport,
-    "inspection": inspection.toJson(),
-    "attachment": attachment.toJson(),
-    "created": created,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "name": name,
+        "brand": brand,
+        "cylinders": cylinders,
+        "manufacture_year": manufactureYear,
+        "color": color,
+        "chassis_number": chassisNumber,
+        "plate_number": plateNumber,
+        "fuel_type": fuelType.index,
+        "engine_capacity": engineCapacity,
+        "value": value,
+        "expiry_start_date": expiryStartDate,
+        "expiry_end_date": expiryEndDate,
+        "ownership_front_image": ownershipFrontImage,
+        "ownership_back_image": ownershipBackImage,
+        "inspection_report": inspectionReport,
+        "inspection": inspection.toJson(),
+        "attachment": attachment.toJson(),
+        "created": created,
+      };
 }
 
 class Attachment {
@@ -313,16 +339,17 @@ class Attachment {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "front_image": frontImage,
-    "right_side_image": rightSideImage,
-    "left_side_image": leftSideImage,
-    "interior_image": interiorImage,
-    "back_image": backImage,
-    "engine_image": engineImage,
-    "created": created,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "front_image": frontImage,
+        "right_side_image": rightSideImage,
+        "left_side_image": leftSideImage,
+        "interior_image": interiorImage,
+        "back_image": backImage,
+        "engine_image": engineImage,
+        "created": created,
+      };
 }
 
 class Inspection {
@@ -430,43 +457,46 @@ class Inspection {
       spareTools: json["spare_tools"] ?? "",
       spareToolsNote: json["spare_tools_note"] ?? "",
       otherNotes: json["other_notes"] ?? "",
-      created: (json["created"] ?? '').toString().parseDate,
+      created: (json["created"] ?? '')
+          .toString()
+          .parseDate,
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "metal_body": metalBody,
-    "metal_body_note": metalBodyNote,
-    "glass_and_lamps": glassAndLamps,
-    "glass_and_lamps_note": glassAndLampsNote,
-    "chrome_nickel": chromeNickel,
-    "chrome_nickel_note": chromeNickelNote,
-    "brand_sign": brandSign,
-    "brand_sign_note": brandSignNote,
-    "windshield_wipers": windshieldWipers,
-    "windshield_wipers_note": windshieldWipersNote,
-    "radio_antenna": radioAntenna,
-    "radio_antenna_note": radioAntennaNote,
-    "seats": seats,
-    "seats_note": seatsNote,
-    "floor_cover": floorCover,
-    "floor_cover_note": floorCoverNote,
-    "radio": radio,
-    "radio_note": radioNote,
-    "air_conditioner": airConditioner,
-    "air_conditioner_note": airConditionerNote,
-    "front_tires": frontTires,
-    "front_tires_note": frontTiresNote,
-    "back_tires": backTires,
-    "back_tires_note": backTiresNote,
-    "spare_tire": spareTire,
-    "spare_tire_note": spareTireNote,
-    "tires_covers": tiresCovers,
-    "tires_covers_note": tiresCoversNote,
-    "spare_tools": spareTools,
-    "spare_tools_note": spareToolsNote,
-    "other_notes": otherNotes,
-    "created": created?.toIso8601String(),
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "id": id,
+        "metal_body": metalBody,
+        "metal_body_note": metalBodyNote,
+        "glass_and_lamps": glassAndLamps,
+        "glass_and_lamps_note": glassAndLampsNote,
+        "chrome_nickel": chromeNickel,
+        "chrome_nickel_note": chromeNickelNote,
+        "brand_sign": brandSign,
+        "brand_sign_note": brandSignNote,
+        "windshield_wipers": windshieldWipers,
+        "windshield_wipers_note": windshieldWipersNote,
+        "radio_antenna": radioAntenna,
+        "radio_antenna_note": radioAntennaNote,
+        "seats": seats,
+        "seats_note": seatsNote,
+        "floor_cover": floorCover,
+        "floor_cover_note": floorCoverNote,
+        "radio": radio,
+        "radio_note": radioNote,
+        "air_conditioner": airConditioner,
+        "air_conditioner_note": airConditionerNote,
+        "front_tires": frontTires,
+        "front_tires_note": frontTiresNote,
+        "back_tires": backTires,
+        "back_tires_note": backTiresNote,
+        "spare_tire": spareTire,
+        "spare_tire_note": spareTireNote,
+        "tires_covers": tiresCovers,
+        "tires_covers_note": tiresCoversNote,
+        "spare_tools": spareTools,
+        "spare_tools_note": spareToolsNote,
+        "other_notes": otherNotes,
+        "created": created?.toIso8601String(),
+      };
 }

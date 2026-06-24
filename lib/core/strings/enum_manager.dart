@@ -7,6 +7,7 @@ import 'package:image_multi_type/image_multi_type.dart';
 
 import 'package:string_similarity/string_similarity.dart';
 
+import '../../features/cars/data/response/cars_response.dart';
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
 import 'app_color_manager.dart';
@@ -1108,7 +1109,9 @@ enum AccidentStatus {
     }
   }
 
-  String description(String? value, CompensationType? type) {
+  String description(HasClaimRequest item) {
+    var type  = item.compensationType;
+    var value  = item.compensationValue.formatPrice;
     final s = S();
     switch (this) {
       case AccidentStatus.pending:
@@ -1123,7 +1126,7 @@ enum AccidentStatus {
       case AccidentStatus.fixed:
         var desc = s.accidentAcceptedSurveyorDesc;
         if (type == .maintenance) {
-          desc += s.compensationMaintenanceDesc;
+          desc += '/n ${item.maintenanceLocation}';
         } else if (type == .financial) {
           desc += s.compensationValuePrefix(num.tryParse(value ?? '0')?.formatPrice ?? '$value');
         }

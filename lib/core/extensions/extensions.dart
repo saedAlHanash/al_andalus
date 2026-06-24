@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:al_andalus/core/api_manager/api_service.dart';
+import 'package:al_andalus/core/helper/launcher_helper.dart';
+import 'package:al_andalus/core/helper/map_helper.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -669,7 +671,12 @@ extension HasTransferRequestH on HasTransferRequest {
 extension HasClaimRequestH on HasClaimRequest {
   Widget get getWidget {
     if (id == 0) return 0.0.verticalSpace;
-
+    final description = DrawableText(
+      text: status.description(this),
+      size: 12.0.sp,
+      color: Colors.grey,
+      textAlign: TextAlign.center,
+    );
     return Container(
       width: 1.0.sw,
       padding: EdgeInsets.all(12.0).r,
@@ -704,12 +711,28 @@ extension HasClaimRequestH on HasClaimRequest {
             size: 16.0.sp,
           ),
           15.0.verticalSpace,
-          DrawableText(
-            text: status.description(compensationValue.formatPrice, compensationType),
-            size: 12.0.sp,
-            color: Colors.grey,
-            textAlign: TextAlign.center,
-          ),
+          if (lat != 0 || address.isNotEmpty)
+            Builder(
+              builder: (context) {
+                return TextButton(
+                  onPressed: () {
+                    if (lat != 0) {
+                      MapHelper.instance.showMapSelectionSheet(
+                        context: context,
+                        latitude: lat.toDouble(),
+                        longitude: lng.toDouble(),
+                        title: address,
+                      );
+                    } else {
+                      LauncherHelper.openPage(address);
+                    }
+                  },
+                  child: description,
+                );
+              },
+            )
+          else
+            description,
         ],
       ),
     );

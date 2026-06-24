@@ -2459,10 +2459,10 @@ class S {
     );
   }
 
-  /// `The account will be deleted along with all data and courses.`
+  /// `The account will be deleted along with all data.`
   String get subTitleDeleteAccount {
     return Intl.message(
-      'The account will be deleted along with all data and courses.',
+      'The account will be deleted along with all data.',
       name: 'subTitleDeleteAccount',
       desc: '',
       args: [],

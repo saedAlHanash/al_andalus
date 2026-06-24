@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
+import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/util/pair_class.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
@@ -35,6 +36,7 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
   );
 
   Future<void> getData({bool newData = false}) async {
+    if (!AppProvider.isLogin) return;
     await getDataAbstract(
       fromJson: CarPolicy.fromJson,
       state: state,
@@ -197,7 +199,13 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
   }
 
   Future<void> delete({required String id}) async {
-    emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: CubitCrud.delete, id: id));
+    emit(
+      state.copyWith(
+        statuses: CubitStatuses.loading,
+        cubitCrud: CubitCrud.delete,
+        id: id,
+      ),
+    );
 
     final response = await APIService().callApi(
       type: ApiType.delete,
@@ -217,7 +225,7 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
         await addOrUpdateCarToCache(item);
       }
       await getData(newData: true);
-      emit(state.copyWith(statuses: CubitStatuses.done,cubitCrud: .get));
+      emit(state.copyWith(statuses: CubitStatuses.done, cubitCrud: .get));
     } else {
       emit(state.copyWith(statuses: CubitStatuses.error, error: response.getPairError.second));
       showErrorFromApi(state);

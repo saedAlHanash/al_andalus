@@ -28,6 +28,7 @@ class HomeCarsInitial extends AbstractState<List<CarPolicy>> {
       step: 0,
       idNotifier: 0,
       url: '',
+      id: '',
       uploadProgress: 0.0,
       statuses: CubitStatuses.init,
     );
@@ -38,8 +39,8 @@ class HomeCarsInitial extends AbstractState<List<CarPolicy>> {
     statuses,
     result,
     error,
-    id,
-    request,
+    ?id,
+    ?request,
     step,
     idNotifier,
     url,

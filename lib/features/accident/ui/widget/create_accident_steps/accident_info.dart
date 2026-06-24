@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
-import 'package:image_multi_type/round_image_widget.dart';
 
 import '../../../../../core/util/bottom_sheets.dart';
 import '../../../../../generated/assets.dart';
@@ -78,7 +77,7 @@ class _AccidentInfoState extends State<AccidentInfo> {
                         title: DrawableText(text: state.mRequest.policeReport.localId ?? '-'),
                       ),
                 onTap: () {
-                  showFileUploadBottomSheet(
+                  showFileOrGalleryBottomSheet(
                     context,
                     (value) {
                       setState(() {

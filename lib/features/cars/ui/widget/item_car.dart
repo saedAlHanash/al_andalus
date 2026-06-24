@@ -99,7 +99,7 @@ class ItemCar extends StatelessWidget {
               if (car.status.canCancel) ...[
                 10.0.horizontalSpace,
                 BlocBuilder<HomeCarsCubit, HomeCarsInitial>(
-                  buildWhen: (previous, current) => current.id.toString() == car.id.toString(),
+                  buildWhen: (p, c) => c.id.toString() == car.id.toString(),
                   builder: (context, state) {
                     return InkWell(
                       onTap: () {
@@ -120,7 +120,7 @@ class ItemCar extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0).r,
                           border: Border.all(color: Colors.red.withOpacity(0.2)),
                         ),
-                        child: state.loading && state.delete
+                        child: state.loading && state.delete && state.id.toString() == car.id.toString()
                             ? MyStyle.loadingWidget(size: 24.0.dg)
                             : Icon(Icons.delete_outline, color: Colors.red, size: 24.r),
                       ),
