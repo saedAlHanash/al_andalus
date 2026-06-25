@@ -5,11 +5,14 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_multi_type/image_multi_type.dart';
 import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../core/strings/enum_manager.dart';
+import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/util/my_style.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
+import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
@@ -55,14 +58,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             ],
           ),
         ),
-        appBar: AppBarWidget(zeroHeight: true),
+        appBar: AppBarWidget(
+          title: ImageMultiType(
+            url: Assets.imagesLogo,
+            height: 110.0.r,
+            width: 110.0.r,
+            // fit: .fill,
+          ),
+          actions: [
+            InkWell(
+              onTap: () => showLanguageDialog(context),
+              child: ImageMultiType(
+                url: Assets.iconsLanguage,
+                height: 40.0.r,
+                width: 40.0.r,
+              ),
+            ),
+            20.0.horizontalSpace,
+          ],
+        ),
         body: ListView(
           padding: MyStyle.pagePadding,
           children: [
-            AuthCardImage(
-              titleText: S.of(context).logInToYourAccount,
-              description: S.of(context).enterYourPhoneAndPasswordToLogIn,
-            ),
             Container(
               padding: const EdgeInsets.all(20.0).r,
               margin: const EdgeInsets.symmetric(vertical: 20.0).r,

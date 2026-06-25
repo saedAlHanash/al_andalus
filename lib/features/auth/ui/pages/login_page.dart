@@ -16,6 +16,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/util/bottom_sheets.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
@@ -66,7 +67,25 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ],
       child: Scaffold(
-        appBar: AppBarWidget(zeroHeight: true),
+        appBar: AppBarWidget(
+          title: ImageMultiType(
+            url: Assets.imagesLogo,
+            height: 110.0.r,
+            width: 110.0.r,
+            // fit: .fill,
+          ),
+          actions: [
+            InkWell(
+              onTap: () => showLanguageDialog(context),
+              child: ImageMultiType(
+                url: Assets.iconsLanguage,
+                height: 40.0.r,
+                width: 40.0.r,
+              ),
+            ),
+            20.0.horizontalSpace,
+          ],
+        ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: Row(
@@ -93,40 +112,39 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: Column(
               children: [
-                AuthCardImage(
-                  titleText: S.of(context).logInToYourAccount,
-                  description: S.of(context).enterYourPhoneAndPasswordToLogIn,
-                  back: false,
-                ),
                 30.0.verticalSpace,
                 AutofillGroup(
                   child: Column(
                     children: [
-                      MyTextFormOutLineWidget(
-                        autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
-                        validator: (p0) => p0.validateEmpty,
-                        hint: S.of(context).phoneNumber,
+                      Directionality(
+                        textDirection: TextDirection.rtl,
 
-                        initialValue: loginCubit.state.mRequest.phone,
-                        keyBordType: .phone,
-                        // textAlign: .end,
-                        onChanged: (val) => loginCubit.setPhone = val,
-                        iconWidgetLift: Row(
-                          mainAxisSize: .min,
-                          children: [
-                            15.0.horizontalSpace,
-                            DrawableText(
-                              text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
-                              fontWeight: .bold,
-                            ),
-                            15.0.horizontalSpace,
-                            ImageMultiType(
-                              url: Assets.iconsFlagOfIraq,
-                              height: 24.h,
-                              width: 24.w,
-                            ),
-                            15.0.horizontalSpace,
-                          ],
+                        child: MyTextFormOutLineWidget(
+                          autofillHints: const [AutofillHints.username, AutofillHints.telephoneNumber],
+                          validator: (p0) => p0.validateEmpty,
+                          hint: S.of(context).phoneNumber,
+
+                          initialValue: loginCubit.state.mRequest.phone,
+                          keyBordType: .phone,
+                          // textAlign: .end,
+                          onChanged: (val) => loginCubit.setPhone = val,
+                          iconWidgetLift: Row(
+                            mainAxisSize: .min,
+                            children: [
+                              15.0.horizontalSpace,
+                              DrawableText(
+                                text: AppSharedPreference.getLocal == 'en' ? '+964' : '964+',
+                                fontWeight: .bold,
+                              ),
+                              15.0.horizontalSpace,
+                              ImageMultiType(
+                                url: Assets.iconsFlagOfIraq,
+                                height: 24.h,
+                                width: 24.w,
+                              ),
+                              15.0.horizontalSpace,
+                            ],
+                          ),
                         ),
                       ),
                       MyTextFormOutLineWidget(

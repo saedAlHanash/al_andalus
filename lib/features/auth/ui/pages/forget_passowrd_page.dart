@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
+import '../../../../core/util/bottom_sheets.dart';
 import '../../../../core/util/my_style.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/assets.dart';
@@ -67,15 +68,29 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
             ],
           ),
         ),
-        appBar: AppBarWidget(zeroHeight: true),
+        appBar: AppBarWidget(
+          title: ImageMultiType(
+            url: Assets.imagesLogo,
+            height: 110.0.r,
+            width: 110.0.r,
+            // fit: .fill,
+          ),
+          actions: [
+            InkWell(
+              onTap: () => showLanguageDialog(context),
+              child: ImageMultiType(
+                url: Assets.iconsLanguage,
+                height: 40.0.r,
+                width: 40.0.r,
+              ),
+            ),
+            20.0.horizontalSpace,
+          ],
+        ),
         body: SingleChildScrollView(
           padding: MyStyle.pagePadding,
           child: Column(
             children: [
-              AuthCardImage(
-                titleText: S.of(context).logInToYourAccount,
-                description: S.of(context).enterYourPhoneAndPasswordToLogIn,
-              ),
               Container(
                 padding: const EdgeInsets.all(20.0).r,
                 margin: const EdgeInsets.symmetric(vertical: 20.0).r,

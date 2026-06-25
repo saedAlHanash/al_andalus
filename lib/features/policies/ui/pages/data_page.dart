@@ -31,9 +31,11 @@ class _DataPageState extends State<DataPage> {
               if (state.loading) {
                 return MyStyle.loadingWidget();
               }
-              return DrawableText(
-                text: state.result.data,
-                padding: EdgeInsets.all(20.0).r,
+              return SingleChildScrollView(
+                child: DrawableText(
+                  text: state.result.data,
+                  padding: EdgeInsets.all(20.0).r,
+                ),
               );
             },
           ),

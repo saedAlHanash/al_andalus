@@ -61,7 +61,7 @@ class _HomepageState extends State<Homepage> {
                     children: [
                       AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
                       Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 100.0).r,
                         child: NotificationPage(),
                       ),
                         BlocListener<HomeCarsCubit, HomeCarsInitial>(
@@ -86,7 +86,7 @@ class _HomepageState extends State<Homepage> {
                           child: ListCars(),
                         ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 150.0).r,
+                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 0.0).r,
                         child: MenuScreen(),
                       ),
                     ],
