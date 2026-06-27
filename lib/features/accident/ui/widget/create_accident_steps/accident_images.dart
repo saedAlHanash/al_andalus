@@ -158,6 +158,8 @@ class AccidentImages extends StatelessWidget {
     }
     showOptionBottomSheet(
       context,
+      title: S.of(context).takeClearCarPhoto,
+      description: S.of(context).takeClearCarPhotoDesc,
       scanDoc: false,
       (value) {
         context.read<AccidentsCubit>().setImage(value, zone);

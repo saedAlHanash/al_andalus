@@ -836,6 +836,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "support": MessageLookupByLibrary.simpleMessage("Support"),
     "sure": MessageLookupByLibrary.simpleMessage("Sure"),
     "system": MessageLookupByLibrary.simpleMessage("System"),
+    "takeClearCarPhoto": MessageLookupByLibrary.simpleMessage(
+      "Take a clear photo of the car",
+    ),
+    "takeClearCarPhotoDesc": MessageLookupByLibrary.simpleMessage(
+      "Please ensure that the car is completely within the frame, in a well-lit area, avoiding reflections or any elements that may obscure the car details.",
+    ),
     "takePicture": MessageLookupByLibrary.simpleMessage("Take picture"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage(
       "Technical Package",

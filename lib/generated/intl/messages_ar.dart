@@ -793,6 +793,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "support": MessageLookupByLibrary.simpleMessage("الدعم"),
     "sure": MessageLookupByLibrary.simpleMessage("متأكد"),
     "system": MessageLookupByLibrary.simpleMessage("تلقائي"),
+    "takeClearCarPhoto": MessageLookupByLibrary.simpleMessage(
+      "التقط صورة واضحة للسيارة",
+    ),
+    "takeClearCarPhotoDesc": MessageLookupByLibrary.simpleMessage(
+      "يرجى التأكد من أن السيارة كاملة ضمن الإطار، وفي مكان مضاء جيدًا، مع تجنب الانعكاسات أو أي عناصر قد تحجب تفاصيل السيارة.",
+    ),
     "takePicture": MessageLookupByLibrary.simpleMessage("التقاط صورة"),
     "technicalPackage": MessageLookupByLibrary.simpleMessage("الحزمة التقنية"),
     "technicalSupport": MessageLookupByLibrary.simpleMessage("الدعم الفني"),

@@ -342,6 +342,8 @@ void showOptionBottomSheet(
   Function(UploadFile value) onConfirm, {
   bool justCamera = false,
   bool scanDoc = true,
+  String? title,
+  String? description,
 }) {
   showModalBottomSheet(
     useSafeArea: true,
@@ -364,11 +366,21 @@ void showOptionBottomSheet(
                 ),
                 10.0.verticalSpace,
                 DrawableText(
-                  text: S.of(context).ensureTextIsClear,
+                  text: title ?? S.of(context).ensureTextIsClear,
                   matchParent: true,
                   textAlign: .center,
                   fontWeight: FontWeight.bold,
                 ),
+                if (description != null) ...[
+                  5.0.verticalSpace,
+                  DrawableText(
+                    text: description,
+                    matchParent: true,
+                    textAlign: .center,
+                    color: AppColorManager.grey,
+                    size: 14.0.sp,
+                  ),
+                ],
                 15.0.verticalSpace,
                 Column(
                   spacing: 12.0.h,
@@ -453,7 +465,6 @@ void showOptionBottomSheet(
     },
   );
 }
-
 
 void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) onConfirm) {
   showModalBottomSheet(

@@ -305,6 +305,8 @@
   "subscribeNow": "Subscribe Now",
   "support": "Support",
   "sure": "Sure",
+  "takeClearCarPhoto": "Take a clear photo of the car",
+  "takeClearCarPhotoDesc": "Please ensure that the car is completely within the frame, in a well-lit area, avoiding reflections or any elements that may obscure the car details.",
   "takePicture": "Take picture",
   "technicalPackage": "Technical Package",
   "technicalSupport": "Technical Support",

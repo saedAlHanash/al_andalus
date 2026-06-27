@@ -2494,6 +2494,26 @@ class S {
     return Intl.message('Sure', name: 'sure', desc: '', args: []);
   }
 
+  /// `Take a clear photo of the car`
+  String get takeClearCarPhoto {
+    return Intl.message(
+      'Take a clear photo of the car',
+      name: 'takeClearCarPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please ensure that the car is completely within the frame, in a well-lit area, avoiding reflections or any elements that may obscure the car details.`
+  String get takeClearCarPhotoDesc {
+    return Intl.message(
+      'Please ensure that the car is completely within the frame, in a well-lit area, avoiding reflections or any elements that may obscure the car details.',
+      name: 'takeClearCarPhotoDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Take picture`
   String get takePicture {
     return Intl.message(
