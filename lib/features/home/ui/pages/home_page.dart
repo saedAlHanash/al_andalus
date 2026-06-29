@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/util/my_style.dart';
+import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../router/go_router.dart';
 import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
@@ -57,10 +58,16 @@ class _HomepageState extends State<Homepage> {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       AppProvider.isGuest ? GuestHomeScreen() : const HomeScreen(),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 100.0).r,
-                        child: NotificationPage(),
-                      ),
+                      if (AppProvider.isNotLogin)
+                        NeedLoginWidget()
+                      else
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 100.0).r,
+                          child: NotificationPage(),
+                        ),
+                      if (AppProvider.isNotLogin)
+                        NeedLoginWidget()
+                      else
                         BlocListener<HomeCarsCubit, HomeCarsInitial>(
                           listenWhen: (p, c) => c.done && c.url.isNotEmpty,
                           listener: (context, state) {
@@ -82,10 +89,13 @@ class _HomepageState extends State<Homepage> {
                           },
                           child: ListCars(),
                         ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 0.0).r,
-                        child: MenuScreen(),
-                      ),
+                      if (AppProvider.isNotLogin)
+                        NeedLoginWidget()
+                      else
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 20.0, bottom: 0.0).r,
+                          child: MenuScreen(),
+                        ),
                     ],
                   );
                 },

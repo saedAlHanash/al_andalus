@@ -29,7 +29,17 @@ class CarCubit extends MCubit<CarInitial> {
   );
 
   Future<void> getData({bool newData = false, String? id}) async {
-    emit(state.copyWith(id: id));
+    emit(state.copyWith(id: id, qr: ''));
+    await getDataAbstract(
+      fromJson: CarPolicy.fromJson,
+      state: state,
+      getDataApi: _getData,
+      newData: newData,
+    );
+  }
+
+  Future<void> getDataByQr({bool newData = false, required String qr}) async {
+    emit(state.copyWith(qr: qr, id: ''));
     await getDataAbstract(
       fromJson: CarPolicy.fromJson,
       state: state,
@@ -40,8 +50,8 @@ class CarCubit extends MCubit<CarInitial> {
 
   Future<Pair<CarPolicy?, String?>> _getData() async {
     final response = await APIService().callApi(
-      url: GetUrl.myCars,
-      path: state.id.toString(),
+      url: state.qr.isNotEmpty ? GetUrl.vehicleByQr : GetUrl.myCars,
+      path: state.qr.isNotEmpty ? state.qr : state.id.toString(),
       type: ApiType.get,
     );
     if (response.statusCode.success) {

@@ -33,7 +33,7 @@ class _AddAccidentPageState extends State<AddAccidentPage> {
         text: S.of(context).exitAddAccidentConfirmation,
         textButton: S.of(context).yes,
         onConfirm: (confirm) {
-          loggerObject.w(confirm);
+
           if (confirm) {
             FocusManager.instance.primaryFocus?.unfocus();
             context.pop();

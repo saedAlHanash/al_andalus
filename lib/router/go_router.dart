@@ -186,7 +186,7 @@ final goRouter = GoRouter(
       name: RouteName.home,
 
       builder: (_, state) {
-        loggerObject.f(state.uri.queryParameters);
+
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => sl<AdsCubit>()..getData()),
@@ -363,11 +363,11 @@ final goRouter = GoRouter(
       name: RouteName.transferOwnershipPage,
       builder: (_, state) {
         final qrcode = state.uri.queryParameters['qrcode'] ?? '';
-        final id = state.uri.queryParameters['id'] ?? '0';
+        // final id = state.uri.queryParameters['id'] ?? '0';
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (context) => sl<TransferOwnershipCubit>()..setQr(qrcode)),
-            BlocProvider(create: (context) => sl<CarCubit>()..getData(id: id)),
+            BlocProvider(create: (context) => sl<CarCubit>()..getDataByQr(qr: qrcode)),
             BlocProvider(create: (context) => sl<UpdateProfileCubit>()),
           ],
           child: TransferOwnershipPage(),

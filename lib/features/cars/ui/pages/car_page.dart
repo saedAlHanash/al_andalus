@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
@@ -68,13 +69,8 @@ class CarPage extends StatelessWidget {
                 IconButton(
                   onPressed: () {
                     if (state.result.status == .cancelled) return;
-                    showQr(
-                      context,
-                      jsonEncode({
-                        'qrcode': car.qrcode,
-                        'id': car.id.toString(),
-                      }),
-                    );
+                    loggerObject.w(car.qrcode);
+                    showQr(context, car.qrcode);
                   },
                   icon: ImageMultiType(url: Assets.icons.qr.path),
                 ),
@@ -318,6 +314,7 @@ class _PolicyFileWidget extends StatelessWidget {
                                 queryParameters: {
                                   'url': car.policyFile,
                                   'type': car.mediaType.index.toString(),
+                                  'title': '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
                                 },
                               );
                             },

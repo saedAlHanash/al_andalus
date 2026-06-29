@@ -356,7 +356,7 @@ void showOptionBottomSheet(
             child: Column(
               children: [
                 ImageMultiType(
-                  url: Assets.images.idScan.path,
+                  url: Assets.images.cameraScan.path,
                   height: 140.0.h,
                 ),
                 10.0.verticalSpace,
@@ -478,7 +478,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
             child: Column(
               children: [
                 ImageMultiType(
-                  url: Assets.icons.pdf.path,
+                  url: Assets.icons.file1.path,
                   height: 100.0.h,
                 ),
                 DrawableText(
@@ -1269,15 +1269,9 @@ void showFileOrGalleryBottomSheet(BuildContext context, Function(UploadFile valu
             padding: const EdgeInsets.all(20.0).r,
             child: Column(
               children: [
-                Row(
-                  mainAxisSize: .min,
-                  children: [
                 ImageMultiType(
                   url: Assets.icons.file1.path,
                   height: 100.0.h,
-                ),
-
-                  ],
                 ),
                 10.0.verticalSpace,
                 DrawableText(

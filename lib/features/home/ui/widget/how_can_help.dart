@@ -84,18 +84,12 @@ class HowCanHelp extends StatelessWidget {
                             // );
                             //   return;
                             final qrcode = await context.pushNamed(RouteName.qrScanner);
-
-                            final json = jsonDecode((qrcode ?? "{}").toString());
-                            loggerObject.e(json);
-                            if (json.isNotEmpty && context.mounted) {
-                              context.pushNamed(
-                                RouteName.transferOwnershipPage,
-                                queryParameters: {
-                                  'qrcode': json['qrcode'].toString(),
-                                  'id': json['id'].toString(),
-                                },
-                              );
-                            }
+                            context.pushNamed(
+                              RouteName.transferOwnershipPage,
+                              queryParameters: {
+                                'qrcode': qrcode.toString(),
+                              },
+                            );
                           },
                           color: context.isDark ? const Color(0xFF565657) : const Color(0xFFE4E4E5),
                           title: S.of(context).transferOwnership,

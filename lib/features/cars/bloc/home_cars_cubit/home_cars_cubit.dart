@@ -152,7 +152,6 @@ class HomeCarsCubit extends MCubit<HomeCarsInitial> {
   Future<void> cancelInsurance({required String id}) async {
     emit(state.copyWith(statuses: CubitStatuses.loading, cubitCrud: .update, id: id));
 
-    loggerObject.w(id);
     final response = await APIService().callApi(
       type: ApiType.put,
       url: PutUrl.cancelInsurance(id),

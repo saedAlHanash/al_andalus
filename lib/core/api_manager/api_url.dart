@@ -120,6 +120,7 @@ class GetUrl {
   static const claim = 'claim';
   static const transferOwnership = 'transfer';
   static const transferFees = 'transfer-fees';
+  static const vehicleByQr = 'vehicle/get-by-qr';
 }
 
 class PostUrl {

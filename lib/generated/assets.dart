@@ -3,8 +3,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:lottie/src/composition.dart';
 import 'package:lottie/src/lottie_builder.dart';
+import 'package:lottie/src/composition.dart';
 
 class Assets {
   Assets._();
@@ -120,6 +120,7 @@ class $AssetsImagesGen {
 
   final AssetGenImage bandtechLogo = const AssetGenImage('assets/images/bandtech_logo.png');
   final AssetGenImage camera = const AssetGenImage('assets/images/camera.png');
+  final AssetGenImage cameraScan = const AssetGenImage('assets/images/camera_scan.png');
   final AssetGenImage carImages = const AssetGenImage('assets/images/car_images.png');
   final AssetGenImage check = const AssetGenImage('assets/images/check.png');
   final LottieGenImage done = const LottieGenImage('assets/images/done.json');
