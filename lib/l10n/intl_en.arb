@@ -457,5 +457,6 @@
   "transferOwnershipAcceptedDesc": "Ownership transfer to another owner has been accepted",
   "transferOwnershipRejectedDesc": "Ownership transfer request has been rejected",
   "theAccidentRequestWasRejected": "The accident request was rejected",
-  "damageInspection": "Damage inspection"
+  "damageInspection": "Damage inspection",
+  "theDamageIsInspectedByOurSpecialists": "The damage is inspected by our specialists."
 }

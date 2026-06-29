@@ -47,7 +47,7 @@ class MediaTypePage extends StatelessWidget {
           if (url.isEmpty) {
             return Center(child: DrawableText(text: S.of(context).theRequestedInformationIsNotCurrentlyAvailable));
           }
-          return MediaWidgetByUrl(resourceUrl: url, mediaType: mediaType);
+          return MediaWidgetByUrl(resourceUrl: url, mediaType: mediaType,title: title);
         },
       ),
     );

@@ -356,7 +356,7 @@ void showOptionBottomSheet(
             child: Column(
               children: [
                 ImageMultiType(
-                  url: Assets.images.cameraScan.path,
+                  url: title == null ? Assets.images.idScan.path : Assets.images.cameraScan.path,
                   height: 140.0.h,
                 ),
                 10.0.verticalSpace,
@@ -377,23 +377,41 @@ void showOptionBottomSheet(
                   ),
                 ],
                 15.0.verticalSpace,
-                Column(
-                  spacing: 12.0.h,
+                Row(
+                  spacing: 12.0.w,
                   children: [
-                    Row(
-                      spacing: 12.0.w,
-                      children: [
-                        if (!justCamera)
-                          Expanded(
-                            child: MyButton(
-                              text: S.of(context).fromGallery,
-                              icon: ImageMultiType(
-                                url: Icons.file_upload_outlined,
-                                color: AppColorManager.white,
-                              ),
-                              onTap: () {
+                    if (!justCamera)
+                      Expanded(
+                        child: MyButton(
+                          text: S.of(context).fromGallery,
+                          icon: ImageMultiType(
+                            url: Icons.file_upload_outlined,
+                            color: AppColorManager.white,
+                          ),
+                          onTap: () {
+                            Navigator.pop(ctx);
+                            pickImage().then(
+                              (value) async {
+                                if (value == null || !context.mounted) return;
+                                final result = await showConfirmDialog(context, value);
+                                if (result == false) return;
+                                onConfirm.call(value);
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    Expanded(
+                      child: MyButton(
+                        text: S.of(context).takePicture,
+                        icon: ImageMultiType(
+                          url: Icons.camera_alt_outlined,
+                          color: AppColorManager.white,
+                        ),
+                        onTap: (justCamera || !scanDoc)
+                            ? () {
                                 Navigator.pop(ctx);
-                                pickImage().then(
+                                takePhoto().then(
                                   (value) async {
                                     if (value == null || !context.mounted) return;
                                     final result = await showConfirmDialog(context, value);
@@ -401,53 +419,30 @@ void showOptionBottomSheet(
                                     onConfirm.call(value);
                                   },
                                 );
-                              },
-                            ),
-                          ),
-                        Expanded(
-                          child: MyButton(
-                            text: S.of(context).takePicture,
-                            icon: ImageMultiType(
-                              url: Icons.camera_alt_outlined,
-                              color: AppColorManager.white,
-                            ),
-                            onTap: (justCamera || !scanDoc)
-                                ? () {
-                                    Navigator.pop(ctx);
-                                    takePhoto().then(
-                                      (value) async {
-                                        if (value == null || !context.mounted) return;
-                                        final result = await showConfirmDialog(context, value);
-                                        if (result == false) return;
-                                        onConfirm.call(value);
+                              }
+                            : scanDoc
+                            ? () {
+                                Navigator.pop(ctx);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DocumentScannerPage(
+                                      onDocumentCaptured: (croppedImagePath, croppedImageBytes) {
+                                        final uploadFile = UploadFile(
+                                          path: croppedImagePath,
+                                          localId: croppedImagePath,
+                                          fileType: FileType.image,
+                                          extension: 'jpg',
+                                          fileBytes: croppedImageBytes,
+                                        );
+                                        onConfirm.call(uploadFile);
                                       },
-                                    );
-                                  }
-                                : scanDoc
-                                ? () {
-                                    Navigator.pop(ctx);
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => DocumentScannerPage(
-                                          onDocumentCaptured: (croppedImagePath, croppedImageBytes) {
-                                            final uploadFile = UploadFile(
-                                              path: croppedImagePath,
-                                              localId: croppedImagePath,
-                                              fileType: FileType.image,
-                                              extension: 'jpg',
-                                              fileBytes: croppedImageBytes,
-                                            );
-                                            onConfirm.call(uploadFile);
-                                          },
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                : () {},
-                          ),
-                        ),
-                      ],
+                                    ),
+                                  ),
+                                );
+                              }
+                            : () {},
+                      ),
                     ),
                   ],
                 ),

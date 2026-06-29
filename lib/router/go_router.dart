@@ -1,8 +1,7 @@
-
-
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/pin_page.dart';
+import 'package:al_andalus/features/home/bloc/home_cubit/home_cubit.dart';
 import 'package:al_andalus/features/policies/ui/pages/data_page.dart';
 import 'package:al_andalus/services/remote_config_service.dart';
 import 'package:flutter/material.dart';
@@ -185,8 +184,8 @@ final goRouter = GoRouter(
       path: RouteName.home,
       name: RouteName.home,
 
-      builder: (_, state) {
-
+      builder: (ctx, state) {
+        // ctx.read<HomeCubit>().initialController();
         return MultiBlocProvider(
           providers: [
             BlocProvider(create: (_) => sl<AdsCubit>()..getData()),

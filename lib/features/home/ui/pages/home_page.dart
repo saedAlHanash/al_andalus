@@ -29,12 +29,6 @@ class _HomepageState extends State<Homepage> {
   HomeCubit get cubit => context.read<HomeCubit>();
 
   @override
-  void dispose() {
-    cubit.state.controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeInitial>(
       builder: (context, state) {

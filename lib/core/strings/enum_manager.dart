@@ -1053,7 +1053,7 @@ enum AccidentStatus {
         return AppColorManager.grey;
       case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
-        return AppColorManager.greenPrice;
+        return AppColorManager.ampere;
       case AccidentStatus.rejectedByOperationStaff:
       case AccidentStatus.rejectedBySurveyorStaff:
         return AppColorManager.red;
@@ -1119,7 +1119,7 @@ enum AccidentStatus {
         return S().theAccidentRequestWasRejected;
       case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
-        return S().damageInspection;
+        return S().theDamageIsInspectedByOurSpecialists;
       case AccidentStatus.paid:
       case AccidentStatus.fixed:
         var desc = s.accidentAcceptedSurveyorDesc;

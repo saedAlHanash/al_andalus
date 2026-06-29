@@ -12,34 +12,47 @@ class HomeCubit extends MCubit<HomeInitial> {
   @override
   AbstractState get mState => state;
 
-  void initialController({required PageController controller}) {
-    emit(state.copyWith(controller: controller));
+  void initialController() {
+    state.controller.dispose();
+    emit(state.copyWith(controller: PageController(initialPage: 0)));
   }
 
   int get getIndex {
     try {
-      return state.controller.page?.toInt() ?? 0;
+      if (!state.controller.hasClients) return 0;
+      return state.controller.page?.round() ?? 0;
     } catch (e) {
-      loggerObject.e('HomeCubit $e');
       return 0;
     }
   }
 
   bool get canPop {
     try {
-      return state.controller.page?.toInt() == 0;
+      if (!state.controller.hasClients) return true;
+      return state.controller.page?.round() == 0;
     } catch (e) {
-      loggerObject.e('HomeCubit $e');
-      return false;
+      return true;
     }
   }
 
   void jumpPage(int i) {
-    state.controller.jumpToPage(i);
+    try {
+      if (state.controller.hasClients) {
+        state.controller.jumpToPage(i);
+      }
+    } catch (e) {
+      loggerObject.e('HomeCubit jumpPage error: $e');
+    }
     emit(state.copyWith(notify: state.notify + 1));
   }
 
   void refresh() {
     emit(state.copyWith(notify: state.notify + 1));
+  }
+
+  @override
+  Future<void> close() {
+    state.controller.dispose();
+    return super.close();
   }
 }

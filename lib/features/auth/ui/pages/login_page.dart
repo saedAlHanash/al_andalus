@@ -205,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                   text: S.of(context).guestLogin,
                   color: Colors.white,
                   onTap: () async {
-                    context.pushNamed(RouteName.home);
+                    context.go(RouteName.home);
                   },
                 ),
               ],

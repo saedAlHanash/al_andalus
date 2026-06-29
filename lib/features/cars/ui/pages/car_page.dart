@@ -394,6 +394,7 @@ class _PolicyFileWidget extends StatelessWidget {
                           queryParameters: {
                             'url': car.policyFile,
                             'type': car.mediaType.index.toString(),
+                            'title': '${S.of(context).insurancePolicy}: ${car.vehicle.name}',
                           },
                         );
                       },

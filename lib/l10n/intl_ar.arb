@@ -456,5 +456,6 @@
   "currencySymbol": "دع",
   "transferOwnershipRejectedDesc": "تم رفض طلب نقل الملكية",
   "theAccidentRequestWasRejected": "تم رفض طلب الحادث",
-  "damageInspection": "فحص الأضرار"
+  "damageInspection": "فحص الأضرار",
+  "theDamageIsInspectedByOurSpecialists": "يتم فحص الأضرار من قبل مختصينا"
 }

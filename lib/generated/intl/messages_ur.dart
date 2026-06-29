@@ -805,6 +805,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
       "داواکاری ڕووداوهکه ڕهتکرایهوه",
     ),
+    "theDamageIsInspectedByOurSpecialists":
+        MessageLookupByLibrary.simpleMessage(
+          "زیانهکه لهلایهن پسپۆڕانمانهوه دهپشکنرێت.",
+        ),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(
           "ئهم زانیارییهی داواکراوه له ئێستادا بهردهست نییه.",

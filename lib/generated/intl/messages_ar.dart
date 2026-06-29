@@ -808,6 +808,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "theAccidentRequestWasRejected": MessageLookupByLibrary.simpleMessage(
       "تم رفض طلب الحادث",
     ),
+    "theDamageIsInspectedByOurSpecialists":
+        MessageLookupByLibrary.simpleMessage("يتم فحص الأضرار من قبل مختصينا"),
     "theRequestedInformationIsNotCurrentlyAvailable":
         MessageLookupByLibrary.simpleMessage(
           "المعلومات المطلوبة غير متوفرة حالياً.",
