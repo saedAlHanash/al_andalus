@@ -1,13 +1,11 @@
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/util/shared_preferences.dart';
-import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/auth_card_image.dart';
+import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -69,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         appBar: AppBarWidget(
           title: ImageMultiType(
-            url: Assets.imagesLogo,
+            url: Assets.images.logo.path,
             height: 110.0.r,
             width: 110.0.r,
             // fit: .fill,
@@ -78,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
             InkWell(
               onTap: () => showLanguageDialog(context),
               child: ImageMultiType(
-                url: Assets.iconsLanguage,
+                url: Assets.icons.language.path,
                 height: 40.0.r,
                 width: 40.0.r,
               ),
@@ -138,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               15.0.horizontalSpace,
                               ImageMultiType(
-                                url: Assets.iconsFlagOfIraq,
+                                url: Assets.icons.flagOfIraq.path,
                                 height: 24.h,
                                 width: 24.w,
                               ),

@@ -1,10 +1,11 @@
 import 'dart:async';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:app_links/app_links.dart';
-import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/core/app/app_widget.dart';
 import 'package:al_andalus/main.dart';
+import 'package:al_andalus/router/go_router.dart';
+import 'package:app_links/app_links.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class DeepLinkService {
   static String? _pendingDeepLinkUrl;

@@ -16,13 +16,13 @@ class AddCarValidator {
     return true;
   }
 
-  static bool _validateStep0(BuildContext context, InsurancePolicyRequest request) {
-    if (request.inspectionReport.notHaveValue) {
-      NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadInspectionReport, context: context);
-      return false;
-    }
-    return true;
-  }
+  // static bool _validateStep0(BuildContext context, InsurancePolicyRequest request) {
+  //   if (request.inspectionReport.notHaveValue) {
+  //     NoteMessage.showTopMessageError(message: S.of(context).pleaseUploadInspectionReport, context: context);
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
   static bool _validateStep1(BuildContext context, InsurancePolicyRequest request) {
     if (request.name.isBlank) {

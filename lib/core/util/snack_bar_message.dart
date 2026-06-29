@@ -1,16 +1,14 @@
 import 'dart:ui';
-import 'package:go_router/go_router.dart';
 
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import '../api_manager/api_service.dart';
 import '../app/app_widget.dart';
 import '../strings/app_color_manager.dart';
 import '../widgets/my_button.dart';
@@ -31,7 +29,7 @@ class NoteMessage {
           borderRadius: BorderRadius.circular(12.0).r,
         ),
         child: ListTile(
-          leading: ImageMultiType(url: Assets.iconsAddToCart),
+          leading: ImageMultiType(url: Assets.icons.addToCart.path),
           title: DrawableText(
             text: message ?? S.of(context).addedToCartSuccessfully,
             color: Colors.white,

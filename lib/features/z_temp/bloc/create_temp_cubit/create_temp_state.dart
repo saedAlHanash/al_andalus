@@ -24,7 +24,7 @@ class CreateTempInitial extends AbstractState<Temp> {
     statuses,
     result,
     error,
-    if (request != null) request,
+    ?request,
   ];
 
   CreateTempInitial copyWith({

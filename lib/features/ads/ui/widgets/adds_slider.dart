@@ -1,5 +1,3 @@
-import 'package:al_andalus/core/api_manager/api_service.dart';
-import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/card_slider_widget.dart';
 import 'package:al_andalus/features/ads/bloc/adss_cubit/adss_cubit.dart';
 import 'package:flutter/cupertino.dart';

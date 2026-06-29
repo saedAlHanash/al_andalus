@@ -319,7 +319,7 @@
 //   }
 //
 //   Widget _buildIcon(int index) {
-//     String iconName = Assets.iconsActiveStep;
+//     String iconName = Assets.icons.activeStep.path;
 //     switch (widget.steps[index].state) {
 //       case StepState.indexed:
 //         break;

@@ -1,4 +1,3 @@
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +110,7 @@ class MyStyle {
     );
   }
 
-  static Widget emptyWidget({dynamic? img, required String text}) {
+  static Widget emptyWidget({dynamic img, required String text}) {
     return Padding(
       padding: const EdgeInsets.all(8.0).r,
       child: Column(

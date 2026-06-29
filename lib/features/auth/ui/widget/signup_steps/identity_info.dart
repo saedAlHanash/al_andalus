@@ -4,7 +4,6 @@ import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +64,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
                 Expanded(
                   child: MyTextFormOutLineWidget(
                     enable: false,
-                    icon: Assets.iconsCalendar,
+                    icon: Assets.icons.calendar.path,
                     onTap: () async {
                       final datePicked = await showDatePicker(
                         context: context,
@@ -91,7 +90,7 @@ class _IdentityInfoState extends State<IdentityInfo> {
                       onChanged: (spinnerItem) {
                         state.mRequest.gender = spinnerItem.item;
                       },
-                      icon: Assets.iconsUserSearch,
+                      icon: Assets.icons.userSearch.path,
                       hintLabel: S.of(context).gender,
                       hintText: S.of(context).gender,
                       height: 46.0.h,

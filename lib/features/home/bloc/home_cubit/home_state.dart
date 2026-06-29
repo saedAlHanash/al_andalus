@@ -52,8 +52,8 @@ class HomeInitial extends AbstractState<bool> {
         controller,
         error,
         notify,
-        if (request != null) request,
-        if (filterRequest != null) filterRequest!
+        ?request,
+        ?filterRequest
       ];
 
   HomeInitial copyWith({

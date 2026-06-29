@@ -32,7 +32,7 @@
 //             return MyStyle.loadingWidget();
 //           }
 //           return IconButton(
-//             icon: const ImageMultiType(url: Assets.iconsLocater),
+//             icon: const ImageMultiType(url: Assets.icons.locater.path),
 //             onPressed: () =>
 //                 context.read<LocationServiceCubit>().getMyLocation(),
 //           );

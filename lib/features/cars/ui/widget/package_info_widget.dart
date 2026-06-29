@@ -65,7 +65,7 @@ class PackageInfoWidget extends StatelessWidget {
                   title: DrawableText(
                     text: '${S.of(context).validityUntil}: ${insurance.endDate}',
                   ),
-                  leading: ImageMultiType(url: Assets.iconsCalendar, height: 24.0.r),
+                  leading: ImageMultiType(url: Assets.icons.calendar.path, height: 24.0.r),
                 ),
                 ListTile(
                   contentPadding: .zero,
@@ -73,7 +73,7 @@ class PackageInfoWidget extends StatelessWidget {
                   title: DrawableText(
                     text: '${S.of(context).annualCost}: ${insurance.annualSubscriptionPrice.formatPrice}',
                   ),
-                  leading: ImageMultiType(url: Assets.iconsCoins, height: 24.0.r),
+                  leading: ImageMultiType(url: Assets.icons.coins.path, height: 24.0.r),
                 ),
                 if (state.result.status.canRenew)
                   MyButton(

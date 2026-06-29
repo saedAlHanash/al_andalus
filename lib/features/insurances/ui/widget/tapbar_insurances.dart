@@ -1,12 +1,9 @@
-import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:drawable_text/drawable_text.dart';
-import 'package:go_router/go_router.dart';
+
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/my_style.dart';
-import '../../../../router/go_router.dart';
-import '../../../cars/data/request/insurance_policy_request.dart';
 
 class TapBarInsurances extends StatelessWidget {
   const TapBarInsurances({

@@ -37,7 +37,7 @@ class AccidentImages extends StatelessWidget {
                             child: Transform.scale(
                               scale: 0.87,
                               child: Image.asset(
-                                Assets.imagesCarImages, // تأكد من المسار الصحيح
+                                Assets.images.carImages.path, // تأكد من المسار الصحيح
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -132,7 +132,7 @@ class AccidentImages extends StatelessWidget {
               ),
               5.0.verticalSpace,
               ImageMultiType(
-                url: isCompleted ? Assets.iconsDoneTake : Assets.imagesCamera,
+                url: isCompleted ? Assets.icons.doneTake.path : Assets.images.camera.path,
                 color: AppColorManager.mainColorDynamic,
                 width: 35.0.r,
                 height: 35.0.r,

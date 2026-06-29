@@ -77,7 +77,7 @@ class _CalculatePriceDialogState extends State<CalculatePriceDialog> {
                           tileColor: AppColorManager.cd,
                           title: DrawableText(text: value.name),
                           leading: ImageMultiType(
-                            url: selected ? Assets.iconsRadio : Icons.radio_button_off,
+                            url: selected ? Assets.icons.radio.path : Icons.radio_button_off,
                             height: 24.0.r,
                             width: 24.0.r,
                           ),

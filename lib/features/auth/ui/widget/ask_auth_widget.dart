@@ -1,12 +1,11 @@
-import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:go_router/go_router.dart';
-import '../../../../router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/strings/app_color_manager.dart';
 import '../../../../generated/l10n.dart';
+import '../../../../router/go_router.dart';
 
 class AskAuthWidget extends StatelessWidget {
   const AskAuthWidget({super.key, this.login});

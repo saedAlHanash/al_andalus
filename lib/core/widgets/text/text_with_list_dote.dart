@@ -1,4 +1,3 @@
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

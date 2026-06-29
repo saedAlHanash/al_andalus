@@ -4,7 +4,6 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 // تأكد من المسار الصحيح للـ AppBarWidget الخاص بك
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
-import 'package:al_andalus/generated/l10n.dart';
 
 class H5PViewerPage extends StatefulWidget {
   const H5PViewerPage({super.key, required this.url, this.title});

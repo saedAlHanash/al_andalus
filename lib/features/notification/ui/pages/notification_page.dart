@@ -1,10 +1,7 @@
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
-import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -14,13 +11,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/app/app_widget.dart';
-import '../../../../core/widgets/my_button.dart';
 import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../core/widgets/not_found_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
-import '../../../../router/go_router.dart';
 import '../../bloc/all_notification_cubit/all_notification_cubit.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -59,7 +53,7 @@ class _NotificationPageState extends State<NotificationPage> {
 
         return state.isDataEmpty
             ? NotFoundNotificationsWidget(
-                icon: Assets.iconsBellNotification,
+                icon: Assets.icons.bellNotification.path,
                 text: S.of(context).noNotifications,
               )
             : RefreshWidget(
@@ -146,7 +140,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                   );
                                 },
                                 leading: ImageMultiType(
-                                  url: Assets.iconsNotificationCardIcon,
+                                  url: Assets.icons.notificationCardIcon.path,
                                   color: AppColorManager.mainColorDynamic,
                                 ),
                                 title: DrawableText(

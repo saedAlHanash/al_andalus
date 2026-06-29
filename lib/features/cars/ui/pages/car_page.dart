@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
@@ -77,7 +76,7 @@ class CarPage extends StatelessWidget {
                       }),
                     );
                   },
-                  icon: ImageMultiType(url: Assets.iconsQr),
+                  icon: ImageMultiType(url: Assets.icons.qr.path),
                 ),
               ],
             ),
@@ -132,7 +131,7 @@ class CarPage extends StatelessWidget {
                           );
                     },
                     icon: ImageMultiType(
-                      url: Assets.iconsEdit,
+                      url: Assets.icons.edit.path,
                       color: AppColorManager.white,
                     ),
                     text: S.of(context).edit,
@@ -323,7 +322,7 @@ class _PolicyFileWidget extends StatelessWidget {
                               );
                             },
                             leading: ImageMultiType(
-                              url: Assets.iconsPdfBorder,
+                              url: Assets.icons.pdfBorder.path,
                               height: 50.0.r,
                               width: 50.0.r,
                             ),
@@ -402,7 +401,7 @@ class _PolicyFileWidget extends StatelessWidget {
                         );
                       },
                       leading: ImageMultiType(
-                        url: Assets.iconsPdfBorder,
+                        url: Assets.icons.pdfBorder.path,
                         color: AppColorManager.textColor,
                         height: 50.0.r,
                         width: 50.0.r,

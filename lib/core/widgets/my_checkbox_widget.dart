@@ -50,7 +50,7 @@ class _MyCheckboxWidgetState extends State<MyCheckboxWidget> {
               width: 0.4.sw,
               height: 40.0.h,
               child: DrawableText(
-                text: value.name ?? '',
+                text: value.name,
                 maxLines: 1,
                 color: selected ? AppColorManager.mainColor : AppColorManager.textColor,
                 size: 16.0.spMin,

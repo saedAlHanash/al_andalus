@@ -32,24 +32,24 @@
 //                     context.pushReplacementNamed(RouteName.studentRecords);
 //                   },
 //                   name: S.of(context).changeStudent,
-//                   image: Assets.iconsSwap,
+//                   image: Assets.icons.swap.path,
 //                 ),
 //                 ItemMenu(
 //                   onTap: () {
 //                     context.pushNamed(RouteName.examsSchedule);
 //                   },
 //                   name: S.of(context).examSchedule,
-//                   image: Assets.iconsCalender,
+//                   image: Assets.icons.calender.path,
 //                 ),
 //                 ItemMenu(
 //                   onTap: () {},
 //                   name: S.of(context).weekSchedule,
-//                   image: Assets.iconsSchoolBag,
+//                   image: Assets.icons.schoolBag.path,
 //                 ),
 //                 ItemMenu(
 //                   onTap: () {},
 //                   name: S.of(context).scoreCard,
-//                   image: Assets.iconsOpenBook,
+//                   image: Assets.icons.openBook.path,
 //                 ),
 //                 Divider(),
 //               ],

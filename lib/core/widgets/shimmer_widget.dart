@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../strings/app_color_manager.dart';
 
 class ShimmerWidget extends StatefulWidget {

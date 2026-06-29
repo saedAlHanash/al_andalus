@@ -1,8 +1,8 @@
-import 'package:flutter/services.dart';
-import 'package:local_auth/local_auth.dart';
-import 'package:local_auth/error_codes.dart' as auth_error;
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:al_andalus/generated/l10n.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:local_auth/error_codes.dart' as auth_error;
+import 'package:local_auth/local_auth.dart';
 
 /// Custom explicitly mapped failure types for biometric authentication
 enum BiometricFailure {

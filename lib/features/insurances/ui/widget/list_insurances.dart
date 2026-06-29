@@ -1,7 +1,5 @@
-import 'package:al_andalus/core/util/my_style.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:collection/collection.dart';
-import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +7,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/bottom_sheets.dart';
-import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
 import '../../data/response/insurance_package.dart';

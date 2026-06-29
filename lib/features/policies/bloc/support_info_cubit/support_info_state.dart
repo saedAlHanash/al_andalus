@@ -21,7 +21,7 @@ class SupportInfoInitial extends AbstractState<SupportInfo> {
     statuses,
     result,
     error,
-    if (request != null) request,
+    ?request,
   ];
 
   SupportInfoInitial copyWith({

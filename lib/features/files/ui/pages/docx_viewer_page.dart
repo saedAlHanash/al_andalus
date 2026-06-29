@@ -3,7 +3,6 @@ import 'package:m_cubit/m_cubit.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
-import 'package:al_andalus/generated/l10n.dart';
 
 class DocxViewerPage extends StatefulWidget {
   const DocxViewerPage({super.key, required this.url, this.title});

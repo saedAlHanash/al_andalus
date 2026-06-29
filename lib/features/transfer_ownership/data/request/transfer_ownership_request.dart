@@ -1,7 +1,5 @@
 import 'package:al_andalus/core/strings/enum_manager.dart';
 
-import '../../../../core/api_manager/api_service.dart';
-
 class TransferOwnershipRequest {
   TransferOwnershipRequest({
     this.qrcode,

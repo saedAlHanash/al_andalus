@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:m_cubit/m_cubit.dart';
 
+import '../../../../core/util/snack_bar_message.dart';
 import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../core/widgets/my_button.dart';
 import '../../../../generated/l10n.dart';
 import '../../../auth/ui/widget/custom_stepper_widget.dart';
 import '../../bloc/accidents_cubit/accidents_cubit.dart';
-import '../../../../core/util/snack_bar_message.dart';
 import '../widget/create_accident_steps/accident_images.dart';
 import '../widget/create_accident_steps/accident_info.dart';
 import '../widget/create_accident_steps/add_accident_validator.dart';

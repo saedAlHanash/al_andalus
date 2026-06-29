@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import 'package:flutter/gestures.dart';
@@ -12,7 +11,6 @@ import 'package:image_multi_type/image_multi_type.dart';
 import 'package:m_cubit/caching_service/caching_service.dart';
 
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
-import '../../features/category/bloc/categories_cubit/categories_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
 import '../../features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
@@ -67,10 +65,10 @@ class _MyAppState extends State<MyApp> {
     S.load(Locale(AppSharedPreference.getLocal));
 
     setImageMultiTypeErrorImage(
-      const Opacity(
+       Opacity(
         opacity: 0.3,
         child: ImageMultiType(
-          url: Assets.imagesLogo,
+          url: Assets.images.logo.path,
           height: 30.0,
           width: 30.0,
         ),

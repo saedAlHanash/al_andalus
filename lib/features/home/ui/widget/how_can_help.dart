@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
-import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,12 +13,7 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
-import '../../../cars/bloc/cars_cubit/cars_cubit.dart';
 import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
-import '../../../insurances/bloc/insurances_cubit/insurances_cubit.dart';
-import '../../../insurances/ui/widget/list_insurances.dart';
-import '../../../../core/injection/injection_container.dart';
-import 'dart:convert';
 
 class HowCanHelp extends StatelessWidget {
   const HowCanHelp({super.key});
@@ -65,7 +61,7 @@ class HowCanHelp extends StatelessWidget {
                   image: ImageMultiType(
                     height: 120.0.r,
                     width: 120.0.r,
-                    url: Assets.iconsAccident1,
+                    url: Assets.icons.accident1.path,
                   ),
                 ),
               ),
@@ -106,7 +102,7 @@ class HowCanHelp extends StatelessWidget {
                           image: ImageMultiType(
                             height: 70.0.r,
                             width: 70.0.r,
-                            url: Assets.iconsTransport,
+                            url: Assets.icons.transport.path,
                           ),
                         ),
                       ),
@@ -133,7 +129,7 @@ class HowCanHelp extends StatelessWidget {
                             child: ImageMultiType(
                               height: 50.0.r,
                               width: 50.0.r,
-                              url: Assets.iconsNewCar,
+                              url: Assets.icons.newCar.path,
                             ),
                           ),
                         ),

@@ -22,7 +22,7 @@ class DeleteTempInitial extends AbstractState<bool> {
     statuses,
     result,
     error,
-    if (request != null) request,
+    ?request,
   ];
   DeleteTempInitial copyWith({
     CubitStatuses? statuses,

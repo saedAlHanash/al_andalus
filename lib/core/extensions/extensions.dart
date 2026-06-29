@@ -7,7 +7,6 @@ import 'package:al_andalus/core/util/my_style.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:http/http.dart' as http;
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:intl/intl.dart';
@@ -637,12 +636,12 @@ extension HasTransferRequestH on HasTransferRequest {
             text: S().ownershipTransferStatus,
             fontWeight: .bold,
             size: 18.0.sp,
-            drawableEnd: ImageMultiType(url: Assets.iconsUserChange),
+            drawableEnd: ImageMultiType(url: Assets.icons.userChange.path),
             drawableAlin: .between,
             matchParent: true,
           ),
           5.0.verticalSpace,
-          ImageMultiType(url: Assets.iconsDotedLine, width: 1.0.sw),
+          ImageMultiType(url: Assets.icons.dotedLine.path, width: 1.0.sw),
           5.0.verticalSpace,
           ImageMultiType(
             url: status.icon,
@@ -664,7 +663,7 @@ extension HasTransferRequestH on HasTransferRequest {
         ],
       ),
     );
-    return 0.0.verticalSpace;
+
   }
 }
 
@@ -689,7 +688,7 @@ extension HasClaimRequestH on HasClaimRequest {
             fontWeight: .bold,
             size: 16.0.sp,
             drawableEnd: ImageMultiType(
-              url: Assets.assetsIconsAccident,
+              url: Assets.icons.accidentSvg.path,
               height: 25.0.r,
               width: 25.0.r,
             ),
@@ -697,7 +696,7 @@ extension HasClaimRequestH on HasClaimRequest {
             matchParent: true,
           ),
           10.0.verticalSpace,
-          ImageMultiType(url: Assets.iconsDotedLine, width: 1.0.sw),
+          ImageMultiType(url: Assets.icons.dotedLine.path, width: 1.0.sw),
           10.0.verticalSpace,
           ImageMultiType(
             url: status.icon,

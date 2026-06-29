@@ -50,7 +50,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                     title: DrawableText(text: S.of(context).electronicCard),
                     subtitle: DrawableText(text: S.of(context).paymentViaElectronicCard),
                     trailing: ImageMultiType(
-                      url: Assets.imagesVisa,
+                      url: Assets.images.visa.path,
                       width: 71.0.w,
                     ),
                   ),
@@ -70,7 +70,7 @@ class _PaymentTransferScreenState extends State<PaymentTransferScreen> {
                     title: DrawableText(text: S.of(context).zainCashWallet),
                     subtitle: DrawableText(text: S.of(context).paymentViaWallet),
                     trailing: ImageMultiType(
-                      url: Assets.imagesZainCash,
+                      url: Assets.images.zainCash.path,
                       width: 71.0.w,
                     ),
                   ),

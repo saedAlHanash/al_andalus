@@ -1,8 +1,8 @@
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
-import '../app/app_widget.dart';
 import '../../generated/l10n.dart';
+import '../app/app_widget.dart';
 import '../util/snack_bar_message.dart';
 
 class LauncherHelper {

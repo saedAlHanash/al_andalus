@@ -1,12 +1,8 @@
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
-import 'package:al_andalus/core/util/snack_bar_message.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:al_andalus/services/app_info_service.dart';
-import 'package:al_andalus/services/biometric_auth_service.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,7 +44,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0).r,
-                    image: DecorationImage(image: AssetImage(Assets.iconsProfileBack), fit: BoxFit.cover),
+                    image: DecorationImage(image: AssetImage(Assets.icons.profileBack.path), fit: BoxFit.cover),
                   ),
                   child: ListTile(
                     tileColor: Colors.transparent,
@@ -218,7 +214,7 @@ class _MenuScreenState extends State<MenuScreen> {
                           queryParameters: {'type': DataPageType.ourService.index.toString()},
                         ),
                         name: S.of(context).ourService,
-                        iconData:  Assets.iconsFileList,
+                        iconData:  Assets.icons.fileList.path,
                       ),
                       ItemMenu(
                         onTap: () => showSupportCall(context),
@@ -267,7 +263,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       //   name: S.of(context).devBy,
                       //   subTitle: S.of(context).technicalPackage,
                       //   iconData: Icons.code_outlined,
-                      //   trailing: ImageMultiType(url: Assets.imagesBandtechLogo, height: 70.0.h, width: 70.0.w),
+                      //   trailing: ImageMultiType(url: Assets.images.bandtechLogo.path, height: 70.0.h, width: 70.0.w),
                       // ),
                     ],
                   ),
@@ -298,7 +294,7 @@ class ItemMenu extends StatelessWidget {
 
   final String name;
   final String? subTitle;
-  final dynamic? iconData;
+  final dynamic iconData;
   final dynamic leading;
   final dynamic image;
   final Function()? onTap;

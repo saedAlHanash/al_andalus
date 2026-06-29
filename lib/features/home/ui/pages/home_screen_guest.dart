@@ -1,18 +1,12 @@
-import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
-import 'package:al_andalus/features/ads/bloc/adss_cubit/adss_cubit.dart';
 import 'package:al_andalus/features/ads/ui/widgets/adds_slider.dart';
 import 'package:al_andalus/features/home/ui/widget/hi_widget.dart';
-import 'package:al_andalus/features/home/ui/widget/how_can_help.dart';
 import 'package:al_andalus/features/insurances/ui/widget/list_insurances.dart';
 import 'package:drawable_text/drawable_text.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 import '../../../../core/strings/enum_manager.dart';
-import '../../../category/ui/widget/home_categories.dart';
 
 class GuestHomeScreen extends StatelessWidget {
   const GuestHomeScreen({super.key});

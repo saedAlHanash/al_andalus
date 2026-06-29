@@ -1,7 +1,7 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
-import 'package:flutter/foundation.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../../generated/l10n.dart';
 import 'insurance_policy_mock.dart';

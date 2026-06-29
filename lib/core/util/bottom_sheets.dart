@@ -1,18 +1,13 @@
-import 'dart:convert';
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
-import 'package:al_andalus/core/widgets/my_checkbox_widget.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
-import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:al_andalus/features/insurances/data/response/insurance_package.dart';
 import 'package:al_andalus/features/insurances/ui/widget/calculate_price_dialog.dart';
-import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -239,15 +234,15 @@ void showSupportCall(BuildContext context, {bool isDismissible = true}) {
                             30.0.horizontalSpace,
                             _SupportCard(
                               onTap: () => LauncherHelper.sendEmail(email: state.result.email),
-                              icon: Assets.iconsEmail,
+                              icon: Assets.icons.email.path,
                             ),
                             _SupportCard(
                               onTap: () => LauncherHelper.sendWhatsApp(phone: state.result.whatsApp),
-                              icon: Assets.iconsWhatsapp,
+                              icon: Assets.icons.whatsapp.path,
                             ),
                             _SupportCard(
                               onTap: () => LauncherHelper.callPhone(phone: state.result.phone),
-                              icon: Assets.iconsPhone,
+                              icon: Assets.icons.phone.path,
                             ),
                             30.0.horizontalSpace,
                           ],
@@ -361,7 +356,7 @@ void showOptionBottomSheet(
             child: Column(
               children: [
                 ImageMultiType(
-                  url: Assets.imagesIdScan,
+                  url: Assets.images.idScan.path,
                   height: 140.0.h,
                 ),
                 10.0.verticalSpace,
@@ -483,7 +478,7 @@ void showFileUploadBottomSheet(BuildContext context, Function(UploadFile value) 
             child: Column(
               children: [
                 ImageMultiType(
-                  url: Assets.iconsPdf,
+                  url: Assets.icons.pdf.path,
                   height: 100.0.h,
                 ),
                 DrawableText(
@@ -551,7 +546,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                         title: DrawableText(text: S.of(context).electronicCard),
                         subtitle: DrawableText(text: S.of(context).paymentViaElectronicCard),
                         trailing: ImageMultiType(
-                          url: Assets.imagesVisa,
+                          url: Assets.images.visa.path,
                           width: 71.0.w,
                         ),
                       ),
@@ -570,7 +565,7 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
                         title: DrawableText(text: S.of(context).zainCashWallet),
                         subtitle: DrawableText(text: S.of(context).paymentViaWallet),
                         trailing: ImageMultiType(
-                          url: Assets.imagesZainCash,
+                          url: Assets.images.zainCash.path,
                           width: 71.0.w,
                         ),
                       ),
@@ -656,7 +651,7 @@ void selectCar(
                                 },
                                 title: DrawableText(text: e.vehicle.name),
                                 leading: ImageMultiType(
-                                  url: Assets.iconsTaxi,
+                                  url: Assets.icons.taxi.path,
                                   color: AppColorManager.textColor,
                                 ),
                                 trailing: DrawableText(
@@ -868,7 +863,7 @@ class HeaderBottomSheet extends StatelessWidget {
     return Transform.translate(
       offset: Offset(0, 2),
       child: ImageMultiType(
-        url: Assets.iconsBottomSheetHeader,
+        url: Assets.icons.bottomSheetHeader.path,
         width: 1.0.sw,
         color: AppColorManager.cardColor,
         height: 30.0.h,
@@ -1278,7 +1273,7 @@ void showFileOrGalleryBottomSheet(BuildContext context, Function(UploadFile valu
                   mainAxisSize: .min,
                   children: [
                 ImageMultiType(
-                  url: Assets.iconsFile1,
+                  url: Assets.icons.file1.path,
                   height: 100.0.h,
                 ),
 

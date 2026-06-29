@@ -1,7 +1,6 @@
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/features/home/ui/pages/home_screen_guest.dart';
-
 import 'package:al_andalus/features/notification/ui/pages/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/util/my_style.dart';
-import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../router/go_router.dart';
 import '../../../auth/bloc/delete_account_cubit/delete_account_cubit.dart';
 import '../../../cars/bloc/home_cars_cubit/home_cars_cubit.dart';
@@ -17,7 +15,6 @@ import '../../../cars/ui/widget/list_cars.dart';
 import '../../bloc/home_cubit/home_cubit.dart';
 import '../widget/bottom_nav_widget.dart';
 import '../widget/screens/menu_screen.dart';
-
 import 'home_screen.dart';
 
 class Homepage extends StatefulWidget {

@@ -17,7 +17,6 @@ import '../../../../../generated/l10n.dart';
 import '../../../../../router/go_router.dart';
 import '../../../bloc/confirm_code_cubit/confirm_code_cubit.dart';
 import '../../../bloc/resend_code_cubit/resend_code_cubit.dart';
-import '../../widget/custom_stepper_widget.dart';
 
 class ConfirmCodePage extends StatefulWidget {
   const ConfirmCodePage({super.key});

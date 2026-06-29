@@ -31,10 +31,10 @@ class CategoriesInitial extends AbstractState<List<Category>> {
         result,
         error,
         cubitCrud,
-        if (id != null) id,
-        if (request != null) request,
-        if (filterRequest != null) filterRequest!,
-        if (createUpdateRequest != null) createUpdateRequest!,
+        ?id,
+        ?request,
+        ?filterRequest,
+        ?createUpdateRequest,
       ];
 
   CategoriesInitial copyWith({

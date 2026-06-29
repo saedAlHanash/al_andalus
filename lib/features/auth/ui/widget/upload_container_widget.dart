@@ -2,9 +2,9 @@ import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../generated/l10n.dart';
-import '../../../../core/strings/enum_manager.dart';
+
 import '../../../../core/widgets/dotted_decoration.dart';
+import '../../../../generated/l10n.dart';
 
 class UploadContainerWidget extends StatelessWidget {
   final String title;

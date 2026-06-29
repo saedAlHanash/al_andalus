@@ -1,18 +1,17 @@
 import 'dart:async';
 
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/features/auth/data/request/resend_request.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/strings/app_color_manager.dart';
 import '../../../../core/util/my_style.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 import '../../../../router/go_router.dart';
 import '../../bloc/resend_code_cubit/resend_code_cubit.dart';
 

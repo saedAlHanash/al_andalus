@@ -106,7 +106,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
           child: DrawableText(
             selectable: false,
             size: 13.0.sp,
-            text: item.name ?? '',
+            text: item.name,
             drawableStart: item.icon,
             drawablePadding: 5.0.w,
           ),
@@ -283,7 +283,7 @@ class SpinnerWidgetState<T> extends State<SpinnerWidget<T>> {
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(horizontal: 10.0).r,
                   child: DrawableText(
-                    text: item.name ?? '-',
+                    text: item.name,
                     size: 12.0.sp,
                     drawableStart: ImageMultiType(
                       url: Icons.check,

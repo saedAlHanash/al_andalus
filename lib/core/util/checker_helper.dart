@@ -17,7 +17,7 @@ late final PackageInfo appData;
 num get appBuildNum => num.tryParse(appData.buildNumber) ?? 1000;
 
 Future<bool> checkForceUpdate() async {
-  return false;
+  // return false;
   final pair = await _apiSettings();
 
   if (pair.first == null) return false;

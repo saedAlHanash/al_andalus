@@ -44,25 +44,25 @@
 //         showElevation: true,
 //         items: [
 //           BottomNavyBarItem(
-//             icon: const ImageMultiType(url:Assets.iconsHouseFill),
+//             icon: const ImageMultiType(url:Assets.icons.houseFill.path),
 //             title: DrawableText(text: 'AppStringManager.home', size: 14.0.sp),
 //             activeColor: AppColorManager.mainColor,
 //             inactiveColor: AppColorManager.mainColor,
 //           ),
 //           BottomNavyBarItem(
-//             icon: const ImageMultiType(url:Assets.iconsJournalCheck),
+//             icon: const ImageMultiType(url:Assets.icons.journalCheck.path),
 //             title: DrawableText(text: 'AppStringManager.courses', size: 14.0.sp),
 //             activeColor: AppColorManager.mainColor,
 //             inactiveColor: AppColorManager.mainColor,
 //           ),
 //           BottomNavyBarItem(
-//             icon: const ImageMultiType(url:Assets.iconsCourses),
+//             icon: const ImageMultiType(url:Assets.icons.courses.path),
 //             title: DrawableText(text: 'AppStringManager.liaisons', size: 14.0.sp),
 //             activeColor: AppColorManager.mainColor,
 //             inactiveColor: AppColorManager.mainColor,
 //           ),
 //           BottomNavyBarItem(
-//             icon: const ImageMultiType(url:Assets.iconsPersonFillGear),
+//             icon: const ImageMultiType(url:Assets.icons.personFillGear.path),
 //             title: DrawableText(text: 'AppStringManager.profile', size: 14.0.sp),
 //             activeColor: AppColorManager.mainColor,
 //             inactiveColor: AppColorManager.mainColor,

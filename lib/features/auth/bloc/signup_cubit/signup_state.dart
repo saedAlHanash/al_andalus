@@ -27,7 +27,7 @@ class SignupInitial extends AbstractState<bool> {
     result,
     error,
     step,
-    if (request != null) request,
+    ?request,
   ];
 
   SignupInitial copyWith({

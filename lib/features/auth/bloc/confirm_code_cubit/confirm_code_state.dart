@@ -29,7 +29,7 @@ class ConfirmCodeInitial extends AbstractState<LoginResponse> {
     result,
     error,
     request,
-    if (id != null) id,
+    ?id,
   ];
 
   ConfirmCodeInitial copyWith({

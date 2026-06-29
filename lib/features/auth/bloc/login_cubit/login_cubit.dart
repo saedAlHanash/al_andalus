@@ -1,12 +1,11 @@
-import 'package:al_andalus/core/util/bottom_sheets.dart';
-import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/features/auth/data/request/login_request.dart';
-import 'package:al_andalus/services/firebase_service.dart';
 import 'package:al_andalus/services/biometric_auth_service.dart';
-
+import 'package:al_andalus/services/firebase_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../core/api_manager/api_service.dart';

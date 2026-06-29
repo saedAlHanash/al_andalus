@@ -1,4 +1,3 @@
-import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:flutter/material.dart';
 

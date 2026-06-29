@@ -1,15 +1,12 @@
-import 'package:al_andalus/core/api_manager/api_service.dart';
-import 'package:al_andalus/core/helper/launcher_helper.dart';
 import 'package:al_andalus/core/util/snack_bar_message.dart';
-import 'package:drawable_text/drawable_text.dart';
-import 'package:flutter/material.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/custom_stepper_widget.dart';
+import 'package:drawable_text/drawable_text.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:http/http.dart';
 
 import '../../../../core/widgets/shimmer_widget.dart';
 import '../../../../generated/l10n.dart';

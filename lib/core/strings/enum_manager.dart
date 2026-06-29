@@ -3,8 +3,6 @@ import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
-import 'package:image_multi_type/image_multi_type.dart';
-
 import 'package:string_similarity/string_similarity.dart';
 
 import '../../features/cars/data/response/cars_response.dart';
@@ -734,12 +732,12 @@ enum PaymentType {
     switch (this) {
       case PaymentType.zainCash:
         return ImageMultiType(
-          url: Assets.imagesZainCash,
+          url: Assets.images.zainCash.path,
           width: 71.0.w,
         );
       case PaymentType.qiCard:
         return ImageMultiType(
-          url: Assets.imagesVisa,
+          url: Assets.images.visa.path,
           width: 71.0.w,
         );
     }
@@ -1069,15 +1067,15 @@ enum AccidentStatus {
   dynamic get icon {
     switch (this) {
       case AccidentStatus.pending:
-        return Assets.iconsWaiting;
+        return Assets.icons.waiting.path;
       case AccidentStatus.acceptedByOperationStaff:
       case AccidentStatus.acceptedBySurveyorStaff:
-        return Assets.iconsDamageInspection;
+        return Assets.icons.damageInspection.path;
       case AccidentStatus.fixed:
-        return Assets.iconsAccepted;
+        return Assets.icons.accepted.path;
       case AccidentStatus.rejectedByOperationStaff:
       case AccidentStatus.rejectedBySurveyorStaff:
-        return Assets.iconsReject;
+        return Assets.icons.reject.path;
       case AccidentStatus.paid:
         return Icons.paid_outlined;
     }
@@ -1128,7 +1126,7 @@ enum AccidentStatus {
         if (type == .maintenance) {
           desc += '/n ${item.maintenanceLocation}';
         } else if (type == .financial) {
-          desc += s.compensationValuePrefix(num.tryParse(value ?? '0')?.formatPrice ?? '$value');
+          desc += s.compensationValuePrefix(num.tryParse(value)?.formatPrice ?? '$value');
         }
 
         return desc;

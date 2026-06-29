@@ -1,7 +1,6 @@
 import 'package:al_andalus/core/api_manager/api_service.dart';
-import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
+import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:flutter/foundation.dart';
 
 class SignupRequest {

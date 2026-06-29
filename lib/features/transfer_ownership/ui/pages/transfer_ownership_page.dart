@@ -10,13 +10,13 @@ import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_pro
 import 'package:al_andalus/features/profile/data/request/update_profile_request.dart';
 import 'package:al_andalus/features/profile/data/response/profile_response.dart';
 import 'package:al_andalus/generated/l10n.dart';
+import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:m_cubit/m_cubit.dart';
-import 'package:al_andalus/router/go_router.dart';
 
 import '../../../../core/util/snack_bar_message.dart';
 import '../../bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';

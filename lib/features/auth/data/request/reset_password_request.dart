@@ -1,6 +1,5 @@
 import 'package:al_andalus/core/extensions/extensions.dart';
 
-import '../../../../core/app/app_provider.dart';
 import '../../../../core/util/shared_preferences.dart';
 
 class ResetPasswordRequest {

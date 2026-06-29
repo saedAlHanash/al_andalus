@@ -2,19 +2,18 @@ import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/util/bottom_sheets.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/core/widgets/spinner_widget.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
 import 'package:al_andalus/features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
+import 'package:al_andalus/generated/assets.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/round_image_widget.dart';
-
-import 'package:al_andalus/generated/assets.dart';
-import 'package:al_andalus/core/util/bottom_sheets.dart';
 
 class IdentityInfoFieldsWidget extends StatefulWidget {
   const IdentityInfoFieldsWidget({super.key});
@@ -96,7 +95,7 @@ class _IdentityInfoFieldsWidgetState extends State<IdentityInfoFieldsWidget> {
                   Expanded(
                     child: MyTextFormOutLineWidget(
                       enable: false,
-                      icon: Assets.iconsCalendar,
+                      icon: Assets.icons.calendar.path,
                       onTap: () async {
                         final datePicked = await showDatePicker(
                           context: context,
@@ -122,7 +121,7 @@ class _IdentityInfoFieldsWidgetState extends State<IdentityInfoFieldsWidget> {
                         onChanged: (spinnerItem) {
                           state.mRequest.gender = spinnerItem.item;
                         },
-                        icon: Assets.iconsUserSearch,
+                        icon: Assets.icons.userSearch.path,
                         hintLabel: S.of(context).gender,
                         hintText: S.of(context).gender,
                         height: 46.0.h,

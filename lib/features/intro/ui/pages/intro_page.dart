@@ -1,10 +1,10 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
-import 'package:go_router/go_router.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart'; // Added this import
@@ -23,17 +23,17 @@ class _IntroPageState extends State<IntroPage> {
 
   List<IntroPageModel> get _pages => [
     IntroPageModel(
-      image: Assets.imagesIntro3,
+      image: Assets.images.intro3.path,
       title: S.of(context).insureCarIntroTitle,
       description: S.of(context).insureCarIntroDesc,
     ),
     IntroPageModel(
-      image: Assets.imagesIntro2,
+      image: Assets.images.intro2.path,
       title: S.of(context).transferOwnershipIntroTitle,
       description: S.of(context).transferOwnershipIntroDesc,
     ),
     IntroPageModel(
-      image: Assets.imagesIntro1,
+      image: Assets.images.intro1.path,
       title: S.of(context).reportAccidentIntroTitle,
       description: S.of(context).reportAccidentIntroDesc,
     ),

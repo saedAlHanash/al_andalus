@@ -19,7 +19,7 @@ class ResendCodeInitial extends AbstractState<String> {
   }
 
   @override
-  List<Object> get props => [statuses, result, error, if (request != null) request];
+  List<Object> get props => [statuses, result, error, ?request];
 
   ResendCodeInitial copyWith({
     CubitStatuses? statuses,

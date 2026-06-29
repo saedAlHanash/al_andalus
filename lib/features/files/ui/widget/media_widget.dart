@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/strings/enum_manager.dart';
-import '../../../../core/util/my_style.dart';
-import '../../bloc/file_cubit/file_cubit.dart';
 import '../pages/docx_viewer_page.dart';
 import '../pages/h5p_viwer_page.dart';
 import '../pages/html_viewer_page.dart';

@@ -1,16 +1,13 @@
-import 'dart:convert';
-
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
-import 'package:al_andalus/core/util/pair_class.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
+import 'package:al_andalus/core/util/pair_class.dart';
 import 'package:al_andalus/features/cars/data/request/insurance_policy_request.dart';
+import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 import 'package:http/http.dart';
 import 'package:m_cubit/m_cubit.dart';
-
-import 'package:al_andalus/features/cars/data/response/cars_response.dart';
 
 import '../../../../core/error/error_manager.dart';
 

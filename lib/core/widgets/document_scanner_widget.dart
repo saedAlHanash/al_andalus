@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:math' as math;
-import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -530,7 +529,7 @@ class ScannerOverlayPainter extends CustomPainter {
     final handlePaint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill;
-    const double handleSize = 20.0;
+    // const double handleSize = 20.0;
 
     // Bottom Right handle
     canvas.drawCircle(scanWindow.bottomRight, 8.0, handlePaint);

@@ -51,7 +51,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
             ),
             MyTextFormOutLineWidget(
               enable: false,
-              icon: Assets.iconsCalendar,
+              icon: Assets.icons.calendar.path,
               onTap: () async {
                 showDialog(
                   context: context,
@@ -169,7 +169,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                 Expanded(
                   child: MyTextFormOutLineWidget(
                     enable: false,
-                    icon: Assets.iconsCalendar,
+                    icon: Assets.icons.calendar.path,
                     onTap: () async {
                       final datePicked = await showDatePicker(
                         context: context,
@@ -191,7 +191,7 @@ class _AnnualInfoState extends State<AnnualInfo> {
                 Expanded(
                   child: MyTextFormOutLineWidget(
                     enable: false,
-                    icon: Assets.iconsCalendar,
+                    icon: Assets.icons.calendar.path,
                     onTap: () async {
                       final datePicked = await showDatePicker(
                         context: context,

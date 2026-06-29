@@ -1,6 +1,4 @@
-import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +39,7 @@ class CarInfo extends StatelessWidget {
               _ItemInfo(
                 label: S.of(context).carName,
                 value: vehicle.name,
-                icon: Assets.iconsTaxi,
+                icon: Assets.icons.taxi.path,
               ),
               Divider(color: AppColorManager.cd, height: 1),
               Row(
@@ -59,7 +57,7 @@ class CarInfo extends StatelessWidget {
                     child: _ItemInfo(
                       label: S.of(context).carModel,
                       value: vehicle.manufactureYear,
-                      icon: Assets.iconsCalendar,
+                      icon: Assets.icons.calendar.path,
                     ),
                   ),
                 ],
@@ -71,7 +69,7 @@ class CarInfo extends StatelessWidget {
                     child: _ItemInfo(
                       label: S.of(context).chassisNumber,
                       value: vehicle.chassisNumber,
-                      icon: Assets.iconsTaxi,
+                      icon: Assets.icons.taxi.path,
                     ),
                   ),
 
@@ -80,7 +78,7 @@ class CarInfo extends StatelessWidget {
                     child: _ItemInfo(
                       label: S.of(context).plateNumber,
                       value: vehicle.plateNumber,
-                      icon: Assets.iconsPlate,
+                      icon: Assets.icons.plate.path,
                     ),
                   ),
                 ],
@@ -92,7 +90,7 @@ class CarInfo extends StatelessWidget {
                     child: _ItemInfo(
                       label: S.of(context).cylinders,
                       value: vehicle.engineCapacity.toString(),
-                      icon: Assets.imagesPistons,
+                      icon: Assets.images.pistons.path,
                     ),
                   ),
 
@@ -101,7 +99,7 @@ class CarInfo extends StatelessWidget {
                     child: _ItemInfo(
                       label: S.of(context).fuelType,
                       value: vehicle.fuelType.name,
-                      icon: Assets.imagesFuel,
+                      icon: Assets.images.fuel.path,
                     ),
                   ),
                 ],

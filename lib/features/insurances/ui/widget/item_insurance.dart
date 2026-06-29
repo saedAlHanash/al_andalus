@@ -1,8 +1,8 @@
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
+import 'package:collection/collection.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,12 +10,10 @@ import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../../core/strings/enum_manager.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
 import '../../data/response/insurance_package.dart';
-import 'package:collection/collection.dart';
 
 class ItemInsurance extends StatelessWidget {
   const ItemInsurance({
@@ -119,7 +117,7 @@ class ItemInsurance extends StatelessWidget {
                             matchParent: true,
                             padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 12.0),
                             drawableStart: ImageMultiType(
-                              url: Assets.iconsDoneStep,
+                              url: Assets.icons.doneStep.path,
                               height: 20.0.r,
                               width: 20.0.r,
                             ),
@@ -193,7 +191,7 @@ class _DetailItemState extends State<_DetailItem> {
                               matchParent: true,
                               padding: const EdgeInsets.symmetric(vertical: 7.0),
                               drawableStart: ImageMultiType(
-                                url: Assets.iconsDoneStep,
+                                url: Assets.icons.doneStep.path,
                                 height: 20.0.r,
                                 width: 20.0.r,
                               ),
@@ -208,8 +206,8 @@ class _DetailItemState extends State<_DetailItem> {
                           child: IgnorePointer(
                             child: Lottie.asset(
                               context.isDark
-                                  ? Assets.lottiesMoveUpwardsAnimationDark
-                                  : Assets.lottiesAnimatedMoveUpwardsLinearIconFixed2,
+                                  ? Assets.lotties.moveUpwardsAnimationDark.path
+                                  : Assets.lotties.animatedMoveUpwardsLinearIconFixed2.path,
                               height: 120.0.r,
                               decoder: customDecoder,
                             ),
@@ -265,7 +263,7 @@ class _Top extends StatelessWidget {
           ImageMultiType(
             height: 1.0.sh,
             width: 1.0.sw,
-            url: Assets.iconsTopCard,
+            url: Assets.icons.topCard.path,
             color: item.level.color,
             fit: BoxFit.fill,
           ),

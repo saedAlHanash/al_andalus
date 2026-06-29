@@ -1,8 +1,5 @@
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
-import 'package:al_andalus/core/helper/launcher_helper.dart';
-import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/card_slider_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +14,7 @@ import '../../../../core/widgets/app_bar/app_bar_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
-import '../../../cars/data/request/insurance_policy_request.dart';
-import '../../../cars/data/response/cars_response.dart';
 import '../../bloc/insurances_cubit/insurances_cubit.dart';
-import '../../data/response/insurance_package.dart';
 import '../widget/item_insurance.dart';
 import '../widget/tapbar_insurances.dart';
 
@@ -66,7 +60,7 @@ class _InsurancePageState extends State<InsurancePage> {
               InkWell(
                 onTap: () => showSupportCall(context),
                 child: ImageMultiType(
-                  url: context.isDark ? Assets.iconsSupportBorder : Assets.iconsSupportBorder1,
+                  url: context.isDark ? Assets.icons.supportBorder.path : Assets.icons.supportBorder1.path,
                   height: 40.0.r,
                   width: 40.0.r,
                 ),

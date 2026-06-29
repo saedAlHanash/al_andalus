@@ -90,7 +90,7 @@
 //                               bottomRight: Radius.circular(10),
 //                             ),
 //                             image: DecorationImage(
-//                               image: AssetImage(Assets.imagesSh,
+//                               image: AssetImage(Assets.images.sh.path,
 //                               ),
 //
 //                               // Asset image for decoration
@@ -128,13 +128,13 @@
 //                               ),
 //                               SizedBox(width: 90,),
 //                               ImageMultiType(
-//                                 url: Assets.imagesBs,
+//                                 url: Assets.images.bs.path,
 //                                   width: 100,
 //                                    height: 110,
 //
 //                               ),
 //                               // Image.asset(
-//                               //   Assets.imagesBs,
+//                               //   Assets.images.bs.path,
 //                               //   fit:BoxFit.cover,
 //                               //   width: 100,
 //                               //   height: 110,

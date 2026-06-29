@@ -1,8 +1,6 @@
 import 'package:al_andalus/core/strings/app_color_manager.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/features/auth/ui/widget/upload_container_widget.dart';
-import 'package:al_andalus/features/auth/ui/widget/uploade_utl.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:al_andalus/router/go_router.dart';
 import 'package:drawable_text/drawable_text.dart';
@@ -91,7 +89,7 @@ class _CarInspectionState extends State<CarInspection> {
                                   }
                                 },
                                 leading: ImageMultiType(
-                                  url: Assets.iconsFolder,
+                                  url: Assets.icons.folder.path,
                                   color: AppColorManager.textColor,
                                   height: 50.0.dg,
                                   width: 50.0.dg,

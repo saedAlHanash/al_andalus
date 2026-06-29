@@ -2,14 +2,11 @@ import 'dart:io';
 
 import 'package:al_andalus/core/api_manager/api_url.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_multi_type/image_multi_type.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../features/auth/data/response/login_response.dart';
 import '../../features/profile/data/response/profile_response.dart';
-import '../../generated/assets.dart';
 import '../../generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 import '../../router/go_router.dart';
 import '../strings/enum_manager.dart';
 import '../util/bottom_sheets.dart';

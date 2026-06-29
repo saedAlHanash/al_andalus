@@ -24,7 +24,7 @@ class PolicyInitial extends AbstractState<Policy> {
     statuses,
     result,
     error,
-    if (request != null) request,
+    ?request,
   ];
 
   PolicyInitial copyWith({

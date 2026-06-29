@@ -1,9 +1,9 @@
-import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/util/my_style.dart';
 import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
@@ -11,8 +11,6 @@ import '../../../../core/app/app_provider.dart';
 import '../../../../core/widgets/need_login_widget.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../bloc/home_cars_cubit/home_cars_cubit.dart';
 import 'item_car.dart';
 
@@ -51,7 +49,7 @@ class ListCars extends StatelessWidget {
               child: Column(
                 mainAxisSize: .min,
                 children: [
-                  ImageMultiType(url: Assets.iconsCircleArow, color: AppColorManager.textColor),
+                  ImageMultiType(url: Assets.icons.circleArow.path, color: AppColorManager.textColor),
                   30.0.verticalSpace,
                   DrawableText(text: S
                       .of(context)

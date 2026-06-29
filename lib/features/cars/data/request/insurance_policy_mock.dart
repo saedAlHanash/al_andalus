@@ -1,5 +1,7 @@
 import 'dart:math';
+
 import 'package:flutter/foundation.dart';
+
 import '../../../../core/api_manager/api_service.dart';
 import '../../../../core/strings/enum_manager.dart';
 import 'insurance_policy_request.dart';

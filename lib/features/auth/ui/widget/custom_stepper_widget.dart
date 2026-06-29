@@ -59,10 +59,10 @@ EasyStep customStepWidget({
   return EasyStep(
     customStep: ImageMultiType(
       url: isCompleted
-          ? Assets.iconsDoneStep
+          ? Assets.icons.doneStep.path
           : isSelected
-          ? Assets.iconsActiveStep
-          : Assets.iconsStep,
+          ? Assets.icons.activeStep.path
+          : Assets.icons.step.path,
     ),
     customTitle: DrawableText(
       text: title,

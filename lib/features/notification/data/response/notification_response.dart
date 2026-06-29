@@ -16,7 +16,7 @@ class NotificationsResponse {
   }
 
   Map<String, dynamic> toJson() => {
-        "data": data.map((x) => x?.toJson()).toList(),
+        "data": data.map((x) => x.toJson()).toList(),
       };
 }
 

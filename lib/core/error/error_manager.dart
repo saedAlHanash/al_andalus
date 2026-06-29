@@ -1,15 +1,12 @@
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/util/bottom_sheets.dart';
-import 'package:al_andalus/router/go_router.dart';
 import 'package:collection/collection.dart';
-import 'package:go_router/go_router.dart';
 import 'package:http/http.dart';
 import 'package:m_cubit/abstraction.dart';
 
 import '../../generated/l10n.dart';
 import '../app/app_widget.dart';
-import '../strings/enum_manager.dart';
 import '../util/snack_bar_message.dart';
 
 class ErrorManager {

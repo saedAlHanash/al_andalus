@@ -21,9 +21,9 @@ class FileInitial extends AbstractState<FileResponse> {
     statuses,
     result,
     error,
-    if (request != null) request,
-    if (id != null) id,
-    if (filterRequest != null) filterRequest!,
+    ?request,
+    ?id,
+    ?filterRequest,
   ];
 
   FileInitial copyWith({

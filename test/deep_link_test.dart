@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:al_andalus/services/deep_link_service.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Clean URL test cases', () {

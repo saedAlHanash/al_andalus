@@ -1,4 +1,3 @@
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 import 'package:intl/intl.dart' as intl;
 
-import '../app/app_provider.dart';
 import '../strings/app_color_manager.dart';
 import '../util/my_style.dart';
 /*import 'package:intl_phone_field/intl_phone_field.dart';

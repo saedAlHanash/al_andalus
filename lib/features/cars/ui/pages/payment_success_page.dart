@@ -1,5 +1,4 @@
 import 'package:al_andalus/core/extensions/extensions.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
@@ -9,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_multi_type/image_multi_type.dart';
-import 'package:intl/intl.dart' as intl;
 
 import '../../../../core/injection/injection_container.dart';
 import '../../../../generated/assets.dart';
@@ -135,7 +133,7 @@ class PaymentSuccessPage extends StatelessWidget {
                 padding: EdgeInsets.all(5.0).r,
                 child: Center(
                   child: ImageMultiType(
-                    url: isSuccessPayment ? Assets.iconsDonePay : Icons.warning,
+                    url: isSuccessPayment ? Assets.icons.donePay.path : Icons.warning,
                     width: isSuccessPayment ? 100.r : 30.0.r,
                     height: isSuccessPayment ? 100.r : 30.0.r,
                   ),

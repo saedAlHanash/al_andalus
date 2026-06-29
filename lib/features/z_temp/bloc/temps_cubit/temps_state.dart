@@ -21,7 +21,7 @@ class TempsInitial extends AbstractState<List<Temp>> {
         statuses,
         result,
         error,
-        if (request != null) request,
+        ?request,
 
       ];
 

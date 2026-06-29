@@ -26,10 +26,10 @@
 //           final size = e.active ? 24.0.spMin : 14.0.spMin;
 //           return  ImageMultiType(url:
 //             e.complete
-//                 ? Assets.iconsDone
+//                 ? Assets.icons.done.path
 //                 : e.active
-//                 ? Assets.iconsActiveStep
-//                 : Assets.iconsDisactiveStep,
+//                 ? Assets.icons.activeStep.path
+//                 : Assets.icons.disactiveStep.path,
 //             height: size,
 //             width: size,
 //           );

@@ -8,8 +8,6 @@ import 'package:image_multi_type/image_multi_type.dart';
 import '../../../../core/util/bottom_sheets.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import '../../../auth/ui/widget/auth_card_image.dart';
-import '../../../policies/ui/widget/support_call.dart';
 
 class HiWidget extends StatelessWidget {
   const HiWidget({super.key});
@@ -20,7 +18,7 @@ class HiWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10.0).w,
       child: ListTile(
         contentPadding: .zero,
-        leading: ImageMultiType(url: Assets.imagesLogo),
+        leading: ImageMultiType(url: Assets.images.logo.path),
         title: AppProvider.isGuest
             ? DrawableText(
                 text: S.of(context).welcome,
@@ -34,7 +32,7 @@ class HiWidget extends StatelessWidget {
         trailing: InkWell(
           onTap: () => showSupportCall(context),
           child: ImageMultiType(
-            url: context.isDark ? Assets.iconsSupportBorder : Assets.iconsSupportBorder1,
+            url: context.isDark ? Assets.icons.supportBorder.path : Assets.icons.supportBorder1.path,
             height: 40.0.r,
             width: 40.0.r,
           ),

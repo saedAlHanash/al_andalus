@@ -29,10 +29,10 @@ class GovernoratesInitial extends AbstractState<List<Governorate>> {
         result,
         error,
         cubitCrud,
-        if (id != null) id,
-        if (request != null) request,
-        if (filterRequest != null) filterRequest!,
-        if (createUpdateRequest != null) createUpdateRequest!,
+        ?id,
+        ?request,
+        ?filterRequest,
+        ?createUpdateRequest,
       ];
 
   List<SpinnerItem> getSpinnerItems({String? selectedId}) {

@@ -1,4 +1,4 @@
-import 'dart:convert';
+
 
 import 'package:al_andalus/core/api_manager/api_service.dart';
 import 'package:al_andalus/features/auth/ui/pages/confirm_code/confirm_edit_phone_page.dart';
@@ -11,8 +11,9 @@ import 'package:go_router/go_router.dart';
 
 import '../core/injection/injection_container.dart';
 import '../core/strings/enum_manager.dart';
-import '../features/files/ui/pages/pdf_viewer_page.dart';
 import '../core/widgets/qr_scanner_page.dart';
+import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
+import '../features/accident/ui/pages/add_accident_page.dart';
 import '../features/ads/bloc/ads_cubit/ads_cubit.dart';
 import '../features/auth/bloc/change_password_cubit/change_password_cubit.dart';
 import '../features/auth/bloc/confirm_code_cubit/confirm_code_cubit.dart';
@@ -22,6 +23,7 @@ import '../features/auth/bloc/otp_password_cubit/otp_password_cubit.dart';
 import '../features/auth/bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../features/auth/bloc/reset_password_cubit/reset_password_cubit.dart';
 import '../features/auth/bloc/signup_cubit/signup_cubit.dart';
+import '../features/auth/ui/pages/biometric_enrollment_page.dart';
 import '../features/auth/ui/pages/change_password_page.dart';
 import '../features/auth/ui/pages/confirm_code/confirm_code_page.dart';
 import '../features/auth/ui/pages/done_page.dart';
@@ -31,7 +33,6 @@ import '../features/auth/ui/pages/otp_password_page.dart';
 import '../features/auth/ui/pages/reset_password_page.dart';
 import '../features/auth/ui/pages/signup_page.dart';
 import '../features/auth/ui/pages/splash_screen_page.dart';
-import '../features/auth/ui/pages/biometric_enrollment_page.dart';
 import '../features/cars/bloc/car_cubit/car_cubit.dart';
 import '../features/cars/bloc/cars_cubit/cars_cubit.dart';
 import '../features/cars/bloc/home_cars_cubit/home_cars_cubit.dart';
@@ -42,14 +43,8 @@ import '../features/cars/ui/pages/car_page.dart';
 import '../features/cars/ui/pages/cars_page.dart';
 import '../features/cars/ui/pages/custome_web_page_view.dart';
 import '../features/cars/ui/pages/payment_success_page.dart';
-import '../features/accident/bloc/accidents_cubit/accidents_cubit.dart';
-import '../features/accident/ui/pages/add_accident_page.dart';
-import '../features/category/ui/pages/categorys_page.dart';
-import '../features/transfer_ownership/bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';
-import '../features/transfer_ownership/ui/pages/transfer_ownership_page.dart';
+import '../features/files/ui/pages/pdf_viewer_page.dart';
 import '../features/home/ui/pages/home_page.dart';
-import '../features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
-import '../features/insurances/data/response/insurance_package.dart';
 import '../features/insurances/ui/pages/insurance_page.dart';
 import '../features/intro/ui/pages/intro_page.dart';
 import '../features/policies/bloc/policy_cubit/policy_cubit.dart';
@@ -58,6 +53,8 @@ import '../features/profile/ui/pages/edit_driving_license.dart';
 import '../features/profile/ui/pages/edit_identity_info.dart';
 import '../features/profile/ui/pages/edit_phone_page.dart';
 import '../features/profile/ui/pages/profile_page.dart';
+import '../features/transfer_ownership/bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';
+import '../features/transfer_ownership/ui/pages/transfer_ownership_page.dart';
 
 final navigatorKey = sl<GlobalKey<NavigatorState>>();
 

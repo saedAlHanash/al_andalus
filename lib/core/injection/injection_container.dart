@@ -1,13 +1,12 @@
+import 'package:al_andalus/features/accident/bloc/accident_cubit/accident_cubit.dart';
+import 'package:al_andalus/features/accident/bloc/accidents_cubit/accidents_cubit.dart';
+import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
+import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
 import 'package:al_andalus/features/category/bloc/categories_cubit/categories_cubit.dart';
 import 'package:al_andalus/features/category/bloc/category_cubit/category_cubit.dart';
 import 'package:al_andalus/features/insurances/bloc/insurance_cubit/insurance_cubit.dart';
 import 'package:al_andalus/features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
-import 'package:al_andalus/features/cars/bloc/cars_cubit/cars_cubit.dart';
-import 'package:al_andalus/features/cars/bloc/car_cubit/car_cubit.dart';
-import 'package:al_andalus/features/accident/bloc/accident_cubit/accident_cubit.dart';
-import 'package:al_andalus/features/accident/bloc/accidents_cubit/accidents_cubit.dart';
 import 'package:al_andalus/features/transfer_ownership/bloc/transfer_fees_cubit/transfer_fees_cubit.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +22,6 @@ import '../../features/auth/bloc/otp_password_cubit/otp_password_cubit.dart';
 import '../../features/auth/bloc/resend_code_cubit/resend_code_cubit.dart';
 import '../../features/auth/bloc/reset_password_cubit/reset_password_cubit.dart';
 import '../../features/auth/bloc/signup_cubit/signup_cubit.dart';
-
 import '../../features/cars/bloc/home_cars_cubit/home_cars_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
@@ -32,7 +30,6 @@ import '../../features/notification/bloc/all_notification_cubit/all_notification
 import '../../features/notification/bloc/notification_count_cubit/notification_count_cubit.dart';
 import '../../features/policies/bloc/policy_cubit/policy_cubit.dart';
 import '../../features/policies/bloc/support_info_cubit/support_info_cubit.dart';
-
 import '../../features/profile/bloc/get_me_cubit/get_me_cubit.dart';
 import '../../features/profile/bloc/update_profile_cubit/update_profile_cubit.dart';
 import '../../features/transfer_ownership/bloc/transfer_ownership_cubit/transfer_ownership_cubit.dart';

@@ -1,17 +1,16 @@
 import 'dart:async';
 
 import 'package:al_andalus/core/api_manager/api_url.dart';
-import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:m_cubit/m_cubit.dart';
 
 import '../../../../core/api_manager/api_service.dart';
 import '../../../../core/error/error_manager.dart';
+import '../../../../core/strings/enum_manager.dart';
 import '../../../../core/util/pair_class.dart';
 import '../../../../core/util/shared_preferences.dart';
 import '../../data/request/update_profile_request.dart';
 import '../../data/response/profile_response.dart';
-import '../../../../core/strings/enum_manager.dart';
 
 part 'update_profile_state.dart';
 

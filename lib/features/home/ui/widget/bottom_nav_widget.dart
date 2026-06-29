@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:al_andalus/core/extensions/extensions.dart';
 
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/features/home/bloc/home_cubit/home_cubit.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +101,7 @@ class _NavbarState extends State<Navbar> {
                 },
                 icon: ImageMultiType(
                   color: isMenuActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
-                  url: Assets.iconsUser,
+                  url: Assets.icons.user.path,
                   height: 20.0.r,
                   width: 20.0.r,
                 ),
@@ -282,7 +282,7 @@ class _Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return ImageMultiType(
       color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
-      url: Assets.iconsHome,
+      url: Assets.icons.home.path,
       height: 20.0.r,
       width: 20.0.r,
     );
@@ -305,7 +305,7 @@ class _Notifications extends StatelessWidget {
           children: [
             ImageMultiType(
               color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
-              url: Assets.iconsNotification,
+              url: Assets.icons.notification.path,
               height: 20.0.r,
               width: 20.0.r,
             ),
@@ -349,7 +349,7 @@ class _Insurance extends StatelessWidget {
   Widget build(BuildContext context) {
     return ImageMultiType(
       color: isActive ? Colors.white : (context.isDark ? Colors.white70 : AppColorManager.grey),
-      url: Assets.iconsClipboardList,
+      url: Assets.icons.clipboardList.path,
       height: 20.0.r,
       width: 20.0.r,
     );

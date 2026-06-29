@@ -22,7 +22,7 @@ class TempInitial extends AbstractState<Temp> {
         statuses,
         result,
         error,
-        if (request != null) request,
+        ?request,
 
       ];
 

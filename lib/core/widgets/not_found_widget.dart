@@ -24,7 +24,7 @@ class NotFoundNotificationsWidget extends StatelessWidget {
         mainAxisSize: .min,
         children: [
           ImageMultiType(
-            url: icon ?? Assets.iconsEmpty,
+            url: icon ?? Assets.icons.empty.path,
             height: 180.0.dg,
             width: 180.0.dg,
           ),

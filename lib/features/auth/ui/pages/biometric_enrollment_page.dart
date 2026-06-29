@@ -1,11 +1,10 @@
 import 'package:al_andalus/core/app/app_provider.dart';
+import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
 import 'package:al_andalus/core/widgets/my_button.dart';
 import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:al_andalus/services/biometric_auth_service.dart';
-import 'package:al_andalus/core/extensions/extensions.dart';
-import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:drawable_text/drawable_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,10 +12,10 @@ import 'package:go_router/go_router.dart';
 import 'package:image_multi_type/image_multi_type.dart';
 
 import '../../../../core/util/shared_preferences.dart';
+import '../../../../core/util/snack_bar_message.dart';
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../router/go_router.dart';
-import '../../../../core/util/snack_bar_message.dart';
 
 class BiometricEnrollmentPage extends StatefulWidget {
   final bool fromLogin;
@@ -239,7 +238,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ImageMultiType(url: Assets.iconsFaceId, width: 80, color: AppColorManager.textColor),
+                ImageMultiType(url: Assets.icons.faceId.path, width: 80, color: AppColorManager.textColor),
                 20.0.horizontalSpace,
                 ImageMultiType(url: Icons.fingerprint, width: 80, color: AppColorManager.textColor),
               ],
@@ -269,7 +268,7 @@ class _BiometricEnrollmentPageState extends State<BiometricEnrollmentPage> {
                           ),
                           15.0.horizontalSpace,
                           ImageMultiType(
-                            url: Assets.iconsFlagOfIraq,
+                            url: Assets.icons.flagOfIraq.path,
                             height: 24.h,
                             width: 24.w,
                           ),

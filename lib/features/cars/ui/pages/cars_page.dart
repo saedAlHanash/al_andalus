@@ -1,5 +1,4 @@
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
-import 'package:al_andalus/core/widgets/refresh_widget/refresh_widget.dart';
 import 'package:al_andalus/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

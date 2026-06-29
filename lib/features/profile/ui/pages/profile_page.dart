@@ -1,4 +1,3 @@
-import 'package:go_router/go_router.dart';
 import 'package:al_andalus/core/app/app_provider.dart';
 import 'package:al_andalus/core/extensions/extensions.dart';
 import 'package:al_andalus/core/widgets/app_bar/app_bar_widget.dart';
@@ -7,6 +6,7 @@ import 'package:al_andalus/core/widgets/my_text_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../bloc/update_profile_cubit/update_profile_cubit.dart';

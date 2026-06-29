@@ -69,7 +69,7 @@ class _AccidentInfoState extends State<AccidentInfo> {
                     ? null
                     : ListTile(
                         leading: ImageMultiType(
-                          url: Assets.iconsFolder,
+                          url: Assets.icons.folder.path,
                           height: 50.0.dg,
                           width: 50.0.dg,
                           color: AppColorManager.textColor,

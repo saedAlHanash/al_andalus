@@ -26,13 +26,13 @@
 //       InkWell(
 //         onTap: () => showLanguageDialog(context),
 //         child: ImageMultiType(
-//           url: Assets.iconsLanguage,
+//           url: Assets.icons.language.path,
 //           height: 40.0.r,
 //           width: 40.0.r,
 //         ),
 //       ),
 //       ImageMultiType(
-//         url: Assets.imagesLogo,
+//         url: Assets.images.logo.path,
 //         height: 110.0.r,
 //         width: 110.0.r,
 //         // fit: .fill,
