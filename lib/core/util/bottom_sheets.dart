@@ -596,10 +596,11 @@ void showRePay(BuildContext context, num value, Function(PaymentType value) onCo
 
 void selectCar(
   BuildContext context,
-  List<CarPolicy> cars,
+  List<CarPolicy> listCars,
   Function(CarPolicy value) onConfirm,
   Function() onAddCar,
 ) {
+  final canUseList = listCars.where((e) => e.status.canUseCar);
   showModalBottomSheet(
     useSafeArea: true,
     context: context,
@@ -630,12 +631,12 @@ void selectCar(
                             matchParent: true,
                           ),
                           10.0.verticalSpace,
-                          if (cars.isEmpty)
+                          if (canUseList.isEmpty)
                             MyButton(
                               text: S.of(context).addYourFirstCar,
                               onTap: onAddCar,
                             ),
-                          ...cars.map(
+                          ...canUseList.map(
                             (e) => Container(
                               decoration: MyStyle.roundBox12(color: AppColorManager.appBarColor),
                               margin: EdgeInsets.symmetric(vertical: 5.0),

@@ -143,17 +143,15 @@ class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
   final LottieGenImage animatedMoveUpwardsLinearIconFixed2 = const LottieGenImage(
-    'assets/lotties/Animated_move_upwards_linear_icon_fixed_2.lottie',
-  );
-  final LottieGenImage moveUpwardsAnimationDark = const LottieGenImage(
-    'assets/lotties/move_upwards_animation_dark.lottie',
-  );
+      'assets/lotties/Animated_move_upwards_linear_icon_fixed_2.lottie');
+  final LottieGenImage moveUpwardsAnimationDark = const LottieGenImage('assets/lotties/move_upwards_animation_dark.lottie');
 }
 
 class AssetGenImage {
   const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
+
 
   final Size? size;
   final Set<String> flavors;
@@ -366,3 +364,4 @@ class LottieGenImage {
 
   String get keyName => _assetName;
 }
+

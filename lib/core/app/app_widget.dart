@@ -130,7 +130,7 @@ class _MyAppState extends State<MyApp> {
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(.85)),
                 child: SafeArea(
-                  bottom: Platform.isAndroid,
+                  bottom: !Platform.isIOS,
                   top: false,
                   left: false,
                   right: false,

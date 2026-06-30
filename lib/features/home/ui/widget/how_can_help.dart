@@ -84,6 +84,7 @@ class HowCanHelp extends StatelessWidget {
                             // );
                             //   return;
                             final qrcode = await context.pushNamed(RouteName.qrScanner);
+                            if (qrcode.toString().isEmpty) return;
                             context.pushNamed(
                               RouteName.transferOwnershipPage,
                               queryParameters: {

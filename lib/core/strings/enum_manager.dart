@@ -774,86 +774,90 @@ enum InsurancePolicyStatus {
   resubscriptionPaymentPending,
   ;
 
+  bool get canUseCar => this == .paid || this == .approved || this == .active;
+
   bool get canRenew => this == .expired || this == .active;
 
   bool get canCancel => this == .cancelled || this == .paymentPending;
 
+  bool get canNotUse => !canUseCar;
+
   String get name {
     switch (this) {
-      case InsurancePolicyStatus.paymentPending:
+      case .paymentPending:
         return S().paymentPending;
-      case InsurancePolicyStatus.paid:
+      case .paid:
         return S().paid;
-      case InsurancePolicyStatus.missingInfo:
+      case .missingInfo:
         return S().missingInfo;
-      case InsurancePolicyStatus.resubmitted:
+      case .resubmitted:
         return S().resubmitted;
-      case InsurancePolicyStatus.draftPreparation:
+      case .draftPreparation:
         return S().draftPreparation;
-      case InsurancePolicyStatus.draft:
+      case .draft:
         return S().draft;
-      case InsurancePolicyStatus.approved:
+      case .approved:
         return S().approved;
-      case InsurancePolicyStatus.rejected:
+      case .rejected:
         return S().rejected;
-      case InsurancePolicyStatus.active:
+      case .active:
         return S().active;
-      case InsurancePolicyStatus.expired:
+      case .expired:
         return S().expired;
-      case InsurancePolicyStatus.cancelled:
+      case .cancelled:
         return S().cancelled;
-      case InsurancePolicyStatus.resubscriptionPaymentPending:
+      case .resubscriptionPaymentPending:
         return S().resubscriptionPaymentPending;
     }
   }
 
   String get nameApi {
     switch (this) {
-      case InsurancePolicyStatus.paymentPending:
+      case .paymentPending:
         return 'payment_pending';
-      case InsurancePolicyStatus.paid:
+      case .paid:
         return 'paid';
-      case InsurancePolicyStatus.missingInfo:
+      case .missingInfo:
         return 'missing_info';
-      case InsurancePolicyStatus.resubmitted:
+      case .resubmitted:
         return 'resubmitted';
-      case InsurancePolicyStatus.draftPreparation:
+      case .draftPreparation:
         return 'draft_preparation';
-      case InsurancePolicyStatus.draft:
+      case .draft:
         return 'draft';
-      case InsurancePolicyStatus.approved:
+      case .approved:
         return 'approved';
-      case InsurancePolicyStatus.rejected:
+      case .rejected:
         return 'rejected';
-      case InsurancePolicyStatus.active:
+      case .active:
         return 'active';
-      case InsurancePolicyStatus.expired:
+      case .expired:
         return 'expired';
-      case InsurancePolicyStatus.cancelled:
+      case .cancelled:
         return 'cancelled';
-      case InsurancePolicyStatus.resubscriptionPaymentPending:
+      case .resubscriptionPaymentPending:
         return 'resubscription_payment_pending';
     }
   }
 
   Color get color {
     switch (this) {
-      case InsurancePolicyStatus.paymentPending:
-      case InsurancePolicyStatus.resubscriptionPaymentPending:
+      case .paymentPending:
+      case .resubscriptionPaymentPending:
         return Colors.orange;
-      case InsurancePolicyStatus.paid:
-      case InsurancePolicyStatus.approved:
-      case InsurancePolicyStatus.active:
+      case .paid:
+      case .approved:
+      case .active:
         return AppColorManager.greenPrice;
-      case InsurancePolicyStatus.missingInfo:
-      case InsurancePolicyStatus.rejected:
-      case InsurancePolicyStatus.expired:
+      case .missingInfo:
+      case .rejected:
+      case .expired:
         return AppColorManager.red;
-      case InsurancePolicyStatus.resubmitted:
+      case .resubmitted:
         return AppColorManager.blue;
-      case InsurancePolicyStatus.draftPreparation:
-      case InsurancePolicyStatus.draft:
-      case InsurancePolicyStatus.cancelled:
+      case .draftPreparation:
+      case .draft:
+      case .cancelled:
         return AppColorManager.grey;
     }
   }
@@ -872,38 +876,38 @@ enum InsurancePolicyStatus {
   }
 
   static InsurancePolicyStatus getByNameOrIndex(dynamic name) {
-    if (name == null) return InsurancePolicyStatus.paymentPending;
+    if (name == null) return .paymentPending;
     final i = int.tryParse(name.toString());
     if (i != null) {
-      return InsurancePolicyStatus.values[i];
+      return .values[i];
     }
     switch (name.toString().toLowerCase()) {
       case 'payment_pending':
-        return InsurancePolicyStatus.paymentPending;
+        return .paymentPending;
       case 'paid':
-        return InsurancePolicyStatus.paid;
+        return .paid;
       case 'missing_info':
-        return InsurancePolicyStatus.missingInfo;
+        return .missingInfo;
       case 'resubmitted':
-        return InsurancePolicyStatus.resubmitted;
+        return .resubmitted;
       case 'draft_preparation':
-        return InsurancePolicyStatus.draftPreparation;
+        return .draftPreparation;
       case 'draft':
-        return InsurancePolicyStatus.draft;
+        return .draft;
       case 'approved':
-        return InsurancePolicyStatus.approved;
+        return .approved;
       case 'rejected':
-        return InsurancePolicyStatus.rejected;
+        return .rejected;
       case 'active':
-        return InsurancePolicyStatus.active;
+        return .active;
       case 'expired':
-        return InsurancePolicyStatus.expired;
+        return .expired;
       case 'cancelled':
-        return InsurancePolicyStatus.cancelled;
+        return .cancelled;
       case 'resubscription_payment_pending':
-        return InsurancePolicyStatus.resubscriptionPaymentPending;
+        return .resubscriptionPaymentPending;
       default:
-        return InsurancePolicyStatus.paymentPending;
+        return .paymentPending;
     }
   }
 }
@@ -1108,8 +1112,8 @@ enum AccidentStatus {
   }
 
   String description(HasClaimRequest item) {
-    var type  = item.compensationType;
-    var value  = item.compensationValue.formatPrice;
+    var type = item.compensationType;
+    var value = item.compensationValue.formatPrice;
     final s = S();
     switch (this) {
       case AccidentStatus.pending:
