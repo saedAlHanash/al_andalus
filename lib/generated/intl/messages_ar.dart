@@ -205,6 +205,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
     "chromeNickel": MessageLookupByLibrary.simpleMessage("الكروم أو النيكل"),
+    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "claimStatus": MessageLookupByLibrary.simpleMessage("حالة المطالبة"),
     "clickToUpdate": MessageLookupByLibrary.simpleMessage("انقر للتعديل"),
     "compensationMaintenanceDesc": MessageLookupByLibrary.simpleMessage(

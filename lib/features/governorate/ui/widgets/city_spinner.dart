@@ -4,23 +4,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/widgets/spinner_widget.dart';
 import '../../../../generated/l10n.dart';
 import '../../bloc/cities_cubit/cities_cubit.dart';
-import '../../bloc/governorates_cubit/governorates_cubit.dart';
 
-class GovernorateSpinner extends StatelessWidget {
-  const GovernorateSpinner({super.key});
+class CitySpinner extends StatelessWidget {
+  const CitySpinner({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GovernoratesCubit, GovernoratesInitial>(
+    return BlocBuilder<CitiesCubit, CitiesInitial>(
       builder: (context, state) {
         return SpinnerWidget(
           loading: state.loading,
-          hintText: S.of(context).governorate,
-          hintLabel: S.of(context).governorate,
+          hintText: S.of(context).city,
+          hintLabel: S.of(context).city,
           items: state.getSpinnerItems(selectedId: state.selectedId),
           onChanged: (spinnerItem) {
-            context.read<GovernoratesCubit>().selectGovernorate(spinnerItem.id.toString());
-            context.read<CitiesCubit>().getData(governorateId: spinnerItem.id.toString());
+            context.read<CitiesCubit>().selectCity(spinnerItem.id.toString());
           },
         );
       },

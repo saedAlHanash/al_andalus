@@ -453,6 +453,7 @@
   "compensationMaintenanceDesc": "سيتم إرشادك لورشة صيانة مختصة",
   "transferOwnershipPendingDesc": "يرجى الإنتظار لغاية إتمام مراجعة الطلب",
   "transferOwnershipAcceptedDesc": "تم قبول نقل الملكية لمالك آخر",
+  "city": "المدينة",
   "currencySymbol": "دع",
   "transferOwnershipRejectedDesc": "تم رفض طلب نقل الملكية",
   "theAccidentRequestWasRejected": "تم رفض طلب الحادث",

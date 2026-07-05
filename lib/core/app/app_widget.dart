@@ -11,6 +11,7 @@ import 'package:image_multi_type/image_multi_type.dart';
 import 'package:m_cubit/caching_service/caching_service.dart';
 
 import '../../features/ads/bloc/adss_cubit/adss_cubit.dart';
+import '../../features/governorate/bloc/cities_cubit/cities_cubit.dart';
 import '../../features/governorate/bloc/governorate_cubit/governorate_cubit.dart';
 import '../../features/governorate/bloc/governorates_cubit/governorates_cubit.dart';
 import '../../features/insurances/bloc/insurances_cubit/insurances_cubit.dart';
@@ -121,6 +122,7 @@ class _MyAppState extends State<MyApp> {
                 BlocProvider(create: (_) => sl<UpdateProfileCubit>()),
                 BlocProvider(create: (_) => sl<GetMeCubit>()..getData()),
                 BlocProvider(create: (_) => sl<GovernoratesCubit>()..getData()),
+                BlocProvider(create: (_) => sl<CitiesCubit>()),
                 BlocProvider(create: (_) => sl<AdssCubit>()..getData()),
                 BlocProvider(create: (_) => sl<InsurancesCubit>()..getData()),
                 BlocProvider(create: (_) => sl<NotificationCubit>()..getData()),

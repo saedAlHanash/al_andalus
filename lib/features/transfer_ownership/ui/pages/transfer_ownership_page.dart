@@ -106,8 +106,8 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
     final profileGender = profile.gender.toLowerCase() == 'male'
         ? GenderEnum.male
         : profile.gender.toLowerCase() == 'female'
-            ? GenderEnum.female
-            : null;
+        ? GenderEnum.female
+        : null;
 
     return req.name != profile.name ||
         req.address != profile.address ||
@@ -119,7 +119,9 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
   }
 
   bool _hasLicenseChanged(UpdateProfileRequest req, Profile profile) {
-    final profileLicenseType = LicenseType.values.where((element) => element.nameApi == profile.licenseType).firstOrNull;
+    final profileLicenseType = LicenseType.values
+        .where((element) => element.nameApi == profile.licenseType)
+        .firstOrNull;
 
     return req.licenseNumber != profile.licenseNumber ||
         req.licenseType != profileLicenseType ||
@@ -156,10 +158,10 @@ class _TransferOwnershipPageState extends State<TransferOwnershipPage> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<TransferOwnershipCubit, TransferOwnershipState>(
-      listenWhen: (p, c) => c.done,
+      listenWhen: (p, c) => c.done && c.create,
       listener: (context, state) {
-        NoteMessage.showSnakeBar(context: context, message: state.result?.message ?? '');
-        context.go(RouteName.home);
+        // NoteMessage.showSnakeBar(context: context, message: state.result?.message ?? '');
+        // context.go(RouteName.home);
       },
       child: Scaffold(
         appBar: AppBarWidget(

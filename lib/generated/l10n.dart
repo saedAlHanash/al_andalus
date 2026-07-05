@@ -3784,6 +3784,11 @@ class S {
     );
   }
 
+  /// `City`
+  String get city {
+    return Intl.message('City', name: 'city', desc: '', args: []);
+  }
+
   /// `IQD`
   String get currencySymbol {
     return Intl.message('IQD', name: 'currencySymbol', desc: '', args: []);

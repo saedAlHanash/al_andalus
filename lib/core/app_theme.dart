@@ -2,10 +2,10 @@ import 'package:al_andalus/core/strings/app_color_manager.dart';
 import 'package:al_andalus/core/strings/enum_manager.dart';
 import 'package:al_andalus/core/util/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 var primaryColor = AppColorManager.mainColor;
 var secondaryColor = AppColorManager.white;
@@ -13,7 +13,6 @@ const _dividerColor = Color(0xFFECEDF2);
 
 String? get appFontFamily {
   try {
-
     if (AppSharedPreference.getLocal == 'ur') {
       return FontManager.bold.name;
     }
@@ -45,11 +44,13 @@ ThemeData get lightTheme => ThemeData(
       color: Color(0xFF132332),
     ),
   ),
-  listTileTheme: ListTileThemeData(
-    horizontalTitleGap: 10.0,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
-    controlAffinity: ListTileControlAffinity.leading,
-  ),
+  listTileTheme: kDebugMode
+      ? null
+      : ListTileThemeData(
+          horizontalTitleGap: 10.0,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
+          controlAffinity: ListTileControlAffinity.leading,
+        ),
   brightness: Brightness.light,
   primaryColor: primaryColor,
   textSelectionTheme: TextSelectionThemeData(
@@ -165,12 +166,14 @@ ThemeData get darkTheme => ThemeData(
   primaryColorDark: Color(0xff13161D),
   dividerColor: Color(0xff4D5259),
   shadowColor: AppColorManager.darkColor.withValues(alpha: 0.5),
-  listTileTheme: ListTileThemeData(
-    horizontalTitleGap: 10.0,
-    tileColor: Color(0xFF303030),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
-    controlAffinity: ListTileControlAffinity.leading,
-  ),
+  listTileTheme: kDebugMode
+      ? null
+      : ListTileThemeData(
+          horizontalTitleGap: 10.0,
+          tileColor: Color(0xFF303030),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0.r)),
+          controlAffinity: ListTileControlAffinity.leading,
+        ),
   brightness: Brightness.dark,
   primaryColor: AppColorManager.secondColor,
   textSelectionTheme: TextSelectionThemeData(

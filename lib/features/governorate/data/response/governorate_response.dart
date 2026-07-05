@@ -49,3 +49,33 @@ class Governorate {
     );
   }
 }
+
+class City {
+  final int id;
+  final String name;
+  final Governorate governorate;
+
+  City({required this.id, required this.name, required this.governorate});
+
+  City copyWith({int? id, String? name, Governorate? governorate}) {
+    return City(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      governorate: governorate ?? this.governorate,
+    );
+  }
+
+  factory City.fromJson(Map<String, dynamic> json) {
+    return City(
+      id: json["id"] ?? 0,
+      name: json["name"] ?? '',
+      governorate: Governorate.fromJson(json['governorate'] ?? {}),
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "governorate": governorate.toJson(),
+  };
+}

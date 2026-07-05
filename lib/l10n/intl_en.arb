@@ -451,6 +451,7 @@
   "accidentPaidDesc": "Paid",
   "accidentFixedDesc": "Maintenance completed successfully",
   "compensationValuePrefix": "Compensation value: {value}",
+  "city": "City",
   "currencySymbol": "IQD",
   "compensationMaintenanceDesc": "You will be guided to a specialized maintenance workshop",
   "transferOwnershipPendingDesc": "Please wait until the request review is completed",
